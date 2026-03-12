@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edos Digital Solutions — Partner tecnico white label per agenzie</title>
+  <meta name="description" content="Gestiamo i progetti digitali complessi per agenzie marketing e creative. Invisibili ai tuoi clienti, indispensabili per il tuo business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #0A1628;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button, a { cursor: pointer; }
+
+    /* ── UTILITIES ── */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-padding { padding: 90px 0; }
+    .text-gray { color: #6b7280; }
+    .bg-light { background: #f8f9fa; }
+    .bg-navy { background: #0A1628; color: #ffffff; }
+    .bg-white { background: #ffffff; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.938rem;
+      font-weight: 500;
+      border: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-navy { background: #0A1628; color: #fff; }
+    .btn-navy:hover { background: #152238; }
+    .btn-white { background: #ffffff; color: #0A1628; }
+    .btn-white:hover { background: #f0f0f0; }
+    .btn-ghost {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.6); }
+    .btn-teal { background: #1D9E75; color: #fff; }
+    .btn-teal:hover { background: #0F6E56; }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.813rem;
+      font-weight: 500;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ──────────────────────────────────────
+       1. NAV
+    ────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0A1628;
+    }
+    .nav-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: #1D9E75;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-logo-icon svg { width: 16px; height: 16px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: #6b7280;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #0A1628; }
+    .nav-cta { margin-left: 16px; }
+    .nav-cta .btn { padding: 10px 22px; font-size: 0.875rem; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #0A1628;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* ──────────────────────────────────────
+       2. HERO
+    ────────────────────────────────────── */
+    .hero {
+      background: #0A1628;
+      color: #ffffff;
+      padding: 100px 0 0;
+    }
+    .hero-content { max-width: 720px; }
+    .hero .tag {
+      background: rgba(29,158,117,0.15);
+      color: #1D9E75;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: 3.25rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 40px 0;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1D9E75;
+    }
+    .hero-stat .label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* ──────────────────────────────────────
+       3. WHITE LABEL FLOW
+    ────────────────────────────────────── */
+    .wl-flow { background: #f8f9fa; }
+    .wl-flow h2 {
+      font-size: 2.25rem;
+      max-width: 680px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 40px;
+    }
+    .flow-step {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      flex: 1;
+      max-width: 280px;
+    }
+    .flow-step-num {
+      width: 36px;
+      height: 36px;
+      background: #E1F5EE;
+      color: #1D9E75;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.813rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .flow-step h4 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    .flow-step p {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    .flow-arrow {
+      font-size: 1.5rem;
+      color: #1D9E75;
+      padding: 0 16px;
+      flex-shrink: 0;
+    }
+    .wl-note {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    /* ──────────────────────────────────────
+       4. WHY US
+    ────────────────────────────────────── */
+    .why-us h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .why-us .section-sub {
+      text-align: center;
+      color: #6b7280;
+      max-width: 560px;
+      margin: 0 auto 60px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 36px;
+      transition: border-color 0.2s;
+    }
+    .why-card:hover { border-color: #1D9E75; }
+    .why-card-num {
+      font-size: 0.813rem;
+      font-weight: 600;
+      color: #1D9E75;
+      margin-bottom: 16px;
+    }
+    .why-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+    }
+    .why-card p {
+      font-size: 0.938rem;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    /* ──────────────────────────────────────
+       5. PARTNERFLOW™
+    ────────────────────────────────────── */
+    .partnerflow {
+      background: #0A1628;
+      color: #ffffff;
+    }
+    .partnerflow .tag {
+      background: rgba(29,158,117,0.15);
+      color: #1D9E75;
+      margin-bottom: 16px;
+    }
+    .partnerflow h2 {
+      font-size: 2.25rem;
+      margin-bottom: 60px;
+      max-width: 560px;
+    }
+    .pf-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+    .pf-step-num {
+      font-size: 0.813rem;
+      font-weight: 600;
+      color: #1D9E75;
+      margin-bottom: 12px;
+    }
+    .pf-step h4 {
+      font-size: 1.063rem;
+      margin-bottom: 10px;
+    }
+    .pf-step p {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+    }
+    .pf-quote {
+      border-left: 3px solid #1D9E75;
+      padding: 24px 32px;
+      background: rgba(29,158,117,0.06);
+      border-radius: 0 12px 12px 0;
+    }
+    .pf-quote p {
+      font-size: 1.125rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* ──────────────────────────────────────
+       6. SERVICES
+    ────────────────────────────────────── */
+    .services h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .services .section-sub {
+      text-align: center;
+      color: #6b7280;
+      max-width: 520px;
+      margin: 0 auto 60px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 36px;
+      transition: border-color 0.2s;
+    }
+    .service-card:hover { border-color: #1D9E75; }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: #E1F5EE;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg { width: 22px; height: 22px; color: #1D9E75; }
+    .service-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 10px;
+    }
+    .service-card p {
+      font-size: 0.938rem;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .service-tags span {
+      padding: 4px 12px;
+      background: #f8f9fa;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    /* ──────────────────────────────────────
+       7. CASE STUDIES
+    ────────────────────────────────────── */
+    .cases { background: #f8f9fa; }
+    .cases h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .cases .section-sub {
+      text-align: center;
+      color: #6b7280;
+      max-width: 480px;
+      margin: 0 auto 60px;
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .case-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #ffffff;
+      transition: border-color 0.2s;
+    }
+    .case-card:hover { border-color: #1D9E75; }
+    .case-top {
+      background: #0A1628;
+      color: #ffffff;
+      padding: 36px;
+    }
+    .case-top .case-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #1D9E75;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .case-top h3 { font-size: 1.25rem; }
+    .case-body { padding: 32px 36px; }
+    .case-results {
+      display: flex;
+      gap: 32px;
+    }
+    .case-result .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1D9E75;
+      letter-spacing: -0.02em;
+    }
+    .case-result .desc {
+      font-size: 0.813rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    /* ──────────────────────────────────────
+       8. TEAM
+    ────────────────────────────────────── */
+    .team h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .team .section-sub {
+      text-align: center;
+      color: #6b7280;
+      max-width: 580px;
+      margin: 0 auto 60px;
+      font-size: 1rem;
+    }
+    .team-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .team-metric {
+      text-align: center;
+      background: #f8f9fa;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 36px 24px;
+      transition: border-color 0.2s;
+    }
+    .team-metric:hover { border-color: #1D9E75; }
+    .team-metric .val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1D9E75;
+      letter-spacing: -0.02em;
+    }
+    .team-metric .label {
+      font-size: 0.938rem;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+    .skill-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-badges span {
+      padding: 8px 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #0A1628;
+      background: #ffffff;
+    }
+
+    /* ──────────────────────────────────────
+       9. CTA FINAL
+    ────────────────────────────────────── */
+    .cta-final { text-align: center; }
+    .cta-final h2 {
+      font-size: 2.25rem;
+      margin-bottom: 16px;
+    }
+    .cta-final p {
+      color: #6b7280;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      font-size: 1.063rem;
+    }
+
+    /* ──────────────────────────────────────
+       10. FOOTER
+    ────────────────────────────────────── */
+    .footer {
+      background: #0A1628;
+      color: rgba(255,255,255,0.5);
+      padding: 60px 0 40px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-logo-icon {
+      width: 28px;
+      height: 28px;
+      background: #1D9E75;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-logo-icon svg { width: 16px; height: 16px; }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-links a {
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #ffffff; }
+    .footer-info {
+      text-align: right;
+      font-size: 0.875rem;
+    }
+    .footer-info p { margin-bottom: 8px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      font-size: 0.813rem;
+      text-align: center;
+    }
+
+    /* ──────────────────────────────────────
+       RESPONSIVE
+    ────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-links.open, .nav-cta.open { display: flex; }
+      .nav-toggle { display: flex; }
+
+      .nav .container {
+        flex-wrap: wrap;
+      }
+      .nav-links.open {
+        flex-direction: column;
+        width: 100%;
+        padding: 16px 0 24px;
+        gap: 20px;
+        order: 3;
+      }
+      .nav-cta.open {
+        width: 100%;
+        padding-bottom: 20px;
+        order: 4;
+      }
+
+      .hero { padding: 60px 0 0; }
+      .hero h1 { font-size: 2.25rem; }
+      .hero-sub { font-size: 1rem; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); padding: 28px 0; }
+      .hero-stat .number { font-size: 1.75rem; }
+
+      .wl-flow h2,
+      .why-us h2,
+      .partnerflow h2,
+      .services h2,
+      .cases h2,
+      .team h2,
+      .cta-final h2 {
+        font-size: 1.75rem;
+      }
+
+      .flow-diagram {
+        flex-direction: column;
+        gap: 0;
+      }
+      .flow-step { max-width: 100%; width: 100%; }
+      .flow-arrow { transform: rotate(90deg); padding: 8px 0; }
+
+      .why-grid,
+      .services-grid,
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pf-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .team-metrics { grid-template-columns: 1fr; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+      }
+      .footer-info { text-align: center; }
+      .footer-logo { justify-content: center; }
+      .footer-links { align-items: center; }
+
+      .section-padding { padding: 60px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.875rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { text-align: center; justify-content: center; }
+      .pf-steps { grid-template-columns: 1fr; }
+      .case-results { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ 1. NAV ════════ -->
+  <nav class="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </span>
+        EDOS
+      </a>
+
+      <button class="nav-toggle" aria-label="Menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#whitelabel">Per le agenzie</a>
+        <a href="#partnerflow">PartnerFlow&trade;</a>
+        <a href="#services">Servizi</a>
+        <a href="#cases">Casi studio</a>
+        <a href="#contact">Contatti</a>
+      </div>
+      <div class="nav-cta" id="navCta">
+        <a href="#contact" class="btn btn-navy">Parliamoci</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════ 2. HERO ════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content fade-in">
+        <span class="tag">Partner tecnico white label per agenzie</span>
+        <h1>La divisione sviluppo che la tua agenzia non ha ancora.</h1>
+        <p class="hero-sub">Gestiamo i progetti digitali complessi per agenzie marketing e creative. Invisibili ai tuoi clienti, indispensabili per il tuo business.</p>
+        <div class="hero-ctas">
+          <a href="#whitelabel" class="btn btn-white">Scopri come funziona</a>
+          <a href="#cases" class="btn btn-ghost">Casi studio</a>
+        </div>
+      </div>
+      <div class="hero-stats fade-in">
+        <div class="hero-stat">
+          <div class="number">40+</div>
+          <div class="label">progetti completati</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">25</div>
+          <div class="label">agenzie partner</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">0</div>
+          <div class="label">ritardi nelle consegne</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 3. WHITE LABEL FLOW ════════ -->
+  <section class="wl-flow section-padding" id="whitelabel">
+    <div class="container">
+      <h2 class="fade-in">Vinci progetti più complessi. Mantieni il rapporto con il cliente. Noi ci occupiamo del resto.</h2>
+      <div class="flow-diagram fade-in">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <h4>Agenzia vince il progetto</h4>
+          <p>Presenti la proposta al cliente e chiudi il contratto come sempre.</p>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <h4>Edos entra come team tecnico</h4>
+          <p>Il nostro team si integra silenziosamente nei tuoi processi.</p>
+        </div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <h4>Il cliente vede solo l'agenzia</h4>
+          <p>Comunichiamo con il tuo brand, la tua email, il tuo tono.</p>
+        </div>
+      </div>
+      <p class="wl-note fade-in">NDA firmato · Account email dedicato · Zero visibilità al cliente finale</p>
+    </div>
+  </section>
+
+  <!-- ════════ 4. WHY US ════════ -->
+  <section class="why-us section-padding bg-white">
+    <div class="container">
+      <h2 class="fade-in">Perché le agenzie ci scelgono</h2>
+      <p class="section-sub fade-in">Quattro motivi concreti che fanno la differenza nei progetti complessi.</p>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-card-num">01</div>
+          <h3>Pre-sales</h3>
+          <p>Partecipiamo ai meeting con il tuo cliente per aiutarti a vincere il progetto, prima ancora della firma.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">02</div>
+          <h3>Referente unico</h3>
+          <p>Un project manager dedicato dall'inizio alla fine. Nessun passaggio di consegne.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">03</div>
+          <h3>Scalabilità</h3>
+          <p>Puoi accettare più progetti senza assumere. Il team è già formato e operativo.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-card-num">04</div>
+          <h3>Trasparenza</h3>
+          <p>Dashboard condivisa in tempo reale. Sai sempre a che punto siamo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 5. PARTNERFLOW™ ════════ -->
+  <section class="partnerflow section-padding bg-navy" id="partnerflow">
+    <div class="container">
+      <span class="tag fade-in">Il nostro metodo</span>
+      <h2 class="fade-in">PartnerFlow&trade;: consegne puntuali, su ogni progetto.</h2>
+      <div class="pf-steps fade-in">
+        <div class="pf-step">
+          <div class="pf-step-num">01</div>
+          <h4>Discovery</h4>
+          <p>Analizziamo requisiti, vincoli tecnici e aspettative del cliente finale insieme a te.</p>
+        </div>
+        <div class="pf-step">
+          <div class="pf-step-num">02</div>
+          <h4>Pianificazione</h4>
+          <p>Definiamo milestones, deliverable e timeline condivise con deadline realistiche.</p>
+        </div>
+        <div class="pf-step">
+          <div class="pf-step-num">03</div>
+          <h4>Sviluppo</h4>
+          <p>Sprint settimanali con demo e aggiornamenti. Niente sorprese alla consegna.</p>
+        </div>
+        <div class="pf-step">
+          <div class="pf-step-num">04</div>
+          <h4>Supporto</h4>
+          <p>Post-lancio garantito. Bugfix, ottimizzazioni e supporto tecnico continuativo.</p>
+        </div>
+      </div>
+      <div class="pf-quote fade-in">
+        <p>&ldquo;Non ci spaventa lo stack tecnologico, ma le richieste dei clienti.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 6. SERVICES ════════ -->
+  <section class="services section-padding bg-white" id="services">
+    <div class="container">
+      <h2 class="fade-in">I nostri servizi</h2>
+      <p class="section-sub fade-in">Competenze verticali per coprire ogni esigenza tecnica della tua agenzia.</p>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Web Solutions</h3>
+          <p>Siti web performanti, landing page ottimizzate e piattaforme web su misura per i clienti della tua agenzia.</p>
+          <div class="service-tags">
+            <span>Next.js</span><span>React</span><span>WordPress</span><span>Headless CMS</span>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3>Sviluppo Custom</h3>
+          <p>Applicazioni web e mobile custom, integrazioni API, piattaforme SaaS e sistemi complessi su misura.</p>
+          <div class="service-tags">
+            <span>Node.js</span><span>Python</span><span>React Native</span><span>PostgreSQL</span>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"></path>
+              <path d="M8.25 9.93A4 4 0 0 1 12 2"></path>
+              <path d="M12 18a8 8 0 0 0 8-8"></path>
+              <path d="M12 18a8 8 0 0 1-8-8"></path>
+              <line x1="12" y1="18" x2="12" y2="22"></line>
+              <line x1="8" y1="22" x2="16" y2="22"></line>
+            </svg>
+          </div>
+          <h3>AI Development</h3>
+          <p>Chatbot intelligenti, automazioni con AI, agenti conversazionali e integrazioni con modelli di linguaggio.</p>
+          <div class="service-tags">
+            <span>OpenAI</span><span>LangChain</span><span>RAG</span><span>Automazioni</span>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3>Project Management</h3>
+          <p>Coordinamento tecnico dei progetti, gestione degli stakeholder e reportistica per la tua agenzia.</p>
+          <div class="service-tags">
+            <span>Agile</span><span>Scrum</span><span>Jira</span><span>Notion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 7. CASE STUDIES ════════ -->
+  <section class="cases section-padding bg-light" id="cases">
+    <div class="container">
+      <h2 class="fade-in">Casi studio</h2>
+      <p class="section-sub fade-in">Risultati concreti ottenuti in collaborazione con le nostre agenzie partner.</p>
+      <div class="cases-grid">
+        <div class="case-card fade-in">
+          <div class="case-top">
+            <div class="case-label">E-commerce · B2B</div>
+            <h3>E-commerce B2B per network franchising</h3>
+          </div>
+          <div class="case-body">
+            <div class="case-results">
+              <div class="case-result">
+                <div class="val">+67%</div>
+                <div class="desc">vendite Q1</div>
+              </div>
+              <div class="case-result">
+                <div class="val">800</div>
+                <div class="desc">franchisee attivi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card fade-in">
+          <div class="case-top">
+            <div class="case-label">AI · Automazione</div>
+            <h3>Agente AI per automazione preventivi</h3>
+          </div>
+          <div class="case-body">
+            <div class="case-results">
+              <div class="case-result">
+                <div class="val">-70%</div>
+                <div class="desc">tempo risposta</div>
+              </div>
+              <div class="case-result">
+                <div class="val">100%</div>
+                <div class="desc">automatizzato</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 8. TEAM ════════ -->
+  <section class="team section-padding bg-white">
+    <div class="container">
+      <h2 class="fade-in">Il team</h2>
+      <p class="section-sub fade-in">10+ professionisti senior, tutti in Italia, esperienza media 5+ anni. Comunicazione in italiano, nessun offshore.</p>
+      <div class="team-metrics fade-in">
+        <div class="team-metric">
+          <div class="val">10+</div>
+          <div class="label">professionisti</div>
+        </div>
+        <div class="team-metric">
+          <div class="val">5+</div>
+          <div class="label">anni esperienza</div>
+        </div>
+        <div class="team-metric">
+          <div class="val">100%</div>
+          <div class="label">Italia</div>
+        </div>
+      </div>
+      <div class="skill-badges fade-in">
+        <span>Frontend</span>
+        <span>Backend</span>
+        <span>UX/UI</span>
+        <span>AI Engineering</span>
+        <span>PM</span>
+        <span>DevOps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 9. CTA FINAL ════════ -->
+  <section class="cta-final section-padding bg-white" id="contact">
+    <div class="container">
+      <h2 class="fade-in">Hai un progetto in vista?</h2>
+      <p class="fade-in">Raccontaci cosa sta portando il tuo cliente. Valutiamo insieme se e come possiamo supportarti.</p>
+      <a href="mailto:info@edos.digital" class="btn btn-navy fade-in">Parliamoci &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ════════ 10. FOOTER ════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">
+            <span class="footer-logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </span>
+            EDOS
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#whitelabel">Per le agenzie</a>
+          <a href="#partnerflow">PartnerFlow&trade;</a>
+          <a href="#services">Servizi</a>
+          <a href="#cases">Casi studio</a>
+          <a href="#contact">Contatti</a>
+        </div>
+        <div class="footer-info">
+          <p>info@edos.digital</p>
+          <p>Milano, Italia</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Edos Digital Solutions S.r.l. &mdash; Milano, Italia
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════ JS ════════ -->
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navCta = document.getElementById('navCta');
+
+    navToggle.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+      navCta.classList.toggle('open');
+    });
+
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        navCta.classList.remove('open');
+      });
+    });
+
+    // Fade-in on scroll with IntersectionObserver
+    var fadeEls = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      fadeEls.forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback: show all immediately
+      fadeEls.forEach(function (el) {
+        el.classList.add('visible');
+      });
+    }
+  </script>
+
+</body>
+</html>
