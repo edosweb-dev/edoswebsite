@@ -176,9 +176,12 @@
     /* CTA */
     .nav-cta .btn { padding:10px 20px; font-size:.875rem; }
 
-    /* hamburger */
+    /* desktop links — always hidden, overlay nav is primary */
+    .nav-links { display:none !important; }
+
+    /* hamburger — always visible */
     .nav-hamburger {
-      display:none; flex-direction:column; gap:5px;
+      display:flex; flex-direction:column; gap:5px;
       background:none; border:none; cursor:pointer; padding:6px; border-radius:6px;
     }
     .nav-hamburger span {
