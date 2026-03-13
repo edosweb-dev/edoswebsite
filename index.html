@@ -595,7 +595,7 @@
     /* watermark number */
     .serv-item::before {
       content:attr(data-n);
-      position:absolute; right:48px; top:50%;
+      position:absolute; left:0; top:50%;
       transform:translateY(-55%);
       font-family:var(--font-display);
       font-size:9rem; font-weight:900; line-height:1;
@@ -620,12 +620,7 @@
       gap:24px; position:relative; z-index:1;
     }
     .serv-btn-left { display:flex; align-items:center; gap:28px; flex:1; }
-    .serv-num {
-      font-size:.7rem; font-weight:700; letter-spacing:.12em;
-      color:var(--text-muted); flex-shrink:0; width:22px;
-      transition:color .2s;
-    }
-    .serv-item.open .serv-num { color:var(--blue); }
+    .serv-num { display:none; }
     .serv-name {
       font-family:var(--font-display);
       font-size:clamp(1.1rem,2.1vw,1.625rem);
