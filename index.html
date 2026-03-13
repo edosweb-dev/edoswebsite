@@ -567,16 +567,17 @@
     .pf-step:nth-child(odd) { border-right:1px solid rgba(255,255,255,.08); }
     .pf-step:hover { background:rgba(59,111,232,.1); }
 
-    /* step number — large, prominent */
-    .pf-step-n {
+    /* large solid-color number — decorative anchor */
+    .pf-step::before {
+      content:attr(data-n);
+      position:absolute; right:-8px; bottom:-32px;
       font-family:var(--font-display);
-      font-size:clamp(2.5rem,4vw,4rem);
-      font-weight:900; line-height:1; letter-spacing:-.04em;
-      color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,.2);
-      display:block; margin-bottom:20px;
-      transition:-webkit-text-stroke-color .35s;
+      font-size:12rem; font-weight:900; line-height:1; letter-spacing:-.06em;
+      color:rgba(59,111,232,.18);
+      pointer-events:none; user-select:none;
+      transition:color .35s;
     }
-    .pf-step:hover .pf-step-n { -webkit-text-stroke-color:rgba(107,155,247,.6); }
+    .pf-step:hover::before { color:rgba(107,155,247,.28); }
 
     /* blue accent line */
     .pf-step-line {
@@ -590,21 +591,12 @@
       font-family:var(--font-display);
       font-size:clamp(1.375rem,2.2vw,1.875rem);
       font-weight:700; letter-spacing:-.025em; color:#fff;
-      margin-bottom:16px;
+      margin-bottom:16px; position:relative; z-index:1;
     }
     .pf-step p {
       font-size:1rem; color:rgba(255,255,255,.48); line-height:1.78;
-      max-width:420px;
+      max-width:420px; position:relative; z-index:1;
     }
-
-    /* decorative icon — top right */
-    .pf-step-ico {
-      position:absolute; right:40px; top:40px;
-      opacity:.03; pointer-events:none;
-      transition:opacity .35s;
-    }
-    .pf-step-ico svg { width:130px; height:130px; color:#fff; }
-    .pf-step:hover .pf-step-ico { opacity:.07; }
 
     @media(max-width:760px){
       .pf-steps { grid-template-columns:1fr; }
@@ -1182,53 +1174,25 @@
     </div>
   </div>
   <div class="pf-steps">
-    <div class="pf-step reveal">
-      <span class="pf-step-n">01</span>
+    <div class="pf-step reveal" data-n="01">
       <span class="pf-step-line"></span>
       <h3>Discovery</h3>
       <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
-      <span class="pf-step-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
-        </svg>
-      </span>
     </div>
-    <div class="pf-step reveal d2">
-      <span class="pf-step-n">02</span>
+    <div class="pf-step reveal d2" data-n="02">
       <span class="pf-step-line"></span>
       <h3>Pianificazione</h3>
       <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
-      <span class="pf-step-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
-        </svg>
-      </span>
     </div>
-    <div class="pf-step reveal d3">
-      <span class="pf-step-n">03</span>
+    <div class="pf-step reveal d3" data-n="03">
       <span class="pf-step-line"></span>
       <h3>Sviluppo</h3>
       <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite dashboard dedicata.</p>
-      <span class="pf-step-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-          <line x1="12" y1="4" x2="12" y2="20"/>
-        </svg>
-      </span>
     </div>
-    <div class="pf-step reveal d4">
-      <span class="pf-step-n">04</span>
+    <div class="pf-step reveal d4" data-n="04">
       <span class="pf-step-line"></span>
       <h3>Supporto</h3>
       <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
-      <span class="pf-step-ico">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          <polyline points="9 12 11 14 15 10"/>
-        </svg>
-      </span>
     </div>
   </div>
 </section>
