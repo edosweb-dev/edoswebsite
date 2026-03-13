@@ -448,7 +448,7 @@
     .hero-bottom {
       background:var(--white);
       border-bottom:1px solid var(--border);
-      padding:52px 0;
+      padding:68px 0;
     }
 
     /* pillars */
@@ -457,28 +457,66 @@
       gap:0;
     }
     .hero-pillar {
-      padding:0 40px;
+      padding:0 48px;
       border-right:1px solid var(--border);
     }
     .hero-pillar:first-child { padding-left:0; }
     .hero-pillar:last-child  { border-right:none; }
+
+    /* icon container */
     .hero-pillar-icon {
-      width:28px; height:28px; margin-bottom:14px;
+      width:52px; height:52px; margin-bottom:22px;
       color:var(--blue);
+      transition:transform .35s cubic-bezier(.16,1,.3,1);
     }
-    .hero-pillar-icon svg { width:28px; height:28px; }
+    .hero-pillar:hover .hero-pillar-icon { transform:translateY(-5px); }
+    .hero-pillar-icon svg { width:52px; height:52px; }
+
+    /* SVG stroke-draw animation */
+    @keyframes strokeDraw {
+      from { stroke-dashoffset:300; opacity:0; }
+      to   { stroke-dashoffset:0;   opacity:1; }
+    }
+    .hero-pillar-icon svg path,
+    .hero-pillar-icon svg line,
+    .hero-pillar-icon svg rect,
+    .hero-pillar-icon svg polyline {
+      stroke-dasharray:300;
+      stroke-dashoffset:300;
+      opacity:0;
+    }
+    .hero-pillar.draw-in .hero-pillar-icon svg path,
+    .hero-pillar.draw-in .hero-pillar-icon svg line,
+    .hero-pillar.draw-in .hero-pillar-icon svg rect,
+    .hero-pillar.draw-in .hero-pillar-icon svg polyline {
+      animation:strokeDraw .9s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    .hero-pillar.draw-in:nth-child(2) .hero-pillar-icon svg path,
+    .hero-pillar.draw-in:nth-child(2) .hero-pillar-icon svg line,
+    .hero-pillar.draw-in:nth-child(2) .hero-pillar-icon svg rect,
+    .hero-pillar.draw-in:nth-child(2) .hero-pillar-icon svg polyline {
+      animation-delay:.18s;
+    }
+    .hero-pillar.draw-in:nth-child(3) .hero-pillar-icon svg path,
+    .hero-pillar.draw-in:nth-child(3) .hero-pillar-icon svg line,
+    .hero-pillar.draw-in:nth-child(3) .hero-pillar-icon svg rect,
+    .hero-pillar.draw-in:nth-child(3) .hero-pillar-icon svg polyline {
+      animation-delay:.36s;
+    }
+
+    /* text */
     .hero-pillar p {
       font-family:var(--font-display);
-      font-size:.875rem; color:var(--text-body);
+      font-size:1rem; color:var(--text-body);
       line-height:1.75; margin:0;
     }
     .hero-pillar p strong {
       display:block; color:var(--navy); font-weight:700;
-      font-size:.9375rem; margin-bottom:5px;
+      font-size:1.125rem; margin-bottom:7px;
     }
     @media(max-width:820px){
       .hero-pillars { grid-template-columns:1fr; gap:0; }
-      .hero-pillar { padding:24px 0; border-right:none; border-top:1px solid var(--border); }
+      .hero-pillar { padding:28px 0; border-right:none; border-top:1px solid var(--border); }
       .hero-pillar:first-child { border-top:none; padding-left:0; }
     }
 
@@ -1421,6 +1459,21 @@
     }, {threshold:0.5});
     cEls.forEach(function(el){ cObs.observe(el); });
   }
+
+  /* ---- PILLARS ICON DRAW ANIMATION ---- */
+  (function(){
+    var pillars = document.querySelectorAll('.hero-pillar');
+    if(!pillars.length) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('draw-in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.3});
+    pillars.forEach(function(p){ obs.observe(p); });
+  })();
 
   /* ---- TAGLINE WORD-BY-WORD ANIMATION ---- */
   (function(){
