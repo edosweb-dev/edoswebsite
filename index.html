@@ -50,7 +50,8 @@
     img { max-width:100%; display:block; }
 
     /* ---- KEYFRAMES ---- */
-    @keyframes fadeUp   { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(28px);filter:blur(6px)} to{opacity:1;transform:translateY(0);filter:blur(0)} }
+    @keyframes heroLine { from{opacity:0;transform:translateY(40px);filter:blur(8px)} to{opacity:1;transform:translateY(0);filter:blur(0)} }
     @keyframes blobA    { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-50px,40px) scale(1.08)} 66%{transform:translate(30px,-30px) scale(.94)} }
     @keyframes blobB    { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(40px,-50px) scale(1.06)} 66%{transform:translate(-25px,25px) scale(.96)} }
     @keyframes blobC    { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,50px) scale(1.12)} }
@@ -89,8 +90,8 @@
     .btn-white:hover { background:var(--blue-pale); color:var(--blue); box-shadow:var(--shadow-md); }
 
     /* reveal */
-    .reveal { opacity:0; transform:translateY(30px); transition:opacity .65s ease,transform .65s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal { opacity:0; transform:translateY(36px); filter:blur(5px); transition:opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1), filter .75s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity:1; transform:translateY(0); filter:blur(0); }
     .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s}
     .d4{transition-delay:.32s} .d5{transition-delay:.40s}
 
@@ -372,7 +373,7 @@
       font-size:clamp(2.25rem, 4.2vw, 4.75rem);
       font-weight:800; line-height:1.1; color:#fff;
       margin-bottom:36px; letter-spacing:-.03em;
-      opacity:0; animation:fadeUp .55s ease forwards .2s;
+      opacity:0; animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards .1s;
     }
     .hero h1 em {
       font-style:normal;
@@ -387,13 +388,13 @@
       font-size:clamp(.9375rem, 1.4vw, 1.125rem);
       color:rgba(255,255,255,.58); line-height:1.78;
       margin-bottom:52px;
-      opacity:0; animation:fadeUp .55s ease forwards .35s;
+      opacity:0; animation:fadeUp .75s cubic-bezier(.16,1,.3,1) forwards .3s;
     }
     .hero-sub strong { color:#fff; font-weight:700; }
 
     .hero-ctas {
       display:flex; flex-wrap:wrap; gap:14px;
-      opacity:0; animation:fadeUp .55s ease forwards .5s;
+      opacity:0; animation:fadeUp .75s cubic-bezier(.16,1,.3,1) forwards .5s;
     }
 
     /* pill CTA */
@@ -422,7 +423,7 @@
       padding-top:56px;
       padding-bottom:36px;
       z-index:4;
-      opacity:0; animation:fadeUp .55s ease forwards .65s;
+      opacity:0; animation:fadeUp .8s cubic-bezier(.16,1,.3,1) forwards .65s;
     }
     .hero-bottom .container { position:relative; z-index:auto; }
 
@@ -462,34 +463,7 @@
     .hero-scroll-bar { width:1px; height:36px; background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent); }
     .hero-scroll span { font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.25); }
 
-    /* ====================================================
-       NUMERI
-    ==================================================== */
-    .numeri {
-      background:var(--off-white);
-      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-      padding:72px 0;
-    }
-    .numeri-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      margin-bottom:28px;
-    }
-    .numeri-item {
-      text-align:center; padding:32px 20px;
-      position:relative;
-    }
-    .numeri-item + .numeri-item::before {
-      content:''; position:absolute; left:0; top:20%; height:60%; width:1px;
-      background:var(--border-s);
-    }
-    .numeri-item .num {
-      font-size:clamp(2.25rem,4vw,3.25rem); font-weight:900;
-      letter-spacing:-.04em; line-height:1; margin-bottom:8px;
-      color:var(--navy);
-    }
-    .numeri-item .num.accent { color:var(--blue); }
-    .numeri-item .lbl { font-size:.875rem; font-weight:500; color:var(--text-muted); }
-    .numeri-note { text-align:center; font-size:.875rem; color:var(--text-muted); font-style:italic; }
+
 
     /* ====================================================
        PROBLEMA
@@ -693,9 +667,7 @@
     }
     @media (max-width: 640px) {
       .section-pad { padding:64px 0; }
-      .numeri-grid  { grid-template-columns:repeat(2,1fr); }
-      .numeri-item + .numeri-item::before { display:none; }
-      .numeri-item  { border:1px solid var(--border); border-radius:10px; }
+
       .settori-grid { grid-template-columns:repeat(2,1fr); }
       .pf-steps     { grid-template-columns:1fr; }
       .pf-step      { border-right:none !important; }
@@ -906,30 +878,6 @@
   </div>
 </section>
 
-<!-- ===================== NUMERI ===================== -->
-<section class="numeri" aria-label="Numeri">
-  <div class="container">
-    <div class="numeri-grid">
-      <div class="numeri-item reveal">
-        <div class="num accent" data-target="100" data-suffix="+">0</div>
-        <div class="lbl">Progetti completati</div>
-      </div>
-      <div class="numeri-item reveal d1">
-        <div class="num" data-target="25" data-suffix="">0</div>
-        <div class="lbl">Agenzie partner</div>
-      </div>
-      <div class="numeri-item reveal d2">
-        <div class="num accent" data-target="100" data-suffix="%">0</div>
-        <div class="lbl">Consegne puntuali</div>
-      </div>
-      <div class="numeri-item reveal d3">
-        <div class="num" data-target="10" data-suffix="+">0</div>
-        <div class="lbl">Professionisti senior</div>
-      </div>
-    </div>
-    <p class="numeri-note reveal">Numeri reali, costruiti progetto dopo progetto con le agenzie che ci scelgono.</p>
-  </div>
-</section>
 
 <!-- ===================== PROBLEMA ===================== -->
 <section class="problema section-pad" id="agenzie">
@@ -1177,12 +1125,25 @@
 
   /* ---- Scroll reveal ---- */
   var revEls = document.querySelectorAll('.reveal');
+  // stagger siblings within same parent
+  var parents = [];
+  revEls.forEach(function(el){
+    var p = el.parentElement;
+    if(!parents.includes(p)) parents.push(p);
+  });
+  parents.forEach(function(p){
+    var kids = Array.from(p.querySelectorAll(':scope > .reveal'));
+    kids.forEach(function(k, i){
+      if(!k.style.transitionDelay) k.style.transitionDelay = (i * 0.1) + 's';
+    });
+  });
+
   if('IntersectionObserver' in window){
     var revObs = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }
       });
-    }, {threshold:0.12});
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
     revEls.forEach(function(el){ revObs.observe(el); });
   } else {
     revEls.forEach(function(el){ el.classList.add('visible'); });
