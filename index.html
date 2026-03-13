@@ -107,7 +107,8 @@
       box-shadow:0 1px 0 var(--border), var(--shadow-sm);
     }
     .nav .container {
-      display:flex; align-items:center; justify-content:space-between; height:70px;
+      display:flex; align-items:center; justify-content:space-between;
+      max-width:100%; padding:0 48px; height:70px;
     }
 
     /* logo */
@@ -298,7 +299,8 @@
       position:relative;
       background:var(--navy);
       display:flex; align-items:center;
-      padding:140px 0 88px;
+      min-height:100vh;
+      padding:120px 0 80px;
       overflow:hidden; color:#fff;
     }
 
@@ -715,9 +717,6 @@
       <div class="nav-item"><a href="#contatti">Contatti</a></div>
     </div>
 
-    <div class="nav-cta" id="navCta">
-      <a href="#contatti" class="btn btn-blue">Prenota una call</a>
-    </div>
 
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
