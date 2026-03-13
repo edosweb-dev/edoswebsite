@@ -533,33 +533,46 @@
 
 
     /* ====================================================
-       PROBLEMA
+       PARTNERFLOW — 2×2 CARDS
     ==================================================== */
-    .problema { background:var(--white); }
-    .problema-grid { display:grid; grid-template-columns:5fr 7fr; gap:88px; align-items:start; }
-    .problema-left { position:sticky; top:100px; }
-    .problema-left h2 { font-size:clamp(1.75rem,3vw,2.625rem); margin-bottom:24px; }
-    .problema-left p  { font-size:1rem; color:var(--text-muted); line-height:1.75; }
-    .problema-right p {
-      font-size:1.0625rem; color:var(--text-body); line-height:1.82;
-      margin-bottom:20px;
+    .partnerflow { background:var(--white); }
+    .pf-intro { max-width:700px; margin-bottom:60px; }
+    .pf-intro .tag { margin-bottom:16px; display:inline-block; }
+    .pf-intro h2 { font-size:clamp(1.75rem,3vw,2.5rem); margin-bottom:20px; }
+    .pf-intro p { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
+    .pf-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+    .pf-card {
+      background:var(--off-white); border:1px solid var(--border);
+      border-top:3px solid transparent; border-radius:var(--r);
+      padding:36px; position:relative; overflow:hidden;
+      transition:border-top-color .3s, box-shadow .3s, transform .3s;
     }
-    .problema-right p:last-of-type { margin-bottom:36px; }
-    .pills { display:flex; flex-direction:column; gap:14px; }
-    .pill {
-      display:flex; gap:16px; align-items:flex-start;
-      padding:20px 22px; background:var(--off-white);
-      border:1px solid var(--border); border-radius:var(--r);
-      transition:border-color .2s, box-shadow .2s;
+    .pf-card:hover {
+      border-top-color:var(--blue); box-shadow:var(--shadow-md);
+      transform:translateY(-4px);
     }
-    .pill:hover { border-color:rgba(59,111,232,.3); box-shadow:var(--shadow-sm); }
-    .pill-ico {
+    .pf-card::after {
+      content:attr(data-n);
+      position:absolute; right:20px; bottom:8px;
+      font-size:5.5rem; font-weight:900; line-height:1;
+      color:transparent; -webkit-text-stroke:1.5px rgba(13,27,62,.05);
+      pointer-events:none; user-select:none;
+      transition:-webkit-text-stroke-color .3s;
+    }
+    .pf-card:hover::after { -webkit-text-stroke-color:rgba(59,111,232,.14); }
+    .pf-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
+    .pf-card-num {
+      font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--blue); background:var(--blue-pale); border-radius:6px; padding:4px 10px;
+    }
+    .pf-card-ico {
       width:36px; height:36px; border-radius:8px; background:var(--blue-pale);
-      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
     }
-    .pill-ico svg { width:17px; height:17px; color:var(--blue); }
-    .pill strong { display:block; font-size:.9375rem; font-weight:700; color:var(--navy); margin-bottom:3px; }
-    .pill span    { font-size:.875rem; color:var(--text-muted); line-height:1.55; }
+    .pf-card-ico svg { width:17px; height:17px; color:var(--blue); }
+    .pf-card h4 { font-size:1.1875rem; font-weight:700; color:var(--navy); margin-bottom:12px; }
+    .pf-card p  { font-size:.9375rem; color:var(--text-muted); line-height:1.72; }
+    @media(max-width:700px){ .pf-grid { grid-template-columns:1fr; } }
 
     /* ====================================================
        SERVIZI
@@ -659,41 +672,6 @@
       .serv-btn { padding-left:5.5rem; }
       .serv-name { font-size:1rem; }
       .serv-desc { padding-left:5.5rem; }
-    }
-
-    /* ====================================================
-       PARTNERFLOW
-    ==================================================== */
-    .partnerflow {
-      background:var(--navy-mid); color:#fff; position:relative; overflow:hidden;
-    }
-    .partnerflow::before {
-      content:''; position:absolute; inset:0; pointer-events:none;
-      background:repeating-linear-gradient(-45deg,transparent,transparent 48px,rgba(255,255,255,.012) 48px,rgba(255,255,255,.012) 49px);
-    }
-    .partnerflow .container { position:relative; z-index:2; }
-    .pf-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:52px; }
-    .pf-head h2 { font-size:clamp(1.75rem,3vw,2.5rem); color:#fff; }
-    .pf-head h2 em { font-style:normal; background:linear-gradient(105deg,#6B9BF7,#93BFFF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .pf-head p    { color:rgba(255,255,255,.5); font-size:1rem; line-height:1.75; }
-    .pf-steps {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      border:1px solid rgba(255,255,255,.09); border-radius:var(--r);
-      overflow:hidden; background:rgba(255,255,255,.025); margin-bottom:20px;
-    }
-    .pf-step { padding:36px 26px; border-right:1px solid rgba(255,255,255,.09); transition:background .25s; }
-    .pf-step:last-child { border-right:none; }
-    .pf-step:hover { background:rgba(59,111,232,.1); }
-    .pf-step-n { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
-    .pf-step h4 { font-size:1.0625rem; font-weight:700; color:#fff; margin-bottom:10px; }
-    .pf-step p  { font-size:.875rem; color:rgba(255,255,255,.48); line-height:1.6; }
-    .pf-track { position:relative; height:3px; background:rgba(255,255,255,.07); border-radius:2px; margin-bottom:52px; }
-    .pf-dot {
-      position:absolute; top:50%; transform:translateY(-50%);
-      width:14px; height:14px; border-radius:50%;
-      background:var(--blue);
-      box-shadow:0 0 0 4px rgba(59,111,232,.25),0 0 22px rgba(59,111,232,.55);
-      animation:dotTrack 3.5s ease-in-out infinite;
     }
 
     /* ====================================================
@@ -818,13 +796,7 @@
       .hero-ctas .btn { justify-content:center; }
       .hero-scroll { display:none; }
 
-      .problema-grid { grid-template-columns:1fr; gap:40px; }
-      .problema-left { position:static; }
-      .pf-head, .settori-head, .cases-head { grid-template-columns:1fr; gap:14px; }
-      .pf-steps { grid-template-columns:repeat(2,1fr); }
-      .pf-step { border-bottom:1px solid rgba(255,255,255,.09); }
-      .pf-step:nth-child(odd)  { border-right:1px solid rgba(255,255,255,.09); }
-      .pf-step:nth-child(even) { border-right:none; }
+      .settori-head, .cases-head { grid-template-columns:1fr; gap:14px; }
       .settori-grid { grid-template-columns:repeat(3,1fr); }
       .cases-grid   { grid-template-columns:1fr; }
       .footer-top   { grid-template-columns:1fr; gap:28px; text-align:center; }
@@ -836,8 +808,6 @@
       .section-pad { padding:64px 0; }
 
       .settori-grid { grid-template-columns:repeat(2,1fr); }
-      .pf-steps     { grid-template-columns:1fr; }
-      .pf-step      { border-right:none !important; }
     }
   </style>
 </head>
@@ -1165,85 +1135,56 @@
 </section>
 
 
-<!-- ===================== PROBLEMA ===================== -->
-<section class="problema section-pad" id="agenzie">
-  <div class="container">
-    <div class="problema-grid">
-      <div class="problema-left reveal">
-        <span class="tag">Il problema che risolviamo</span>
-        <h2>Hai vinto il progetto.<br>Chi lo sviluppa?</h2>
-      </div>
-      <div class="problema-right">
-        <p class="reveal">Conosci la situazione. La tua agenzia ha appena chiuso un contratto importante: un e-commerce complesso, una piattaforma custom, un progetto con tempi stretti. Il cliente si fida di te. Ma internamente non hai un team di sviluppo strutturato.</p>
-        <p class="reveal">Hai provato con i freelance: tempi incerti, qualit&agrave; variabile, comunicazione frammentata. Assumere sviluppatori senior &egrave; costoso e rischioso. Ti serve un partner tecnico che lavori come se fosse il tuo team &mdash; ma senza esserlo.</p>
-        <p class="reveal">Edos nasce per risolvere esattamente questo. Diventiamo la tua divisione tecnica. Lavoriamo con il tuo brand, i tuoi strumenti, le tue tempistiche. Il tuo cliente non sapr&agrave; mai che esistiamo.</p>
-        <div class="pills">
-          <div class="pill reveal d1">
-            <div class="pill-ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <div>
-              <strong>White label completo</strong>
-              <span>NDA firmato, account email con il tuo dominio, zero visibilit&agrave; verso il cliente finale.</span>
-            </div>
-          </div>
-          <div class="pill reveal d2">
-            <div class="pill-ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div>
-              <strong>Supporto pre-sales</strong>
-              <span>Ti aiutiamo a strutturare l&rsquo;offerta tecnica prima ancora di vincere il progetto.</span>
-            </div>
-          </div>
-          <div class="pill reveal d3">
-            <div class="pill-ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <div>
-              <strong>Referente dedicato</strong>
-              <span>Un project manager Edos che parla la tua lingua e conosce il tuo modo di lavorare.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== PARTNERFLOW ===================== -->
 <section class="partnerflow section-pad" id="metodo">
   <div class="container">
-    <div class="pf-head reveal">
-      <div>
-        <span class="tag" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Come lavoriamo &mdash; PartnerFlow&trade;</span>
-        <h2>Un processo chiaro,<br>dalla prima call al <em>go-live.</em></h2>
-      </div>
-      <p>Non improvvisiamo. Ogni progetto segue PartnerFlow&trade;, il nostro metodo in 4 fasi pensato per dare alle agenzie controllo e visibilit&agrave; su tutto.</p>
+    <div class="pf-intro reveal">
+      <span class="tag">PartnerFlow&trade;</span>
+      <h2>Il metodo con cui gestiamo<br>ogni progetto.</h2>
+      <p>Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow&trade; &egrave; il framework che usiamo su ogni progetto per garantirti tempi certi, comunicazione continua e zero sorprese a ridosso della deadline.</p>
     </div>
-    <div class="pf-steps reveal">
-      <div class="pf-step">
-        <div class="pf-step-n">01 &mdash; Discovery</div>
+    <div class="pf-grid">
+      <div class="pf-card reveal d1" data-n="01">
+        <div class="pf-card-top">
+          <span class="pf-card-num">01 &mdash; Discovery</span>
+          <span class="pf-card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+        </div>
         <h4>Discovery</h4>
-        <p>Analizziamo insieme il progetto, definiamo requisiti e stime. Nessuna sorpresa in corso d&rsquo;opera.</p>
+        <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
       </div>
-      <div class="pf-step">
-        <div class="pf-step-n">02 &mdash; Pianificazione</div>
+      <div class="pf-card reveal d2" data-n="02">
+        <div class="pf-card-top">
+          <span class="pf-card-num">02 &mdash; Pianificazione</span>
+          <span class="pf-card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </span>
+        </div>
         <h4>Pianificazione</h4>
-        <p>Architettura tecnica, sprint, timeline condivisa. Approvi tutto prima che si scriva una riga di codice.</p>
+        <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
       </div>
-      <div class="pf-step">
-        <div class="pf-step-n">03 &mdash; Sviluppo</div>
+      <div class="pf-card reveal d3" data-n="03">
+        <div class="pf-card-top">
+          <span class="pf-card-num">03 &mdash; Sviluppo</span>
+          <span class="pf-card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </span>
+        </div>
         <h4>Sviluppo</h4>
-        <p>UX/UI, frontend, backend, QA continua. Dashboard condivisa per seguire ogni avanzamento in tempo reale.</p>
+        <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite dashboard dedicata.</p>
       </div>
-      <div class="pf-step">
-        <div class="pf-step-n">04 &mdash; Supporto</div>
+      <div class="pf-card reveal d4" data-n="04">
+        <div class="pf-card-top">
+          <span class="pf-card-num">04 &mdash; Supporto</span>
+          <span class="pf-card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+        </div>
         <h4>Supporto</h4>
-        <p>Lancio, stabilizzazione, manutenzione e evoluzione. Non spariscmo dopo il go-live.</p>
+        <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
       </div>
     </div>
-    <div class="pf-track reveal"><div class="pf-dot"></div></div>
   </div>
 </section>
 
