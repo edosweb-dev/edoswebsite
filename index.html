@@ -62,6 +62,20 @@
     /* ---- UTILS ---- */
     .container   { max-width:1160px; margin:0 auto; padding:0 28px; }
     .section-pad { padding:96px 0; }
+    .hero-tagline {
+      background:var(--white);
+      padding:64px 0 56px;
+      border-bottom:1px solid var(--border);
+    }
+    .hero-tagline p {
+      width:80%; max-width:900px;
+      font-family:var(--font-display);
+      font-size:clamp(1.2rem,2.2vw,1.75rem);
+      font-weight:400; line-height:1.65;
+      color:var(--text-body);
+      margin:0;
+    }
+    @media(max-width:600px){ .hero-tagline p { width:100%; } }
 
     .tag {
       display:inline-flex; align-items:center; gap:8px;
@@ -931,6 +945,13 @@
     <span>scroll</span>
   </div>
 </section>
+
+<!-- tagline strip -->
+<div class="hero-tagline">
+  <div class="container">
+    <p class="reveal">Affianchiamo agenzie marketing e creative come partner tecnico white label. Gestiamo lo sviluppo dei loro progetti più complessi con metodo, trasparenza e rispetto delle scadenze — mentre loro mantengono la relazione con il cliente finale.</p>
+  </div>
+</div>
 
 <!-- pillars strip -->
 <div class="hero-bottom">
