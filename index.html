@@ -190,56 +190,103 @@
     .nav-hamburger.open span:nth-child(2) { opacity:0; }
     .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
-    /* mobile panel */
-    .nav-mobile {
-      display:none;
-      position:fixed; top:70px; left:0; right:0; bottom:0;
-      background:#fff; overflow-y:auto;
-      transform:translateX(100%);
-      transition:transform .3s ease;
-      padding:20px 20px 40px;
-      z-index:890;
-      box-shadow:var(--shadow-lg);
+    /* ---- Fullscreen overlay nav ---- */
+    .nav-overlay {
+      position:fixed; inset:0; z-index:980;
+      background:var(--navy);
+      display:flex; flex-direction:column;
+      opacity:0; pointer-events:none;
+      transition:opacity .38s ease;
+      overflow:hidden;
     }
-    .nav-mobile.open { transform:translateX(0); }
-    .nav-mobile-link {
-      display:block; padding:14px 0;
-      border-bottom:1px solid var(--border);
-      font-size:1rem; font-weight:600; color:var(--navy);
+    .nav-overlay.open { opacity:1; pointer-events:auto; }
+
+    /* deco shapes */
+    .nav-ov-deco {
+      position:absolute; inset:0; pointer-events:none; overflow:hidden;
     }
-    .nav-mobile-toggle {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 0; border-bottom:1px solid var(--border);
-      font-size:1rem; font-weight:600; color:var(--navy);
-      background:none; border-left:none; border-right:none; border-top:none;
-      width:100%; cursor:pointer; font-family:var(--font);
+    .nav-ov-deco svg {
+      position:absolute; right:-4%; top:8%;
+      width:56%; height:85%; opacity:.055;
     }
-    .nav-mobile-toggle svg { transition:transform .25s; flex-shrink:0; }
-    .nav-mobile-toggle.open svg { transform:rotate(180deg); }
-    .nav-mobile-sub {
-      max-height:0; overflow:hidden;
-      transition:max-height .3s ease, padding .3s ease;
+
+    /* header row */
+    .nav-ov-top {
+      position:relative; z-index:2;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 48px; height:70px; flex-shrink:0;
     }
-    .nav-mobile-sub.open { max-height:600px; padding-bottom:8px; }
-    .nav-mobile-sub a {
-      display:block; padding:10px 16px;
-      font-size:.9rem; font-weight:500; color:var(--text-body);
-      border-radius:8px; transition:background .15s, color .15s;
+    .nav-ov-logo img { height:26px; }
+    .nav-ov-close {
+      background:none; border:none; cursor:pointer; padding:8px;
+      color:#fff; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s;
     }
-    .nav-mobile-sub a:hover { background:var(--blue-pale); color:var(--blue); }
-    .nav-mobile-cta {
-      margin-top:24px;
+    .nav-ov-close:hover { background:rgba(255,255,255,.08); }
+    .nav-ov-close svg { width:22px; height:22px; }
+
+    /* body grid */
+    .nav-ov-body {
+      position:relative; z-index:2;
+      flex:1; display:grid; grid-template-columns:1fr 1fr;
+      padding:52px 48px 48px; gap:48px;
+      align-items:center;
     }
-    .nav-mobile-cta .btn { width:100%; justify-content:center; }
+
+    /* big primary links */
+    .nav-ov-main a {
+      display:block;
+      font-size:clamp(2rem, 4.5vw, 3.75rem);
+      font-weight:800; color:#fff;
+      letter-spacing:-.03em; line-height:1.18;
+      margin-bottom:4px;
+      opacity:0; transform:translateX(-28px);
+      transition:opacity .38s ease, transform .38s ease, color .18s;
+    }
+    .nav-overlay.open .nav-ov-main a { opacity:1; transform:translateX(0); }
+    .nav-ov-main a:nth-child(1){transition-delay:.06s}
+    .nav-ov-main a:nth-child(2){transition-delay:.12s}
+    .nav-ov-main a:nth-child(3){transition-delay:.18s}
+    .nav-ov-main a:nth-child(4){transition-delay:.24s}
+    .nav-ov-main a:nth-child(5){transition-delay:.30s}
+    .nav-ov-main a:hover { color:#6B9BF7; }
+
+    /* right column */
+    .nav-ov-right {
+      display:flex; flex-direction:column; gap:36px;
+      border-left:1px solid rgba(255,255,255,.08);
+      padding-left:48px;
+    }
+
+    .nav-ov-sub-label {
+      font-size:.68rem; font-weight:700; letter-spacing:.1em;
+      text-transform:uppercase; color:rgba(107,155,247,.65);
+      margin-bottom:10px;
+    }
+    .nav-ov-sub a {
+      display:block; font-size:.9375rem; font-weight:500;
+      color:rgba(255,255,255,.48); margin-bottom:8px;
+      transition:color .18s;
+    }
+    .nav-ov-sub a:hover { color:#fff; }
+
+    .nav-ov-cta { display:flex; flex-direction:column; gap:12px; }
+    .nav-ov-cta .btn { align-self:flex-start; }
+    .nav-ov-email {
+      font-size:.875rem; color:rgba(255,255,255,.28);
+    }
+    .nav-ov-email a { transition:color .18s; }
+    .nav-ov-email a:hover { color:rgba(255,255,255,.7); }
 
     /* ====================================================
        HERO
     ==================================================== */
     .hero {
-      position:relative; min-height:100vh;
+      position:relative;
       background:var(--navy);
       display:flex; align-items:center;
-      padding:130px 0 100px;
+      padding:140px 0 88px;
       overflow:hidden; color:#fff;
     }
 
@@ -529,7 +576,10 @@
     @media (max-width: 900px) {
       .nav-links, .nav-cta { display:none; }
       .nav-hamburger { display:flex; }
-      .nav-mobile { display:block; }
+      .nav-ov-body { grid-template-columns:1fr; padding:36px 28px 40px; }
+      .nav-ov-top  { padding:0 28px; }
+      .nav-ov-right { border-left:none; padding-left:0; border-top:1px solid rgba(255,255,255,.08); padding-top:28px; gap:24px; }
+      .nav-ov-main a { font-size:clamp(1.75rem,8vw,2.75rem); }
 
       .hero h1 { font-size:clamp(2rem,6vw,3rem); }
       .hero-sub { font-size:1rem; }
@@ -626,44 +676,58 @@
   </div>
 </nav>
 
-<!-- Mobile panel -->
-<div class="nav-mobile" id="navMobile">
-  <a class="nav-mobile-link" href="#agenzie">Per le agenzie</a>
-
-  <button class="nav-mobile-toggle" id="mToggleServizi">
-    Servizi
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="nav-mobile-sub" id="mSubServizi">
-    <a href="#servizi">Sviluppo Web &amp; E-commerce</a>
-    <a href="#servizi">Piattaforme &amp; Applicazioni Custom</a>
-    <a href="#servizi">AI &amp; Automazione</a>
-    <a href="#servizi">UX/UI Design</a>
-    <a href="#servizi">Consulenza tecnica &amp; CTO as a Service</a>
-    <a href="#servizi">Supporto &amp; Manutenzione</a>
+<!-- Fullscreen overlay nav -->
+<div class="nav-overlay" id="navOverlay">
+  <!-- decorative geometry -->
+  <div class="nav-ov-deco">
+    <svg viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40"  y="40"  width="300" height="540" rx="150" stroke="white" stroke-width="1.2"/>
+      <rect x="200" y="90"  width="300" height="380" rx="130" stroke="white" stroke-width="1.2"/>
+      <rect x="360" y="160" width="220" height="300" rx="100" stroke="white" stroke-width="1.2"/>
+      <line x1="0"  y1="310" x2="620" y2="310" stroke="white" stroke-width="1.2"/>
+      <line x1="310" y1="0" x2="310" y2="620" stroke="white" stroke-width="1.2"/>
+    </svg>
   </div>
 
-  <button class="nav-mobile-toggle" id="mToggleSettori">
-    Settori
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-  </button>
-  <div class="nav-mobile-sub" id="mSubSettori">
-    <a href="#settori">Food &amp; Beverage / GDO</a>
-    <a href="#settori">Retail / Consumer Goods</a>
-    <a href="#settori">Industrial / Manifatturiero B2B</a>
-    <a href="#settori">Finance / Banking</a>
-    <a href="#settori">Beauty / Wellness</a>
-    <a href="#settori">Technology / SaaS</a>
-    <a href="#settori">Fashion / Luxury</a>
-    <a href="#settori">Healthcare / Pharma</a>
-    <a href="#settori">Turismo / Hospitality</a>
-    <a href="#settori">Automotive / Motorsport</a>
+  <!-- top bar -->
+  <div class="nav-ov-top">
+    <a href="#" class="nav-ov-logo">
+      <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
+    </a>
+    <button class="nav-ov-close" id="navOverlayClose" aria-label="Chiudi menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </div>
 
-  <a class="nav-mobile-link" href="#chi-siamo">Chi siamo</a>
-  <a class="nav-mobile-link" href="#contatti">Contatti</a>
-  <div class="nav-mobile-cta">
-    <a href="#contatti" class="btn btn-blue">Prenota una call</a>
+  <!-- body -->
+  <div class="nav-ov-body">
+    <!-- primary links -->
+    <nav class="nav-ov-main">
+      <a href="#agenzie">Per le agenzie</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#settori">Settori</a>
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+
+    <!-- secondary column -->
+    <div class="nav-ov-right">
+      <div class="nav-ov-sub">
+        <div class="nav-ov-sub-label">Servizi</div>
+        <a href="#servizi">Sviluppo Web &amp; E-commerce</a>
+        <a href="#servizi">Piattaforme &amp; Applicazioni Custom</a>
+        <a href="#servizi">AI &amp; Automazione</a>
+        <a href="#servizi">UX/UI Design</a>
+        <a href="#servizi">Consulenza tecnica &amp; CTO as a Service</a>
+        <a href="#servizi">Supporto &amp; Manutenzione</a>
+      </div>
+      <div class="nav-ov-cta">
+        <a href="#contatti" class="btn btn-blue">Prenota una call</a>
+        <div class="nav-ov-email"><a href="mailto:info@edos.it">info@edos.it</a></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -678,7 +742,7 @@
   <div class="container">
     <div class="hero-inner">
       <h1>Il tuo reparto tech,<br><em>senza assumerlo.</em></h1>
-      <p class="hero-sub">Sviluppiamo siti, piattaforme e soluzioni AI per le agenzie che vogliono crescere senza complicarsi la vita. In white label, con il tuo brand.</p>
+      <p class="hero-sub">Sviluppiamo siti web, piattaforme su misura, e soluzioni AI per le agenzie marketing e comunicazione che non hanno al proprio interno un team tech.</p>
       <div class="hero-ctas">
         <a href="#contatti" class="btn btn-blue">Prenota una call conoscitiva</a>
         <a href="#agenzie"  class="btn btn-ghost">Scopri come lavoriamo &rarr;</a>
@@ -925,35 +989,31 @@
     nav.classList[window.scrollY > 48 ? 'add' : 'remove']('scrolled');
   }, {passive:true});
 
-  /* ---- NAV: hamburger ---- */
-  var burger    = document.getElementById('navHamburger');
-  var mobileNav = document.getElementById('navMobile');
-  burger.addEventListener('click', function(){
-    burger.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-  });
+  /* ---- NAV: fullscreen overlay ---- */
+  var burger  = document.getElementById('navHamburger');
+  var overlay = document.getElementById('navOverlay');
+  var closeBtn = document.getElementById('navOverlayClose');
 
-  /* Close mobile nav on link click */
-  mobileNav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      burger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  /* ---- NAV: mobile accordion ---- */
-  function mobileAccordion(toggleId, subId){
-    var btn = document.getElementById(toggleId);
-    var sub = document.getElementById(subId);
-    btn.addEventListener('click', function(){
-      btn.classList.toggle('open');
-      sub.classList.toggle('open');
-    });
+  function openOverlay(){
+    overlay.classList.add('open');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
-  mobileAccordion('mToggleServizi', 'mSubServizi');
-  mobileAccordion('mToggleSettori', 'mSubSettori');
+  function closeOverlay(){
+    overlay.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', function(){
+    overlay.classList.contains('open') ? closeOverlay() : openOverlay();
+  });
+  closeBtn.addEventListener('click', closeOverlay);
+
+  /* close on any link inside overlay */
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeOverlay);
+  });
 
   /* ---- Smooth scroll ---- */
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
