@@ -564,103 +564,127 @@
     /* ====================================================
        SERVIZI
     ==================================================== */
-    .servizi { background:var(--off-white); }
+    /* ---- SERVIZI — glassmorphism ---- */
+    .servizi {
+      background:linear-gradient(145deg,#060E22 0%,#091428 45%,#0D1F52 100%);
+      position:relative; overflow:hidden;
+    }
+    .servizi::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(ellipse 55% 45% at 85% 15%, rgba(59,111,232,.20) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 15% 85%, rgba(107,155,247,.10) 0%, transparent 65%);
+    }
+    .servizi .container { position:relative; z-index:2; }
     .servizi-head {
       display:grid; grid-template-columns:1fr 1fr;
       gap:48px; align-items:end;
       margin-bottom:56px;
     }
     .servizi-head-left { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
-    .servizi-head-left p { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; margin:0; }
     .servizi-head h2 {
       font-size:clamp(2.25rem,4.5vw,3.75rem);
-      font-weight:400; line-height:1.1; margin:0;
+      font-weight:400; line-height:1.1; margin:0; color:#fff;
     }
-    @media(max-width:700px){
-      .servizi-head { grid-template-columns:1fr; gap:28px; }
+    .servizi-head h2 em {
+      font-style:normal;
+      background:linear-gradient(105deg,#6B9BF7,#93BFFF);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
     .serv-label {
       font-size:1rem; font-weight:400; letter-spacing:.04em;
-      text-transform:uppercase; color:var(--blue);
+      text-transform:uppercase; color:rgba(107,155,247,.85);
     }
-    .serv-list { list-style:none; border-top:1px solid var(--border-s); }
+    /* lista */
+    .serv-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
     .serv-item {
-      border-bottom:1px solid var(--border-s);
-      position:relative;
-      transition:background .2s;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:14px;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      position:relative; overflow:hidden;
+      transition:background .3s, border-color .3s, box-shadow .3s;
     }
-    .serv-item::before {
-      content:''; position:absolute; left:0; top:0; bottom:0;
-      width:3px; background:var(--blue); border-radius:2px;
-      transform:scaleY(0); transform-origin:top;
-      transition:transform .35s cubic-bezier(.16,1,.3,1);
+    .serv-item::before { display:none; }
+    .serv-item:hover {
+      background:rgba(255,255,255,.07);
+      border-color:rgba(255,255,255,.16);
     }
-    .serv-item.open::before { transform:scaleY(1); }
-    /* pulsante cliccabile — tutta la riga del titolo */
+    .serv-item.open {
+      background:rgba(59,111,232,.13);
+      border-color:rgba(107,155,247,.4);
+      box-shadow:0 0 32px rgba(59,111,232,.18), inset 0 1px 0 rgba(255,255,255,.1);
+    }
+    /* glow line top on open */
+    .serv-item.open::after {
+      content:''; position:absolute; top:0; left:10%; right:10%; height:1px;
+      background:linear-gradient(90deg,transparent,rgba(107,155,247,.6),transparent);
+    }
+    /* pulsante */
     .serv-btn {
       display:flex; align-items:center; justify-content:space-between;
-      width:100%; padding:28px 0 28px 0;
+      width:100%; padding:24px 28px;
       background:none; border:none; cursor:pointer; text-align:left;
-      gap:16px;
-      transition:padding-left .35s cubic-bezier(.16,1,.3,1);
+      gap:16px; transition:none;
     }
-    .serv-item.open .serv-btn,
-    .serv-btn:hover { padding-left:20px; }
-    .serv-btn-left { display:flex; align-items:baseline; gap:22px; }
+    .serv-btn-left { display:flex; align-items:baseline; gap:20px; }
     .serv-num {
-      font-size:.72rem; font-weight:700; letter-spacing:.1em;
-      color:var(--text-muted); flex-shrink:0; width:22px;
+      font-size:.7rem; font-weight:700; letter-spacing:.1em;
+      color:rgba(107,155,247,.6); flex-shrink:0; width:22px;
     }
     .serv-name {
       font-family:var(--font-display);
-      font-size:clamp(1.1rem,2.1vw,1.625rem);
-      font-weight:800; color:var(--navy);
-      letter-spacing:-.025em; line-height:1.1;
+      font-size:clamp(1rem,2vw,1.5rem);
+      font-weight:700; color:rgba(255,255,255,.85);
+      letter-spacing:-.02em; line-height:1.1;
       transition:color .2s;
     }
     .serv-btn:hover .serv-name,
-    .serv-item.open .serv-name { color:var(--blue); }
+    .serv-item.open .serv-name { color:#fff; }
     .serv-btn-right { display:flex; align-items:center; gap:14px; flex-shrink:0; }
     .serv-badge {
-      font-size:.68rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
-      color:var(--blue); background:var(--blue-pale);
-      border:1px solid rgba(59,111,232,.2);
+      font-size:.67rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+      color:#6B9BF7; background:rgba(107,155,247,.12);
+      border:1px solid rgba(107,155,247,.28);
       padding:4px 11px; border-radius:100px;
       opacity:0; transform:translateX(8px);
       transition:opacity .2s, transform .2s;
     }
     .serv-item.open .serv-badge,
     .serv-btn:hover .serv-badge { opacity:1; transform:translateX(0); }
-    /* icona +/× */
+    /* toggle */
     .serv-toggle {
       width:32px; height:32px; border-radius:50%;
-      border:1.5px solid var(--border-s);
+      border:1.5px solid rgba(255,255,255,.18);
       display:flex; align-items:center; justify-content:center; flex-shrink:0;
       transition:border-color .2s, background .2s, transform .35s cubic-bezier(.16,1,.3,1);
     }
-    .serv-toggle svg { width:14px; height:14px; color:var(--text-muted); transition:color .2s; }
+    .serv-toggle svg { width:14px; height:14px; color:rgba(255,255,255,.55); transition:color .2s; }
     .serv-item.open .serv-toggle {
       background:var(--blue); border-color:var(--blue);
       transform:rotate(45deg);
     }
     .serv-item.open .serv-toggle svg { color:#fff; }
-    /* pannello descrizione — accordion */
+    /* panel */
     .serv-panel {
       display:grid; grid-template-rows:0fr;
       transition:grid-template-rows .42s cubic-bezier(.16,1,.3,1);
     }
     .serv-item.open .serv-panel { grid-template-rows:1fr; }
-    .serv-panel-inner {
-      overflow:hidden;
-    }
+    .serv-panel-inner { overflow:hidden; }
     .serv-desc {
-      font-size:.9375rem; color:var(--text-muted); line-height:1.72;
-      padding:0 0 28px 44px; max-width:680px;
+      font-size:.9375rem; color:rgba(255,255,255,.55); line-height:1.75;
+      padding:4px 28px 26px 64px; max-width:680px;
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    @media(max-width:700px){
+      .servizi-head { grid-template-columns:1fr; gap:28px; }
     }
     @media(max-width:580px){
-      .serv-name   { font-size:1rem; }
-      .serv-badge  { display:none; }
-      .serv-desc   { padding-left:0; font-size:.875rem; }
+      .serv-name  { font-size:1rem; }
+      .serv-badge { display:none; }
+      .serv-desc  { padding-left:28px; font-size:.875rem; }
     }
 
     /* ====================================================
@@ -1067,7 +1091,7 @@
       <div class="servizi-head-left">
         <span class="serv-label">Servizi</span>
       </div>
-      <h2>Tutto il tech che<br><em style="font-style:normal;font-weight:400;background:linear-gradient(105deg,var(--blue),#6B9BF7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">la tua agenzia</em><br>può offrire</h2>
+      <h2>Tutto il tech che<br><em>la tua agenzia</em><br>può offrire</h2>
     </div>
 
     <ul class="serv-list" id="servAccordion">
