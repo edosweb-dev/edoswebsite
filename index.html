@@ -505,14 +505,15 @@
     }
 
     /* text */
-    .hero-pillar p {
+    .hero-pillar-title {
       font-family:var(--font-display);
-      font-size:1rem; color:var(--text-body);
-      line-height:1.75; margin:0;
+      font-size:1rem; font-weight:700; color:var(--navy);
+      line-height:1.4; margin:0 0 8px;
     }
-    .hero-pillar p strong {
-      display:block; color:var(--navy); font-weight:700;
-      font-size:1.125rem; margin-bottom:7px;
+    .hero-pillar-text {
+      font-family:var(--font-display);
+      font-size:1rem; color:var(--text-muted);
+      line-height:1.75; margin:0;
     }
     @media(max-width:820px){
       .hero-pillars { grid-template-columns:1fr; gap:0; }
@@ -1018,7 +1019,8 @@
             <line x1="14" y1="28" x2="24" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </div>
-        <p><strong>White label, zero compromessi</strong>Accordo di riservatezza, account con il tuo dominio. Per il cliente finale, ci sei solo tu.</p>
+        <p class="hero-pillar-title">White label, zero compromessi</p>
+        <p class="hero-pillar-text">Accordo di riservatezza, account con il tuo dominio. Per il cliente finale, ci sei solo tu.</p>
       </div>
 
       <div class="hero-pillar">
@@ -1034,7 +1036,8 @@
             <line x1="22" y1="27" x2="22" y2="30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
           </svg>
         </div>
-        <p><strong>Un metodo, non improvvisazione</strong>PartnerFlow: quattro fasi, dashboard condivisa, timeline rispettate.</p>
+        <p class="hero-pillar-title">Un metodo, non improvvisazione</p>
+        <p class="hero-pillar-text">PartnerFlow: quattro fasi, dashboard condivisa, timeline rispettate.</p>
       </div>
 
       <div class="hero-pillar">
@@ -1047,7 +1050,8 @@
             <polyline points="32,4 38,4 38,10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <p><strong>I numeri, non le promesse</strong>50+ progetti, 25 agenzie partner, zero ritardi. Dati verificabili.</p>
+        <p class="hero-pillar-title">I numeri, non le promesse</p>
+        <p class="hero-pillar-text">50+ progetti, 25 agenzie partner, zero ritardi. Dati verificabili.</p>
       </div>
 
     </div>
