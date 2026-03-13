@@ -713,25 +713,30 @@
       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
       margin-bottom:56px;
     }
-    .settori-head-left { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
     .settori-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
     .settori-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
+
+    /* pillar-style grid — 5 columns × 2 rows */
     .settori-grid {
       display:grid; grid-template-columns:repeat(5,1fr);
-      border-top:1px solid var(--border-s);
-      border-left:1px solid var(--border-s);
+      gap:0; border-top:1px solid var(--border);
     }
     .s-card {
-      padding:28px 24px;
-      border-right:1px solid var(--border-s);
-      border-bottom:1px solid var(--border-s);
-      display:flex; flex-direction:column; gap:10px;
-      transition:background .2s, box-shadow .2s;
-      background:var(--white);
+      padding:36px 32px;
+      border-right:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      display:flex; flex-direction:column; gap:0;
+      cursor:pointer;
+      transition:background .25s;
     }
-    .s-card:hover { background:var(--blue-pale); box-shadow:inset 0 3px 0 var(--blue); }
-    .s-n  { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); }
-    .s-card h4 { font-size:.9375rem; font-weight:700; color:var(--navy); line-height:1.35; }
+    .s-card:nth-child(5n) { border-right:none; }
+    .s-card:nth-child(n+6) { border-bottom:none; }
+    .s-card:hover { background:var(--white); }
+    .s-card:hover .s-name { color:var(--blue); }
+
+    .s-n { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
+    .s-name { font-family:var(--font-display); font-size:.9375rem; font-weight:700; color:var(--navy); line-height:1.35; margin-bottom:auto; padding-bottom:20px; transition:color .2s; }
+    .s-cases { font-size:.75rem; color:var(--text-muted); margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
 
     /* ====================================================
        CASE STUDY
@@ -1212,23 +1217,20 @@
 <section class="settori section-pad" id="settori">
   <div class="container">
     <div class="settori-head">
-      <div class="settori-head-left">
-        <span class="tag reveal">Settori</span>
-        <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
-      </div>
+      <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
       <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
     </div>
     <div class="settori-grid">
-      <div class="s-card reveal d1"><div class="s-n">01</div><h4>Food &amp; Beverage / GDO</h4></div>
-      <div class="s-card reveal d2"><div class="s-n">02</div><h4>Retail / Consumer Goods</h4></div>
-      <div class="s-card reveal d3"><div class="s-n">03</div><h4>Industrial / Manifatturiero B2B</h4></div>
-      <div class="s-card reveal d4"><div class="s-n">04</div><h4>Finance / Banking</h4></div>
-      <div class="s-card reveal d5"><div class="s-n">05</div><h4>Beauty / Wellness</h4></div>
-      <div class="s-card reveal d1"><div class="s-n">06</div><h4>Technology / SaaS</h4></div>
-      <div class="s-card reveal d2"><div class="s-n">07</div><h4>Fashion / Luxury</h4></div>
-      <div class="s-card reveal d3"><div class="s-n">08</div><h4>Healthcare / Pharma</h4></div>
-      <div class="s-card reveal d4"><div class="s-n">09</div><h4>Turismo / Hospitality</h4></div>
-      <div class="s-card reveal d5"><div class="s-n">10</div><h4>Automotive / Motorsport</h4></div>
+      <div class="s-card reveal d1"><div class="s-n">01</div><span class="s-name">Food &amp; Beverage / GDO</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d2"><div class="s-n">02</div><span class="s-name">Retail / Consumer Goods</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d3"><div class="s-n">03</div><span class="s-name">Industrial / Manifatturiero B2B</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d4"><div class="s-n">04</div><span class="s-name">Finance / Banking</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d5"><div class="s-n">05</div><span class="s-name">Beauty / Wellness</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d1"><div class="s-n">06</div><span class="s-name">Technology / SaaS</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d2"><div class="s-n">07</div><span class="s-name">Fashion / Luxury</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d3"><div class="s-n">08</div><span class="s-name">Healthcare / Pharma</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d4"><div class="s-n">09</div><span class="s-name">Turismo / Hospitality</span><span class="s-cases">3 case study</span></div>
+      <div class="s-card reveal d5"><div class="s-n">10</div><span class="s-name">Automotive / Motorsport</span><span class="s-cases">3 case study</span></div>
     </div>
   </div>
 </section>
