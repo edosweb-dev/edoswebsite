@@ -535,7 +535,7 @@
     /* ====================================================
        PARTNERFLOW — QUADRANT GRID
     ==================================================== */
-    .partnerflow { background:var(--white); }
+    .partnerflow { background:var(--off-white); }
     .pf-header { margin-bottom:80px; }
     .pf-title {
       font-family:var(--font-display);
@@ -546,42 +546,50 @@
     .pf-brand { font-weight:700; color:var(--blue); }
     .pf-desc { font-size:1.0625rem; color:var(--text-muted); line-height:1.78; max-width:640px; }
 
-    /* 2×2 quadrant grid — single horizontal + vertical divider */
-    .pf-steps { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border-s); }
-    .pf-step {
-      padding:72px 60px;
-      border-bottom:1px solid var(--border-s);
-      position:relative; overflow:hidden;
-      transition:background .35s;
+    /* 2×2 quadrant grid — gap-as-line technique */
+    .pf-steps {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:1px; background:var(--border-s);
+      border:1px solid var(--border-s);
     }
-    .pf-step:nth-child(odd)  { border-right:1px solid var(--border-s); }
-    .pf-step:hover { background:rgba(238,243,255,.45); }
+    .pf-step {
+      background:var(--white);
+      padding:72px 60px;
+      position:relative; overflow:hidden;
+      transition:background .35s, box-shadow .35s;
+    }
+    .pf-step:hover {
+      background:rgba(238,243,255,.7);
+      box-shadow:inset 4px 0 0 var(--blue);
+    }
 
-    /* watermark number */
+    /* large watermark number — top-right */
     .pf-step::before {
       content:attr(data-n);
-      position:absolute; right:40px; bottom:20px;
-      font-family:var(--font-display); font-size:9rem; font-weight:900; line-height:1;
-      color:transparent; -webkit-text-stroke:1.5px rgba(13,27,62,.04);
+      position:absolute; right:-6px; top:-32px;
+      font-family:var(--font-display); font-size:13rem; font-weight:900; line-height:1;
+      color:transparent; -webkit-text-stroke:1.5px rgba(59,111,232,.07);
       pointer-events:none; user-select:none;
       transition:-webkit-text-stroke-color .35s;
+      z-index:0;
     }
-    .pf-step:hover::before { -webkit-text-stroke-color:rgba(59,111,232,.1); }
+    .pf-step:hover::before { -webkit-text-stroke-color:rgba(59,111,232,.18); }
 
-    /* step label: "01 ──" */
+    /* monospace step badge */
     .pf-num {
-      display:flex; align-items:center; gap:12px;
-      font-size:.7rem; font-weight:700; letter-spacing:.14em;
-      text-transform:uppercase; color:var(--blue);
-      margin-bottom:28px;
-    }
-    .pf-num::after {
-      content:''; display:block; width:48px; height:1px;
-      background:var(--blue); opacity:.4;
+      display:inline-block;
+      font-family:'Courier New', 'Courier', monospace;
+      font-size:.72rem; font-weight:700; letter-spacing:.06em;
+      color:var(--blue);
+      background:var(--blue-pale);
+      border:1px solid rgba(59,111,232,.2);
+      border-radius:4px; padding:3px 10px;
+      margin-bottom:32px;
+      position:relative; z-index:1;
     }
     .pf-step h3 {
       font-family:var(--font-display);
-      font-size:clamp(1.5rem,2.2vw,2rem);
+      font-size:clamp(1.625rem,2.5vw,2.125rem);
       font-weight:700; letter-spacing:-.025em; color:var(--navy);
       margin-bottom:18px; position:relative; z-index:1;
     }
@@ -592,8 +600,8 @@
 
     @media(max-width:760px){
       .pf-steps { grid-template-columns:1fr; }
-      .pf-step:nth-child(odd) { border-right:none; }
       .pf-step { padding:52px 0; }
+      .pf-step:hover { box-shadow:inset 0 4px 0 var(--blue); }
     }
 
     /* ====================================================
@@ -1161,8 +1169,8 @@
 <section class="partnerflow section-pad" id="metodo">
   <div class="container">
     <div class="pf-header reveal">
-      <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui gestiamo ogni progetto.</p>
-      <p class="pf-desc">Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow&trade; &egrave; il framework che usiamo su ogni progetto per garantirti tempi certi, comunicazione continua e zero sorprese a ridosso della deadline.</p>
+      <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui<br>gestiamo ogni progetto.</p>
+      <p class="pf-desc">Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow &egrave; il framework che usiamo su ogni progetto per garantirti tempi certi, comunicazione continua e zero sorprese a ridosso della deadline.</p>
     </div>
     <div class="pf-steps">
       <div class="pf-step reveal" data-n="01">
