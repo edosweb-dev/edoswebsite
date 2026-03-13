@@ -716,39 +716,62 @@
     .settori-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
     .settori-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* full-width row list — consistent with serv-list style */
-    .settori-list { border-top:1px solid var(--border-s); }
-    .s-row {
-      display:flex; align-items:center; justify-content:space-between;
-      padding:26px 0; border-bottom:1px solid var(--border-s);
-      cursor:pointer; gap:24px;
-      transition:background .2s;
+    /* settori grid — 2 rows × 5 columns of linked cards */
+    .settori-grid {
+      display:grid; grid-template-columns:repeat(5,1fr); gap:16px;
     }
-    .s-row:hover { background:var(--off-white); margin:0 -28px; padding-left:28px; padding-right:28px; }
-    .s-row-left { display:flex; align-items:center; gap:32px; flex:1; }
+    .s-card {
+      position:relative;
+      display:flex; flex-direction:column; justify-content:space-between;
+      padding:24px 20px; min-height:160px;
+      background:var(--off-white);
+      border:1px solid var(--border-s);
+      border-radius:var(--r);
+      cursor:pointer;
+      transition:transform .25s, box-shadow .25s, border-color .25s, background .25s;
+    }
+    .s-card:hover {
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+      border-color:rgba(59,111,232,.3);
+      background:var(--white);
+    }
+    .s-card-top { display:flex; align-items:center; justify-content:space-between; }
     .s-n {
       font-family:'Courier New',monospace;
       font-size:.7rem; font-weight:700; letter-spacing:.08em;
-      color:var(--blue); flex-shrink:0; width:28px;
+      color:var(--blue);
     }
+    .s-arrow {
+      width:28px; height:28px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--blue-pale); border-radius:50%;
+      color:var(--blue); font-size:.85rem;
+      transition:background .2s, transform .2s;
+    }
+    .s-card:hover .s-arrow { background:var(--blue); color:var(--white); transform:translate(2px,-2px); }
+    .s-card-bottom {}
     .s-name {
       font-family:var(--font-display);
-      font-size:clamp(1rem,1.4vw,1.25rem); font-weight:700;
-      color:var(--navy); line-height:1.2;
+      font-size:clamp(.9rem,1.2vw,1.1rem); font-weight:700;
+      color:var(--navy); line-height:1.3;
+      margin-bottom:8px;
       transition:color .2s;
     }
-    .s-row:hover .s-name { color:var(--blue); }
+    .s-card:hover .s-name { color:var(--blue); }
     .s-cases {
-      font-size:.78rem; font-weight:600; letter-spacing:.04em;
-      color:var(--text-muted); flex-shrink:0;
-      background:var(--off-white); border:1px solid var(--border);
-      border-radius:100px; padding:4px 14px;
-      transition:background .2s, border-color .2s, color .2s;
+      font-size:.72rem; font-weight:600; letter-spacing:.04em;
+      color:var(--text-muted);
+      display:inline-flex; align-items:center; gap:4px;
     }
-    .s-row:hover .s-cases { background:var(--blue-pale); border-color:rgba(59,111,232,.2); color:var(--blue); }
+    .s-cases svg { width:12px; height:12px; opacity:.6; }
 
+    @media(max-width:1024px){
+      .settori-grid { grid-template-columns:repeat(3,1fr); }
+    }
     @media(max-width:640px){
-      .s-row:hover { margin:0; padding-left:0; padding-right:0; }
+      .settori-grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+      .s-card { min-height:140px; padding:20px 16px; }
     }
 
     /* ====================================================
@@ -1231,17 +1254,47 @@
       <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
       <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
     </div>
-    <div class="settori-list">
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">01</span><span class="s-name">Food &amp; Beverage / GDO</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">02</span><span class="s-name">Retail / Consumer Goods</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">03</span><span class="s-name">Industrial / Manifatturiero B2B</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">04</span><span class="s-name">Finance / Banking</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">05</span><span class="s-name">Beauty / Wellness</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">06</span><span class="s-name">Technology / SaaS</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">07</span><span class="s-name">Fashion / Luxury</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">08</span><span class="s-name">Healthcare / Pharma</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">09</span><span class="s-name">Turismo / Hospitality</span></div><span class="s-cases">3 case study</span></div>
-      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">10</span><span class="s-name">Automotive / Motorsport</span></div><span class="s-cases">3 case study</span></div>
+    <div class="settori-grid">
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">01</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Food &amp; Beverage / GDO</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">02</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Retail / Consumer Goods</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">03</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Industrial / Manifatturiero B2B</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">04</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Finance / Banking</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">05</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Beauty / Wellness</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">06</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Technology / SaaS</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">07</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Fashion / Luxury</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">08</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Healthcare / Pharma</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">09</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Turismo / Hospitality</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
+      <div class="s-card reveal">
+        <div class="s-card-top"><span class="s-n">10</span><span class="s-arrow">&nearr;</span></div>
+        <div class="s-card-bottom"><span class="s-name">Automotive / Motorsport</span><span class="s-cases"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h12M2 7h8M2 11h10"/></svg>3 case</span></div>
+      </div>
     </div>
   </div>
 </section>
