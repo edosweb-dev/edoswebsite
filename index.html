@@ -716,65 +716,58 @@
     .settori-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
     .settori-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* settori grid — 2 rows × 5 columns, bordered cells */
+    /* settori grid — pillar style: vertical dividers, horizontal row separator */
     .settori-grid {
       display:grid; grid-template-columns:repeat(5,1fr);
       width:100%;
       border-top:1px solid var(--border-s);
-      border-bottom:1px solid var(--border-s);
     }
     .s-cell {
-      display:flex; flex-direction:column; justify-content:space-between;
-      padding:24px 20px; min-height:150px;
+      display:flex; flex-direction:column;
+      padding:32px 36px;
       border-right:1px solid var(--border-s);
       border-bottom:1px solid var(--border-s);
       cursor:pointer;
       transition:background .2s;
     }
-    /* remove right border on last column */
     .s-cell:nth-child(5n) { border-right:none; }
-    /* remove bottom border on last row */
-    .s-cell:nth-child(n+6) { border-bottom:none; }
     .s-cell:hover { background:var(--off-white); }
-    .s-cell-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:auto; }
     .s-n {
       font-family:'Courier New',monospace;
       font-size:.7rem; font-weight:700; letter-spacing:.08em;
       color:var(--blue);
+      margin-bottom:20px;
     }
-    .s-cell-bottom { margin-top:auto; }
     .s-name {
       font-family:var(--font-display);
-      font-size:clamp(.9rem,1.2vw,1.1rem); font-weight:700;
-      color:var(--navy); line-height:1.3;
-      margin-bottom:10px;
+      font-size:1rem; font-weight:700;
+      color:var(--navy); line-height:1.4;
+      margin:0 0 12px;
       transition:color .2s;
     }
     .s-cell:hover .s-name { color:var(--blue); }
     .s-cases {
-      font-size:.72rem; font-weight:600; letter-spacing:.04em;
+      font-size:.78rem; font-weight:600;
       color:var(--text-muted);
       display:inline-flex; align-items:center; gap:5px;
+      margin-top:auto;
       transition:color .2s;
     }
-    .s-cases-arrow { font-size:.65rem; transition:transform .2s; }
+    .s-cases-arrow { transition:transform .2s; }
     .s-cell:hover .s-cases { color:var(--blue); }
-    .s-cell:hover .s-cases-arrow { transform:translateX(2px); }
+    .s-cell:hover .s-cases-arrow { transform:translateX(3px); }
 
     @media(max-width:1024px){
       .settori-grid { grid-template-columns:repeat(3,1fr); }
       .s-cell:nth-child(5n) { border-right:1px solid var(--border-s); }
-      .s-cell:nth-child(n+6) { border-bottom:1px solid var(--border-s); }
       .s-cell:nth-child(3n) { border-right:none; }
-      .s-cell:nth-child(n+10) { border-bottom:none; }
+      .s-cell { padding:28px 28px; }
     }
     @media(max-width:640px){
       .settori-grid { grid-template-columns:repeat(2,1fr); }
-      .s-cell { min-height:130px; padding:20px 16px; }
       .s-cell:nth-child(3n) { border-right:1px solid var(--border-s); }
-      .s-cell:nth-child(n+10) { border-bottom:1px solid var(--border-s); }
       .s-cell:nth-child(2n) { border-right:none; }
-      .s-cell:nth-child(n+10) { border-bottom:none; }
+      .s-cell { padding:24px 20px; }
     }
 
     /* ====================================================
@@ -1259,46 +1252,16 @@
     </div>
   </div>
   <div class="settori-grid">
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">01</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Food &amp; Beverage / GDO</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">02</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Retail / Consumer Goods</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">03</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Industrial / Manifatturiero B2B</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">04</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Finance / Banking</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">05</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Beauty / Wellness</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">06</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Technology / SaaS</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">07</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Fashion / Luxury</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">08</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Healthcare / Pharma</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">09</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Turismo / Hospitality</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
-      <div class="s-cell reveal">
-        <div class="s-cell-top"><span class="s-n">10</span></div>
-        <div class="s-cell-bottom"><span class="s-name">Automotive / Motorsport</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
-      </div>
+    <div class="s-cell reveal"><span class="s-n">01</span><p class="s-name">Food &amp; Beverage / GDO</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">02</span><p class="s-name">Retail / Consumer Goods</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">03</span><p class="s-name">Industrial / Manifatturiero B2B</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">04</span><p class="s-name">Finance / Banking</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">05</span><p class="s-name">Beauty / Wellness</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">06</span><p class="s-name">Technology / SaaS</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">07</span><p class="s-name">Fashion / Luxury</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">08</span><p class="s-name">Healthcare / Pharma</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">09</span><p class="s-name">Turismo / Hospitality</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
+    <div class="s-cell reveal"><span class="s-n">10</span><p class="s-name">Automotive / Motorsport</p><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
   </div>
 </section>
 
