@@ -719,8 +719,9 @@
     /* settori grid — 2 rows × 5 columns, bordered cells */
     .settori-grid {
       display:grid; grid-template-columns:repeat(5,1fr);
-      border:1px solid var(--border-s);
-      border-radius:var(--r); overflow:hidden;
+      width:100%;
+      border-top:1px solid var(--border-s);
+      border-bottom:1px solid var(--border-s);
     }
     .s-cell {
       display:flex; flex-direction:column; justify-content:space-between;
@@ -1256,7 +1257,8 @@
       <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
       <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
     </div>
-    <div class="settori-grid">
+  </div>
+  <div class="settori-grid">
       <div class="s-cell reveal">
         <div class="s-cell-top"><span class="s-n">01</span></div>
         <div class="s-cell-bottom"><span class="s-name">Food &amp; Beverage / GDO</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
@@ -1297,7 +1299,6 @@
         <div class="s-cell-top"><span class="s-n">10</span></div>
         <div class="s-cell-bottom"><span class="s-name">Automotive / Motorsport</span><span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span></div>
       </div>
-    </div>
   </div>
 </section>
 
