@@ -502,41 +502,49 @@
     .servizi-head { text-align:center; max-width:640px; margin:0 auto 56px; }
     .servizi-head h2 { font-size:clamp(1.75rem,3.2vw,2.5rem); margin-bottom:18px; }
     .servizi-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
-    .servizi-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
+    .serv-list { list-style:none; border-top:1px solid var(--border-s); }
+    .serv-item {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:26px 0;
+      border-bottom:1px solid var(--border-s);
+      position:relative;
+      cursor:default;
+      transition:padding-left .35s cubic-bezier(.16,1,.3,1);
     }
-    .serv-card {
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:var(--r);
-      padding:32px 28px;
-      display:flex; flex-direction:column; gap:18px;
-      transition:border-color .22s, box-shadow .22s, transform .22s;
+    .serv-item::before {
+      content:''; position:absolute; left:0; top:0; bottom:0;
+      width:3px; background:var(--blue); border-radius:2px;
+      transform:scaleY(0); transform-origin:top;
+      transition:transform .35s cubic-bezier(.16,1,.3,1);
     }
-    .serv-card:hover {
-      border-color:rgba(59,111,232,.35);
-      box-shadow:var(--shadow-md);
-      transform:translateY(-3px);
+    .serv-item:hover { padding-left:22px; }
+    .serv-item:hover::before { transform:scaleY(1); }
+    .serv-item-inner { display:flex; align-items:baseline; gap:22px; }
+    .serv-num {
+      font-size:.72rem; font-weight:700; letter-spacing:.1em;
+      color:var(--text-muted); flex-shrink:0; width:22px;
     }
-    .serv-ico {
-      width:48px; height:48px; border-radius:12px;
-      background:var(--blue-pale);
-      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    .serv-name {
+      font-family:var(--font-display);
+      font-size:clamp(1.2rem,2.4vw,1.875rem);
+      font-weight:800; color:var(--navy);
+      letter-spacing:-.025em; line-height:1.1;
+      transition:color .22s;
     }
-    .serv-ico svg { width:22px; height:22px; color:var(--blue); }
-    .serv-card h4 { font-size:1.0625rem; font-weight:700; color:var(--navy); margin:0; }
-    .serv-card p  { font-size:.9375rem; color:var(--text-muted); line-height:1.65; flex:1; margin:0; }
-    .serv-link {
-      display:inline-flex; align-items:center; gap:6px;
-      font-size:.875rem; font-weight:600; color:var(--blue);
-      transition:gap .2s;
+    .serv-item:hover .serv-name { color:var(--blue); }
+    .serv-badge {
+      font-size:.7rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+      color:var(--blue); background:var(--blue-pale);
+      border:1px solid rgba(59,111,232,.2);
+      padding:4px 12px; border-radius:100px; flex-shrink:0;
+      opacity:0; transform:translateX(10px);
+      transition:opacity .25s .05s, transform .25s .05s;
     }
-    .serv-link:hover { gap:10px; }
-    .serv-link svg { width:14px; height:14px; }
-    @media(max-width:900px){ .servizi-grid { grid-template-columns:repeat(2,1fr); } }
-    @media(max-width:580px){ .servizi-grid { grid-template-columns:1fr; } }
+    .serv-item:hover .serv-badge { opacity:1; transform:translateX(0); }
+    @media(max-width:580px){
+      .serv-name { font-size:1.125rem; }
+      .serv-badge { display:none; }
+    }
 
     /* ====================================================
        PARTNERFLOW
@@ -933,100 +941,57 @@
       <p>Dal sito vetrina alla piattaforma enterprise, dall'automazione AI al supporto continuativo. Un unico partner, tutte le competenze.</p>
     </div>
 
-    <div class="servizi-grid">
+    <ul class="serv-list">
 
-      <div class="serv-card reveal d1">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-            <path d="M6 8h4M6 11h6"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">01</span>
+          <span class="serv-name">Sviluppo Web &amp; E-commerce</span>
         </div>
-        <h4>Sviluppo Web &amp; E-commerce</h4>
-        <p>Siti istituzionali, landing page ad alto converting, e-commerce su WooCommerce, Shopify o piattaforme custom. Performance e SEO-ready.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">Full-stack</span>
+      </li>
 
-      <div class="serv-card reveal d2">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2"/><rect x="6" y="3" width="12" height="6" rx="1.5"/>
-            <line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="17" x2="13" y2="17"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">02</span>
+          <span class="serv-name">Piattaforme &amp; Applicazioni Custom</span>
         </div>
-        <h4>Piattaforme &amp; Applicazioni Custom</h4>
-        <p>Web app, portali, gestionali, SaaS su misura. Architetture scalabili, API REST, integrazioni con CRM e strumenti terzi. Dal brief al deploy.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">Scalabile</span>
+      </li>
 
-      <div class="serv-card reveal d3">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.5V11h2l-2 4-2-4h2V9.5A4 4 0 0 1 12 2z"/>
-            <path d="M8 16c-2.2.5-4 2-4 4h16c0-2-1.8-3.5-4-4"/>
-            <circle cx="12" cy="20" r="1" fill="currentColor"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">03</span>
+          <span class="serv-name">AI &amp; Automazione</span>
         </div>
-        <h4>AI &amp; Automazione</h4>
-        <p>Chatbot, agenti AI, workflow automatizzati e integrazioni con LLM. Riduciamo i task ripetitivi e aggiungiamo intelligenza ai prodotti digitali.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">LLM-powered</span>
+      </li>
 
-      <div class="serv-card reveal d1">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 19l-7-7 1.5-1.5L12 16l9.5-9.5L23 8l-11 11z"/>
-            <circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/>
-            <path d="M5 7v5M19 7v5"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">04</span>
+          <span class="serv-name">UX/UI Design</span>
         </div>
-        <h4>UX/UI Design</h4>
-        <p>Ricerca utente, wireframe, prototipi interattivi e design system. Interfacce che convertono, con un occhio all'accessibilità e alla coerenza visiva.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">Research-led</span>
+      </li>
 
-      <div class="serv-card reveal d2">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            <path d="M17 3l1.5 1.5M19.5 7H22M17 11l1.5-1.5"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">05</span>
+          <span class="serv-name">Consulenza &amp; CTO as a Service</span>
         </div>
-        <h4>Consulenza &amp; CTO as a Service</h4>
-        <p>Audit tecnologico, scelta dello stack, roadmap di prodotto e governance del codice. La guida tecnica senior che il progetto richiede, senza assumerla.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">Senior-only</span>
+      </li>
 
-      <div class="serv-card reveal d3">
-        <div class="serv-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3-3a6 6 0 0 1-7.5 7.5l-4.2 4.2a2.1 2.1 0 0 1-3-3l4.2-4.2a6 6 0 0 1 7.5-7.5l-3 3z"/>
-          </svg>
+      <li class="serv-item reveal">
+        <div class="serv-item-inner">
+          <span class="serv-num">06</span>
+          <span class="serv-name">Supporto &amp; Manutenzione</span>
         </div>
-        <h4>Supporto &amp; Manutenzione</h4>
-        <p>Monitoring continuativo, aggiornamenti di sicurezza, correzione bug e piccole evoluzioni. Il progetto consegnato resta sempre in salute.</p>
-        <a href="#contatti" class="serv-link">
-          Parla con noi
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"/></svg>
-        </a>
-      </div>
+        <span class="serv-badge">Continuativo</span>
+      </li>
 
-    </div>
+    </ul>
   </div>
 </section>
 
