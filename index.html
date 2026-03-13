@@ -1215,63 +1215,127 @@
     update();
   })();
 
-  /* ---- HERO CANVAS: particle network ---- */
+  /* ---- HERO CANVAS: circuit board ---- */
   var canvas = document.getElementById('heroCanvas');
   var ctx    = canvas.getContext('2d');
-  var W, H, pts = [];
+  var W, H;
+  var CELL     = 88;
+  var RGB      = '107,155,247';
+  var segments = [];
+  var sparks   = [];
+  var nodes    = {};
 
   function resize(){
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   }
 
-  function initParticles(){
-    pts = [];
-    var count = Math.min(90, Math.floor((W * H) / 12000));
-    for(var i = 0; i < count; i++){
-      pts.push({
-        x:  Math.random() * W,
-        y:  Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        r:  Math.random() * 1.5 + 0.8,
-        a:  Math.random() * 0.45 + 0.15
-      });
+  function buildCircuit(){
+    segments = [];
+    sparks   = [];
+    nodes    = {};
+
+    var cols   = Math.ceil(W / CELL) + 2;
+    var rows   = Math.ceil(H / CELL) + 2;
+    var offX   = -CELL * 0.5;
+    var offY   = -CELL * 0.5;
+
+    /* random-walk paths on grid — only H/V moves → PCB look */
+    var paths = Math.floor(cols * rows * 0.55);
+    for(var p = 0; p < paths; p++){
+      var gx = Math.floor(Math.random() * cols);
+      var gy = Math.floor(Math.random() * rows);
+      var steps = Math.floor(Math.random() * 6) + 2;
+      for(var s = 0; s < steps; s++){
+        var dir = Math.floor(Math.random() * 4);
+        var nx = gx, ny = gy;
+        if     (dir === 0) nx = Math.min(gx + 1, cols - 1);
+        else if(dir === 1) nx = Math.max(gx - 1, 0);
+        else if(dir === 2) ny = Math.min(gy + 1, rows - 1);
+        else               ny = Math.max(gy - 1, 0);
+        if(nx !== gx || ny !== gy){
+          var x1 = offX + gx * CELL, y1 = offY + gy * CELL;
+          var x2 = offX + nx * CELL, y2 = offY + ny * CELL;
+          segments.push({x1:x1, y1:y1, x2:x2, y2:y2, lit:0});
+          nodes[x1+'_'+y1] = {x:x1, y:y1};
+          nodes[x2+'_'+y2] = {x:x2, y:y2};
+          gx = nx; gy = ny;
+        }
+      }
     }
+
+    /* spawn initial sparks */
+    var count = Math.min(22, Math.floor(segments.length / 6));
+    for(var i = 0; i < count; i++) spawnSpark();
+  }
+
+  function spawnSpark(){
+    if(!segments.length) return;
+    var seg = segments[Math.floor(Math.random() * segments.length)];
+    sparks.push({
+      seg:   seg,
+      t:     0,
+      speed: Math.random() * 0.006 + 0.0025,
+      alpha: Math.random() * 0.4 + 0.55,
+      size:  Math.random() * 1.5 + 2
+    });
   }
 
   function drawFrame(){
     ctx.clearRect(0, 0, W, H);
-    var len = pts.length;
 
-    for(var i = 0; i < len; i++){
-      var p = pts[i];
-
-      /* connections */
-      for(var j = i + 1; j < len; j++){
-        var q  = pts[j];
-        var dx = p.x - q.x, dy = p.y - q.y;
-        var d  = Math.sqrt(dx*dx + dy*dy);
-        if(d < 160){
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = 'rgba(107,155,247,' + (0.14 * (1 - d/160)) + ')';
-          ctx.lineWidth   = 0.8;
-          ctx.stroke();
-        }
-      }
-
-      /* dot */
+    /* traces */
+    for(var i = 0; i < segments.length; i++){
+      var s = segments[i];
+      var glow = s.lit > 0 ? 0.08 + s.lit * 0.28 : 0.07;
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(107,155,247,' + p.a + ')';
+      ctx.moveTo(s.x1, s.y1);
+      ctx.lineTo(s.x2, s.y2);
+      ctx.strokeStyle = 'rgba(' + RGB + ',' + glow + ')';
+      ctx.lineWidth   = s.lit > 0 ? 1.2 : 0.8;
+      ctx.stroke();
+      if(s.lit > 0) s.lit -= 0.018;
+    }
+
+    /* junction nodes */
+    var nArr = Object.values(nodes);
+    for(var i = 0; i < nArr.length; i++){
+      var n = nArr[i];
+      ctx.fillStyle = 'rgba(' + RGB + ',0.22)';
+      ctx.fillRect(n.x - 1.5, n.y - 1.5, 3, 3);
+    }
+
+    /* sparks */
+    for(var i = sparks.length - 1; i >= 0; i--){
+      var sp = sparks[i];
+      sp.t += sp.speed;
+
+      var x = sp.seg.x1 + (sp.seg.x2 - sp.seg.x1) * sp.t;
+      var y = sp.seg.y1 + (sp.seg.y2 - sp.seg.y1) * sp.t;
+
+      /* light the trace */
+      sp.seg.lit = 1;
+
+      /* outer glow */
+      var grd = ctx.createRadialGradient(x, y, 0, x, y, sp.size * 5);
+      grd.addColorStop(0,   'rgba(' + RGB + ',' + (sp.alpha * 0.9) + ')');
+      grd.addColorStop(0.35,'rgba(' + RGB + ',' + (sp.alpha * 0.3) + ')');
+      grd.addColorStop(1,   'rgba(' + RGB + ',0)');
+      ctx.beginPath();
+      ctx.arc(x, y, sp.size * 5, 0, Math.PI * 2);
+      ctx.fillStyle = grd;
       ctx.fill();
 
-      /* move */
-      p.x += p.vx; p.y += p.vy;
-      if(p.x < 0 || p.x > W) p.vx *= -1;
-      if(p.y < 0 || p.y > H) p.vy *= -1;
+      /* bright core */
+      ctx.beginPath();
+      ctx.arc(x, y, sp.size * 0.7, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(220,235,255,' + sp.alpha + ')';
+      ctx.fill();
+
+      if(sp.t >= 1){
+        sparks.splice(i, 1);
+        spawnSpark();
+      }
     }
 
     requestAnimationFrame(drawFrame);
@@ -1280,11 +1344,11 @@
   var resizeTimer;
   window.addEventListener('resize', function(){
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function(){ resize(); initParticles(); }, 200);
+    resizeTimer = setTimeout(function(){ resize(); buildCircuit(); }, 200);
   });
 
   resize();
-  initParticles();
+  buildCircuit();
   drawFrame();
 
 })();
