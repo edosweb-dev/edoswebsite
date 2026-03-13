@@ -76,6 +76,15 @@
       margin:0;
     }
     .hero-tagline p + p { margin-top:.35em; }
+    /* word-by-word entrance */
+    .tagline-anim .tw {
+      display:inline-block;
+      opacity:0;
+      transform:translateY(22px);
+      transition:opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1);
+      will-change:transform,opacity;
+    }
+    .tagline-anim.animated .tw { opacity:1; transform:translateY(0); }
     @media(max-width:600px){
       .hero-tagline p { width:100%; font-size:1.25rem; }
     }
@@ -952,8 +961,8 @@
 <!-- tagline strip -->
 <div class="hero-tagline">
   <div class="container">
-    <p class="reveal">Affianchiamo la tua <strong style="font-weight:700;color:var(--navy)">agenzia marketing</strong> e <strong style="font-weight:700;color:var(--navy)">comunicazione</strong> come partner tecnico white label.</p>
-    <p class="reveal">Gestiamo lo sviluppo dei tuoi progetti più complessi con <strong style="font-weight:700;color:var(--navy)">metodo</strong>, <strong style="font-weight:700;color:var(--navy)">trasparenza</strong> e <strong style="font-weight:700;color:var(--navy)">rispetto</strong> delle scadenze mentre tu mantieni la relazione con il cliente finale.</p>
+    <p class="tagline-anim">Affianchiamo la tua <strong style="font-weight:700;color:var(--navy)">agenzia marketing</strong> e <strong style="font-weight:700;color:var(--navy)">comunicazione</strong> come partner tecnico white label.</p>
+    <p class="tagline-anim">Gestiamo lo sviluppo dei tuoi progetti più complessi con <strong style="font-weight:700;color:var(--navy)">metodo</strong>, <strong style="font-weight:700;color:var(--navy)">trasparenza</strong> e <strong style="font-weight:700;color:var(--navy)">rispetto</strong> delle scadenze mentre tu mantieni la relazione con il cliente finale.</p>
   </div>
 </div>
 
@@ -1412,6 +1421,61 @@
     }, {threshold:0.5});
     cEls.forEach(function(el){ cObs.observe(el); });
   }
+
+  /* ---- TAGLINE WORD-BY-WORD ANIMATION ---- */
+  (function(){
+    var paras = document.querySelectorAll('.hero-tagline .tagline-anim');
+    if(!paras.length) return;
+
+    var delay = 0;
+    var step  = 42; // ms between words
+
+    paras.forEach(function(p){
+      var nodes = Array.from(p.childNodes);
+      p.innerHTML = '';
+
+      nodes.forEach(function(node){
+        if(node.nodeType === 3){
+          // text node: split by spaces preserving them
+          var parts = node.textContent.split(/(\s+)/);
+          parts.forEach(function(part){
+            if(/^\s+$/.test(part)){
+              p.appendChild(document.createTextNode(part));
+            } else if(part){
+              var sp = document.createElement('span');
+              sp.className = 'tw';
+              sp.textContent = part;
+              sp.style.transitionDelay = delay + 'ms';
+              delay += step;
+              p.appendChild(sp);
+            }
+          });
+        } else if(node.nodeType === 1){
+          // element node (strong): treat as one word unit
+          var sp = document.createElement('span');
+          sp.className = 'tw';
+          sp.appendChild(node.cloneNode(true));
+          sp.style.transitionDelay = delay + 'ms';
+          delay += step;
+          p.appendChild(sp);
+        }
+      });
+
+      // gap between the two paragraphs
+      delay += 80;
+    });
+
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          paras.forEach(function(p){ p.classList.add('animated'); });
+          obs.disconnect();
+        }
+      });
+    }, {threshold: 0.2});
+
+    obs.observe(paras[0]);
+  })();
 
   /* ---- SERVICES ACCORDION ---- */
   (function(){
