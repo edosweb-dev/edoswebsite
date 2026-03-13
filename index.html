@@ -533,46 +533,68 @@
 
 
     /* ====================================================
-       PARTNERFLOW — 2×2 CARDS
+       PARTNERFLOW — QUADRANT GRID
     ==================================================== */
     .partnerflow { background:var(--white); }
-    .pf-intro { max-width:700px; margin-bottom:60px; }
-    .pf-intro .tag { margin-bottom:16px; display:inline-block; }
-    .pf-intro h2 { font-size:clamp(1.75rem,3vw,2.5rem); margin-bottom:20px; }
-    .pf-intro p { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
-    .pf-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
-    .pf-card {
-      background:var(--off-white); border:1px solid var(--border);
-      border-top:3px solid transparent; border-radius:var(--r);
-      padding:36px; position:relative; overflow:hidden;
-      transition:border-top-color .3s, box-shadow .3s, transform .3s;
+    .pf-header { margin-bottom:80px; }
+    .pf-title {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3.25rem);
+      font-weight:300; line-height:1.2; letter-spacing:-.025em;
+      color:var(--text); margin-bottom:28px;
     }
-    .pf-card:hover {
-      border-top-color:var(--blue); box-shadow:var(--shadow-md);
-      transform:translateY(-4px);
+    .pf-brand { font-weight:700; color:var(--blue); }
+    .pf-desc { font-size:1.0625rem; color:var(--text-muted); line-height:1.78; max-width:640px; }
+
+    /* 2×2 quadrant grid — single horizontal + vertical divider */
+    .pf-steps { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--border-s); }
+    .pf-step {
+      padding:72px 60px;
+      border-bottom:1px solid var(--border-s);
+      position:relative; overflow:hidden;
+      transition:background .35s;
     }
-    .pf-card::after {
+    .pf-step:nth-child(odd)  { border-right:1px solid var(--border-s); }
+    .pf-step:hover { background:rgba(238,243,255,.45); }
+
+    /* watermark number */
+    .pf-step::before {
       content:attr(data-n);
-      position:absolute; right:20px; bottom:8px;
-      font-size:5.5rem; font-weight:900; line-height:1;
-      color:transparent; -webkit-text-stroke:1.5px rgba(13,27,62,.05);
+      position:absolute; right:40px; bottom:20px;
+      font-family:var(--font-display); font-size:9rem; font-weight:900; line-height:1;
+      color:transparent; -webkit-text-stroke:1.5px rgba(13,27,62,.04);
       pointer-events:none; user-select:none;
-      transition:-webkit-text-stroke-color .3s;
+      transition:-webkit-text-stroke-color .35s;
     }
-    .pf-card:hover::after { -webkit-text-stroke-color:rgba(59,111,232,.14); }
-    .pf-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:22px; }
-    .pf-card-num {
-      font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
-      color:var(--blue); background:var(--blue-pale); border-radius:6px; padding:4px 10px;
+    .pf-step:hover::before { -webkit-text-stroke-color:rgba(59,111,232,.1); }
+
+    /* step label: "01 ──" */
+    .pf-num {
+      display:flex; align-items:center; gap:12px;
+      font-size:.7rem; font-weight:700; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--blue);
+      margin-bottom:28px;
     }
-    .pf-card-ico {
-      width:36px; height:36px; border-radius:8px; background:var(--blue-pale);
-      display:flex; align-items:center; justify-content:center;
+    .pf-num::after {
+      content:''; display:block; width:48px; height:1px;
+      background:var(--blue); opacity:.4;
     }
-    .pf-card-ico svg { width:17px; height:17px; color:var(--blue); }
-    .pf-card h4 { font-size:1.1875rem; font-weight:700; color:var(--navy); margin-bottom:12px; }
-    .pf-card p  { font-size:.9375rem; color:var(--text-muted); line-height:1.72; }
-    @media(max-width:700px){ .pf-grid { grid-template-columns:1fr; } }
+    .pf-step h3 {
+      font-family:var(--font-display);
+      font-size:clamp(1.5rem,2.2vw,2rem);
+      font-weight:700; letter-spacing:-.025em; color:var(--navy);
+      margin-bottom:18px; position:relative; z-index:1;
+    }
+    .pf-step p {
+      font-size:1.0625rem; color:var(--text-muted); line-height:1.78;
+      max-width:440px; position:relative; z-index:1;
+    }
+
+    @media(max-width:760px){
+      .pf-steps { grid-template-columns:1fr; }
+      .pf-step:nth-child(odd) { border-right:none; }
+      .pf-step { padding:52px 0; }
+    }
 
     /* ====================================================
        SERVIZI
@@ -1138,50 +1160,29 @@
 <!-- ===================== PARTNERFLOW ===================== -->
 <section class="partnerflow section-pad" id="metodo">
   <div class="container">
-    <div class="pf-intro reveal">
-      <span class="tag">PartnerFlow&trade;</span>
-      <h2>Il metodo con cui gestiamo<br>ogni progetto.</h2>
-      <p>Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow&trade; &egrave; il framework che usiamo su ogni progetto per garantirti tempi certi, comunicazione continua e zero sorprese a ridosso della deadline.</p>
+    <div class="pf-header reveal">
+      <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui gestiamo ogni progetto.</p>
+      <p class="pf-desc">Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow&trade; &egrave; il framework che usiamo su ogni progetto per garantirti tempi certi, comunicazione continua e zero sorprese a ridosso della deadline.</p>
     </div>
-    <div class="pf-grid">
-      <div class="pf-card reveal d1" data-n="01">
-        <div class="pf-card-top">
-          <span class="pf-card-num">01 &mdash; Discovery</span>
-          <span class="pf-card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </span>
-        </div>
-        <h4>Discovery</h4>
+    <div class="pf-steps">
+      <div class="pf-step reveal" data-n="01">
+        <span class="pf-num">01</span>
+        <h3>Discovery</h3>
         <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
       </div>
-      <div class="pf-card reveal d2" data-n="02">
-        <div class="pf-card-top">
-          <span class="pf-card-num">02 &mdash; Pianificazione</span>
-          <span class="pf-card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </span>
-        </div>
-        <h4>Pianificazione</h4>
+      <div class="pf-step reveal d2" data-n="02">
+        <span class="pf-num">02</span>
+        <h3>Pianificazione</h3>
         <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
       </div>
-      <div class="pf-card reveal d3" data-n="03">
-        <div class="pf-card-top">
-          <span class="pf-card-num">03 &mdash; Sviluppo</span>
-          <span class="pf-card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </span>
-        </div>
-        <h4>Sviluppo</h4>
+      <div class="pf-step reveal d3" data-n="03">
+        <span class="pf-num">03</span>
+        <h3>Sviluppo</h3>
         <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite dashboard dedicata.</p>
       </div>
-      <div class="pf-card reveal d4" data-n="04">
-        <div class="pf-card-top">
-          <span class="pf-card-num">04 &mdash; Supporto</span>
-          <span class="pf-card-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </span>
-        </div>
-        <h4>Supporto</h4>
+      <div class="pf-step reveal d4" data-n="04">
+        <span class="pf-num">04</span>
+        <h3>Supporto</h3>
         <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
       </div>
     </div>
