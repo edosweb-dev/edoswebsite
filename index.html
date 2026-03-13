@@ -708,7 +708,7 @@
     /* ====================================================
        SETTORI
     ==================================================== */
-    .settori { background:var(--off-white); }
+    .settori { background:var(--white); }
     .settori-head {
       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
       margin-bottom:56px;
@@ -716,27 +716,40 @@
     .settori-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
     .settori-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* pillar-style grid — 5 columns × 2 rows */
-    .settori-grid {
-      display:grid; grid-template-columns:repeat(5,1fr);
-      gap:0; border-top:1px solid var(--border);
+    /* full-width row list — consistent with serv-list style */
+    .settori-list { border-top:1px solid var(--border-s); }
+    .s-row {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:26px 0; border-bottom:1px solid var(--border-s);
+      cursor:pointer; gap:24px;
+      transition:background .2s;
     }
-    .s-card {
-      padding:36px 32px;
-      border-right:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      display:flex; flex-direction:column; gap:0;
-      cursor:pointer;
-      transition:background .25s;
+    .s-row:hover { background:var(--off-white); margin:0 -28px; padding-left:28px; padding-right:28px; }
+    .s-row-left { display:flex; align-items:center; gap:32px; flex:1; }
+    .s-n {
+      font-family:'Courier New',monospace;
+      font-size:.7rem; font-weight:700; letter-spacing:.08em;
+      color:var(--blue); flex-shrink:0; width:28px;
     }
-    .s-card:nth-child(5n) { border-right:none; }
-    .s-card:nth-child(n+6) { border-bottom:none; }
-    .s-card:hover { background:var(--white); }
-    .s-card:hover .s-name { color:var(--blue); }
+    .s-name {
+      font-family:var(--font-display);
+      font-size:clamp(1rem,1.4vw,1.25rem); font-weight:700;
+      color:var(--navy); line-height:1.2;
+      transition:color .2s;
+    }
+    .s-row:hover .s-name { color:var(--blue); }
+    .s-cases {
+      font-size:.78rem; font-weight:600; letter-spacing:.04em;
+      color:var(--text-muted); flex-shrink:0;
+      background:var(--off-white); border:1px solid var(--border);
+      border-radius:100px; padding:4px 14px;
+      transition:background .2s, border-color .2s, color .2s;
+    }
+    .s-row:hover .s-cases { background:var(--blue-pale); border-color:rgba(59,111,232,.2); color:var(--blue); }
 
-    .s-n { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
-    .s-name { font-family:var(--font-display); font-size:.9375rem; font-weight:700; color:var(--navy); line-height:1.35; margin-bottom:auto; padding-bottom:20px; transition:color .2s; }
-    .s-cases { font-size:.75rem; color:var(--text-muted); margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+    @media(max-width:640px){
+      .s-row:hover { margin:0; padding-left:0; padding-right:0; }
+    }
 
     /* ====================================================
        CASE STUDY
@@ -839,7 +852,6 @@
       .hero-scroll { display:none; }
 
       .settori-head, .cases-head { grid-template-columns:1fr; gap:28px; }
-      .settori-grid { grid-template-columns:repeat(3,1fr); }
       .cases-grid   { grid-template-columns:1fr; }
       .footer-top   { grid-template-columns:1fr; gap:28px; text-align:center; }
       .footer-contact { text-align:center; }
@@ -849,7 +861,6 @@
     @media (max-width: 640px) {
       .section-pad { padding:64px 0; }
 
-      .settori-grid { grid-template-columns:repeat(2,1fr); }
     }
   </style>
 </head>
@@ -1220,17 +1231,17 @@
       <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
       <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
     </div>
-    <div class="settori-grid">
-      <div class="s-card reveal d1"><div class="s-n">01</div><span class="s-name">Food &amp; Beverage / GDO</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d2"><div class="s-n">02</div><span class="s-name">Retail / Consumer Goods</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d3"><div class="s-n">03</div><span class="s-name">Industrial / Manifatturiero B2B</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d4"><div class="s-n">04</div><span class="s-name">Finance / Banking</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d5"><div class="s-n">05</div><span class="s-name">Beauty / Wellness</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d1"><div class="s-n">06</div><span class="s-name">Technology / SaaS</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d2"><div class="s-n">07</div><span class="s-name">Fashion / Luxury</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d3"><div class="s-n">08</div><span class="s-name">Healthcare / Pharma</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d4"><div class="s-n">09</div><span class="s-name">Turismo / Hospitality</span><span class="s-cases">3 case study</span></div>
-      <div class="s-card reveal d5"><div class="s-n">10</div><span class="s-name">Automotive / Motorsport</span><span class="s-cases">3 case study</span></div>
+    <div class="settori-list">
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">01</span><span class="s-name">Food &amp; Beverage / GDO</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">02</span><span class="s-name">Retail / Consumer Goods</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">03</span><span class="s-name">Industrial / Manifatturiero B2B</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">04</span><span class="s-name">Finance / Banking</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">05</span><span class="s-name">Beauty / Wellness</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">06</span><span class="s-name">Technology / SaaS</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">07</span><span class="s-name">Fashion / Luxury</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">08</span><span class="s-name">Healthcare / Pharma</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">09</span><span class="s-name">Turismo / Hospitality</span></div><span class="s-cases">3 case study</span></div>
+      <div class="s-row reveal"><div class="s-row-left"><span class="s-n">10</span><span class="s-name">Automotive / Motorsport</span></div><span class="s-cases">3 case study</span></div>
     </div>
   </div>
 </section>
