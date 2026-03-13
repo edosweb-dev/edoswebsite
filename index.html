@@ -299,9 +299,8 @@
     .hero {
       position:relative;
       background:var(--navy);
-      display:flex; align-items:flex-start;
-      min-height:100vh;
-      padding:170px 0 240px;
+      display:flex; flex-direction:column;
+      padding:150px 0 0;
       overflow:hidden; color:#fff;
     }
 
@@ -406,7 +405,7 @@
 
     /* hero bottom strip */
     .hero-bottom {
-      position:absolute; bottom:0; left:0; right:0;
+      margin-top:56px;
       border-top:1px solid rgba(255,255,255,.1);
       z-index:4;
       opacity:0; animation:fadeUp .55s ease forwards .65s;
@@ -439,7 +438,6 @@
       font-size:.875rem; margin-bottom:4px;
     }
     @media(max-width:820px){
-      .hero-bottom { position:static; }
       .hero-pillars { grid-template-columns:1fr; }
       .hero-pillar { padding:22px 0; }
       .hero-pillar + .hero-pillar { padding-left:0; border-left:none; border-top:1px solid rgba(255,255,255,.1); }
