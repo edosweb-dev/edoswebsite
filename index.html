@@ -8,1338 +8,1074 @@
   <link rel="icon" type="image/jpeg" href="https://www.edos.it/wp-content/uploads/2025/02/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
   <style>
-    /* ── VARIABLES ── */
     :root {
-      --navy: #0D1B3E;
-      --navy-mid: #162347;
-      --blue: #3B6FE8;
-      --blue-hover: #2557D6;
-      --blue-pale: #EEF3FF;
-      --blue-soft: #F0F4FF;
-      --white: #FFFFFF;
-      --off-white: #F7F8FC;
-      --surface: #F2F4F9;
-      --text: #0D1B3E;
-      --text-body: #374165;
-      --text-muted: #6B7A99;
-      --border: rgba(13,27,62,0.08);
-      --border-strong: rgba(13,27,62,0.13);
-      --shadow-sm: 0 2px 8px rgba(13,27,62,0.07);
-      --shadow-md: 0 8px 24px rgba(13,27,62,0.10);
-      --shadow-lg: 0 16px 48px rgba(13,27,62,0.13);
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --radius: 14px;
+      --navy:        #060E22;
+      --navy-mid:    #0D1B3E;
+      --navy-card:   #111F45;
+      --blue:        #3B6FE8;
+      --blue-hover:  #2557D6;
+      --blue-pale:   #EEF3FF;
+      --white:       #FFFFFF;
+      --off-white:   #F7F8FC;
+      --surface:     #F2F4F9;
+      --text:        #0D1B3E;
+      --text-body:   #374165;
+      --text-muted:  #6B7A99;
+      --border:      rgba(13,27,62,0.08);
+      --border-s:    rgba(13,27,62,0.14);
+      --shadow-sm:   0 2px 10px rgba(13,27,62,0.07);
+      --shadow-md:   0 8px 28px rgba(13,27,62,0.11);
+      --shadow-lg:   0 20px 56px rgba(13,27,62,0.15);
+      --font:        "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --r:           14px;
     }
 
-    /* ── RESET ── */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
     body {
       font-family: var(--font);
       font-size: 16px;
-      font-weight: 400;
       line-height: 1.7;
       color: var(--text-body);
       background: var(--white);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4, h5 {
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.12;
-      color: var(--text);
-    }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    img { max-width: 100%; display: block; }
+    h1,h2,h3,h4 { font-weight:800; letter-spacing:-0.025em; line-height:1.1; color:var(--text); }
+    a { text-decoration:none; color:inherit; }
+    ul { list-style:none; }
+    img { max-width:100%; display:block; }
 
-    /* ── KEYFRAMES ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes gridDrift {
-      0%   { background-position: 0 0; }
-      100% { background-position: 40px 40px; }
-    }
-    @keyframes orbFloat {
-      0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
-      50%       { transform: translateY(-24px) scale(1.06); opacity: 0.8; }
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: translateY(0); }
-      50%       { opacity: 0.9; transform: translateY(6px); }
-    }
-    @keyframes dotTrack {
-      0%   { left: 0; }
-      100% { left: calc(100% - 14px); }
-    }
-    @keyframes shimmer {
-      0%   { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
+    /* ---- KEYFRAMES ---- */
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes blobA    { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-50px,40px) scale(1.08)} 66%{transform:translate(30px,-30px) scale(.94)} }
+    @keyframes blobB    { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(40px,-50px) scale(1.06)} 66%{transform:translate(-25px,25px) scale(.96)} }
+    @keyframes blobC    { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,50px) scale(1.12)} }
+    @keyframes scrollB  { 0%,100%{opacity:.35;transform:translateY(0)} 50%{opacity:.8;transform:translateY(7px)} }
+    @keyframes dotTrack { 0%{left:0} 100%{left:calc(100% - 14px)} }
+    @keyframes shimmer  { 0%{opacity:.4} 50%{opacity:.9} 100%{opacity:.4} }
 
-    /* ── UTILITIES ── */
-    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-    .section-pad { padding: 96px 0; }
+    /* ---- UTILS ---- */
+    .container   { max-width:1160px; margin:0 auto; padding:0 28px; }
+    .section-pad { padding:96px 0; }
 
-    .label-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: var(--blue-pale);
-      border: 1px solid rgba(59,111,232,0.18);
-      border-radius: 100px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 22px;
+    .tag {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:5px 14px;
+      background:var(--blue-pale); border:1px solid rgba(59,111,232,.18);
+      border-radius:100px;
+      font-size:.72rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--blue);
+      margin-bottom:22px;
     }
-    .label-tag::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--blue);
-      border-radius: 50%;
-    }
+    .tag::before { content:''; width:6px; height:6px; background:var(--blue); border-radius:50%; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      border-radius: 9px;
-      font-family: var(--font);
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border: none;
-      transition: all 0.22s ease;
-      white-space: nowrap;
-      cursor: pointer;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:14px 28px; border-radius:9px;
+      font-family:var(--font); font-size:.9375rem; font-weight:600; border:none;
+      transition:all .22s ease; cursor:pointer; white-space:nowrap;
     }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-blue {
-      background: var(--blue);
-      color: #fff;
-    }
-    .btn-blue:hover {
-      background: var(--blue-hover);
-      box-shadow: 0 8px 24px rgba(59,111,232,0.32);
-    }
-    .btn-outline {
-      background: transparent;
-      color: var(--navy);
-      border: 1.5px solid var(--border-strong);
-    }
-    .btn-outline:hover {
-      border-color: var(--blue);
-      color: var(--blue);
-      background: var(--blue-pale);
-    }
-    .btn-ghost-white {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: 1.5px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(6px);
-    }
-    .btn-ghost-white:hover {
-      background: rgba(255,255,255,0.18);
-      border-color: rgba(255,255,255,0.45);
-    }
-    .btn-white {
-      background: #fff;
-      color: var(--navy);
-    }
-    .btn-white:hover {
-      background: var(--blue-pale);
-      color: var(--blue);
-      box-shadow: var(--shadow-md);
-    }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-blue  { background:var(--blue); color:#fff; }
+    .btn-blue:hover  { background:var(--blue-hover); box-shadow:0 8px 28px rgba(59,111,232,.35); }
+    .btn-ghost { background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.22); }
+    .btn-ghost:hover { background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.45); }
+    .btn-outline { background:transparent; color:var(--navy); border:1.5px solid var(--border-s); }
+    .btn-outline:hover { border-color:var(--blue); color:var(--blue); background:var(--blue-pale); }
+    .btn-white  { background:#fff; color:var(--navy); }
+    .btn-white:hover { background:var(--blue-pale); color:var(--blue); box-shadow:var(--shadow-md); }
 
-    /* ── REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.08s; }
-    .reveal-d2 { transition-delay: 0.16s; }
-    .reveal-d3 { transition-delay: 0.24s; }
-    .reveal-d4 { transition-delay: 0.32s; }
-    .reveal-d5 { transition-delay: 0.40s; }
+    /* reveal */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s}
+    .d4{transition-delay:.32s} .d5{transition-delay:.40s}
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        NAV
-    ══════════════════════════════════════ */
+    ==================================================== */
     .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 900;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      position:fixed; top:0; left:0; right:0; z-index:900;
+      transition:background .3s ease, box-shadow .3s ease;
     }
     .nav.scrolled {
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 1px 0 var(--border), var(--shadow-sm);
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      box-shadow:0 1px 0 var(--border), var(--shadow-sm);
     }
     .nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 70px;
+      display:flex; align-items:center; justify-content:space-between; height:70px;
     }
-    .nav-logo img { height: 28px; width: auto; }
-    .nav-logo .logo-dark { display: none; }
-    .nav-logo .logo-white { display: block; }
-    .nav.scrolled .nav-logo .logo-dark { display: block; }
-    .nav.scrolled .nav-logo .logo-white { display: none; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-    .nav-links a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.75);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #fff; }
-    .nav.scrolled .nav-links a { color: var(--text-muted); }
-    .nav.scrolled .nav-links a:hover { color: var(--navy); }
-    .nav-cta .btn { padding: 10px 20px; font-size: 0.875rem; }
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: background 0.2s;
-    }
-    .nav.scrolled .nav-toggle span { background: var(--navy); }
 
-    /* ══════════════════════════════════════
+    /* logo */
+    .nav-logo img { height:28px; width:auto; }
+    .nav-logo .logo-white { display:block; }
+    .nav-logo .logo-dark  { display:none; }
+    .nav.scrolled .nav-logo .logo-white { display:none; }
+    .nav.scrolled .nav-logo .logo-dark  { display:block; }
+
+    /* desktop links */
+    .nav-links {
+      display:flex; align-items:center; gap:4px;
+    }
+    .nav-item { position:relative; }
+    .nav-item > a, .nav-item > button {
+      display:flex; align-items:center; gap:5px;
+      padding:8px 14px; border-radius:8px;
+      font-size:.875rem; font-weight:500;
+      color:rgba(255,255,255,.78);
+      background:none; border:none; cursor:pointer; font-family:var(--font);
+      transition:color .2s, background .2s;
+    }
+    .nav-item > a:hover, .nav-item > button:hover {
+      color:#fff; background:rgba(255,255,255,.07);
+    }
+    .nav.scrolled .nav-item > a,
+    .nav.scrolled .nav-item > button { color:var(--text-muted); }
+    .nav.scrolled .nav-item > a:hover,
+    .nav.scrolled .nav-item > button:hover { color:var(--navy); background:var(--off-white); }
+
+    /* chevron icon */
+    .nav-chevron {
+      width:14px; height:14px; flex-shrink:0;
+      transition:transform .2s ease;
+    }
+    .nav-item:hover .nav-chevron { transform:rotate(180deg); }
+
+    /* dropdown panel */
+    .nav-drop {
+      position:absolute; top:calc(100% + 10px); left:50%;
+      transform:translateX(-50%) translateY(-6px);
+      min-width:260px; background:#fff;
+      border-radius:var(--r); box-shadow:var(--shadow-lg);
+      border:1px solid var(--border);
+      padding:10px; z-index:500;
+      opacity:0; pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+    /* wide dropdown for settori */
+    .nav-drop.wide { min-width:440px; display:grid; grid-template-columns:1fr 1fr; }
+    .nav-item:hover .nav-drop,
+    .nav-drop:hover { opacity:1; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+    .nav-drop a {
+      display:flex; align-items:center; gap:10px;
+      padding:9px 12px; border-radius:8px;
+      font-size:.8438rem; font-weight:500; color:var(--text-body);
+      transition:background .15s, color .15s;
+    }
+    .nav-drop a:hover { background:var(--blue-pale); color:var(--blue); }
+    .nav-drop a::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--border-s); flex-shrink:0; transition:background .15s;
+    }
+    .nav-drop a:hover::before { background:var(--blue); }
+
+    /* CTA */
+    .nav-cta .btn { padding:10px 20px; font-size:.875rem; }
+
+    /* hamburger */
+    .nav-hamburger {
+      display:none; flex-direction:column; gap:5px;
+      background:none; border:none; cursor:pointer; padding:6px; border-radius:6px;
+    }
+    .nav-hamburger span {
+      display:block; width:22px; height:2px; border-radius:2px;
+      background:#fff; transition:background .2s, transform .3s, opacity .3s;
+    }
+    .nav.scrolled .nav-hamburger span { background:var(--navy); }
+    .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity:0; }
+    .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    /* mobile panel */
+    .nav-mobile {
+      display:none;
+      position:fixed; top:70px; left:0; right:0; bottom:0;
+      background:#fff; overflow-y:auto;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      padding:20px 20px 40px;
+      z-index:890;
+      box-shadow:var(--shadow-lg);
+    }
+    .nav-mobile.open { transform:translateX(0); }
+    .nav-mobile-link {
+      display:block; padding:14px 0;
+      border-bottom:1px solid var(--border);
+      font-size:1rem; font-weight:600; color:var(--navy);
+    }
+    .nav-mobile-toggle {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 0; border-bottom:1px solid var(--border);
+      font-size:1rem; font-weight:600; color:var(--navy);
+      background:none; border-left:none; border-right:none; border-top:none;
+      width:100%; cursor:pointer; font-family:var(--font);
+    }
+    .nav-mobile-toggle svg { transition:transform .25s; flex-shrink:0; }
+    .nav-mobile-toggle.open svg { transform:rotate(180deg); }
+    .nav-mobile-sub {
+      max-height:0; overflow:hidden;
+      transition:max-height .3s ease, padding .3s ease;
+    }
+    .nav-mobile-sub.open { max-height:600px; padding-bottom:8px; }
+    .nav-mobile-sub a {
+      display:block; padding:10px 16px;
+      font-size:.9rem; font-weight:500; color:var(--text-body);
+      border-radius:8px; transition:background .15s, color .15s;
+    }
+    .nav-mobile-sub a:hover { background:var(--blue-pale); color:var(--blue); }
+    .nav-mobile-cta {
+      margin-top:24px;
+    }
+    .nav-mobile-cta .btn { width:100%; justify-content:center; }
+
+    /* ====================================================
        HERO
-    ══════════════════════════════════════ */
+    ==================================================== */
     .hero {
-      position: relative;
-      min-height: 100vh;
-      background: var(--navy);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      padding: 130px 0 80px;
-      overflow: hidden;
+      position:relative; min-height:100vh;
+      background:var(--navy);
+      display:flex; align-items:center;
+      padding:130px 0 100px;
+      overflow:hidden; color:#fff;
     }
-    /* Animated dot-grid */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(rgba(59,111,232,0.18) 1px, transparent 1px);
-      background-size: 40px 40px;
-      animation: gridDrift 25s linear infinite;
-      pointer-events: none;
+
+    /* canvas */
+    #heroCanvas {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      pointer-events:none; z-index:1;
     }
-    /* Glow orbs */
-    .hero-orb {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
+
+    /* blobs */
+    .blob {
+      position:absolute; border-radius:50%;
+      filter:blur(90px); pointer-events:none; z-index:0;
     }
-    .hero-orb-1 {
-      top: -10%;
-      right: -8%;
-      width: 640px;
-      height: 640px;
-      background: radial-gradient(circle, rgba(59,111,232,0.22) 0%, transparent 65%);
-      animation: orbFloat 8s ease-in-out infinite;
+    .blob-1 {
+      width:700px; height:700px; top:-15%; right:-12%;
+      background:radial-gradient(circle, rgba(59,111,232,.22) 0%, transparent 65%);
+      animation:blobA 14s ease-in-out infinite;
     }
-    .hero-orb-2 {
-      bottom: -20%;
-      left: -12%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(107,155,247,0.12) 0%, transparent 65%);
-      animation: orbFloat 11s ease-in-out infinite reverse;
+    .blob-2 {
+      width:500px; height:500px; bottom:-20%; left:-10%;
+      background:radial-gradient(circle, rgba(100,60,230,.14) 0%, transparent 65%);
+      animation:blobB 18s ease-in-out infinite;
     }
-    .hero .container { position: relative; z-index: 2; width: 100%; }
-    .hero-inner { max-width: 780px; }
+    .blob-3 {
+      width:380px; height:380px; top:35%; left:28%;
+      background:radial-gradient(circle, rgba(0,180,240,.08) 0%, transparent 65%);
+      animation:blobC 12s ease-in-out infinite;
+    }
+
+    /* noise overlay */
+    .hero-noise {
+      position:absolute; inset:0; z-index:2; pointer-events:none;
+      opacity:.04;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size:200px 200px;
+    }
+
+    .hero .container { position:relative; z-index:3; width:100%; }
+    .hero-inner { max-width:900px; }
 
     .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      opacity: 0;
-      animation: fadeUp 0.55s ease forwards 0.2s;
+      display:inline-flex; align-items:center; gap:10px;
+      margin-bottom:28px;
+      opacity:0; animation:fadeUp .55s ease forwards .2s;
     }
-    .hero-eyebrow-line {
-      width: 36px;
-      height: 2px;
-      background: var(--blue);
-      border-radius: 2px;
-    }
+    .hero-eyebrow-bar { width:36px; height:2px; background:var(--blue); border-radius:2px; }
     .hero-eyebrow span {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(59,111,232,0.95);
+      font-size:.72rem; font-weight:700; letter-spacing:.1em;
+      text-transform:uppercase; color:rgba(107,155,247,.9);
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.25rem);
-      font-weight: 900;
-      line-height: 1.05;
-      color: #fff;
-      margin-bottom: 26px;
-      opacity: 0;
-      animation: fadeUp 0.55s ease forwards 0.35s;
+      font-size:clamp(3rem, 6.5vw, 7rem);
+      font-weight:900; line-height:1.04; color:#fff;
+      margin-bottom:28px; letter-spacing:-.03em;
+      opacity:0; animation:fadeUp .55s ease forwards .35s;
     }
-    .hero h1 .highlight {
-      background: linear-gradient(105deg, #6B9BF7, #93BFFF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .hero h1 em {
+      font-style:normal;
+      background:linear-gradient(110deg,#6B9BF7 0%,#93BFFF 50%,#6B9BF7 100%);
+      background-size:200% auto;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:shimmer 4s linear infinite;
     }
 
     .hero-sub {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.62);
-      max-width: 580px;
-      margin-bottom: 40px;
-      opacity: 0;
-      animation: fadeUp 0.55s ease forwards 0.5s;
+      font-size:clamp(1rem, 1.6vw, 1.3rem);
+      color:rgba(255,255,255,.58); max-width:600px; line-height:1.75;
+      margin-bottom:44px;
+      opacity:0; animation:fadeUp .55s ease forwards .5s;
     }
 
     .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 0;
-      opacity: 0;
-      animation: fadeUp 0.55s ease forwards 0.65s;
+      display:flex; flex-wrap:wrap; gap:14px;
+      opacity:0; animation:fadeUp .55s ease forwards .65s;
     }
 
+    /* scroll cue */
     .hero-scroll {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      animation: scrollPulse 2.5s ease infinite;
+      position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+      z-index:3; display:flex; flex-direction:column; align-items:center; gap:6px;
+      animation:scrollB 2.5s ease infinite;
     }
-    .hero-scroll-bar {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-    }
-    .hero-scroll span {
-      font-size: 0.625rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
-    }
+    .hero-scroll-bar { width:1px; height:36px; background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent); }
+    .hero-scroll span { font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.25); }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        NUMERI
-    ══════════════════════════════════════ */
+    ==================================================== */
     .numeri {
-      background: var(--off-white);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 72px 0;
+      background:var(--off-white);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      padding:72px 0;
     }
     .numeri-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      margin-bottom: 32px;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      margin-bottom:28px;
     }
     .numeri-item {
-      text-align: center;
-      padding: 32px 24px;
-      position: relative;
+      text-align:center; padding:32px 20px;
+      position:relative;
     }
     .numeri-item + .numeri-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--border-strong);
+      content:''; position:absolute; left:0; top:20%; height:60%; width:1px;
+      background:var(--border-s);
     }
     .numeri-item .num {
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 8px;
+      font-size:clamp(2.25rem,4vw,3.25rem); font-weight:900;
+      letter-spacing:-.04em; line-height:1; margin-bottom:8px;
+      color:var(--navy);
     }
-    .numeri-item .num-accent { color: var(--blue); }
-    .numeri-item .num-label {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-    .numeri-note {
-      text-align: center;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
+    .numeri-item .num.accent { color:var(--blue); }
+    .numeri-item .lbl { font-size:.875rem; font-weight:500; color:var(--text-muted); }
+    .numeri-note { text-align:center; font-size:.875rem; color:var(--text-muted); font-style:italic; }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        PROBLEMA
-    ══════════════════════════════════════ */
-    .problema { background: var(--white); }
-    .problema-inner {
-      display: grid;
-      grid-template-columns: 5fr 7fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .problema-left { position: sticky; top: 100px; }
-    .problema-left h2 {
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      margin-bottom: 28px;
-      line-height: 1.15;
-    }
-    .problema-left p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
+    ==================================================== */
+    .problema { background:var(--white); }
+    .problema-grid { display:grid; grid-template-columns:5fr 7fr; gap:88px; align-items:start; }
+    .problema-left { position:sticky; top:100px; }
+    .problema-left h2 { font-size:clamp(1.75rem,3vw,2.625rem); margin-bottom:24px; }
+    .problema-left p  { font-size:1rem; color:var(--text-muted); line-height:1.75; }
     .problema-right p {
-      font-size: 1.0625rem;
-      color: var(--text-body);
-      line-height: 1.8;
-      margin-bottom: 20px;
+      font-size:1.0625rem; color:var(--text-body); line-height:1.82;
+      margin-bottom:20px;
     }
-    .problema-right p:last-of-type { margin-bottom: 36px; }
-    .problema-pills {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .problema-right p:last-of-type { margin-bottom:36px; }
+    .pills { display:flex; flex-direction:column; gap:14px; }
+    .pill {
+      display:flex; gap:16px; align-items:flex-start;
+      padding:20px 22px; background:var(--off-white);
+      border:1px solid var(--border); border-radius:var(--r);
+      transition:border-color .2s, box-shadow .2s;
     }
-    .problema-pill {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px 24px;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color 0.2s, box-shadow 0.2s;
+    .pill:hover { border-color:rgba(59,111,232,.3); box-shadow:var(--shadow-sm); }
+    .pill-ico {
+      width:36px; height:36px; border-radius:8px; background:var(--blue-pale);
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
     }
-    .problema-pill:hover {
-      border-color: rgba(59,111,232,0.3);
-      box-shadow: var(--shadow-sm);
-    }
-    .problema-pill-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--blue-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .problema-pill-icon svg { width: 18px; height: 18px; color: var(--blue); }
-    .problema-pill-text strong {
-      display: block;
-      font-size: 0.9375rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 3px;
-    }
-    .problema-pill-text span {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
+    .pill-ico svg { width:17px; height:17px; color:var(--blue); }
+    .pill strong { display:block; font-size:.9375rem; font-weight:700; color:var(--navy); margin-bottom:3px; }
+    .pill span    { font-size:.875rem; color:var(--text-muted); line-height:1.55; }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        PARTNERFLOW
-    ══════════════════════════════════════ */
+    ==================================================== */
     .partnerflow {
-      background: var(--navy);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
+      background:var(--navy-mid); color:#fff; position:relative; overflow:hidden;
     }
     .partnerflow::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 48px,
-        rgba(255,255,255,0.012) 48px,
-        rgba(255,255,255,0.012) 49px
-      );
-      pointer-events: none;
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:repeating-linear-gradient(-45deg,transparent,transparent 48px,rgba(255,255,255,.012) 48px,rgba(255,255,255,.012) 49px);
     }
-    .partnerflow .container { position: relative; z-index: 2; }
-    .pf-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: end;
-      margin-bottom: 56px;
-    }
-    .pf-header h2 {
-      font-size: clamp(1.75rem, 3vw, 2.375rem);
-      color: #fff;
-    }
-    .pf-header h2 .pf-brand {
-      background: linear-gradient(105deg, #6B9BF7, #93BFFF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .pf-header p {
-      color: rgba(255,255,255,0.55);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
+    .partnerflow .container { position:relative; z-index:2; }
+    .pf-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:52px; }
+    .pf-head h2 { font-size:clamp(1.75rem,3vw,2.5rem); color:#fff; }
+    .pf-head h2 em { font-style:normal; background:linear-gradient(105deg,#6B9BF7,#93BFFF); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .pf-head p    { color:rgba(255,255,255,.5); font-size:1rem; line-height:1.75; }
     .pf-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: rgba(255,255,255,0.03);
-      margin-bottom: 20px;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      border:1px solid rgba(255,255,255,.09); border-radius:var(--r);
+      overflow:hidden; background:rgba(255,255,255,.025); margin-bottom:20px;
     }
-    .pf-step {
-      padding: 36px 28px;
-      border-right: 1px solid rgba(255,255,255,0.09);
-      transition: background 0.25s;
-    }
-    .pf-step:last-child { border-right: none; }
-    .pf-step:hover { background: rgba(59,111,232,0.1); }
-    .pf-step-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 14px;
-    }
-    .pf-step h4 {
-      font-size: 1.0625rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .pf-step p {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
-    }
-    /* Connector */
-    .pf-track {
-      position: relative;
-      height: 3px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 2px;
-      margin-bottom: 52px;
-      overflow: visible;
-    }
-    .pf-track-dot {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 0 4px rgba(59,111,232,0.25), 0 0 20px rgba(59,111,232,0.5);
-      animation: dotTrack 3.5s ease-in-out infinite;
+    .pf-step { padding:36px 26px; border-right:1px solid rgba(255,255,255,.09); transition:background .25s; }
+    .pf-step:last-child { border-right:none; }
+    .pf-step:hover { background:rgba(59,111,232,.1); }
+    .pf-step-n { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
+    .pf-step h4 { font-size:1.0625rem; font-weight:700; color:#fff; margin-bottom:10px; }
+    .pf-step p  { font-size:.875rem; color:rgba(255,255,255,.48); line-height:1.6; }
+    .pf-track { position:relative; height:3px; background:rgba(255,255,255,.07); border-radius:2px; margin-bottom:52px; }
+    .pf-dot {
+      position:absolute; top:50%; transform:translateY(-50%);
+      width:14px; height:14px; border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 0 4px rgba(59,111,232,.25),0 0 22px rgba(59,111,232,.55);
+      animation:dotTrack 3.5s ease-in-out infinite;
     }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        SETTORI
-    ══════════════════════════════════════ */
-    .settori { background: var(--off-white); }
-    .settori-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 52px;
+    ==================================================== */
+    .settori { background:var(--off-white); }
+    .settori-head { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; margin-bottom:48px; }
+    .settori-head h2 { font-size:clamp(1.75rem,3vw,2.5rem); }
+    .settori-head p  { font-size:1rem; color:var(--text-muted); line-height:1.75; }
+    .settori-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+    .s-card {
+      background:var(--white); border:1px solid var(--border); border-radius:var(--r);
+      padding:20px 18px; display:flex; flex-direction:column; gap:10px;
+      transition:transform .22s,box-shadow .22s,border-color .22s;
     }
-    .settori-header h2 { font-size: clamp(1.75rem, 3vw, 2.375rem); }
-    .settori-header p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.75;
+    .s-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:rgba(59,111,232,.22); }
+    .s-n  { font-size:.68rem; font-weight:700; letter-spacing:.08em; color:var(--blue); }
+    .s-card h4 { font-size:.9rem; font-weight:700; color:var(--navy); line-height:1.3; }
+    .s-ico {
+      width:30px; height:30px; border-radius:7px; background:var(--blue-pale);
+      display:flex; align-items:center; justify-content:center; margin-top:auto;
     }
-    .settori-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-    .settori-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s;
-    }
-    .settori-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(59,111,232,0.22);
-    }
-    .settori-num {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--blue);
-    }
-    .settori-card h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.3;
-    }
-    .settori-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: var(--blue-pale);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: auto;
-    }
-    .settori-icon svg { width: 16px; height: 16px; color: var(--blue); }
+    .s-ico svg { width:15px; height:15px; color:var(--blue); }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        CASE STUDY
-    ══════════════════════════════════════ */
-    .cases { background: var(--white); }
-    .cases-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 52px;
+    ==================================================== */
+    .cases { background:var(--white); }
+    .cases-head { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end; margin-bottom:48px; }
+    .cases-head h2 { font-size:clamp(1.75rem,3vw,2.5rem); }
+    .cases-head p  { font-size:1rem; color:var(--text-muted); line-height:1.75; }
+    .cases-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .c-card {
+      border:1px solid var(--border); border-radius:var(--r); overflow:hidden;
+      transition:transform .25s,box-shadow .25s;
     }
-    .cases-header h2 { font-size: clamp(1.75rem, 3vw, 2.375rem); }
-    .cases-header p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      line-height: 1.75;
+    .c-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .c-top {
+      background:var(--navy-mid); padding:34px 30px;
+      position:relative; overflow:hidden; min-height:150px;
     }
-    .cases-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .c-top::after {
+      content:''; position:absolute; top:-40%; right:-20%;
+      width:220px; height:220px; border-radius:50%;
+      background:radial-gradient(circle,rgba(59,111,232,.24),transparent 70%);
+      pointer-events:none;
     }
-    .case-card {
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: var(--white);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .case-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-    .case-top {
-      background: var(--navy);
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-      min-height: 160px;
-    }
-    .case-top::after {
-      content: '';
-      position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(59,111,232,0.24), transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .case-tag {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: rgba(59,111,232,0.9);
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-    .case-top h3 {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #fff;
-      position: relative;
-      z-index: 1;
-      line-height: 1.3;
-    }
-    .case-body { padding: 28px 32px 32px; }
-    .case-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-    .case-metric {
-      padding: 5px 14px;
-      background: var(--blue-pale);
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--blue);
-    }
-    .case-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
+    .c-tag { font-size:.68rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:rgba(107,155,247,.9); margin-bottom:12px; position:relative; z-index:1; }
+    .c-top h3 { font-size:1.125rem; font-weight:700; color:#fff; position:relative; z-index:1; line-height:1.3; }
+    .c-body { padding:26px 30px 30px; }
+    .c-metrics { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    .c-metric { padding:4px 12px; background:var(--blue-pale); border-radius:100px; font-size:.78rem; font-weight:600; color:var(--blue); }
+    .c-desc { font-size:.9rem; color:var(--text-muted); line-height:1.65; }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        CTA FINALE
-    ══════════════════════════════════════ */
+    ==================================================== */
     .cta-final {
-      background: var(--navy);
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background:var(--navy); color:#fff; text-align:center;
+      position:relative; overflow:hidden;
     }
     .cta-final::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(59,111,232,0.18) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:radial-gradient(rgba(59,111,232,.18) 1px,transparent 1px);
+      background-size:40px 40px;
     }
     .cta-final::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(59,111,232,0.18) 0%, transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
+      content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:700px; height:700px; border-radius:50%; pointer-events:none;
+      background:radial-gradient(circle,rgba(59,111,232,.18) 0%,transparent 65%);
     }
-    .cta-final .container { position: relative; z-index: 2; }
-    .cta-final h2 {
-      font-size: clamp(1.875rem, 4vw, 3rem);
-      color: #fff;
-      margin-bottom: 16px;
-    }
-    .cta-final p {
-      font-size: 1.0625rem;
-      color: rgba(255,255,255,0.58);
-      max-width: 460px;
-      margin: 0 auto 40px;
-      line-height: 1.75;
-    }
-    .cta-final .btn { padding: 18px 42px; font-size: 1rem; }
-    .cta-reply {
-      margin-top: 20px;
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.32);
-    }
+    .cta-final .container { position:relative; z-index:2; }
+    .cta-final h2 { font-size:clamp(2rem,4vw,3.25rem); color:#fff; margin-bottom:16px; }
+    .cta-final > .container > p { font-size:1.0625rem; color:rgba(255,255,255,.55); max-width:460px; margin:0 auto 40px; }
+    .cta-final .btn { padding:18px 44px; font-size:1rem; }
+    .cta-reply { margin-top:20px; font-size:.8125rem; color:rgba(255,255,255,.28); }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        FOOTER
-    ══════════════════════════════════════ */
+    ==================================================== */
     .footer {
-      background: var(--navy-mid);
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 60px 0 36px;
+      background:var(--navy-mid);
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:60px 0 36px;
     }
     .footer-top {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 48px;
+      display:grid; grid-template-columns:auto 1fr auto; gap:48px;
+      align-items:center; margin-bottom:48px;
     }
-    .footer-logo img { height: 26px; width: auto; }
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px 28px;
-    }
-    .footer-nav a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.45);
-      transition: color 0.2s;
-    }
-    .footer-nav a:hover { color: #fff; }
-    .footer-contact {
-      text-align: right;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.8;
-    }
-    .footer-contact a { transition: color 0.2s; }
-    .footer-contact a:hover { color: #fff; }
+    .footer-logo img { height:26px; width:auto; }
+    .footer-nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 28px; }
+    .footer-nav a { font-size:.875rem; font-weight:500; color:rgba(255,255,255,.42); transition:color .2s; }
+    .footer-nav a:hover { color:#fff; }
+    .footer-contact { text-align:right; font-size:.875rem; color:rgba(255,255,255,.42); line-height:1.8; }
+    .footer-contact a:hover { color:#fff; }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.28);
+      border-top:1px solid rgba(255,255,255,.06); padding-top:24px;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+      font-size:.8125rem; color:rgba(255,255,255,.26);
     }
-    .footer-legal a {
-      color: rgba(255,255,255,0.28);
-      transition: color 0.2s;
-    }
-    .footer-legal a:hover { color: rgba(255,255,255,0.55); }
-    .footer-legal a + a::before {
-      content: ' · ';
-    }
+    .footer-legal a { color:rgba(255,255,255,.26); transition:color .2s; }
+    .footer-legal a:hover { color:rgba(255,255,255,.55); }
+    .footer-legal a + a::before { content:' · '; }
 
-    /* ══════════════════════════════════════
+    /* ====================================================
        RESPONSIVE
-    ══════════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .settori-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
+    ==================================================== */
     @media (max-width: 900px) {
-      .problema-inner { grid-template-columns: 1fr; gap: 40px; }
-      .problema-left { position: static; }
-      .pf-header,
-      .settori-header,
-      .cases-header { grid-template-columns: 1fr; gap: 16px; }
-      .pf-steps { grid-template-columns: repeat(2, 1fr); }
-      .pf-step { border-bottom: 1px solid rgba(255,255,255,0.09); }
-      .pf-step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.09); }
-      .pf-step:nth-child(even) { border-right: none; }
-      .cases-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; gap: 28px; text-align: center; }
-      .footer-nav { justify-content: center; }
-      .footer-contact { text-align: center; }
+      .nav-links, .nav-cta { display:none; }
+      .nav-hamburger { display:flex; }
+      .nav-mobile { display:block; }
+
+      .hero h1 { font-size:clamp(2.5rem,7vw,4rem); }
+      .hero-sub { font-size:1rem; }
+      .hero-ctas { flex-direction:column; }
+      .hero-ctas .btn { justify-content:center; }
+      .hero-scroll { display:none; }
+
+      .problema-grid { grid-template-columns:1fr; gap:40px; }
+      .problema-left { position:static; }
+      .pf-head, .settori-head, .cases-head { grid-template-columns:1fr; gap:14px; }
+      .pf-steps { grid-template-columns:repeat(2,1fr); }
+      .pf-step { border-bottom:1px solid rgba(255,255,255,.09); }
+      .pf-step:nth-child(odd)  { border-right:1px solid rgba(255,255,255,.09); }
+      .pf-step:nth-child(even) { border-right:none; }
+      .settori-grid { grid-template-columns:repeat(3,1fr); }
+      .cases-grid   { grid-template-columns:1fr; }
+      .footer-top   { grid-template-columns:1fr; gap:28px; text-align:center; }
+      .footer-contact { text-align:center; }
+      .footer-nav   { justify-content:center; }
+      .footer-bottom { flex-direction:column; text-align:center; }
     }
-
-    @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-toggle { display: flex; }
-      .nav .container { flex-wrap: wrap; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 16px 0 20px;
-        gap: 18px;
-        order: 3;
-        border-top: 1px solid rgba(255,255,255,0.09);
-      }
-      .nav.scrolled .nav-links.open {
-        border-top-color: var(--border);
-      }
-      .nav-cta.open {
-        display: flex;
-        width: 100%;
-        padding-bottom: 16px;
-        order: 4;
-      }
-      .nav-cta.open .btn { width: 100%; justify-content: center; }
-
-      .hero { padding: 110px 0 80px; min-height: auto; }
-      .hero h1 { font-size: 2.25rem; }
-      .hero-sub { font-size: 1rem; }
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { justify-content: center; }
-      .hero-scroll { display: none; }
-
-      .section-pad { padding: 64px 0; }
-
-      .numeri-grid { grid-template-columns: repeat(2, 1fr); }
-      .numeri-item + .numeri-item::before { display: none; }
-      .numeri-item { border: 1px solid var(--border); border-radius: 10px; }
-
-      .settori-grid { grid-template-columns: repeat(2, 1fr); }
-
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .pf-steps { grid-template-columns: 1fr; }
-      .pf-step { border-right: none !important; }
-      .settori-grid { grid-template-columns: 1fr 1fr; }
-      .numeri-item .num { font-size: 2.25rem; }
+    @media (max-width: 640px) {
+      .section-pad { padding:64px 0; }
+      .numeri-grid  { grid-template-columns:repeat(2,1fr); }
+      .numeri-item + .numeri-item::before { display:none; }
+      .numeri-item  { border:1px solid var(--border); border-radius:10px; }
+      .settori-grid { grid-template-columns:repeat(2,1fr); }
+      .pf-steps     { grid-template-columns:1fr; }
+      .pf-step      { border-right:none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════ NAV ══════ -->
-  <nav class="nav" id="mainNav" aria-label="Navigazione principale">
-    <div class="container">
-      <a href="#" class="nav-logo">
-        <img class="logo-white" src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
-        <img class="logo-dark" src="https://www.edos.it/wp-content/uploads/2025/02/logo-edos.png" alt="Edos Digital Solutions">
+<!-- ===================== NAV ===================== -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img class="logo-white" src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
+      <img class="logo-dark"  src="https://www.edos.it/wp-content/uploads/2025/02/logo-edos.png"       alt="Edos Digital Solutions">
+    </a>
+
+    <!-- Desktop links -->
+    <div class="nav-links" id="navDesktop">
+      <div class="nav-item">
+        <a href="#agenzie">Per le agenzie</a>
+      </div>
+
+      <div class="nav-item">
+        <button type="button">
+          Servizi
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-drop">
+          <a href="#servizi">Sviluppo Web &amp; E-commerce</a>
+          <a href="#servizi">Piattaforme &amp; Applicazioni Custom</a>
+          <a href="#servizi">AI &amp; Automazione</a>
+          <a href="#servizi">UX/UI Design</a>
+          <a href="#servizi">Consulenza tecnica &amp; CTO as a Service</a>
+          <a href="#servizi">Supporto &amp; Manutenzione</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button type="button">
+          Settori
+          <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="nav-drop wide">
+          <a href="#settori">Food &amp; Beverage / GDO</a>
+          <a href="#settori">Retail / Consumer Goods</a>
+          <a href="#settori">Industrial / Manifatturiero B2B</a>
+          <a href="#settori">Finance / Banking</a>
+          <a href="#settori">Beauty / Wellness</a>
+          <a href="#settori">Technology / SaaS</a>
+          <a href="#settori">Fashion / Luxury</a>
+          <a href="#settori">Healthcare / Pharma</a>
+          <a href="#settori">Turismo / Hospitality</a>
+          <a href="#settori">Automotive / Motorsport</a>
+        </div>
+      </div>
+
+      <div class="nav-item"><a href="#chi-siamo">Chi siamo</a></div>
+      <div class="nav-item"><a href="#contatti">Contatti</a></div>
+    </div>
+
+    <div class="nav-cta" id="navCta">
+      <a href="#contatti" class="btn btn-blue">Prenota una call</a>
+    </div>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile panel -->
+<div class="nav-mobile" id="navMobile">
+  <a class="nav-mobile-link" href="#agenzie">Per le agenzie</a>
+
+  <button class="nav-mobile-toggle" id="mToggleServizi">
+    Servizi
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="nav-mobile-sub" id="mSubServizi">
+    <a href="#servizi">Sviluppo Web &amp; E-commerce</a>
+    <a href="#servizi">Piattaforme &amp; Applicazioni Custom</a>
+    <a href="#servizi">AI &amp; Automazione</a>
+    <a href="#servizi">UX/UI Design</a>
+    <a href="#servizi">Consulenza tecnica &amp; CTO as a Service</a>
+    <a href="#servizi">Supporto &amp; Manutenzione</a>
+  </div>
+
+  <button class="nav-mobile-toggle" id="mToggleSettori">
+    Settori
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+  <div class="nav-mobile-sub" id="mSubSettori">
+    <a href="#settori">Food &amp; Beverage / GDO</a>
+    <a href="#settori">Retail / Consumer Goods</a>
+    <a href="#settori">Industrial / Manifatturiero B2B</a>
+    <a href="#settori">Finance / Banking</a>
+    <a href="#settori">Beauty / Wellness</a>
+    <a href="#settori">Technology / SaaS</a>
+    <a href="#settori">Fashion / Luxury</a>
+    <a href="#settori">Healthcare / Pharma</a>
+    <a href="#settori">Turismo / Hospitality</a>
+    <a href="#settori">Automotive / Motorsport</a>
+  </div>
+
+  <a class="nav-mobile-link" href="#chi-siamo">Chi siamo</a>
+  <a class="nav-mobile-link" href="#contatti">Contatti</a>
+  <div class="nav-mobile-cta">
+    <a href="#contatti" class="btn btn-blue">Prenota una call</a>
+  </div>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="home">
+  <canvas id="heroCanvas"></canvas>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-noise"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-bar"></span>
+        <span>Partner tecnico white label per agenzie</span>
+      </div>
+      <h1>Il tuo reparto tech,<br><em>senza assumerlo.</em></h1>
+      <p class="hero-sub">Sviluppiamo siti, piattaforme e soluzioni AI per le agenzie che vogliono crescere senza complicarsi la vita. In white label, con il tuo brand.</p>
+      <div class="hero-ctas">
+        <a href="#contatti" class="btn btn-blue">Prenota una call conoscitiva</a>
+        <a href="#agenzie"  class="btn btn-ghost">Scopri come lavoriamo &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-bar"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ===================== NUMERI ===================== -->
+<section class="numeri" aria-label="Numeri">
+  <div class="container">
+    <div class="numeri-grid">
+      <div class="numeri-item reveal">
+        <div class="num accent" data-target="100" data-suffix="+">0</div>
+        <div class="lbl">Progetti completati</div>
+      </div>
+      <div class="numeri-item reveal d1">
+        <div class="num" data-target="25" data-suffix="">0</div>
+        <div class="lbl">Agenzie partner</div>
+      </div>
+      <div class="numeri-item reveal d2">
+        <div class="num accent" data-target="100" data-suffix="%">0</div>
+        <div class="lbl">Consegne puntuali</div>
+      </div>
+      <div class="numeri-item reveal d3">
+        <div class="num" data-target="10" data-suffix="+">0</div>
+        <div class="lbl">Professionisti senior</div>
+      </div>
+    </div>
+    <p class="numeri-note reveal">Numeri reali, costruiti progetto dopo progetto con le agenzie che ci scelgono.</p>
+  </div>
+</section>
+
+<!-- ===================== PROBLEMA ===================== -->
+<section class="problema section-pad" id="agenzie">
+  <div class="container">
+    <div class="problema-grid">
+      <div class="problema-left reveal">
+        <span class="tag">Il problema che risolviamo</span>
+        <h2>Hai vinto il progetto.<br>Chi lo sviluppa?</h2>
+      </div>
+      <div class="problema-right">
+        <p class="reveal">Conosci la situazione. La tua agenzia ha appena chiuso un contratto importante: un e-commerce complesso, una piattaforma custom, un progetto con tempi stretti. Il cliente si fida di te. Ma internamente non hai un team di sviluppo strutturato.</p>
+        <p class="reveal">Hai provato con i freelance: tempi incerti, qualit&agrave; variabile, comunicazione frammentata. Assumere sviluppatori senior &egrave; costoso e rischioso. Ti serve un partner tecnico che lavori come se fosse il tuo team &mdash; ma senza esserlo.</p>
+        <p class="reveal">Edos nasce per risolvere esattamente questo. Diventiamo la tua divisione tecnica. Lavoriamo con il tuo brand, i tuoi strumenti, le tue tempistiche. Il tuo cliente non sapr&agrave; mai che esistiamo.</p>
+        <div class="pills">
+          <div class="pill reveal d1">
+            <div class="pill-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <strong>White label completo</strong>
+              <span>NDA firmato, account email con il tuo dominio, zero visibilit&agrave; verso il cliente finale.</span>
+            </div>
+          </div>
+          <div class="pill reveal d2">
+            <div class="pill-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <strong>Supporto pre-sales</strong>
+              <span>Ti aiutiamo a strutturare l&rsquo;offerta tecnica prima ancora di vincere il progetto.</span>
+            </div>
+          </div>
+          <div class="pill reveal d3">
+            <div class="pill-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <strong>Referente dedicato</strong>
+              <span>Un project manager Edos che parla la tua lingua e conosce il tuo modo di lavorare.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERFLOW ===================== -->
+<section class="partnerflow section-pad" id="servizi">
+  <div class="container">
+    <div class="pf-head reveal">
+      <div>
+        <span class="tag" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Come lavoriamo &mdash; PartnerFlow&trade;</span>
+        <h2>Un processo chiaro,<br>dalla prima call al <em>go-live.</em></h2>
+      </div>
+      <p>Non improvvisiamo. Ogni progetto segue PartnerFlow&trade;, il nostro metodo in 4 fasi pensato per dare alle agenzie controllo e visibilit&agrave; su tutto.</p>
+    </div>
+    <div class="pf-steps reveal">
+      <div class="pf-step">
+        <div class="pf-step-n">01 &mdash; Discovery</div>
+        <h4>Discovery</h4>
+        <p>Analizziamo insieme il progetto, definiamo requisiti e stime. Nessuna sorpresa in corso d&rsquo;opera.</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-step-n">02 &mdash; Pianificazione</div>
+        <h4>Pianificazione</h4>
+        <p>Architettura tecnica, sprint, timeline condivisa. Approvi tutto prima che si scriva una riga di codice.</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-step-n">03 &mdash; Sviluppo</div>
+        <h4>Sviluppo</h4>
+        <p>UX/UI, frontend, backend, QA continua. Dashboard condivisa per seguire ogni avanzamento in tempo reale.</p>
+      </div>
+      <div class="pf-step">
+        <div class="pf-step-n">04 &mdash; Supporto</div>
+        <h4>Supporto</h4>
+        <p>Lancio, stabilizzazione, manutenzione e evoluzione. Non spariscmo dopo il go-live.</p>
+      </div>
+    </div>
+    <div class="pf-track reveal"><div class="pf-dot"></div></div>
+  </div>
+</section>
+
+<!-- ===================== SETTORI ===================== -->
+<section class="settori section-pad" id="settori">
+  <div class="container">
+    <div class="settori-head">
+      <div>
+        <span class="tag reveal">Settori</span>
+        <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
+      </div>
+      <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
+    </div>
+    <div class="settori-grid">
+      <div class="s-card reveal d1"><div class="s-n">01</div><h4>Food &amp; Beverage / GDO</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div></div>
+      <div class="s-card reveal d2"><div class="s-n">02</div><h4>Retail / Consumer Goods</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div></div>
+      <div class="s-card reveal d3"><div class="s-n">03</div><h4>Industrial / Manifatturiero B2B</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg></div></div>
+      <div class="s-card reveal d4"><div class="s-n">04</div><h4>Finance / Banking</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div></div>
+      <div class="s-card reveal d5"><div class="s-n">05</div><h4>Beauty / Wellness</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div></div>
+      <div class="s-card reveal d1"><div class="s-n">06</div><h4>Technology / SaaS</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div></div>
+      <div class="s-card reveal d2"><div class="s-n">07</div><h4>Fashion / Luxury</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div></div>
+      <div class="s-card reveal d3"><div class="s-n">08</div><h4>Healthcare / Pharma</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div></div>
+      <div class="s-card reveal d4"><div class="s-n">09</div><h4>Turismo / Hospitality</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div></div>
+      <div class="s-card reveal d5"><div class="s-n">10</div><h4>Automotive / Motorsport</h4><div class="s-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="cases section-pad" id="chi-siamo">
+  <div class="container">
+    <div class="cases-head">
+      <div>
+        <span class="tag reveal">Case study</span>
+        <h2 class="reveal">Quello che facciamo,<br>raccontato dai risultati.</h2>
+      </div>
+      <p class="reveal">Lavoriamo in white label &mdash; la maggior parte dei progetti &egrave; coperta da NDA. Ma i numeri parlano.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="c-card reveal d1">
+        <div class="c-top">
+          <div class="c-tag">Retail / Franchising</div>
+          <h3>E-commerce B2B per rete di 800+ affiliati</h3>
+        </div>
+        <div class="c-body">
+          <div class="c-metrics"><span class="c-metric">+67% vendite nel primo trimestre</span></div>
+          <p class="c-desc">Piattaforma centralizzata per acquisti, pagamenti e contratti digitali.</p>
+        </div>
+      </div>
+      <div class="c-card reveal d2">
+        <div class="c-top">
+          <div class="c-tag">Energy / Retail</div>
+          <h3>Piattaforma InstantWin per brand del settore energia</h3>
+        </div>
+        <div class="c-body">
+          <div class="c-metrics">
+            <span class="c-metric">+67% engagement</span>
+            <span class="c-metric">-40% tempo operativo</span>
+          </div>
+          <p class="c-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata.</p>
+        </div>
+      </div>
+      <div class="c-card reveal d3">
+        <div class="c-top">
+          <div class="c-tag">B2B Services</div>
+          <h3>Agente AI per automazione preventivi</h3>
+        </div>
+        <div class="c-body">
+          <div class="c-metrics">
+            <span class="c-metric">-70% tempo di risposta</span>
+            <span class="c-metric">100% automazione</span>
+          </div>
+          <p class="c-desc">Piattaforma gestionale con AI integrata per la generazione automatica di preventivi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINALE ===================== -->
+<section class="cta-final section-pad" id="contatti">
+  <div class="container">
+    <span class="tag reveal" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Inizia da qui</span>
+    <h2 class="reveal">Parliamo del tuo<br>prossimo progetto?</h2>
+    <p class="reveal">Nessun impegno, nessuna presentazione infinita.<br>Una call di 30 minuti per capire se possiamo lavorare insieme.</p>
+    <a href="mailto:info@edos.it" class="btn btn-white reveal">Prenota una call conoscitiva</a>
+    <p class="cta-reply reveal">Rispondiamo entro 24 ore lavorative.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="#" class="footer-logo">
+        <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
       </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
+      <nav class="footer-nav">
         <a href="#agenzie">Per le agenzie</a>
         <a href="#servizi">Servizi</a>
         <a href="#settori">Settori</a>
         <a href="#chi-siamo">Chi siamo</a>
         <a href="#contatti">Contatti</a>
-      </div>
-
-      <div class="nav-cta" id="navCta">
-        <a href="#contatti" class="btn btn-blue">Prenota una call</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ══════ HERO ══════ -->
-  <section class="hero" id="home" aria-label="Hero">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-eyebrow">
-          <span class="hero-eyebrow-line"></span>
-          <span>Partner tecnico white label per agenzie</span>
-        </div>
-        <h1>Il tuo reparto tech,<br><span class="highlight">senza assumerlo.</span></h1>
-        <p class="hero-sub">Sviluppiamo siti, piattaforme e soluzioni AI per le agenzie che vogliono crescere senza complicarsi la vita. In white label, con il tuo brand.</p>
-        <div class="hero-ctas">
-          <a href="#contatti" class="btn btn-blue">Prenota una call conoscitiva</a>
-          <a href="#agenzie" class="btn btn-ghost-white">Scopri come lavoriamo &rarr;</a>
-        </div>
+      </nav>
+      <div class="footer-contact">
+        <a href="mailto:info@edos.it">info@edos.it</a><br>
+        P.IVA 02507760903
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="hero-scroll-bar"></div>
-      <span>scroll</span>
-    </div>
-  </section>
-
-  <!-- ══════ NUMERI ══════ -->
-  <section class="numeri" aria-label="Numeri">
-    <div class="container">
-      <div class="numeri-grid">
-        <div class="numeri-item reveal">
-          <div class="num num-accent" data-target="100" data-suffix="+">0</div>
-          <div class="num-label">Progetti completati</div>
-        </div>
-        <div class="numeri-item reveal reveal-d1">
-          <div class="num" data-target="25" data-suffix="">0</div>
-          <div class="num-label">Agenzie partner</div>
-        </div>
-        <div class="numeri-item reveal reveal-d2">
-          <div class="num num-accent" data-target="100" data-suffix="%">0</div>
-          <div class="num-label">Consegne puntuali</div>
-        </div>
-        <div class="numeri-item reveal reveal-d3">
-          <div class="num" data-target="10" data-suffix="+">0</div>
-          <div class="num-label">Professionisti senior</div>
-        </div>
-      </div>
-      <p class="numeri-note reveal">Numeri reali, costruiti progetto dopo progetto con le agenzie che ci scelgono.</p>
-    </div>
-  </section>
-
-  <!-- ══════ IL PROBLEMA ══════ -->
-  <section class="problema section-pad" id="agenzie" aria-label="Il problema che risolviamo">
-    <div class="container">
-      <div class="problema-inner">
-        <div class="problema-left reveal">
-          <span class="label-tag">Il problema che risolviamo</span>
-          <h2>Hai vinto il progetto.<br>Chi lo sviluppa?</h2>
-        </div>
-        <div class="problema-right">
-          <p class="reveal">Conosci la situazione. La tua agenzia ha appena chiuso un contratto importante: un e-commerce complesso, una piattaforma custom, un progetto con tempi stretti. Il cliente si fida di te. Ma internamente non hai un team di sviluppo strutturato.</p>
-          <p class="reveal">Hai provato con i freelance: tempi incerti, qualità variabile, comunicazione frammentata. Assumere sviluppatori senior è costoso e rischioso, soprattutto se il carico di lavoro non è costante. Ti serve un partner tecnico che lavori come se fosse il tuo team — ma senza esserlo.</p>
-          <p class="reveal">Edos nasce per risolvere esattamente questo. Diventiamo la tua divisione tecnica. Lavoriamo con il tuo brand, i tuoi strumenti, le tue tempistiche. Il tuo cliente non saprà mai che esistiamo.</p>
-          <div class="problema-pills">
-            <div class="problema-pill reveal reveal-d1">
-              <div class="problema-pill-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <div class="problema-pill-text">
-                <strong>White label completo</strong>
-                <span>NDA firmato, account email con il tuo dominio, zero visibilità verso il cliente finale.</span>
-              </div>
-            </div>
-            <div class="problema-pill reveal reveal-d2">
-              <div class="problema-pill-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <div class="problema-pill-text">
-                <strong>Supporto pre-sales</strong>
-                <span>Ti aiutiamo a strutturare l'offerta tecnica prima ancora di vincere il progetto.</span>
-              </div>
-            </div>
-            <div class="problema-pill reveal reveal-d3">
-              <div class="problema-pill-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </div>
-              <div class="problema-pill-text">
-                <strong>Referente dedicato</strong>
-                <span>Un project manager Edos che parla la tua lingua e conosce il tuo modo di lavorare.</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Edos Digital Solutions</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
       </div>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- ══════ PARTNERFLOW ══════ -->
-  <section class="partnerflow section-pad" id="servizi" aria-label="Come lavoriamo PartnerFlow">
-    <div class="container">
-      <div class="pf-header">
-        <div>
-          <span class="label-tag" style="background:rgba(59,111,232,0.12);border-color:rgba(59,111,232,0.2);color:#6B9BF7;">Come lavoriamo — PartnerFlow&trade;</span>
-          <h2>Un processo chiaro,<br>dalla prima call al <span class="pf-brand">go-live.</span></h2>
-        </div>
-        <p class="reveal">Non improvvisiamo. Ogni progetto segue PartnerFlow&trade;, il nostro metodo in 4 fasi pensato per dare alle agenzie controllo e visibilità su tutto.</p>
-      </div>
-      <div class="pf-steps reveal">
-        <div class="pf-step">
-          <div class="pf-step-num">01 — Discovery</div>
-          <h4>Discovery</h4>
-          <p>Analizziamo insieme il progetto, definiamo requisiti e stime. Nessuna sorpresa in corso d'opera.</p>
-        </div>
-        <div class="pf-step">
-          <div class="pf-step-num">02 — Pianificazione</div>
-          <h4>Pianificazione</h4>
-          <p>Architettura tecnica, sprint, timeline condivisa. Approvi tutto prima che si scriva una riga di codice.</p>
-        </div>
-        <div class="pf-step">
-          <div class="pf-step-num">03 — Sviluppo</div>
-          <h4>Sviluppo</h4>
-          <p>UX/UI, frontend, backend, QA continua. Dashboard condivisa per seguire ogni avanzamento in tempo reale.</p>
-        </div>
-        <div class="pf-step">
-          <div class="pf-step-num">04 — Supporto</div>
-          <h4>Supporto</h4>
-          <p>Lancio, stabilizzazione, manutenzione e evoluzione. Non spariscmo dopo il go-live.</p>
-        </div>
-      </div>
-      <div class="pf-track reveal">
-        <div class="pf-track-dot"></div>
-      </div>
-    </div>
-  </section>
+<script>
+(function(){
+  'use strict';
 
-  <!-- ══════ SETTORI ══════ -->
-  <section class="settori section-pad" id="settori" aria-label="Settori">
-    <div class="container">
-      <div class="settori-header">
-        <div>
-          <span class="label-tag reveal">Settori</span>
-          <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
-        </div>
-        <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perché ci lavoriamo ogni giorno con le agenzie come la tua.</p>
-      </div>
-      <div class="settori-grid">
-        <div class="settori-card reveal reveal-d1">
-          <div class="settori-num">01</div>
-          <h4>Food &amp; Beverage / GDO</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d2">
-          <div class="settori-num">02</div>
-          <h4>Retail / Consumer Goods</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d3">
-          <div class="settori-num">03</div>
-          <h4>Industrial / Manifatturiero B2B</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d4">
-          <div class="settori-num">04</div>
-          <h4>Finance / Banking</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d5">
-          <div class="settori-num">05</div>
-          <h4>Beauty / Wellness</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d1">
-          <div class="settori-num">06</div>
-          <h4>Technology / SaaS</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d2">
-          <div class="settori-num">07</div>
-          <h4>Fashion / Luxury</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d3">
-          <div class="settori-num">08</div>
-          <h4>Healthcare / Pharma</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d4">
-          <div class="settori-num">09</div>
-          <h4>Turismo / Hospitality</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-        </div>
-        <div class="settori-card reveal reveal-d5">
-          <div class="settori-num">10</div>
-          <h4>Automotive / Motorsport</h4>
-          <div class="settori-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  /* ---- NAV: scroll state ---- */
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function(){
+    nav.classList[window.scrollY > 48 ? 'add' : 'remove']('scrolled');
+  }, {passive:true});
 
-  <!-- ══════ CASE STUDY ══════ -->
-  <section class="cases section-pad" id="chi-siamo" aria-label="Case study">
-    <div class="container">
-      <div class="cases-header">
-        <div>
-          <span class="label-tag reveal">Case study</span>
-          <h2 class="reveal">Quello che facciamo,<br>raccontato dai risultati.</h2>
-        </div>
-        <p class="reveal">Lavoriamo in white label — questo significa che la maggior parte dei nostri progetti è coperta da NDA. Ma i numeri parlano.</p>
-      </div>
-      <div class="cases-grid">
-        <div class="case-card reveal reveal-d1">
-          <div class="case-top">
-            <div class="case-tag">Retail / Franchising</div>
-            <h3>E-commerce B2B per rete di 800+ affiliati</h3>
-          </div>
-          <div class="case-body">
-            <div class="case-metrics">
-              <span class="case-metric">+67% vendite nel primo trimestre</span>
-            </div>
-            <p class="case-desc">Piattaforma centralizzata per acquisti, pagamenti e contratti digitali.</p>
-          </div>
-        </div>
-        <div class="case-card reveal reveal-d2">
-          <div class="case-top">
-            <div class="case-tag">Energy / Retail</div>
-            <h3>Piattaforma InstantWin per brand del settore energia</h3>
-          </div>
-          <div class="case-body">
-            <div class="case-metrics">
-              <span class="case-metric">+67% engagement</span>
-              <span class="case-metric">-40% tempo operativo</span>
-            </div>
-            <p class="case-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata.</p>
-          </div>
-        </div>
-        <div class="case-card reveal reveal-d3">
-          <div class="case-top">
-            <div class="case-tag">B2B Services</div>
-            <h3>Agente AI per automazione preventivi</h3>
-          </div>
-          <div class="case-body">
-            <div class="case-metrics">
-              <span class="case-metric">-70% tempo di risposta</span>
-              <span class="case-metric">100% automazione end-to-end</span>
-            </div>
-            <p class="case-desc">Piattaforma gestionale con AI integrata per la generazione automatica di preventivi.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  /* ---- NAV: hamburger ---- */
+  var burger    = document.getElementById('navHamburger');
+  var mobileNav = document.getElementById('navMobile');
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
 
-  <!-- ══════ CTA FINALE ══════ -->
-  <section class="cta-final section-pad" id="contatti" aria-label="Contatti">
-    <div class="container">
-      <span class="label-tag reveal" style="background:rgba(59,111,232,0.12);border-color:rgba(59,111,232,0.2);color:#6B9BF7;">Inizia da qui</span>
-      <h2 class="reveal">Parliamo del tuo prossimo progetto?</h2>
-      <p class="reveal">Nessun impegno, nessuna presentazione infinita. Una call di 30 minuti per capire se possiamo lavorare insieme.</p>
-      <a href="mailto:info@edos.it" class="btn btn-white reveal">Prenota una call conoscitiva</a>
-      <p class="cta-reply reveal">Rispondiamo entro 24 ore lavorative.</p>
-    </div>
-  </section>
+  /* Close mobile nav on link click */
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      burger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 
-  <!-- ══════ FOOTER ══════ -->
-  <footer class="footer" aria-label="Footer">
-    <div class="container">
-      <div class="footer-top">
-        <a href="#" class="footer-logo">
-          <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
-        </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#agenzie">Per le agenzie</a>
-          <a href="#servizi">Servizi</a>
-          <a href="#settori">Settori</a>
-          <a href="#chi-siamo">Chi siamo</a>
-          <a href="#contatti">Contatti</a>
-        </nav>
-        <div class="footer-contact">
-          <a href="mailto:info@edos.it">info@edos.it</a><br>
-          P.IVA 02507760903
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Edos Digital Solutions</span>
-        <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  /* ---- NAV: mobile accordion ---- */
+  function mobileAccordion(toggleId, subId){
+    var btn = document.getElementById(toggleId);
+    var sub = document.getElementById(subId);
+    btn.addEventListener('click', function(){
+      btn.classList.toggle('open');
+      sub.classList.toggle('open');
+    });
+  }
+  mobileAccordion('mToggleServizi', 'mSubServizi');
+  mobileAccordion('mToggleSettori', 'mSubSettori');
 
-  <!-- ══════ JS ══════ -->
-  <script>
-    (function () {
-      'use strict';
+  /* ---- Smooth scroll ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = this.getAttribute('href');
+      if(id === '#') return;
+      var el = document.querySelector(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+    });
+  });
 
-      var nav = document.getElementById('mainNav');
+  /* ---- Scroll reveal ---- */
+  var revEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var revObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    revEls.forEach(function(el){ revObs.observe(el); });
+  } else {
+    revEls.forEach(function(el){ el.classList.add('visible'); });
+  }
 
-      // Nav scroll state
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 48) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
+  /* ---- Count-up ---- */
+  var cEls = document.querySelectorAll('[data-target]');
+  if('IntersectionObserver' in window){
+    var cObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        cObs.unobserve(el);
+        var cur = 0, step = Math.max(1, Math.ceil(target/50));
+        var t = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(t); }
+          el.textContent = cur + suffix;
+        }, 28);
+      });
+    }, {threshold:0.5});
+    cEls.forEach(function(el){ cObs.observe(el); });
+  }
+
+  /* ---- HERO CANVAS: particle network ---- */
+  var canvas = document.getElementById('heroCanvas');
+  var ctx    = canvas.getContext('2d');
+  var W, H, pts = [];
+
+  function resize(){
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function initParticles(){
+    pts = [];
+    var count = Math.min(90, Math.floor((W * H) / 12000));
+    for(var i = 0; i < count; i++){
+      pts.push({
+        x:  Math.random() * W,
+        y:  Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r:  Math.random() * 1.5 + 0.8,
+        a:  Math.random() * 0.45 + 0.15
+      });
+    }
+  }
+
+  function drawFrame(){
+    ctx.clearRect(0, 0, W, H);
+    var len = pts.length;
+
+    for(var i = 0; i < len; i++){
+      var p = pts[i];
+
+      /* connections */
+      for(var j = i + 1; j < len; j++){
+        var q  = pts[j];
+        var dx = p.x - q.x, dy = p.y - q.y;
+        var d  = Math.sqrt(dx*dx + dy*dy);
+        if(d < 160){
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = 'rgba(107,155,247,' + (0.14 * (1 - d/160)) + ')';
+          ctx.lineWidth   = 0.8;
+          ctx.stroke();
         }
-      }, { passive: true });
-
-      // Mobile toggle
-      var navToggle = document.getElementById('navToggle');
-      var navLinks  = document.getElementById('navLinks');
-      var navCta    = document.getElementById('navCta');
-
-      navToggle.addEventListener('click', function () {
-        navLinks.classList.toggle('open');
-        navCta.classList.toggle('open');
-      });
-
-      navLinks.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          navLinks.classList.remove('open');
-          navCta.classList.remove('open');
-        });
-      });
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        a.addEventListener('click', function (e) {
-          var id = this.getAttribute('href');
-          if (id === '#') return;
-          var el = document.querySelector(id);
-          if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
-        });
-      });
-
-      // Scroll reveal
-      var revEls = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        var revObs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              revObs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12 });
-        revEls.forEach(function (el) { revObs.observe(el); });
-      } else {
-        revEls.forEach(function (el) { el.classList.add('visible'); });
       }
 
-      // Count-up
-      var countEls = document.querySelectorAll('[data-target]');
-      if ('IntersectionObserver' in window) {
-        var countObs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            var el     = entry.target;
-            var target = parseInt(el.getAttribute('data-target'), 10);
-            var suffix = el.getAttribute('data-suffix') || '';
-            countObs.unobserve(el);
-            var current = 0;
-            var step    = Math.max(1, Math.ceil(target / 50));
-            var timer   = setInterval(function () {
-              current += step;
-              if (current >= target) { current = target; clearInterval(timer); }
-              el.textContent = current + suffix;
-            }, 28);
-          });
-        }, { threshold: 0.5 });
-        countEls.forEach(function (el) { countObs.observe(el); });
-      }
-    })();
-  </script>
+      /* dot */
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(107,155,247,' + p.a + ')';
+      ctx.fill();
 
+      /* move */
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < 0 || p.x > W) p.vx *= -1;
+      if(p.y < 0 || p.y > H) p.vy *= -1;
+    }
+
+    requestAnimationFrame(drawFrame);
+  }
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ resize(); initParticles(); }, 200);
+  });
+
+  resize();
+  initParticles();
+  drawFrame();
+
+})();
+</script>
 </body>
 </html>
