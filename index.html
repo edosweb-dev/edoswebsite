@@ -560,16 +560,6 @@
     .pf-step:nth-child(odd) { border-right:1px solid var(--border-s); }
     .pf-step:hover { background:rgba(13,27,62,.025); }
 
-    /* monospace step badge */
-    .pf-num {
-      display:inline-block;
-      font-family:'Courier New','Courier',monospace;
-      font-size:.72rem; font-weight:700; letter-spacing:.06em;
-      color:var(--blue); background:var(--blue-pale);
-      border:1px solid rgba(59,111,232,.2);
-      border-radius:4px; padding:3px 10px;
-      margin-bottom:32px; position:relative; z-index:1;
-    }
     .pf-step h3 {
       font-family:var(--font-display);
       font-size:clamp(1.625rem,2.5vw,2.125rem);
@@ -581,14 +571,14 @@
       max-width:420px; position:relative; z-index:1;
     }
 
-    /* large decorative icon — bottom right */
+    /* large decorative icon — top right */
     .pf-step-ico {
-      position:absolute; right:40px; bottom:32px;
-      opacity:.07; pointer-events:none;
+      position:absolute; right:40px; top:40px;
+      opacity:.09; pointer-events:none;
       transition:opacity .35s;
     }
     .pf-step-ico svg { width:140px; height:140px; color:var(--navy); }
-    .pf-step:hover .pf-step-ico { opacity:.13; }
+    .pf-step:hover .pf-step-ico { opacity:.15; }
 
     @media(max-width:760px){
       .pf-steps { grid-template-columns:1fr; }
@@ -1167,7 +1157,6 @@
     </div>
     <div class="pf-steps">
       <div class="pf-step reveal">
-        <span class="pf-num">01</span>
         <h3>Discovery</h3>
         <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
         <span class="pf-step-ico">
@@ -1180,7 +1169,6 @@
         </span>
       </div>
       <div class="pf-step reveal d2">
-        <span class="pf-num">02</span>
         <h3>Pianificazione</h3>
         <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
         <span class="pf-step-ico">
@@ -1193,7 +1181,6 @@
         </span>
       </div>
       <div class="pf-step reveal d3">
-        <span class="pf-num">03</span>
         <h3>Sviluppo</h3>
         <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite dashboard dedicata.</p>
         <span class="pf-step-ico">
@@ -1205,7 +1192,6 @@
         </span>
       </div>
       <div class="pf-step reveal d4">
-        <span class="pf-num">04</span>
         <h3>Supporto</h3>
         <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
         <span class="pf-step-ico">
