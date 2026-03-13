@@ -183,17 +183,29 @@
 
     /* hamburger — always visible */
     .nav-hamburger {
-      display:flex; flex-direction:column; gap:5px;
-      background:none; border:none; cursor:pointer; padding:6px; border-radius:6px;
+      display:flex; flex-direction:column; justify-content:center; gap:7px;
+      background:none; border:none; cursor:pointer; padding:8px; border-radius:6px;
+      width:40px; height:40px;
     }
     .nav-hamburger span {
-      display:block; width:22px; height:2px; border-radius:2px;
-      background:#fff; transition:background .2s, transform .3s, opacity .3s;
+      display:block; height:1.5px; border-radius:2px;
+      background:#fff;
+      transform-origin:center;
+      transition:background .25s, transform .38s cubic-bezier(.23,1,.32,1), width .38s cubic-bezier(.23,1,.32,1);
     }
+    .nav-hamburger span:nth-child(1) { width:24px; }
+    .nav-hamburger span:nth-child(2) { width:16px; }
     .nav.scrolled .nav-hamburger span { background:var(--navy); }
-    .nav-hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity:0; }
-    .nav-hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+    /* open state: two bars cross into X */
+    .nav-hamburger.open span:nth-child(1) {
+      width:22px;
+      transform:translateY(4.25px) rotate(45deg);
+    }
+    .nav-hamburger.open span:nth-child(2) {
+      width:22px;
+      transform:translateY(-4.25px) rotate(-45deg);
+    }
 
     /* ---- Fullscreen overlay nav ---- */
     .nav-overlay {
@@ -748,7 +760,7 @@
 
 
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
+      <span></span><span></span>
     </button>
   </div>
 </nav>
