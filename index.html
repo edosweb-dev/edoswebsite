@@ -567,25 +567,26 @@
     .pf-step:nth-child(odd) { border-right:1px solid rgba(255,255,255,.08); }
     .pf-step:hover { background:rgba(59,111,232,.1); }
 
-    /* large solid-color number — decorative anchor */
-    .pf-step::before {
-      content:attr(data-n);
+    /* large solid-color number — animated via JS */
+    .pf-step-num {
       position:absolute; right:-8px; bottom:-32px;
       font-family:var(--font-display);
       font-size:12rem; font-weight:900; line-height:1; letter-spacing:-.06em;
-      color:rgba(59,111,232,.18);
+      color:rgba(59,111,232,0);
       pointer-events:none; user-select:none;
       transition:color .35s;
     }
-    .pf-step:hover::before { color:rgba(107,155,247,.28); }
+    .pf-step.pf-counted .pf-step-num { color:rgba(59,111,232,.18); }
+    .pf-step:hover .pf-step-num { color:rgba(107,155,247,.28); }
 
-    /* blue accent line */
+    /* blue accent line — draws in on reveal */
     .pf-step-line {
-      width:36px; height:2px; background:var(--blue);
+      width:0; height:2px; background:var(--blue);
       display:block; margin-bottom:28px;
-      transition:width .35s cubic-bezier(.16,1,.3,1);
+      transition:width .7s cubic-bezier(.16,1,.3,1) .35s;
     }
-    .pf-step:hover .pf-step-line { width:72px; }
+    .pf-step.visible .pf-step-line { width:36px; }
+    .pf-step:hover .pf-step-line { width:72px; transition-delay:0s; }
 
     .pf-step h3 {
       font-family:var(--font-display);
@@ -1174,22 +1175,26 @@
     </div>
   </div>
   <div class="pf-steps">
-    <div class="pf-step reveal" data-n="01">
+    <div class="pf-step reveal">
+      <span class="pf-step-num" data-pf="1">00</span>
       <span class="pf-step-line"></span>
       <h3>Discovery</h3>
       <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
     </div>
-    <div class="pf-step reveal d2" data-n="02">
+    <div class="pf-step reveal d2">
+      <span class="pf-step-num" data-pf="2">00</span>
       <span class="pf-step-line"></span>
       <h3>Pianificazione</h3>
       <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
     </div>
-    <div class="pf-step reveal d3" data-n="03">
+    <div class="pf-step reveal d3">
+      <span class="pf-step-num" data-pf="3">00</span>
       <span class="pf-step-line"></span>
       <h3>Sviluppo</h3>
       <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite dashboard dedicata.</p>
     </div>
-    <div class="pf-step reveal d4" data-n="04">
+    <div class="pf-step reveal d4">
+      <span class="pf-step-num" data-pf="4">00</span>
       <span class="pf-step-line"></span>
       <h3>Supporto</h3>
       <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
@@ -1419,6 +1424,46 @@
       });
     }, {threshold:0.3});
     pillars.forEach(function(p){ obs.observe(p); });
+  })();
+
+  /* ---- PARTNERFLOW STEP ANIMATIONS ---- */
+  (function(){
+    var steps = document.querySelectorAll('.pf-step');
+    if(!steps.length) return;
+
+    function scrambleNum(numEl, target) {
+      var iter = 0, maxIter = 14;
+      var id = setInterval(function(){
+        iter++;
+        if(iter < maxIter) {
+          numEl.textContent = '0' + Math.floor(Math.random() * 9);
+        } else {
+          numEl.textContent = String(target).padStart(2,'0');
+          clearInterval(id);
+          numEl.closest('.pf-step').classList.add('pf-counted');
+        }
+      }, 38);
+    }
+
+    if('IntersectionObserver' in window) {
+      var pfObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting) return;
+          pfObs.unobserve(e.target);
+          var numEl = e.target.querySelector('.pf-step-num');
+          if(!numEl || e.target.classList.contains('pf-counted')) return;
+          var idx = Array.from(steps).indexOf(e.target);
+          setTimeout(function(){ scrambleNum(numEl, parseInt(numEl.dataset.pf)); }, idx * 120);
+        });
+      }, {threshold:0.25});
+      steps.forEach(function(s){ pfObs.observe(s); });
+    } else {
+      steps.forEach(function(s){
+        var n = s.querySelector('.pf-step-num');
+        if(n) n.textContent = String(parseInt(n.dataset.pf)).padStart(2,'0');
+        s.classList.add('pf-counted');
+      });
+    }
   })();
 
   /* ---- TAGLINE WORD-BY-WORD ANIMATION ---- */
