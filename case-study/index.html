@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study &middot; Edos Digital Solutions</title>
+  <meta name="description" content="Progetti reali per agenzie: e-commerce, piattaforme, AI e web app. Scopri come abbiamo mantenuto le promesse nei tempi, nel perimetro, senza sorprese.">
+  <link rel="icon" type="image/jpeg" href="https://www.edos.it/wp-content/uploads/2025/02/favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#060E22;--navy-mid:#0D1B3E;--navy-card:#111F45;--blue:#3B6FE8;--blue-hover:#2557D6;--blue-pale:#EEF3FF;--white:#FFFFFF;--off-white:#F7F8FC;--surface:#F2F4F9;--text:#0D1B3E;--text-body:#374165;--text-muted:#6B7A99;--border:rgba(13,27,62,0.08);--border-s:rgba(13,27,62,0.14);--shadow-sm:0 2px 10px rgba(13,27,62,0.07);--shadow-md:0 8px 28px rgba(13,27,62,0.11);--shadow-lg:0 20px 56px rgba(13,27,62,0.15);--font:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Plus Jakarta Sans","Inter",sans-serif;--r:14px}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);font-size:16px;line-height:1.7;color:var(--text-body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text)}
+    a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px);filter:blur(6px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+    @keyframes heroLine{from{opacity:0;transform:translateY(40px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+    @keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-50px,40px) scale(1.08)}66%{transform:translate(30px,-30px) scale(.94)}}
+    @keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.06)}66%{transform:translate(-25px,25px) scale(.96)}}
+    @keyframes shimmer{0%{opacity:.4}50%{opacity:.9}100%{opacity:.4}}
+    @keyframes spinRing{to{transform:rotate(360deg)}}
+    .container{max-width:1160px;margin:0 auto;padding:0 28px}.section-pad{padding:96px 0}
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.18);border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:22px}
+    .tag::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+    .btn-pill{display:inline-flex;align-items:center;gap:18px;padding:5px 28px 5px 5px;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;color:#fff;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:border-color .2s,background .2s}
+    .btn-pill:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.05)}
+    .btn-pill-circle{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+    .btn-pill:hover .btn-pill-circle{background:var(--blue)}
+    .btn-pill-circle svg{width:18px;height:18px;color:var(--navy);transition:color .2s}
+    .btn-pill:hover .btn-pill-circle svg{color:#fff}
+    .reveal{opacity:0;transform:translateY(36px);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),filter .8s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .3s,box-shadow .3s}
+    .nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 1px 0 var(--border),var(--shadow-sm)}
+    .nav .container{display:flex;align-items:center;justify-content:space-between;max-width:100%;padding:0 48px;height:70px}
+    .nav-logo img{height:28px;width:auto}.nav-logo .logo-white{display:block}.nav-logo .logo-dark{display:none}
+    .nav.scrolled .nav-logo .logo-white{display:none}.nav.scrolled .nav-logo .logo-dark{display:block}
+    .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:7px;background:none;border:none;cursor:pointer;padding:8px;border-radius:6px;width:40px;height:40px}
+    .nav-hamburger span{display:block;height:1.5px;border-radius:2px;background:#fff;transform-origin:center;transition:background .25s,transform .38s cubic-bezier(.23,1,.32,1),width .38s cubic-bezier(.23,1,.32,1)}
+    .nav-hamburger span:nth-child(1){width:24px}.nav-hamburger span:nth-child(2){width:16px}
+    .nav.scrolled .nav-hamburger span{background:var(--navy)}
+    .nav-hamburger.open span:nth-child(1){width:22px;transform:translateY(4.25px) rotate(45deg)}
+    .nav-hamburger.open span:nth-child(2){width:22px;transform:translateY(-4.25px) rotate(-45deg)}
+    .nav-overlay{position:fixed;inset:0;z-index:980;background:#060E22;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .42s ease;overflow:hidden}
+    .nav-overlay.open{opacity:1;pointer-events:auto}
+    .nav-ov-geo{position:absolute;inset:0;pointer-events:none}.nav-ov-geo svg{width:100%;height:100%;opacity:.07}
+    .nav-ov-top{position:relative;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:0 44px;height:70px;flex-shrink:0}
+    .nav-ov-logo img{height:26px}
+    .nav-ov-close{background:none;border:none;cursor:pointer;color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    .nav-ov-close:hover{background:rgba(255,255,255,.09)}.nav-ov-close svg{width:20px;height:20px}
+    .nav-ov-body{position:relative;z-index:4;flex:1;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(32px,5vw,80px) 56px;gap:clamp(32px,4vw,80px)}
+    .nav-ov-main{flex:0 0 auto}
+    .nav-ov-main a{display:block;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.12;white-space:nowrap;opacity:0;transform:translateY(24px);transition:opacity .4s ease,transform .4s ease,color .18s}
+    .nav-overlay.open .nav-ov-main a{opacity:1;transform:translateY(0)}
+    .nav-ov-main a:nth-child(1){transition-delay:.05s}.nav-ov-main a:nth-child(2){transition-delay:.10s}.nav-ov-main a:nth-child(3){transition-delay:.15s}.nav-ov-main a:nth-child(4){transition-delay:.20s}.nav-ov-main a:nth-child(5){transition-delay:.25s}.nav-ov-main a:nth-child(6){transition-delay:.30s}.nav-ov-main a:nth-child(7){transition-delay:.35s}
+    .nav-ov-main a:hover{color:var(--blue)}
+    .nav-ov-divider{flex:0 0 1px;align-self:stretch;background:rgba(255,255,255,.08)}
+    .nav-ov-side{flex:1 1 auto;display:flex;flex-direction:row;gap:clamp(32px,4vw,72px);align-items:flex-start}
+    .nav-ov-sub-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(107,155,247,.6);margin-bottom:12px}
+    .nav-ov-sub a{display:block;font-size:1rem;font-weight:500;color:rgba(255,255,255,.42);margin-bottom:10px;transition:color .18s}
+    .nav-ov-sub a:hover{color:#fff}
+    .nav-ov-cta-block{margin-top:20px}.nav-ov-cta-block .btn-pill{font-size:.65rem;padding:4px 24px 4px 4px}.nav-ov-cta-block .btn-pill-circle{width:38px;height:38px}.nav-ov-cta-block .btn-pill-circle svg{width:16px;height:16px}
+
+    /* HERO */
+    .page-hero{position:relative;background:var(--navy);padding:180px 0 100px;overflow:hidden;color:#fff}
+    .page-hero .blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+    .page-hero .blob-1{width:700px;height:700px;top:-15%;right:-12%;background:radial-gradient(circle,rgba(59,111,232,.22) 0%,transparent 65%);animation:blobA 14s ease-in-out infinite}
+    .page-hero .blob-2{width:500px;height:500px;bottom:-20%;left:-10%;background:radial-gradient(circle,rgba(100,60,230,.14) 0%,transparent 65%);animation:blobB 18s ease-in-out infinite}
+    .page-hero-noise{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+    .page-hero .container{position:relative;z-index:2}.page-hero-inner{max-width:800px}
+    .page-hero h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4.25rem);font-weight:800;line-height:1.08;color:#fff;margin-bottom:28px;letter-spacing:-.03em;opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards .1s}
+    .page-hero h1 em{font-style:normal;background:linear-gradient(110deg,#6B9BF7 0%,#93BFFF 50%,#6B9BF7 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+    .page-hero-sub{font-family:var(--font-display);font-size:clamp(1rem,1.5vw,1.1875rem);color:rgba(255,255,255,.55);line-height:1.78;max-width:640px;opacity:0;animation:fadeUp .75s cubic-bezier(.16,1,.3,1) forwards .3s}
+
+    /* FILTERS */
+    .cases-filters{margin-bottom:0;padding:48px 0 0}
+    .cf-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .cf-row+.cf-row{margin-top:16px}
+    .cf-label{font-family:var(--font-display);font-size:.8125rem;font-weight:600;color:var(--text-muted);min-width:110px;flex-shrink:0}
+    .cf-btn{font-family:var(--font);font-size:.8125rem;font-weight:500;padding:9px 20px;border-radius:100px;border:1px solid var(--border-s);background:transparent;color:var(--text-body);cursor:pointer;white-space:nowrap;transition:all .25s}
+    .cf-btn:hover{border-color:var(--blue);color:var(--blue);background:rgba(59,111,232,.04)}
+    .cf-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+    /* CASE GRID */
+    .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--border-s);width:100%}
+    .c-item{display:block;cursor:pointer;position:relative;padding:40px 40px 40px 24px;border-bottom:1px solid var(--border-s);transition:background .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+    .c-item:nth-child(odd){border-right:1px solid var(--border-s);padding-left:max(24px,calc((100vw - 1160px)/2 + 24px))}
+    .c-item:nth-child(even){padding-right:max(40px,calc((100vw - 1160px)/2 + 40px))}
+    .c-item:hover{background:rgba(59,111,232,.03);box-shadow:0 8px 32px rgba(6,14,34,.06);transform:translateY(-2px);z-index:2}
+    .c-item[hidden]{display:none}
+    .c-num{font-family:var(--font);font-size:.6875rem;font-weight:500;color:var(--text-muted);letter-spacing:.06em;margin-bottom:20px;opacity:.5}
+    .c-title{font-family:var(--font-display);font-size:clamp(1.35rem,2.4vw,1.75rem);font-weight:700;color:var(--navy);line-height:1.25;margin:0 0 14px;letter-spacing:-.02em;padding-right:40px;transition:color .2s}
+    .c-item:hover .c-title{color:var(--blue)}
+    .c-desc{font-family:var(--font);font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin:0 0 24px;padding-right:40px}
+    .c-meta{display:flex;gap:0;border-top:1px solid var(--border);padding-top:16px}
+    .c-meta-item{flex:1;min-width:0}
+    .c-meta-item+.c-meta-item{border-left:1px solid var(--border);padding-left:16px}
+    .c-meta-label{font-family:var(--font);font-size:.625rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);opacity:.6;margin-bottom:4px;line-height:1}
+    .c-meta-value{font-family:var(--font);font-size:.8125rem;font-weight:600;color:var(--navy);line-height:1.3}
+    .c-arrow{position:absolute;right:24px;bottom:32px;display:flex;align-items:center;justify-content:center;color:var(--blue);opacity:0;transform:translateY(6px);transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1)}
+    .c-arrow svg{width:28px;height:28px}
+    .c-item:hover .c-arrow{opacity:1;transform:translateY(0)}
+
+    /* EMPTY STATE */
+    .cases-empty{display:none;text-align:center;padding:80px 28px;color:var(--text-muted);font-size:1.0625rem;border-top:1px solid var(--border-s)}
+
+    /* CTA */
+    .cta-final{background:var(--navy);color:#fff;padding:clamp(80px,12vw,140px) 0;position:relative;overflow:hidden}
+    .cta-final::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
+    .cta-blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+    .cta-blob-1{width:600px;height:600px;top:-30%;right:-8%;background:radial-gradient(circle,rgba(59,111,232,.18) 0%,transparent 65%);animation:blobA 16s ease-in-out infinite}
+    .cta-blob-2{width:450px;height:450px;bottom:-25%;left:-5%;background:radial-gradient(circle,rgba(100,60,230,.10) 0%,transparent 65%);animation:blobB 20s ease-in-out infinite}
+    .cta-final .container{position:relative;z-index:1}
+    .cta-inner{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:100%;margin:0 auto}
+    .cta-final h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.25rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:#fff;margin:0 0 20px}
+    .cta-final h2 em{font-style:normal;background:linear-gradient(110deg,#6B9BF7 0%,#93BFFF 50%,#6B9BF7 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+    .cta-final .cta-desc{font-size:clamp(.9375rem,1.3vw,1.0625rem);color:rgba(255,255,255,.5);line-height:1.7;margin:0 0 40px;max-width:560px}
+    .cta-final .cta-action .btn-pill{font-size:1rem;padding:6px 32px 6px 6px}
+    .cta-final .cta-action .btn-pill .btn-pill-circle{width:52px;height:52px}
+
+    /* FIXED CTA */
+    .fixed-cta{position:fixed;right:28px;bottom:32px;z-index:90;opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.16,1,.3,1)}
+    .fixed-cta.visible{opacity:1;pointer-events:auto}
+    .fixed-cta-link{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;position:relative;text-decoration:none;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .4s,border-color .4s;background:var(--navy);border:1px solid rgba(6,14,34,.08);box-shadow:0 4px 20px rgba(6,14,34,.12)}
+    .fixed-cta-link:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(59,111,232,.25);border-color:rgba(59,111,232,.3)}
+    .fixed-cta-icon{display:flex;align-items:center;justify-content:center;width:26px;height:26px;color:var(--blue);transition:color .4s}
+    .fixed-cta-icon svg{width:100%;height:100%}.fixed-cta-link:hover .fixed-cta-icon{color:#93BFFF}
+    .fixed-cta-ring{position:absolute;inset:-18px;animation:spinRing 14s linear infinite}
+    .fixed-cta-ring text{font-family:var(--font-display);font-size:9.2px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;fill:var(--navy);fill-opacity:.4;transition:fill .4s,fill-opacity .4s}
+    .fixed-cta-link:hover .fixed-cta-ring text{fill-opacity:.65}
+    .fixed-cta.on-dark .fixed-cta-link{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 20px rgba(0,0,0,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .fixed-cta.on-dark .fixed-cta-link:hover{border-color:rgba(59,111,232,.5);box-shadow:0 6px 28px rgba(59,111,232,.3);background:rgba(255,255,255,.1)}
+    .fixed-cta.on-dark .fixed-cta-icon{color:var(--blue)}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-icon{color:#93BFFF}
+    .fixed-cta.on-dark .fixed-cta-ring text{fill:#fff;fill-opacity:.4}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-ring text{fill:#fff;fill-opacity:.7}
+
+    /* FOOTER */
+    .footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.06);padding:72px 0 0}
+    .footer-logo{display:block;margin-bottom:48px}.footer-logo img{height:26px;width:auto}
+    .footer-columns{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;margin-bottom:56px}
+    .footer-col-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(107,155,247,.6);margin-bottom:16px}
+    .footer-col a{display:block;font-size:.9rem;font-weight:500;color:rgba(255,255,255,.42);line-height:1.4;margin-bottom:10px;transition:color .2s}
+    .footer-col a:hover{color:#fff}
+    .footer-info{border-top:1px solid rgba(255,255,255,.06);padding:28px 0;font-size:.8125rem;color:rgba(255,255,255,.22);line-height:1.7}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.8125rem;color:rgba(255,255,255,.26)}
+    .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
+    .footer-legal a+a::before{content:' \00B7 '}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}}
+    @media(max-width:600px){.cases-grid{grid-template-columns:1fr}.c-item{border-right:none !important;padding:28px 16px !important}.c-title{font-size:1.25rem;padding-right:48px}.c-desc{padding-right:0}.c-arrow{right:16px;bottom:24px}.cf-label{min-width:auto;width:100%}.cf-btn{font-size:.75rem;padding:8px 16px}}
+    @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
+
+    /* FOOTER V2: logo below columns + mobile accordion */
+    .footer-col-label{display:flex;align-items:center;justify-content:space-between}
+    .footer-col-chevron{display:none;width:16px;height:16px;color:rgba(255,255,255,.3);transition:transform .3s cubic-bezier(.16,1,.3,1);flex-shrink:0}
+    .footer-col.open .footer-col-chevron{transform:rotate(180deg);color:rgba(107,155,247,.6)}
+    .footer-logo{margin-bottom:20px;padding-top:48px;border-top:1px solid rgba(255,255,255,.06)}
+    .footer-info{border-top:none;padding-top:0}
+    @media(max-width:900px){
+      .footer-columns{gap:0}
+      .footer-col{border-bottom:1px solid rgba(255,255,255,.06)}
+      .footer-col:last-child{border-bottom:none}
+      .footer-col-label{cursor:pointer;padding:16px 0;margin-bottom:0}
+      .footer-col-chevron{display:block}
+      .footer-col-links{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+      .footer-col.open .footer-col-links{max-height:500px}
+      .footer-col.open .footer-col-label{margin-bottom:8px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <a href="/" class="nav-logo">
+      <img class="logo-white" src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos">
+      <img class="logo-dark" src="https://www.edos.it/wp-content/uploads/2025/02/logo-edos.png" alt="Edos">
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-ov-geo"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="380" y="60" width="460" height="790" rx="230" stroke="white" stroke-width="1.4"/><rect x="680" y="100" width="420" height="620" rx="200" stroke="white" stroke-width="1.4"/><rect x="1020" y="180" width="340" height="460" rx="170" stroke="white" stroke-width="1.4"/><line x1="440" y1="0" x2="1440" y2="900" stroke="white" stroke-width="1.4"/><line x1="548" y1="0" x2="548" y2="900" stroke="white" stroke-width="1.4"/></svg></div>
+  <div class="nav-ov-top">
+    <a href="/" class="nav-ov-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions"></a>
+    <button class="nav-ov-close" id="navOverlayClose" aria-label="Chiudi menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="nav-ov-body">
+    <nav class="nav-ov-main">
+      <a href="/per-le-agenzie">Per le agenzie</a><a href="/servizi">Servizi</a><a href="/settori">Settori</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a>
+    </nav>
+    <div class="nav-ov-divider"></div>
+    <div class="nav-ov-side">
+      <div class="nav-ov-sub">
+        <div class="nav-ov-sub-label">Servizi</div>
+        <a href="/servizi/web-commerce">Web &amp; Commerce</a><a href="/servizi/app-webapp">App &amp; WebApp</a><a href="/servizi/platform-engineering">Platform Engineering</a><a href="/servizi/ai-integration">AI Integration</a><a href="/servizi/product-design">Product Design</a><a href="/servizi/technical-advisory">Technical Advisory</a><a href="/servizi/cto-as-a-service">CTO as a Service</a><a href="/servizi/continuity-evolution">Continuity &amp; Evolution</a>
+        <div class="nav-ov-cta-block"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+      </div>
+      <div class="nav-ov-sub">
+        <div class="nav-ov-sub-label">Settori</div>
+        <a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/beauty-wellness">Beauty / Wellness</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a><a href="/settori/healthcare-pharma">Healthcare / Pharma</a><a href="/settori/turismo-hospitality">Turismo / Hospitality</a><a href="/settori/automotive-motorsport">Automotive / Motorsport</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="page-hero-noise"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="tag" style="opacity:0;animation:fadeUp .55s ease forwards .2s">Case study</div>
+      <h1>Quello che facciamo, raccontato dai <em>risultati.</em></h1>
+      <p class="page-hero-sub">Dietro ogni progetto c&rsquo;&egrave; un&rsquo;agenzia che aveva una promessa da mantenere al suo cliente. Una scadenza, un budget, un risultato atteso. Noi abbiamo fatto in modo che quella promessa venisse mantenuta &mdash; nei tempi, nel perimetro, senza sorprese.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FILTRI + GRIGLIA -->
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="cases-filters reveal">
+      <div class="cf-row">
+        <span class="cf-label">Per servizio</span>
+        <button class="cf-btn active" data-filter="all">Tutti</button>
+        <button class="cf-btn" data-filter="type:ecommerce">E-commerce</button>
+        <button class="cf-btn" data-filter="type:platform">Piattaforme</button>
+        <button class="cf-btn" data-filter="type:ai">AI</button>
+        <button class="cf-btn" data-filter="type:webapp">Web App</button>
+      </div>
+      <div class="cf-row">
+        <span class="cf-label">Per settore</span>
+        <button class="cf-btn" data-filter="sector:retail">Retail</button>
+        <button class="cf-btn" data-filter="sector:energy">Energy</button>
+        <button class="cf-btn" data-filter="sector:fashion">Fashion</button>
+        <button class="cf-btn" data-filter="sector:tech">Tech</button>
+        <button class="cf-btn" data-filter="sector:health">Health</button>
+        <button class="cf-btn" data-filter="sector:industry">Industry</button>
+        <button class="cf-btn" data-filter="sector:food">Food</button>
+        <button class="cf-btn" data-filter="sector:b2b">B2B</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid full-width -->
+  <div class="cases-grid" id="casesGrid">
+
+    <a href="/case-study/ecommerce-b2b-rete-affiliati" class="c-item reveal-scale" data-type="ecommerce" data-sector="retail">
+      <div class="c-num">01</div>
+      <p class="c-title">E-commerce B2B per rete di 800+ affiliati</p>
+      <p class="c-desc">Piattaforma centralizzata per acquisti e contratti digitali, con gestione catalogo, ordini e fatturazione per l&rsquo;intera rete.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Retail / Franchising</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">E-commerce B2B</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/agente-ai-automazione-preventivi" class="c-item reveal-scale" data-type="ai" data-sector="b2b">
+      <div class="c-num">02</div>
+      <p class="c-title">Agente AI per automazione preventivi</p>
+      <p class="c-desc">Generazione automatica di preventivi personalizzati tramite AI integrata nel flusso commerciale, dal primo contatto alla firma.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">B2B Services</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">AI Agent</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/piattaforma-ordini-gdo" class="c-item reveal-scale" data-type="platform" data-sector="food">
+      <div class="c-num">03</div>
+      <p class="c-title">Piattaforma ordini per catena GDO nazionale</p>
+      <p class="c-desc">Sistema integrato con ERP e logistica in tempo reale per la gestione di centinaia di migliaia di ordini mensili.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Food &amp; Beverage</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">Order Platform</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/ecommerce-headless-brand-luxury" class="c-item reveal-scale" data-type="ecommerce" data-sector="fashion">
+      <div class="c-num">04</div>
+      <p class="c-title">E-commerce headless per brand luxury</p>
+      <p class="c-desc">Architettura headless con esperienza su misura per il mercato luxury. Design premium e performance ottimizzate.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Fashion / Luxury</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">Headless Commerce</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/piattaforma-instantwin-brand-energia" class="c-item reveal-scale" data-type="platform" data-sector="energy">
+      <div class="c-num">05</div>
+      <p class="c-title">Piattaforma InstantWin per brand energia</p>
+      <p class="c-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata dei vincitori e compliance normativa.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Energy / Retail</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">Gamification Platform</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/dashboard-analytics-saas" class="c-item reveal-scale" data-type="webapp" data-sector="tech">
+      <div class="c-num">06</div>
+      <p class="c-title">Dashboard analytics per piattaforma SaaS</p>
+      <p class="c-desc">Pannello di controllo real-time con metriche, reportistica avanzata e oltre 50 integrazioni API.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Technology / SaaS</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">Analytics Dashboard</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/portale-prenotazioni-cliniche" class="c-item reveal-scale" data-type="webapp" data-sector="health">
+      <div class="c-num">07</div>
+      <p class="c-title">Portale prenotazioni per rete cliniche</p>
+      <p class="c-desc">Gestione appuntamenti, referti digitali e comunicazione medico-paziente per una rete di strutture sanitarie.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Healthcare / Pharma</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">Booking Platform</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+    <a href="/case-study/marketplace-b2b-filiera-manifatturiera" class="c-item reveal-scale" data-type="platform" data-sector="industry">
+      <div class="c-num">08</div>
+      <p class="c-title">Marketplace B2B per filiera manifatturiera</p>
+      <p class="c-desc">Piattaforma di sourcing con catalogo digitale e ordini automatizzati che connette oltre 800 aziende della filiera.</p>
+      <div class="c-meta">
+        <div class="c-meta-item">
+          <div class="c-meta-label">Settore</div>
+          <div class="c-meta-value">Industrial / B2B</div>
+        </div>
+        <div class="c-meta-item">
+          <div class="c-meta-label">Servizio</div>
+          <div class="c-meta-value">B2B Marketplace</div>
+        </div>
+      </div>
+      <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+    </a>
+
+  </div>
+
+  <div class="cases-empty" id="casesEmpty">Nessun case study corrisponde ai filtri selezionati.</div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-final">
+  <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2>Hai un progetto <em>simile?</em></h2>
+      <p class="cta-desc">Raccontaci il progetto. Una call di 30 minuti per capire se siamo il partner tecnico giusto per la tua agenzia.</p>
+      <div class="cta-action"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+    </div>
+  </div>
+</section>
+
+<div class="fixed-cta" id="fixedCta">
+  <a href="/contatti" class="fixed-cta-link" aria-label="Prenota un appuntamento">
+    <span class="fixed-cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
+    <svg class="fixed-cta-ring" viewBox="0 0 108 108"><defs><path id="ringPath" d="M54,54 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs><text><textPath href="#ringPath">PRENOTA &middot; APPUNTAMENTO &middot; PRENOTA &middot; APPUNTAMENTO &middot;&nbsp;</textPath></text></svg>
+  </a>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-col-label">Menu<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="footer-col-links"><a href="/per-le-agenzie">Per le agenzie</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a><a href="/faq">FAQ</a></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Servizi<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="footer-col-links"><a href="/servizi/web-commerce">Web &amp; Commerce</a><a href="/servizi/app-webapp">App &amp; WebApp</a><a href="/servizi/platform-engineering">Platform Engineering</a><a href="/servizi/ai-integration">AI Integration</a><a href="/servizi/product-design">Product Design</a><a href="/servizi/technical-advisory">Technical Advisory</a><a href="/servizi/cto-as-a-service">CTO as a Service</a><a href="/servizi/continuity-evolution">Continuity &amp; Evolution</a></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Settori<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="footer-col-links"><a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/beauty-wellness">Beauty / Wellness</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a><a href="/settori/healthcare-pharma">Healthcare / Pharma</a><a href="/settori/turismo-hospitality">Turismo / Hospitality</a><a href="/settori/automotive-motorsport">Automotive / Motorsport</a></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Case study<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="footer-col-links"><a href="/case-study/ecommerce-b2b-rete-affiliati">E-commerce B2B rete affiliati</a><a href="/case-study/agente-ai-automazione-preventivi">Agente AI preventivi</a><a href="/case-study/piattaforma-ordini-gdo">Piattaforma ordini GDO</a><a href="/case-study/ecommerce-headless-brand-luxury">E-commerce headless luxury</a><a href="/case-study/piattaforma-instantwin-brand-energia">Piattaforma InstantWin</a><a href="/case-study/dashboard-analytics-saas">Dashboard analytics SaaS</a><a href="/case-study/portale-prenotazioni-cliniche">Portale prenotazioni cliniche</a><a href="/case-study/marketplace-b2b-filiera-manifatturiera">Marketplace B2B manifatturiero</a></div>
+      </div>
+    </div>
+    <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async"></a>
+    <div class="footer-info">Edos Srl &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>Sede legale: Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI) &mdash; Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)</div>
+    <div class="footer-bottom"><span>&copy; 2026 Edos Digital Solutions</span><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a></div></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var nav=document.getElementById('mainNav');
+  window.addEventListener('scroll',function(){nav.classList[window.scrollY>48?'add':'remove']('scrolled');},{passive:true});
+  var burger=document.getElementById('navHamburger'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navOverlayClose');
+  function openOv(){overlay.classList.add('open');burger.classList.add('open');document.body.style.overflow='hidden';}
+  function closeOv(){overlay.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}
+  burger.addEventListener('click',function(){overlay.classList.contains('open')?closeOv():openOv();});
+  closeBtn.addEventListener('click',closeOv);
+  overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeOv);});
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id==='#')return;var el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}});});
+
+  /* Reveal animations */
+  var revEls=document.querySelectorAll('.reveal,.reveal-scale');var parents=[];
+  revEls.forEach(function(el){var p=el.parentElement;if(!parents.includes(p))parents.push(p);});
+  parents.forEach(function(p){var kids=Array.from(p.querySelectorAll(':scope > .reveal, :scope > .reveal-scale'));kids.forEach(function(k,i){if(!k.style.transitionDelay)k.style.transitionDelay=(i*0.12)+'s';});});
+  if('IntersectionObserver' in window){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});revEls.forEach(function(el){ro.observe(el);});}else{revEls.forEach(function(el){el.classList.add('visible');});}
+
+  /* Case study filters */
+  (function(){
+    var btns=document.querySelectorAll('.cf-btn');
+    var cards=document.querySelectorAll('.c-item');
+    var empty=document.getElementById('casesEmpty');
+    btns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        btns.forEach(function(b){b.classList.remove('active');});
+        btn.classList.add('active');
+        var f=btn.getAttribute('data-filter');
+        var visibleCount=0;
+        cards.forEach(function(card){
+          if(f==='all'){
+            card.hidden=false;
+            visibleCount++;
+          } else {
+            var parts=f.split(':');
+            var key=parts[0];
+            var val=parts[1];
+            var attr=key==='type'?card.getAttribute('data-type'):card.getAttribute('data-sector');
+            var match=attr===val;
+            card.hidden=!match;
+            if(match) visibleCount++;
+          }
+        });
+        if(empty) empty.style.display=visibleCount===0?'block':'none';
+      });
+    });
+  })();
+
+  /* Fixed CTA: show/hide + adaptive color */
+  (function(){
+    var fc=document.getElementById('fixedCta'),hero=document.querySelector('.page-hero');if(!fc)return;var past=false;
+    if('IntersectionObserver' in window){
+      var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===hero)past=!e.isIntersecting;fc.classList[past?'add':'remove']('visible');});},{threshold:0});if(hero)ho.observe(hero);
+      var darks=document.querySelectorAll('.page-hero,.cta-final'),dc=0;
+      var dobs=new IntersectionObserver(function(es){es.forEach(function(e){dc+=e.isIntersecting?1:-1;fc.classList[dc>0?'add':'remove']('on-dark');});},{threshold:0,rootMargin:'0px -60px 0px 0px'});darks.forEach(function(s){dobs.observe(s);});
+    }
+  })();
+
+  /* Footer accordion (mobile) */
+  (function(){
+    var cols=document.querySelectorAll('.footer-col');
+    function initAccordion(){
+      if(window.innerWidth>900){
+        cols.forEach(function(c){c.classList.remove('open')});
+        return;
+      }
+    }
+    cols.forEach(function(col){
+      var label=col.querySelector('.footer-col-label');
+      if(!label) return;
+      label.addEventListener('click',function(){
+        if(window.innerWidth>900) return;
+        var isOpen=col.classList.contains('open');
+        cols.forEach(function(c){c.classList.remove('open')});
+        if(!isOpen) col.classList.add('open');
+      });
+    });
+    window.addEventListener('resize',initAccordion);
+  })();
+})();
+</script>
+</body>
+</html>
