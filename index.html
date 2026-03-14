@@ -115,6 +115,12 @@
     .btn-white  { background:#fff; color:var(--navy); }
     .btn-white:hover { background:var(--blue-pale); color:var(--blue); box-shadow:var(--shadow-md); }
 
+    /* lazy section loading */
+    .lazy-section {
+      content-visibility:auto;
+      contain-intrinsic-size:auto 600px;
+    }
+
     /* reveal */
     .reveal { opacity:0; transform:translateY(36px); filter:blur(5px); transition:opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1), filter .75s cubic-bezier(.16,1,.3,1); }
     .reveal.visible { opacity:1; transform:translateY(0); filter:blur(0); }
@@ -937,19 +943,26 @@
       font-size:.8125rem; font-weight:600;
       color:var(--navy); line-height:1.3;
     }
+    .c-meta-value a {
+      color:inherit; text-decoration:none;
+      border-bottom:1px solid transparent;
+      transition:color .2s, border-color .2s;
+    }
+    .c-meta-value a:hover {
+      color:var(--blue);
+      border-bottom-color:var(--blue);
+    }
 
     /* ── hover arrow ── */
     .c-arrow {
-      position:absolute; right:20px; top:40px;
-      width:36px; height:36px; border-radius:50%;
+      position:absolute; right:24px; bottom:32px;
       display:flex; align-items:center; justify-content:center;
-      background:var(--blue);
-      opacity:0; transform:translateX(-8px);
+      color:var(--blue);
+      opacity:0; transform:translateY(6px);
       transition:opacity .3s cubic-bezier(.16,1,.3,1), transform .3s cubic-bezier(.16,1,.3,1);
-      color:#fff;
     }
-    .c-arrow svg { width:18px; height:18px; }
-    .c-item:hover .c-arrow { opacity:1; transform:translateX(0); }
+    .c-arrow svg { width:28px; height:28px; }
+    .c-item:hover .c-arrow { opacity:1; transform:translateY(0); }
 
     @media(max-width:900px){
       .cases-head { grid-template-columns:1fr; gap:20px; }
@@ -959,7 +972,7 @@
       .c-item { border-right:none !important; padding:28px 16px; }
       .c-title { font-size:1.25rem; padding-right:48px; }
       .c-desc { padding-right:0; }
-      .c-arrow { right:16px; top:28px; }
+      .c-arrow { right:16px; bottom:24px; }
     }
 
     /* ====================================================
@@ -1261,7 +1274,7 @@
 
 
 <!-- ===================== SERVIZI ===================== -->
-<section class="servizi section-pad" id="servizi">
+<section class="servizi section-pad lazy-section" id="servizi">
   <div class="container">
 
     <div class="servizi-head reveal">
@@ -1464,7 +1477,7 @@
 
 
 <!-- ===================== PARTNERFLOW ===================== -->
-<section class="partnerflow section-pad" id="metodo">
+<section class="partnerflow section-pad lazy-section" id="metodo">
   <div class="container">
     <div class="pf-header reveal">
       <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui<br>gestiamo ogni progetto.</p>
@@ -1500,7 +1513,7 @@
 </section>
 
 <!-- ===================== SETTORI ===================== -->
-<section class="settori section-pad" id="settori">
+<section class="settori section-pad lazy-section" id="settori">
   <div class="container">
     <div class="settori-head">
       <h2 class="reveal">Conosciamo le regole<br>del tuo settore.</h2>
@@ -1589,7 +1602,7 @@
 </section>
 
 <!-- ===================== CASE STUDY ===================== -->
-<section class="cases section-pad" id="chi-siamo">
+<section class="cases section-pad lazy-section" id="chi-siamo">
   <div class="container">
     <div class="cases-head">
       <h2 class="reveal">Quello che facciamo,<br>raccontato dai risultati.</h2>
@@ -1629,11 +1642,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Retail / Franchising</div>
+            <div class="c-meta-value"><a href="/settori/retail">Retail / Franchising</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">E-commerce B2B</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/ecommerce">E-commerce B2B</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1646,11 +1659,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">B2B Services</div>
+            <div class="c-meta-value"><a href="/settori/b2b">B2B Services</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">AI Agent</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/ai">AI Agent</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1663,11 +1676,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Food &amp; Beverage</div>
+            <div class="c-meta-value"><a href="/settori/food">Food &amp; Beverage</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">Order Platform</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/piattaforme">Order Platform</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1680,11 +1693,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Fashion / Luxury</div>
+            <div class="c-meta-value"><a href="/settori/fashion">Fashion / Luxury</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">Headless Commerce</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/ecommerce">Headless Commerce</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1697,11 +1710,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Energy / Retail</div>
+            <div class="c-meta-value"><a href="/settori/energy">Energy / Retail</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">Gamification Platform</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/piattaforme">Gamification Platform</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1714,11 +1727,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Technology / SaaS</div>
+            <div class="c-meta-value"><a href="/settori/tech">Technology / SaaS</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">Analytics Dashboard</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/webapp">Analytics Dashboard</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1731,11 +1744,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Healthcare / Pharma</div>
+            <div class="c-meta-value"><a href="/settori/health">Healthcare / Pharma</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">Booking Platform</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/webapp">Booking Platform</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1748,11 +1761,11 @@
         <div class="c-meta">
           <div class="c-meta-item">
             <div class="c-meta-label">Settore</div>
-            <div class="c-meta-value">Industrial / B2B</div>
+            <div class="c-meta-value"><a href="/settori/industry">Industrial / B2B</a></div>
           </div>
           <div class="c-meta-item">
-            <div class="c-meta-label">Prodotto</div>
-            <div class="c-meta-value">B2B Marketplace</div>
+            <div class="c-meta-label">Servizio</div>
+            <div class="c-meta-value"><a href="/servizi/piattaforme">B2B Marketplace</a></div>
           </div>
         </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
@@ -1763,7 +1776,7 @@
 </section>
 
 <!-- ===================== CTA FINALE ===================== -->
-<section class="cta-final section-pad" id="contatti">
+<section class="cta-final section-pad lazy-section" id="contatti">
   <div class="container">
     <span class="tag reveal" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Inizia da qui</span>
     <h2 class="reveal">Parliamo del tuo<br>prossimo progetto?</h2>
@@ -1778,7 +1791,7 @@
   <div class="container">
     <div class="footer-top">
       <a href="#" class="footer-logo">
-        <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions">
+        <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async">
       </a>
       <nav class="footer-nav">
         <a href="#agenzie">Per le agenzie</a>
