@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
+
     :root{--navy:#060E22;--navy-mid:#0D1B3E;--navy-card:#111F45;--blue:#3B6FE8;--blue-hover:#2557D6;--blue-pale:#EEF3FF;--white:#FFFFFF;--off-white:#F7F8FC;--surface:#F2F4F9;--text:#0D1B3E;--text-body:#374165;--text-muted:#6B7A99;--border:rgba(13,27,62,0.08);--border-s:rgba(13,27,62,0.14);--shadow-sm:0 2px 10px rgba(13,27,62,0.07);--shadow-md:0 8px 28px rgba(13,27,62,0.11);--shadow-lg:0 20px 56px rgba(13,27,62,0.15);--font:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Plus Jakarta Sans","Inter",sans-serif;--r:14px}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -23,14 +24,7 @@
     @keyframes shimmer{0%{opacity:.4}50%{opacity:.9}100%{opacity:.4}}
     @keyframes spinRing{to{transform:rotate(360deg)}}
     .container{max-width:1160px;margin:0 auto;padding:0 28px}.section-pad{padding:96px 0}
-    .tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.18);border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:22px}
-    .tag::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
-    .tag-link{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.04em;transition:background .2s,border-color .2s}
-    .tag-sector{background:rgba(59,111,232,.08);border:1px solid rgba(59,111,232,.15);color:var(--blue)}
-    .tag-sector:hover{background:rgba(59,111,232,.15);border-color:rgba(59,111,232,.3)}
-    .tag-service{background:rgba(13,27,62,.05);border:1px solid rgba(13,27,62,.1);color:var(--text)}
-    .tag-service:hover{background:rgba(13,27,62,.1);border-color:rgba(13,27,62,.18)}
-    .btn-pill{display:inline-flex;align-items:center;gap:18px;padding:5px 28px 5px 5px;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;color:#fff;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:border-color .2s,background .2s}
+.btn-pill{display:inline-flex;align-items:center;gap:18px;padding:5px 28px 5px 5px;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;color:#fff;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:border-color .2s,background .2s}
     .btn-pill:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.05)}
     .btn-pill-circle{width:46px;height:46px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
     .btn-pill:hover .btn-pill-circle{background:var(--blue)}
@@ -68,6 +62,8 @@
     .nav-ov-sub a{display:block;font-size:1rem;font-weight:500;color:rgba(255,255,255,.42);margin-bottom:10px;transition:color .18s}
     .nav-ov-sub a:hover{color:#fff}
     .nav-ov-cta-block{margin-top:20px}.nav-ov-cta-block .btn-pill{font-size:.65rem;padding:4px 24px 4px 4px}.nav-ov-cta-block .btn-pill-circle{width:38px;height:38px}.nav-ov-cta-block .btn-pill-circle svg{width:16px;height:16px}
+
+    /* ===== HERO — no number, compact ===== */
     .cs-hero{position:relative;background:var(--navy);padding:180px 0 100px;overflow:hidden;color:#fff}
     .cs-hero .blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
     .cs-hero .blob-1{width:700px;height:700px;top:-15%;right:-12%;background:radial-gradient(circle,rgba(59,111,232,.22) 0%,transparent 65%);animation:blobA 14s ease-in-out infinite}
@@ -75,40 +71,66 @@
     .cs-hero-noise{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
     .cs-hero .container{position:relative;z-index:2}
     .cs-hero-inner{max-width:800px}
-    .cs-hero-num{font-family:var(--font-display);font-size:clamp(4rem,8vw,6rem);font-weight:800;color:rgba(107,155,247,.15);line-height:1;letter-spacing:-.04em;margin-bottom:8px;opacity:0;animation:fadeUp .6s ease forwards .1s}
-    .cs-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.75rem);font-weight:800;line-height:1.08;color:#fff;margin-bottom:28px;letter-spacing:-.03em;opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards .2s}
-    .cs-hero-tags{display:flex;flex-wrap:wrap;gap:10px;opacity:0;animation:fadeUp .7s ease forwards .35s}
-    .section-title{font-family:var(--font-display);font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin:0 0 20px}
-    .section-title strong{font-weight:700}
-    .section-label{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .cs-hero h1{font-family:var(--font-display);font-size:clamp(2.2rem,4.5vw,3.75rem);font-weight:800;line-height:1.08;color:#fff;margin-bottom:24px;letter-spacing:-.03em;opacity:0;animation:heroLine .8s cubic-bezier(.16,1,.3,1) forwards .15s}
+    .cs-hero-lead{font-size:clamp(1rem,1.4vw,1.1875rem);color:rgba(255,255,255,.55);line-height:1.7;max-width:620px;margin-bottom:32px;opacity:0;animation:fadeUp .7s ease forwards .3s}
+    .cs-hero-meta{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;opacity:0;animation:fadeUp .7s ease forwards .4s;padding-top:8px;border-top:1px solid rgba(255,255,255,.1)}
+    .cs-hero-meta-item{display:flex;flex-direction:column;gap:6px}
+    .cs-hero-meta-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+    .cs-hero-meta-value{font-size:1rem;font-weight:600;color:#fff}
+    .cs-hero-meta-value a{color:#fff;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+    .cs-hero-meta-value a:hover{color:#93BFFF}
+
+    /* ===== EDITORIAL BODY ===== */
+    .section-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px}
     .section-label::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
-    .overview-text{font-size:1.1875rem;color:var(--text-body);line-height:1.78;max-width:720px}
-    .overview-nda{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:10px 18px;background:rgba(59,111,232,.05);border:1px solid rgba(59,111,232,.12);border-radius:10px;font-size:.8125rem;color:var(--text-muted);line-height:1.5}
-    .overview-nda svg{width:16px;height:16px;flex-shrink:0;color:var(--blue)}
-    .ps-section{max-width:720px}
-    .ps-text{font-size:1.0625rem;color:var(--text-body);line-height:1.78}
-    .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
-    .res-card{padding:32px 24px;border:1px solid var(--border-s);border-radius:var(--r);background:var(--white);text-align:center;transition:border-color .3s,box-shadow .3s,transform .3s}
-    .res-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .res-num{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:800;color:var(--blue);letter-spacing:-.03em;line-height:1.1;margin-bottom:8px}
-    .res-card p{font-size:.9rem;color:var(--text-muted);line-height:1.5;margin:0}
-    .stack-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .stack-tag{display:inline-flex;align-items:center;padding:8px 18px;background:var(--off-white);border:1px solid var(--border-s);border-radius:100px;font-size:.8125rem;font-weight:600;color:var(--text);letter-spacing:.02em;transition:border-color .2s,background .2s}
-    .stack-tag:hover{border-color:rgba(59,111,232,.2);background:var(--blue-pale)}
-    .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-    .rel-card{display:block;padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s}
-    .rel-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .rel-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 6px;display:flex;align-items:center;gap:8px;transition:color .2s}
-    .rel-card:hover h4{color:var(--blue)}
-    .rel-card h4 svg{width:18px;height:18px;flex-shrink:0;color:var(--blue);transition:transform .3s}.rel-card:hover h4 svg{transform:translateX(4px)}
-    .rel-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin:0}
-    .ocs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-    .ocs-card{display:block;padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s}
-    .ocs-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .ocs-num{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:rgba(59,111,232,.2);letter-spacing:-.03em;margin-bottom:12px}
-    .ocs-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 12px;line-height:1.3;transition:color .2s}
-    .ocs-card:hover h4{color:var(--blue)}
-    .ocs-meta span{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+
+    /* Editorial: full-width blocks with prominent headings */
+    .ed-block{max-width:780px}
+    .ed-block + .ed-block{margin-top:80px}
+    .ed-heading{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.75rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--text);margin:0 0 24px}
+    .ed-heading span{font-weight:300}
+    .ed-text{font-size:1.0625rem;color:var(--text-body);line-height:1.85}
+
+    /* ===== RESULTS — white grid with icon+text ===== */
+    .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:40px}
+    .res-card{display:flex;flex-direction:column;gap:12px;padding:28px 0;border-top:2px solid var(--border-s)}
+    .res-card-icon{width:40px;height:40px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center}
+    .res-card-icon svg{width:20px;height:20px;color:var(--blue)}
+    .res-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text);margin:0;letter-spacing:-.01em;line-height:1.3}
+    .res-card p{font-size:.8125rem;color:var(--text-muted);line-height:1.55;margin:0}
+
+    /* ===== STACK + SERVICES — combined bottom bar ===== */
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:80px;padding-top:48px;border-top:1px solid var(--border)}
+    .detail-col-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+    .detail-col-label::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+    .stack-list{display:flex;flex-direction:column;gap:0}
+    .stack-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+    .stack-item:last-child{border-bottom:none}
+    .stack-item-icon{width:36px;height:36px;border-radius:10px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .stack-item-icon svg{width:18px;height:18px;color:var(--blue)}
+    .stack-item-name{font-size:.9375rem;font-weight:600;color:var(--text)}
+    .svc-list{display:flex;flex-direction:column;gap:0}
+    .svc-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);transition:padding-left .2s}
+    .svc-item:last-child{border-bottom:none}
+    .svc-item:hover{padding-left:8px}
+    .svc-item span{font-family:var(--font-display);font-size:.9375rem;font-weight:600;color:var(--text);transition:color .2s}
+    .svc-item:hover span{color:var(--blue)}
+    .svc-item svg{width:16px;height:16px;color:var(--text-muted);flex-shrink:0;transition:transform .3s,color .3s}
+    .svc-item:hover svg{transform:translateX(3px);color:var(--blue)}
+
+    /* ===== OTHER CASES — 3-column grid ===== */
+    .ocs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+    .ocs-item{display:flex;flex-direction:column;gap:16px;padding:32px 0;border-top:2px solid var(--border-s);transition:border-color .3s}
+    .ocs-item:hover{border-color:var(--blue)}
+    .ocs-item h4{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin:0;line-height:1.3;transition:color .2s}
+    .ocs-item:hover h4{color:var(--blue)}
+    .ocs-item p{font-size:.875rem;color:var(--text-muted);line-height:1.6;margin:0}
+    .ocs-item-meta span{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+    .ocs-item-arrow{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-top:auto;transition:gap .3s}
+    .ocs-item:hover .ocs-item-arrow{gap:10px}
+    .ocs-item-arrow svg{width:16px;height:16px}
+
+    /* ===== CTA ===== */
     .cta-final{background:var(--navy);color:#fff;padding:clamp(80px,12vw,140px) 0;position:relative;overflow:hidden}
     .cta-final::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
     .cta-blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
@@ -121,6 +143,8 @@
     .cta-final .cta-desc{font-size:clamp(.9375rem,1.3vw,1.0625rem);color:rgba(255,255,255,.5);line-height:1.7;margin:0 0 40px;max-width:560px}
     .cta-final .cta-action .btn-pill{font-size:1rem;padding:6px 32px 6px 6px}
     .cta-final .cta-action .btn-pill .btn-pill-circle{width:52px;height:52px}
+
+    /* ===== FIXED CTA ===== */
     .fixed-cta{position:fixed;right:28px;bottom:32px;z-index:90;opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.16,1,.3,1)}
     .fixed-cta.visible{opacity:1;pointer-events:auto}
     .fixed-cta-link{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;position:relative;text-decoration:none;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .4s,border-color .4s;background:var(--navy);border:1px solid rgba(6,14,34,.08);box-shadow:0 4px 20px rgba(6,14,34,.12)}
@@ -134,26 +158,28 @@
     .fixed-cta.on-dark .fixed-cta-link:hover{border-color:rgba(59,111,232,.5);box-shadow:0 6px 28px rgba(59,111,232,.3);background:rgba(255,255,255,.1)}
     .fixed-cta.on-dark .fixed-cta-icon{color:var(--blue)}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-icon{color:#93BFFF}
     .fixed-cta.on-dark .fixed-cta-ring text{fill:#fff;fill-opacity:.4}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-ring text{fill:#fff;fill-opacity:.7}
+
+    /* ===== FOOTER ===== */
     .footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.06);padding:72px 0 0}
-    .footer-logo{display:block;margin-bottom:48px}.footer-logo img{height:26px;width:auto}
+    .footer-logo{display:block;margin-bottom:20px;padding-top:48px;border-top:1px solid rgba(255,255,255,.06)}.footer-logo img{height:26px;width:auto}
     .footer-columns{display:grid;grid-template-columns:repeat(4,1fr);gap:48px;margin-bottom:56px}
-    .footer-col-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(107,155,247,.6);margin-bottom:16px}
+    .footer-col-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(107,155,247,.6);margin-bottom:16px;display:flex;align-items:center;justify-content:space-between}
     .footer-col a{display:block;font-size:.9rem;font-weight:500;color:rgba(255,255,255,.42);line-height:1.4;margin-bottom:10px;transition:color .2s}
     .footer-col a:hover{color:#fff}
-    .footer-info{border-top:1px solid rgba(255,255,255,.06);padding:28px 0;font-size:.8125rem;color:rgba(255,255,255,.22);line-height:1.7}
+    .footer-info{padding:28px 0;font-size:.8125rem;color:rgba(255,255,255,.22);line-height:1.7}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:24px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.8125rem;color:rgba(255,255,255,.26)}
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.rel-grid{grid-template-columns:1fr}.ocs-grid{grid-template-columns:1fr}.res-grid{grid-template-columns:repeat(2,1fr)}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.cs-hero{padding:140px 0 72px}.res-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.ocs-grid{grid-template-columns:1fr}}
-    @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
-    .footer-col-label{display:flex;align-items:center;justify-content:space-between}
     .footer-col-chevron{display:none;width:16px;height:16px;color:rgba(255,255,255,.3);transition:transform .3s cubic-bezier(.16,1,.3,1);flex-shrink:0}
     .footer-col.open .footer-col-chevron{transform:rotate(180deg);color:rgba(107,155,247,.6)}
-    .footer-logo{margin-bottom:20px;padding-top:48px;border-top:1px solid rgba(255,255,255,.06)}
-    .footer-info{border-top:none;padding-top:0}
+
+    /* ===== RESPONSIVE ===== */
     @media(max-width:900px){
-      .footer-columns{gap:0}
+      .nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}
+      .res-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+      .detail-grid{grid-template-columns:1fr;gap:40px}
+      .ocs-grid{grid-template-columns:1fr}
+      .footer-columns{grid-template-columns:1fr;gap:0}
       .footer-col{border-bottom:1px solid rgba(255,255,255,.06)}
       .footer-col:last-child{border-bottom:none}
       .footer-col-label{cursor:pointer;padding:16px 0;margin-bottom:0}
@@ -161,8 +187,15 @@
       .footer-col-links{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
       .footer-col.open .footer-col-links{max-height:500px}
       .footer-col.open .footer-col-label{margin-bottom:8px}
+      .footer-bottom{flex-direction:column;text-align:center}
     }
-  </style>
+    @media(max-width:640px){
+      .section-pad{padding:64px 0}.cs-hero{padding:140px 0 72px}
+      .res-grid{grid-template-columns:1fr}
+      .cs-hero-meta{gap:20px}
+    }
+    @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
+    </style>
 </head>
 <body>
 
@@ -199,143 +232,136 @@
       </div>
     </div>
   </div>
-</div>
 
-<!-- 1. HERO -->
+<!-- HERO -->
 <section class="cs-hero">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="cs-hero-noise"></div>
   <div class="container">
     <div class="cs-hero-inner">
-      <div class="cs-hero-num">20</div>
       <h1>Marketplace B2B filiera manifatturiera</h1>
-      <div class="cs-hero-tags">
-        <a href="/settori/industrial-manifatturiero-b2b" class="tag-link tag-sector">Industrial / B2B</a>
-        <a href="/servizi/platform-engineering" class="tag-link tag-service">Platform Engineering</a>
+      <p class="cs-hero-lead">Marketplace B2B con catalogo digitale centralizzato, sistema ordini automatizzato e tracking in tempo reale.</p>
+      <div class="cs-hero-meta">
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Cliente</span>
+          <span class="cs-hero-meta-value"><a href="#">Cliente</a></span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Settore</span>
+          <span class="cs-hero-meta-value"><a href="/settori/industrial-manifatturiero-b2b">Industrial / B2B</a></span>
+        </div>
+        <div class="cs-hero-meta-item">
+          <span class="cs-hero-meta-label">Servizio</span>
+          <span class="cs-hero-meta-value"><a href="/servizi/platform-engineering">Platform Engineering</a></span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. OVERVIEW -->
+<!-- CORPO EDITORIALE -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <div class="section-label">Overview</div>
-      <p class="overview-text">Marketplace B2B con catalogo digitale centralizzato, sistema ordini automatizzato e tracking in tempo reale.</p>
-      <div class="overview-nda">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        Progetto realizzato per agenzia partner. Il nome del cliente finale &egrave; coperto da NDA.
+
+    <!-- Problema -->
+    <div class="ed-block reveal">
+      <h2 class="ed-heading">La situazione <span>di partenza</span></h2>
+      <p class="ed-text">Filiera manifatturiera con processi di sourcing frammentati, cataloghi cartacei, ordini via email e fax, nessuna visibilit&agrave; sullo stato degli ordini in tempo reale.</p>
+      <div class="overview-nda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Progetto realizzato per agenzia partner. Il nome del cliente finale &egrave; coperto da NDA.</div>
+    </div>
+
+    <!-- Soluzione -->
+    <div class="ed-block reveal">
+      <h2 class="ed-heading">Cosa abbiamo <span>costruito</span></h2>
+      <p class="ed-text">Marketplace B2B con catalogo digitale centralizzato, sistema ordini automatizzato, tracking in tempo reale e integrazione con i sistemi gestionali delle aziende.</p>
+    </div>
+
+    <!-- Risultati -->
+    <div class="ed-block reveal">
+      <h2 class="ed-heading">Cosa abbiamo <span>ottenuto</span></h2>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h4>800+</h4>
+          <p>Aziende della filiera connesse</p>
+        </div>
+        <div class="res-card">
+          <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+          <h4>Zero</h4>
+          <p>Processi cartacei eliminati</p>
+        </div>
+        <div class="res-card">
+          <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <h4>-80%</h4>
+          <p>Tempi di ordine ridotti</p>
+        </div>
+        <div class="res-card">
+          <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h4>Real-time</h4>
+          <p>Visibilit&agrave; su ogni ordine</p>
+        </div>
       </div>
     </div>
+
+    <!-- Stack + Servizi -->
+    <div class="detail-grid reveal">
+      <div>
+        <div class="detail-col-label">Stack tecnologico</div>
+        <div class="stack-list">
+          <div class="stack-item">
+            <div class="stack-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <span class="stack-item-name">Custom marketplace</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <span class="stack-item-name">ERP integrations</span>
+          </div>
+          <div class="stack-item">
+            <div class="stack-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+            <span class="stack-item-name">AWS</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="detail-col-label">Servizi coinvolti</div>
+        <div class="svc-list">
+          <a href="/servizi/platform-engineering" class="svc-item"><span>Platform Engineering</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+          <a href="/servizi/technical-advisory" class="svc-item"><span>Technical Advisory</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+          <a href="/servizi/web-commerce" class="svc-item"><span>Web &amp; Commerce</span><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- 3. IL PROBLEMA -->
+<!-- ALTRI CASE STUDY -->
 <section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="ps-section reveal">
-      <div class="section-label">Il problema</div>
-      <h2 class="section-title">La situazione <strong>di partenza</strong></h2>
-      <p class="ps-text">Filiera manifatturiera con processi di sourcing frammentati, cataloghi cartacei, ordini via email e fax, nessuna visibilit&agrave; sullo stato degli ordini in tempo reale.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 4. LA SOLUZIONE -->
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="ps-section reveal">
-      <div class="section-label">La soluzione</div>
-      <h2 class="section-title">Cosa abbiamo <strong>costruito</strong></h2>
-      <p class="ps-text">Marketplace B2B con catalogo digitale centralizzato, sistema ordini automatizzato, tracking in tempo reale e integrazione con i sistemi gestionali delle aziende.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 5. RISULTATI -->
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Risultati</div>
-      <h2 class="section-title">I numeri del <strong>progetto</strong></h2>
-    </div>
-    <div class="res-grid">
-      <div class="res-card reveal">
-        <div class="res-num">800+</div>
-        <p>Aziende della filiera connesse</p>
-      </div>
-      <div class="res-card reveal">
-        <div class="res-num">Zero</div>
-        <p>Processi cartacei eliminati</p>
-      </div>
-      <div class="res-card reveal">
-        <div class="res-num">-80%</div>
-        <p>Tempi di ordine ridotti</p>
-      </div>
-      <div class="res-card reveal">
-        <div class="res-num">Real-time</div>
-        <p>Visibilit&agrave; su ogni ordine</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. STACK TECNOLOGICO -->
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Stack tecnologico</div>
-      <h2 class="section-title">Le tecnologie <strong>utilizzate</strong></h2>
-      <div class="stack-grid">
-        <span class="stack-tag">Custom marketplace</span><span class="stack-tag">ERP integrations</span><span class="stack-tag">AWS</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. SERVIZI UTILIZZATI -->
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Servizi</div>
-      <h2 class="section-title">Servizi Edos <strong>coinvolti</strong></h2>
-    </div>
-    <div class="rel-grid">
-      <a href="/servizi/platform-engineering" class="rel-card reveal"><h4>Platform Engineering <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>Architetture scalabili e integrazioni</p></a>
-      <a href="/servizi/technical-advisory" class="rel-card reveal"><h4>Technical Advisory <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>Consulenza tecnica e strategica</p></a>
-      <a href="/servizi/web-commerce" class="rel-card reveal"><h4>Web &amp; Commerce <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>Siti, e-commerce e piattaforme di vendita</p></a>
-    </div>
-  </div>
-</section>
-
-<!-- 8. ALTRI CASE STUDY -->
-<section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
       <div class="section-label">Esplora</div>
-      <h2 class="section-title">Altri <strong>case study</strong></h2>
+      <h2 class="ed-heading">Altri <span>case study</span></h2>
     </div>
     <div class="ocs-grid">
-      <a href="/case-study/piattaforma-ai-automazione-preventivi" class="ocs-card reveal">
-        <div class="ocs-num">05</div>
+      <a href="/case-study/piattaforma-ai-automazione-preventivi" class="ocs-item reveal">
         <h4>Piattaforma AI per automazione preventivi</h4>
-        <div class="ocs-meta"><span>Industrial / Manifatturiero B2B</span></div>
+        <div class="ocs-item-meta"><span>Industrial / Manifatturiero B2B</span></div>
+        <div class="ocs-item-arrow">Leggi <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
-      <a href="/case-study/rag-agentico-analisi-documentazione" class="ocs-card reveal">
-        <div class="ocs-num">08</div>
+      <a href="/case-study/rag-agentico-analisi-documentazione" class="ocs-item reveal">
         <h4>RAG Agentico per analisi documentazione</h4>
-        <div class="ocs-meta"><span>Industrial / B2B</span></div>
+        <div class="ocs-item-meta"><span>Industrial / B2B</span></div>
+        <div class="ocs-item-arrow">Leggi <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
-      <a href="/case-study/piattaforma-web-orchestra" class="ocs-card reveal">
-        <div class="ocs-num">01</div>
+      <a href="/case-study/piattaforma-web-orchestra" class="ocs-item reveal">
         <h4>Piattaforma web Orchestra</h4>
-        <div class="ocs-meta"><span>Technology / SaaS</span></div>
+        <div class="ocs-item-meta"><span>Technology / SaaS</span></div>
+        <div class="ocs-item-arrow">Leggi <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- 9. CTA -->
+<!-- CTA -->
 <section class="cta-final">
   <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
   <div class="container">
@@ -401,7 +427,6 @@
   var darks=document.querySelectorAll('.cs-hero,.cta-final'),dc=0;
   var dobs=new IntersectionObserver(function(es){es.forEach(function(e){dc+=e.isIntersecting?1:-1;fc.classList[dc>0?'add':'remove']('on-dark');});},{threshold:0,rootMargin:'0px -60px 0px 0px'});darks.forEach(function(s){dobs.observe(s);});}})();
 })();
-  /* ---- FOOTER ACCORDION (mobile) ---- */
   (function(){
     var cols=document.querySelectorAll('.footer-col');
     function initAccordion(){
