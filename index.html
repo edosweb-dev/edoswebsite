@@ -881,12 +881,14 @@
     /* vertical divider between columns */
     .c-item:nth-child(odd) {
       border-right:1px solid var(--border-s);
-      padding-right:40px; padding-left:0;
+      padding-right:40px; padding-left:15px;
     }
     .c-item:nth-child(even) {
-      padding-left:40px; padding-right:0;
+      padding-left:calc(40px + 15px); padding-right:15px;
     }
-    .c-item:hover { background:var(--off-white); }
+    .c-item:hover {
+      background:rgba(59,111,232,.04);
+    }
     .c-item[hidden] { display:none; }
 
     /* badges */
@@ -938,9 +940,9 @@
     }
     @media(max-width:700px){
       .cases-grid { grid-template-columns:1fr; }
-      .c-item:nth-child(odd) { border-right:none; padding-right:0; }
-      .c-item:nth-child(even) { padding-left:0; }
-      .c-item { padding:24px 0; }
+      .c-item:nth-child(odd) { border-right:none; padding-right:15px; }
+      .c-item:nth-child(even) { padding-left:15px; }
+      .c-item { padding:24px 15px; }
       .c-arrow { right:0; bottom:24px; }
     }
 
