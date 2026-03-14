@@ -425,8 +425,7 @@
       return res.json();
     })
     .then(function(){
-      form.style.display='none';
-      successDiv.classList.add('visible');
+      window.location.href='/contatti/grazie';
     })
     .catch(function(err){
       errorBanner.textContent='Si \u00e8 verificato un errore nell\'invio del messaggio. Riprova o scrivici a info@edos.it.';
