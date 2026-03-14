@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food &amp; Beverage / GDO &middot; Edos Digital Solutions</title>
-  <meta name="description" content="Soluzioni digitali per il settore food & beverage e GDO: gestionali ordini, e-commerce B2B, portali per reti distributive. Partner tecnico per agenzie.">
+  <title>Contatti &middot; Edos Digital Solutions</title>
+  <meta name="description" content="Contattaci per parlare del tuo progetto. Form diretto, risposta entro 24 ore lavorative. Oppure prenota una call di 30 minuti.">
   <link rel="icon" type="image/jpeg" href="https://www.edos.it/wp-content/uploads/2025/02/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
-    :root{--navy:#060E22;--navy-mid:#0D1B3E;--navy-card:#111F45;--blue:#3B6FE8;--blue-hover:#2557D6;--blue-pale:#EEF3FF;--white:#FFFFFF;--off-white:#F7F8FC;--surface:#F2F4F9;--text:#0D1B3E;--text-body:#374165;--text-muted:#6B7A99;--border:rgba(13,27,62,0.08);--border-s:rgba(13,27,62,0.14);--shadow-sm:0 2px 10px rgba(13,27,62,0.07);--shadow-md:0 8px 28px rgba(13,27,62,0.11);--shadow-lg:0 20px 56px rgba(13,27,62,0.15);--font:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Plus Jakarta Sans","Inter",sans-serif;--r:14px}
+    :root{--navy:#060E22;--navy-mid:#0D1B3E;--navy-card:#111F45;--blue:#3B6FE8;--blue-hover:#2557D6;--blue-pale:#EEF3FF;--white:#FFFFFF;--off-white:#F7F8FC;--surface:#F2F4F9;--text:#0D1B3E;--text-body:#374165;--text-muted:#6B7A99;--border:rgba(13,27,62,0.08);--border-s:rgba(13,27,62,0.14);--shadow-sm:0 2px 10px rgba(13,27,62,0.07);--shadow-md:0 8px 28px rgba(13,27,62,0.11);--shadow-lg:0 20px 56px rgba(13,27,62,0.15);--font:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--font-display:"Plus Jakarta Sans","Inter",sans-serif;--r:14px;--red:#E53E3E;--green:#38A169}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{font-family:var(--font);font-size:16px;line-height:1.7;color:var(--text-body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -22,6 +22,7 @@
     @keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.06)}66%{transform:translate(-25px,25px) scale(.96)}}
     @keyframes shimmer{0%{opacity:.4}50%{opacity:.9}100%{opacity:.4}}
     @keyframes spinRing{to{transform:rotate(360deg)}}
+    @keyframes checkPop{0%{transform:scale(0)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
     .container{max-width:1160px;margin:0 auto;padding:0 28px}.section-pad{padding:96px 0}
     .tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.18);border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:22px}
     .tag::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
@@ -80,45 +81,60 @@
     /* SECTION COMMON */
     .section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;letter-spacing:-.025em;margin:0 0 20px}
     .section-title strong{font-weight:700}
-    .section-desc{font-size:1.0625rem;color:var(--text-muted);line-height:1.78;max-width:640px;margin:0 0 48px}
 
-    /* INTRO */
-    .intro-text{font-size:1.125rem;color:var(--text-body);line-height:1.78;max-width:720px;margin:0 0 0}
+    /* CONTACT LAYOUT */
+    .contact-layout{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
 
-    /* CHALLENGES */
-    .ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-    .ch-card{padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);background:var(--white);transition:border-color .3s,box-shadow .3s,transform .3s}
-    .ch-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .ch-icon{width:44px;height:44px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-    .ch-icon svg{width:22px;height:22px;color:var(--blue)}
-    .ch-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3}
-    .ch-card p{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0}
+    /* FORM */
+    .contact-form{display:flex;flex-direction:column;gap:24px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .form-label{font-size:.8125rem;font-weight:600;color:var(--text);letter-spacing:.02em}
+    .form-label .optional{font-weight:400;color:var(--text-muted);margin-left:4px}
+    .form-input,.form-textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border-s);border-radius:10px;font-family:var(--font);font-size:.9375rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none}
+    .form-input::placeholder,.form-textarea::placeholder{color:var(--text-muted);opacity:.6}
+    .form-input:focus,.form-textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,111,232,.1)}
+    .form-input.error,.form-textarea.error{border-color:var(--red)}
+    .form-error{font-size:.75rem;color:var(--red);min-height:0;overflow:hidden;transition:all .2s}
+    .form-textarea{resize:vertical;min-height:140px}
+    .form-submit{display:inline-flex;align-items:center;gap:12px;padding:14px 32px;background:var(--blue);color:#fff;border:none;border-radius:100px;font-family:var(--font-display);font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+    .form-submit:hover{background:var(--blue-hover);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+    .form-submit:active{transform:translateY(0)}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .form-submit svg{width:18px;height:18px;flex-shrink:0}
+    .form-submit .spinner{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spinRing .6s linear infinite}
+    .form-submit.loading .spinner{display:block}
+    .form-submit.loading .submit-icon{display:none}
+    .form-submit.loading{pointer-events:none}
+    .form-note{font-size:.8125rem;color:var(--text-muted);margin-top:-8px}
 
-    /* COME LAVORIAMO */
-    .cl-section{background:var(--navy-mid);position:relative;overflow:hidden}
-    .cl-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
-    .cl-section .container{position:relative;z-index:1}
-    .cl-section .section-title{color:#fff}.cl-section .section-title strong{color:#6B9BF7}
-    .cl-text{font-size:1.0625rem;color:rgba(255,255,255,.48);line-height:1.78;max-width:640px;margin:0 0 36px}
+    /* SUCCESS STATE */
+    .form-success{display:none;flex-direction:column;align-items:center;text-align:center;padding:48px 24px;gap:20px}
+    .form-success.visible{display:flex}
+    .form-success-icon{width:64px;height:64px;border-radius:50%;background:rgba(56,161,105,.1);display:flex;align-items:center;justify-content:center;animation:checkPop .4s cubic-bezier(.16,1,.3,1) forwards}
+    .form-success-icon svg{width:32px;height:32px;color:var(--green)}
+    .form-success h3{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--navy);margin:0}
+    .form-success p{font-size:1rem;color:var(--text-muted);margin:0;max-width:400px;line-height:1.6}
 
-    /* SERVIZI RILEVANTI */
-    .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-    .rel-card{display:block;padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s}
-    .rel-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .rel-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 6px;display:flex;align-items:center;gap:8px;transition:color .2s}
-    .rel-card:hover h4{color:var(--blue)}
-    .rel-card h4 svg{width:18px;height:18px;flex-shrink:0;color:var(--blue);transition:transform .3s}.rel-card:hover h4 svg{transform:translateX(4px)}
-    .rel-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin:0}
+    /* ERROR BANNER */
+    .form-error-banner{display:none;padding:14px 18px;background:rgba(229,62,62,.06);border:1px solid rgba(229,62,62,.2);border-radius:10px;font-size:.875rem;color:var(--red);line-height:1.5}
+    .form-error-banner.visible{display:block}
 
-    /* CASE STUDY */
-    .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
-    .cs-card{padding:36px 32px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s;cursor:pointer}
-    .cs-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .cs-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3;transition:color .2s}
-    .cs-card:hover .cs-card-title{color:var(--blue)}
-    .cs-card-desc{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0 0 20px}
-    .cs-card-meta{border-top:1px solid var(--border);padding-top:14px}
-    .cs-card-meta span{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+    /* SIDEBAR */
+    .contact-sidebar{display:flex;flex-direction:column;gap:32px}
+    .sidebar-card{padding:28px 24px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s}
+    .sidebar-card:hover{border-color:rgba(59,111,232,.2);box-shadow:var(--shadow-sm)}
+    .sidebar-label{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .sidebar-label svg{width:16px;height:16px}
+    .sidebar-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3}
+    .sidebar-card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;margin:0}
+    .sidebar-card p+p{margin-top:8px}
+    .sidebar-cta{margin-top:18px}
+    .sidebar-cta a{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--blue);color:#fff;border-radius:100px;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,transform .2s}
+    .sidebar-cta a:hover{background:var(--blue-hover);transform:translateY(-1px)}
+    .sidebar-cta a svg{width:16px;height:16px}
+    .sidebar-info{font-size:.8125rem;color:var(--text-muted);line-height:1.7}
+    .sidebar-info strong{color:var(--text);font-weight:600}
 
     /* CTA */
     .cta-final{background:var(--navy);color:#fff;padding:clamp(80px,12vw,140px) 0;position:relative;overflow:hidden}
@@ -134,21 +150,6 @@
     .cta-final .cta-action .btn-pill{font-size:1rem;padding:6px 32px 6px 6px}
     .cta-final .cta-action .btn-pill .btn-pill-circle{width:52px;height:52px}
 
-    /* FIXED CTA */
-    .fixed-cta{position:fixed;right:28px;bottom:32px;z-index:90;opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.16,1,.3,1)}
-    .fixed-cta.visible{opacity:1;pointer-events:auto}
-    .fixed-cta-link{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;position:relative;text-decoration:none;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,background .4s,border-color .4s;background:var(--navy);border:1px solid rgba(6,14,34,.08);box-shadow:0 4px 20px rgba(6,14,34,.12)}
-    .fixed-cta-link:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(59,111,232,.25);border-color:rgba(59,111,232,.3)}
-    .fixed-cta-icon{display:flex;align-items:center;justify-content:center;width:26px;height:26px;color:var(--blue);transition:color .4s}
-    .fixed-cta-icon svg{width:100%;height:100%}.fixed-cta-link:hover .fixed-cta-icon{color:#93BFFF}
-    .fixed-cta-ring{position:absolute;inset:-18px;animation:spinRing 14s linear infinite}
-    .fixed-cta-ring text{font-family:var(--font-display);font-size:9.2px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;fill:var(--navy);fill-opacity:.4;transition:fill .4s,fill-opacity .4s}
-    .fixed-cta-link:hover .fixed-cta-ring text{fill-opacity:.65}
-    .fixed-cta.on-dark .fixed-cta-link{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 20px rgba(0,0,0,.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-    .fixed-cta.on-dark .fixed-cta-link:hover{border-color:rgba(59,111,232,.5);box-shadow:0 6px 28px rgba(59,111,232,.3);background:rgba(255,255,255,.1)}
-    .fixed-cta.on-dark .fixed-cta-icon{color:var(--blue)}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-icon{color:#93BFFF}
-    .fixed-cta.on-dark .fixed-cta-ring text{fill:#fff;fill-opacity:.4}.fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-ring text{fill:#fff;fill-opacity:.7}
-
     /* FOOTER */
     .footer{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.06);padding:72px 0 0}
     .footer-logo{display:block;margin-bottom:48px}.footer-logo img{height:26px;width:auto}
@@ -162,9 +163,8 @@
     .footer-legal a+a::before{content:' \00B7 '}
 
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
-    @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.contact-layout{grid-template-columns:1fr;gap:48px}.form-row{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}}
   </style>
 </head>
 <body>
@@ -208,126 +208,126 @@
   </div>
 </div>
 
-<!-- 1. HERO -->
+<!-- HERO -->
 <section class="page-hero">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="page-hero-noise"></div>
   <div class="container">
     <div class="page-hero-inner">
-      <div class="tag" style="opacity:0;animation:fadeUp .55s ease forwards .2s">Settore</div>
-      <h1>Food &amp; Beverage / <em>GDO</em></h1>
-      <p class="page-hero-sub">Dal gestionale ordini all&rsquo;e-commerce B2B per la distribuzione.</p>
+      <div class="tag" style="opacity:0;animation:fadeUp .55s ease forwards .2s">Contatti</div>
+      <h1><em>Parliamo.</em></h1>
+      <p class="page-hero-sub">Che tu abbia un progetto in mente o voglia semplicemente capire se possiamo lavorare insieme, siamo qui.</p>
     </div>
   </div>
 </section>
 
-<!-- 2. INTRO SETTORE -->
+<!-- FORM + SIDEBAR -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <span class="tag">Il settore</span>
-      <p class="intro-text">Il settore food &amp; beverage e la GDO hanno esigenze digitali complesse &mdash; volumi alti, integrazioni con ERP e logistica, portali B2B per reti di distribuzione e franchising. Le agenzie che lavorano in questo settore hanno bisogno di un partner tecnico che conosca queste dinamiche.</p>
+    <div class="contact-layout">
+
+      <!-- FORM -->
+      <div class="reveal">
+        <span class="tag">Scrivici</span>
+        <h2 class="section-title" style="margin-bottom:36px">Raccontaci il tuo <strong>progetto</strong></h2>
+
+        <div class="form-error-banner" id="formErrorBanner"></div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Nome e cognome</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Mario Rossi" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agency">Nome agenzia</label>
+              <input class="form-input" type="text" id="agency" name="agency" placeholder="La tua agenzia" required>
+              <span class="form-error" id="agencyError"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="mario@agenzia.it" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Telefono <span class="optional">(opzionale)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="+39 333 123 4567">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Messaggio</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Raccontaci il progetto o cosa stai cercando" required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <div>
+            <button type="submit" class="form-submit" id="submitBtn">
+              <span class="spinner"></span>
+              <svg class="submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Invia messaggio
+            </button>
+          </div>
+          <p class="form-note">Ti risponderemo entro 24 ore lavorative.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Messaggio inviato</h3>
+          <p>Grazie per averci scritto. Ti risponderemo entro 24 ore lavorative.</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="contact-sidebar">
+        <div class="sidebar-card reveal">
+          <div class="sidebar-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Prenota una call
+          </div>
+          <h4>Preferisci parlare direttamente?</h4>
+          <p>Prenota una call di 30 minuti. Nessun impegno, solo una conversazione per capire se possiamo lavorare insieme.</p>
+          <div class="sidebar-cta">
+            <a href="https://calendly.com/edos" target="_blank" rel="noopener">
+              <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5"/></svg>
+              Prenota un appuntamento
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card reveal">
+          <div class="sidebar-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Informazioni aziendali
+          </div>
+          <div class="sidebar-info">
+            <p><strong>Edos Srl</strong></p>
+            <p>P.IVA 14030760962<br>C.C.I.A.A. Milano REA MI 2758088</p>
+            <p style="margin-top:14px"><strong>Sede legale</strong><br>Piazzetta Umberto Giordano, 2<br>20122 Milano (MI)</p>
+            <p style="margin-top:14px"><strong>Sede operativa</strong><br>Via Giovanni Gioacchino Winckelmann, 1<br>20146 Milano (MI)</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- 3. LE SFIDE DIGITALI -->
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <span class="tag">Le sfide</span>
-      <h2 class="section-title">Le sfide digitali del settore <strong>Food &amp; Beverage / GDO</strong></h2>
-    </div>
-    <div class="ch-grid">
-      <div class="ch-card reveal">
-        <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
-        <h4>Gestione ordini su larga scala</h4>
-        <p>Piattaforme che gestiscono volumi elevati di ordini con integrazioni in tempo reale verso sistemi logistici e di magazzino.</p>
-      </div>
-      <div class="ch-card reveal">
-        <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M7 4v6H4"/><path d="M17 14v6h-3"/><path d="M10 7h4"/><path d="M10 17h4"/></svg></div>
-        <h4>Integrazione con sistemi logistici</h4>
-        <p>Connessione fluida con ERP, WMS e sistemi di tracciamento per garantire una filiera digitale senza interruzioni.</p>
-      </div>
-      <div class="ch-card reveal">
-        <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h4>Portali per reti distributive e franchising</h4>
-        <p>E-commerce B2B e portali dedicati per reti di affiliati, con gestione catalogo, listini personalizzati e ordini ricorrenti.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. COME LAVORIAMO -->
-<section class="cl-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il nostro approccio</span>
-      <h2 class="section-title">Come lavoriamo nel settore <strong>Food &amp; Beverage</strong></h2>
-      <p class="cl-text">Conosciamo le dinamiche del food &amp; beverage e della GDO perch&eacute; ci lavoriamo da anni. Sappiamo che ogni integrazione deve funzionare al primo colpo, che i volumi non aspettano e che la rete distributiva ha bisogno di strumenti semplici ma potenti. Lavoriamo fianco a fianco con la tua agenzia per costruire soluzioni che reggono la complessit&agrave; di questo settore.</p>
-      <a href="/per-le-agenzie#partnerflow" class="btn-pill">
-        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Scopri PartnerFlow&trade;</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- 5. SERVIZI RILEVANTI -->
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <span class="tag">Servizi</span>
-      <h2 class="section-title">Servizi pi&ugrave; rilevanti per <strong>Food &amp; Beverage / GDO</strong></h2>
-    </div>
-    <div class="rel-grid">
-      <a href="/servizi/platform-engineering" class="rel-card reveal"><h4>Platform Engineering <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>Piattaforme custom per gestire volumi e integrazioni complesse</p></a>
-      <a href="/servizi/web-commerce" class="rel-card reveal"><h4>Web &amp; Commerce <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>E-commerce B2B e portali per reti distributive</p></a>
-      <a href="/servizi/app-webapp" class="rel-card reveal"><h4>App &amp; WebApp <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h4><p>Applicazioni per la gestione ordini e la rete vendita</p></a>
-    </div>
-  </div>
-</section>
-
-<!-- 6. CASE STUDY -->
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <span class="tag">Case study</span>
-      <h2 class="section-title">Progetti nel settore <strong>Food &amp; Beverage / GDO</strong></h2>
-    </div>
-    <div class="cs-grid">
-      <div class="cs-card reveal">
-        <p class="cs-card-title">Piattaforma ordini GDO nazionale</p>
-        <p class="cs-card-desc">Sistema centralizzato per la gestione ordini di una rete GDO nazionale, con integrazioni ERP e logistica in tempo reale.</p>
-        <div class="cs-card-meta"><span>Food &amp; Beverage / GDO</span></div>
-      </div>
-      <div class="cs-card reveal">
-        <p class="cs-card-title">E-commerce B2B rete affiliati</p>
-        <p class="cs-card-desc">Portale B2B per una rete di oltre 800 affiliati con catalogo personalizzato, listini dedicati e gestione ordini ricorrenti.</p>
-        <div class="cs-card-meta"><span>Food &amp; Beverage / GDO</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. CTA -->
+<!-- CTA FINALE -->
 <section class="cta-final">
   <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <h2>Hai un cliente nel settore<br><em>Food &amp; Beverage / GDO?</em></h2>
-      <p class="cta-desc">Raccontaci il progetto. Una call di 30 minuti per capire se siamo il partner tecnico giusto per la tua agenzia.</p>
-      <div class="cta-action"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+      <h2>Le migliori collaborazioni<br>iniziano da una <em>conversazione.</em></h2>
+      <p class="cta-desc">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto.</p>
+      <div class="cta-action"><a href="mailto:info@edos.it" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>info@edos.it</span></a></div>
     </div>
   </div>
 </section>
 
-<div class="fixed-cta" id="fixedCta">
-  <a href="/#contatti" class="fixed-cta-link" aria-label="Prenota un appuntamento">
-    <span class="fixed-cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span>
-    <svg class="fixed-cta-ring" viewBox="0 0 108 108"><defs><path id="ringPath" d="M54,54 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs><text><textPath href="#ringPath">PRENOTA &middot; APPUNTAMENTO &middot; PRENOTA &middot; APPUNTAMENTO &middot;&nbsp;</textPath></text></svg>
-  </a>
-</div>
-
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos" loading="lazy"></a>
@@ -345,6 +345,8 @@
 <script>
 (function(){
   'use strict';
+
+  /* ── Nav ── */
   var nav=document.getElementById('mainNav');
   window.addEventListener('scroll',function(){nav.classList[window.scrollY>48?'add':'remove']('scrolled');},{passive:true});
   var burger=document.getElementById('navHamburger'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navOverlayClose');
@@ -353,15 +355,86 @@
   burger.addEventListener('click',function(){overlay.classList.contains('open')?closeOv():openOv();});
   closeBtn.addEventListener('click',closeOv);
   overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeOv);});
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id==='#')return;var el=document.querySelector(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}});});
+
+  /* ── Reveal ── */
   var revEls=document.querySelectorAll('.reveal');var parents=[];
   revEls.forEach(function(el){var p=el.parentElement;if(!parents.includes(p))parents.push(p);});
   parents.forEach(function(p){var kids=Array.from(p.querySelectorAll(':scope > .reveal'));kids.forEach(function(k,i){if(!k.style.transitionDelay)k.style.transitionDelay=(i*0.12)+'s';});});
   if('IntersectionObserver' in window){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});revEls.forEach(function(el){ro.observe(el);});}else{revEls.forEach(function(el){el.classList.add('visible');});}
-  (function(){var fc=document.getElementById('fixedCta'),hero=document.querySelector('.page-hero');if(!fc)return;var past=false;
-  if('IntersectionObserver' in window){var ho=new IntersectionObserver(function(es){es.forEach(function(e){if(e.target===hero)past=!e.isIntersecting;fc.classList[past?'add':'remove']('visible');});},{threshold:0});if(hero)ho.observe(hero);
-  var darks=document.querySelectorAll('.page-hero,.cl-section,.cta-final'),dc=0;
-  var dobs=new IntersectionObserver(function(es){es.forEach(function(e){dc+=e.isIntersecting?1:-1;fc.classList[dc>0?'add':'remove']('on-dark');});},{threshold:0,rootMargin:'0px -60px 0px 0px'});darks.forEach(function(s){dobs.observe(s);});}})();
+
+  /* ── Contact Form ── */
+  var form=document.getElementById('contactForm');
+  var submitBtn=document.getElementById('submitBtn');
+  var errorBanner=document.getElementById('formErrorBanner');
+  var successDiv=document.getElementById('formSuccess');
+
+  var fields={
+    name:{el:document.getElementById('name'),err:document.getElementById('nameError'),msg:'Inserisci il tuo nome'},
+    agency:{el:document.getElementById('agency'),err:document.getElementById('agencyError'),msg:'Inserisci il nome della tua agenzia'},
+    email:{el:document.getElementById('email'),err:document.getElementById('emailError'),msg:'Inserisci un indirizzo email valido'},
+    message:{el:document.getElementById('message'),err:document.getElementById('messageError'),msg:'Scrivi un messaggio'}
+  };
+
+  function validateField(key){
+    var f=fields[key];
+    var val=f.el.value.trim();
+    var valid=true;
+    if(!val){valid=false;}
+    if(key==='email'&&val&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){valid=false;}
+    f.el.classList[valid?'remove':'add']('error');
+    f.err.textContent=valid?'':f.msg;
+    return valid;
+  }
+
+  Object.keys(fields).forEach(function(key){
+    fields[key].el.addEventListener('blur',function(){validateField(key);});
+    fields[key].el.addEventListener('input',function(){
+      if(this.classList.contains('error'))validateField(key);
+    });
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    errorBanner.classList.remove('visible');
+    errorBanner.textContent='';
+
+    var allValid=true;
+    Object.keys(fields).forEach(function(key){
+      if(!validateField(key))allValid=false;
+    });
+    if(!allValid)return;
+
+    submitBtn.classList.add('loading');
+    submitBtn.disabled=true;
+
+    var data={
+      name:fields.name.el.value.trim(),
+      agency:fields.agency.el.value.trim(),
+      email:fields.email.el.value.trim(),
+      phone:document.getElementById('phone').value.trim(),
+      message:fields.message.el.value.trim()
+    };
+
+    fetch('/api/contact',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    })
+    .then(function(res){
+      if(!res.ok)throw new Error('Errore nell\'invio');
+      return res.json();
+    })
+    .then(function(){
+      form.style.display='none';
+      successDiv.classList.add('visible');
+    })
+    .catch(function(err){
+      errorBanner.textContent='Si \u00e8 verificato un errore nell\'invio del messaggio. Riprova o scrivici a info@edos.it.';
+      errorBanner.classList.add('visible');
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled=false;
+    });
+  });
 })();
 </script>
 </body>
