@@ -1010,36 +1010,17 @@
        CTA FINALE
     ==================================================== */
     .cta-final {
-      background:linear-gradient(135deg, var(--navy) 0%, #0D1B3E 40%, #112554 100%);
-      background-size:200% 200%;
-      animation:gradientShift 12s ease infinite;
+      background:var(--navy);
       color:#fff;
-      position:relative; overflow:hidden;
-      padding:64px 0;
+      padding:40px 0;
     }
-    .cta-final::before {
-      content:''; position:absolute; inset:0; pointer-events:none;
-      background-image:radial-gradient(rgba(59,111,232,.18) 1px,transparent 1px);
-      background-size:40px 40px;
-    }
-    .cta-final::after {
-      content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-      width:700px; height:700px; border-radius:50%; pointer-events:none;
-      background:radial-gradient(circle,rgba(59,111,232,.22) 0%,transparent 65%);
-      animation:subtleFloat 6s ease-in-out infinite;
-    }
-    .cta-final .container { position:relative; z-index:2; }
-    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:48px; }
-    .cta-final .cta-content { flex:1; text-align:left; }
+    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:32px; }
+    .cta-final h2 { font-size:clamp(1.25rem,2.5vw,1.75rem); color:#fff; margin:0; line-height:1.35; font-weight:600; }
     .cta-final .cta-action { flex-shrink:0; }
-    .cta-final h2 { font-size:clamp(1.75rem,3.5vw,2.75rem); color:#fff; margin-bottom:16px; line-height:1.25; }
-    .cta-final .cta-content p { font-size:1.0625rem; color:rgba(255,255,255,.55); max-width:520px; margin:0; }
-    .cta-final .btn-pill { font-size:1.0625rem; }
+    .cta-final .cta-action .btn { padding:14px 32px; font-size:.9375rem; background:#fff; color:var(--navy); border-radius:10px; font-weight:600; }
+    .cta-final .cta-action .btn:hover { background:var(--blue-pale); color:var(--blue); box-shadow:0 6px 24px rgba(59,111,232,.25); transform:translateY(-2px); }
     @media(max-width:768px){
-      .cta-final { padding:48px 0; }
-      .cta-final .cta-row { flex-direction:column; text-align:center; gap:32px; }
-      .cta-final .cta-content { text-align:center; }
-      .cta-final .cta-content p { margin:0 auto; }
+      .cta-final .cta-row { flex-direction:column; text-align:center; gap:24px; }
     }
 
     /* ====================================================
@@ -1823,19 +1804,9 @@
 <section class="cta-final lazy-section" id="contatti">
   <div class="container">
     <div class="cta-row">
-      <div class="cta-content">
-        <h2 class="reveal">Le migliori collaborazioni<br>iniziano da una conversazione.</h2>
-        <p class="reveal">Lavoriamo con agenzie che cercano una collaborazione stabile, non solo qualcuno a cui passare un brief.</p>
-      </div>
+      <h2 class="reveal">Le migliori collaborazioni iniziano da una conversazione.</h2>
       <div class="cta-action">
-        <a href="mailto:info@edos.it" class="btn-pill reveal">
-          <span class="btn-pill-circle">
-            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          Prenota un appuntamento
-        </a>
+        <a href="mailto:info@edos.it" class="btn reveal">Prenota un appuntamento</a>
       </div>
     </div>
   </div>
