@@ -1014,13 +1014,14 @@
       color:#fff;
       padding:40px 0;
     }
-    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:32px; }
-    .cta-final h2 { font-size:clamp(1.25rem,2.5vw,1.75rem); color:#fff; margin:0; line-height:1.35; font-weight:600; }
+    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:40px; }
+    .cta-final .cta-content { flex:1; }
+    .cta-final h2 { font-size:clamp(1.25rem,2.5vw,1.75rem); color:#fff; margin:0 0 10px; line-height:1.35; font-weight:600; }
+    .cta-final .cta-content p { font-size:.9375rem; color:rgba(255,255,255,.5); margin:0; max-width:480px; }
     .cta-final .cta-action { flex-shrink:0; }
-    .cta-final .cta-action .btn { padding:14px 32px; font-size:.9375rem; background:#fff; color:var(--navy); border-radius:10px; font-weight:600; }
-    .cta-final .cta-action .btn:hover { background:var(--blue-pale); color:var(--blue); box-shadow:0 6px 24px rgba(59,111,232,.25); transform:translateY(-2px); }
     @media(max-width:768px){
       .cta-final .cta-row { flex-direction:column; text-align:center; gap:24px; }
+      .cta-final .cta-content p { margin:0 auto; }
     }
 
     /* ====================================================
@@ -1804,9 +1805,19 @@
 <section class="cta-final lazy-section" id="contatti">
   <div class="container">
     <div class="cta-row">
-      <h2 class="reveal">Le migliori collaborazioni iniziano da una conversazione.</h2>
+      <div class="cta-content">
+        <h2 class="reveal">Le migliori collaborazioni iniziano da una conversazione.</h2>
+        <p class="reveal">Lavoriamo con agenzie che cercano una collaborazione stabile, non solo qualcuno a cui passare un brief.</p>
+      </div>
       <div class="cta-action">
-        <a href="mailto:info@edos.it" class="btn reveal">Prenota un appuntamento</a>
+        <a href="mailto:info@edos.it" class="btn-pill reveal">
+          <span class="btn-pill-circle">
+            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Prenota un appuntamento
+        </a>
       </div>
     </div>
   </div>
