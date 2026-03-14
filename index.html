@@ -1013,8 +1013,9 @@
       background:linear-gradient(135deg, var(--navy) 0%, #0D1B3E 40%, #112554 100%);
       background-size:200% 200%;
       animation:gradientShift 12s ease infinite;
-      color:#fff; text-align:center;
+      color:#fff;
       position:relative; overflow:hidden;
+      padding:64px 0;
     }
     .cta-final::before {
       content:''; position:absolute; inset:0; pointer-events:none;
@@ -1028,10 +1029,19 @@
       animation:subtleFloat 6s ease-in-out infinite;
     }
     .cta-final .container { position:relative; z-index:2; }
-    .cta-final h2 { font-size:clamp(2rem,4vw,3.25rem); color:#fff; margin-bottom:16px; }
-    .cta-final > .container > p { font-size:1.0625rem; color:rgba(255,255,255,.55); max-width:460px; margin:0 auto 40px; }
-    .cta-final .btn { padding:18px 44px; font-size:1rem; }
-    .cta-reply { margin-top:20px; font-size:.8125rem; color:rgba(255,255,255,.28); }
+    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:48px; }
+    .cta-final .cta-content { flex:1; text-align:left; }
+    .cta-final .cta-action { flex-shrink:0; }
+    .cta-final h2 { font-size:clamp(1.75rem,3.5vw,2.75rem); color:#fff; margin-bottom:16px; line-height:1.25; }
+    .cta-final .cta-content p { font-size:1.0625rem; color:rgba(255,255,255,.55); max-width:520px; margin:0; }
+    .cta-final .btn-cta-large { display:inline-flex; align-items:center; justify-content:center; padding:22px 52px; font-size:1.125rem; font-weight:600; border-radius:14px; background:#fff; color:var(--navy); text-decoration:none; transition:all .3s ease; white-space:nowrap; }
+    .cta-final .btn-cta-large:hover { background:var(--blue-pale); color:var(--blue); box-shadow:0 8px 32px rgba(59,111,232,.25); transform:translateY(-2px); }
+    @media(max-width:768px){
+      .cta-final { padding:48px 0; }
+      .cta-final .cta-row { flex-direction:column; text-align:center; gap:32px; }
+      .cta-final .cta-content { text-align:center; }
+      .cta-final .cta-content p { margin:0 auto; }
+    }
 
     /* ====================================================
        FOOTER
@@ -1640,7 +1650,7 @@
   <div class="container">
     <div class="cases-head">
       <h2 class="reveal">Quello che facciamo<br>raccontato dai risultati.</h2>
-      <p class="reveal">Dietro ogni case study c&rsquo;&egrave; un&rsquo;agenzia che aveva una promessa da mantenere al suo cliente. Una scadenza, un budget, un risultato atteso. Noi abbiamo fatto in modo che quella promessa venisse mantenuta nei tempi, nel perimetro, senza sorprese.</p>
+      <p class="reveal">Dietro ogni progetto c&rsquo;&egrave; un&rsquo;agenzia che aveva una promessa da mantenere al suo cliente. Una scadenza, un budget, un risultato atteso. Noi abbiamo fatto in modo che quella promessa venisse mantenuta nei tempi, nel perimetro, senza sorprese.</p>
     </div>
 
     <!-- Filtri su due righe -->
@@ -1811,13 +1821,18 @@
 </section>
 
 <!-- ===================== CTA FINALE ===================== -->
-<section class="cta-final section-pad lazy-section" id="contatti">
+<section class="cta-final lazy-section" id="contatti">
   <div class="container">
-    <span class="tag reveal" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Inizia da qui</span>
-    <h2 class="reveal">Parliamo del tuo<br>prossimo progetto?</h2>
-    <p class="reveal">Nessun impegno, nessuna presentazione infinita.<br>Una call di 30 minuti per capire se possiamo lavorare insieme.</p>
-    <a href="mailto:info@edos.it" class="btn btn-white reveal">Prenota una call conoscitiva</a>
-    <p class="cta-reply reveal">Rispondiamo entro 24 ore lavorative.</p>
+    <div class="cta-row">
+      <div class="cta-content">
+        <span class="tag reveal" style="background:rgba(59,111,232,.12);border-color:rgba(59,111,232,.2);color:#6B9BF7;">Inizia da qui</span>
+        <h2 class="reveal">Le migliori collaborazioni<br>iniziano da una conversazione.</h2>
+        <p class="reveal">Lavoriamo con agenzie che cercano una collaborazione stabile, non solo qualcuno a cui passare un brief.</p>
+      </div>
+      <div class="cta-action">
+        <a href="mailto:info@edos.it" class="btn-cta-large reveal">Entriamo in contatto</a>
+      </div>
+    </div>
   </div>
 </section>
 
