@@ -367,27 +367,10 @@
   </div>
 </footer>
 
+<script src="/js/main.js" defer></script>
 <script>
+/* ── Contact Form ── */
 (function(){
-  'use strict';
-
-  /* ── Nav ── */
-  var nav=document.getElementById('mainNav');
-  window.addEventListener('scroll',function(){nav.classList[window.scrollY>48?'add':'remove']('scrolled');},{passive:true});
-  var burger=document.getElementById('navHamburger'),overlay=document.getElementById('navOverlay'),closeBtn=document.getElementById('navOverlayClose');
-  function openOv(){overlay.classList.add('open');burger.classList.add('open');document.body.style.overflow='hidden';}
-  function closeOv(){overlay.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}
-  burger.addEventListener('click',function(){overlay.classList.contains('open')?closeOv():openOv();});
-  closeBtn.addEventListener('click',closeOv);
-  overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeOv);});
-
-  /* ── Reveal ── */
-  var revEls=document.querySelectorAll('.reveal');var parents=[];
-  revEls.forEach(function(el){var p=el.parentElement;if(!parents.includes(p))parents.push(p);});
-  parents.forEach(function(p){var kids=Array.from(p.querySelectorAll(':scope > .reveal'));kids.forEach(function(k,i){if(!k.style.transitionDelay)k.style.transitionDelay=(i*0.12)+'s';});});
-  if('IntersectionObserver' in window){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});revEls.forEach(function(el){ro.observe(el);});}else{revEls.forEach(function(el){el.classList.add('visible');});}
-
-  /* ── Contact Form ── */
   var form=document.getElementById('contactForm');
   var submitBtn=document.getElementById('submitBtn');
   var errorBanner=document.getElementById('formErrorBanner');
@@ -460,28 +443,6 @@
     });
   });
 })();
-
-  /* ---- FOOTER ACCORDION (mobile) ---- */
-  (function(){
-    var cols=document.querySelectorAll('.footer-col');
-    function initAccordion(){
-      if(window.innerWidth>900){
-        cols.forEach(function(c){c.classList.remove('open')});
-        return;
-      }
-    }
-    cols.forEach(function(col){
-      var label=col.querySelector('.footer-col-label');
-      if(!label) return;
-      label.addEventListener('click',function(){
-        if(window.innerWidth>900) return;
-        var isOpen=col.classList.contains('open');
-        cols.forEach(function(c){c.classList.remove('open')});
-        if(!isOpen) col.classList.add('open');
-      });
-    });
-    window.addEventListener('resize',initAccordion);
-  })();
 </script>
 </body>
 </html>

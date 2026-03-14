@@ -969,140 +969,21 @@
   </div>
 </footer>
 
+<script src="/js/main.js" defer></script>
 <script>
-(function(){
-  'use strict';
-
-  /* ---- NAV: scroll state ---- */
-  var nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', function(){
-    nav.classList[window.scrollY > 48 ? 'add' : 'remove']('scrolled');
-  }, {passive:true});
-
-  /* ---- NAV: fullscreen overlay ---- */
-  var burger  = document.getElementById('navHamburger');
-  var overlay = document.getElementById('navOverlay');
-  var closeBtn = document.getElementById('navOverlayClose');
-
-  function openOverlay(){
-    overlay.classList.add('open');
-    burger.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeOverlay(){
-    overlay.classList.remove('open');
-    burger.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  burger.addEventListener('click', function(){
-    overlay.classList.contains('open') ? closeOverlay() : openOverlay();
-  });
-  closeBtn.addEventListener('click', closeOverlay);
-  overlay.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', closeOverlay);
-  });
-
-  /* ---- Smooth scroll ---- */
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = this.getAttribute('href');
-      if(id === '#') return;
-      var el = document.querySelector(id);
-      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+/* ---- FAQ ACCORDION (per-section) ---- */
+document.querySelectorAll('.faq-accordion').forEach(function(accordion){
+  var items = accordion.querySelectorAll('.faq-item');
+  items.forEach(function(item){
+    var btn = item.querySelector('.faq-btn');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      items.forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen) item.classList.add('open');
     });
   });
-
-  /* ---- Scroll reveal ---- */
-  var revEls = document.querySelectorAll('.reveal');
-  var parents = [];
-  revEls.forEach(function(el){
-    var p = el.parentElement;
-    if(!parents.includes(p)) parents.push(p);
-  });
-  parents.forEach(function(p){
-    var kids = Array.from(p.querySelectorAll(':scope > .reveal'));
-    kids.forEach(function(k, i){
-      if(!k.style.transitionDelay) k.style.transitionDelay = (i * 0.12) + 's';
-    });
-  });
-  if('IntersectionObserver' in window){
-    var revObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); }
-      });
-    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
-    revEls.forEach(function(el){ revObs.observe(el); });
-  } else {
-    revEls.forEach(function(el){ el.classList.add('visible'); });
-  }
-
-  /* ---- FAQ ACCORDION (per-section) ---- */
-  document.querySelectorAll('.faq-accordion').forEach(function(accordion){
-    var items = accordion.querySelectorAll('.faq-item');
-    items.forEach(function(item){
-      var btn = item.querySelector('.faq-btn');
-      if(!btn) return;
-      btn.addEventListener('click', function(){
-        var isOpen = item.classList.contains('open');
-        items.forEach(function(i){ i.classList.remove('open'); });
-        if(!isOpen) item.classList.add('open');
-      });
-    });
-  });
-
-  /* ---- FIXED SIDE CTA: show/hide + adaptive color ---- */
-  (function(){
-    var fixedCta = document.getElementById('fixedCta');
-    var hero = document.querySelector('.page-hero');
-    if(!fixedCta) return;
-
-    var pastHero = false;
-
-    if('IntersectionObserver' in window){
-      var heroObs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.target === hero) pastHero = !e.isIntersecting;
-          fixedCta.classList[pastHero ? 'add' : 'remove']('visible');
-        });
-      }, {threshold:0});
-      if(hero) heroObs.observe(hero);
-
-      /* dark section detection */
-      var darkSections = document.querySelectorAll('.page-hero, .cta-final');
-      var onDarkCount = 0;
-      var darkObs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          onDarkCount += e.isIntersecting ? 1 : -1;
-          fixedCta.classList[onDarkCount > 0 ? 'add' : 'remove']('on-dark');
-        });
-      }, {threshold:0, rootMargin:'0px -60px 0px 0px'});
-      darkSections.forEach(function(s){ darkObs.observe(s); });
-    }
-  })();
-
-})();
-
-  /* ---- FOOTER ACCORDION (mobile) ---- */
-  (function(){
-    var cols=document.querySelectorAll('.footer-col');
-    function initAccordion(){
-      if(window.innerWidth>900){
-        cols.forEach(function(c){c.classList.remove('open')});
-        return;
-      }
-    }
-    cols.forEach(function(col){
-      var label=col.querySelector('.footer-col-label');
-      if(!label) return;
-      label.addEventListener('click',function(){
-        if(window.innerWidth>900) return;
-        var isOpen=col.classList.contains('open');
-        cols.forEach(function(c){c.classList.remove('open')});
-        if(!isOpen) col.classList.add('open');
-      });
-    });
-    window.addEventListener('resize',initAccordion);
-  })();
+});
 </script>
 
 </body>
