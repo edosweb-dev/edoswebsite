@@ -731,80 +731,73 @@
     .settori-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
     .settori-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* settori grid — tech style */
-    .settori-grid {
-      display:grid; grid-template-columns:repeat(5,1fr);
+    /* two-column accordion layout */
+    .settori-columns {
+      display:grid; grid-template-columns:1fr 1fr; gap:0 64px;
       width:100%;
-      border-top:1px solid var(--border-s);
     }
-    .s-cell {
-      display:flex; flex-direction:column;
-      padding:36px 32px;
-      border-right:1px solid var(--border-s);
+    .s-col-title {
+      font-family:var(--font-display);
+      font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--blue); margin:0 0 12px; padding:0 0 12px;
+    }
+    .s-list { list-style:none; margin:0; padding:0; }
+
+    /* single row */
+    .s-row {
+      display:flex; align-items:center; gap:16px;
+      padding:18px 0;
       border-bottom:1px solid var(--border-s);
       cursor:pointer;
-      position:relative;
-      overflow:hidden;
-      transition:background .3s;
+      transition:background .2s;
+      text-decoration:none; color:inherit;
     }
-    .s-cell:nth-child(5n) { border-right:none; }
-
-    /* top accent line — slides in on hover */
-    .s-cell::before {
-      content:''; position:absolute; top:0; left:0;
-      width:0; height:2px;
-      background:linear-gradient(90deg,var(--blue),rgba(59,111,232,.3));
-      transition:width .4s cubic-bezier(.16,1,.3,1);
-    }
-    .s-cell:hover::before { width:100%; }
-    .s-cell:hover { background:rgba(59,111,232,.03); }
+    .s-row:first-child { border-top:1px solid var(--border-s); }
+    .s-row:hover { background:rgba(59,111,232,.03); }
 
     /* icon */
     .s-icon {
-      width:36px; height:36px; margin-bottom:20px;
-      color:var(--blue); opacity:.7;
-      transition:opacity .3s, transform .3s cubic-bezier(.16,1,.3,1);
+      width:40px; height:40px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(59,111,232,.08); border-radius:10px;
+      color:var(--blue);
+      transition:background .3s, transform .3s cubic-bezier(.16,1,.3,1);
     }
-    .s-icon svg { width:36px; height:36px; stroke-width:1.5; }
-    .s-cell:hover .s-icon { opacity:1; transform:translateY(-3px); }
+    .s-icon svg { width:22px; height:22px; stroke-width:1.6; }
+    .s-row:hover .s-icon { background:rgba(59,111,232,.14); transform:scale(1.05); }
 
     /* name */
     .s-name {
       font-family:var(--font-display);
-      font-size:1rem; font-weight:700;
-      color:var(--navy); line-height:1.4;
-      margin:0 0 16px;
+      font-size:1rem; font-weight:600;
+      color:var(--navy); line-height:1.3;
+      margin:0; flex:1; min-width:0;
       transition:color .2s;
     }
-    .s-cell:hover .s-name { color:var(--blue); }
+    .s-row:hover .s-name { color:var(--blue); }
 
-    /* bottom link */
+    /* cases badge */
     .s-cases {
       font-family:'Courier New',monospace;
-      font-size:.72rem; font-weight:600; letter-spacing:.06em;
+      font-size:.72rem; font-weight:600; letter-spacing:.04em;
       color:var(--text-muted);
-      display:inline-flex; align-items:center; gap:6px;
-      margin-top:auto;
+      white-space:nowrap; flex-shrink:0;
       transition:color .2s;
     }
-    .s-cases-arrow {
-      display:inline-block;
-      transition:transform .3s cubic-bezier(.16,1,.3,1);
-    }
-    .s-cell:hover .s-cases { color:var(--blue); }
-    .s-cell:hover .s-cases-arrow { transform:translateX(4px); }
 
-    @media(max-width:1024px){
-      .settori-grid { grid-template-columns:repeat(3,1fr); }
-      .s-cell:nth-child(5n) { border-right:1px solid var(--border-s); }
-      .s-cell:nth-child(3n) { border-right:none; }
-      .s-cell { padding:30px 24px; }
+    /* arrow */
+    .s-arrow {
+      flex-shrink:0; color:var(--text-muted);
+      display:flex; align-items:center;
+      transition:color .2s, transform .3s cubic-bezier(.16,1,.3,1);
     }
-    @media(max-width:640px){
-      .settori-grid { grid-template-columns:repeat(2,1fr); }
-      .s-cell:nth-child(3n) { border-right:1px solid var(--border-s); }
-      .s-cell:nth-child(2n) { border-right:none; }
-      .s-cell { padding:24px 20px; }
+    .s-arrow svg { width:18px; height:18px; }
+    .s-row:hover .s-arrow { color:var(--blue); transform:translateX(4px); }
+    .s-row:hover .s-cases { color:var(--blue); }
+
+    @media(max-width:768px){
+      .settori-columns { grid-template-columns:1fr; gap:40px 0; }
+      .settori-head { grid-template-columns:1fr; gap:20px; }
     }
 
     /* ====================================================
@@ -1383,68 +1376,84 @@
       <p class="reveal">Non lavoriamo in modo generico. Ogni industry ha le sue logiche, le sue normative, le sue aspettative digitali. Le conosciamo perch&eacute; ci lavoriamo ogni giorno.</p>
     </div>
   </div>
-  <div class="settori-grid">
+  <div class="container">
+    <div class="settori-columns">
 
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4v6M12 8l2 4M24 8l-2 4"/><circle cx="18" cy="22" r="9"/><path d="M14 20c1-2 3-3 4-3s3 1 4 3M13 25h10"/></svg></span>
-      <p class="s-name">Food &amp; Beverage / GDO</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
+      <!-- Colonna sinistra -->
+      <div class="s-col reveal">
+        <p class="s-col-title">Produzione &amp; Industria</p>
+        <ul class="s-list">
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4v6M12 8l2 4M24 8l-2 4"/><circle cx="18" cy="22" r="9"/><path d="M14 20c1-2 3-3 4-3s3 1 4 3M13 25h10"/></svg></span>
+            <p class="s-name">Food &amp; Beverage / GDO</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 30h24M10 30V18h4v12M16 30V12h4v18M22 30V22h4v8"/><path d="M8 14l10-8 10 8" stroke-dasharray="2 2"/></svg></span>
+            <p class="s-name">Industrial / Manifatturiero B2B</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="10" cy="26" r="4"/><circle cx="26" cy="26" r="4"/><path d="M14 26h8M6 22l4-8h8l4-4h6l2 4v8"/><path d="M10 14h8"/></svg></span>
+            <p class="s-name">Automotive / Motorsport</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 6v8l6 4-6 4v8"/><circle cx="18" cy="18" r="13"/><path d="M12 18h-2M26 18h-2" stroke-dasharray="1 2"/></svg></span>
+            <p class="s-name">Healthcare / Pharma</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="16" r="8"/><path d="M18 8v2M22 10l-1 1.5M14 10l1 1.5"/><path d="M10 28c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
+            <p class="s-name">Beauty / Wellness</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Colonna destra -->
+      <div class="s-col reveal">
+        <p class="s-col-title">Servizi &amp; Digitale</p>
+        <ul class="s-list">
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="6" width="24" height="24" rx="3"/><path d="M6 14h24M14 14v16"/><circle cx="24" cy="22" r="3"/></svg></span>
+            <p class="s-name">Retail / Consumer Goods</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
+            <p class="s-name">Technology / SaaS</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="8" y="6" width="20" height="24" rx="2"/><path d="M13 12h10M13 17h10M13 22h6"/><circle cx="24" cy="24" r="3"/><path d="M22.5 22.5l3 3"/></svg></span>
+            <p class="s-name">Finance / Banking</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M12 4l-2 28M24 4l2 28"/><path d="M8 12c4-3 8-3 10 0s6 3 10 0"/><path d="M8 22c4-3 8-3 10 0s6 3 10 0"/></svg></span>
+            <p class="s-name">Fashion / Luxury</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+          <li class="s-row">
+            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="13"/><path d="M18 5v4M18 27v4M5 18h4M27 18h4"/><circle cx="18" cy="18" r="5"/><circle cx="18" cy="18" r="1.5"/></svg></span>
+            <p class="s-name">Turismo / Hospitality</p>
+            <span class="s-cases">3 case</span>
+            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+          </li>
+        </ul>
+      </div>
+
     </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="6" width="24" height="24" rx="3"/><path d="M6 14h24M14 14v16"/><circle cx="24" cy="22" r="3"/></svg></span>
-      <p class="s-name">Retail / Consumer Goods</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 30h24M10 30V18h4v12M16 30V12h4v18M22 30V22h4v8"/><path d="M8 14l10-8 10 8" stroke-dasharray="2 2"/></svg></span>
-      <p class="s-name">Industrial / Manifatturiero B2B</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="8" y="6" width="20" height="24" rx="2"/><path d="M13 12h10M13 17h10M13 22h6"/><circle cx="24" cy="24" r="3"/><path d="M22.5 22.5l3 3"/></svg></span>
-      <p class="s-name">Finance / Banking</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="16" r="8"/><path d="M18 8v2M22 10l-1 1.5M14 10l1 1.5"/><path d="M10 28c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
-      <p class="s-name">Beauty / Wellness</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
-      <p class="s-name">Technology / SaaS</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M12 4l-2 28M24 4l2 28"/><path d="M8 12c4-3 8-3 10 0s6 3 10 0"/><path d="M8 22c4-3 8-3 10 0s6 3 10 0"/></svg></span>
-      <p class="s-name">Fashion / Luxury</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 6v8l6 4-6 4v8"/><circle cx="18" cy="18" r="13"/><path d="M12 18h-2M26 18h-2" stroke-dasharray="1 2"/></svg></span>
-      <p class="s-name">Healthcare / Pharma</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="13"/><path d="M18 5v4M18 27v4M5 18h4M27 18h4"/><circle cx="18" cy="18" r="5"/><circle cx="18" cy="18" r="1.5"/></svg></span>
-      <p class="s-name">Turismo / Hospitality</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
-    <div class="s-cell reveal">
-      <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="10" cy="26" r="4"/><circle cx="26" cy="26" r="4"/><path d="M14 26h8M6 22l4-8h8l4-4h6l2 4v8"/><path d="M10 14h8"/></svg></span>
-      <p class="s-name">Automotive / Motorsport</p>
-      <span class="s-cases">3 case <span class="s-cases-arrow">&rarr;</span></span>
-    </div>
-
   </div>
 </section>
 
