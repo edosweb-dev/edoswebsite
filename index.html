@@ -1147,20 +1147,36 @@
     .footer {
       background:var(--navy-mid);
       border-top:1px solid rgba(255,255,255,.06);
-      padding:60px 0 36px;
+      padding:72px 0 0;
     }
-    .footer-top {
-      display:grid; grid-template-columns:auto 1fr auto; gap:48px;
-      align-items:center; margin-bottom:48px;
-    }
+    /* top row: logo */
+    .footer-logo { display:block; margin-bottom:48px; }
     .footer-logo img { height:26px; width:auto; }
-    .footer-nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 28px; }
-    .footer-nav a { font-size:.875rem; font-weight:500; color:rgba(255,255,255,.42); transition:color .2s; }
-    .footer-nav a:hover { color:#fff; }
-    .footer-contact { text-align:right; font-size:.875rem; color:rgba(255,255,255,.42); line-height:1.8; }
-    .footer-contact a:hover { color:#fff; }
+    /* columns row */
+    .footer-columns {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:48px;
+      margin-bottom:56px;
+    }
+    .footer-col-label {
+      font-size:.65rem; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:rgba(107,155,247,.6);
+      margin-bottom:16px;
+    }
+    .footer-col a {
+      display:block; font-size:.9rem; font-weight:500;
+      color:rgba(255,255,255,.42); line-height:1.4;
+      margin-bottom:10px; transition:color .2s;
+    }
+    .footer-col a:hover { color:#fff; }
+    /* company info */
+    .footer-info {
+      border-top:1px solid rgba(255,255,255,.06);
+      padding:28px 0;
+      font-size:.8125rem; color:rgba(255,255,255,.22); line-height:1.7;
+    }
+    /* bottom bar */
     .footer-bottom {
-      border-top:1px solid rgba(255,255,255,.06); padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.06); padding:24px 0;
       display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
       font-size:.8125rem; color:rgba(255,255,255,.26);
     }
@@ -1189,9 +1205,7 @@
       .hero-scroll { display:none; }
 
       .settori-head { grid-template-columns:1fr; gap:28px; }
-      .footer-top   { grid-template-columns:1fr; gap:28px; text-align:center; }
-      .footer-contact { text-align:center; }
-      .footer-nav   { justify-content:center; }
+      .footer-columns { grid-template-columns:1fr; gap:36px; }
       .footer-bottom { flex-direction:column; text-align:center; }
     }
     @media (max-width: 640px) {
@@ -1988,22 +2002,51 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-top">
-      <a href="#" class="footer-logo">
-        <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async">
-      </a>
-      <nav class="footer-nav">
+    <a href="#" class="footer-logo">
+      <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async">
+    </a>
+
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-col-label">Menu</div>
         <a href="#agenzie">Per le agenzie</a>
-        <a href="#servizi">Servizi</a>
-        <a href="#settori">Settori</a>
-        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#chi-siamo">Case study</a>
+        <a href="#">Team</a>
+        <a href="#">Lavora con noi</a>
         <a href="#contatti">Contatti</a>
-      </nav>
-      <div class="footer-contact">
-        <a href="mailto:info@edos.it">info@edos.it</a><br>
-        P.IVA 02507760903
+        <a href="#">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Servizi</div>
+        <a href="#servizi">Web &amp; Commerce</a>
+        <a href="#servizi">App &amp; WebApp</a>
+        <a href="#servizi">Platform Engineering</a>
+        <a href="#servizi">AI Integration</a>
+        <a href="#servizi">Product Design</a>
+        <a href="#servizi">Technical Advisory</a>
+        <a href="#servizi">CTO as a Service</a>
+        <a href="#servizi">Continuity &amp; Evolution</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Settori</div>
+        <a href="#settori">Food &amp; Beverage / GDO</a>
+        <a href="#settori">Retail / Consumer Goods</a>
+        <a href="#settori">Industrial / Manifatturiero B2B</a>
+        <a href="#settori">Finance / Banking</a>
+        <a href="#settori">Beauty / Wellness</a>
+        <a href="#settori">Technology / SaaS</a>
+        <a href="#settori">Fashion / Luxury</a>
+        <a href="#settori">Healthcare / Pharma</a>
+        <a href="#settori">Turismo / Hospitality</a>
+        <a href="#settori">Automotive / Motorsport</a>
       </div>
     </div>
+
+    <div class="footer-info">
+      Edos Srl &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>
+      Sede legale: Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI) &mdash; Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)
+    </div>
+
     <div class="footer-bottom">
       <span>&copy; 2026 Edos Digital Solutions</span>
       <div class="footer-legal">
