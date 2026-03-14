@@ -1039,16 +1039,7 @@
     .cta-final .container { position:relative; z-index:1; }
     .cta-final .cta-inner {
       display:flex; flex-direction:column; align-items:center; text-align:center;
-      max-width:720px; margin:0 auto;
-    }
-    .cta-final .cta-eyebrow {
-      display:inline-flex; align-items:center; gap:10px;
-      font-family:var(--font-display); font-size:.72rem; font-weight:700;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:rgba(107,155,247,.9); margin-bottom:28px;
-    }
-    .cta-final .cta-eyebrow::before {
-      content:''; width:36px; height:2px; background:var(--blue); border-radius:2px;
+      max-width:100%; margin:0 auto;
     }
     .cta-final h2 {
       font-family:var(--font-display);
@@ -1066,28 +1057,14 @@
     .cta-final .cta-desc {
       font-size:clamp(.9375rem,1.3vw,1.0625rem);
       color:rgba(255,255,255,.5); line-height:1.7;
-      margin:0 0 40px; max-width:540px;
+      margin:0 0 40px; max-width:640px;
     }
-    .cta-final .cta-action { margin-bottom:28px; }
+    .cta-final .cta-action { }
     .cta-final .cta-action .btn-pill {
       font-size:1rem; padding:6px 32px 6px 6px;
     }
     .cta-final .cta-action .btn-pill .btn-pill-circle {
       width:52px; height:52px;
-    }
-    .cta-final .cta-trust {
-      display:flex; align-items:center; gap:8px;
-      font-size:.8125rem; color:rgba(255,255,255,.32);
-      font-family:var(--font-display);
-    }
-    .cta-final .cta-trust span { display:flex; align-items:center; gap:8px; }
-    .cta-final .cta-trust .cta-dot {
-      width:3px; height:3px; border-radius:50%;
-      background:rgba(255,255,255,.25); flex-shrink:0;
-    }
-    @media(max-width:768px){
-      .cta-final .cta-trust { flex-direction:column; gap:6px; }
-      .cta-final .cta-trust .cta-dot { display:none; }
     }
 
     /* ====================================================
@@ -1873,10 +1850,9 @@
   <div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner">
-      <div class="cta-eyebrow reveal">Iniziamo a collaborare</div>
-      <h2 class="reveal d1">Le migliori collaborazioni iniziano da una <em>conversazione.</em></h2>
-      <p class="cta-desc reveal d2">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto. Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
-      <div class="cta-action reveal d3">
+      <h2 class="reveal">Le migliori collaborazioni iniziano da una <em>conversazione.</em></h2>
+      <p class="cta-desc reveal d1">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto. Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
+      <div class="cta-action reveal d2">
         <a href="mailto:info@edos.it" class="btn-pill">
           <span class="btn-pill-circle">
             <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1885,13 +1861,6 @@
           </span>
           Prenota un appuntamento
         </a>
-      </div>
-      <div class="cta-trust reveal d4">
-        <span>Nessun impegno</span>
-        <span class="cta-dot"></span>
-        <span>30 minuti</span>
-        <span class="cta-dot"></span>
-        <span>Online o in sede</span>
       </div>
     </div>
   </div>
