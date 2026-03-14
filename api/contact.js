@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     try {
       await resend.emails.send({
         from: 'Edos Website <onboarding@resend.dev>',
-        to: ['info@edos.it'],
+        to: ['giuseppe.famiani@edos.it'],
         replyTo: email,
         subject: `Nuovo contatto da ${name} — ${agency}`,
         html: `
