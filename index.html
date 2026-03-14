@@ -814,16 +814,7 @@
     /* ====================================================
        CASE STUDY
     ==================================================== */
-    .cases {
-      background:var(--navy);
-      position:relative; overflow:hidden;
-    }
-    .cases::before {
-      content:''; position:absolute; inset:0; pointer-events:none;
-      background-image:radial-gradient(rgba(59,111,232,.1) 1px,transparent 1px);
-      background-size:48px 48px; opacity:.5;
-    }
-    .cases .container { position:relative; z-index:1; }
+    .cases { background:var(--white); }
 
     .cases-head {
       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
@@ -831,85 +822,96 @@
     }
     .cases-head h2 {
       font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1;
-      margin:0; color:#fff;
+      margin:0;
     }
-    .cases-head p { font-size:1.0625rem; color:rgba(255,255,255,.5); line-height:1.75; }
+    .cases-head p { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* filters */
-    .cases-filters {
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-bottom:40px;
+    /* ── terminal-style filter bar ── */
+    .cases-filterbar {
+      display:flex; align-items:center; gap:0;
+      margin-bottom:48px;
+      background:var(--navy); border-radius:8px;
+      padding:0 4px;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
     }
+    .cases-filterbar::-webkit-scrollbar { height:0; }
+
+    .cf-group {
+      display:flex; align-items:center; gap:0;
+      padding:0 4px;
+    }
+    .cf-group + .cf-group { border-left:1px solid rgba(255,255,255,.08); }
+
+    .cf-label {
+      font-family:'Courier New',monospace;
+      font-size:.6rem; font-weight:600; letter-spacing:.08em;
+      text-transform:uppercase; color:rgba(255,255,255,.25);
+      padding:12px 12px 12px 14px;
+      white-space:nowrap; user-select:none;
+    }
+
     .cf-btn {
       font-family:'Courier New',monospace;
-      font-size:.72rem; font-weight:600; letter-spacing:.04em;
-      text-transform:uppercase;
-      padding:8px 18px; border-radius:100px;
-      border:1px solid rgba(255,255,255,.12);
+      font-size:.7rem; font-weight:600; letter-spacing:.03em;
+      padding:8px 14px; border-radius:5px;
+      border:none;
       background:transparent; color:rgba(255,255,255,.45);
-      cursor:pointer;
-      transition:all .25s;
+      cursor:pointer; white-space:nowrap;
+      transition:all .2s;
+      position:relative;
     }
-    .cf-btn:hover { border-color:rgba(255,255,255,.25); color:rgba(255,255,255,.7); }
+    .cf-btn:hover { color:rgba(255,255,255,.8); }
     .cf-btn.active {
-      background:var(--blue); border-color:var(--blue);
-      color:#fff;
+      background:var(--blue); color:#fff;
     }
-    .cf-sep {
-      width:1px; background:rgba(255,255,255,.1);
-      margin:0 8px; align-self:stretch;
+    .cf-btn.active::before {
+      content:''; position:absolute; left:5px; top:50%; transform:translateY(-50%);
+      width:4px; height:4px; border-radius:50%;
+      background:#fff; opacity:.6;
     }
 
-    /* card grid */
+    /* ── case grid (open, no cards) ── */
     .cases-grid {
       display:grid; grid-template-columns:1fr 1fr;
-      gap:24px;
+      gap:48px 64px;
     }
 
-    /* single card */
-    .c-card {
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:12px;
-      padding:28px 28px 24px;
+    .c-item {
+      padding-left:20px;
+      border-left:2px solid var(--border-s);
+      transition:border-color .3s;
       cursor:pointer;
-      transition:background .25s, border-color .25s, transform .3s cubic-bezier(.16,1,.3,1);
     }
-    .c-card:hover {
-      background:rgba(59,111,232,.08);
-      border-color:rgba(59,111,232,.2);
-      transform:translateY(-2px);
-    }
-    .c-card[hidden] { display:none; }
+    .c-item:hover { border-left-color:var(--blue); }
+    .c-item[hidden] { display:none; }
 
-    /* badges row */
-    .c-badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+    /* badges */
+    .c-badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
     .c-badge {
       font-family:'Courier New',monospace;
-      font-size:.65rem; font-weight:600; letter-spacing:.04em;
+      font-size:.62rem; font-weight:600; letter-spacing:.04em;
       text-transform:uppercase;
-      padding:4px 10px; border-radius:4px;
+      padding:3px 8px; border-radius:3px;
       line-height:1.2;
     }
     .c-badge--sector {
-      background:rgba(59,111,232,.15); color:#6B9BF7;
-      border:1px solid rgba(59,111,232,.2);
+      background:rgba(59,111,232,.08); color:var(--blue);
     }
     .c-badge--type {
-      background:rgba(255,255,255,.06); color:rgba(255,255,255,.45);
-      border:1px solid rgba(255,255,255,.08);
+      background:var(--bg-alt); color:var(--text-muted);
     }
 
     .c-title {
       font-family:var(--font-display);
       font-size:clamp(1.05rem,1.6vw,1.2rem); font-weight:600;
-      color:#fff; line-height:1.4; margin:0 0 10px;
+      color:var(--navy); line-height:1.4; margin:0 0 8px;
       transition:color .2s;
     }
-    .c-card:hover .c-title { color:var(--blue); }
+    .c-item:hover .c-title { color:var(--blue); }
 
     .c-desc {
-      font-size:.875rem; color:rgba(255,255,255,.4); line-height:1.65;
+      font-size:.875rem; color:var(--text-muted); line-height:1.65;
       margin:0;
     }
 
@@ -917,8 +919,11 @@
       .cases-head { grid-template-columns:1fr; gap:20px; }
     }
     @media(max-width:700px){
-      .cases-grid { grid-template-columns:1fr; }
-      .c-card { padding:22px 20px 20px; }
+      .cases-grid { grid-template-columns:1fr; gap:36px; }
+    }
+    @media(max-width:500px){
+      .cases-filterbar { border-radius:6px; }
+      .cf-label { display:none; }
     }
 
     /* ====================================================
@@ -1555,31 +1560,36 @@
       <p class="reveal">Lavoriamo in white label &mdash; la maggior parte dei progetti &egrave; coperta da NDA. Ma i numeri parlano.</p>
     </div>
 
-    <!-- Filtri -->
-    <div class="cases-filters reveal">
-      <button class="cf-btn active" data-filter="all">Tutti</button>
-      <span class="cf-sep"></span>
-      <!-- Tipologia -->
-      <button class="cf-btn" data-filter="type:ecommerce">E-commerce</button>
-      <button class="cf-btn" data-filter="type:platform">Piattaforme</button>
-      <button class="cf-btn" data-filter="type:ai">AI &amp; Automation</button>
-      <button class="cf-btn" data-filter="type:webapp">Web App</button>
-      <span class="cf-sep"></span>
-      <!-- Settore -->
-      <button class="cf-btn" data-filter="sector:retail">Retail</button>
-      <button class="cf-btn" data-filter="sector:energy">Energy</button>
-      <button class="cf-btn" data-filter="sector:fashion">Fashion</button>
-      <button class="cf-btn" data-filter="sector:tech">Technology</button>
-      <button class="cf-btn" data-filter="sector:health">Healthcare</button>
-      <button class="cf-btn" data-filter="sector:industry">Industry</button>
-      <button class="cf-btn" data-filter="sector:food">Food</button>
-      <button class="cf-btn" data-filter="sector:b2b">B2B</button>
+    <!-- Terminal-style filter bar -->
+    <div class="cases-filterbar reveal">
+      <div class="cf-group">
+        <span class="cf-label">filter&gt;</span>
+        <button class="cf-btn active" data-filter="all">*</button>
+      </div>
+      <div class="cf-group">
+        <span class="cf-label">tipo</span>
+        <button class="cf-btn" data-filter="type:ecommerce">e-commerce</button>
+        <button class="cf-btn" data-filter="type:platform">piattaforme</button>
+        <button class="cf-btn" data-filter="type:ai">ai</button>
+        <button class="cf-btn" data-filter="type:webapp">web app</button>
+      </div>
+      <div class="cf-group">
+        <span class="cf-label">settore</span>
+        <button class="cf-btn" data-filter="sector:retail">retail</button>
+        <button class="cf-btn" data-filter="sector:energy">energy</button>
+        <button class="cf-btn" data-filter="sector:fashion">fashion</button>
+        <button class="cf-btn" data-filter="sector:tech">tech</button>
+        <button class="cf-btn" data-filter="sector:health">health</button>
+        <button class="cf-btn" data-filter="sector:industry">industry</button>
+        <button class="cf-btn" data-filter="sector:food">food</button>
+        <button class="cf-btn" data-filter="sector:b2b">b2b</button>
+      </div>
     </div>
 
-    <!-- Card grid -->
+    <!-- Open grid -->
     <div class="cases-grid">
 
-      <div class="c-card reveal" data-type="ecommerce" data-sector="retail">
+      <div class="c-item reveal" data-type="ecommerce" data-sector="retail">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Retail / Franchising</span>
           <span class="c-badge c-badge--type">E-commerce</span>
@@ -1588,7 +1598,7 @@
         <p class="c-desc">Piattaforma centralizzata per acquisti e contratti digitali, con gestione catalogo, ordini e fatturazione per l&rsquo;intera rete.</p>
       </div>
 
-      <div class="c-card reveal" data-type="ai" data-sector="b2b">
+      <div class="c-item reveal" data-type="ai" data-sector="b2b">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">B2B Services</span>
           <span class="c-badge c-badge--type">AI &amp; Automation</span>
@@ -1597,7 +1607,7 @@
         <p class="c-desc">Generazione automatica di preventivi personalizzati tramite AI integrata nel flusso commerciale, dal primo contatto alla firma.</p>
       </div>
 
-      <div class="c-card reveal" data-type="platform" data-sector="food">
+      <div class="c-item reveal" data-type="platform" data-sector="food">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Food &amp; Beverage</span>
           <span class="c-badge c-badge--type">Piattaforme</span>
@@ -1606,7 +1616,7 @@
         <p class="c-desc">Sistema integrato con ERP e logistica in tempo reale per la gestione di centinaia di migliaia di ordini mensili.</p>
       </div>
 
-      <div class="c-card reveal" data-type="ecommerce" data-sector="fashion">
+      <div class="c-item reveal" data-type="ecommerce" data-sector="fashion">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Fashion / Luxury</span>
           <span class="c-badge c-badge--type">E-commerce</span>
@@ -1615,7 +1625,7 @@
         <p class="c-desc">Architettura headless con esperienza su misura per il mercato luxury. Design premium e performance ottimizzate.</p>
       </div>
 
-      <div class="c-card reveal" data-type="platform" data-sector="energy">
+      <div class="c-item reveal" data-type="platform" data-sector="energy">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Energy / Retail</span>
           <span class="c-badge c-badge--type">Piattaforme</span>
@@ -1624,7 +1634,7 @@
         <p class="c-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata dei vincitori e compliance normativa.</p>
       </div>
 
-      <div class="c-card reveal" data-type="webapp" data-sector="tech">
+      <div class="c-item reveal" data-type="webapp" data-sector="tech">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Technology / SaaS</span>
           <span class="c-badge c-badge--type">Web App</span>
@@ -1633,7 +1643,7 @@
         <p class="c-desc">Pannello di controllo real-time con metriche, reportistica avanzata e oltre 50 integrazioni API.</p>
       </div>
 
-      <div class="c-card reveal" data-type="webapp" data-sector="health">
+      <div class="c-item reveal" data-type="webapp" data-sector="health">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Healthcare / Pharma</span>
           <span class="c-badge c-badge--type">Web App</span>
@@ -1642,7 +1652,7 @@
         <p class="c-desc">Gestione appuntamenti, referti digitali e comunicazione medico-paziente per una rete di strutture sanitarie.</p>
       </div>
 
-      <div class="c-card reveal" data-type="platform" data-sector="industry">
+      <div class="c-item reveal" data-type="platform" data-sector="industry">
         <div class="c-badges">
           <span class="c-badge c-badge--sector">Industrial / B2B</span>
           <span class="c-badge c-badge--type">Piattaforme</span>
@@ -2099,7 +2109,7 @@
   /* ── Case study filters ── */
   (function(){
     var btns = document.querySelectorAll('.cf-btn');
-    var cards = document.querySelectorAll('.c-card');
+    var cards = document.querySelectorAll('.c-item');
     btns.forEach(function(btn){
       btn.addEventListener('click', function(){
         btns.forEach(function(b){ b.classList.remove('active'); });
