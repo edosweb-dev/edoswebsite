@@ -867,7 +867,7 @@
 
     /* ── case grid ── */
     .cases-grid {
-      display:grid; grid-template-columns:1fr 1fr;
+      display:grid; grid-template-columns:repeat(4,1fr);
       gap:0;
       border-top:1px solid var(--border-s);
     }
@@ -879,12 +879,12 @@
       transition:background .3s;
     }
     /* vertical divider between columns */
-    .c-item:nth-child(odd) {
+    .c-item {
       border-right:1px solid var(--border-s);
-      padding-right:40px; padding-left:15px;
+      padding-left:20px; padding-right:20px;
     }
-    .c-item:nth-child(even) {
-      padding-left:calc(40px + 15px); padding-right:15px;
+    .c-item:nth-child(4n) {
+      border-right:none;
     }
     .c-item:hover {
       background:rgba(59,111,232,.04);
@@ -909,8 +909,8 @@
 
     .c-title {
       font-family:var(--font-display);
-      font-size:clamp(1.25rem,2.2vw,1.5rem); font-weight:700;
-      color:var(--navy); line-height:1.3; margin:0 0 10px;
+      font-size:clamp(1rem,1.4vw,1.15rem); font-weight:700;
+      color:var(--navy); line-height:1.3; margin:0 0 8px;
       letter-spacing:-.015em;
       transition:color .2s;
     }
@@ -918,14 +918,14 @@
 
     .c-desc {
       font-family:var(--font);
-      font-size:.9375rem; color:var(--text-muted); line-height:1.7;
-      margin:0; padding-right:44px;
+      font-size:.8125rem; color:var(--text-muted); line-height:1.65;
+      margin:0; padding-right:32px;
     }
 
     /* hover arrow */
     .c-arrow {
-      position:absolute; right:16px; bottom:32px;
-      width:36px; height:36px; border-radius:50%;
+      position:absolute; right:12px; bottom:28px;
+      width:32px; height:32px; border-radius:50%;
       display:flex; align-items:center; justify-content:center;
       background:var(--blue);
       opacity:0; transform:scale(.7);
@@ -938,12 +938,15 @@
     @media(max-width:900px){
       .cases-head { grid-template-columns:1fr; gap:20px; }
     }
-    @media(max-width:700px){
+    @media(max-width:1024px){
+      .cases-grid { grid-template-columns:1fr 1fr; }
+      .c-item:nth-child(4n) { border-right:1px solid var(--border-s); }
+      .c-item:nth-child(2n) { border-right:none; }
+    }
+    @media(max-width:600px){
       .cases-grid { grid-template-columns:1fr; }
-      .c-item:nth-child(odd) { border-right:none; padding-right:15px; }
-      .c-item:nth-child(even) { padding-left:15px; }
-      .c-item { padding:24px 15px; }
-      .c-arrow { right:0; bottom:24px; }
+      .c-item { border-right:none !important; padding:24px 15px; }
+      .c-arrow { right:8px; bottom:24px; }
     }
 
     /* ====================================================
