@@ -289,7 +289,7 @@
       position:relative; z-index:4;
       flex:1; display:flex; align-items:center;
       justify-content:space-between;
-      padding:0 44px 56px; gap:40px;
+      padding:0 clamp(32px,5vw,80px) 56px; gap:clamp(32px,4vw,80px);
     }
 
     /* primary links — left */
@@ -318,14 +318,14 @@
 
     /* vertical divider */
     .nav-ov-divider {
-      flex:0 0 1px; height:220px; background:rgba(255,255,255,.1);
-      margin-right:48px; align-self:center;
+      flex:0 0 1px; align-self:stretch;
+      background:rgba(255,255,255,.08);
     }
 
     /* secondary block — two columns side by side */
     .nav-ov-side {
       flex:1 1 auto;
-      display:flex; flex-direction:row; gap:48px;
+      display:flex; flex-direction:row; gap:clamp(32px,4vw,72px);
       align-items:flex-start;
     }
 
