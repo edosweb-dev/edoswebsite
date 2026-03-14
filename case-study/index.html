@@ -81,18 +81,33 @@
 
     /* FILTERS */
     .cases-filters{margin-bottom:0;padding:48px 0 0}
-    .cf-bar{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-    .cf-select-wrap{position:relative;display:inline-flex;align-items:center}
-    .cf-select{font-family:var(--font);font-size:.875rem;font-weight:500;color:var(--text);background:var(--white);border:1px solid var(--border-s);border-radius:10px;padding:11px 40px 11px 16px;cursor:pointer;appearance:none;-webkit-appearance:none;-moz-appearance:none;min-width:180px;transition:border-color .25s,box-shadow .25s}
-    .cf-select:hover{border-color:var(--blue)}
-    .cf-select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,111,232,.12)}
-    .cf-select-icon{position:absolute;right:14px;pointer-events:none;width:16px;height:16px;color:var(--text-muted);transition:color .2s}
-    .cf-select-wrap:hover .cf-select-icon{color:var(--blue)}
-    .cf-count{font-family:var(--font);font-size:.8125rem;font-weight:500;color:var(--text-muted);margin-left:auto}
+    .cf-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .cf-dropdown{position:relative;z-index:20}
+    .cf-dropdown+.cf-dropdown{z-index:19}
+    .cf-trigger{font-family:var(--font);font-size:.875rem;font-weight:500;color:var(--text);background:var(--white);border:1.5px solid var(--border-s);border-radius:12px;padding:12px 42px 12px 18px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;transition:border-color .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1),background .3s;min-width:190px;position:relative;user-select:none}
+    .cf-trigger:hover{border-color:rgba(59,111,232,.4);box-shadow:0 2px 12px rgba(59,111,232,.08)}
+    .cf-dropdown.open .cf-trigger{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,111,232,.14);background:var(--white)}
+    .cf-trigger-icon{position:absolute;right:14px;top:50%;width:18px;height:18px;color:var(--text-muted);transition:transform .4s cubic-bezier(.16,1,.3,1),color .3s;transform:translateY(-50%)}
+    .cf-dropdown.open .cf-trigger-icon{transform:translateY(-50%) rotate(180deg);color:var(--blue)}
+    .cf-trigger-label{font-weight:600;color:var(--text-muted);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+    .cf-trigger-value{color:var(--text);font-weight:600}
+    .cf-trigger-value.is-default{color:var(--text-body);font-weight:500}
+    .cf-panel{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;background:var(--white);border:1.5px solid var(--border-s);border-radius:14px;box-shadow:0 12px 40px rgba(6,14,34,.12),0 2px 8px rgba(6,14,34,.06);padding:6px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top left;transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),visibility .3s;pointer-events:none}
+    .cf-dropdown.open .cf-panel{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto}
+    .cf-option{font-family:var(--font);font-size:.8125rem;font-weight:500;color:var(--text-body);padding:10px 16px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s,color .2s,transform .15s;position:relative;overflow:hidden}
+    .cf-option::before{content:'';position:absolute;inset:0;background:var(--blue);border-radius:9px;opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s cubic-bezier(.16,1,.3,1)}
+    .cf-option:hover{color:var(--blue);background:rgba(59,111,232,.05)}
+    .cf-option:active{transform:scale(.98)}
+    .cf-option.selected{color:#fff;font-weight:600}
+    .cf-option.selected::before{opacity:1;transform:scale(1)}
+    .cf-option span{position:relative;z-index:1}
+    .cf-option-check{width:16px;height:16px;position:relative;z-index:1;opacity:0;transform:scale(.5);transition:opacity .25s cubic-bezier(.16,1,.3,1),transform .25s cubic-bezier(.16,1,.3,1);flex-shrink:0;margin-left:auto}
+    .cf-option.selected .cf-option-check{opacity:1;transform:scale(1)}
+    .cf-count{font-family:var(--font);font-size:.8125rem;font-weight:500;color:var(--text-muted);margin-left:auto;transition:opacity .3s}
     .cf-count strong{color:var(--text);font-weight:700}
-    .cf-reset{font-family:var(--font);font-size:.8125rem;font-weight:600;color:var(--blue);background:none;border:none;cursor:pointer;padding:8px 16px;border-radius:8px;transition:background .2s,opacity .2s;opacity:0;pointer-events:none}
-    .cf-reset.show{opacity:1;pointer-events:auto}
-    .cf-reset:hover{background:rgba(59,111,232,.06)}
+    .cf-reset{font-family:var(--font);font-size:.78rem;font-weight:600;color:var(--blue);background:rgba(59,111,232,.06);border:none;cursor:pointer;padding:10px 20px;border-radius:10px;transition:background .25s,opacity .35s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1);opacity:0;pointer-events:none;transform:translateX(-8px) scale(.95)}
+    .cf-reset.show{opacity:1;pointer-events:auto;transform:translateX(0) scale(1)}
+    .cf-reset:hover{background:rgba(59,111,232,.12)}
 
     /* CASE GRID */
     .cases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border-s);width:100%}
@@ -162,7 +177,7 @@
     @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}}
     @media(max-width:1080px){.cases-grid{grid-template-columns:repeat(3,1fr)}.c-item:nth-child(4n){border-right:1px solid var(--border-s)}.c-item:nth-child(3n){border-right:none}}
     @media(max-width:768px){.cases-grid{grid-template-columns:repeat(2,1fr)}.c-item:nth-child(3n){border-right:1px solid var(--border-s)}.c-item:nth-child(2n){border-right:none}}
-    @media(max-width:600px){.cases-grid{grid-template-columns:1fr}.c-item{border-right:none !important;padding:24px 16px !important}.c-title{font-size:1.1rem}.cf-bar{flex-direction:column;align-items:stretch;gap:12px}.cf-select{width:100%;min-width:0}.cf-count{margin-left:0;text-align:center}}
+    @media(max-width:600px){.cases-grid{grid-template-columns:1fr}.c-item{border-right:none !important;padding:24px 16px !important}.c-title{font-size:1.1rem}.cf-bar{flex-direction:column;align-items:stretch;gap:12px}.cf-dropdown{z-index:20 !important}.cf-trigger{width:100%;min-width:0}.cf-panel{min-width:100%}.cf-count{margin-left:0;text-align:center}.cf-reset{text-align:center}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
 
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -237,34 +252,42 @@
   <div class="container">
     <div class="cases-filters reveal">
       <div class="cf-bar">
-        <div class="cf-select-wrap">
-          <select class="cf-select" id="filterType">
-            <option value="all">Tutti i servizi</option>
-            <option value="ecommerce">E-commerce</option>
-            <option value="platform">Piattaforme</option>
-            <option value="ai">AI</option>
-            <option value="app">App</option>
-            <option value="web">Web</option>
-            <option value="advisory">Advisory</option>
-          </select>
-          <svg class="cf-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="cf-dropdown" id="ddType">
+          <button class="cf-trigger" type="button">
+            <span class="cf-trigger-label">Servizio</span>
+            <span class="cf-trigger-value is-default" id="ddTypeValue">Tutti</span>
+            <svg class="cf-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="cf-panel">
+            <div class="cf-option selected" data-value="all"><span>Tutti i servizi</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="ecommerce"><span>E-commerce</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="platform"><span>Piattaforme</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="ai"><span>AI</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="app"><span>App</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="web"><span>Web</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="advisory"><span>Advisory</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          </div>
         </div>
-        <div class="cf-select-wrap">
-          <select class="cf-select" id="filterSector">
-            <option value="all">Tutti i settori</option>
-            <option value="retail">Retail</option>
-            <option value="energy">Energy</option>
-            <option value="fashion">Fashion</option>
-            <option value="tech">Tech</option>
-            <option value="health">Health</option>
-            <option value="industry">Industry</option>
-            <option value="food">Food</option>
-            <option value="finance">Finance</option>
-            <option value="hospitality">Hospitality</option>
-            <option value="automotive">Automotive</option>
-            <option value="wellness">Wellness</option>
-          </select>
-          <svg class="cf-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="cf-dropdown" id="ddSector">
+          <button class="cf-trigger" type="button">
+            <span class="cf-trigger-label">Settore</span>
+            <span class="cf-trigger-value is-default" id="ddSectorValue">Tutti</span>
+            <svg class="cf-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="cf-panel">
+            <div class="cf-option selected" data-value="all"><span>Tutti i settori</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="retail"><span>Retail</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="energy"><span>Energy</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="fashion"><span>Fashion</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="tech"><span>Tech</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="health"><span>Health</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="industry"><span>Industry</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="food"><span>Food</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="finance"><span>Finance</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="hospitality"><span>Hospitality</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="automotive"><span>Automotive</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="cf-option" data-value="wellness"><span>Wellness</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          </div>
         </div>
         <button class="cf-reset" id="filterReset">Reset filtri</button>
         <span class="cf-count" id="filterCount"><strong>30</strong> progetti</span>
@@ -854,30 +877,83 @@
   parents.forEach(function(p){var kids=Array.from(p.querySelectorAll(':scope > .reveal, :scope > .reveal-scale'));kids.forEach(function(k,i){if(!k.style.transitionDelay)k.style.transitionDelay=(i*0.12)+'s';});});
   if('IntersectionObserver' in window){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});revEls.forEach(function(el){ro.observe(el);});}else{revEls.forEach(function(el){el.classList.add('visible');});}
 
-  /* Case study filters */
+  /* Case study filters — custom animated dropdowns */
   (function(){
-    var selType=document.getElementById('filterType');
-    var selSector=document.getElementById('filterSector');
-    var resetBtn=document.getElementById('filterReset');
-    var countEl=document.getElementById('filterCount');
+    var state={type:'all',sector:'all'};
     var cards=document.querySelectorAll('.c-item');
     var empty=document.getElementById('casesEmpty');
+    var countEl=document.getElementById('filterCount');
+    var resetBtn=document.getElementById('filterReset');
+    var ddType=document.getElementById('ddType');
+    var ddSector=document.getElementById('ddSector');
+    var ddTypeVal=document.getElementById('ddTypeValue');
+    var ddSectorVal=document.getElementById('ddSectorValue');
+
+    function closeAll(){
+      document.querySelectorAll('.cf-dropdown.open').forEach(function(d){d.classList.remove('open');});
+    }
+
+    function initDropdown(dd,key,valEl){
+      var trigger=dd.querySelector('.cf-trigger');
+      var opts=dd.querySelectorAll('.cf-option');
+
+      trigger.addEventListener('click',function(e){
+        e.stopPropagation();
+        var wasOpen=dd.classList.contains('open');
+        closeAll();
+        if(!wasOpen) dd.classList.add('open');
+      });
+
+      opts.forEach(function(opt){
+        opt.addEventListener('click',function(e){
+          e.stopPropagation();
+          var val=opt.getAttribute('data-value');
+          var label=opt.querySelector('span').textContent;
+          state[key]=val;
+          opts.forEach(function(o){o.classList.remove('selected');});
+          opt.classList.add('selected');
+          valEl.textContent=val==='all'?'Tutti':label;
+          valEl.classList[val==='all'?'add':'remove']('is-default');
+          dd.classList.remove('open');
+          applyFilters();
+        });
+      });
+    }
+
+    initDropdown(ddType,'type',ddTypeVal);
+    initDropdown(ddSector,'sector',ddSectorVal);
+
+    document.addEventListener('click',function(){closeAll();});
+
     function applyFilters(){
-      var t=selType.value,s=selSector.value,vis=0;
-      cards.forEach(function(card){
+      var t=state.type,s=state.sector,vis=0;
+      cards.forEach(function(card,i){
         var matchT=t==='all'||card.getAttribute('data-type')===t;
         var matchS=s==='all'||card.getAttribute('data-sector')===s;
         var show=matchT&&matchS;
-        card.hidden=!show;
-        if(show) vis++;
+        if(show){
+          card.hidden=false;
+          card.style.opacity='0';card.style.transform='translateY(16px)';
+          setTimeout(function(){card.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';card.style.opacity='1';card.style.transform='translateY(0)';},vis*40);
+          vis++;
+        } else {
+          card.hidden=true;
+          card.style.opacity='';card.style.transform='';card.style.transition='';
+        }
       });
       if(empty) empty.style.display=vis===0?'block':'none';
       if(countEl) countEl.innerHTML='<strong>'+vis+'</strong> progett'+(vis===1?'o':'i');
       if(resetBtn) resetBtn.classList[t!=='all'||s!=='all'?'add':'remove']('show');
     }
-    selType.addEventListener('change',applyFilters);
-    selSector.addEventListener('change',applyFilters);
-    resetBtn.addEventListener('click',function(){selType.value='all';selSector.value='all';applyFilters();});
+
+    resetBtn.addEventListener('click',function(){
+      state.type='all';state.sector='all';
+      ddType.querySelectorAll('.cf-option').forEach(function(o,i){o.classList[i===0?'add':'remove']('selected');});
+      ddSector.querySelectorAll('.cf-option').forEach(function(o,i){o.classList[i===0?'add':'remove']('selected');});
+      ddTypeVal.textContent='Tutti';ddTypeVal.classList.add('is-default');
+      ddSectorVal.textContent='Tutti';ddSectorVal.classList.add('is-default');
+      applyFilters();
+    });
   })();
 
   /* Fixed CTA: show/hide + adaptive color */
