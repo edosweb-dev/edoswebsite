@@ -1068,6 +1068,51 @@
     }
 
     /* ====================================================
+       FIXED SIDE CTA
+    ==================================================== */
+    .fixed-cta {
+      position:fixed; right:28px; top:50%; transform:translateY(-50%);
+      z-index:90;
+      opacity:0; pointer-events:none;
+      transition:opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1);
+    }
+    .fixed-cta.visible {
+      opacity:1; pointer-events:auto;
+    }
+    .fixed-cta-link {
+      display:flex; align-items:center; gap:0;
+      writing-mode:vertical-rl; text-orientation:mixed;
+      background:var(--blue); color:#fff;
+      font-family:var(--font-display); font-size:.68rem; font-weight:700;
+      letter-spacing:.12em; text-transform:uppercase;
+      padding:20px 14px;
+      border-radius:14px;
+      box-shadow:0 8px 32px rgba(59,111,232,.35);
+      transition:background .25s, box-shadow .25s, transform .25s;
+      text-decoration:none;
+    }
+    .fixed-cta-link:hover {
+      background:var(--blue-hover);
+      box-shadow:0 12px 40px rgba(59,111,232,.5);
+      transform:translateX(-3px);
+    }
+    .fixed-cta-icon {
+      display:flex; align-items:center; justify-content:center;
+      width:36px; height:36px; border-radius:50%;
+      background:rgba(255,255,255,.2);
+      margin-bottom:14px;
+      transition:background .25s;
+    }
+    .fixed-cta-link:hover .fixed-cta-icon { background:rgba(255,255,255,.3); }
+    .fixed-cta-icon svg { width:16px; height:16px; color:#fff; }
+    .fixed-cta-label { line-height:1.3; }
+    @media(max-width:768px){
+      .fixed-cta { right:14px; }
+      .fixed-cta-link { padding:14px 10px; font-size:.6rem; }
+      .fixed-cta-icon { width:30px; height:30px; margin-bottom:10px; }
+    }
+
+    /* ====================================================
        FOOTER
     ==================================================== */
     .footer {
@@ -1866,6 +1911,18 @@
   </div>
 </section>
 
+<!-- ===================== FIXED SIDE CTA ===================== -->
+<div class="fixed-cta" id="fixedCta">
+  <a href="mailto:info@edos.it" class="fixed-cta-link">
+    <span class="fixed-cta-icon">
+      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="fixed-cta-label">Prenota un appuntamento</span>
+  </a>
+</div>
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="container">
@@ -2341,6 +2398,36 @@
         });
       });
     });
+  })();
+
+  /* ---- FIXED SIDE CTA: show/hide ---- */
+  (function(){
+    var fixedCta = document.getElementById('fixedCta');
+    var ctaFinal = document.querySelector('.cta-final');
+    var hero = document.querySelector('.hero');
+    if(!fixedCta || !ctaFinal) return;
+
+    var pastHero = false;
+    var inFinal = false;
+
+    function update(){ fixedCta.classList[pastHero && !inFinal ? 'add' : 'remove']('visible'); }
+
+    /* show after scrolling past hero */
+    if('IntersectionObserver' in window){
+      var heroObs = new IntersectionObserver(function(entries){
+        pastHero = !entries[0].isIntersecting;
+        update();
+      }, {threshold:0});
+      if(hero) heroObs.observe(hero);
+      else pastHero = true;
+
+      /* hide when cta-final is in view */
+      var finalObs = new IntersectionObserver(function(entries){
+        inFinal = entries[0].isIntersecting;
+        update();
+      }, {threshold:0.05});
+      finalObs.observe(ctaFinal);
+    }
   })();
 
 })();
