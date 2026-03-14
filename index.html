@@ -1057,7 +1057,7 @@
     .cta-final .cta-desc {
       font-size:clamp(.9375rem,1.3vw,1.0625rem);
       color:rgba(255,255,255,.5); line-height:1.7;
-      margin:0 0 40px; max-width:640px;
+      margin:0 0 40px; max-width:100%;
     }
     .cta-final .cta-action { }
     .cta-final .cta-action .btn-pill {
@@ -1068,7 +1068,7 @@
     }
 
     /* ====================================================
-       FIXED SIDE CTA – circle with rotating text
+       FIXED SIDE CTA – adaptive circle with rotating text
     ==================================================== */
     .fixed-cta {
       position:fixed; right:28px; bottom:32px;
@@ -1081,38 +1081,57 @@
       display:flex; align-items:center; justify-content:center;
       width:72px; height:72px;
       border-radius:50%;
-      background:var(--navy);
-      border:1px solid rgba(255,255,255,.12);
       position:relative;
       text-decoration:none;
-      transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s, border-color .3s;
+      transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s, background .4s, border-color .4s;
+    }
+    .fixed-cta-link:hover { transform:scale(1.08); }
+    /* dark mode (default) – on light backgrounds */
+    .fixed-cta-link {
+      background:var(--navy);
+      border:1px solid rgba(6,14,34,.08);
+      box-shadow:0 4px 20px rgba(6,14,34,.12);
     }
     .fixed-cta-link:hover {
-      transform:scale(1.08);
-      border-color:rgba(59,111,232,.5);
       box-shadow:0 6px 28px rgba(59,111,232,.25);
+      border-color:rgba(59,111,232,.3);
     }
-    /* calendar icon center */
+    .fixed-cta-icon { color:var(--blue); }
+    .fixed-cta-ring text { fill:var(--navy); fill-opacity:.4; }
+    .fixed-cta-link:hover .fixed-cta-icon { color:#93BFFF; }
+    .fixed-cta-link:hover .fixed-cta-ring text { fill:var(--navy); fill-opacity:.65; }
+    /* light mode – on dark backgrounds */
+    .fixed-cta.on-dark .fixed-cta-link {
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 4px 20px rgba(0,0,0,.15);
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    }
+    .fixed-cta.on-dark .fixed-cta-link:hover {
+      border-color:rgba(59,111,232,.5);
+      box-shadow:0 6px 28px rgba(59,111,232,.3);
+      background:rgba(255,255,255,.1);
+    }
+    .fixed-cta.on-dark .fixed-cta-icon { color:var(--blue); }
+    .fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-icon { color:#93BFFF; }
+    .fixed-cta.on-dark .fixed-cta-ring text { fill:#fff; fill-opacity:.4; }
+    .fixed-cta.on-dark .fixed-cta-link:hover .fixed-cta-ring text { fill:#fff; fill-opacity:.7; }
+    /* shared icon & ring */
     .fixed-cta-icon {
       display:flex; align-items:center; justify-content:center;
-      width:26px; height:26px;
-      color:var(--blue); transition:color .3s;
+      width:26px; height:26px; transition:color .4s;
     }
-    .fixed-cta-link:hover .fixed-cta-icon { color:#93BFFF; }
     .fixed-cta-icon svg { width:100%; height:100%; }
-    /* rotating text ring */
     .fixed-cta-ring {
       position:absolute; inset:-18px;
-      animation:spinRing 12s linear infinite;
+      animation:spinRing 14s linear infinite;
     }
     .fixed-cta-ring text {
       font-family:var(--font-display);
       font-size:9.2px; font-weight:600;
       letter-spacing:2.2px; text-transform:uppercase;
-      fill:rgba(255,255,255,.45);
-      transition:fill .3s;
+      transition:fill .4s, fill-opacity .4s;
     }
-    .fixed-cta-link:hover .fixed-cta-ring text { fill:rgba(255,255,255,.75); }
     @keyframes spinRing { to { transform:rotate(360deg); } }
     @media(max-width:768px){
       .fixed-cta { right:16px; bottom:20px; }
@@ -2420,7 +2439,7 @@
     });
   })();
 
-  /* ---- FIXED SIDE CTA: show/hide ---- */
+  /* ---- FIXED SIDE CTA: show/hide + adaptive color ---- */
   (function(){
     var fixedCta = document.getElementById('fixedCta');
     var ctaFinal = document.querySelector('.cta-final');
@@ -2430,13 +2449,21 @@
     var pastHero = false;
     var inFinal = false;
 
-    function update(){ fixedCta.classList[pastHero && !inFinal ? 'add' : 'remove']('visible'); }
+    function updateVisibility(){ fixedCta.classList[pastHero && !inFinal ? 'add' : 'remove']('visible'); }
 
-    /* show after scrolling past hero */
+    /* dark sections list */
+    var darkSections = document.querySelectorAll('.hero, .partnerflow, .cta-final');
+    var onDarkCount = 0;
+
+    function updateColor(){
+      fixedCta.classList[onDarkCount > 0 ? 'add' : 'remove']('on-dark');
+    }
+
     if('IntersectionObserver' in window){
+      /* show after scrolling past hero */
       var heroObs = new IntersectionObserver(function(entries){
         pastHero = !entries[0].isIntersecting;
-        update();
+        updateVisibility();
       }, {threshold:0});
       if(hero) heroObs.observe(hero);
       else pastHero = true;
@@ -2444,9 +2471,19 @@
       /* hide when cta-final is in view */
       var finalObs = new IntersectionObserver(function(entries){
         inFinal = entries[0].isIntersecting;
-        update();
+        updateVisibility();
       }, {threshold:0.05});
       finalObs.observe(ctaFinal);
+
+      /* detect dark/light background under the fixed CTA */
+      var colorObs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting) onDarkCount++;
+          else onDarkCount = Math.max(0, onDarkCount - 1);
+        });
+        updateColor();
+      }, {rootMargin:'-70% 0px -20% 0px'});
+      darkSections.forEach(function(s){ colorObs.observe(s); });
     }
   })();
 
