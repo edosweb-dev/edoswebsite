@@ -765,15 +765,16 @@
     .s-row:first-child { border-top:1px solid var(--border-s); }
     .s-row:hover { background:rgba(59,111,232,.03); padding-left:6px; }
 
-    /* icon */
+    /* icon — matches text size */
     .s-icon {
-      width:40px; height:40px; flex-shrink:0;
+      width:1em; height:1em; flex-shrink:0;
       display:flex; align-items:center; justify-content:center;
+      font-size:1rem;
       color:var(--blue);
       opacity:.85;
       transition:opacity .3s, transform .3s cubic-bezier(.16,1,.3,1);
     }
-    .s-icon svg { width:22px; height:22px; stroke-width:1.6; }
+    .s-icon svg { width:1em; height:1em; stroke-width:1.6; }
     .s-row:hover .s-icon { opacity:1; transform:translateX(3px); }
 
     /* name */
@@ -813,55 +814,78 @@
     /* ====================================================
        CASE STUDY
     ==================================================== */
-    .cases { background:var(--white); }
+    .cases {
+      background:var(--navy);
+      position:relative; overflow:hidden;
+    }
+    .cases::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:radial-gradient(rgba(59,111,232,.1) 1px,transparent 1px);
+      background-size:48px 48px; opacity:.5;
+    }
+    .cases .container { position:relative; z-index:1; }
+
     .cases-head {
       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
       margin-bottom:56px;
     }
-    .cases-head h2 { font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1; margin:0; }
-    .cases-head p  { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
-
-    /* case list */
-    .cases-list { list-style:none; margin:0; padding:0; border-top:1px solid var(--border-s); }
-
-    .c-row {
-      display:grid; grid-template-columns:140px 1fr auto;
-      align-items:center; gap:24px;
-      padding:28px 0;
-      border-bottom:1px solid var(--border-s);
-      cursor:pointer;
-      transition:padding-left .3s cubic-bezier(.16,1,.3,1), background .2s;
+    .cases-head h2 {
+      font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1;
+      margin:0; color:#fff;
     }
-    .c-row:hover { padding-left:6px; background:rgba(59,111,232,.02); }
+    .cases-head p { font-size:1.0625rem; color:rgba(255,255,255,.5); line-height:1.75; }
 
+    /* two-col grid of cases */
+    .cases-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:0 64px;
+    }
+    .cases-col { list-style:none; margin:0; padding:0; }
+
+    /* single case row */
+    .c-row {
+      display:flex; align-items:flex-start; gap:20px;
+      padding:28px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      cursor:pointer;
+      transition:padding-left .3s cubic-bezier(.16,1,.3,1);
+    }
+    .c-row:first-child { border-top:1px solid rgba(255,255,255,.08); }
+    .c-row:hover { padding-left:8px; }
+
+    /* big number */
+    .c-num {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,3.5vw,3rem); font-weight:700;
+      line-height:1; letter-spacing:-.03em;
+      color:var(--blue); flex-shrink:0;
+      min-width:72px;
+      transition:color .3s;
+    }
+    .c-row:hover .c-num { color:#6B9BF7; }
+
+    .c-content { min-width:0; flex:1; padding-top:4px; }
     .c-sector {
       font-family:'Courier New',monospace;
-      font-size:.72rem; font-weight:600; letter-spacing:.04em;
-      text-transform:uppercase; color:var(--blue);
-      white-space:nowrap;
+      font-size:.68rem; font-weight:600; letter-spacing:.06em;
+      text-transform:uppercase; color:rgba(255,255,255,.35);
+      margin-bottom:6px; display:block;
     }
-
-    .c-content { min-width:0; }
     .c-title {
       font-family:var(--font-display);
-      font-size:clamp(1.05rem,1.8vw,1.25rem); font-weight:600;
-      color:var(--navy); line-height:1.35; margin:0 0 6px;
+      font-size:clamp(1rem,1.6vw,1.15rem); font-weight:600;
+      color:#fff; line-height:1.4; margin:0 0 8px;
       transition:color .2s;
     }
     .c-row:hover .c-title { color:var(--blue); }
-
-    .c-metrics {
-      display:flex; flex-wrap:wrap; gap:4px 16px;
-    }
-    .c-metric {
-      font-family:'Courier New',monospace;
-      font-size:.78rem; font-weight:600; letter-spacing:.02em;
-      color:var(--text-muted);
+    .c-desc {
+      font-size:.875rem; color:rgba(255,255,255,.4); line-height:1.6;
+      margin:0;
     }
 
     .c-arrow {
-      flex-shrink:0; color:var(--text-muted);
+      flex-shrink:0; color:rgba(255,255,255,.2);
       display:flex; align-items:center;
+      margin-top:6px;
       transition:color .2s, transform .3s cubic-bezier(.16,1,.3,1);
     }
     .c-arrow svg { width:18px; height:18px; }
@@ -869,12 +893,11 @@
 
     @media(max-width:900px){
       .cases-head { grid-template-columns:1fr; gap:20px; }
-      .c-row { grid-template-columns:1fr auto; gap:16px; }
-      .c-sector { grid-column:1/-1; }
+      .cases-grid { grid-template-columns:1fr; gap:0; }
     }
     @media(max-width:640px){
-      .c-row { grid-template-columns:1fr; gap:8px; padding:22px 0; }
-      .c-arrow { display:none; }
+      .c-num { font-size:1.6rem; min-width:52px; }
+      .c-row { gap:14px; padding:22px 0; }
     }
 
     /* ====================================================
@@ -1510,42 +1533,89 @@
       <h2 class="reveal">Quello che facciamo,<br>raccontato dai risultati.</h2>
       <p class="reveal">Lavoriamo in white label &mdash; la maggior parte dei progetti &egrave; coperta da NDA. Ma i numeri parlano.</p>
     </div>
-    <ul class="cases-list">
-      <li class="c-row reveal">
-        <span class="c-sector">Retail / Franchising</span>
-        <div class="c-content">
-          <p class="c-title">E-commerce B2B per rete di 800+ affiliati</p>
-          <div class="c-metrics">
-            <span class="c-metric">+67% vendite nel primo trimestre</span>
+    <div class="cases-grid">
+
+      <!-- Colonna sinistra -->
+      <ul class="cases-col">
+        <li class="c-row reveal">
+          <span class="c-num">+67%</span>
+          <div class="c-content">
+            <span class="c-sector">Retail / Franchising</span>
+            <p class="c-title">E-commerce B2B per rete di 800+ affiliati</p>
+            <p class="c-desc">Vendite nel primo trimestre. Piattaforma centralizzata per acquisti e contratti digitali.</p>
           </div>
-        </div>
-        <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-      </li>
-      <li class="c-row reveal">
-        <span class="c-sector">Energy / Retail</span>
-        <div class="c-content">
-          <p class="c-title">Piattaforma InstantWin per brand del settore energia</p>
-          <div class="c-metrics">
-            <span class="c-metric">+67% engagement</span>
-            <span class="c-metric">&middot;</span>
-            <span class="c-metric">-40% tempo operativo</span>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">-70%</span>
+          <div class="c-content">
+            <span class="c-sector">B2B Services</span>
+            <p class="c-title">Agente AI per automazione preventivi</p>
+            <p class="c-desc">Tempo di risposta. Generazione automatica di preventivi con AI integrata.</p>
           </div>
-        </div>
-        <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-      </li>
-      <li class="c-row reveal">
-        <span class="c-sector">B2B Services</span>
-        <div class="c-content">
-          <p class="c-title">Agente AI per automazione preventivi</p>
-          <div class="c-metrics">
-            <span class="c-metric">-70% tempo di risposta</span>
-            <span class="c-metric">&middot;</span>
-            <span class="c-metric">100% automazione</span>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">300k</span>
+          <div class="c-content">
+            <span class="c-sector">Food &amp; Beverage</span>
+            <p class="c-title">Piattaforma ordini per catena GDO nazionale</p>
+            <p class="c-desc">Ordini gestiti al mese. Sistema integrato con ERP e logistica in tempo reale.</p>
           </div>
-        </div>
-        <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-      </li>
-    </ul>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">+120%</span>
+          <div class="c-content">
+            <span class="c-sector">Fashion / Luxury</span>
+            <p class="c-title">E-commerce headless per brand luxury</p>
+            <p class="c-desc">Conversion rate. Architettura headless con esperienza su misura per il mercato luxury.</p>
+          </div>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+      </ul>
+
+      <!-- Colonna destra -->
+      <ul class="cases-col">
+        <li class="c-row reveal">
+          <span class="c-num">+67%</span>
+          <div class="c-content">
+            <span class="c-sector">Energy / Retail</span>
+            <p class="c-title">Piattaforma InstantWin per brand energia</p>
+            <p class="c-desc">Engagement. Infrastruttura scalabile per concorsi a premi con gestione automatizzata.</p>
+          </div>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">50+</span>
+          <div class="c-content">
+            <span class="c-sector">Technology / SaaS</span>
+            <p class="c-title">Dashboard analytics per piattaforma SaaS</p>
+            <p class="c-desc">Integrazioni API. Pannello di controllo real-time con metriche e reportistica avanzata.</p>
+          </div>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">-40%</span>
+          <div class="c-content">
+            <span class="c-sector">Healthcare / Pharma</span>
+            <p class="c-title">Portale prenotazioni per rete cliniche</p>
+            <p class="c-desc">Tempo operativo. Gestione appuntamenti, referti e comunicazione medico-paziente.</p>
+          </div>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+        <li class="c-row reveal">
+          <span class="c-num">800+</span>
+          <div class="c-content">
+            <span class="c-sector">Industrial / B2B</span>
+            <p class="c-title">Marketplace B2B per filiera manifatturiera</p>
+            <p class="c-desc">Aziende connesse. Piattaforma di sourcing con catalogo digitale e ordini automatizzati.</p>
+          </div>
+          <span class="c-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+        </li>
+      </ul>
+
+    </div>
   </div>
 </section>
 
