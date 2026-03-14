@@ -818,7 +818,7 @@
 
     .cases-head {
       display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:end;
-      margin-bottom:40px;
+      margin-bottom:48px;
     }
     .cases-head h2 {
       font-size:clamp(2rem,4vw,3.25rem); font-weight:400; line-height:1.1;
@@ -826,68 +826,62 @@
     }
     .cases-head p { font-size:1.0625rem; color:var(--text-muted); line-height:1.75; }
 
-    /* ── terminal-style filter bar ── */
-    .cases-filterbar {
-      display:flex; align-items:center; gap:0;
-      margin-bottom:48px;
-      background:var(--navy); border-radius:8px;
-      padding:0 4px;
-      overflow-x:auto;
-      -webkit-overflow-scrolling:touch;
-    }
-    .cases-filterbar::-webkit-scrollbar { height:0; }
+    /* ── filters ── */
+    .cases-filters { margin-bottom:48px; }
 
-    .cf-group {
-      display:flex; align-items:center; gap:0;
-      padding:0 4px;
+    .cf-row {
+      display:flex; align-items:center; gap:8px;
+      flex-wrap:wrap;
     }
-    .cf-group + .cf-group { border-left:1px solid rgba(255,255,255,.08); }
+    .cf-row + .cf-row { margin-top:12px; }
 
     .cf-label {
       font-family:'Courier New',monospace;
-      font-size:.6rem; font-weight:600; letter-spacing:.08em;
-      text-transform:uppercase; color:rgba(255,255,255,.25);
-      padding:12px 12px 12px 14px;
-      white-space:nowrap; user-select:none;
+      font-size:.65rem; font-weight:700; letter-spacing:.06em;
+      text-transform:uppercase; color:var(--navy);
+      min-width:100px; flex-shrink:0;
     }
 
     .cf-btn {
       font-family:'Courier New',monospace;
-      font-size:.7rem; font-weight:600; letter-spacing:.03em;
-      padding:8px 14px; border-radius:5px;
-      border:none;
-      background:transparent; color:rgba(255,255,255,.45);
+      font-size:.68rem; font-weight:600; letter-spacing:.03em;
+      text-transform:uppercase;
+      padding:7px 16px; border-radius:4px;
+      border:1px solid var(--border-s);
+      background:transparent; color:var(--text-muted);
       cursor:pointer; white-space:nowrap;
       transition:all .2s;
-      position:relative;
     }
-    .cf-btn:hover { color:rgba(255,255,255,.8); }
+    .cf-btn:hover {
+      border-color:var(--blue); color:var(--blue);
+    }
     .cf-btn.active {
-      background:var(--blue); color:#fff;
-    }
-    .cf-btn.active::before {
-      content:''; position:absolute; left:5px; top:50%; transform:translateY(-50%);
-      width:4px; height:4px; border-radius:50%;
-      background:#fff; opacity:.6;
+      background:var(--navy); border-color:var(--navy);
+      color:#fff;
     }
 
-    /* ── case grid (open, no cards) ── */
+    .cf-divider {
+      width:100%; height:1px; background:var(--border-s);
+      margin:0;
+    }
+
+    /* ── case grid ── */
     .cases-grid {
       display:grid; grid-template-columns:1fr 1fr;
-      gap:48px 64px;
+      gap:40px 56px;
     }
 
     .c-item {
-      padding-left:20px;
-      border-left:2px solid var(--border-s);
+      cursor:pointer; position:relative;
+      padding-bottom:24px;
+      border-bottom:1px solid var(--border-s);
       transition:border-color .3s;
-      cursor:pointer;
     }
-    .c-item:hover { border-left-color:var(--blue); }
+    .c-item:hover { border-bottom-color:var(--blue); }
     .c-item[hidden] { display:none; }
 
     /* badges */
-    .c-badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px; }
+    .c-badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
     .c-badge {
       font-family:'Courier New',monospace;
       font-size:.62rem; font-weight:600; letter-spacing:.04em;
@@ -904,26 +898,38 @@
 
     .c-title {
       font-family:var(--font-display);
-      font-size:clamp(1.05rem,1.6vw,1.2rem); font-weight:600;
-      color:var(--navy); line-height:1.4; margin:0 0 8px;
+      font-size:clamp(1.2rem,2vw,1.45rem); font-weight:600;
+      color:var(--navy); line-height:1.35; margin:0 0 10px;
       transition:color .2s;
     }
     .c-item:hover .c-title { color:var(--blue); }
 
     .c-desc {
-      font-size:.875rem; color:var(--text-muted); line-height:1.65;
-      margin:0;
+      font-size:.9375rem; color:var(--text-muted); line-height:1.7;
+      margin:0 0 0;
+      padding-right:40px;
     }
+
+    /* hover arrow */
+    .c-arrow {
+      position:absolute; right:0; bottom:24px;
+      width:32px; height:32px;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transform:translateX(-8px);
+      transition:opacity .25s, transform .25s;
+      color:var(--blue);
+    }
+    .c-arrow svg { width:20px; height:20px; }
+    .c-item:hover .c-arrow { opacity:1; transform:translateX(0); }
 
     @media(max-width:900px){
       .cases-head { grid-template-columns:1fr; gap:20px; }
     }
     @media(max-width:700px){
-      .cases-grid { grid-template-columns:1fr; gap:36px; }
+      .cases-grid { grid-template-columns:1fr; gap:32px; }
     }
     @media(max-width:500px){
-      .cases-filterbar { border-radius:6px; }
-      .cf-label { display:none; }
+      .cf-label { min-width:auto; width:100%; margin-bottom:2px; }
     }
 
     /* ====================================================
@@ -1560,33 +1566,30 @@
       <p class="reveal">Lavoriamo in white label &mdash; la maggior parte dei progetti &egrave; coperta da NDA. Ma i numeri parlano.</p>
     </div>
 
-    <!-- Terminal-style filter bar -->
-    <div class="cases-filterbar reveal">
-      <div class="cf-group">
-        <span class="cf-label">filter&gt;</span>
-        <button class="cf-btn active" data-filter="all">*</button>
+    <!-- Filtri su due righe -->
+    <div class="cases-filters reveal">
+      <div class="cf-row">
+        <span class="cf-label">Per servizio</span>
+        <button class="cf-btn active" data-filter="all">Tutti</button>
+        <button class="cf-btn" data-filter="type:ecommerce">E-commerce</button>
+        <button class="cf-btn" data-filter="type:platform">Piattaforme</button>
+        <button class="cf-btn" data-filter="type:ai">AI</button>
+        <button class="cf-btn" data-filter="type:webapp">Web App</button>
       </div>
-      <div class="cf-group">
-        <span class="cf-label">tipo</span>
-        <button class="cf-btn" data-filter="type:ecommerce">e-commerce</button>
-        <button class="cf-btn" data-filter="type:platform">piattaforme</button>
-        <button class="cf-btn" data-filter="type:ai">ai</button>
-        <button class="cf-btn" data-filter="type:webapp">web app</button>
-      </div>
-      <div class="cf-group">
-        <span class="cf-label">settore</span>
-        <button class="cf-btn" data-filter="sector:retail">retail</button>
-        <button class="cf-btn" data-filter="sector:energy">energy</button>
-        <button class="cf-btn" data-filter="sector:fashion">fashion</button>
-        <button class="cf-btn" data-filter="sector:tech">tech</button>
-        <button class="cf-btn" data-filter="sector:health">health</button>
-        <button class="cf-btn" data-filter="sector:industry">industry</button>
-        <button class="cf-btn" data-filter="sector:food">food</button>
-        <button class="cf-btn" data-filter="sector:b2b">b2b</button>
+      <div class="cf-row">
+        <span class="cf-label">Per settore</span>
+        <button class="cf-btn" data-filter="sector:retail">Retail</button>
+        <button class="cf-btn" data-filter="sector:energy">Energy</button>
+        <button class="cf-btn" data-filter="sector:fashion">Fashion</button>
+        <button class="cf-btn" data-filter="sector:tech">Tech</button>
+        <button class="cf-btn" data-filter="sector:health">Health</button>
+        <button class="cf-btn" data-filter="sector:industry">Industry</button>
+        <button class="cf-btn" data-filter="sector:food">Food</button>
+        <button class="cf-btn" data-filter="sector:b2b">B2B</button>
       </div>
     </div>
 
-    <!-- Open grid -->
+    <!-- Grid -->
     <div class="cases-grid">
 
       <div class="c-item reveal" data-type="ecommerce" data-sector="retail">
@@ -1596,6 +1599,7 @@
         </div>
         <p class="c-title">E-commerce B2B per rete di 800+ affiliati</p>
         <p class="c-desc">Piattaforma centralizzata per acquisti e contratti digitali, con gestione catalogo, ordini e fatturazione per l&rsquo;intera rete.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="ai" data-sector="b2b">
@@ -1605,6 +1609,7 @@
         </div>
         <p class="c-title">Agente AI per automazione preventivi</p>
         <p class="c-desc">Generazione automatica di preventivi personalizzati tramite AI integrata nel flusso commerciale, dal primo contatto alla firma.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="food">
@@ -1614,6 +1619,7 @@
         </div>
         <p class="c-title">Piattaforma ordini per catena GDO nazionale</p>
         <p class="c-desc">Sistema integrato con ERP e logistica in tempo reale per la gestione di centinaia di migliaia di ordini mensili.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="ecommerce" data-sector="fashion">
@@ -1623,6 +1629,7 @@
         </div>
         <p class="c-title">E-commerce headless per brand luxury</p>
         <p class="c-desc">Architettura headless con esperienza su misura per il mercato luxury. Design premium e performance ottimizzate.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="energy">
@@ -1632,6 +1639,7 @@
         </div>
         <p class="c-title">Piattaforma InstantWin per brand energia</p>
         <p class="c-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata dei vincitori e compliance normativa.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="webapp" data-sector="tech">
@@ -1641,6 +1649,7 @@
         </div>
         <p class="c-title">Dashboard analytics per piattaforma SaaS</p>
         <p class="c-desc">Pannello di controllo real-time con metriche, reportistica avanzata e oltre 50 integrazioni API.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="webapp" data-sector="health">
@@ -1650,6 +1659,7 @@
         </div>
         <p class="c-title">Portale prenotazioni per rete cliniche</p>
         <p class="c-desc">Gestione appuntamenti, referti digitali e comunicazione medico-paziente per una rete di strutture sanitarie.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="industry">
@@ -1659,6 +1669,7 @@
         </div>
         <p class="c-title">Marketplace B2B per filiera manifatturiera</p>
         <p class="c-desc">Piattaforma di sourcing con catalogo digitale e ordini automatizzati che connette oltre 800 aziende della filiera.</p>
+        <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
     </div>
