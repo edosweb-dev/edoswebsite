@@ -613,11 +613,6 @@
       display:flex; flex-direction:column; align-items:flex-start; gap:14px;
       margin-bottom:64px;
     }
-    .serv-label {
-      font-family:'Courier New',monospace;
-      font-size:.78rem; font-weight:600; letter-spacing:.1em;
-      text-transform:uppercase; color:var(--blue);
-    }
     .servizi-head h2 {
       font-size:clamp(2rem,4vw,3.25rem);
       font-weight:400; line-height:1.1; margin:0;
@@ -644,7 +639,21 @@
       background:none; border:none; cursor:pointer; text-align:left;
       gap:24px; position:relative; z-index:1;
     }
-    .serv-btn-left { display:flex; align-items:center; flex:1; min-width:0; }
+    .serv-btn-left { display:flex; align-items:center; gap:20px; flex:1; min-width:0; }
+
+    /* icon — left, same visual height as title */
+    .serv-icon {
+      width:clamp(1.4rem,3vw,2.8rem); height:clamp(1.4rem,3vw,2.8rem);
+      flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--blue);
+      opacity:.9;
+      transition:opacity .35s, color .3s;
+    }
+    .serv-icon svg { width:100%; height:100%; stroke-width:1.4; }
+    .serv-item.open .serv-icon { opacity:1; }
+    .serv-btn:hover .serv-icon { opacity:1; }
+
     .serv-name {
       font-family:var(--font-display);
       font-size:clamp(1.4rem,3vw,2.8rem);
@@ -655,17 +664,17 @@
     .serv-btn:hover .serv-name,
     .serv-item.open .serv-name { color:var(--navy); }
 
-    /* icon right */
+    /* arrow right */
     .serv-btn-right { flex-shrink:0; }
-    .serv-icon {
-      width:44px; height:44px;
+    .serv-arrow {
+      width:32px; height:32px;
       display:flex; align-items:center; justify-content:center;
-      color:rgba(6,14,34,.25);
-      transition:color .3s;
+      color:rgba(6,14,34,.3);
+      transition:color .3s, transform .4s cubic-bezier(.16,1,.3,1);
     }
-    .serv-icon svg { width:36px; height:36px; stroke-width:1.4; }
-    .serv-item.open .serv-icon,
-    .serv-btn:hover .serv-icon { color:var(--blue); }
+    .serv-arrow svg { width:20px; height:20px; }
+    .serv-item.open .serv-arrow { transform:rotate(90deg); color:var(--blue); }
+    .serv-btn:hover .serv-arrow { color:var(--blue); }
 
     /* accent line on open */
     .serv-item::after {
@@ -685,7 +694,7 @@
     .serv-panel-inner { overflow:hidden; }
     .serv-panel-content {
       padding:0 0 40px 0;
-      margin-left:0;
+      margin-left:calc(clamp(1.4rem,3vw,2.8rem) + 20px);
       position:relative; z-index:1;
     }
     .serv-desc {
@@ -714,10 +723,11 @@
     @media(max-width:820px){
       .serv-btn { padding:24px 0; }
       .serv-name { font-size:clamp(1.2rem,2.5vw,1.8rem); }
+      .serv-icon { width:clamp(1.2rem,2.5vw,1.8rem); height:clamp(1.2rem,2.5vw,1.8rem); }
       .serv-panel-content { margin-left:0; padding-top:4px; }
       .serv-tags { grid-template-columns:1fr; gap:10px; }
       .serv-tags::before { display:none; }
-      .serv-btn-left { gap:20px; }
+      .serv-btn-left { gap:16px; }
     }
 
     /* ====================================================
@@ -1134,21 +1144,20 @@
   <div class="container">
 
     <div class="servizi-head reveal">
-      <span class="serv-label">Servizi</span>
       <h2>Tutto il tech che<br><em>la tua agenzia</em> pu&ograve; offrire</h2>
     </div>
 
     <ul class="serv-list" id="servAccordion">
 
-      <!-- 01 Web & Commerce -->
+      <!-- Web & Commerce -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="6" width="28" height="20" rx="2"/><path d="M4 12h28"/><circle cx="8" cy="9" r="1"/><circle cx="12" cy="9" r="1"/><path d="M12 30h12M18 26v4"/></svg></span>
             <span class="serv-name">Web &amp; Commerce</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="6" width="28" height="20" rx="2"/><path d="M4 12h28"/><circle cx="8" cy="9" r="1"/><circle cx="12" cy="9" r="1"/><path d="M12 30h12M18 26v4"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1166,10 +1175,11 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="10" y="3" width="16" height="30" rx="3"/><path d="M10 8h16M10 27h16"/><circle cx="18" cy="30" r="1.2"/><path d="M15 15l3 3 3-3M15 19l3 3 3-3"/></svg></span>
             <span class="serv-name">App &amp; WebApp</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="10" y="3" width="16" height="30" rx="3"/><path d="M10 8h16M10 27h16"/><circle cx="18" cy="30" r="1.2"/><path d="M15 15l3 3 3-3M15 19l3 3 3-3"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1187,11 +1197,11 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M6 10h24M6 26h24"/><circle cx="18" cy="7" r="1.2"/><path d="M12 16h12M12 20h8"/></svg></span>
             <span class="serv-name">Platform Engineering</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M6 10h24M6 26h24"/><circle cx="18" cy="7" r="1.2"/><path d="M12 16h12M12 20h8"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1207,15 +1217,15 @@
         </div></div></div>
       </li>
 
-      <!-- 03 AI Integration -->
+      <!-- AI Integration -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="12"/><circle cx="18" cy="18" r="4"/><path d="M18 2v4M18 30v4M2 18h4M30 18h4"/><path d="M8 8l3 3M25 25l3 3M8 28l3-3M25 8l3-3"/></svg></span>
             <span class="serv-name">AI Integration</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="12"/><circle cx="18" cy="18" r="4"/><path d="M18 2v4M18 30v4M2 18h4M30 18h4"/><path d="M8 8l3 3M25 25l3 3M8 28l3-3M25 8l3-3"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1231,15 +1241,15 @@
         </div></div></div>
       </li>
 
-      <!-- 04 Product Design -->
+      <!-- Product Design -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M8 4h20v28H8z"/><path d="M12 10h12M12 14h12M12 18h8"/><path d="M22 22l6 6M28 22l-6 6"/></svg></span>
             <span class="serv-name">Product Design</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M8 4h20v28H8z"/><path d="M12 10h12M12 14h12M12 18h8"/><path d="M22 22l6 6M28 22l-6 6"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1255,15 +1265,15 @@
         </div></div></div>
       </li>
 
-      <!-- 05 Technical Advisory -->
+      <!-- Technical Advisory -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4l14 8v12l-14 8L4 24V12z"/><path d="M18 12v12M12 18h12"/></svg></span>
             <span class="serv-name">Technical Advisory</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4l14 8v12l-14 8L4 24V12z"/><path d="M18 12v12M12 18h12"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1279,15 +1289,15 @@
         </div></div></div>
       </li>
 
-      <!-- 06 CTO as a Service -->
+      <!-- CTO as a Service -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
             <span class="serv-name">CTO as a Service</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
@@ -1303,15 +1313,15 @@
         </div></div></div>
       </li>
 
-      <!-- 07 Continuity & Evolution -->
+      <!-- Continuity & Evolution -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 18a12 12 0 0 1 24 0"/><path d="M30 18a12 12 0 0 1-24 0"/><path d="M30 18l-3-3M30 18l-3 3"/><path d="M6 18l3-3M6 18l3 3"/><circle cx="18" cy="18" r="3"/></svg></span>
             <span class="serv-name">Continuity &amp; Evolution</span>
           </div>
           <div class="serv-btn-right">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 18a12 12 0 0 1 24 0"/><path d="M30 18a12 12 0 0 1-24 0"/><path d="M30 18l-3-3M30 18l-3 3"/><path d="M6 18l3-3M6 18l3 3"/><circle cx="18" cy="18" r="3"/></svg></span>
+            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
           </div>
         </button>
         <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
