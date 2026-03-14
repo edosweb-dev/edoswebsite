@@ -49,7 +49,7 @@ export default async function handler(req, res) {
   try {
     // Send notification email to Edos
     await resend.emails.send({
-      from: 'Edos Website <noreply@edos.it>',
+      from: 'Edos Website <onboarding@resend.dev>',
       to: ['info@edos.it'],
       replyTo: email,
       subject: `Nuovo contatto da ${name} — ${agency}`,
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
 
     // Send confirmation email to the sender
     await resend.emails.send({
-      from: 'Edos Digital Solutions <noreply@edos.it>',
+      from: 'Edos Digital Solutions <onboarding@resend.dev>',
       to: [email],
       subject: 'Abbiamo ricevuto il tuo messaggio — Edos',
       html: `
