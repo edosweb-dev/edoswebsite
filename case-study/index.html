@@ -81,33 +81,25 @@
 
     /* FILTERS */
     .cases-filters{margin-bottom:0;padding:48px 0 0}
-    .cf-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .cf-dropdown{position:relative;z-index:20}
-    .cf-dropdown+.cf-dropdown{z-index:19}
-    .cf-trigger{font-family:var(--font);font-size:.875rem;font-weight:500;color:var(--text);background:var(--white);border:1.5px solid var(--border-s);border-radius:12px;padding:12px 42px 12px 18px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:10px;transition:border-color .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1),background .3s;min-width:190px;position:relative;user-select:none}
-    .cf-trigger:hover{border-color:rgba(59,111,232,.4);box-shadow:0 2px 12px rgba(59,111,232,.08)}
-    .cf-dropdown.open .cf-trigger{border-color:var(--blue);box-shadow:0 4px 20px rgba(59,111,232,.14);background:var(--white)}
-    .cf-trigger-icon{position:absolute;right:14px;top:50%;width:18px;height:18px;color:var(--text-muted);transition:transform .4s cubic-bezier(.16,1,.3,1),color .3s;transform:translateY(-50%)}
-    .cf-dropdown.open .cf-trigger-icon{transform:translateY(-50%) rotate(180deg);color:var(--blue)}
-    .cf-trigger-label{font-weight:600;color:var(--text-muted);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
-    .cf-trigger-value{color:var(--text);font-weight:600}
-    .cf-trigger-value.is-default{color:var(--text-body);font-weight:500}
-    .cf-panel{position:absolute;top:calc(100% + 8px);left:0;min-width:220px;background:var(--white);border:1.5px solid var(--border-s);border-radius:14px;box-shadow:0 12px 40px rgba(6,14,34,.12),0 2px 8px rgba(6,14,34,.06);padding:6px;opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:top left;transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),visibility .3s;pointer-events:none}
-    .cf-dropdown.open .cf-panel{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto}
-    .cf-option{font-family:var(--font);font-size:.8125rem;font-weight:500;color:var(--text-body);padding:10px 16px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s,color .2s,transform .15s;position:relative;overflow:hidden}
-    .cf-option::before{content:'';position:absolute;inset:0;background:var(--blue);border-radius:9px;opacity:0;transform:scale(.92);transition:opacity .25s,transform .25s cubic-bezier(.16,1,.3,1)}
-    .cf-option:hover{color:var(--blue);background:rgba(59,111,232,.05)}
-    .cf-option:active{transform:scale(.98)}
-    .cf-option.selected{color:#fff;font-weight:600}
-    .cf-option.selected::before{opacity:1;transform:scale(1)}
-    .cf-option span{position:relative;z-index:1}
-    .cf-option-check{width:16px;height:16px;position:relative;z-index:1;opacity:0;transform:scale(.5);transition:opacity .25s cubic-bezier(.16,1,.3,1),transform .25s cubic-bezier(.16,1,.3,1);flex-shrink:0;margin-left:auto}
-    .cf-option.selected .cf-option-check{opacity:1;transform:scale(1)}
-    .cf-count{font-family:var(--font);font-size:.8125rem;font-weight:500;color:var(--text-muted);margin-left:auto;transition:opacity .3s}
+    .cf-group{margin-bottom:20px}
+    .cf-group:last-child{margin-bottom:0}
+    .cf-header{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+    .cf-label{font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);flex-shrink:0}
+    .cf-line{flex:1;height:1px;background:var(--border)}
+    .cf-count{font-family:var(--font);font-size:.78rem;font-weight:500;color:var(--text-muted);flex-shrink:0}
     .cf-count strong{color:var(--text);font-weight:700}
-    .cf-reset{font-family:var(--font);font-size:.78rem;font-weight:600;color:var(--blue);background:rgba(59,111,232,.06);border:none;cursor:pointer;padding:10px 20px;border-radius:10px;transition:background .25s,opacity .35s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1);opacity:0;pointer-events:none;transform:translateX(-8px) scale(.95)}
-    .cf-reset.show{opacity:1;pointer-events:auto;transform:translateX(0) scale(1)}
-    .cf-reset:hover{background:rgba(59,111,232,.12)}
+    .cf-row{display:flex;gap:0;width:100%}
+    .cf-btn{font-family:var(--font);font-size:.8125rem;font-weight:500;flex:1;text-align:center;padding:11px 6px;border:1px solid var(--border-s);background:transparent;color:var(--text-body);cursor:pointer;white-space:nowrap;position:relative;overflow:hidden;transition:color .35s cubic-bezier(.16,1,.3,1),border-color .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1),transform .2s cubic-bezier(.16,1,.3,1)}
+    .cf-btn::before{content:'';position:absolute;inset:0;background:var(--blue);opacity:0;transform:scaleX(0);transform-origin:center;transition:opacity .35s cubic-bezier(.16,1,.3,1),transform .35s cubic-bezier(.16,1,.3,1)}
+    .cf-btn:first-child{border-radius:10px 0 0 10px}
+    .cf-btn:last-child{border-radius:0 10px 10px 0}
+    .cf-btn+.cf-btn{border-left:none}
+    .cf-btn:hover{color:var(--blue);border-color:rgba(59,111,232,.3);z-index:1;box-shadow:0 0 0 1px rgba(59,111,232,.15)}
+    .cf-btn:active{transform:scale(.97)}
+    .cf-btn.active{color:#fff;border-color:var(--blue);z-index:2;box-shadow:0 2px 12px rgba(59,111,232,.2)}
+    .cf-btn.active::before{opacity:1;transform:scaleX(1)}
+    .cf-btn.active:hover{box-shadow:0 4px 16px rgba(59,111,232,.28)}
+    .cf-btn span{position:relative;z-index:1}
 
     /* CASE GRID */
     .cases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border-s);width:100%}
@@ -177,7 +169,7 @@
     @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}}
     @media(max-width:1080px){.cases-grid{grid-template-columns:repeat(3,1fr)}.c-item:nth-child(4n){border-right:1px solid var(--border-s)}.c-item:nth-child(3n){border-right:none}}
     @media(max-width:768px){.cases-grid{grid-template-columns:repeat(2,1fr)}.c-item:nth-child(3n){border-right:1px solid var(--border-s)}.c-item:nth-child(2n){border-right:none}}
-    @media(max-width:600px){.cases-grid{grid-template-columns:1fr}.c-item{border-right:none !important;padding:24px 16px !important}.c-title{font-size:1.1rem}.cf-bar{flex-direction:column;align-items:stretch;gap:12px}.cf-dropdown{z-index:20 !important}.cf-trigger{width:100%;min-width:0}.cf-panel{min-width:100%}.cf-count{margin-left:0;text-align:center}.cf-reset{text-align:center}}
+    @media(max-width:600px){.cases-grid{grid-template-columns:1fr}.c-item{border-right:none !important;padding:24px 16px !important}.c-title{font-size:1.1rem}.cf-row{flex-wrap:wrap;gap:6px}.cf-btn{flex:0 0 auto;padding:9px 14px;border-radius:8px !important;border:1px solid var(--border-s) !important}.cf-btn+.cf-btn{border-left:1px solid var(--border-s) !important}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
 
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -251,46 +243,41 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="cases-filters reveal">
-      <div class="cf-bar">
-        <div class="cf-dropdown" id="ddType">
-          <button class="cf-trigger" type="button">
-            <span class="cf-trigger-label">Servizio</span>
-            <span class="cf-trigger-value is-default" id="ddTypeValue">Tutti</span>
-            <svg class="cf-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="cf-panel">
-            <div class="cf-option selected" data-value="all"><span>Tutti i servizi</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="ecommerce"><span>E-commerce</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="platform"><span>Piattaforme</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="ai"><span>AI</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="app"><span>App</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="web"><span>Web</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="advisory"><span>Advisory</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          </div>
+      <div class="cf-group">
+        <div class="cf-header">
+          <span class="cf-label">Per servizio</span>
+          <span class="cf-line"></span>
+          <span class="cf-count" id="filterCount"><strong>30</strong> progetti</span>
         </div>
-        <div class="cf-dropdown" id="ddSector">
-          <button class="cf-trigger" type="button">
-            <span class="cf-trigger-label">Settore</span>
-            <span class="cf-trigger-value is-default" id="ddSectorValue">Tutti</span>
-            <svg class="cf-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="cf-panel">
-            <div class="cf-option selected" data-value="all"><span>Tutti i settori</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="retail"><span>Retail</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="energy"><span>Energy</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="fashion"><span>Fashion</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="tech"><span>Tech</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="health"><span>Health</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="industry"><span>Industry</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="food"><span>Food</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="finance"><span>Finance</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="hospitality"><span>Hospitality</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="automotive"><span>Automotive</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div class="cf-option" data-value="wellness"><span>Wellness</span><svg class="cf-option-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          </div>
+        <div class="cf-row" id="filterTypeRow">
+          <button class="cf-btn active" data-filter-type="all"><span>Tutti</span></button>
+          <button class="cf-btn" data-filter-type="ecommerce"><span>E-commerce</span></button>
+          <button class="cf-btn" data-filter-type="platform"><span>Piattaforme</span></button>
+          <button class="cf-btn" data-filter-type="ai"><span>AI</span></button>
+          <button class="cf-btn" data-filter-type="app"><span>App</span></button>
+          <button class="cf-btn" data-filter-type="web"><span>Web</span></button>
+          <button class="cf-btn" data-filter-type="advisory"><span>Advisory</span></button>
         </div>
-        <button class="cf-reset" id="filterReset">Reset filtri</button>
-        <span class="cf-count" id="filterCount"><strong>30</strong> progetti</span>
+      </div>
+      <div class="cf-group">
+        <div class="cf-header">
+          <span class="cf-label">Per settore</span>
+          <span class="cf-line"></span>
+        </div>
+        <div class="cf-row" id="filterSectorRow">
+          <button class="cf-btn active" data-filter-sector="all"><span>Tutti</span></button>
+          <button class="cf-btn" data-filter-sector="retail"><span>Retail</span></button>
+          <button class="cf-btn" data-filter-sector="energy"><span>Energy</span></button>
+          <button class="cf-btn" data-filter-sector="fashion"><span>Fashion</span></button>
+          <button class="cf-btn" data-filter-sector="tech"><span>Tech</span></button>
+          <button class="cf-btn" data-filter-sector="health"><span>Health</span></button>
+          <button class="cf-btn" data-filter-sector="industry"><span>Industry</span></button>
+          <button class="cf-btn" data-filter-sector="food"><span>Food</span></button>
+          <button class="cf-btn" data-filter-sector="finance"><span>Finance</span></button>
+          <button class="cf-btn" data-filter-sector="hospitality"><span>Hospitality</span></button>
+          <button class="cf-btn" data-filter-sector="automotive"><span>Automotive</span></button>
+          <button class="cf-btn" data-filter-sector="wellness"><span>Wellness</span></button>
+        </div>
       </div>
     </div>
   </div>
@@ -877,83 +864,47 @@
   parents.forEach(function(p){var kids=Array.from(p.querySelectorAll(':scope > .reveal, :scope > .reveal-scale'));kids.forEach(function(k,i){if(!k.style.transitionDelay)k.style.transitionDelay=(i*0.12)+'s';});});
   if('IntersectionObserver' in window){var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});revEls.forEach(function(el){ro.observe(el);});}else{revEls.forEach(function(el){el.classList.add('visible');});}
 
-  /* Case study filters — custom animated dropdowns */
+  /* Case study filters — animated inline buttons */
   (function(){
     var state={type:'all',sector:'all'};
     var cards=document.querySelectorAll('.c-item');
     var empty=document.getElementById('casesEmpty');
     var countEl=document.getElementById('filterCount');
-    var resetBtn=document.getElementById('filterReset');
-    var ddType=document.getElementById('ddType');
-    var ddSector=document.getElementById('ddSector');
-    var ddTypeVal=document.getElementById('ddTypeValue');
-    var ddSectorVal=document.getElementById('ddSectorValue');
+    var typeBtns=document.querySelectorAll('[data-filter-type]');
+    var sectorBtns=document.querySelectorAll('[data-filter-sector]');
 
-    function closeAll(){
-      document.querySelectorAll('.cf-dropdown.open').forEach(function(d){d.classList.remove('open');});
-    }
-
-    function initDropdown(dd,key,valEl){
-      var trigger=dd.querySelector('.cf-trigger');
-      var opts=dd.querySelectorAll('.cf-option');
-
-      trigger.addEventListener('click',function(e){
-        e.stopPropagation();
-        var wasOpen=dd.classList.contains('open');
-        closeAll();
-        if(!wasOpen) dd.classList.add('open');
-      });
-
-      opts.forEach(function(opt){
-        opt.addEventListener('click',function(e){
-          e.stopPropagation();
-          var val=opt.getAttribute('data-value');
-          var label=opt.querySelector('span').textContent;
+    function bindRow(btns,key){
+      btns.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var val=btn.getAttribute('data-filter-'+key);
           state[key]=val;
-          opts.forEach(function(o){o.classList.remove('selected');});
-          opt.classList.add('selected');
-          valEl.textContent=val==='all'?'Tutti':label;
-          valEl.classList[val==='all'?'add':'remove']('is-default');
-          dd.classList.remove('open');
+          btns.forEach(function(b){b.classList.remove('active');});
+          btn.classList.add('active');
           applyFilters();
         });
       });
     }
-
-    initDropdown(ddType,'type',ddTypeVal);
-    initDropdown(ddSector,'sector',ddSectorVal);
-
-    document.addEventListener('click',function(){closeAll();});
+    bindRow(typeBtns,'type');
+    bindRow(sectorBtns,'sector');
 
     function applyFilters(){
       var t=state.type,s=state.sector,vis=0;
-      cards.forEach(function(card,i){
+      cards.forEach(function(card){
         var matchT=t==='all'||card.getAttribute('data-type')===t;
         var matchS=s==='all'||card.getAttribute('data-sector')===s;
         var show=matchT&&matchS;
         if(show){
           card.hidden=false;
-          card.style.opacity='0';card.style.transform='translateY(16px)';
-          setTimeout(function(){card.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';card.style.opacity='1';card.style.transform='translateY(0)';},vis*40);
+          card.style.opacity='0';card.style.transform='translateY(14px)';
+          (function(v){setTimeout(function(){card.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';card.style.opacity='1';card.style.transform='translateY(0)';},v*35);})(vis);
           vis++;
         } else {
-          card.hidden=true;
-          card.style.opacity='';card.style.transform='';card.style.transition='';
+          card.hidden=true;card.style.opacity='';card.style.transform='';card.style.transition='';
         }
       });
       if(empty) empty.style.display=vis===0?'block':'none';
       if(countEl) countEl.innerHTML='<strong>'+vis+'</strong> progett'+(vis===1?'o':'i');
-      if(resetBtn) resetBtn.classList[t!=='all'||s!=='all'?'add':'remove']('show');
     }
-
-    resetBtn.addEventListener('click',function(){
-      state.type='all';state.sector='all';
-      ddType.querySelectorAll('.cf-option').forEach(function(o,i){o.classList[i===0?'add':'remove']('selected');});
-      ddSector.querySelectorAll('.cf-option').forEach(function(o,i){o.classList[i===0?'add':'remove']('selected');});
-      ddTypeVal.textContent='Tutti';ddTypeVal.classList.add('is-default');
-      ddSectorVal.textContent='Tutti';ddSectorVal.classList.add('is-default');
-      applyFilters();
-    });
   })();
 
   /* Fixed CTA: show/hide + adaptive color */
