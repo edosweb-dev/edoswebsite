@@ -830,39 +830,54 @@
     .cases-filters { margin-bottom:48px; }
 
     .cf-row {
-      display:flex; align-items:center; gap:8px;
-      flex-wrap:wrap;
+      display:flex; align-items:stretch; gap:0;
     }
-    .cf-row + .cf-row { margin-top:12px; }
+    .cf-row + .cf-row { margin-top:8px; }
 
     .cf-label {
       font-family:'Courier New',monospace;
-      font-size:.65rem; font-weight:700; letter-spacing:.06em;
+      font-size:.7rem; font-weight:700; letter-spacing:.06em;
       text-transform:uppercase; color:var(--navy);
-      min-width:100px; flex-shrink:0;
+      background:var(--bg-alt);
+      padding:14px 20px;
+      display:flex; align-items:center;
+      white-space:nowrap; flex-shrink:0;
+      border:1px solid var(--border-s);
+      border-right:none;
+      border-radius:6px 0 0 6px;
     }
 
     .cf-btn {
       font-family:'Courier New',monospace;
-      font-size:.68rem; font-weight:600; letter-spacing:.03em;
+      font-size:.75rem; font-weight:600; letter-spacing:.03em;
       text-transform:uppercase;
-      padding:7px 16px; border-radius:4px;
+      padding:14px 0;
+      flex:1;
       border:1px solid var(--border-s);
+      border-right:none;
       background:transparent; color:var(--text-muted);
       cursor:pointer; white-space:nowrap;
       transition:all .2s;
+      text-align:center;
+    }
+    .cf-btn:last-child {
+      border-right:1px solid var(--border-s);
+      border-radius:0 6px 6px 0;
     }
     .cf-btn:hover {
-      border-color:var(--blue); color:var(--blue);
+      background:rgba(59,111,232,.04); color:var(--blue);
     }
     .cf-btn.active {
       background:var(--navy); border-color:var(--navy);
       color:#fff;
     }
+    .cf-btn.active + .cf-btn { border-left-color:var(--navy); }
 
-    .cf-divider {
-      width:100%; height:1px; background:var(--border-s);
-      margin:0;
+    @media(max-width:600px){
+      .cf-row { flex-wrap:wrap; }
+      .cf-label { width:100%; border-right:1px solid var(--border-s); border-radius:6px 6px 0 0; }
+      .cf-btn:first-of-type { border-radius:0; }
+      .cf-btn:last-child { border-radius:0 0 6px 0; }
     }
 
     /* ── case grid ── */
