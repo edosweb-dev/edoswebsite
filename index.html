@@ -224,28 +224,32 @@
 
     /* hamburger — always visible */
     .nav-hamburger {
-      display:flex; flex-direction:column; justify-content:center; gap:7px;
+      display:flex; flex-direction:column; justify-content:center; gap:5px;
       background:none; border:none; cursor:pointer; padding:8px; border-radius:6px;
       width:40px; height:40px;
     }
     .nav-hamburger span {
-      display:block; height:1.5px; border-radius:2px;
+      display:block; height:2px; border-radius:2px;
       background:#fff;
       transform-origin:center;
-      transition:background .25s, transform .38s cubic-bezier(.23,1,.32,1), width .38s cubic-bezier(.23,1,.32,1);
+      transition:background .25s, transform .38s cubic-bezier(.23,1,.32,1), width .38s cubic-bezier(.23,1,.32,1), opacity .25s;
     }
-    .nav-hamburger span:nth-child(1) { width:24px; }
-    .nav-hamburger span:nth-child(2) { width:16px; }
+    .nav-hamburger span:nth-child(1) { width:22px; }
+    .nav-hamburger span:nth-child(2) { width:22px; }
+    .nav-hamburger span:nth-child(3) { width:16px; }
     .nav.scrolled .nav-hamburger span { background:var(--navy); }
 
-    /* open state: two bars cross into X */
+    /* open state: three bars morph into X */
     .nav-hamburger.open span:nth-child(1) {
       width:22px;
-      transform:translateY(4.25px) rotate(45deg);
+      transform:translateY(7px) rotate(45deg);
     }
     .nav-hamburger.open span:nth-child(2) {
+      opacity:0; width:0;
+    }
+    .nav-hamburger.open span:nth-child(3) {
       width:22px;
-      transform:translateY(-4.25px) rotate(-45deg);
+      transform:translateY(-7px) rotate(-45deg);
     }
 
     /* ---- Fullscreen overlay nav ---- */
@@ -806,13 +810,13 @@
 
     /* icon */
     .s-icon {
-      width:28px; height:28px; flex-shrink:0;
+      width:42px; height:42px; flex-shrink:0;
       display:flex; align-items:center; justify-content:center;
       color:var(--blue);
       opacity:.85;
       transition:opacity .3s, transform .3s cubic-bezier(.16,1,.3,1);
     }
-    .s-icon svg { width:28px; height:28px; stroke-width:1.4; }
+    .s-icon svg { width:42px; height:42px; stroke-width:1.2; }
     .s-row:hover .s-icon { opacity:1; transform:translateX(3px); }
 
     /* name */
@@ -1286,7 +1290,7 @@
 
 
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
-      <span></span><span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
@@ -1784,7 +1788,7 @@
       <h2 class="reveal">Le migliori collaborazioni<br>iniziano da una <em>conversazione.</em></h2>
       <p class="cta-desc reveal d1">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto.<br>Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
       <div class="cta-action reveal d2">
-        <a href="mailto:info@edos.it" class="btn-pill">
+        <a href="/contatti" class="btn-pill">
           <span class="btn-pill-circle">
             <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1799,7 +1803,7 @@
 
 <!-- ===================== FIXED SIDE CTA ===================== -->
 <div class="fixed-cta" id="fixedCta">
-  <a href="mailto:info@edos.it" class="fixed-cta-link">
+  <a href="/contatti" class="fixed-cta-link">
     <!-- rotating text ring -->
     <svg class="fixed-cta-ring" viewBox="0 0 108 108">
       <defs>
@@ -1837,7 +1841,7 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Case study<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/case-study/ecommerce-b2b-rete-affiliati">E-commerce B2B rete affiliati</a><a href="/case-study/agente-ai-automazione-preventivi">Agente AI preventivi</a><a href="/case-study/piattaforma-ordini-gdo">Piattaforma ordini GDO</a><a href="/case-study/ecommerce-headless-brand-luxury">E-commerce headless luxury</a><a href="/case-study/piattaforma-instantwin-brand-energia">Piattaforma InstantWin</a><a href="/case-study/dashboard-analytics-saas">Dashboard analytics SaaS</a><a href="/case-study/portale-prenotazioni-cliniche">Portale prenotazioni cliniche</a><a href="/case-study/marketplace-b2b-filiera-manifatturiera">Marketplace B2B manifatturiero</a></div>
+        <div class="footer-col-links" id="footerCaseLinks"></div>
       </div>
     </div>
     <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async"></a>

@@ -100,6 +100,30 @@
     }
   })();
 
+  /* ---- FOOTER CASE STUDY (dynamic) ---- */
+  (function(){
+    var el=document.getElementById('footerCaseLinks');
+    if(!el)return;
+    var cases=[
+      {h:'/case-study/piattaforma-web-orchestra',t:'Piattaforma web Orchestra'},
+      {h:'/case-study/ecommerce-b2b-treere',t:'E-commerce B2B Treere'},
+      {h:'/case-study/crm-b2c-mutuisi',t:'CRM B2C MutuiS\u00ec'},
+      {h:'/case-study/piattaforma-power2play-brand-energia',t:'Piattaforma Power2Play'},
+      {h:'/case-study/piattaforma-ai-automazione-preventivi',t:'AI automazione preventivi'},
+      {h:'/case-study/rag-agentico-analisi-documentazione',t:'RAG analisi documentazione'},
+      {h:'/case-study/ecommerce-headless-brand-luxury',t:'E-commerce headless luxury'},
+      {h:'/case-study/marketplace-b2b-filiera-manifatturiera',t:'Marketplace B2B manifatturiero'}
+    ];
+    /* Exclude current page from footer links */
+    var path=location.pathname.replace(/\/$/,'');
+    var filtered=cases.filter(function(c){return c.h!==path;});
+    var show=filtered.slice(0,8);
+    show.forEach(function(c){
+      var a=document.createElement('a');a.href=c.h;a.textContent=c.t;
+      el.appendChild(a);
+    });
+  })();
+
   /* ---- FOOTER ACCORDION (mobile) ---- */
   (function(){
     var cols=document.querySelectorAll('.footer-col');

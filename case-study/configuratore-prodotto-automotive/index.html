@@ -41,12 +41,14 @@
     .nav .container{display:flex;align-items:center;justify-content:space-between;max-width:100%;padding:0 48px;height:70px}
     .nav-logo img{height:28px;width:auto}.nav-logo .logo-white{display:block}.nav-logo .logo-dark{display:none}
     .nav.scrolled .nav-logo .logo-white{display:none}.nav.scrolled .nav-logo .logo-dark{display:block}
-    .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:7px;background:none;border:none;cursor:pointer;padding:8px;border-radius:6px;width:40px;height:40px}
-    .nav-hamburger span{display:block;height:1.5px;border-radius:2px;background:#fff;transform-origin:center;transition:background .25s,transform .38s cubic-bezier(.23,1,.32,1),width .38s cubic-bezier(.23,1,.32,1)}
-    .nav-hamburger span:nth-child(1){width:24px}.nav-hamburger span:nth-child(2){width:16px}
+    .nav-hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;border-radius:6px;width:40px;height:40px}
+    .nav-hamburger span{display:block;height:2px;border-radius:2px;background:#fff;transform-origin:center;transition:background .25s,transform .38s cubic-bezier(.23,1,.32,1),width .38s cubic-bezier(.23,1,.32,1),opacity .25s}
+    .nav-hamburger span:nth-child(1){width:22px}.nav-hamburger span:nth-child(2){width:22px}
+    .nav-hamburger span:nth-child(3){width:16px}
     .nav.scrolled .nav-hamburger span{background:var(--navy)}
-    .nav-hamburger.open span:nth-child(1){width:22px;transform:translateY(4.25px) rotate(45deg)}
-    .nav-hamburger.open span:nth-child(2){width:22px;transform:translateY(-4.25px) rotate(-45deg)}
+    .nav-hamburger.open span:nth-child(1){width:22px;transform:translateY(7px) rotate(45deg)}
+    .nav-hamburger.open span:nth-child(2){opacity:0;width:0}
+    .nav-hamburger.open span:nth-child(3){width:22px;transform:translateY(-7px) rotate(-45deg)}
     .nav-overlay{position:fixed;inset:0;z-index:980;background:#060E22;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .42s ease;overflow:hidden}
     .nav-overlay.open{opacity:1;pointer-events:auto}
     .nav-ov-geo{position:absolute;inset:0;pointer-events:none}.nav-ov-geo svg{width:100%;height:100%;opacity:.07}
@@ -211,7 +213,7 @@
       <img class="logo-white" src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos">
       <img class="logo-dark" src="https://www.edos.it/wp-content/uploads/2025/02/logo-edos.png" alt="Edos">
     </a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span></button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -258,7 +260,7 @@
         </div>
             <div class="cs-nda">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Progetto realizzato per agenzia partner. Il nome del cliente finale &egrave; coperto da NDA.
+        Progetto realizzato per agenzia partner. Il nome del cliente finale &egrave; coperto da accordo di riservatezza.
       </div>
 </div>
     </div>
@@ -273,7 +275,6 @@
     <div class="ed-block reveal">
       <h2 class="ed-heading">La situazione <span>di partenza</span></h2>
       <p class="ed-text">Brand automotive con processo di configurazione prodotto gestito manualmente dai dealer, lungo, soggetto a errori e incapace di fornire un&rsquo;esperienza premium al cliente finale.</p>
-      <div class="overview-nda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Progetto realizzato per agenzia partner. Il nome del cliente finale &egrave; coperto da NDA.</div>
     </div>
 
     <!-- Soluzione -->
@@ -408,7 +409,7 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Case study<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/case-study/piattaforma-web-orchestra">Piattaforma web Orchestra</a><a href="/case-study/ecommerce-b2b-treere">E-commerce B2B Treere</a><a href="/case-study/crm-b2c-mutuisi">CRM B2C MutuiS&igrave;</a><a href="/case-study/piattaforma-power2play-brand-energia">Piattaforma Power2Play</a><a href="/case-study/piattaforma-ai-automazione-preventivi">AI automazione preventivi</a><a href="/case-study/rag-agentico-analisi-documentazione">RAG analisi documentazione</a><a href="/case-study/ecommerce-headless-brand-luxury">E-commerce headless luxury</a><a href="/case-study/marketplace-b2b-filiera-manifatturiera">Marketplace B2B manifatturiero</a></div>
+        <div class="footer-col-links" id="footerCaseLinks"></div>
       </div>
     </div>
     <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async"></a>
