@@ -169,9 +169,53 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI DI SETTORE */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--off-white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* PROCESSO STEP BY STEP */
+    .processo-list{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
+    .processo-step{display:flex;gap:28px;position:relative;padding-bottom:40px}
+    .processo-step:last-child{padding-bottom:0}
+    .processo-step:last-child .processo-line{display:none}
+    .processo-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+    .processo-line{position:absolute;left:24px;top:48px;bottom:0;width:2px;background:var(--border-s)}
+    .processo-body{flex:1;padding-top:8px}
+    .processo-body h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin:0 0 6px}
+    .processo-body p{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0}
+
+    /* STACK TECNOLOGICO */
+    .stack-groups{display:flex;flex-direction:column;gap:28px;margin-top:48px}
+    .stack-group-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+    .stack-pills{display:flex;flex-wrap:wrap;gap:8px}
+    .stack-pill{display:inline-flex;padding:6px 16px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.15);border-radius:100px;font-size:.8125rem;font-weight:600;color:var(--navy);transition:background .2s}
+    .stack-pill:hover{background:rgba(59,111,232,.12)}
+
+    /* PERCHE FUNZIONA */
+    .perche-list{display:flex;flex-direction:column;gap:20px;margin-top:48px}
+    .perche-item{display:flex;gap:16px;align-items:flex-start}
+    .perche-check{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
+    .perche-check svg{width:100%;height:100%}
+    .perche-item p{font-size:1.0625rem;color:var(--text-body);line-height:1.7;margin:0}
+
+    /* FAQ ACCORDION */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px}
+    .faq-item{border-bottom:1px solid var(--border-s)}
+    .faq-item:first-child{border-top:1px solid var(--border-s)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{width:20px;height:20px;flex-shrink:0;color:var(--text-muted);transition:transform .3s cubic-bezier(.16,1,.3,1),color .2s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg);color:var(--blue)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 20px;font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin:0}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -255,6 +299,21 @@
   </div>
 </section>
 
+<section class="section-pad" style="background:var(--surface)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>AI Integration</strong></h2>
+    </div>
+    <div class="numeri-grid">
+      <div class="numeri-card reveal"><p class="numeri-num">+70%</p><p class="numeri-label">di riduzione media dei tempi su processi automatizzati con AI</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">40%</p><p class="numeri-label">delle aziende italiane sta valutando investimenti in AI nel 2025</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">3,7x</p><p class="numeri-label">ROI medio dei progetti AI ben implementati nel primo anno</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">85%</p><p class="numeri-label">dei casi d&rsquo;uso AI in azienda riguarda automazione di processi ripetitivi</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
     <div class="reveal">
@@ -262,12 +321,91 @@
       <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>AI Integration</strong></h2>
     </div>
     <div class="sc-list">
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando il cliente riceve volumi alti di richieste ripetitive.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando un processo manuale pu&ograve; essere automatizzato.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando serve un assistente digitale integrato nel sistema esistente.</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Il cliente gestisce volumi alti di richieste ripetitive (email, preventivi, ticket)</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Serve estrarre informazioni strutturate da documenti non strutturati</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Un processo manuale costa troppe ore al mese e pu&ograve; essere automatizzato</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Il cliente vuole un assistente AI integrato nel suo prodotto o sito</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Serve analizzare grandi quantit&agrave; di dati per prendere decisioni migliori</p></div>
     </div>
   </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Processo</span>
+      <h2 class="section-title">Come realizziamo un progetto <strong>AI Integration</strong></h2>
+    </div>
+    <div class="processo-list">
+      <div class="processo-step reveal">
+        <div class="processo-num">01</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Assessment AI</h4><p>Identifichiamo i processi con il miglior rapporto costo/beneficio per l&rsquo;automazione. Selezioniamo dove l&rsquo;AI crea valore reale.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">02</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Proof of Concept</h4><p>PoC in 2-3 settimane per validare che la soluzione funzioni sul caso d&rsquo;uso reale prima di investire nello sviluppo completo.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">03</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Sviluppo e integrazione</h4><p>Sviluppo dell&rsquo;agente AI e integrazione con i sistemi esistenti del cliente (CRM, email, gestionale).</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">04</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Training e fine-tuning</h4><p>Addestramento sui dati specifici del cliente. L&rsquo;AI impara il contesto aziendale, non risponde genericamente.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">05</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Test e validazione</h4><p>Test su casi reali prima del go-live. Misurazione delle performance rispetto al processo manuale precedente.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">06</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Monitoraggio continuo</h4><p>Monitoraggio delle performance e aggiornamenti periodici inclusi nel servizio.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Stack</span>
+      <h2 class="section-title">Tecnologie che <strong>utilizziamo</strong></h2>
+    </div>
+    <div class="stack-groups">
+      <div class="reveal"><p class="stack-group-label">LLM</p><div class="stack-pills"><span class="stack-pill">OpenAI GPT-4</span><span class="stack-pill">Claude API</span><span class="stack-pill">Mistral</span><span class="stack-pill">LLM in locale</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Framework</p><div class="stack-pills"><span class="stack-pill">LangChain</span><span class="stack-pill">LlamaIndex</span><span class="stack-pill">CrewAI</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Vector DB</p><div class="stack-pills"><span class="stack-pill">Pinecone</span><span class="stack-pill">Weaviate</span><span class="stack-pill">pgvector</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Automazione</p><div class="stack-pills"><span class="stack-pill">Python</span><span class="stack-pill">n8n</span><span class="stack-pill">Custom pipelines</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Integrazioni</p><div class="stack-pills"><span class="stack-pill">Gmail</span><span class="stack-pill">Outlook</span><span class="stack-pill">Salesforce</span><span class="stack-pill">HubSpot</span><span class="stack-pill">REST API</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Infrastruttura</p><div class="stack-pills"><span class="stack-pill">AWS Lambda</span><span class="stack-pill">Docker</span><span class="stack-pill">FastAPI</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Perch&eacute; funziona</span>
+      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
+    </div>
+    <div class="perche-list">
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Partiamo sempre da un Proof of Concept per validare che la soluzione funzioni sul caso d&rsquo;uso reale prima di investire nello sviluppo completo.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>L&rsquo;agente AI viene addestrato sui dati e i processi specifici del cliente &mdash; conosce il contesto aziendale, non risponde genericamente.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Possibilit&agrave; di implementare LLM in locale per i clienti con requisiti di privacy stringenti &mdash; nessun dato esce dall&rsquo;infrastruttura.</p></div>
+    </div>
+  </div>
+</section>
+
 
 <section class="cl-section section-pad">
   <div class="container">
@@ -314,6 +452,35 @@
   </div>
 </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">I dati del cliente sono al sicuro?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Possiamo implementare soluzioni con LLM in locale che non inviano dati a servizi esterni. Per i casi che usano API cloud, applichiamo sempre data processing agreements e anonimizzazione dove necessario.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo ci vuole per vedere i primi risultati?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Con un PoC ben definito, i primi risultati si vedono in 3-4 settimane. Un sistema completo in produzione richiede tipicamente 2-3 mesi.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">L&rsquo;AI pu&ograve; sbagliare? Come gestiamo gli errori?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;, ogni sistema AI ha un margine di errore. Progettiamo sempre con un human-in-the-loop per i casi critici e misuriamo l&rsquo;accuracy in produzione con report periodici.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Serve grande quantit&agrave; di dati per iniziare?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Dipende dal caso d&rsquo;uso. Per molti agenti basati su LLM non serve training da zero &mdash; bastano esempi e istruzioni ben strutturate. Valutiamo caso per caso.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">

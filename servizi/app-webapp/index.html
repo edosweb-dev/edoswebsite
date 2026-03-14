@@ -169,9 +169,53 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI DI SETTORE */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--off-white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* PROCESSO STEP BY STEP */
+    .processo-list{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
+    .processo-step{display:flex;gap:28px;position:relative;padding-bottom:40px}
+    .processo-step:last-child{padding-bottom:0}
+    .processo-step:last-child .processo-line{display:none}
+    .processo-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+    .processo-line{position:absolute;left:24px;top:48px;bottom:0;width:2px;background:var(--border-s)}
+    .processo-body{flex:1;padding-top:8px}
+    .processo-body h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin:0 0 6px}
+    .processo-body p{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0}
+
+    /* STACK TECNOLOGICO */
+    .stack-groups{display:flex;flex-direction:column;gap:28px;margin-top:48px}
+    .stack-group-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+    .stack-pills{display:flex;flex-wrap:wrap;gap:8px}
+    .stack-pill{display:inline-flex;padding:6px 16px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.15);border-radius:100px;font-size:.8125rem;font-weight:600;color:var(--navy);transition:background .2s}
+    .stack-pill:hover{background:rgba(59,111,232,.12)}
+
+    /* PERCHE FUNZIONA */
+    .perche-list{display:flex;flex-direction:column;gap:20px;margin-top:48px}
+    .perche-item{display:flex;gap:16px;align-items:flex-start}
+    .perche-check{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
+    .perche-check svg{width:100%;height:100%}
+    .perche-item p{font-size:1.0625rem;color:var(--text-body);line-height:1.7;margin:0}
+
+    /* FAQ ACCORDION */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px}
+    .faq-item{border-bottom:1px solid var(--border-s)}
+    .faq-item:first-child{border-top:1px solid var(--border-s)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{width:20px;height:20px;flex-shrink:0;color:var(--text-muted);transition:transform .3s cubic-bezier(.16,1,.3,1),color .2s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg);color:var(--blue)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 20px;font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin:0}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -255,6 +299,21 @@
   </div>
 </section>
 
+<section class="section-pad" style="background:var(--surface)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>App &amp; WebApp</strong></h2>
+    </div>
+    <div class="numeri-grid">
+      <div class="numeri-card reveal"><p class="numeri-num">85%</p><p class="numeri-label">delle aziende che ha digitalizzato un processo interno ha ridotto i costi operativi di almeno il 30%</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">4,2 mld</p><p class="numeri-label">di utenti smartphone nel mondo &mdash; il mobile &egrave; il primo schermo</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">60%</p><p class="numeri-label">delle WebApp aziendali non viene adottata per scarsa usabilit&agrave;</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">+40%</p><p class="numeri-label">di produttivit&agrave; media dopo l&rsquo;introduzione di un gestionale custom</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
     <div class="reveal">
@@ -262,12 +321,91 @@
       <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>App &amp; WebApp</strong></h2>
     </div>
     <div class="sc-list">
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando il cliente ha un processo interno da digitalizzare.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando serve un&rsquo;app che si integra con sistemi esistenti.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando una WebApp sostituisce un gestionale obsoleto.</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Il cliente gestisce ancora processi interni su Excel o carta</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Serve un&rsquo;app mobile per i propri clienti o per il team interno</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Una WebApp deve integrarsi con sistemi esistenti (ERP, CRM, POS)</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Il cliente ha un&rsquo;idea di prodotto digitale da lanciare sul mercato</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Una piattaforma esistente va sostituita perch&eacute; non scala pi&ugrave;</p></div>
     </div>
   </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Processo</span>
+      <h2 class="section-title">Come realizziamo un progetto <strong>App &amp; WebApp</strong></h2>
+    </div>
+    <div class="processo-list">
+      <div class="processo-step reveal">
+        <div class="processo-num">01</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Discovery tecnica</h4><p>Analisi dei processi esistenti, mappatura dei requisiti funzionali, scelta dell&rsquo;architettura pi&ugrave; adatta (PWA, ibrida, nativa).</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">02</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>UX Design</h4><p>User flow, wireframe, prototipo interattivo. Test con utenti reali prima di scrivere una riga di codice.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">03</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Sviluppo iterativo</h4><p>Sprint di 2 settimane con demo al cliente finale ogni ciclo. Backend, frontend e integrazioni in parallelo.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">04</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Integrazioni</h4><p>Connessione con sistemi esistenti via API: ERP, CRM, POS, sistemi di pagamento, notifiche push.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">05</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Testing</h4><p>QA funzionale, test di carico, test di sicurezza. Testing su dispositivi reali, non solo emulatori.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">06</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Deploy e onboarding</h4><p>Pubblicazione su App Store e Google Play (se mobile). Formazione utenti e documentazione inclusa.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Stack</span>
+      <h2 class="section-title">Tecnologie che <strong>utilizziamo</strong></h2>
+    </div>
+    <div class="stack-groups">
+      <div class="reveal"><p class="stack-group-label">Mobile ibrido</p><div class="stack-pills"><span class="stack-pill">Capacitor JS</span><span class="stack-pill">React Native</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Frontend web</p><div class="stack-pills"><span class="stack-pill">React</span><span class="stack-pill">Vue.js</span><span class="stack-pill">Next.js</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Backend</p><div class="stack-pills"><span class="stack-pill">Node.js</span><span class="stack-pill">Laravel</span><span class="stack-pill">NestJS</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Database</p><div class="stack-pills"><span class="stack-pill">PostgreSQL</span><span class="stack-pill">MySQL</span><span class="stack-pill">MongoDB</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Cloud</p><div class="stack-pills"><span class="stack-pill">AWS</span><span class="stack-pill">Vercel</span><span class="stack-pill">Supabase</span></div></div>
+      <div class="reveal"><p class="stack-group-label">Integrazioni</p><div class="stack-pills"><span class="stack-pill">REST API</span><span class="stack-pill">GraphQL</span><span class="stack-pill">WebSocket</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Perch&eacute; funziona</span>
+      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
+    </div>
+    <div class="perche-list">
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Un gestionale custom fa esattamente quello che serve al cliente, senza funzionalit&agrave; inutili che complicano l&rsquo;adozione.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Il codice sorgente &egrave; sempre di propriet&agrave; del cliente finale &mdash; consegniamo tutto documentato su repository dedicato.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Sviluppo iterativo con demo ogni 2 settimane: il cliente vede il progresso e pu&ograve; indirizzare lo sviluppo prima che sia troppo tardi.</p></div>
+    </div>
+  </div>
+</section>
+
 
 <section class="cl-section section-pad">
   <div class="container">
@@ -314,6 +452,35 @@
   </div>
 </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Meglio un&rsquo;app nativa o ibrida?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Per il 90% dei casi un&rsquo;app ibrida con Capacitor offre la stessa esperienza utente a costo significativamente inferiore. Consigliamo il nativo solo quando servono funzionalit&agrave; hardware specifiche.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto costa pubblicare su App Store e Google Play?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Apple Developer Program 99$/anno, Google Play 25$ una tantum. Li gestiamo noi ma i costi sono a carico del cliente finale.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">L&rsquo;app funziona offline?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Dipende dall&rsquo;architettura. Le PWA e le app ibride possono essere progettate per funzionare offline con sincronizzazione automatica quando torna la connessione.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Possiamo integrare l&rsquo;app con il nostro CRM/ERP?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Abbiamo esperienza con le principali piattaforme (Salesforce, HubSpot, SAP, custom).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">

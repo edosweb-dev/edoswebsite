@@ -169,9 +169,53 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI DI SETTORE */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--off-white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* PROCESSO STEP BY STEP */
+    .processo-list{display:flex;flex-direction:column;gap:0;margin-top:48px;position:relative}
+    .processo-step{display:flex;gap:28px;position:relative;padding-bottom:40px}
+    .processo-step:last-child{padding-bottom:0}
+    .processo-step:last-child .processo-line{display:none}
+    .processo-num{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1}
+    .processo-line{position:absolute;left:24px;top:48px;bottom:0;width:2px;background:var(--border-s)}
+    .processo-body{flex:1;padding-top:8px}
+    .processo-body h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin:0 0 6px}
+    .processo-body p{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0}
+
+    /* STACK TECNOLOGICO */
+    .stack-groups{display:flex;flex-direction:column;gap:28px;margin-top:48px}
+    .stack-group-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+    .stack-pills{display:flex;flex-wrap:wrap;gap:8px}
+    .stack-pill{display:inline-flex;padding:6px 16px;background:var(--blue-pale);border:1px solid rgba(59,111,232,.15);border-radius:100px;font-size:.8125rem;font-weight:600;color:var(--navy);transition:background .2s}
+    .stack-pill:hover{background:rgba(59,111,232,.12)}
+
+    /* PERCHE FUNZIONA */
+    .perche-list{display:flex;flex-direction:column;gap:20px;margin-top:48px}
+    .perche-item{display:flex;gap:16px;align-items:flex-start}
+    .perche-check{width:24px;height:24px;flex-shrink:0;color:var(--blue);margin-top:2px}
+    .perche-check svg{width:100%;height:100%}
+    .perche-item p{font-size:1.0625rem;color:var(--text-body);line-height:1.7;margin:0}
+
+    /* FAQ ACCORDION */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px}
+    .faq-item{border-bottom:1px solid var(--border-s)}
+    .faq-item:first-child{border-top:1px solid var(--border-s)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{width:20px;height:20px;flex-shrink:0;color:var(--text-muted);transition:transform .3s cubic-bezier(.16,1,.3,1),color .2s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg);color:var(--blue)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 20px;font-size:.9375rem;color:var(--text-muted);line-height:1.7;margin:0}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -255,6 +299,21 @@
   </div>
 </section>
 
+<section class="section-pad" style="background:var(--surface)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>Technical Advisory</strong></h2>
+    </div>
+    <div class="numeri-grid">
+      <div class="numeri-card reveal"><p class="numeri-num">60%</p><p class="numeri-label">delle agenzie italiane ha perso almeno un cliente per un progetto tecnico consegnato in ritardo o con problemi</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">3,2x</p><p class="numeri-label">&egrave; il costo medio di un progetto gestito male rispetto a uno pianificato correttamente</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">45%</p><p class="numeri-label">delle offerte tecniche perse contiene errori di stima che potevano essere evitati</p></div>
+      <div class="numeri-card reveal"><p class="numeri-num">+80%</p><p class="numeri-label">di probabilit&agrave; di vincere una gara con un&rsquo;offerta tecnica strutturata e credibile</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
     <div class="reveal">
@@ -262,12 +321,86 @@
       <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>Technical Advisory</strong></h2>
     </div>
     <div class="sc-list">
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando devi rispondere a un brief tecnico complesso.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando vuoi partecipare a una gara con una proposta solida.</p></div>
-      <div class="sc-card reveal"><div class="sc-accent"></div><p>Quando hai bisogno di qualcuno che valuti una piattaforma esistente.</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Devi rispondere a un brief tecnico complesso senza expertise interna</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Vuoi partecipare a una gara con una proposta tecnica solida</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Hai un progetto attivo con problemi e hai bisogno di una diagnosi</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Vuoi valutare se una piattaforma esistente &egrave; sana o da rifare</p></div>
+      <div class="sc-card reveal"><div class="sc-accent"></div><p>Hai bisogno di qualcuno che parli con il CTO del cliente finale</p></div>
     </div>
   </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Processo</span>
+      <h2 class="section-title">Come realizziamo un progetto <strong>Technical Advisory</strong></h2>
+    </div>
+    <div class="processo-list">
+      <div class="processo-step reveal">
+        <div class="processo-num">01</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Brief e contesto</h4><p>Leggiamo il brief del cliente finale, capiamo il contesto di business e identifichiamo le domande tecniche critiche.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">02</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Analisi tecnica</h4><p>Valutiamo le opzioni tecnologiche, stimiamo i rischi, identifichiamo i vincoli (budget, tempi, sistemi esistenti).</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">03</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Documento di offerta</h4><p>Costruiamo con te l&rsquo;offerta tecnica: architettura proposta, stack tecnologico, timeline, breakdown dei costi.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">04</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Supporto al pitch</h4><p>Partecipiamo al meeting con il cliente finale come parte del tuo team. Rispondiamo alle domande tecniche con credibilit&agrave;.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">05</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Audit piattaforme</h4><p>Report dettagliato con findings e raccomandazioni su sistemi sviluppati da chiunque.</p></div>
+      </div>
+      <div class="processo-step reveal">
+        <div class="processo-num">06</div>
+        <div class="processo-line"></div>
+        <div class="processo-body"><h4>Affiancamento continuativo</h4><p>Per agenzie che lavorano regolarmente su progetti tecnici, supporto continuativo come riferimento tecnico esterno.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Stack</span>
+      <h2 class="section-title">Tecnologie che <strong>utilizziamo</strong></h2>
+    </div>
+    <div class="stack-groups">
+      <div class="reveal"><p class="stack-group-label">Approccio</p><div class="stack-pills"><span class="stack-pill">Technology-agnostic &mdash; valutiamo e consigliamo lo stack pi&ugrave; adatto al caso specifico senza preferenze predefinite</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Perch&eacute; funziona</span>
+      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
+    </div>
+    <div class="perche-list">
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Partecipiamo ai meeting con il cliente finale come parte del tuo team &mdash; con il tuo dominio email e accordo di riservatezza firmato.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Conosciamo il mercato italiano: normative, integrazioni con sistemi locali, dinamiche delle gare pubbliche e private.</p></div>
+      <div class="perche-item reveal"><div class="perche-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Possiamo eseguire quello che consigliamo &mdash; non solo strategia, ma anche sviluppo quando il progetto parte.</p></div>
+    </div>
+  </div>
+</section>
+
 
 <section class="cl-section section-pad">
   <div class="container">
@@ -299,6 +432,35 @@
   </div>
 </div>
 </section>
+
+
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Partecipate fisicamente ai meeting con i clienti?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Partecipiamo come parte del tuo team con il tuo dominio email e accordo di riservatezza &mdash; senza rivelare la nostra presenza.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo serve per preparare un&rsquo;offerta tecnica?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Per un progetto standard: 3-5 giorni lavorativi. Per progetti complessi: 1-2 settimane.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Potete fare l&rsquo;audit di una piattaforma che non avete sviluppato voi?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Facciamo reverse engineering e audit di qualsiasi piattaforma. Produciamo un report con findings, rischi e priorit&agrave; di intervento.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Se poi vinciamo il progetto, lo sviluppate voi?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Passiamo direttamente alla fase di sviluppo con PartnerFlow&trade;. Conoscendo gi&agrave; il brief, la Discovery &egrave; molto pi&ugrave; rapida.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
