@@ -867,86 +867,99 @@
 
     /* ── case grid ── */
     .cases-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
+      display:grid; grid-template-columns:1fr 1fr;
       gap:0;
       border-top:1px solid var(--border-s);
     }
 
     .c-item {
       cursor:pointer; position:relative;
-      padding:32px 32px 32px 0;
+      padding:40px 40px 40px 24px;
       border-bottom:1px solid var(--border-s);
       transition:background .3s;
     }
-    /* vertical divider between columns */
-    .c-item {
+    .c-item:nth-child(odd) {
       border-right:1px solid var(--border-s);
-      padding-left:20px; padding-right:20px;
-    }
-    .c-item:nth-child(4n) {
-      border-right:none;
     }
     .c-item:hover {
-      background:rgba(59,111,232,.04);
+      background:rgba(59,111,232,.03);
     }
     .c-item[hidden] { display:none; }
 
-    /* badges */
-    .c-badges { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
-    .c-badge {
+    /* ── number ── */
+    .c-num {
       font-family:var(--font);
-      font-size:.6875rem; font-weight:600; letter-spacing:.02em;
-      text-transform:uppercase;
-      padding:4px 10px; border-radius:100px;
-      line-height:1.2;
-    }
-    .c-badge--sector {
-      background:rgba(59,111,232,.08); color:var(--blue);
-    }
-    .c-badge--type {
-      background:var(--surface); color:var(--text-muted);
+      font-size:.6875rem; font-weight:500; color:var(--text-muted);
+      letter-spacing:.06em; margin-bottom:20px;
+      opacity:.5;
     }
 
+    /* ── title ── */
     .c-title {
       font-family:var(--font-display);
-      font-size:clamp(1rem,1.4vw,1.15rem); font-weight:700;
-      color:var(--navy); line-height:1.3; margin:0 0 8px;
-      letter-spacing:-.015em;
+      font-size:clamp(1.35rem,2.4vw,1.75rem); font-weight:700;
+      color:var(--navy); line-height:1.25; margin:0 0 14px;
+      letter-spacing:-.02em;
+      padding-right:40px;
       transition:color .2s;
     }
     .c-item:hover .c-title { color:var(--blue); }
 
+    /* ── description ── */
     .c-desc {
       font-family:var(--font);
-      font-size:.8125rem; color:var(--text-muted); line-height:1.65;
-      margin:0; padding-right:32px;
+      font-size:.9375rem; color:var(--text-muted); line-height:1.7;
+      margin:0 0 24px; padding-right:40px;
     }
 
-    /* hover arrow */
+    /* ── meta row ── */
+    .c-meta {
+      display:flex; gap:0;
+      border-top:1px solid var(--border);
+      padding-top:16px;
+    }
+    .c-meta-item {
+      flex:1; min-width:0;
+    }
+    .c-meta-item + .c-meta-item {
+      border-left:1px solid var(--border);
+      padding-left:16px;
+    }
+    .c-meta-label {
+      font-family:var(--font);
+      font-size:.625rem; font-weight:600;
+      text-transform:uppercase; letter-spacing:.1em;
+      color:var(--text-muted); opacity:.6;
+      margin-bottom:4px; line-height:1;
+    }
+    .c-meta-value {
+      font-family:var(--font);
+      font-size:.8125rem; font-weight:600;
+      color:var(--navy); line-height:1.3;
+    }
+
+    /* ── hover arrow ── */
     .c-arrow {
-      position:absolute; right:12px; bottom:28px;
-      width:32px; height:32px; border-radius:50%;
+      position:absolute; right:20px; top:40px;
+      width:36px; height:36px; border-radius:50%;
       display:flex; align-items:center; justify-content:center;
       background:var(--blue);
-      opacity:0; transform:scale(.7);
+      opacity:0; transform:translateX(-8px);
       transition:opacity .3s cubic-bezier(.16,1,.3,1), transform .3s cubic-bezier(.16,1,.3,1);
       color:#fff;
     }
     .c-arrow svg { width:18px; height:18px; }
-    .c-item:hover .c-arrow { opacity:1; transform:scale(1); }
+    .c-item:hover .c-arrow { opacity:1; transform:translateX(0); }
 
     @media(max-width:900px){
       .cases-head { grid-template-columns:1fr; gap:20px; }
     }
-    @media(max-width:1024px){
-      .cases-grid { grid-template-columns:1fr 1fr; }
-      .c-item:nth-child(4n) { border-right:1px solid var(--border-s); }
-      .c-item:nth-child(2n) { border-right:none; }
-    }
     @media(max-width:600px){
       .cases-grid { grid-template-columns:1fr; }
-      .c-item { border-right:none !important; padding:24px 15px; }
-      .c-arrow { right:8px; bottom:24px; }
+      .c-item { border-right:none !important; padding:28px 16px; }
+      .c-title { font-size:1.25rem; padding-right:48px; }
+      .c-desc { padding-right:0; }
+      .c-arrow { right:16px; top:28px; }
     }
 
     /* ====================================================
@@ -1610,82 +1623,138 @@
     <div class="cases-grid">
 
       <div class="c-item reveal" data-type="ecommerce" data-sector="retail">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Retail / Franchising</span>
-          <span class="c-badge c-badge--type">E-commerce</span>
-        </div>
+        <div class="c-num">01</div>
         <p class="c-title">E-commerce B2B per rete di 800+ affiliati</p>
         <p class="c-desc">Piattaforma centralizzata per acquisti e contratti digitali, con gestione catalogo, ordini e fatturazione per l&rsquo;intera rete.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Retail / Franchising</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">E-commerce B2B</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="ai" data-sector="b2b">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">B2B Services</span>
-          <span class="c-badge c-badge--type">AI &amp; Automation</span>
-        </div>
+        <div class="c-num">02</div>
         <p class="c-title">Agente AI per automazione preventivi</p>
         <p class="c-desc">Generazione automatica di preventivi personalizzati tramite AI integrata nel flusso commerciale, dal primo contatto alla firma.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">B2B Services</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">AI Agent</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="food">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Food &amp; Beverage</span>
-          <span class="c-badge c-badge--type">Piattaforme</span>
-        </div>
+        <div class="c-num">03</div>
         <p class="c-title">Piattaforma ordini per catena GDO nazionale</p>
         <p class="c-desc">Sistema integrato con ERP e logistica in tempo reale per la gestione di centinaia di migliaia di ordini mensili.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Food &amp; Beverage</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">Order Platform</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="ecommerce" data-sector="fashion">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Fashion / Luxury</span>
-          <span class="c-badge c-badge--type">E-commerce</span>
-        </div>
+        <div class="c-num">04</div>
         <p class="c-title">E-commerce headless per brand luxury</p>
         <p class="c-desc">Architettura headless con esperienza su misura per il mercato luxury. Design premium e performance ottimizzate.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Fashion / Luxury</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">Headless Commerce</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="energy">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Energy / Retail</span>
-          <span class="c-badge c-badge--type">Piattaforme</span>
-        </div>
+        <div class="c-num">05</div>
         <p class="c-title">Piattaforma InstantWin per brand energia</p>
         <p class="c-desc">Infrastruttura scalabile per concorsi a premi con gestione automatizzata dei vincitori e compliance normativa.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Energy / Retail</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">Gamification Platform</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="webapp" data-sector="tech">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Technology / SaaS</span>
-          <span class="c-badge c-badge--type">Web App</span>
-        </div>
+        <div class="c-num">06</div>
         <p class="c-title">Dashboard analytics per piattaforma SaaS</p>
         <p class="c-desc">Pannello di controllo real-time con metriche, reportistica avanzata e oltre 50 integrazioni API.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Technology / SaaS</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">Analytics Dashboard</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="webapp" data-sector="health">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Healthcare / Pharma</span>
-          <span class="c-badge c-badge--type">Web App</span>
-        </div>
+        <div class="c-num">07</div>
         <p class="c-title">Portale prenotazioni per rete cliniche</p>
         <p class="c-desc">Gestione appuntamenti, referti digitali e comunicazione medico-paziente per una rete di strutture sanitarie.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Healthcare / Pharma</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">Booking Platform</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
       <div class="c-item reveal" data-type="platform" data-sector="industry">
-        <div class="c-badges">
-          <span class="c-badge c-badge--sector">Industrial / B2B</span>
-          <span class="c-badge c-badge--type">Piattaforme</span>
-        </div>
+        <div class="c-num">08</div>
         <p class="c-title">Marketplace B2B per filiera manifatturiera</p>
         <p class="c-desc">Piattaforma di sourcing con catalogo digitale e ordini automatizzati che connette oltre 800 aziende della filiera.</p>
+        <div class="c-meta">
+          <div class="c-meta-item">
+            <div class="c-meta-label">Settore</div>
+            <div class="c-meta-value">Industrial / B2B</div>
+          </div>
+          <div class="c-meta-item">
+            <div class="c-meta-label">Prodotto</div>
+            <div class="c-meta-value">B2B Marketplace</div>
+          </div>
+        </div>
         <span class="c-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
 
