@@ -284,17 +284,17 @@
     .nav-ov-close:hover { background:rgba(255,255,255,.09); }
     .nav-ov-close svg { width:20px; height:20px; }
 
-    /* body: flex row, items sit left, secondary sits right of them */
+    /* body: flex row, full width distribution */
     .nav-ov-body {
       position:relative; z-index:4;
       flex:1; display:flex; align-items:center;
-      padding:0 44px 56px; gap:0;
+      justify-content:space-between;
+      padding:0 44px 56px; gap:40px;
     }
 
     /* primary links — left */
     .nav-ov-main {
       flex:0 0 auto;
-      padding-right:80px;
     }
     .nav-ov-main a {
       display:block;
@@ -341,7 +341,7 @@
     }
     .nav-ov-sub a:hover { color:#fff; }
 
-    .nav-ov-cta-block { margin-top:8px; }
+    .nav-ov-cta-block { margin-top:20px; }
     .nav-ov-cta-block .btn-pill { font-size:.65rem; padding:4px 24px 4px 4px; }
     .nav-ov-cta-block .btn-pill-circle { width:38px; height:38px; }
     .nav-ov-cta-block .btn-pill-circle svg { width:16px; height:16px; }
@@ -1317,6 +1317,16 @@
         <a href="#servizi">Technical Advisory</a>
         <a href="#servizi">CTO as a Service</a>
         <a href="#servizi">Continuity &amp; Evolution</a>
+        <div class="nav-ov-cta-block">
+          <a href="#contatti" class="btn-pill">
+            <span class="btn-pill-circle">
+              <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Prenota un appuntamento</span>
+          </a>
+        </div>
       </div>
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Settori</div>
@@ -1330,16 +1340,6 @@
         <a href="#settori">Healthcare / Pharma</a>
         <a href="#settori">Turismo / Hospitality</a>
         <a href="#settori">Automotive / Motorsport</a>
-      </div>
-      <div class="nav-ov-cta-block">
-        <a href="#contatti" class="btn-pill">
-          <span class="btn-pill-circle">
-            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span>Prenota un appuntamento</span>
-        </a>
       </div>
     </div>
   </div>
