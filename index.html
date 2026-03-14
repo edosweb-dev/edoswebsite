@@ -1012,16 +1012,82 @@
     .cta-final {
       background:var(--navy);
       color:#fff;
-      padding:40px 0;
+      padding:clamp(80px,12vw,140px) 0;
+      position:relative;
+      overflow:hidden;
     }
-    .cta-final .cta-row { display:flex; align-items:center; justify-content:space-between; gap:40px; }
-    .cta-final .cta-content { flex:1; }
-    .cta-final h2 { font-size:clamp(1.25rem,2.5vw,1.75rem); color:#fff; margin:0 0 10px; line-height:1.35; font-weight:600; }
-    .cta-final .cta-content p { font-size:.9375rem; color:rgba(255,255,255,.5); margin:0; max-width:480px; }
-    .cta-final .cta-action { flex-shrink:0; }
+    /* diagonal texture (like partnerflow) */
+    .cta-final::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px);
+    }
+    /* animated blobs */
+    .cta-final .cta-blob {
+      position:absolute; border-radius:50%;
+      filter:blur(100px); pointer-events:none; z-index:0;
+    }
+    .cta-final .cta-blob-1 {
+      width:600px; height:600px; top:-30%; right:-8%;
+      background:radial-gradient(circle, rgba(59,111,232,.18) 0%, transparent 65%);
+      animation:blobA 16s ease-in-out infinite;
+    }
+    .cta-final .cta-blob-2 {
+      width:450px; height:450px; bottom:-25%; left:-5%;
+      background:radial-gradient(circle, rgba(100,60,230,.10) 0%, transparent 65%);
+      animation:blobB 20s ease-in-out infinite;
+    }
+    .cta-final .container { position:relative; z-index:1; }
+    .cta-final .cta-inner {
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+      max-width:720px; margin:0 auto;
+    }
+    .cta-final .cta-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:var(--font-display); font-size:.72rem; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase;
+      color:rgba(107,155,247,.9); margin-bottom:28px;
+    }
+    .cta-final .cta-eyebrow::before {
+      content:''; width:36px; height:2px; background:var(--blue); border-radius:2px;
+    }
+    .cta-final h2 {
+      font-family:var(--font-display);
+      font-size:clamp(2rem,4vw,3.25rem);
+      font-weight:800; line-height:1.12; letter-spacing:-.03em;
+      color:#fff; margin:0 0 20px;
+    }
+    .cta-final h2 em {
+      font-style:normal;
+      background:linear-gradient(110deg,#6B9BF7 0%,#93BFFF 50%,#6B9BF7 100%);
+      background-size:200% auto;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:shimmer 4s linear infinite;
+    }
+    .cta-final .cta-desc {
+      font-size:clamp(.9375rem,1.3vw,1.0625rem);
+      color:rgba(255,255,255,.5); line-height:1.7;
+      margin:0 0 40px; max-width:540px;
+    }
+    .cta-final .cta-action { margin-bottom:28px; }
+    .cta-final .cta-action .btn-pill {
+      font-size:1rem; padding:6px 32px 6px 6px;
+    }
+    .cta-final .cta-action .btn-pill .btn-pill-circle {
+      width:52px; height:52px;
+    }
+    .cta-final .cta-trust {
+      display:flex; align-items:center; gap:8px;
+      font-size:.8125rem; color:rgba(255,255,255,.32);
+      font-family:var(--font-display);
+    }
+    .cta-final .cta-trust span { display:flex; align-items:center; gap:8px; }
+    .cta-final .cta-trust .cta-dot {
+      width:3px; height:3px; border-radius:50%;
+      background:rgba(255,255,255,.25); flex-shrink:0;
+    }
     @media(max-width:768px){
-      .cta-final .cta-row { flex-direction:column; text-align:center; gap:24px; }
-      .cta-final .cta-content p { margin:0 auto; }
+      .cta-final .cta-trust { flex-direction:column; gap:6px; }
+      .cta-final .cta-trust .cta-dot { display:none; }
     }
 
     /* ====================================================
@@ -1803,14 +1869,15 @@
 
 <!-- ===================== CTA FINALE ===================== -->
 <section class="cta-final lazy-section" id="contatti">
+  <div class="cta-blob cta-blob-1"></div>
+  <div class="cta-blob cta-blob-2"></div>
   <div class="container">
-    <div class="cta-row">
-      <div class="cta-content">
-        <h2 class="reveal">Le migliori collaborazioni iniziano da una conversazione.</h2>
-        <p class="reveal">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto. Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
-      </div>
-      <div class="cta-action">
-        <a href="mailto:info@edos.it" class="btn-pill reveal">
+    <div class="cta-inner">
+      <div class="cta-eyebrow reveal">Iniziamo a collaborare</div>
+      <h2 class="reveal d1">Le migliori collaborazioni iniziano da una <em>conversazione.</em></h2>
+      <p class="cta-desc reveal d2">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto. Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
+      <div class="cta-action reveal d3">
+        <a href="mailto:info@edos.it" class="btn-pill">
           <span class="btn-pill-circle">
             <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1818,6 +1885,13 @@
           </span>
           Prenota un appuntamento
         </a>
+      </div>
+      <div class="cta-trust reveal d4">
+        <span>Nessun impegno</span>
+        <span class="cta-dot"></span>
+        <span>30 minuti</span>
+        <span class="cta-dot"></span>
+        <span>Online o in sede</span>
       </div>
     </div>
   </div>
