@@ -100,28 +100,9 @@ export default async function handler(req, res) {
       console.error('Notification email failed (free tier may restrict recipients):', notifyErr);
     }
 
-    // Send confirmation email to the sender
-    await resend.emails.send({
-      from: 'Edos Digital Solutions <onboarding@resend.dev>',
-      to: [email],
-      subject: 'Abbiamo ricevuto il tuo messaggio — Edos',
-      html: `
-        <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:32px 0">
-          <div style="background:#060E22;padding:28px 32px;border-radius:14px 14px 0 0">
-            <img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos" style="height:24px;width:auto">
-          </div>
-          <div style="background:#ffffff;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 14px 14px;padding:32px">
-            <h2 style="font-size:20px;font-weight:700;color:#0D1B3E;margin:0 0 16px">Ciao ${escapeHtml(name.split(' ')[0])},</h2>
-            <p style="font-size:15px;color:#374165;line-height:1.7;margin:0 0 20px">abbiamo ricevuto il tuo messaggio e ti risponderemo entro 24 ore lavorative.</p>
-            <p style="font-size:15px;color:#374165;line-height:1.7;margin:0 0 20px">Nel frattempo, se vuoi approfondire chi siamo e cosa facciamo, puoi visitare il nostro sito: <a href="https://www.edos.it" style="color:#3B6FE8">www.edos.it</a></p>
-            <p style="font-size:15px;color:#374165;line-height:1.7;margin:0">A presto,<br><strong>Il team Edos</strong></p>
-            <div style="margin-top:28px;padding-top:20px;border-top:1px solid #f1f5f9;font-size:12px;color:#a0aec0">
-              Edos Srl &middot; Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI)
-            </div>
-          </div>
-        </div>
-      `,
-    });
+    // TODO: Re-enable confirmation email to sender after domain verification
+    // With Resend free tier (onboarding@resend.dev), emails can only be sent
+    // to the account owner's address. Uncomment when edos.it domain is verified.
 
     return res.status(200).json({ success: true });
   } catch (error) {
