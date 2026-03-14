@@ -1068,48 +1068,58 @@
     }
 
     /* ====================================================
-       FIXED SIDE CTA
+       FIXED SIDE CTA – circle with rotating text
     ==================================================== */
     .fixed-cta {
-      position:fixed; right:28px; top:50%; transform:translateY(-50%);
+      position:fixed; right:28px; bottom:32px;
       z-index:90;
       opacity:0; pointer-events:none;
-      transition:opacity .4s cubic-bezier(.16,1,.3,1), transform .4s cubic-bezier(.16,1,.3,1);
+      transition:opacity .5s cubic-bezier(.16,1,.3,1);
     }
-    .fixed-cta.visible {
-      opacity:1; pointer-events:auto;
-    }
+    .fixed-cta.visible { opacity:1; pointer-events:auto; }
     .fixed-cta-link {
-      display:flex; align-items:center; gap:0;
-      writing-mode:vertical-rl; text-orientation:mixed;
-      background:var(--blue); color:#fff;
-      font-family:var(--font-display); font-size:.68rem; font-weight:700;
-      letter-spacing:.12em; text-transform:uppercase;
-      padding:20px 14px;
-      border-radius:14px;
-      box-shadow:0 8px 32px rgba(59,111,232,.35);
-      transition:background .25s, box-shadow .25s, transform .25s;
+      display:flex; align-items:center; justify-content:center;
+      width:72px; height:72px;
+      border-radius:50%;
+      background:var(--navy);
+      border:1px solid rgba(255,255,255,.12);
+      position:relative;
       text-decoration:none;
+      transition:transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s, border-color .3s;
     }
     .fixed-cta-link:hover {
-      background:var(--blue-hover);
-      box-shadow:0 12px 40px rgba(59,111,232,.5);
-      transform:translateX(-3px);
+      transform:scale(1.08);
+      border-color:rgba(59,111,232,.5);
+      box-shadow:0 6px 28px rgba(59,111,232,.25);
     }
+    /* calendar icon center */
     .fixed-cta-icon {
       display:flex; align-items:center; justify-content:center;
-      width:36px; height:36px; border-radius:50%;
-      background:rgba(255,255,255,.2);
-      margin-bottom:14px;
-      transition:background .25s;
+      width:26px; height:26px;
+      color:var(--blue); transition:color .3s;
     }
-    .fixed-cta-link:hover .fixed-cta-icon { background:rgba(255,255,255,.3); }
-    .fixed-cta-icon svg { width:16px; height:16px; color:#fff; }
-    .fixed-cta-label { line-height:1.3; }
+    .fixed-cta-link:hover .fixed-cta-icon { color:#93BFFF; }
+    .fixed-cta-icon svg { width:100%; height:100%; }
+    /* rotating text ring */
+    .fixed-cta-ring {
+      position:absolute; inset:-18px;
+      animation:spinRing 12s linear infinite;
+    }
+    .fixed-cta-ring text {
+      font-family:var(--font-display);
+      font-size:9.2px; font-weight:600;
+      letter-spacing:2.2px; text-transform:uppercase;
+      fill:rgba(255,255,255,.45);
+      transition:fill .3s;
+    }
+    .fixed-cta-link:hover .fixed-cta-ring text { fill:rgba(255,255,255,.75); }
+    @keyframes spinRing { to { transform:rotate(360deg); } }
     @media(max-width:768px){
-      .fixed-cta { right:14px; }
-      .fixed-cta-link { padding:14px 10px; font-size:.6rem; }
-      .fixed-cta-icon { width:30px; height:30px; margin-bottom:10px; }
+      .fixed-cta { right:16px; bottom:20px; }
+      .fixed-cta-link { width:60px; height:60px; }
+      .fixed-cta-icon { width:22px; height:22px; }
+      .fixed-cta-ring { inset:-15px; }
+      .fixed-cta-ring text { font-size:7.8px; }
     }
 
     /* ====================================================
@@ -1895,8 +1905,8 @@
   <div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner">
-      <h2 class="reveal">Le migliori collaborazioni iniziano da una <em>conversazione.</em></h2>
-      <p class="cta-desc reveal d1">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto. Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
+      <h2 class="reveal">Le migliori collaborazioni<br>iniziano da una <em>conversazione.</em></h2>
+      <p class="cta-desc reveal d1">Se stai cercando un partner tecnico con cui crescere, sei nel posto giusto.<br>Non un fornitore da gestire, ma qualcuno con cui ragionare, progettare e migliorarsi insieme.</p>
       <div class="cta-action reveal d2">
         <a href="mailto:info@edos.it" class="btn-pill">
           <span class="btn-pill-circle">
@@ -1914,12 +1924,22 @@
 <!-- ===================== FIXED SIDE CTA ===================== -->
 <div class="fixed-cta" id="fixedCta">
   <a href="mailto:info@edos.it" class="fixed-cta-link">
+    <!-- rotating text ring -->
+    <svg class="fixed-cta-ring" viewBox="0 0 108 108">
+      <defs>
+        <path id="ctaCircle" d="M54,54 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/>
+      </defs>
+      <text><textPath href="#ctaCircle">PRENOTA UN APPUNTAMENTO · PRENOTA UN APPUNTAMENTO ·&nbsp;</textPath></text>
+    </svg>
+    <!-- calendar icon -->
     <span class="fixed-cta-icon">
-      <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M3 9h18" stroke="currentColor" stroke-width="1.7"/>
+        <path d="M8 2v4M16 2v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        <circle cx="12" cy="15" r="1.5" fill="currentColor"/>
       </svg>
     </span>
-    <span class="fixed-cta-label">Prenota un appuntamento</span>
   </a>
 </div>
 
