@@ -644,12 +644,7 @@
       background:none; border:none; cursor:pointer; text-align:left;
       gap:24px; position:relative; z-index:1;
     }
-    .serv-btn-left { display:flex; align-items:center; gap:32px; flex:1; min-width:0; }
-    .serv-num {
-      font-family:'Courier New',monospace;
-      font-size:.82rem; font-weight:400; letter-spacing:.04em;
-      color:var(--blue); white-space:nowrap; flex-shrink:0;
-    }
+    .serv-btn-left { display:flex; align-items:center; flex:1; min-width:0; }
     .serv-name {
       font-family:var(--font-display);
       font-size:clamp(1.4rem,3vw,2.8rem);
@@ -690,7 +685,7 @@
     .serv-panel-inner { overflow:hidden; }
     .serv-panel-content {
       padding:0 0 40px 0;
-      margin-left:calc(32px + .82rem * 5);
+      margin-left:0;
       position:relative; z-index:1;
     }
     .serv-desc {
@@ -1156,7 +1151,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 01 )</span>
+
             <span class="serv-name">Web &amp; Commerce</span>
           </div>
           <div class="serv-btn-right">
@@ -1174,11 +1169,32 @@
         </div></div></div>
       </li>
 
-      <!-- 02 Platform Engineering -->
+      <!-- App & WebApp -->
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 02 )</span>
+            <span class="serv-name">App &amp; WebApp</span>
+          </div>
+          <div class="serv-btn-right">
+            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="10" y="3" width="16" height="30" rx="3"/><path d="M10 8h16M10 27h16"/><circle cx="18" cy="30" r="1.2"/><path d="M15 15l3 3 3-3M15 19l3 3 3-3"/></svg></span>
+          </div>
+        </button>
+        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
+          <p class="serv-desc">Sviluppiamo applicazioni web e mobile che rispondono a esigenze specifiche, scalabili e pronte a crescere.</p>
+          <div class="serv-tags">
+            <span class="serv-tag">Applicazioni web progressive (PWA)</span>
+            <span class="serv-tag">App mobile ibride (iOS e Android)</span>
+            <span class="serv-tag">Dashboard e pannelli di controllo</span>
+            <span class="serv-tag">Integrazioni con API e servizi terzi</span>
+          </div>
+        </div></div></div>
+      </li>
+
+      <!-- Platform Engineering -->
+      <li class="serv-item reveal">
+        <button class="serv-btn" aria-expanded="false">
+          <div class="serv-btn-left">
+
             <span class="serv-name">Platform Engineering</span>
           </div>
           <div class="serv-btn-right">
@@ -1202,7 +1218,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 03 )</span>
+
             <span class="serv-name">AI Integration</span>
           </div>
           <div class="serv-btn-right">
@@ -1226,7 +1242,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 04 )</span>
+
             <span class="serv-name">Product Design</span>
           </div>
           <div class="serv-btn-right">
@@ -1250,7 +1266,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 05 )</span>
+
             <span class="serv-name">Technical Advisory</span>
           </div>
           <div class="serv-btn-right">
@@ -1274,7 +1290,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 06 )</span>
+
             <span class="serv-name">CTO as a Service</span>
           </div>
           <div class="serv-btn-right">
@@ -1298,7 +1314,7 @@
       <li class="serv-item reveal">
         <button class="serv-btn" aria-expanded="false">
           <div class="serv-btn-left">
-            <span class="serv-num">( 07 )</span>
+
             <span class="serv-name">Continuity &amp; Evolution</span>
           </div>
           <div class="serv-btn-right">
