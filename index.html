@@ -1223,6 +1223,20 @@
       .footer-col.open .footer-col-label{margin-bottom:8px}
       .footer-bottom{flex-direction:column;text-align:center}
     }
+    /* ---- TECH SLIDER ---- */
+    .tech-slider{padding:64px 0;background:var(--white);border-bottom:1px solid var(--border);overflow:hidden}
+    .tech-slider-label{text-align:center;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:32px}
+    .tech-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+    .tech-track:hover{animation-play-state:paused}
+    .tech-item{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:120px;height:48px;margin:0 28px;opacity:.35;transition:opacity .3s ease;filter:grayscale(100%)}
+    .tech-item:hover{opacity:.7}
+    .tech-item svg{width:auto;height:32px;max-width:100px}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @media(max-width:640px){
+      .tech-slider{padding:48px 0}
+      .tech-item{width:90px;margin:0 18px}
+      .tech-item svg{height:26px}
+    }
   </style>
 </head>
 <body>
@@ -1404,6 +1418,57 @@
   </div>
 </div>
 
+
+<!-- ===================== TECH SLIDER ===================== -->
+<section class="tech-slider">
+  <p class="tech-slider-label reveal">Le tecnologie che utilizziamo</p>
+  <div class="tech-track">
+    <!-- Set 1 -->
+    <!-- React -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="15.5" r="2.5"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3" transform="rotate(60 16 15.5)"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3" transform="rotate(120 16 15.5)"/></svg></div>
+    <!-- Next.js -->
+    <div class="tech-item"><svg viewBox="0 0 80 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" letter-spacing="-0.5">Next.js</text></svg></div>
+    <!-- Vue.js -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16 27L2 5h7.2L16 17.4 22.8 5H30L16 27z"/><path d="M16 21L8.5 8h4L16 14.2 19.5 8h4L16 21z"/></svg></div>
+    <!-- Node.js -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 1.6L3.2 9v14.1L16 30.4l12.8-7.3V9L16 1.6zm0 2.6l10.4 5.9v11.8L16 27.8 5.6 21.9V10.1L16 4.2z"/><path d="M16 10v12M10.5 13.2L16 16l5.5-2.8" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    <!-- TypeScript -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="7" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18">TS</text></svg></div>
+    <!-- Laravel -->
+    <div class="tech-item"><svg viewBox="0 0 80 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="16">Laravel</text></svg></div>
+    <!-- WordPress -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="13.5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="8.5" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="16">W</text></svg></div>
+    <!-- Shopify -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M22 5.5s-.2-.1-.5-.1c-.3 0-5.2-.4-5.2-.4l-3.5-3.5c-.3-.3-.9-.2-1.1-.1l-1.5.5C9.5.7 8.8 0 7.9 0 6 0 5 2.4 4.4 4.2l-2.7.8C.9 5.2.8 5.3.8 6L0 24l16.4 3L26 24.8s-3.9-19-4-19.3zm-7.1-.8l-2.7.8c.3-1 .8-2.1 1.6-2.8.7.3 1.2 1 1.1 2zm-2.1-3.5c.7 0 1.1.3 1.5.8-.9.8-1.5 2-1.8 3.3l-2.6.8c.5-1.8 1.5-4.9 2.9-4.9z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M21.5 5.5c-.2 0-4.5-.3-4.5-.3l-3-3c-.1-.1-.3-.2-.4-.2v24l9.5-2.2L21.5 5.5z" fill="none" stroke="currentColor" stroke-width="0"/><text x="3" y="23" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="8.5">Shopify</text></svg></div>
+    <!-- AWS -->
+    <div class="tech-item"><svg viewBox="0 0 56 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" letter-spacing="1">AWS</text></svg></div>
+    <!-- Docker -->
+    <div class="tech-item"><svg viewBox="0 0 36 32" fill="currentColor"><rect x="1" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="8.5" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="23.5" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="8.5" y="7.5" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="7.5" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="1" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M35 16c-1-4-4-4.5-4-4.5s-1.5 2-5 2H0c0 0-.5 7 6 11s12.5 3 17 1 8-5.5 9.5-7.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+    <!-- Figma -->
+    <div class="tech-item"><svg viewBox="0 0 20 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="8" height="10" rx="4"/><rect x="11" y="1" width="8" height="10" rx="4"/><rect x="1" y="11" width="8" height="10" rx="4"/><circle cx="15" cy="16" r="4"/><path d="M1 25a4 4 0 004 4h0a4 4 0 004-4V21H5a4 4 0 00-4 4z"/></svg></div>
+    <!-- Python -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2C9 2 9.5 5 9.5 5v3.5H16v1H6S2 9 2 16s3.5 7 3.5 7h2V19.5S7.3 16 11 16h5c3 0 3.5-2.5 3.5-2.5V6S20 2 16 2z"/><circle cx="12.5" cy="6" r="1.2" fill="currentColor"/><path d="M16 30c7 0 6.5-3 6.5-3V23.5H16v-1h10s4 .5 4-6.5-3.5-7-3.5-7h-2v3.5s.2 3.5-3.5 3.5h-5c-3 0-3.5 2.5-3.5 2.5v7s-.5 4.5 3.5 4.5z"/><circle cx="19.5" cy="26" r="1.2" fill="currentColor"/></svg></div>
+    <!-- Flutter -->
+    <div class="tech-item"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M15 0L0 16l5 5L23 0H15z"/><path d="M15 16L5 27l5 5 13-14h-8z"/></svg></div>
+    <!-- PostgreSQL -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="15" cy="8" rx="11" ry="5"/><path d="M4 8v8c0 2.8 4.9 5 11 5s11-2.2 11-5V8"/><path d="M4 16v8c0 2.8 4.9 5 11 5s11-2.2 11-5v-8"/></svg></div>
+    <!-- Set 2 (duplicate for seamless loop) -->
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="15.5" r="2.5"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3" transform="rotate(60 16 15.5)"/><ellipse cx="16" cy="15.5" rx="14" ry="5.2" fill="none" stroke="currentColor" stroke-width="1.3" transform="rotate(120 16 15.5)"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 80 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" letter-spacing="-0.5">Next.js</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16 27L2 5h7.2L16 17.4 22.8 5H30L16 27z"/><path d="M16 21L8.5 8h4L16 14.2 19.5 8h4L16 21z"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 1.6L3.2 9v14.1L16 30.4l12.8-7.3V9L16 1.6zm0 2.6l10.4 5.9v11.8L16 27.8 5.6 21.9V10.1L16 4.2z"/><path d="M16 10v12M10.5 13.2L16 16l5.5-2.8" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><rect x="2" y="2" width="28" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="7" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18">TS</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 80 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="16">Laravel</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="13.5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="8.5" y="22" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="16">W</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M22 5.5s-.2-.1-.5-.1c-.3 0-5.2-.4-5.2-.4l-3.5-3.5c-.3-.3-.9-.2-1.1-.1l-1.5.5C9.5.7 8.8 0 7.9 0 6 0 5 2.4 4.4 4.2l-2.7.8C.9 5.2.8 5.3.8 6L0 24l16.4 3L26 24.8s-3.9-19-4-19.3zm-7.1-.8l-2.7.8c.3-1 .8-2.1 1.6-2.8.7.3 1.2 1 1.1 2zm-2.1-3.5c.7 0 1.1.3 1.5.8-.9.8-1.5 2-1.8 3.3l-2.6.8c.5-1.8 1.5-4.9 2.9-4.9z" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="3" y="23" font-family="Inter,system-ui,sans-serif" font-weight="700" font-size="8.5">Shopify</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 56 32" fill="currentColor"><text x="0" y="23" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="18" letter-spacing="1">AWS</text></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 36 32" fill="currentColor"><rect x="1" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="8.5" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="23.5" y="14" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="8.5" y="7.5" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="7.5" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="16" y="1" width="6" height="5" rx=".8" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M35 16c-1-4-4-4.5-4-4.5s-1.5 2-5 2H0c0 0-.5 7 6 11s12.5 3 17 1 8-5.5 9.5-7.5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 20 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="8" height="10" rx="4"/><rect x="11" y="1" width="8" height="10" rx="4"/><rect x="1" y="11" width="8" height="10" rx="4"/><circle cx="15" cy="16" r="4"/><path d="M1 25a4 4 0 004 4h0a4 4 0 004-4V21H5a4 4 0 00-4 4z"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 2C9 2 9.5 5 9.5 5v3.5H16v1H6S2 9 2 16s3.5 7 3.5 7h2V19.5S7.3 16 11 16h5c3 0 3.5-2.5 3.5-2.5V6S20 2 16 2z"/><circle cx="12.5" cy="6" r="1.2" fill="currentColor"/><path d="M16 30c7 0 6.5-3 6.5-3V23.5H16v-1h10s4 .5 4-6.5-3.5-7-3.5-7h-2v3.5s.2 3.5-3.5 3.5h-5c-3 0-3.5 2.5-3.5 2.5v7s-.5 4.5 3.5 4.5z"/><circle cx="19.5" cy="26" r="1.2" fill="currentColor"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 26 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M15 0L0 16l5 5L23 0H15z"/><path d="M15 16L5 27l5 5 13-14h-8z"/></svg></div>
+    <div class="tech-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="15" cy="8" rx="11" ry="5"/><path d="M4 8v8c0 2.8 4.9 5 11 5s11-2.2 11-5V8"/><path d="M4 16v8c0 2.8 4.9 5 11 5s11-2.2 11-5v-8"/></svg></div>
+  </div>
+</section>
 
 <!-- ===================== SERVIZI ===================== -->
 <section class="servizi section-pad lazy-section" id="servizi">
