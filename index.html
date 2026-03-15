@@ -344,16 +344,10 @@
     }
     .nav-ov-sub a:hover { color:#fff; }
 
-    .nav-ov-cta-bottom {
-      position:absolute; bottom:clamp(28px,4vw,56px); left:clamp(32px,5vw,80px); z-index:5;
-    }
-    .nav-ov-cta-bottom .btn-pill {
-      font-size:.72rem; padding:5px 28px 5px 5px;
-      border-color:rgba(255,255,255,.35);
-    }
-    .nav-ov-cta-bottom .btn-pill:hover { border-color:rgba(255,255,255,.7); background:rgba(255,255,255,.06); }
-    .nav-ov-cta-bottom .btn-pill-circle { width:44px; height:44px; }
-    .nav-ov-cta-bottom .btn-pill-circle svg { width:18px; height:18px; }
+    .nav-ov-cta-block { margin-top:16px; }
+    .nav-ov-cta-block .btn-pill { font-size:.58rem; padding:3px 16px 3px 3px; gap:10px; }
+    .nav-ov-cta-block .btn-pill-circle { width:28px; height:28px; }
+    .nav-ov-cta-block .btn-pill-circle svg { width:12px; height:12px; }
 
     /* ====================================================
        HERO
@@ -1202,7 +1196,6 @@
       .nav-ov-divider { display:none; }
       .nav-ov-side { flex-direction:column; gap:20px; }
       .nav-ov-sub a { font-size:.9rem; }
-      .nav-ov-cta-bottom { position:static; margin-top:24px; padding:0 24px; }
 
       .hero h1 { font-size:clamp(2rem,6vw,3rem); }
       .hero-sub { font-size:1rem; }
@@ -1325,6 +1318,7 @@
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Servizi</div>
         <a href="/servizi/web-commerce">Web &amp; Commerce</a><a href="/servizi/app-webapp">App &amp; WebApp</a><a href="/servizi/platform-engineering">Platform Engineering</a><a href="/servizi/ai-integration">AI Integration</a><a href="/servizi/product-design">Product Design</a><a href="/servizi/technical-advisory">Technical Advisory</a><a href="/servizi/cto-as-a-service">CTO as a Service</a><a href="/servizi/continuity-evolution">Continuity &amp; Evolution</a>
+        <div class="nav-ov-cta-block"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
       </div>
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Settori</div>
@@ -1332,7 +1326,6 @@
       </div>
     </div>
   </div>
-  <div class="nav-ov-cta-bottom"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
 </div>
 
 <!-- ===================== HERO ===================== -->
