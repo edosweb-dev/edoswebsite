@@ -167,9 +167,47 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* CRM BLOCK */
+    .crm-section{background:var(--navy-mid);position:relative;overflow:hidden}
+    .crm-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
+    .crm-section .container{position:relative;z-index:1}
+    .crm-section .section-title{color:#fff}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{transition:transform .3s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
+
+    /* ANIMATIONS */
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+    .reveal-stagger .reveal:nth-child(1),.reveal-stagger .reveal-scale:nth-child(1){transition-delay:.0s}
+    .reveal-stagger .reveal:nth-child(2),.reveal-stagger .reveal-scale:nth-child(2){transition-delay:.08s}
+    .reveal-stagger .reveal:nth-child(3),.reveal-stagger .reveal-scale:nth-child(3){transition-delay:.16s}
+    .reveal-stagger .reveal:nth-child(4),.reveal-stagger .reveal-scale:nth-child(4){transition-delay:.24s}
+    .section-title{position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--blue);transition:width .6s cubic-bezier(.16,1,.3,1) .2s}
+    .reveal.visible .section-title::after,.section-title.visible::after{width:48px}
+    .reveal-scale{animation:revealFallback 0s 2s forwards}
+    .reveal-scale.visible{animation:none}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -244,7 +282,23 @@
   <div class="container">
     <div class="reveal">
       <span class="tag">Il settore</span>
-      <p class="intro-text">Il settore turismo e hospitality vive di stagionalit&agrave;, picchi di traffico e la necessit&agrave; di convertire in tempo reale. Le agenzie che lavorano con hotel, tour operator e destinazioni turistiche hanno bisogno di un partner tecnico capace di costruire booking engine performanti, portali multi-lingua e integrazioni con channel manager e PMS.</p>
+      <p class="intro-text">Il turismo e l&rsquo;hospitality sono tra i settori pi&ugrave; competitivi online. La differenza tra un hotel che vende al prezzo giusto e uno che svende ai portali OTA &egrave; spesso una questione di strumenti digitali. Le agenzie che lavorano con strutture ricettive, tour operator e destinazioni turistiche hanno bisogno di un partner tecnico che conosca le dinamiche del revenue management e del digital marketing turistico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERI DEL SETTORE -->
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>Turismo &amp; Hospitality</strong></h2>
+    </div>
+    <div class="numeri-grid reveal-stagger">
+      <div class="numeri-card reveal-scale"><p class="numeri-num">84 mld &euro;</p><p class="numeri-label">il contributo del turismo al PIL italiano nel 2024</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">72%</p><p class="numeri-label">delle prenotazioni turistiche in Italia avviene online</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">+23%</p><p class="numeri-label">di crescita delle prenotazioni dirette con siti ottimizzati</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">4,7x</p><p class="numeri-label">pi&ugrave; alto il margine su una prenotazione diretta rispetto a una via OTA</p></div>
     </div>
   </div>
 </section>
@@ -256,18 +310,18 @@
       <span class="tag">Le sfide</span>
       <h2 class="section-title">Le sfide digitali del settore <strong>Turismo &amp; Hospitality</strong></h2>
     </div>
-    <div class="ch-grid">
-      <div class="ch-card reveal">
+    <div class="ch-grid reveal-stagger">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
-        <h4>Booking engine e prenotazioni real-time</h4>
-        <p>Motori di prenotazione con disponibilit&agrave; in tempo reale, tariffe dinamiche, gestione camere/esperienze e checkout ottimizzato per massimizzare le conversioni.</p>
+        <h4>Gestione multi-property e revenue management</h4>
+        <p>Un gruppo alberghiero con pi&ugrave; strutture non pu&ograve; gestire tariffe, disponibilit&agrave; e promozioni manualmente. Costruiamo piattaforme di gestione centralizzata con dashboard revenue management e distribuzione automatica sui canali.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M7 4v6H4"/><path d="M17 14v6h-3"/><path d="M10 7h4"/><path d="M10 17h4"/></svg></div>
         <h4>Integrazioni con PMS e channel manager</h4>
         <p>Connessione fluida con Property Management System, channel manager, OTA e sistemi di revenue management per una distribuzione omnicanale.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
         <h4>Esperienza multi-lingua e localizzazione</h4>
         <p>Piattaforme multilingua con contenuti localizzati, valute multiple, SEO internazionale e adattamento culturale per mercati turistici globali.</p>
@@ -282,10 +336,25 @@
     <div class="reveal">
       <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il nostro approccio</span>
       <h2 class="section-title">Come lavoriamo nel settore <strong>Turismo &amp; Hospitality</strong></h2>
-      <p class="cl-text">Conosciamo le dinamiche del turismo e dell&rsquo;hospitality perch&eacute; ci lavoriamo da anni. Sappiamo che i picchi stagionali non perdonano, che il booking deve convertire al primo colpo e che l&rsquo;esperienza digitale &egrave; il primo contatto con la destinazione. Lavoriamo fianco a fianco con la tua agenzia per costruire soluzioni che reggono i picchi e convertono.</p>
+      <p class="cl-text">Conosciamo le dinamiche del turismo italiano: stagionalit&agrave;, dipendenza dagli OTA, aspettative degli ospiti internazionali e complessit&agrave; operativa della gestione multi-property. Lavoriamo con la tua agenzia per costruire strumenti digitali che aumentano le prenotazioni dirette, migliorano l&rsquo;esperienza degli ospiti e riducono il lavoro manuale del personale.</p>
       <a href="/per-le-agenzie#partnerflow" class="btn-pill">
         <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span>Scopri PartnerFlow&trade;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCCO CRM -->
+<section class="crm-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Trasparenza</span>
+      <h2 class="section-title" style="color:#fff">Trasparenza totale su <strong style="color:#6B9BF7">ogni progetto</strong></h2>
+      <p class="cl-text">Hai accesso diretto al nostro CRM per tutta la durata del progetto. Avanzamento, comunicazioni, documenti e decisioni &mdash; tutto tracciato e visibile in tempo reale. Formalizzato nel contratto che firmiamo insieme prima di iniziare.</p>
+      <a href="/per-le-agenzie" class="btn-pill">
+        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Scopri come lavoriamo</span>
       </a>
     </div>
   </div>
@@ -322,6 +391,34 @@
     </div>
   </div>
 </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande frequenti su <strong>Turismo &amp; Hospitality</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Potete costruire un motore di prenotazione integrato con il PMS?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Abbiamo esperienza con i principali PMS italiani e internazionali (Opera, Protel, Mews, gestionali custom).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Come aumentate le prenotazioni dirette rispetto agli OTA?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Con un booking engine veloce e ottimizzato per la conversione, una strategia di best rate guarantee implementata tecnicamente e funzionalit&agrave; che gli OTA non offrono.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Gestite siti multilingua per strutture con ospiti internazionali?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Siti multilingua con localizzazione completa, gestione multi-valuta e metodi di pagamento per mercato.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto ci vuole per un sito con booking engine per un boutique hotel?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Un sito istituzionale con booking engine integrato: tipicamente 8-12 settimane. Dipende dalla complessit&agrave; del PMS e delle integrazioni richieste.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 7. CTA -->
@@ -369,5 +466,17 @@
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
+
+<script>
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>

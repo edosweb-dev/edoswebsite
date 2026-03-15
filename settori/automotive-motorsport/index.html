@@ -167,9 +167,47 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* CRM BLOCK */
+    .crm-section{background:var(--navy-mid);position:relative;overflow:hidden}
+    .crm-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
+    .crm-section .container{position:relative;z-index:1}
+    .crm-section .section-title{color:#fff}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{transition:transform .3s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
+
+    /* ANIMATIONS */
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+    .reveal-stagger .reveal:nth-child(1),.reveal-stagger .reveal-scale:nth-child(1){transition-delay:.0s}
+    .reveal-stagger .reveal:nth-child(2),.reveal-stagger .reveal-scale:nth-child(2){transition-delay:.08s}
+    .reveal-stagger .reveal:nth-child(3),.reveal-stagger .reveal-scale:nth-child(3){transition-delay:.16s}
+    .reveal-stagger .reveal:nth-child(4),.reveal-stagger .reveal-scale:nth-child(4){transition-delay:.24s}
+    .section-title{position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--blue);transition:width .6s cubic-bezier(.16,1,.3,1) .2s}
+    .reveal.visible .section-title::after,.section-title.visible::after{width:48px}
+    .reveal-scale{animation:revealFallback 0s 2s forwards}
+    .reveal-scale.visible{animation:none}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -244,7 +282,23 @@
   <div class="container">
     <div class="reveal">
       <span class="tag">Il settore</span>
-      <p class="intro-text">Il settore automotive e motorsport richiede esperienze digitali ad alto impatto tecnologico &mdash; configuratori 3D, piattaforme per reti di concessionari, sistemi di lead management e integrazioni con DMS. Le agenzie che lavorano con case automobilistiche e team motorsport hanno bisogno di un partner tecnico che comprenda queste complessit&agrave;.</p>
+      <p class="intro-text">L&rsquo;automotive &egrave; uno dei settori dove il digitale ha pi&ugrave; impatto sull&rsquo;esperienza di acquisto. Il cliente che arriva in concessionaria ha gi&agrave; fatto il 70% del suo percorso decisionale online. Le agenzie che lavorano con brand automotive, reti di dealer e brand motorsport hanno bisogno di un partner tecnico che sappia costruire esperienze digitali all&rsquo;altezza delle aspettative di un settore premium.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERI DEL SETTORE -->
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>Automotive &amp; Motorsport</strong></h2>
+    </div>
+    <div class="numeri-grid reveal-stagger">
+      <div class="numeri-card reveal-scale"><p class="numeri-num">93 mld &euro;</p><p class="numeri-label">il valore del mercato automotive italiano nel 2024</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">71%</p><p class="numeri-label">degli acquisti auto inizia con una ricerca online</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">+38%</p><p class="numeri-label">di lead qualificati con un configuratore digitale ottimizzato</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">3,1x</p><p class="numeri-label">pi&ugrave; alta la probabilit&agrave; di acquisto di un cliente che ha usato un configuratore online</p></div>
     </div>
   </div>
 </section>
@@ -256,18 +310,18 @@
       <span class="tag">Le sfide</span>
       <h2 class="section-title">Le sfide digitali del settore <strong>Automotive &amp; Motorsport</strong></h2>
     </div>
-    <div class="ch-grid">
-      <div class="ch-card reveal">
+    <div class="ch-grid reveal-stagger">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h4>Configuratori prodotto interattivi</h4>
-        <p>Configuratori 3D e 2D per veicoli con personalizzazione in tempo reale, calcolo prezzo dinamico, comparazione modelli e generazione preventivi automatici.</p>
+        <h4>Brand experience digitale per il motorsport</h4>
+        <p>Il motorsport ha una fanbase appassionata che vuole essere coinvolta. Piattaforme di engagement per i fan, app ufficiali, sistemi di ticketing e contenuti esclusivi per gli abbonati sono strumenti che costruiamo per brand e team motorsport.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h4>Piattaforme per reti di concessionari</h4>
         <p>Portali dealer con gestione stock, lead distribution, area riservata, materiali marketing e reportistica vendite per reti di concessionari multi-sede.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h4>Lead management e customer journey</h4>
         <p>Sistemi di lead management con scoring, nurturing automatizzato, integrazione CRM e tracciamento del customer journey dal primo click alla consegna.</p>
@@ -282,10 +336,25 @@
     <div class="reveal">
       <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il nostro approccio</span>
       <h2 class="section-title">Come lavoriamo nel settore <strong>Automotive &amp; Motorsport</strong></h2>
-      <p class="cl-text">Conosciamo le dinamiche dell&rsquo;automotive e del motorsport perch&eacute; ci lavoriamo da anni. Sappiamo che il configuratore deve emozionare, che la rete dealer ha esigenze specifiche e che il lead management &egrave; il cuore del funnel di vendita. Lavoriamo fianco a fianco con la tua agenzia per costruire esperienze digitali che fanno la differenza.</p>
+      <p class="cl-text">Nell&rsquo;automotive la qualit&agrave; percepita del digitale si riflette sulla qualit&agrave; percepita del prodotto. Costruiamo esperienze digitali che comunicano il valore del brand &mdash; veloci, affidabili e visivamente all&rsquo;altezza di un settore premium. Lavoriamo con la tua agenzia per costruire strumenti che aumentano i lead qualificati della rete dealer e migliorano l&rsquo;efficienza dei processi commerciali.</p>
       <a href="/per-le-agenzie#partnerflow" class="btn-pill">
         <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span>Scopri PartnerFlow&trade;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCCO CRM -->
+<section class="crm-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Trasparenza</span>
+      <h2 class="section-title" style="color:#fff">Trasparenza totale su <strong style="color:#6B9BF7">ogni progetto</strong></h2>
+      <p class="cl-text">Hai accesso diretto al nostro CRM per tutta la durata del progetto. Avanzamento, comunicazioni, documenti e decisioni &mdash; tutto tracciato e visibile in tempo reale. Formalizzato nel contratto che firmiamo insieme prima di iniziare.</p>
+      <a href="/per-le-agenzie" class="btn-pill">
+        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Scopri come lavoriamo</span>
       </a>
     </div>
   </div>
@@ -322,6 +391,34 @@
     </div>
   </div>
 </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande frequenti su <strong>Automotive &amp; Motorsport</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Gestite integrazioni con CRM automotive come Salesforce Automotive Cloud?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. I lead generati dal configuratore vengono trasmessi automaticamente al dealer corretto con tutti i dati di configurazione.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Potete costruire un configuratore 3D per un brand automotive?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Configuratori con visualizzazione 3D real-time usando Three.js, gestione di colori, optional e versioni, calcolo automatico del prezzo e rate finanziamento.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Gestite anche i siti per la rete di dealer indipendenti?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Template configurabili che permettono ai dealer di personalizzare il proprio sito mantenendo i brand guidelines del costruttore, con aggiornamenti automatici.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Supportate anche gli eventi e le esperienze live per il motorsport?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. App evento, sistemi di accreditamento digitale, live tracking gara e piattaforme di engagement per i fan.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 7. CTA -->
@@ -369,5 +466,17 @@
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
+
+<script>
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>

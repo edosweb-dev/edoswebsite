@@ -167,9 +167,47 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* CRM BLOCK */
+    .crm-section{background:var(--navy-mid);position:relative;overflow:hidden}
+    .crm-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
+    .crm-section .container{position:relative;z-index:1}
+    .crm-section .section-title{color:#fff}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{transition:transform .3s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
+
+    /* ANIMATIONS */
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+    .reveal-stagger .reveal:nth-child(1),.reveal-stagger .reveal-scale:nth-child(1){transition-delay:.0s}
+    .reveal-stagger .reveal:nth-child(2),.reveal-stagger .reveal-scale:nth-child(2){transition-delay:.08s}
+    .reveal-stagger .reveal:nth-child(3),.reveal-stagger .reveal-scale:nth-child(3){transition-delay:.16s}
+    .reveal-stagger .reveal:nth-child(4),.reveal-stagger .reveal-scale:nth-child(4){transition-delay:.24s}
+    .section-title{position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--blue);transition:width .6s cubic-bezier(.16,1,.3,1) .2s}
+    .reveal.visible .section-title::after,.section-title.visible::after{width:48px}
+    .reveal-scale{animation:revealFallback 0s 2s forwards}
+    .reveal-scale.visible{animation:none}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -244,7 +282,23 @@
   <div class="container">
     <div class="reveal">
       <span class="tag">Il settore</span>
-      <p class="intro-text">Il settore healthcare e pharma &egrave; tra i pi&ugrave; regolamentati e sensibili. Le agenzie che operano in questo ambito hanno bisogno di un partner tecnico che comprenda le normative sanitarie, la gestione di dati sensibili, le certificazioni necessarie e le complessit&agrave; delle integrazioni con sistemi ospedalieri e farmaceutici.</p>
+      <p class="intro-text">La sanit&agrave; e il farmaceutico sono settori dove l&rsquo;errore non &egrave; un&rsquo;opzione. Affidabilit&agrave;, sicurezza dei dati e conformit&agrave; normativa non sono requisiti aggiuntivi &mdash; sono il punto di partenza. Le agenzie che lavorano con strutture sanitarie, aziende pharma e operatori del benessere hanno bisogno di un partner tecnico che conosca questi vincoli e sappia costruire soluzioni che funzionano quando contano davvero.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERI DEL SETTORE -->
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>Healthcare &amp; Pharma</strong></h2>
+    </div>
+    <div class="numeri-grid reveal-stagger">
+      <div class="numeri-card reveal-scale"><p class="numeri-num">127 mld &euro;</p><p class="numeri-label">la spesa sanitaria totale in Italia nel 2024</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">+67%</p><p class="numeri-label">di crescita delle prenotazioni sanitarie online negli ultimi 3 anni</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">78%</p><p class="numeri-label">dei pazienti italiani preferisce gestire gli appuntamenti online</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">3,4x</p><p class="numeri-label">pi&ugrave; alta la soddisfazione del paziente con portali di accesso ai referti digitali</p></div>
     </div>
   </div>
 </section>
@@ -256,18 +310,18 @@
       <span class="tag">Le sfide</span>
       <h2 class="section-title">Le sfide digitali del settore <strong>Healthcare &amp; Pharma</strong></h2>
     </div>
-    <div class="ch-grid">
-      <div class="ch-card reveal">
+    <div class="ch-grid reveal-stagger">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>Compliance e gestione dati sensibili</h4>
-        <p>Piattaforme conformi a GDPR, MDR e normative sanitarie con crittografia dei dati paziente, audit trail e gestione consensi granulare.</p>
+        <h4>Compliance normativa e sicurezza dei dati</h4>
+        <p>I dati sanitari sono la categoria pi&ugrave; sensibile prevista dal GDPR. Costruiamo architetture con crittografia end-to-end, accessi granulari basati sui ruoli, audit log completo e procedure di breach notification automatizzate.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M7 4v6H4"/><path d="M17 14v6h-3"/><path d="M10 7h4"/><path d="M10 17h4"/></svg></div>
         <h4>Integrazioni con sistemi sanitari</h4>
         <p>Connessione con sistemi HIS, EMR, HL7/FHIR e piattaforme farmaceutiche per un flusso dati sicuro e interoperabile tra strutture e operatori.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h4>Telemedicina e patient engagement</h4>
         <p>Piattaforme di telemedicina, portali paziente, app per aderenza terapeutica e sistemi di monitoraggio remoto con interfacce accessibili.</p>
@@ -282,10 +336,25 @@
     <div class="reveal">
       <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il nostro approccio</span>
       <h2 class="section-title">Come lavoriamo nel settore <strong>Healthcare &amp; Pharma</strong></h2>
-      <p class="cl-text">Conosciamo le dinamiche del settore sanitario e farmaceutico perch&eacute; ci lavoriamo da anni. Sappiamo che la compliance non ammette errori, che i dati dei pazienti sono sacri e che ogni soluzione deve essere accessibile a tutti. Lavoriamo fianco a fianco con la tua agenzia per costruire piattaforme che rispettano i pi&ugrave; alti standard del settore.</p>
+      <p class="cl-text">Nel healthcare ogni decisione tecnica ha implicazioni sulla sicurezza dei pazienti e sulla conformit&agrave; normativa. Lavoriamo con un approccio documentato e rigoroso: ogni requisito di sicurezza viene verificato, ogni accesso ai dati sanitari viene tracciato e ogni rilascio passa per un processo di validazione formale. Lavoriamo con la tua agenzia per costruire soluzioni che i medici e i pazienti usano davvero, nel rispetto di tutti i requisiti normativi applicabili.</p>
       <a href="/per-le-agenzie#partnerflow" class="btn-pill">
         <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span>Scopri PartnerFlow&trade;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCCO CRM -->
+<section class="crm-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Trasparenza</span>
+      <h2 class="section-title" style="color:#fff">Trasparenza totale su <strong style="color:#6B9BF7">ogni progetto</strong></h2>
+      <p class="cl-text">Hai accesso diretto al nostro CRM per tutta la durata del progetto. Avanzamento, comunicazioni, documenti e decisioni &mdash; tutto tracciato e visibile in tempo reale. Formalizzato nel contratto che firmiamo insieme prima di iniziare.</p>
+      <a href="/per-le-agenzie" class="btn-pill">
+        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Scopri come lavoriamo</span>
       </a>
     </div>
   </div>
@@ -322,6 +391,34 @@
     </div>
   </div>
 </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande frequenti su <strong>Healthcare &amp; Pharma</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Come gestite la conformit&agrave; GDPR per i dati sanitari?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>I dati sanitari rientrano nelle categorie speciali del GDPR (art. 9). Implementiamo consenso esplicito, accessi basati sui ruoli, crittografia, data retention automatica e procedure di esercizio dei diritti degli interessati.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Potete integrare il portale con il software gestionale della struttura?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Abbiamo esperienza con i principali software gestionali per strutture sanitarie italiane. L&rsquo;integrazione viene sempre sviluppata e testata in ambiente separato prima della messa in produzione.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Gestite anche la firma digitale del consenso informato?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Integriamo soluzioni di firma digitale qualificata conformi alle normative sanitarie italiane con archiviazione con valore probatorio.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo ci vuole per un portale prenotazioni per una rete di cliniche?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Per una rete di 5-20 strutture con prenotazione online, gestione agenda e referti digitali: tipicamente 4-6 mesi.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 7. CTA -->
@@ -369,5 +466,17 @@
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
+
+<script>
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>

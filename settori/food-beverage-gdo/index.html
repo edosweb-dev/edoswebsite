@@ -167,9 +167,47 @@
     .footer-legal a{color:rgba(255,255,255,.26);transition:color .2s}.footer-legal a:hover{color:rgba(255,255,255,.55)}
     .footer-legal a+a::before{content:' \00B7 '}
 
+
+    /* NUMERI */
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .numeri-card{padding:32px 28px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);text-align:center;transition:transform .3s,box-shadow .3s}
+    .numeri-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .numeri-num{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+    .numeri-label{font-size:.875rem;color:var(--text-muted);line-height:1.5;margin:0}
+
+    /* CRM BLOCK */
+    .crm-section{background:var(--navy-mid);position:relative;overflow:hidden}
+    .crm-section::before{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-55deg,transparent,transparent 60px,rgba(255,255,255,.013) 60px,rgba(255,255,255,.013) 61px)}
+    .crm-section .container{position:relative;z-index:1}
+    .crm-section .section-title{color:#fff}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:16px;background:none;border:none;width:100%;text-align:left;font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);transition:color .2s}
+    .faq-q:hover{color:var(--blue)}
+    .faq-q svg{transition:transform .3s}
+    .faq-item.open .faq-q svg{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+    .faq-item.open .faq-a{max-height:500px}
+    .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
+
+    /* ANIMATIONS */
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+    .reveal-stagger .reveal:nth-child(1),.reveal-stagger .reveal-scale:nth-child(1){transition-delay:.0s}
+    .reveal-stagger .reveal:nth-child(2),.reveal-stagger .reveal-scale:nth-child(2){transition-delay:.08s}
+    .reveal-stagger .reveal:nth-child(3),.reveal-stagger .reveal-scale:nth-child(3){transition-delay:.16s}
+    .reveal-stagger .reveal:nth-child(4),.reveal-stagger .reveal-scale:nth-child(4){transition-delay:.24s}
+    .section-title{position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--blue);transition:width .6s cubic-bezier(.16,1,.3,1) .2s}
+    .reveal.visible .section-title::after,.section-title.visible::after{width:48px}
+    .reveal-scale{animation:revealFallback 0s 2s forwards}
+    .reveal-scale.visible{animation:none}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.ch-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -244,7 +282,23 @@
   <div class="container">
     <div class="reveal">
       <span class="tag">Il settore</span>
-      <p class="intro-text">Il settore food &amp; beverage e la GDO hanno esigenze digitali complesse &mdash; volumi alti, integrazioni con ERP e logistica, portali B2B per reti di distribuzione e franchising. Le agenzie che lavorano in questo settore hanno bisogno di un partner tecnico che conosca queste dinamiche.</p>
+      <p class="intro-text">Il food &amp; beverage e la GDO sono tra i settori pi&ugrave; complessi da digitalizzare. Volumi alti, stagionalit&agrave;, reti distributive articolate e integrazioni con sistemi logistici rendono ogni progetto una sfida tecnica reale. Le agenzie che lavorano in questo settore hanno bisogno di un partner tecnico che conosca queste dinamiche e sappia costruire soluzioni che tengono sotto pressione.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERI DEL SETTORE -->
+<section class="section-pad" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">Numeri</span>
+      <h2 class="section-title">I numeri del settore <strong>Food &amp; Beverage / GDO</strong></h2>
+    </div>
+    <div class="numeri-grid reveal-stagger">
+      <div class="numeri-card reveal-scale"><p class="numeri-num">847 mld &euro;</p><p class="numeri-label">il valore del mercato food &amp; beverage europeo nel 2024</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">+23%</p><p class="numeri-label">di crescita dell&rsquo;e-commerce grocery in Italia negli ultimi 3 anni</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">68%</p><p class="numeri-label">delle aziende GDO italiane ha avviato progetti di digitalizzazione della supply chain</p></div>
+      <div class="numeri-card reveal-scale"><p class="numeri-num">4,2x</p><p class="numeri-label">pi&ugrave; efficiente una rete distributiva con portale B2B centralizzato</p></div>
     </div>
   </div>
 </section>
@@ -256,18 +310,18 @@
       <span class="tag">Le sfide</span>
       <h2 class="section-title">Le sfide digitali del settore <strong>Food &amp; Beverage / GDO</strong></h2>
     </div>
-    <div class="ch-grid">
-      <div class="ch-card reveal">
+    <div class="ch-grid reveal-stagger">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
-        <h4>Gestione ordini su larga scala</h4>
-        <p>Piattaforme che gestiscono volumi elevati di ordini con integrazioni in tempo reale verso sistemi logistici e di magazzino.</p>
+        <h4>Portali B2B per reti distributive e franchising</h4>
+        <p>800 affiliati che ordinano via email o telefono sono 800 fonti di errore. Un portale B2B centralizzato con catalogo, ordini, pagamenti e contratti digitalizzati riduce il costo operativo e scala con la rete.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M7 4v6H4"/><path d="M17 14v6h-3"/><path d="M10 7h4"/><path d="M10 17h4"/></svg></div>
         <h4>Integrazione con sistemi logistici</h4>
         <p>Connessione fluida con ERP, WMS e sistemi di tracciamento per garantire una filiera digitale senza interruzioni.</p>
       </div>
-      <div class="ch-card reveal">
+      <div class="ch-card reveal-scale">
         <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
         <h4>Portali per reti distributive e franchising</h4>
         <p>E-commerce B2B e portali dedicati per reti di affiliati, con gestione catalogo, listini personalizzati e ordini ricorrenti.</p>
@@ -282,10 +336,25 @@
     <div class="reveal">
       <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il nostro approccio</span>
       <h2 class="section-title">Come lavoriamo nel settore <strong>Food &amp; Beverage</strong></h2>
-      <p class="cl-text">Conosciamo le dinamiche del food &amp; beverage e della GDO perch&eacute; ci lavoriamo da anni. Sappiamo che ogni integrazione deve funzionare al primo colpo, che i volumi non aspettano e che la rete distributiva ha bisogno di strumenti semplici ma potenti. Lavoriamo fianco a fianco con la tua agenzia per costruire soluzioni che reggono la complessit&agrave; di questo settore.</p>
+      <p class="cl-text">Conosciamo le complessit&agrave; del food &amp; beverage e della GDO perch&eacute; ci lavoriamo da anni. Sappiamo che ogni integrazione deve funzionare al primo colpo, che i volumi alti non ammettono downtime e che le reti distributive hanno bisogno di strumenti semplici ma potenti. Lavoriamo fianco a fianco con la tua agenzia per costruire soluzioni che reggono la complessit&agrave; di questo settore.</p>
       <a href="/per-le-agenzie#partnerflow" class="btn-pill">
         <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span>Scopri PartnerFlow&trade;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCCO CRM -->
+<section class="crm-section section-pad">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Trasparenza</span>
+      <h2 class="section-title" style="color:#fff">Trasparenza totale su <strong style="color:#6B9BF7">ogni progetto</strong></h2>
+      <p class="cl-text">Hai accesso diretto al nostro CRM per tutta la durata del progetto. Avanzamento, comunicazioni, documenti e decisioni &mdash; tutto tracciato e visibile in tempo reale. Formalizzato nel contratto che firmiamo insieme prima di iniziare.</p>
+      <a href="/per-le-agenzie" class="btn-pill">
+        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Scopri come lavoriamo</span>
       </a>
     </div>
   </div>
@@ -322,6 +391,34 @@
     </div>
   </div>
 </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad" style="background:var(--white)">
+  <div class="container">
+    <div class="reveal">
+      <span class="tag">FAQ</span>
+      <h2 class="section-title">Domande frequenti su <strong>Food &amp; Beverage / GDO</strong></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Avete esperienza con integrazioni ERP nel settore food?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Abbiamo lavorato su integrazioni con i principali ERP (SAP, Navision, gestionali custom) in contesti di distribuzione alimentare e GDO. Ogni integrazione parte da un&rsquo;analisi delle API disponibili e dei flussi dati esistenti.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quanto tempo ci vuole per un portale B2B per franchising?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>Per una rete di 100-500 affiliati con gestione ordini, pagamenti e contratti: tipicamente 3-5 mesi. Dipende dalla complessit&agrave; delle integrazioni con i sistemi esistenti.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Gestite la compliance normativa del settore food?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Tracciabilit&agrave;, etichettatura, gestione scadenze e normative HACCP sono requisiti che conosciamo e integriamo nelle piattaforme che costruiamo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Possiamo fare una demo prima di iniziare il progetto?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;flex-shrink:0;transition:transform .3s"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="faq-a"><p>S&igrave;. Dopo la fase di Discovery possiamo costruire un prototipo funzionale per validare l&rsquo;approccio prima di investire nello sviluppo completo.</p></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 7. CTA -->
@@ -369,5 +466,17 @@
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
+
+<script>
+/* FAQ accordion */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>
