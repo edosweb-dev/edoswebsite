@@ -1178,19 +1178,50 @@
     .footer-legal a:hover { color:rgba(255,255,255,.55); }
     .footer-legal a + a::before { content:' · '; }
 
+    /* footer mobile contact strip */
+    .footer-mobile-contact { display:none; }
+    @media(max-width:900px){
+      .footer { padding:48px 0 0; }
+      .footer-mobile-contact {
+        display:flex; flex-direction:column; gap:0;
+        margin-bottom:24px; border-radius:12px; overflow:hidden;
+        background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06);
+      }
+      .footer-mobile-contact a {
+        display:flex; align-items:center; gap:12px;
+        padding:16px 20px; font-size:.9rem; font-weight:500;
+        color:rgba(255,255,255,.55); transition:color .2s, background .2s;
+        border-bottom:1px solid rgba(255,255,255,.04);
+      }
+      .footer-mobile-contact a:last-child { border-bottom:none; }
+      .footer-mobile-contact a:hover { color:#fff; background:rgba(255,255,255,.04); }
+      .footer-mobile-contact svg { width:18px; height:18px; flex-shrink:0; color:rgba(107,155,247,.5); }
+      .footer-info { font-size:.75rem; }
+    }
+
     /* ====================================================
        RESPONSIVE
     ==================================================== */
+    /* --- NAV OVERLAY MOBILE CONTACT --- */
+    .nav-ov-contact { display:none; }
+
     @media (max-width: 900px) {
       .nav-links, .nav-cta { display:none; }
       .nav-hamburger { display:flex; }
       .nav-ov-top  { padding:0 24px; }
-      .nav-ov-body { flex-direction:column; align-items:flex-start; justify-content:center; padding:24px 24px 48px; gap:32px; }
-      .nav-ov-main { padding-right:0; }
-      .nav-ov-main a { font-size:clamp(2rem,9vw,3rem); white-space:normal; }
+      .nav-ov-body { flex-direction:column; align-items:flex-start; justify-content:flex-start; padding:24px 24px 32px; gap:0; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+      .nav-ov-main { padding-right:0; margin-bottom:24px; }
+      .nav-ov-main a { font-size:clamp(1.6rem,7vw,2.4rem); white-space:normal; line-height:1.2; }
       .nav-ov-divider { display:none; }
-      .nav-ov-side { flex-direction:column; gap:20px; }
+      .nav-ov-side { flex-direction:column; gap:20px; display:none; }
       .nav-ov-sub a { font-size:.9rem; }
+      .nav-ov-contact { display:block; width:100%; padding-top:20px; border-top:1px solid rgba(255,255,255,.08); }
+      .nav-ov-contact-row { display:flex; align-items:center; gap:12px; padding:12px 0; color:rgba(255,255,255,.5); font-size:.9rem; font-weight:500; transition:color .2s; }
+      .nav-ov-contact-row:hover { color:#fff; }
+      .nav-ov-contact-row svg { width:18px; height:18px; flex-shrink:0; color:rgba(107,155,247,.6); }
+      .nav-ov-contact-cta { display:inline-flex; align-items:center; gap:10px; margin-top:16px; padding:12px 24px; border-radius:10px; background:var(--blue); color:#fff; font-size:.875rem; font-weight:600; width:100%; justify-content:center; transition:background .2s; }
+      .nav-ov-contact-cta:hover { background:var(--blue-hover); }
+      .nav-ov-contact-cta svg { width:16px; height:16px; }
 
       .hero h1 { font-size:clamp(2rem,6vw,3rem); }
       .hero-sub { font-size:1rem; }
@@ -1202,7 +1233,10 @@
     }
     @media (max-width: 640px) {
       .section-pad { padding:64px 0; }
-
+      .nav-ov-main a { font-size:1.5rem; }
+      .hero-tagline p { width:100%; font-size:1.15rem; }
+      .hero-pillars { gap:0; }
+      .hero-pillar-text { font-size:.85rem; }
     }
   
     .footer-col-chevron{display:none;width:16px;height:16px;color:rgba(255,255,255,.3);transition:transform .3s cubic-bezier(.16,1,.3,1);flex-shrink:0}
@@ -1318,6 +1352,11 @@
         <div class="nav-ov-sub-label">Settori</div>
         <a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/beauty-wellness">Beauty / Wellness</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a><a href="/settori/healthcare-pharma">Healthcare / Pharma</a><a href="/settori/turismo-hospitality">Turismo / Hospitality</a><a href="/settori/automotive-motorsport">Automotive / Motorsport</a>
       </div>
+    </div>
+    <div class="nav-ov-contact">
+      <a href="mailto:info@edos.it" class="nav-ov-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>info@edos.it</a>
+      <a href="tel:+390200000000" class="nav-ov-contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.37 1.61.7 2.37a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.76.33 1.56.57 2.37.7A2 2 0 0122 16.92z"/></svg>Chiamaci</a>
+      <a href="/contatti" class="nav-ov-contact-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota un appuntamento</a>
     </div>
   </div>
 </div>
@@ -1868,6 +1907,11 @@
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="container">
+    <div class="footer-mobile-contact">
+      <a href="mailto:info@edos.it"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>info@edos.it</a>
+      <a href="tel:+390200000000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.13.81.37 1.61.7 2.37a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.76.33 1.56.57 2.37.7A2 2 0 0122 16.92z"/></svg>Chiamaci</a>
+      <a href="/contatti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Prenota un appuntamento</a>
+    </div>
     <div class="footer-columns">
       <div class="footer-col">
         <div class="footer-col-label">Menu<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
