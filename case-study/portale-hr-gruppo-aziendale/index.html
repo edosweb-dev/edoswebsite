@@ -67,7 +67,7 @@
     .nav-ov-sub-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(107,155,247,.6);margin-bottom:12px}
     .nav-ov-sub a{display:block;font-size:1rem;font-weight:500;color:rgba(255,255,255,.42);margin-bottom:10px;transition:color .18s}
     .nav-ov-sub a:hover{color:#fff}
-    .nav-ov-cta-block{margin-top:20px}.nav-ov-cta-block .btn-pill{font-size:.65rem;padding:4px 24px 4px 4px}.nav-ov-cta-block .btn-pill-circle{width:38px;height:38px}.nav-ov-cta-block .btn-pill-circle svg{width:16px;height:16px}
+    
 
     /* ===== HERO — no number, compact ===== */
     .cs-hero{position:relative;background:var(--navy);padding:180px 0 100px;overflow:hidden;color:#fff}
@@ -183,7 +183,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media(max-width:900px){
-      .nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}
+      .nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:24px 24px 32px;gap:0;overflow-y:auto;-webkit-overflow-scrolling:touch}.nav-ov-main a{font-size:clamp(1.6rem,7vw,2.4rem);white-space:normal;line-height:1.2}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}
       .res-grid{grid-template-columns:repeat(2,1fr);gap:24px}
       .detail-grid{grid-template-columns:1fr;gap:40px}
       .ocs-grid{grid-template-columns:1fr}
@@ -203,7 +203,34 @@
       .cs-hero-meta{gap:20px}
     }
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
-    </style>
+    
+    .nav-ov-contact{display:none}
+    .footer-mobile-contact{display:none}
+    @media(max-width:900px){
+      .nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:24px 24px 32px;gap:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+      .nav-ov-main a{font-size:clamp(1.6rem,7vw,2.4rem);line-height:1.2}
+      .nav-ov-side{display:none}
+      .nav-ov-contact{display:block;width:100%;padding-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+      .nav-ov-contact-row{display:flex;align-items:center;gap:12px;padding:12px 0;color:rgba(255,255,255,.5);font-size:.9rem;font-weight:500;transition:color .2s}
+      .nav-ov-contact-row:hover{color:#fff}
+      .nav-ov-contact-row svg{width:18px;height:18px;flex-shrink:0;color:rgba(107,155,247,.6)}
+      .nav-ov-contact-cta{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:12px 24px;border-radius:10px;background:var(--blue);color:#fff;font-size:.875rem;font-weight:600;width:100%;justify-content:center;transition:background .2s}
+      .nav-ov-contact-cta:hover{background:var(--blue-hover)}
+      .nav-ov-contact-cta svg{width:16px;height:16px}
+      .footer{padding:48px 0 0}
+      .footer-mobile-contact{display:flex;flex-direction:column;gap:0;margin-bottom:24px;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+      .footer-mobile-contact a{display:flex;align-items:center;gap:12px;padding:16px 20px;font-size:.9rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s,background .2s;border-bottom:1px solid rgba(255,255,255,.04)}
+      .footer-mobile-contact a:last-child{border-bottom:none}
+      .footer-mobile-contact a:hover{color:#fff;background:rgba(255,255,255,.04)}
+      .footer-mobile-contact svg{width:18px;height:18px;flex-shrink:0;color:rgba(107,155,247,.5)}
+      .footer-info{font-size:.75rem}
+    }
+    @media(max-width:640px){
+      .nav-ov-main a{font-size:1.5rem}
+      .page-hero{padding:120px 0 56px}
+      .page-hero-sub{font-size:.95rem}
+    }
+  </style>
 </head>
 <body>
 
@@ -232,8 +259,7 @@
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Servizi</div>
         <a href="/servizi/web-commerce">Web &amp; Commerce</a><a href="/servizi/app-webapp">App &amp; WebApp</a><a href="/servizi/platform-engineering">Platform Engineering</a><a href="/servizi/ai-integration">AI Integration</a><a href="/servizi/product-design">Product Design</a><a href="/servizi/technical-advisory">Technical Advisory</a><a href="/servizi/cto-as-a-service">CTO as a Service</a><a href="/servizi/continuity-evolution">Continuity &amp; Evolution</a>
-        <div class="nav-ov-cta-block"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
-      </div>
+</div>
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Settori</div>
         <a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/beauty-wellness">Beauty / Wellness</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a><a href="/settori/healthcare-pharma">Healthcare / Pharma</a><a href="/settori/turismo-hospitality">Turismo / Hospitality</a><a href="/settori/automotive-motorsport">Automotive / Motorsport</a>
