@@ -88,14 +88,11 @@
     .section-title strong{font-weight:700}
     .section-desc{font-size:1.0625rem;color:var(--text-muted);line-height:1.78;max-width:640px;margin:0 0 48px}
 
-    /* ACTIVITIES */
-    .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-    .act-card{padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);transition:background .3s,border-color .3s,transform .3s}
-    .act-card:hover{background:var(--blue-pale);border-color:rgba(59,111,232,.25);transform:translateY(-4px)}
-    .act-icon{width:40px;height:40px;color:var(--blue);margin-bottom:16px}.act-icon svg{width:100%;height:100%}
-    .act-card h4{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--navy);margin:0;line-height:1.4}
-
-    /* SCENARIOS — legacy compat */
+    /* ACTIVITIES — 4 col grid, border-top only */
+    .act-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+    .act-item{padding:24px 0 0;border-top:2px solid var(--border-s)}
+    .act-icon{width:32px;height:32px;color:var(--blue);margin-bottom:12px}.act-icon svg{width:100%;height:100%}
+    .act-item h4{font-family:var(--font-display);font-size:.9375rem;font-weight:700;color:var(--navy);margin:0;line-height:1.4}
 
     /* COME LAVORIAMO */
     .cl-section{background:var(--navy-mid);position:relative;overflow:hidden}
@@ -104,15 +101,17 @@
     .cl-section .section-title{color:#fff}.cl-section .section-title strong{color:#6B9BF7}
     .cl-text{font-size:1.0625rem;color:rgba(255,255,255,.48);line-height:1.78;max-width:640px;margin:0 0 36px}
 
-    /* CASE STUDY */
-    .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
-    .cs-card{padding:36px 32px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s,box-shadow .3s,transform .3s;cursor:pointer}
-    .cs-card:hover{border-color:rgba(59,111,232,.25);box-shadow:var(--shadow-md);transform:translateY(-4px)}
-    .cs-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin:0 0 10px;line-height:1.3;transition:color .2s}
+    /* CASE STUDY — ocs-style grid */
+    .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+    .cs-card{display:flex;flex-direction:column;gap:16px;padding:32px 0;border-top:2px solid var(--border-s);transition:border-color .3s}
+    .cs-card:hover{border-color:var(--blue)}
+    .cs-card-title{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin:0;line-height:1.3;transition:color .2s}
     .cs-card:hover .cs-card-title{color:var(--blue)}
-    .cs-card-desc{font-size:.9375rem;color:var(--text-muted);line-height:1.65;margin:0 0 20px}
-    .cs-card-meta{border-top:1px solid var(--border);padding-top:14px}
-    .cs-card-meta span{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+    .cs-card-desc{font-size:.875rem;color:var(--text-muted);line-height:1.6;margin:0}
+    .cs-card-meta span{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+    .cs-card-arrow{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-top:auto;transition:gap .3s}
+    .cs-card:hover .cs-card-arrow{gap:10px}
+    .cs-card-arrow svg{width:16px;height:16px}
 
     /* RELATED SERVICES */
     .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
@@ -171,20 +170,18 @@
     .numeri-num{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:800;color:#004AAD;line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
     .numeri-label{font-size:.8125rem;color:var(--text-muted);line-height:1.55;margin:0}
 
-    /* SCENARI — editorial list, clean */
-    .sc-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
-    .sc-item{padding:20px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:16px}
-    .sc-item:first-child{border-top:1px solid var(--border)}
-    .sc-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;position:relative;top:2px}
-    .sc-item p{font-size:1.0625rem;color:var(--text-body);line-height:1.7;margin:0}
+    /* SCENARI — numbered grid */
+    .sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px}
+    .sc-item{padding:24px 28px 24px 0;border-top:1px solid var(--border);display:flex;align-items:baseline;gap:14px}
+    .sc-num{font-family:var(--font-display);font-size:.75rem;font-weight:700;color:var(--blue);flex-shrink:0;letter-spacing:.04em}
+    .sc-item p{font-size:.9375rem;color:var(--text-body);line-height:1.65;margin:0}
 
-    /* PROCESSO — editorial stepper, counter + text flow */
-    .processo-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
-    .processo-step{padding:32px 0;border-bottom:1px solid var(--border)}
-    .processo-step:first-child{border-top:1px solid var(--border)}
-    .processo-counter{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
-    .processo-step h4{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--navy);margin:0 0 8px;line-height:1.3;letter-spacing:-.02em}
-    .processo-step p{font-size:.9375rem;color:var(--text-muted);line-height:1.75;margin:0}
+    /* PROCESSO — grid layout */
+    .processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px;margin-top:48px}
+    .processo-step{padding:24px 0;border-top:2px solid var(--border-s)}
+    .processo-counter{font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+    .processo-step h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 6px;line-height:1.3;letter-spacing:-.02em}
+    .processo-step p{font-size:.8125rem;color:var(--text-muted);line-height:1.65;margin:0}
 
     /* STACK TECNOLOGICO — detail grid, inline */
     .stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;border-top:1px solid var(--border)}
@@ -192,12 +189,11 @@
     .stack-cat{font-family:var(--font-display);font-size:.8125rem;font-weight:700;color:var(--navy);min-width:120px;flex-shrink:0}
     .stack-val{font-size:.875rem;color:var(--text-muted);line-height:1.6}
 
-    /* PERCHE FUNZIONA — editorial list */
-    .perche-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
-    .perche-item{padding:20px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:14px}
-    .perche-item:first-child{border-top:1px solid var(--border)}
-    .perche-marker{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;position:relative;top:3px}
-    .perche-item p{font-size:1.0625rem;color:var(--text-body);line-height:1.78;margin:0}
+    /* PERCHE FUNZIONA — card grid */
+    .perche-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+    .perche-card{padding:32px 28px;border:1px solid var(--border-s);border-radius:var(--r);transition:border-color .3s}
+    .perche-card:hover{border-color:rgba(59,111,232,.25)}
+    .perche-card p{font-size:.9375rem;color:var(--text-body);line-height:1.7;margin:0}
 
     /* FAQ ACCORDION — minimal */
     .faq-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:780px}
@@ -211,8 +207,8 @@
     .faq-item.open .faq-a{max-height:500px}
     .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:1fr 1fr}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:repeat(2,1fr)}.stack-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}.stack-cat{min-width:90px}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:repeat(2,1fr)}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:repeat(2,1fr)}.sc-grid{grid-template-columns:1fr}.processo-grid{grid-template-columns:repeat(2,1fr)}.perche-grid{grid-template-columns:1fr}.stack-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}.processo-grid{grid-template-columns:1fr}.stack-cat{min-width:90px}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -276,32 +272,24 @@
     <div class="page-hero-inner">
       <div class="tag" style="opacity:0;animation:fadeUp .55s ease forwards .2s">Servizio</div>
       <h1>Web &amp; <em>Commerce</em></h1>
-      <p class="page-hero-sub">Siti, landing page ed e-commerce che convertono.</p>
+      <p class="page-hero-sub">Realizziamo siti aziendali, landing page e shop online per i clienti della tua agenzia. Dal progetto al lancio, nei tempi stabiliti e con il tuo nome sopra.</p>
     </div>
   </div>
 </section>
 
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <span class="tag">Cosa facciamo</span>
-      <p class="section-desc" style="max-width:720px;font-size:1.125rem;color:var(--text-body)">Realizziamo siti aziendali, landing page e shop online per i clienti della tua agenzia. Dal progetto al lancio, nei tempi stabiliti e con il tuo nome sopra.</p>
-    </div>
     <div class="act-grid">
-      <div class="act-card reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="32" height="24" rx="3"/><path d="M4 14h32"/><circle cx="9" cy="10" r="1.2"/><circle cx="14" cy="10" r="1.2"/><path d="M14 34h12M20 30v4"/></svg></div><h4>Siti aziendali e istituzionali</h4></div>
-      <div class="act-card reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="28" height="32" rx="3"/><path d="M12 14h16M12 20h10"/><path d="M12 28h6"/></svg></div><h4>Landing page ad alta conversione</h4></div>
-      <div class="act-card reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-8h20l4 8"/><path d="M6 12v20h28V12"/><path d="M16 24h8v8h-8z"/><path d="M6 12h28"/></svg></div><h4>E-commerce Shopify, WooCommerce, Magento 2</h4></div>
-      <div class="act-card reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8h10v10H8zM22 8h10v10H22zM8 22h10v10H8zM22 22h10v10H22z"/><path d="M18 13h4M18 27h4M13 18v4M27 18v4"/></svg></div><h4>Headless &amp; architetture moderne</h4></div>
+      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="32" height="24" rx="3"/><path d="M4 14h32"/><circle cx="9" cy="10" r="1.2"/><circle cx="14" cy="10" r="1.2"/><path d="M14 34h12M20 30v4"/></svg></div><h4>Siti aziendali e istituzionali</h4></div>
+      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="28" height="32" rx="3"/><path d="M12 14h16M12 20h10"/><path d="M12 28h6"/></svg></div><h4>Landing page ad alta conversione</h4></div>
+      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4-8h20l4 8"/><path d="M6 12v20h28V12"/><path d="M16 24h8v8h-8z"/><path d="M6 12h28"/></svg></div><h4>E-commerce Shopify, WooCommerce, Magento 2</h4></div>
+      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8h10v10H8zM22 8h10v10H22zM8 22h10v10H8zM22 22h10v10H22z"/><path d="M18 13h4M18 27h4M13 18v4M27 18v4"/></svg></div><h4>Headless &amp; architetture moderne</h4></div>
     </div>
   </div>
 </section>
 
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <span class="tag">Numeri</span>
-      <h2 class="section-title">I numeri del settore <strong>Web &amp; Commerce</strong></h2>
-    </div>
     <div class="numeri-grid">
       <div class="numeri-item reveal"><p class="numeri-num">73%</p><p class="numeri-label">delle PMI italiane ha un sito non ottimizzato per mobile</p></div>
       <div class="numeri-item reveal"><p class="numeri-num">2,4s</p><p class="numeri-label">tempo massimo di caricamento prima che l&rsquo;utente abbandoni</p></div>
@@ -314,15 +302,14 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Quando serve</span>
       <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>Web &amp; Commerce</strong></h2>
     </div>
-    <div class="sc-list">
-      <div class="sc-item reveal"><div class="sc-dot"></div><p>Il sito del cliente non converte nonostante il traffico</p></div>
-      <div class="sc-item reveal"><div class="sc-dot"></div><p>Il cliente vuole un e-commerce ma non sa da dove iniziare</p></div>
-      <div class="sc-item reveal"><div class="sc-dot"></div><p>La piattaforma esistente &egrave; lenta, vecchia o difficile da gestire</p></div>
-      <div class="sc-item reveal"><div class="sc-dot"></div><p>Serve una landing page per una campagna con deadline stretta</p></div>
-      <div class="sc-item reveal"><div class="sc-dot"></div><p>Il cliente opera su pi&ugrave; canali e vuole un&rsquo;esperienza coerente</p></div>
+    <div class="sc-grid">
+      <div class="sc-item reveal"><span class="sc-num">01</span><p>Il sito del cliente non converte nonostante il traffico</p></div>
+      <div class="sc-item reveal"><span class="sc-num">02</span><p>Il cliente vuole un e-commerce ma non sa da dove iniziare</p></div>
+      <div class="sc-item reveal"><span class="sc-num">03</span><p>La piattaforma esistente &egrave; lenta, vecchia o difficile da gestire</p></div>
+      <div class="sc-item reveal"><span class="sc-num">04</span><p>Serve una landing page per una campagna con deadline stretta</p></div>
+      <div class="sc-item reveal"><span class="sc-num">05</span><p>Il cliente opera su pi&ugrave; canali e vuole un&rsquo;esperienza coerente</p></div>
     </div>
   </div>
 </section>
@@ -331,40 +318,15 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Processo</span>
       <h2 class="section-title">Come realizziamo un progetto <strong>Web &amp; Commerce</strong></h2>
     </div>
-    <div class="processo-list">
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 01</p>
-        <h4>Brief e analisi</h4>
-        <p>Raccogliamo obiettivi, target, competitor e KPI attesi. Definiamo architettura dell&rsquo;informazione e user journey.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 02</p>
-        <h4>Design</h4>
-        <p>Wireframe &rarr; UI design &rarr; Design system. Ogni scelta visiva ha una ragione strategica, non estetica.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 03</p>
-        <h4>Sviluppo</h4>
-        <p>Frontend performante, backend solido, CMS configurato per permettere al cliente di gestire i contenuti in autonomia.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 04</p>
-        <h4>SEO e performance</h4>
-        <p>Ottimizzazione tecnica, Core Web Vitals, struttura URL, meta tag e schema markup prima del lancio.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 05</p>
-        <h4>Test e lancio</h4>
-        <p>QA su tutti i dispositivi e browser. Lancio pianificato con rollback in caso di problemi.</p>
-      </div>
-      <div class="processo-step reveal">
-        <p class="processo-counter">Step 06</p>
-        <h4>Supporto post-lancio</h4>
-        <p>Monitoraggio performance, fix rapidi, evoluzione continua.</p>
-      </div>
+    <div class="processo-grid">
+      <div class="processo-step reveal"><p class="processo-counter">01</p><h4>Brief e analisi</h4><p>Raccogliamo obiettivi, target, competitor e KPI attesi. Definiamo architettura dell&rsquo;informazione e user journey.</p></div>
+      <div class="processo-step reveal"><p class="processo-counter">02</p><h4>Design</h4><p>Wireframe &rarr; UI design &rarr; Design system. Ogni scelta visiva ha una ragione strategica, non estetica.</p></div>
+      <div class="processo-step reveal"><p class="processo-counter">03</p><h4>Sviluppo</h4><p>Frontend performante, backend solido, CMS configurato per permettere al cliente di gestire i contenuti in autonomia.</p></div>
+      <div class="processo-step reveal"><p class="processo-counter">04</p><h4>SEO e performance</h4><p>Ottimizzazione tecnica, Core Web Vitals, struttura URL, meta tag e schema markup prima del lancio.</p></div>
+      <div class="processo-step reveal"><p class="processo-counter">05</p><h4>Test e lancio</h4><p>QA su tutti i dispositivi e browser. Lancio pianificato con rollback in caso di problemi.</p></div>
+      <div class="processo-step reveal"><p class="processo-counter">06</p><h4>Supporto post-lancio</h4><p>Monitoraggio performance, fix rapidi, evoluzione continua.</p></div>
     </div>
   </div>
 </section>
@@ -373,7 +335,6 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Stack</span>
       <h2 class="section-title">Tecnologie che <strong>utilizziamo</strong></h2>
     </div>
     <div class="stack-grid">
@@ -394,14 +355,13 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Perch&eacute; funziona</span>
       <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
     </div>
-    <div class="perche-list">
-      <div class="perche-item reveal"><div class="perche-marker"></div><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-      <div class="perche-item reveal"><div class="perche-marker"></div><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
-      <div class="perche-item reveal"><div class="perche-marker"></div><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
-      <div class="perche-item reveal"><div class="perche-marker"></div><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
+    <div class="perche-grid">
+      <div class="perche-card reveal"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-card reveal"><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
+      <div class="perche-card reveal"><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
+      <div class="perche-card reveal"><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
     </div>
   </div>
 </section>
@@ -410,12 +370,11 @@
 <section class="cl-section section-pad">
   <div class="container">
     <div class="reveal">
-      <span class="tag" style="background:rgba(107,155,247,.1);border-color:rgba(107,155,247,.2)">Il metodo</span>
       <h2 class="section-title">Come <strong>lavoriamo</strong></h2>
-      <p class="cl-text">Ogni progetto segue <strong style="color:#6B9BF7;font-weight:700">PartnerFlow&trade;</strong>, il nostro framework che garantisce tempi, qualit&agrave; e trasparenza in ogni fase.</p>
+      <p class="cl-text">Ogni progetto segue <strong style="color:#6B9BF7;font-weight:700">PartnerFlow</strong>, il nostro framework che garantisce tempi, qualit&agrave; e trasparenza in ogni fase.</p>
       <a href="/per-le-agenzie#partnerflow" class="btn-pill">
         <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Scopri PartnerFlow&trade;</span>
+        <span>Scopri PartnerFlow</span>
       </a>
     </div>
   </div>
@@ -424,40 +383,32 @@
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Case study</span>
       <h2 class="section-title">Progetti <strong>Web &amp; Commerce</strong> che abbiamo realizzato</h2>
     </div>
     <div class="cs-grid">
       <a href="/case-study/ecommerce-b2b-treere" class="cs-card reveal">
         <p class="cs-card-title">E-commerce B2B per rete di 800+ affiliati</p>
         <p class="cs-card-desc">Piattaforma centralizzata per acquisti e contratti digitali, con gestione catalogo, ordini e fatturazione per l&rsquo;intera rete.</p>
-        <div class="cs-card-meta"><span>Retail / Franchising</span></div>
+        <div class="cs-card-arrow">Scopri il progetto <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
       <a href="/case-study/ecommerce-headless-brand-luxury" class="cs-card reveal">
         <p class="cs-card-title">E-commerce headless per brand luxury</p>
         <p class="cs-card-desc">Architettura headless con esperienza su misura per il mercato luxury. Design premium e performance ottimizzate.</p>
-        <div class="cs-card-meta"><span>Fashion / Luxury</span></div>
+        <div class="cs-card-arrow">Scopri il progetto <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
       <a href="/case-study/sito-istituzionale-studio-professionale" class="cs-card reveal">
         <p class="cs-card-title">Sito istituzionale studio professionale</p>
         <p class="cs-card-desc">+180% traffico organico in 6 mesi. Sito SEO con lead qualificati e integrazione CRM.</p>
-        <div class="cs-card-meta"><span>Finance / Banking</span></div>
-      </a>
-      <a href="/case-study/sito-crm-network-immobiliare" class="cs-card reveal">
-        <p class="cs-card-title">Sito e CRM per network immobiliare</p>
-        <p class="cs-card-desc">+250% traffico organico in 12 mesi. Sito con motore ricerca immobili e CRM integrato per agenti.</p>
-        <div class="cs-card-meta"><span>Retail / Consumer Goods</span></div>
+        <div class="cs-card-arrow">Scopri il progetto <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></div>
       </a>
     </div>
   </div>
-</div>
 </section>
 
 
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">FAQ</span>
       <h2 class="section-title">Domande <strong>frequenti</strong></h2>
     </div>
     <div class="faq-list">
@@ -485,7 +436,6 @@
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
     <div class="reveal">
-      <span class="tag">Servizi correlati</span>
       <h2 class="section-title">Altri servizi che <strong>completano</strong> Web &amp; Commerce</h2>
     </div>
     <div class="rel-grid">
@@ -540,5 +490,15 @@
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
+<script>
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>
