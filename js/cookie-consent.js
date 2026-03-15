@@ -107,14 +107,14 @@
           '<div class="cp-cat">' +
             '<div class="cp-cat-head">' +
               '<div class="cp-cat-info"><span class="cp-cat-name">Cookie analitici</span></div>' +
-              '<label class="cp-toggle"><input type="checkbox" id="cpAnalytics"><span class="cp-toggle-slider"></span></label>' +
+              '<label class="cp-toggle" for="cpAnalytics"><input type="checkbox" id="cpAnalytics" aria-label="Cookie analitici"><span class="cp-toggle-slider"></span></label>' +
             '</div>' +
             '<p class="cp-cat-desc">Raccolgono informazioni aggregate su come i visitatori utilizzano il sito, per migliorare l\u2019esperienza di navigazione e le prestazioni.</p>' +
           '</div>' +
           '<div class="cp-cat">' +
             '<div class="cp-cat-head">' +
               '<div class="cp-cat-info"><span class="cp-cat-name">Cookie di marketing</span></div>' +
-              '<label class="cp-toggle"><input type="checkbox" id="cpMarketing"><span class="cp-toggle-slider"></span></label>' +
+              '<label class="cp-toggle" for="cpMarketing"><input type="checkbox" id="cpMarketing" aria-label="Cookie di marketing"><span class="cp-toggle-slider"></span></label>' +
             '</div>' +
             '<p class="cp-cat-desc">Utilizzati per mostrare annunci pertinenti e misurare l\u2019efficacia delle campagne pubblicitarie su piattaforme esterne.</p>' +
           '</div>' +
