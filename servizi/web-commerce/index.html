@@ -198,15 +198,16 @@
     .sc-card:hover .sc-card-glow{opacity:1}
 
     /* PROCESSO — grid layout */
-    .processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 40px;margin-top:48px}
-    .processo-step{padding:24px 0 24px 20px;border-right:2px solid var(--border-s);transition:border-color .3s}
-    .processo-step:last-child{border-right:none}
+    .processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px}
+    .processo-step{padding:28px 32px 28px 0;border-right:1px solid var(--border-s);transition:border-color .3s}
+    .processo-step:nth-child(3n){border-right:none}
+    .processo-step:nth-child(n+4){border-top:1px solid var(--border-s)}
     .processo-step:hover{border-color:var(--blue)}
-    .processo-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-    .processo-icon{width:28px;height:28px;color:var(--blue);flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1)}.processo-icon svg{width:100%;height:100%}
+    .processo-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .processo-icon{width:32px;height:32px;color:var(--blue);flex-shrink:0;transition:transform .3s cubic-bezier(.16,1,.3,1)}.processo-icon svg{width:100%;height:100%}
     .processo-step:hover .processo-icon{transform:scale(1.15)}
     .processo-step h4{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin:0;line-height:1.3;letter-spacing:-.02em}
-    .processo-step p{font-size:.9rem;color:var(--text-muted);line-height:1.65;margin:6px 0 0}
+    .processo-step p{font-size:.9rem;color:var(--text-muted);line-height:1.65;margin:8px 0 0}
 
     /* STACK TECNOLOGICO — logo grid */
     .stack-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:48px}
@@ -216,13 +217,12 @@
     .stack-logo-item:hover img{transform:scale(1.12)}
     .stack-logo-item span{font-family:var(--font-display);font-size:.75rem;font-weight:600;color:var(--text-muted);text-align:center;letter-spacing:.02em}
 
-    /* PERCHE FUNZIONA — card grid */
-    .perche-wrap{margin-top:48px;margin-left:calc(-50vw + 50%);margin-right:calc(-50vw + 50%);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s)}
-    .perche-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;max-width:1160px;margin:0 auto}
-    .perche-card{padding:36px 32px;border-right:1px solid var(--border-s);transition:background .3s;position:relative}
-    .perche-card:nth-child(2n){border-right:none}
-    .perche-card:nth-child(-n+2)::before{content:'';position:absolute;bottom:0;left:calc(-50vw);width:200vw;height:1px;background:var(--border-s)}
-    .perche-card:hover{background:var(--blue-pale)}
+    /* PERCHE FUNZIONA — full-width grid (same pattern as homepage cases) */
+    .perche-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100vw;margin-left:calc(-50vw + 50%);border-top:1px solid var(--border-s)}
+    .perche-card{padding:40px 40px 40px 28px;border-bottom:1px solid var(--border-s);transition:background .3s}
+    .perche-card:nth-child(odd){border-right:1px solid var(--border-s);padding-left:max(28px,calc((100vw - 1160px)/2 + 28px))}
+    .perche-card:nth-child(even){padding-right:max(40px,calc((100vw - 1160px)/2 + 40px))}
+    .perche-card:hover{background:rgba(59,111,232,.03)}
     .perche-card p{font-size:.9375rem;color:var(--text-body);line-height:1.7;margin:0}
 
     /* FAQ ACCORDION — minimal */
@@ -237,8 +237,8 @@
     .faq-item.open .faq-a{max-height:500px}
     .faq-a p{padding:0 0 24px;font-size:.9375rem;color:var(--text-muted);line-height:1.78;margin:0}
     /* RESPONSIVE */
-    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:repeat(2,1fr)}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:repeat(2,1fr)}.sc-grid{grid-template-columns:repeat(2,1fr)}.processo-grid{grid-template-columns:repeat(2,1fr)}.perche-grid{grid-template-columns:1fr}.perche-card{border-right:none!important}.perche-card::before{left:0!important;width:100%!important}.perche-card:last-child::before{display:none}.stack-logo-grid{grid-template-columns:repeat(3,1fr)}.footer-bottom{flex-direction:column;text-align:center}}
-    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}.processo-grid{grid-template-columns:1fr}.sc-grid{grid-template-columns:1fr}.stack-logo-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:900px){.nav-ov-top{padding:0 24px}.nav-ov-body{flex-direction:column;align-items:flex-start;justify-content:center;padding:24px 24px 48px;gap:32px}.nav-ov-main a{font-size:clamp(2rem,9vw,3rem);white-space:normal}.nav-ov-divider{display:none}.nav-ov-side{flex-direction:column;gap:20px}.nav-ov-sub a{font-size:.9rem}.act-grid{grid-template-columns:repeat(2,1fr)}.rel-grid{grid-template-columns:1fr}.cs-grid{grid-template-columns:1fr}.footer-columns{grid-template-columns:1fr;gap:36px}.numeri-grid{grid-template-columns:repeat(2,1fr)}.sc-grid{grid-template-columns:repeat(2,1fr)}.processo-grid{grid-template-columns:repeat(2,1fr)}.processo-step:nth-child(3n){border-right:1px solid var(--border-s)}.processo-step:nth-child(2n){border-right:none}.processo-step:nth-child(n+3){border-top:1px solid var(--border-s)}.perche-grid{grid-template-columns:1fr;width:100%;margin-left:0}.perche-card{border-right:none!important;padding-left:28px!important;padding-right:28px!important}.stack-logo-grid{grid-template-columns:repeat(3,1fr)}.footer-bottom{flex-direction:column;text-align:center}}
+    @media(max-width:640px){.section-pad{padding:64px 0}.page-hero{padding:140px 0 72px}.act-grid{grid-template-columns:1fr}.rel-grid{grid-template-columns:1fr}.numeri-grid{grid-template-columns:1fr}.processo-grid{grid-template-columns:1fr}.processo-step{border-right:none!important}.sc-grid{grid-template-columns:1fr}.stack-logo-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:768px){.fixed-cta{right:16px;bottom:20px}.fixed-cta-link{width:60px;height:60px}.fixed-cta-icon{width:22px;height:22px}.fixed-cta-ring{inset:-15px}.fixed-cta-ring text{font-size:7.8px}}
   
     /* FOOTER V2: logo below columns + mobile accordion */
@@ -413,13 +413,11 @@
     <div class="reveal">
       <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
     </div>
-    <div class="perche-wrap">
-      <div class="perche-grid">
-        <div class="perche-card reveal"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-        <div class="perche-card reveal"><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
-        <div class="perche-card reveal"><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
-        <div class="perche-card reveal"><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
-      </div>
+    <div class="perche-grid">
+      <div class="perche-card reveal"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-card reveal"><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
+      <div class="perche-card reveal"><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
+      <div class="perche-card reveal"><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
     </div>
   </div>
 </section>
