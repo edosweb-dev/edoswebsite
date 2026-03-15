@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/api/contact", "destination": "/api/contact" }
+    { "source": "/api/contact", "destination": "/api/contact" },
+    { "source": "/api/candidatura", "destination": "/api/candidatura" }
   ],
   "headers": [
     {
