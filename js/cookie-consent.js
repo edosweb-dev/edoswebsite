@@ -72,11 +72,10 @@
     banner.className = 'cb';
     banner.innerHTML =
       '<div class="cb-inner">' +
+        '<div class="cb-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos" loading="lazy"></div>' +
         '<div class="cb-text">' +
-          '<p class="cb-title">Questo sito utilizza i cookie</p>' +
-          '<p class="cb-desc">Utilizziamo cookie tecnici necessari per il funzionamento del sito. ' +
-            'Puoi accettare tutti i cookie oppure personalizzare le tue preferenze. ' +
-            '<a href="/cookie-policy">Scopri di pi\u00f9</a></p>' +
+          '<p class="cb-desc">Per fornire le migliori esperienze, utilizziamo tecnologie come i cookie per memorizzare e/o accedere alle informazioni del dispositivo. Il consenso a queste tecnologie ci permetter\u00e0 di elaborare dati come il comportamento di navigazione o ID unici su questo sito. Non acconsentire o ritirare il consenso pu\u00f2 influire negativamente su alcune caratteristiche e funzioni. ' +
+            '<a href="/cookie-policy">Cookie Policy</a></p>' +
         '</div>' +
         '<div class="cb-actions">' +
           '<button class="cb-btn cb-btn-accept" id="cbAcceptAll">Accetta tutti</button>' +
