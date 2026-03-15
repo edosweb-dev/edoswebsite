@@ -60,6 +60,12 @@
 
   /* ---------- DOM ---------- */
   function createBanner(){
+    // Blocking overlay — dims the page until user interacts with the banner
+    var wall = document.createElement('div');
+    wall.id = 'cookieWall';
+    wall.className = 'cw';
+    document.body.appendChild(wall);
+
     // Banner
     var banner = document.createElement('div');
     banner.id = 'cookieBanner';
@@ -126,11 +132,15 @@
 
   function showBanner(){
     var b = document.getElementById('cookieBanner');
+    var w = document.getElementById('cookieWall');
     if(b) b.classList.add('cb-visible');
+    if(w) w.classList.add('cw-visible');
   }
   function hideBanner(){
     var b = document.getElementById('cookieBanner');
+    var w = document.getElementById('cookieWall');
     if(b) b.classList.remove('cb-visible');
+    if(w) w.classList.remove('cw-visible');
   }
   function showPrefs(){
     var p = document.getElementById('cookiePrefs');
