@@ -33,17 +33,37 @@
     .btn-pill:hover .btn-pill-circle svg{color:#fff}
     .reveal{opacity:0;transform:translateY(36px);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
     .reveal.visible{opacity:1;transform:translateY(0);filter:blur(0)}
+    .reveal-scale{opacity:0;transform:scale(.92);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-scale.visible{opacity:1;transform:scale(1);filter:blur(0)}
+    .reveal-left{opacity:0;transform:translateX(-36px);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-left.visible{opacity:1;transform:translateX(0);filter:blur(0)}
+    .reveal-right{opacity:0;transform:translateX(36px);filter:blur(5px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1),filter .75s cubic-bezier(.16,1,.3,1)}
+    .reveal-right.visible{opacity:1;transform:translateX(0);filter:blur(0)}
     /* staggered children */
-    .reveal-stagger .reveal:nth-child(1){transition-delay:.0s}
-    .reveal-stagger .reveal:nth-child(2){transition-delay:.08s}
-    .reveal-stagger .reveal:nth-child(3){transition-delay:.16s}
-    .reveal-stagger .reveal:nth-child(4){transition-delay:.24s}
-    .reveal-stagger .reveal:nth-child(5){transition-delay:.32s}
-    .reveal-stagger .reveal:nth-child(6){transition-delay:.40s}
+    .reveal-stagger .reveal:nth-child(1),.reveal-stagger .reveal-scale:nth-child(1){transition-delay:.0s}
+    .reveal-stagger .reveal:nth-child(2),.reveal-stagger .reveal-scale:nth-child(2){transition-delay:.08s}
+    .reveal-stagger .reveal:nth-child(3),.reveal-stagger .reveal-scale:nth-child(3){transition-delay:.16s}
+    .reveal-stagger .reveal:nth-child(4),.reveal-stagger .reveal-scale:nth-child(4){transition-delay:.24s}
+    .reveal-stagger .reveal:nth-child(5),.reveal-stagger .reveal-scale:nth-child(5){transition-delay:.32s}
+    .reveal-stagger .reveal:nth-child(6),.reveal-stagger .reveal-scale:nth-child(6){transition-delay:.40s}
+    .reveal-stagger .reveal:nth-child(7),.reveal-stagger .reveal-scale:nth-child(7){transition-delay:.48s}
+    .reveal-stagger .reveal:nth-child(8),.reveal-stagger .reveal-scale:nth-child(8){transition-delay:.56s}
+    .reveal-stagger .reveal:nth-child(9),.reveal-stagger .reveal-scale:nth-child(9){transition-delay:.64s}
+    .reveal-stagger .reveal:nth-child(10),.reveal-stagger .reveal-scale:nth-child(10){transition-delay:.72s}
+    /* section title animated underline */
+    .section-title{position:relative;display:inline-block}
+    .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--blue);transition:width .6s cubic-bezier(.16,1,.3,1) .2s}
+    .reveal.visible .section-title::after,.section-title.visible::after{width:48px}
     /* JS fallback: auto-reveal after 2s if JS fails to load */
     @keyframes revealFallback{to{opacity:1;transform:none;filter:none}}
     .reveal{animation:revealFallback 0s 2s forwards}
     .reveal.visible{animation:none}
+    .reveal-scale{animation:revealFallback 0s 2s forwards}
+    .reveal-scale.visible{animation:none}
+    .reveal-left{animation:revealFallback 0s 2s forwards}
+    .reveal-left.visible{animation:none}
+    .reveal-right{animation:revealFallback 0s 2s forwards}
+    .reveal-right.visible{animation:none}
 
     /* NAV */
     .nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:background .3s,box-shadow .3s}
@@ -340,27 +360,27 @@
       <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>Web &amp; Commerce</strong></h2>
     </div>
     <div class="sc-grid reveal-stagger">
-      <div class="sc-card reveal">
+      <div class="sc-card reveal-scale">
         <div class="sc-card-glow"></div>
         <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l6-14 6 8 6-16 6 10"/><path d="M6 34h28"/><circle cx="14" cy="16" r="2"/></svg></div>
         <p>Il sito del cliente non converte nonostante il traffico</p>
       </div>
-      <div class="sc-card reveal">
+      <div class="sc-card reveal-scale">
         <div class="sc-card-glow"></div>
         <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M6 16h28"/><path d="M16 24h8v8h-8z"/><circle cx="11" cy="12" r="1.2"/><circle cx="16" cy="12" r="1.2"/></svg></div>
         <p>Il cliente vuole un e-commerce ma non sa da dove iniziare</p>
       </div>
-      <div class="sc-card reveal">
+      <div class="sc-card reveal-scale">
         <div class="sc-card-glow"></div>
         <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l7 4"/><path d="M30 8l2-2M10 8L8 6"/><path d="M14 30l-2 4M26 30l2 4"/></svg></div>
         <p>La piattaforma esistente &egrave; lenta, vecchia o difficile da gestire</p>
       </div>
-      <div class="sc-card reveal">
+      <div class="sc-card reveal-scale">
         <div class="sc-card-glow"></div>
         <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24v28H8z"/><path d="M14 14h12M14 20h8"/><path d="M32 12l4-4M32 18l4 0"/><circle cx="36" cy="8" r="2" fill="currentColor" stroke="none" opacity=".5"/></svg></div>
         <p>Serve una landing page per una campagna con deadline stretta</p>
       </div>
-      <div class="sc-card reveal">
+      <div class="sc-card reveal-scale">
         <div class="sc-card-glow"></div>
         <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="14" height="20" rx="2"/><rect x="22" y="6" width="14" height="28" rx="2"/><path d="M8 26h6M26 30h6"/><path d="M18 20h4"/></svg></div>
         <p>Il cliente opera su pi&ugrave; canali e vuole un&rsquo;esperienza coerente</p>
@@ -393,16 +413,16 @@
       <h2 class="section-title">Tecnologie che <strong>utilizziamo</strong></h2>
     </div>
     <div class="stack-logo-grid reveal-stagger">
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" loading="lazy"><span>WordPress</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sanity/sanity-original.svg" alt="Sanity" loading="lazy"><span>Sanity</span></div>
-      <div class="stack-logo-item reveal"><img src="https://staging.svgrepo.com/show/353600/contentful.svg" alt="Contentful" loading="lazy"><span>Contentful</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg" alt="Shopify" loading="lazy"><span>Shopify</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" loading="lazy"><span>WooCommerce</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento 2" loading="lazy"><span>Magento 2</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" loading="lazy"><span>Next.js</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro" loading="lazy"><span>Astro</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel" loading="lazy"><span>Vercel</span></div>
-      <div class="stack-logo-item reveal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" loading="lazy"><span>Cloudflare</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" loading="lazy"><span>WordPress</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sanity/sanity-original.svg" alt="Sanity" loading="lazy"><span>Sanity</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://staging.svgrepo.com/show/353600/contentful.svg" alt="Contentful" loading="lazy"><span>Contentful</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/shopify.svg" alt="Shopify" loading="lazy"><span>Shopify</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" loading="lazy"><span>WooCommerce</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento 2" loading="lazy"><span>Magento 2</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" loading="lazy"><span>Next.js</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" alt="Astro" loading="lazy"><span>Astro</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel" loading="lazy"><span>Vercel</span></div>
+      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare" loading="lazy"><span>Cloudflare</span></div>
     </div>
   </div>
 </section>
@@ -413,11 +433,11 @@
     <div class="reveal">
       <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
     </div>
-    <div class="perche-grid">
-      <div class="perche-card reveal"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-      <div class="perche-card reveal"><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
-      <div class="perche-card reveal"><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
-      <div class="perche-card reveal"><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
+    <div class="perche-grid reveal-stagger">
+      <div class="perche-card reveal-scale"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
+      <div class="perche-card reveal-scale"><p>Il cliente finale non sa che esistiamo. Lavoriamo con accordo di riservatezza, email con il tuo dominio, senza mai comparire nelle comunicazioni.</p></div>
+      <div class="perche-card reveal-scale"><p>Design, sviluppo e PM lavorano insieme dall&rsquo;inizio &mdash; nessun passaggio di consegna problematico tra figure separate.</p></div>
+      <div class="perche-card reveal-scale"><p>Il CMS viene sempre configurato perch&eacute; il cliente possa gestire i contenuti in autonomia dopo il lancio.</p></div>
     </div>
   </div>
 </section>
