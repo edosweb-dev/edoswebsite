@@ -703,8 +703,8 @@
   </div>
 </footer>
 
-<script src="/js/cases-data.js" defer></script>
 <script src="/js/main.js" defer></script>
+<script src="/js/cases-data.js"></script>
 <script>
 (function(){
   'use strict';
@@ -1078,7 +1078,7 @@
 
     function buildCard(c,idx){
       var a=document.createElement('a');
-      a.href=c.u;a.className='c-item reveal-scale';
+      a.href=c.u;a.className='c-item';
       a.setAttribute('data-type',c.ty);a.setAttribute('data-sector',c.se);
       a.innerHTML=
         '<div class="c-num">'+String(idx+1).padStart(2,'0')+'</div>'+
@@ -1094,7 +1094,15 @@
 
     /* initial render: 8 random cases */
     var shown=shuffle(CASES).slice(0,8);
-    shown.forEach(function(c,i){grid.appendChild(buildCard(c,i));});
+    shown.forEach(function(c,i){
+      var card=buildCard(c,i);
+      card.style.opacity='0';card.style.transform='translateY(14px)';
+      grid.appendChild(card);
+      (function(el,v){setTimeout(function(){
+        el.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';
+        el.style.opacity='1';el.style.transform='translateY(0)';
+      },v*50);})(card,i);
+    });
 
     /* filters */
     var btns=document.querySelectorAll('.cf-btn');
@@ -1123,8 +1131,7 @@
       });
     });
   }
-  if(typeof CASES!=='undefined'){initCases();}
-  else{window.addEventListener('load',initCases);}
+  initCases();
 
 })();
 </script>
