@@ -1063,7 +1063,7 @@
   drawFrame();
 
   /* ── Case study: dynamic render from CASES catalogue ── */
-  (function(){
+  function initCases(){
     if(typeof CASES==='undefined')return;
     var grid=document.getElementById('casesGrid');
     if(!grid)return;
@@ -1122,7 +1122,9 @@
         });
       });
     });
-  })();
+  }
+  if(typeof CASES!=='undefined'){initCases();}
+  else{window.addEventListener('load',initCases);}
 
 })();
 </script>
