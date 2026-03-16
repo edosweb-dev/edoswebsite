@@ -85,18 +85,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.edos.it/case-study/app-wellness-catena-palestre/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.edos.it/case-study/configuratore-prodotto-automotive/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.edos.it/case-study/crm-b2b-agenzia-food-influencer/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -145,12 +133,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.edos.it/case-study/piattaforma-booking-gruppo-hospitality/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.edos.it/case-study/piattaforma-elearning-ente-formativo/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -176,12 +158,6 @@
   </url>
   <url>
     <loc>https://www.edos.it/case-study/portale-hr-gruppo-aziendale/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.edos.it/case-study/portale-prenotazioni-rete-cliniche/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -307,18 +283,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.edos.it/settori/automotive-motorsport/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.edos.it/settori/beauty-wellness/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.edos.it/settori/fashion-luxury/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -337,12 +301,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.edos.it/settori/healthcare-pharma/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.edos.it/settori/industrial-manifatturiero-b2b/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -356,12 +314,6 @@
   </url>
   <url>
     <loc>https://www.edos.it/settori/technology-saas/</loc>
-    <lastmod>2026-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.edos.it/settori/turismo-hospitality/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
