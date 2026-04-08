@@ -1,6 +1,6 @@
 # Edos Digital Solutions
 
-> Partner tecnico white label per agenzie marketing e digital. Team senior 100% italiano, consegne puntuali, metodo PartnerFlow. Sviluppo web, app, piattaforme custom e AI integration.
+> Piattaforme digitali su misura per aziende: configuratori, portali B2B, e-commerce multi-sede, gestionali custom. Team senior 100% italiano, 30+ progetti consegnati, zero ritardi.
 
 ## Informazioni aziendali
 
@@ -13,7 +13,7 @@
 
 ## Chi siamo
 
-Edos Digital Solutions è un partner tecnico white label per agenzie marketing e comunicazione. Progettiamo e sviluppiamo soluzioni digitali per conto delle agenzie, che possono presentarle ai propri clienti con il proprio brand. Team senior, 100% italiano, niente offshore, niente junior nascosti.
+Edos Digital Solutions costruisce piattaforme digitali su misura per aziende che hanno bisogno di tecnologia seria — non un sito vetrina. Configuratori di prodotto, portali B2B, e-commerce multi-sede, gestionali custom. Team senior, 100% italiano, niente offshore, niente junior nascosti. Lavoriamo anche con agenzie marketing come partner tecnico.
 
 ## Servizi
 
@@ -31,13 +31,10 @@ Edos Digital Solutions è un partner tecnico white label per agenzie marketing e
 - [Food & Beverage / GDO](https://www.edos.it/settori/food-beverage-gdo/)
 - [Retail / Consumer Goods](https://www.edos.it/settori/retail-consumer-goods/)
 - [Industrial / Manifatturiero B2B](https://www.edos.it/settori/industrial-manifatturiero-b2b/)
+- [Real Estate / Costruttori](https://www.edos.it/settori/real-estate-costruttori/)
 - [Finance / Banking](https://www.edos.it/settori/finance-banking/)
-- [Beauty / Wellness](https://www.edos.it/settori/beauty-wellness/)
-- [Technology / SaaS](https://www.edos.it/settori/technology-saas/)
 - [Fashion / Luxury](https://www.edos.it/settori/fashion-luxury/)
-- [Healthcare / Pharma](https://www.edos.it/settori/healthcare-pharma/)
-- [Turismo / Hospitality](https://www.edos.it/settori/turismo-hospitality/)
-- [Automotive / Motorsport](https://www.edos.it/settori/automotive-motorsport/)
+- [Technology / SaaS](https://www.edos.it/settori/technology-saas/)
 
 ## Numeri
 
