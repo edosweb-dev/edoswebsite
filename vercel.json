@@ -1,5 +1,7 @@
 {
   "redirects": [
+    { "source": "/retainer", "destination": "/servizi/team-dedicato", "statusCode": 301 },
+    { "source": "/retainer/", "destination": "/servizi/team-dedicato", "statusCode": 301 },
     { "source": "/il-team", "destination": "/team", "statusCode": 301 },
     { "source": "/il-team/", "destination": "/team", "statusCode": 301 },
     { "source": "/progetti", "destination": "/case-study", "statusCode": 301 },
