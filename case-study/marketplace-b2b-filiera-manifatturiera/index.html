@@ -37,48 +37,17 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Marketplace B2B filiera manifatturiera | Case Study | Edos", "description": "Case study: marketplace B2B con catalogo digitale, ordini automatizzati e 800+ aziende della filiera connesse.", "url": "https://www.edos.it/case-study/marketplace-b2b-filiera-manifatturiera/", "author": {"@type": "Organization", "name": "Edos Digital Solutions", "url": "https://www.edos.it"}, "publisher": {"@type": "Organization", "name": "Edos Digital Solutions", "url": "https://www.edos.it", "logo": {"@type": "ImageObject", "url": "/logo.png"}}}</script>
 <style id="nav-floating-pill-styles">
 /* ───────────────────────────────────────────────────────────────
-   NAV: transparent white initial → light pill on scroll
-   With dark gradient overlay over first 120px of hero for contrast
+   NAV: Fixed, fullwidth, always white glass — no shift on scroll
    ─────────────────────────────────────────────────────────────── */
 
 nav.nav.nav-top { display: none !important; }
 
 body { padding-top: 0 !important; }
-
-/* Hero top padding to leave space for the nav */
-.hero { padding-top: 88px !important; position: relative !important; }
-.page-hero { padding-top: 112px !important; padding-bottom: 64px !important; position: relative !important; }
+.hero { padding-top: 96px !important; }
+.page-hero { padding-top: 120px !important; padding-bottom: 72px !important; }
 @media (max-width: 1024px) {
-  .hero { padding-top: 76px !important; }
-  .page-hero { padding-top: 96px !important; }
-}
-
-/* ─── Dark gradient overlay on hero top for nav contrast ─── */
-.hero::before,
-.page-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 140px;
-  background: linear-gradient(180deg,
-    rgba(13, 27, 62, 0.55) 0%,
-    rgba(13, 27, 62, 0.28) 50%,
-    rgba(13, 27, 62, 0) 100%);
-  pointer-events: none;
-  z-index: 1;
-  transition: opacity .4s ease;
-}
-.hero > *,
-.page-hero > * {
-  position: relative;
-  z-index: 2;
-}
-/* When nav is scrolled (pill floating), fade the overlay out */
-body.nav-scrolled .hero::before,
-body.nav-scrolled .page-hero::before {
-  opacity: 0;
+  .hero { padding-top: 80px !important; }
+  .page-hero { padding-top: 104px !important; }
 }
 
 /* ─── NAV CONTAINER ─── */
@@ -96,54 +65,28 @@ body.nav-scrolled .page-hero::before {
   justify-content: space-between;
   gap: 32px;
   padding: 14px 48px;
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
   border-radius: 0;
   box-shadow: none;
-  transition:
-    top .45s cubic-bezier(.2,.8,.2,1),
-    left .45s cubic-bezier(.2,.8,.2,1),
-    right .45s cubic-bezier(.2,.8,.2,1),
-    max-width .45s cubic-bezier(.2,.8,.2,1),
-    padding .45s cubic-bezier(.2,.8,.2,1),
-    gap .45s cubic-bezier(.2,.8,.2,1),
-    background .35s ease,
-    border-color .35s ease,
-    box-shadow .35s ease,
-    border-radius .45s cubic-bezier(.2,.8,.2,1),
-    backdrop-filter .35s ease,
-    transform .45s cubic-bezier(.2,.8,.2,1);
+  transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
   font-family: inherit;
 }
 
 .nav-float.is-scrolled {
-  top: 14px;
-  left: 50%;
-  right: auto;
-  width: auto;
-  max-width: min(1040px, calc(100% - 32px));
-  transform: translateX(-50%);
-  padding: 9px 12px 9px 22px;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  border-radius: 999px;
-  box-shadow:
-    0 16px 48px rgba(13, 27, 62, 0.12),
-    0 4px 12px rgba(13, 27, 62, 0.05);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px rgba(13, 27, 62, 0.06);
 }
 
 @media (max-width: 1024px) {
   .nav-float { padding: 12px 24px; gap: 16px; }
-  .nav-float.is-scrolled { padding: 10px 12px 10px 18px; max-width: calc(100% - 24px); }
 }
 
-/* ─── LOGO (white initial, dark on scroll) ─── */
+/* ─── LOGO ─── */
 .nf-logo {
   display: flex;
   align-items: center;
@@ -154,12 +97,7 @@ body.nav-scrolled .page-hero::before {
   display: block;
   height: 28px;
   width: auto;
-  filter: brightness(0) invert(1);
-  transition: filter .35s ease, height .35s ease;
-}
-.nav-float.is-scrolled .nf-logo img {
   filter: none;
-  height: 24px;
 }
 
 /* ─── MENU LIST ─── */
@@ -169,42 +107,28 @@ body.nav-scrolled .page-hero::before {
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 4px;
   flex: 1;
   justify-content: center;
-  transition: gap .45s cubic-bezier(.2,.8,.2,1), flex .45s cubic-bezier(.2,.8,.2,1);
-}
-.nav-float.is-scrolled .nf-menu {
-  gap: 2px;
-  flex: 0 0 auto;
 }
 .nf-menu li { margin: 0; }
 
-/* ─── LINKS (white initial, navy on scroll) ─── */
+/* ─── LINKS ─── */
 .nf-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 14px;
-  color: #ffffff;
+  padding: 10px 16px;
+  color: #0D1B3E;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  border-radius: 999px;
-  transition:
-    background .3s ease,
-    color .3s ease,
-    padding .35s ease,
-    text-shadow .3s ease;
+  border-radius: 10px;
+  transition: background .22s ease, color .22s ease;
   white-space: nowrap;
   cursor: pointer;
   background: transparent;
-  text-shadow: 0 1px 2px rgba(13, 27, 62, 0.25);
-}
-.nav-float.is-scrolled .nf-link {
-  padding: 9px 13px;
-  color: #0D1B3E;
   text-shadow: none;
 }
 
@@ -212,89 +136,57 @@ body.nav-scrolled .page-hero::before {
 .nf-link:focus-visible,
 .nf-has-mega:hover > .nf-link,
 .nf-has-mega:focus-within > .nf-link {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  outline: none;
-}
-.nav-float.is-scrolled .nf-link:hover,
-.nav-float.is-scrolled .nf-link:focus-visible,
-.nav-float.is-scrolled .nf-has-mega:hover > .nf-link,
-.nav-float.is-scrolled .nf-has-mega:focus-within > .nf-link {
   background: rgba(59, 111, 232, 0.1);
   color: #3B6FE8;
+  outline: none;
 }
 
 .nf-chevron {
-  transition: transform .28s cubic-bezier(.2,.8,.2,1);
-  opacity: 0.85;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+  opacity: 0.55;
   width: 11px;
   height: 7px;
 }
-.nav-float.is-scrolled .nf-chevron { opacity: 0.55; }
 .nf-has-mega:hover .nf-chevron,
 .nf-has-mega:focus-within .nf-chevron {
   transform: rotate(180deg);
   opacity: 1;
 }
 
-/* ─── CTA (white transparent outlined initial → navy solid on scroll) ─── */
+/* ─── CTA ─── */
 .nf-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 22px;
-  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 22px;
+  background: #0D1B3E;
   color: #ffffff;
   text-decoration: none;
   font-size: 14.5px;
   font-weight: 700;
   letter-spacing: -0.005em;
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border: 1.5px solid #0D1B3E;
   border-radius: 999px;
-  margin-left: 0;
-  transition:
-    background .3s ease,
-    color .3s ease,
-    border-color .3s ease,
-    transform .25s ease,
-    box-shadow .3s ease,
-    padding .35s ease;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.nav-float.is-scrolled .nf-cta {
-  padding: 10px 20px;
-  background: #0D1B3E;
-  color: #ffffff;
-  border-color: #0D1B3E;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: 0 2px 8px rgba(13, 27, 62, 0.15);
+  box-shadow: 0 2px 8px rgba(13, 27, 62, 0.12);
 }
 .nf-cta svg { width: 15px; height: 15px; transition: transform .25s ease; }
 .nf-cta:hover {
-  background: #ffffff;
-  color: #0D1B3E;
-  border-color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
-}
-.nav-float.is-scrolled .nf-cta:hover {
   background: #3B6FE8;
-  color: #ffffff;
   border-color: #3B6FE8;
-  box-shadow: 0 10px 28px rgba(59, 111, 232, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(59, 111, 232, 0.32);
 }
 .nf-cta:hover svg { transform: translateX(3px); }
 
-/* ─── MEGA-MENU (always white solid, independent of nav state) ─── */
+/* ─── MEGA-MENU ─── */
 .nf-has-mega { position: static; }
 
 .nf-mega {
   position: fixed;
-  top: 70px;
+  top: 78px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   width: min(1040px, calc(100vw - 48px));
@@ -307,14 +199,11 @@ body.nav-scrolled .page-hero::before {
   pointer-events: none;
   transition: opacity .3s cubic-bezier(.2,.8,.2,1),
               transform .3s cubic-bezier(.2,.8,.2,1),
-              top .3s cubic-bezier(.2,.8,.2,1),
               visibility .3s;
   box-shadow:
     0 24px 80px rgba(13, 27, 62, 0.16),
     0 6px 20px rgba(13, 27, 62, 0.06);
 }
-.nav-float.is-scrolled .nf-mega { top: 78px; }
-
 .nf-has-mega:hover .nf-mega,
 .nf-has-mega:focus-within .nf-mega {
   opacity: 1;
@@ -456,7 +345,7 @@ body.nav-scrolled .page-hero::before {
   transform: translateX(3px);
 }
 
-/* ─── HAMBURGER (white initial, dark on scroll) ─── */
+/* ─── HAMBURGER ─── */
 .nf-hamburger {
   display: none;
   flex-direction: column;
@@ -472,17 +361,15 @@ body.nav-scrolled .page-hero::before {
   border-radius: 10px;
   transition: background .2s ease;
 }
-.nf-hamburger:hover { background: rgba(255, 255, 255, 0.15); }
-.nav-float.is-scrolled .nf-hamburger:hover { background: rgba(59, 111, 232, 0.08); }
+.nf-hamburger:hover { background: rgba(59, 111, 232, 0.08); }
 .nf-hamburger span {
   display: block;
   width: 22px;
   height: 2px;
-  background: #ffffff;
+  background: #0D1B3E;
   border-radius: 2px;
-  transition: background .35s ease, transform .2s ease, opacity .2s ease;
+  transition: transform .2s ease, opacity .2s ease;
 }
-.nav-float.is-scrolled .nf-hamburger span { background: #0D1B3E; }
 
 @media (max-width: 1024px) {
   .nav-float .nf-menu,
@@ -490,7 +377,6 @@ body.nav-scrolled .page-hero::before {
   .nav-float .nf-hamburger { display: flex; }
 }
 
-/* Mobile overlay theme */
 .nav-overlay {
   background: rgba(13, 27, 62, 0.96);
   -webkit-backdrop-filter: blur(24px);
