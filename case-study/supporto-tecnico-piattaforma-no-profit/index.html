@@ -35,15 +35,198 @@
   </script>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Supporto tecnico piattaforma No-Profit internazionale | Case Study | Edos", "description": "Case study: supporto tecnico e reverse engineering per piattaforma digitale di ente caritatevole internazionale in America Latina.", "url": "https://www.edos.it/case-study/supporto-tecnico-piattaforma-no-profit/", "author": {"@type": "Organization", "name": "Edos Digital Solutions", "url": "https://www.edos.it"}, "publisher": {"@type": "Organization", "name": "Edos Digital Solutions", "url": "https://www.edos.it", "logo": {"@type": "ImageObject", "url": "/logo.png"}}}</script>
+<style id="nav-top-classic-styles">
+/* ─── NAV TOP CLASSIC with glass blur ──────────────────────────── */
+.nav.nav-top {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+  transition: background .25s ease, box-shadow .25s ease, padding .25s ease;
+}
+.nav.nav-top.is-scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 24px rgba(13, 27, 62, 0.06);
+  padding: 8px 0;
+}
+.nav.nav-top .nav-container {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px;
+}
+.nav.nav-top .nav-logo { flex-shrink: 0; display: flex; align-items: center; }
+.nav.nav-top .nav-logo img { display: block; }
+.nav.nav-top .nav-logo .logo-dark { display: block; }
+.nav.nav-top .nav-logo .logo-white { display: none; }
+
+.nav-main-menu {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; align-items: center; gap: 4px;
+  flex: 1; justify-content: center;
+}
+.nav-main-menu li { margin: 0; }
+
+.nav-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 10px 16px;
+  color: #0D1B3E;
+  text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  border-radius: 8px;
+  transition: background .2s ease, color .2s ease;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.nav-link:hover, .nav-link:focus-visible {
+  background: rgba(59, 111, 232, 0.08);
+  color: #3B6FE8;
+  outline: none;
+}
+.nav-chevron { transition: transform .2s ease; opacity: 0.55; }
+
+.nav-has-dropdown { position: relative; }
+.nav-has-dropdown:hover .nav-chevron,
+.nav-has-dropdown:focus-within .nav-chevron { transform: rotate(180deg); opacity: 1; }
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 280px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(13, 27, 62, 0.14), 0 2px 8px rgba(13, 27, 62, 0.06);
+  border: 1px solid #e2e8f0;
+  padding: 10px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s;
+}
+.nav-has-dropdown:hover .nav-dropdown,
+.nav-has-dropdown:focus-within .nav-dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+/* invisible hover bridge so cursor can travel to dropdown */
+.nav-has-dropdown::before {
+  content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 12px;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 11px 14px;
+  color: #0D1B3E;
+  text-decoration: none;
+  font-size: 13.5px; font-weight: 500;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease;
+  letter-spacing: -0.005em;
+}
+.nav-dropdown a:hover { background: #f5f7fa; color: #3B6FE8; }
+
+.nav-cta {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 11px 22px;
+  background: #0D1B3E;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13.5px; font-weight: 700;
+  border-radius: 999px;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.nav-cta:hover {
+  background: #3B6FE8;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(59, 111, 232, 0.25);
+}
+
+.nav.nav-top .nav-hamburger { display: none; }
+
+/* ─── MOBILE breakpoint ─── */
+@media (max-width: 1024px) {
+  .nav.nav-top .nav-main-menu,
+  .nav.nav-top .nav-cta { display: none; }
+  .nav.nav-top .nav-hamburger {
+    display: flex; flex-direction: column; gap: 5px;
+    width: 36px; height: 36px; padding: 0;
+    background: transparent; border: 0; cursor: pointer;
+    align-items: center; justify-content: center;
+  }
+  .nav.nav-top .nav-hamburger span {
+    display: block; width: 22px; height: 2px; background: #0D1B3E;
+    border-radius: 2px; transition: transform .2s ease, opacity .2s ease;
+  }
+}
+
+/* ─── Reserve space for fixed nav ─── */
+body { padding-top: 72px; }
+@media (max-width: 1024px) { body { padding-top: 64px; } }
+
+/* Make sure hero sections don't hide behind fixed nav */
+.page-hero, .hero { margin-top: -0.01px; }
+
+/* ─── Mobile overlay: extend side columns to 4 sub-sections ─── */
+.nav-overlay .nav-ov-side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 40px;
+}
+.nav-overlay .nav-ov-sub-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+}
+@media (max-width: 640px) {
+  .nav-overlay .nav-ov-side { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
 </head>
 <body>
 
-<nav class="nav" id="mainNav">
-  <div class="container">
+<nav class="nav nav-top scrolled" id="mainNav">
+  <div class="container nav-container">
     <a href="/" class="nav-logo">
       <img class="logo-white" src="/logo-white.png" alt="Edos Digital Solutions - Logo" width="78" height="26" loading="lazy">
       <img class="logo-dark" src="/logo.png" alt="Edos Digital Solutions - Logo" width="78" height="26" loading="lazy">
     </a>
+
+    <ul class="nav-main-menu" role="menubar">
+      <li role="none"><a href="/retainer" class="nav-link" role="menuitem">Retainer</a></li>
+      <li role="none"><a href="/per-le-agenzie" class="nav-link" role="menuitem">Per le agenzie</a></li>
+      <li role="none" class="nav-has-dropdown">
+        <a href="/servizi" class="nav-link" role="menuitem">Servizi<svg class="nav-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/servizi/web-commerce" role="menuitem">Web &amp; Commerce</a>
+          <a href="/servizi/app-webapp" role="menuitem">App &amp; WebApp</a>
+          <a href="/servizi/platform-engineering" role="menuitem">Platform Engineering</a>
+          <a href="/servizi/ai-integration" role="menuitem">AI Integration</a>
+          <a href="/servizi/product-design" role="menuitem">Product Design</a>
+          <a href="/servizi/technical-advisory" role="menuitem">Technical Advisory</a>
+          <a href="/servizi/cto-as-a-service" role="menuitem">CTO as a Service</a>
+          <a href="/servizi/continuity-evolution" role="menuitem">Continuity &amp; Evolution</a>
+        </div>
+      </li>
+      <li role="none" class="nav-has-dropdown">
+        <a href="/settori" class="nav-link" role="menuitem">Settori<svg class="nav-chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/settori/industrial-manifatturiero-b2b" role="menuitem">Industrial / Manifatturiero B2B</a>
+          <a href="/settori/retail-consumer-goods" role="menuitem">Retail / Consumer Goods</a>
+          <a href="/settori/food-beverage-gdo" role="menuitem">Food &amp; Beverage / GDO</a>
+          <a href="/settori/real-estate-costruttori" role="menuitem">Real Estate / Costruttori</a>
+          <a href="/settori/finance-banking" role="menuitem">Finance / Banking</a>
+          <a href="/settori/technology-saas" role="menuitem">Technology / SaaS</a>
+          <a href="/settori/fashion-luxury" role="menuitem">Fashion / Luxury</a>
+        </div>
+      </li>
+      <li role="none"><a href="/case-study" class="nav-link" role="menuitem">Case study</a></li>
+    </ul>
+
+    <a href="/contatti" class="nav-cta">Prenota call</a>
+
     <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -56,17 +239,26 @@
   </div>
   <div class="nav-ov-body">
     <nav class="nav-ov-main">
-      <a href="/retainer">Retainer</a><a href="/audit-gratuito">Audit gratuito</a><a href="/tools">Tool</a><a href="/blog">Blog</a><a href="/per-le-agenzie">Per le agenzie</a><a href="/servizi">Servizi</a><a href="/settori">Settori</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a>
+      <a href="/retainer">Retainer</a><a href="/per-le-agenzie">Per le agenzie</a><a href="/servizi">Servizi</a><a href="/settori">Settori</a><a href="/case-study">Case study</a><a href="/contatti">Contatti</a>
     </nav>
     <div class="nav-ov-divider"></div>
     <div class="nav-ov-side">
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Servizi</div>
         <a href="/servizi/web-commerce">Web &amp; Commerce</a><a href="/servizi/app-webapp">App &amp; WebApp</a><a href="/servizi/platform-engineering">Platform Engineering</a><a href="/servizi/ai-integration">AI Integration</a><a href="/servizi/product-design">Product Design</a><a href="/servizi/technical-advisory">Technical Advisory</a><a href="/servizi/cto-as-a-service">CTO as a Service</a><a href="/servizi/continuity-evolution">Continuity &amp; Evolution</a>
-</div>
+      </div>
       <div class="nav-ov-sub">
         <div class="nav-ov-sub-label">Settori</div>
-        <a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a>      </div>
+        <a href="/settori/industrial-manifatturiero-b2b">Industrial / Manifatturiero B2B</a><a href="/settori/retail-consumer-goods">Retail / Consumer Goods</a><a href="/settori/food-beverage-gdo">Food &amp; Beverage / GDO</a><a href="/settori/real-estate-costruttori">Real Estate / Costruttori</a><a href="/settori/finance-banking">Finance / Banking</a><a href="/settori/technology-saas">Technology / SaaS</a><a href="/settori/fashion-luxury">Fashion / Luxury</a>
+      </div>
+      <div class="nav-ov-sub">
+        <div class="nav-ov-sub-label">Risorse</div>
+        <a href="/audit-gratuito">Audit gratuito</a><a href="/tools">Tool gratuiti</a><a href="/tools/calcolatore-roi-configuratore">Calcolatore ROI</a><a href="/blog">Blog</a><a href="/metodo">Metodo PartnerFlow</a><a href="/sicurezza-compliance">Sicurezza &amp; Compliance</a>
+      </div>
+      <div class="nav-ov-sub">
+        <div class="nav-ov-sub-label">Azienda</div>
+        <a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/faq">FAQ</a><a href="/contatti">Contatti</a>
+      </div>
     </div>
   </div>
 </div>
@@ -285,6 +477,18 @@
     });
   },{threshold:0.15});
   document.querySelectorAll('.res-grid').forEach(function(g){io.observe(g);});
+})();
+</script>
+<script>
+(function(){
+  var nav = document.getElementById('mainNav');
+  if (!nav) return;
+  function check(){
+    if (window.scrollY > 20) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  }
+  check();
+  window.addEventListener('scroll', check, {passive: true});
 })();
 </script>
 </body>
