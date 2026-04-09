@@ -333,8 +333,8 @@ body { padding-top: 0 !important; }
 }
 .nf-cta:hover svg { transform: translateX(3px); }
 
-/* ─── MEGA-MENU ─── */
-.nf-has-mega { position: static; }
+/* ─── MEGA-MENU with smooth hover handoff ─── */
+.nf-has-mega { position: relative; }
 
 .nf-mega {
   position: fixed;
@@ -349,31 +349,53 @@ body { padding-top: 0 !important; }
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .3s cubic-bezier(.2,.8,.2,1),
-              transform .3s cubic-bezier(.2,.8,.2,1),
-              visibility .3s;
+  /* Delay on close (250ms) gives the cursor time to reach the mega-menu */
+  transition: opacity .3s cubic-bezier(.2,.8,.2,1) .25s,
+              transform .3s cubic-bezier(.2,.8,.2,1) .25s,
+              visibility .3s .25s;
   box-shadow:
     0 24px 80px rgba(13, 27, 62, 0.16),
     0 6px 20px rgba(13, 27, 62, 0.06);
 }
+
+/* Invisible hover-catcher above the mega-menu (full width) */
+.nf-mega::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: transparent;
+  pointer-events: none;
+}
+.nf-has-mega:hover .nf-mega::before,
+.nf-has-mega:focus-within .nf-mega::before { pointer-events: auto; }
+
 .nf-has-mega:hover .nf-mega,
 .nf-has-mega:focus-within .nf-mega {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+  /* No delay on open — instant */
+  transition: opacity .25s cubic-bezier(.2,.8,.2,1),
+              transform .25s cubic-bezier(.2,.8,.2,1),
+              visibility .25s;
 }
 
+/* Large invisible bridge under the menu item (extends sideways) */
 .nf-has-mega::after {
   content: "";
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  height: 20px;
+  left: -40px;
+  right: -40px;
+  height: 44px;
   pointer-events: none;
 }
-.nf-has-mega:hover::after { pointer-events: auto; }
+.nf-has-mega:hover::after,
+.nf-has-mega:focus-within::after { pointer-events: auto; }
 
 .nf-mega-head {
   margin-bottom: 22px;
