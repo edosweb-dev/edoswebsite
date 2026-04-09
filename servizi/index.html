@@ -423,6 +423,133 @@ body { padding-top: 0 !important; }
   backdrop-filter: blur(24px);
 }
 </style>
+<style id="servizi-layout-styles">
+/* Featured card: Team dedicato */
+.svc-featured {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(59, 111, 232, 0.08) 0%, rgba(59, 111, 232, 0.02) 100%);
+  border: 1.5px solid rgba(59, 111, 232, 0.35);
+  border-radius: 20px;
+  padding: 36px 40px;
+  margin-bottom: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, border-color .3s ease, background .3s ease;
+}
+.svc-featured:hover {
+  transform: translateY(-3px);
+  border-color: #3B6FE8;
+  background: linear-gradient(135deg, rgba(59, 111, 232, 0.14) 0%, rgba(59, 111, 232, 0.04) 100%);
+  box-shadow: 0 20px 48px rgba(59, 111, 232, 0.16), 0 6px 16px rgba(13, 27, 62, 0.08);
+}
+.svc-featured-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  background: #3B6FE8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 12px 32px rgba(59, 111, 232, 0.3);
+}
+.svc-featured-icon svg {
+  width: 44px;
+  height: 44px;
+}
+.svc-featured-body { flex: 1; min-width: 0; }
+.svc-featured-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3B6FE8;
+  letter-spacing: 0.02em;
+}
+.svc-featured-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: #3B6FE8;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.svc-featured h3 {
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 800;
+  color: #0D1B3E;
+  margin: 0 0 10px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.svc-featured p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+.svc-featured-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3B6FE8;
+  transition: gap .2s ease;
+}
+.svc-featured-cta svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .2s ease;
+}
+.svc-featured:hover .svc-featured-cta svg {
+  transform: translateX(4px);
+}
+
+/* Force 4 columns on desktop for the remaining 8 services */
+.svc-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+@media (max-width: 1200px) {
+  .svc-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 900px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .svc-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Responsive adjustments for featured card */
+@media (max-width: 768px) {
+  .svc-featured {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+  .svc-featured-icon {
+    margin: 0 auto;
+    width: 72px;
+    height: 72px;
+  }
+  .svc-featured-icon svg { width: 36px; height: 36px; }
+  .svc-featured-label { justify-content: center; }
+  .svc-featured p { margin-left: auto; margin-right: auto; }
+}
+</style>
 </head>
 <body>
 
@@ -540,8 +667,27 @@ body { padding-top: 0 !important; }
   <div class="container">
     <div class="reveal">
       <h2 class="section-title">I nostri <strong>servizi</strong></h2>
-      <p class="section-desc">Otto aree di competenza per coprire qualsiasi esigenza tecnica dei tuoi clienti.</p>
+      <p class="section-desc">Nove aree di competenza per coprire qualsiasi esigenza tecnica. Dal team dedicato in retainer ai singoli progetti a commessa.</p>
     </div>
+    <!-- Featured: Team dedicato -->
+    <a href="/servizi/team-dedicato" class="svc-featured reveal">
+      <div class="svc-featured-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="svc-featured-body">
+        <div class="svc-featured-label">
+          <span class="svc-featured-badge">Novit&agrave;</span>
+          <span>Servizio di punta</span>
+        </div>
+        <h3>Team dedicato &mdash; Il tuo reparto tech, senza assumerlo</h3>
+        <p>Un team senior in retainer mensile: PM, sviluppatori e designer dedicati al tuo progetto. Onboarding in 48 ore, SLA di consegna scritto, dashboard real-time. Piani da &euro;8.000 a &euro;15.000/mese, commitment trimestrale.</p>
+        <span class="svc-featured-cta">
+          Scopri il team dedicato
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
+        </span>
+      </div>
+    </a>
+
     <div class="svc-grid reveal-stagger">
       <a href="/servizi/web-commerce" class="svc-card reveal-scale">
         <div class="svc-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
