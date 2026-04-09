@@ -54,10 +54,28 @@ Il metodo di lavoro Edos prevede:
 
 Ogni progetto include NDA garantito, accesso CRM trasparente, PM dedicato e comunicazione in italiano.
 
+## Offerta Retainer
+
+[Reparto Tech Dedicato](https://www.edos.it/retainer/) — Team senior in retainer mensile per aziende che hanno bisogno di tecnologia seria senza assumere un reparto IT interno. Include PM, sviluppatori senior e designer dedicati, dashboard PartnerFlow real-time, SLA di consegna scritto, onboarding in 48 ore. Piani da €8.000 a €15.000/mese, commitment trimestrale, primo progetto a commessa prima del retainer.
+
+## Risorse gratuite e tool
+
+- [Audit digitale gratuito](https://www.edos.it/audit-gratuito/) — Form 5 domande → report scritto entro 48 ore con 3 interventi prioritari per il tuo settore. Zero follow-up commerciali non richiesti.
+- [Calcolatore ROI configuratore preventivi](https://www.edos.it/tools/calcolatore-roi-configuratore/) — Tool interattivo che stima ore risparmiate, costo opportunità e revenue potenziale automatizzando la preventivazione manuale. Calcolo istantaneo senza email, report dettagliato opzionale.
+- [Sicurezza & Compliance](https://www.edos.it/sicurezza-compliance/) — Come Edos protegge dati, codice e progetti: GDPR, NDA, hosting EU, proprietà del codice, logging, audit esterni e reference call.
+- [PartnerFlow — Il metodo](https://www.edos.it/metodo/) — Framework operativo in 4 fasi (Discovery, Pianificazione, Sviluppo, Supporto) applicato su ogni progetto complesso.
+- [Tool gratuiti (hub)](https://www.edos.it/tools/) — Hub dei calcolatori e strumenti gratuiti di analisi ROI per progetti tech B2B.
+- [Blog](https://www.edos.it/blog/) — Insight e storie di prodotto dai progetti reali Edos.
+
 ## Pagine principali
 
 - [Homepage](https://www.edos.it/)
+- [Reparto Tech Dedicato (Retainer)](https://www.edos.it/retainer/)
 - [Per le agenzie](https://www.edos.it/per-le-agenzie/)
+- [PartnerFlow — Metodo](https://www.edos.it/metodo/)
+- [Sicurezza & Compliance](https://www.edos.it/sicurezza-compliance/)
+- [Audit digitale gratuito](https://www.edos.it/audit-gratuito/)
+- [Calcolatore ROI configuratore](https://www.edos.it/tools/calcolatore-roi-configuratore/)
 - [Servizi](https://www.edos.it/servizi/)
 - [Settori](https://www.edos.it/settori/)
 - [Case Study](https://www.edos.it/case-study/)

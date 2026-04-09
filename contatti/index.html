@@ -56,7 +56,7 @@
   </div>
   <div class="nav-ov-body">
     <nav class="nav-ov-main">
-      <a href="/per-le-agenzie">Per le agenzie</a><a href="/servizi">Servizi</a><a href="/settori">Settori</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a>
+      <a href="/retainer">Retainer</a><a href="/audit-gratuito">Audit gratuito</a><a href="/tools">Tool</a><a href="/blog">Blog</a><a href="/per-le-agenzie">Per le agenzie</a><a href="/servizi">Servizi</a><a href="/settori">Settori</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a>
     </nav>
     <div class="nav-ov-divider"></div>
     <div class="nav-ov-side">
@@ -102,15 +102,15 @@
               <span class="form-error" id="nameError"></span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="agency">Nome agenzia</label>
-              <input class="form-input" type="text" id="agency" name="agency" placeholder="La tua agenzia" required>
-              <span class="form-error" id="agencyError"></span>
+              <label class="form-label" for="company">Azienda</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="La tua azienda o agenzia" required>
+              <span class="form-error" id="companyError"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="email">Email</label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="mario@agenzia.it" required>
+              <input class="form-input" type="email" id="email" name="email" placeholder="mario@azienda.it" required>
               <span class="form-error" id="emailError"></span>
             </div>
             <div class="form-group">
@@ -208,7 +208,7 @@
     <div class="footer-columns">
       <div class="footer-col">
         <div class="footer-col-label">Menu<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/per-le-agenzie">Per le agenzie</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a><a href="/faq">FAQ</a></div>
+        <div class="footer-col-links"><a href="/retainer">Retainer</a><a href="/audit-gratuito">Audit gratuito</a><a href="/tools">Tool</a><a href="/blog">Blog</a><a href="/per-le-agenzie">Per le agenzie</a><a href="/case-study">Case study</a><a href="/team">Team</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/contatti">Contatti</a><a href="/faq">FAQ</a></div>
       </div>
       <div class="footer-col">
         <div class="footer-col-label">Servizi<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -240,7 +240,7 @@
 
   var fields={
     name:{el:document.getElementById('name'),err:document.getElementById('nameError'),msg:'Inserisci il tuo nome'},
-    agency:{el:document.getElementById('agency'),err:document.getElementById('agencyError'),msg:'Inserisci il nome della tua agenzia'},
+    company:{el:document.getElementById('company'),err:document.getElementById('companyError'),msg:'Inserisci il nome della tua azienda'},
     email:{el:document.getElementById('email'),err:document.getElementById('emailError'),msg:'Inserisci un indirizzo email valido'},
     reason:{el:document.getElementById('reason'),err:document.getElementById('reasonError'),msg:'Seleziona il motivo del contatto'},
     message:{el:document.getElementById('message'),err:document.getElementById('messageError'),msg:'Scrivi un messaggio'}
@@ -290,7 +290,7 @@
 
     var data={
       name:fields.name.el.value.trim(),
-      agency:fields.agency.el.value.trim(),
+      company:fields.company.el.value.trim(),
       email:fields.email.el.value.trim(),
       phone:document.getElementById('phone').value.trim(),
       reason:fields.reason.el.value,

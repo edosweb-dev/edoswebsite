@@ -40,10 +40,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, agency, email, phone, message } = req.body;
+  const { name, company, agency, email, phone, message } = req.body;
+
+  // Backwards compat: accept legacy "agency" payloads from cached clients
+  const companyName = company || agency;
 
   // Validation
-  if (!name || !agency || !email || !message) {
+  if (!name || !companyName || !email || !message) {
     return res.status(400).json({ error: 'Campi obbligatori mancanti' });
   }
 
@@ -59,7 +62,7 @@ export default async function handler(req, res) {
         from: 'Edos Website <onboarding@resend.dev>',
         to: ['giuseppe.famiani@edos.it'],
         replyTo: email,
-        subject: `Nuovo contatto da ${name} — ${agency}`,
+        subject: `Nuovo contatto da ${name} — ${companyName}`,
         html: `
           <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:32px 0">
             <div style="background:#060E22;padding:28px 32px;border-radius:14px 14px 0 0">
@@ -73,8 +76,8 @@ export default async function handler(req, res) {
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0D1B3E">${escapeHtml(name)}</td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px;font-weight:600;color:#6B7A99;vertical-align:top">Agenzia</td>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0D1B3E">${escapeHtml(agency)}</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px;font-weight:600;color:#6B7A99;vertical-align:top">Azienda</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:15px;color:#0D1B3E">${escapeHtml(companyName)}</td>
                 </tr>
                 <tr>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px;font-weight:600;color:#6B7A99;vertical-align:top">Email</td>
