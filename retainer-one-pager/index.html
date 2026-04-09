@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team dedicato — One Pager · Edos Digital Solutions</title>
+<meta name="description" content="One-pager stampabile dell'offerta team dedicato Edos: PM + dev senior + designer in retainer mensile, onboarding 48h, SLA scritto, €8-15K/mese.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.edos.it/retainer-one-pager/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+/* ───────────────────────────────────────────────────────
+   PRINT-READY ONE PAGER
+   Ottimizzato per stampa A4. Usa Ctrl+P → Salva come PDF.
+   ─────────────────────────────────────────────────────── */
+:root {
+  --navy: #0D1B3E;
+  --electric: #3B6FE8;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --bg-soft: #f8fafc;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: var(--navy);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 48px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* ─── Print button (screen only) ─── */
+.print-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(13,27,62,.2);
+  font-family: inherit;
+  transition: background .2s ease, transform .2s ease;
+}
+.print-btn:hover { background: var(--electric); transform: translateY(-1px); }
+.print-btn svg { width: 16px; height: 16px; }
+@media print { .print-btn { display: none; } }
+
+/* ─── Header ─── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 24px;
+}
+.logo { font-size: 17px; font-weight: 800; letter-spacing: -0.01em; }
+.logo span { color: var(--electric); }
+.doc-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ─── Hero ─── */
+.hero { margin-bottom: 28px; }
+.hero h1 {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+.hero h1 em { color: var(--electric); font-style: normal; }
+.hero p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 640px;
+}
+
+/* ─── Value props 4 col ─── */
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.value {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.value .num {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.value .label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--electric);
+}
+
+/* ─── Sections ─── */
+section { margin-bottom: 24px; page-break-inside: avoid; }
+h2 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Grid 2-col for "cosa è incluso" */
+.included {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.included-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+}
+.included-item .check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--electric);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+.included-item .text {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.included-item .text strong {
+  display: block;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1px;
+}
+.included-item .text span { color: var(--muted); font-size: 11.5px; }
+
+/* ─── Pricing tiers 3 col ─── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.tier {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  background: #fff;
+}
+.tier.featured {
+  border: 1.5px solid var(--electric);
+  background: linear-gradient(180deg, rgba(59,111,232,.05), rgba(59,111,232,0));
+  position: relative;
+}
+.tier.featured::before {
+  content: "Più scelto";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--electric);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+.tier-name {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--electric);
+  margin-bottom: 4px;
+}
+.tier-price {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+.tier-price .sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.tier-note {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 4px 0 10px;
+}
+.tier-desc {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+/* ─── Guarantees ─── */
+.guarantees {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.guarantee {
+  background: var(--bg-soft);
+  border-left: 3px solid var(--electric);
+  border-radius: 4px;
+  padding: 12px 14px;
+}
+.guarantee h3 {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 4px;
+}
+.guarantee p {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ─── CTA block ─── */
+.cta-block {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  text-align: center;
+  margin-top: 8px;
+  page-break-inside: avoid;
+}
+.cta-block h2 {
+  color: #fff;
+  border: 0;
+  font-size: 15px;
+  margin: 0 0 6px;
+  padding: 0;
+}
+.cta-block p {
+  font-size: 12px;
+  color: rgba(255,255,255,.8);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.cta-block .cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.cta-block .cta-row a {
+  color: var(--electric);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ─── Footer ─── */
+footer {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ─── Print rules ─── */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { max-width: none; padding: 0; font-size: 11pt; }
+  .hero h1 { font-size: 22pt; }
+  h2 { font-size: 11pt; }
+  .value .num { font-size: 18pt; }
+  .tier-price { font-size: 18pt; }
+  a { color: var(--navy) !important; text-decoration: none; }
+  .cta-block { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .tier.featured { background: linear-gradient(180deg, rgba(59,111,232,.1), rgba(59,111,232,0)) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .value, .guarantee { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<button type="button" class="print-btn" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+  Salva come PDF
+</button>
+
+<header>
+  <div class="logo">Edos<span>·</span></div>
+  <div class="doc-title">Team dedicato — One Pager</div>
+</header>
+
+<div class="hero">
+  <h1>Il tuo <em>reparto tech dedicato</em>,<br>senza assumerlo.</h1>
+  <p>Team senior su misura per aziende che hanno bisogno di tecnologia seria. PM, sviluppatori e designer dedicati al tuo progetto. Onboarding in 48 ore. Consegne garantite. Commitment trimestrale.</p>
+</div>
+
+<div class="values">
+  <div class="value"><div class="num">48h</div><div class="label">Onboarding</div></div>
+  <div class="value"><div class="num">40+</div><div class="label">Progetti consegnati</div></div>
+  <div class="value"><div class="num">100%</div><div class="label">Consegne puntuali</div></div>
+  <div class="value"><div class="num">5+</div><div class="label">Anni esperienza media</div></div>
+</div>
+
+<section>
+  <h2>Cosa è incluso</h2>
+  <div class="included">
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Team senior dedicato</strong><span>PM + 2-3 dev senior + designer UX/UI. Stessi nomi ogni mese.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Dashboard PartnerFlow™</strong><span>Accesso real-time al CRM di progetto. Zero status update via email.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>20 giorni/dev al mese</strong><span>Capacità produttiva garantita. Extra a €350/giorno, tariffa trasparente.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>SLA scritto sui tempi</strong><span>Se sforiamo una deadline per cause nostre, scontiamo il canone.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Audit tecnico iniziale</strong><span>Nelle prime 2 settimane, report su stack, debito tecnico, sicurezza.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Roadmap tecnologica 12 mesi</strong><span>Pianificazione condivisa delle evoluzioni, milestone misurabili.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Accesso diretto al CTO</strong><span>Call mensile per decisioni architetturali e scelte strategiche.</span></div>
+    </div>
+    <div class="included-item">
+      <div class="check">✓</div>
+      <div class="text"><strong>Proprietà del codice</strong><span>Tutto su repository Git accessibile, zero vendor lock-in.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Prezzi e pacchetti</h2>
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-name">Starter</div>
+      <div class="tier-price">€ 8.000<span class="sub">/mese</span></div>
+      <div class="tier-note">commitment trimestrale</div>
+      <div class="tier-desc">PM + 1 dev senior + designer condiviso. 20 giorni/dev/mese. SLA standard.</div>
+    </div>
+    <div class="tier featured">
+      <div class="tier-name">Growth</div>
+      <div class="tier-price">€ 12.000<span class="sub">/mese</span></div>
+      <div class="tier-note">commitment trimestrale</div>
+      <div class="tier-desc">PM + 2 dev senior + designer dedicato. 40 giorni/dev/mese. SLA premium + call CTO.</div>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Scale</div>
+      <div class="tier-price">€ 15.000<span class="sub">/mese</span></div>
+      <div class="tier-note">commitment trimestrale</div>
+      <div class="tier-desc">PM + 3 dev senior + designer dedicato. 60 giorni/dev/mese. CTO dedicato.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Le 3 garanzie sul contratto</h2>
+  <div class="guarantees">
+    <div class="guarantee">
+      <h3>1. Garanzia consegna</h3>
+      <p>Ogni sprint ha deadline scritta. Se sforiamo per cause nostre, i giorni di ritardo vengono scalati dal canone del mese successivo.</p>
+    </div>
+    <div class="guarantee">
+      <h3>2. Garanzia satisfaction</h3>
+      <p>Primo mese rimborsabile se non sei soddisfatto del team, del metodo o dei primi output. Nessun vincolo di recesso.</p>
+    </div>
+    <div class="guarantee">
+      <h3>3. Mai vincoli al primo incontro</h3>
+      <p>Si parte sempre con un progetto singolo a commessa. Solo se ti convince, continuiamo con formula continuativa trimestrale.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <h2>Vuoi capire se fa al caso vostro?</h2>
+  <p>Una call diagnostica di 30 minuti. Niente pitch, solo domande sui vostri processi. Alla fine capiamo insieme se ha senso andare avanti.</p>
+  <div class="cta-row">
+    <a href="mailto:info@edos.it">info@edos.it</a>
+    <span>·</span>
+    <a href="https://www.edos.it/contatti/">www.edos.it/contatti</a>
+    <span>·</span>
+    <a href="https://www.edos.it/servizi/team-dedicato/">www.edos.it/servizi/team-dedicato</a>
+  </div>
+</div>
+
+<footer>
+  Edos Srl · P.IVA 14030760962 · Sede legale: Piazzetta Umberto Giordano, 2, 20122 Milano · www.edos.it · © 2026 Edos Digital Solutions
+</footer>
+
+</body>
+</html>

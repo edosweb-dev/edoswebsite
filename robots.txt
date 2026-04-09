@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Disallow: /contatti/grazie/
 Disallow: /case-study-template/
+Disallow: /retainer-one-pager/
 
 # Sitemap
 Sitemap: https://www.edos.it/sitemap.xml

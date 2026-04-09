@@ -445,6 +445,15 @@ body { padding-top: 0 !important; }
   backdrop-filter: blur(24px);
 }
 </style>
+<style id="servizio-lean-styles">
+.intro-text { font-size:17px; line-height:1.7; color:var(--navy); margin:0 0 0 }
+.serv-tags .serv-tag { display:inline-block; padding:9px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:999px; font-size:13.5px; font-weight:600; color:var(--navy); }
+.num-card { background:var(--white); border:1px solid #e2e8f0; border-radius:16px; padding:32px 28px; text-align:center; transition:border-color .2s ease, transform .2s ease; }
+.num-card:hover { border-color:#3B6FE8; transform:translateY(-2px); }
+.num-card .num-big { font-size:clamp(36px,4vw,48px); font-weight:800; color:var(--navy); line-height:1; margin-bottom:10px; letter-spacing:-0.02em; }
+.num-card .num-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric); margin-bottom:6px; }
+.num-card .num-note { font-size:13px; color:var(--muted); line-height:1.4; }
+</style>
 </head>
 <body>
 
@@ -545,223 +554,78 @@ body { padding-top: 0 !important; }
   </div>
 </div>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="page-hero-noise"></div>
   <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">AI Integration</li></ol></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">AI Integration</li></ol></nav>
     <div class="page-hero-inner">
-      <h1>AI <em>Integration</em></h1>
-      <p class="page-hero-sub">Integriamo AI nei processi e nelle piattaforme di aziende e agenzie, dove ha senso farlo. Non AI per moda, ma AI per risolvere problemi concreti.</p>
+      <h1>AI Integration</h1>
+      <p class="page-hero-sub">Agenti AI, automazione dei processi, RAG sulla knowledge base aziendale. AI dove risolve problemi concreti, non per moda.</p>
     </div>
   </div>
 </section>
 
+<!-- COSA FACCIAMO -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I nostri <strong>servizi</strong></h2>
-    </div>
-    <div class="act-grid reveal-stagger">
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="5"/><path d="M20 6v4M20 30v4M6 20h4M30 20h4M10 10l3 3M27 27l3 3M10 30l3-3M27 10l3-3"/></svg></div><h3>Agenti AI personalizzati</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28V12l8-6h8l8 6v16"/><path d="M12 28h16"/><path d="M16 18l4 4 4-4"/><circle cx="20" cy="28" r="2"/></svg></div><h3>Automazione flussi operativi</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="32" height="24" rx="3"/><path d="M4 14h32"/><path d="M14 22l4 4 6-8"/></svg></div><h3>Integrazione AI in piattaforme esistenti</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8h24v18H18l-6 6v-6H8z"/><path d="M14 16h12M14 20h8"/></svg></div><h3>Chatbot e assistenti su misura</h3></div>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Cosa facciamo</h2>
+      <p class="intro-text">L&rsquo;AI ha senso quando toglie ore di lavoro manuale o fa cose che prima non si potevano fare. Integriamo LLM, RAG e agenti custom nei processi esistenti con attenzione a costi, latenza e controllo sugli output.</p>
+      <div class="serv-tags" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px">
+        <span class="serv-tag">Agenti AI custom</span>
+        <span class="serv-tag">RAG su documenti aziendali</span>
+        <span class="serv-tag">Automazione workflow</span>
+        <span class="serv-tag">Integrazione OpenAI / Claude / local LLM</span>
+        <span class="serv-tag">Chatbot verticali</span>
+        <span class="serv-tag">Analisi documentale</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- NUMERI -->
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I numeri del settore <strong>AI Integration</strong></h2>
-    </div>
-    <div class="numeri-grid reveal-stagger">
-      <div class="numeri-item reveal"><p class="numeri-num">+70%</p><p class="numeri-label">di riduzione media dei tempi su processi automatizzati con AI</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">40%</p><p class="numeri-label">delle aziende italiane sta valutando investimenti in AI nel 2025</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">3,7x</p><p class="numeri-label">ROI medio dei progetti AI ben implementati nel primo anno</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">85%</p><p class="numeri-label">dei casi d&rsquo;uso AI in azienda riguarda automazione di processi ripetitivi</p></div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1080px;margin:0 auto">
+      <div class="num-card"><div class="num-big">20x</div><div class="num-label">Lead qualificati/mese</div><div class="num-note">Da 100 manuali a 2.000 con agente AI</div></div>
+      <div class="num-card"><div class="num-big">3s</div><div class="num-label">Risposta media</div><div class="num-note">RAG su knowledge base da 12K documenti</div></div>
+      <div class="num-card"><div class="num-big">-60%</div><div class="num-label">Tempo preventivazione</div><div class="num-note">Agente AI automazione preventivi</div></div>
     </div>
   </div>
 </section>
 
-<section class="sc-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>AI Integration</strong></h2>
-    </div>
-    <div class="sc-grid reveal-stagger">
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l6-14 6 8 6-16 6 10"/><path d="M6 34h28"/><circle cx="14" cy="16" r="2"/></svg></div>
-        <p>Il cliente gestisce volumi alti di richieste ripetitive (email, preventivi, ticket)</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M6 16h28"/><path d="M16 24h8v8h-8z"/><circle cx="11" cy="12" r="1.2"/><circle cx="16" cy="12" r="1.2"/></svg></div>
-        <p>Serve estrarre informazioni strutturate da documenti non strutturati</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l7 4"/><path d="M30 8l2-2M10 8L8 6"/><path d="M14 30l-2 4M26 30l2 4"/></svg></div>
-        <p>Un processo manuale costa troppe ore al mese e pu&ograve; essere automatizzato</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24v28H8z"/><path d="M14 14h12M14 20h8"/><path d="M32 12l4-4M32 18l4 0"/><circle cx="36" cy="8" r="2" fill="currentColor" stroke="none" opacity=".5"/></svg></div>
-        <p>Il cliente vuole un assistente AI integrato nel suo prodotto o sito</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="14" height="20" rx="2"/><rect x="22" y="6" width="14" height="28" rx="2"/><path d="M8 26h6M26 30h6"/><path d="M18 20h4"/></svg></div>
-        <p>Serve analizzare grandi quantit&agrave; di dati per prendere decisioni migliori</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- MINI CASE STUDY -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come realizziamo un progetto <strong>AI Integration</strong></h2>
-    </div>
-    <div class="processo-grid reveal-stagger">
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6v24M6 18h24"/><circle cx="18" cy="18" r="13"/><path d="M12 12l12 12M24 12L12 24"/></svg></div><h3>Assessment AI</h3></div><p>Identifichiamo i processi con il miglior rapporto costo/beneficio per l&rsquo;automazione. Selezioniamo dove l&rsquo;AI crea valore reale.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="28" height="28" rx="3"/><path d="M4 14h28"/><path d="M14 4v10"/><circle cx="22" cy="24" r="4"/><path d="M10 22h2M10 26h2"/></svg></div><h3>Proof of Concept</h3></div><p>PoC in 2-3 settimane per validare che la soluzione funzioni sul caso d&rsquo;uso reale prima di investire nello sviluppo completo.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8l4-4 4 4"/><path d="M10 4v18"/><path d="M22 8h8v20H6v-6"/><path d="M16 22h10M16 26h6"/></svg></div><h3>Sviluppo e integrazione</h3></div><p>Sviluppo dell&rsquo;agente AI e integrazione con i sistemi esistenti del cliente (CRM, email, gestionale).</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="13"/><path d="M18 10v8l5 5"/><path d="M28 6l2-2M8 6L6 4"/></svg></div><h3>Training e fine-tuning</h3></div><p>Addestramento sui dati specifici del cliente. L&rsquo;AI impara il contesto aziendale, non risponde genericamente.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18l4 4 8-8"/><rect x="4" y="6" width="28" height="24" rx="3"/><path d="M4 12h28"/></svg></div><h3>Test e validazione</h3></div><p>Test su casi reali prima del go-live. Misurazione delle performance rispetto al processo manuale precedente.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a10 10 0 1 1-10 10"/><path d="M8 18H4l4-5 4 5H8"/><path d="M18 14v5l3 3"/></svg></div><h3>Monitoraggio continuo</h3></div><p>Monitoraggio delle performance e aggiornamenti periodici inclusi nel servizio.</p></div>
-    </div></div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Alcune tecnologie che <strong>utilizziamo</strong></h2>
-    </div>
-    <div class="stack-logo-grid reveal-stagger">
-      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="LangChain" width="40" height="40" loading="lazy"><span>LangChain</span></div>
-      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Pinecone" width="40" height="40" loading="lazy"><span>Pinecone</span></div>
-      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy"><span>Python</span></div>
-      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="REST API" width="40" height="40" loading="lazy"><span>REST API</span></div>
-      <div class="stack-logo-item reveal-scale"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy"><span>Docker</span></div>
-    </div></div>
-</section>
-
-
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
-    </div>
-    <div class="perche-grid reveal-stagger">
-      <div class="perche-card reveal-scale"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-      <div class="perche-card reveal-scale"><p>Partiamo sempre da un Proof of Concept per validare che la soluzione funzioni sul caso d&rsquo;uso reale prima di investire nello sviluppo completo.</p></div>
-      <div class="perche-card reveal-scale"><p>L&rsquo;agente AI viene addestrato sui dati e i processi specifici del cliente, conosce il contesto aziendale, non risponde genericamente.</p></div>
-      <div class="perche-card reveal-scale"><p>Possibilit&agrave; di implementare LLM in locale per i clienti con requisiti di privacy stringenti, nessun dato esce dall&rsquo;infrastruttura.</p></div>
-    </div></div>
-</section>
-
-
-<section class="cl-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come <strong>lavoriamo</strong></h2>
-      <p class="cl-text">Ogni progetto segue <strong style="color:#6B9BF7;font-weight:700">PartnerFlow</strong>, il nostro framework operativo che garantisce tempi, qualit&agrave; e trasparenza in ogni fase. Dall&rsquo;analisi iniziale alla consegna, ogni step &egrave; documentato e condiviso con l&rsquo;agenzia partner. Nessuna sorpresa, nessun ritardo non comunicato: solo un processo chiaro dove sai sempre a che punto siamo.</p>
-      <a href="/metodo" class="btn-pill">
-        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Scopri PartnerFlow</span>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Un esempio concreto</h2>
+      <a href="/case-study/agente-ai-qualifica-lead" class="svc-case-card" style="display:block;background:var(--off-white);border:1px solid #e2e8f0;border-radius:16px;padding:28px 32px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease" onmouseover="this.style.borderColor='#3B6FE8';this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px rgba(59,111,232,0.12)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.transform='';this.style.boxShadow=''">
+        <p style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--electric);margin:0 0 8px">Case study</p>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin:0 0 10px;line-height:1.3">Agente AI per qualificazione lead</h3>
+        <p style="font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 14px">Da 100 lead qualificati manualmente al mese a 2.000 con la stessa squadra. Test A/B sui dati reali del cliente, non promesse.</p>
+        <span style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--electric)">Leggi il caso <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Progetti <strong>AI Integration</strong> che abbiamo realizzato</h2>
-    </div>
-    <div class="cs-grid">
-      <a href="/case-study/piattaforma-ai-automazione-preventivi" class="cs-card reveal">
-        <p class="cs-card-title">Agente AI per automazione preventivi</p>
-        <p class="cs-card-desc">Generazione automatica di preventivi personalizzati tramite AI integrata nel flusso commerciale, dal primo contatto alla firma.</p>
-        <div class="cs-card-meta"><span>Industrial / B2B</span></div>
-      </a>
-      <a href="/case-study/rag-agentico-analisi-documentazione" class="cs-card reveal">
-        <p class="cs-card-title">RAG Agentico per analisi documentazione</p>
-        <p class="cs-card-desc">Da 1 mese di 2 senior a 2 ore di 1 junior. Agente AI su architettura RAG per analisi documentazione tecnica.</p>
-        <div class="cs-card-meta"><span>Industrial / B2B</span></div>
-      </a>
-      <a href="/case-study/tool-analisi-bandi-di-gara" class="cs-card reveal">
-        <p class="cs-card-title">Tool analisi bandi di gara</p>
-        <p class="cs-card-desc">Agente AI per analisi automatizzata di bandi di gara. Risparmio di 2 settimane per gara, zero criteri saltati.</p>
-        <div class="cs-card-meta"><span>Industrial / B2B</span></div>
-      </a>
-    
-    <div class="reveal" style="text-align:center;margin-top:48px">
-      <a href="/case-study/" class="btn-pill" style="border-color:rgba(13,27,62,.15);color:var(--navy);display:inline-flex">
-        <span class="btn-pill-circle" style="background:var(--blue)"><svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" style="width:18px;height:18px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-        Guarda tutte le case history
-      </a>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">I dati del cliente sono al sicuro?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;. Possiamo implementare soluzioni con LLM in locale che non inviano dati a servizi esterni. Per i casi che usano API cloud, applichiamo sempre data processing agreements e anonimizzazione dove necessario.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Quanto tempo ci vuole per vedere i primi risultati?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Con un PoC ben definito, i primi risultati si vedono in 3-4 settimane. Un sistema completo in produzione richiede tipicamente 2-3 mesi.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">L&rsquo;AI pu&ograve; sbagliare? Come gestiamo gli errori?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;, ogni sistema AI ha un margine di errore. Progettiamo sempre con un human-in-the-loop per i casi critici e misuriamo l&rsquo;accuracy in produzione con report periodici.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Serve grande quantit&agrave; di dati per iniziare?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Dipende dal caso d&rsquo;uso. Per molti agenti basati su LLM non serve training da zero, bastano esempi e istruzioni ben strutturate. Valutiamo caso per caso.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Altri servizi che <strong>completano</strong> AI Integration</h2>
-    </div>
-    <div class="rel-grid">
-      <a href="/servizi/platform-engineering" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h3>Platform Engineering <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Piattaforme custom per esigenze complesse</p></a>
-      <a href="/servizi/app-webapp" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><h3>App &amp; WebApp <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Applicazioni web e mobile su misura</p></a>
-      <a href="/servizi/technical-advisory" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Technical Advisory <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Guida tecnica per progetti complessi</p></a>
-    </div>
-  </div>
-</section>
-
+<!-- CTA FINALE -->
 <section class="cta-final">
   <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <h2>Hai un progetto che richiede<br><em>AI Integration?</em></h2>
-      <p class="cta-desc">Nessun impegno. Una call di 30 minuti per capire se possiamo costruire qualcosa di altrettanto concreto.</p>
-      <div class="cta-action"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+      <h2>Parliamo del tuo <em>progetto?</em></h2>
+      <p class="cta-desc">Se stai valutando un progetto nel nostro ambito, raccontacelo. Una call di 30 minuti per capire se possiamo aiutare. In alternativa, se cerchi qualcosa di continuativo, guarda il <a href="/servizi/team-dedicato" style="color:var(--electric);text-decoration:underline">team dedicato</a>.</p>
+      <div class="cta-action">
+        <a href="/contatti" class="btn-pill">
+          <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Prenota una call</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">

@@ -445,6 +445,15 @@ body { padding-top: 0 !important; }
   backdrop-filter: blur(24px);
 }
 </style>
+<style id="servizio-lean-styles">
+.intro-text { font-size:17px; line-height:1.7; color:var(--navy); margin:0 0 0 }
+.serv-tags .serv-tag { display:inline-block; padding:9px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:999px; font-size:13.5px; font-weight:600; color:var(--navy); }
+.num-card { background:var(--white); border:1px solid #e2e8f0; border-radius:16px; padding:32px 28px; text-align:center; transition:border-color .2s ease, transform .2s ease; }
+.num-card:hover { border-color:#3B6FE8; transform:translateY(-2px); }
+.num-card .num-big { font-size:clamp(36px,4vw,48px); font-weight:800; color:var(--navy); line-height:1; margin-bottom:10px; letter-spacing:-0.02em; }
+.num-card .num-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric); margin-bottom:6px; }
+.num-card .num-note { font-size:13px; color:var(--muted); line-height:1.4; }
+</style>
 </head>
 <body>
 
@@ -545,198 +554,78 @@ body { padding-top: 0 !important; }
   </div>
 </div>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="page-hero-noise"></div>
   <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">Continuity & Evolution</li></ol></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">Continuity & Evolution</li></ol></nav>
     <div class="page-hero-inner">
-      <h1>Continuity &amp; <em>Evolution</em></h1>
-      <p class="page-hero-sub">Monitoriamo, aggiorniamo e facciamo evolvere ogni progetto nel tempo. Per le agenzie che vogliono offrire ai loro clienti un supporto continuativo affidabile.</p>
+      <h1>Continuity &amp; Evolution</h1>
+      <p class="page-hero-sub">Manutenzione, monitoraggio ed evoluzione post-lancio. Nessuno sparisce dopo il go-live.</p>
     </div>
   </div>
 </section>
 
+<!-- COSA FACCIAMO -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I nostri <strong>servizi</strong></h2>
-    </div>
-    <div class="act-grid reveal-stagger">
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="32" height="24" rx="3"/><path d="M10 22l6-6 4 4 6-8"/><path d="M14 34h12M20 30v4"/></svg></div><h3>Monitoraggio performance e uptime</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L6 10v10c0 9 5.6 17 14 20 8.4-3 14-11 14-20V10z"/><path d="M16 20l4 4 8-8"/></svg></div><h3>Aggiornamenti di sicurezza</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32V20l8-6 8 6v12"/><path d="M24 14l8-6v24"/><path d="M8 32h24"/></svg></div><h3>Evolutive e nuove funzionalit&agrave;</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8h16v20H20l-4 4v-4h-4z"/><path d="M16 16h8M16 20h5"/><circle cx="30" cy="30" r="6"/><path d="M28 30h4M30 28v4"/></svg></div><h3>Assistenza prioritaria per agenzie partner</h3></div>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Cosa facciamo</h2>
+      <p class="intro-text">Il lancio &egrave; l&rsquo;inizio, non la fine. Un sistema in produzione ha bisogno di chi lo tiene aggiornato, chi risponde agli incidenti, chi lo fa crescere con il business. Lavoriamo in continuit&agrave; sui progetti che abbiamo costruito e su quelli ereditati da altri.</p>
+      <div class="serv-tags" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px">
+        <span class="serv-tag">Monitoring e uptime</span>
+        <span class="serv-tag">Security patch e aggiornamenti</span>
+        <span class="serv-tag">Gestione incidenti</span>
+        <span class="serv-tag">Evolutive su backlog</span>
+        <span class="serv-tag">Performance tuning</span>
+        <span class="serv-tag">Backup e disaster recovery</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- NUMERI -->
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I numeri del settore <strong>Continuity &amp; Evolution</strong></h2>
-    </div>
-    <div class="numeri-grid reveal-stagger">
-      <div class="numeri-item reveal"><p class="numeri-num">60%</p><p class="numeri-label">dei problemi critici di una piattaforma emerge nei 30 giorni successivi al lancio</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">+35%</p><p class="numeri-label">di costo medio per correggere un bug scoperto in produzione rispetto a uno intercettato in QA</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">78%</p><p class="numeri-label">delle piattaforme senza manutenzione attiva ha vulnerabilit&agrave; di sicurezza critiche entro 12 mesi</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">2,5x</p><p class="numeri-label">pi&ugrave; lunga la vita media di una piattaforma con un piano di evoluzione strutturato</p></div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1080px;margin:0 auto">
+      <div class="num-card"><div class="num-big">99.9%</div><div class="num-label">Uptime garantito</div><div class="num-note">Target su clienti in continuativo</div></div>
+      <div class="num-card"><div class="num-big">60</div><div class="num-label">Giorni per stabilizzare</div><div class="num-note">Piattaforma legacy ereditata</div></div>
+      <div class="num-card"><div class="num-big">< 2h</div><div class="num-label">Risposta incidenti critici</div><div class="num-note">In orario lavorativo</div></div>
     </div>
   </div>
 </section>
 
-<section class="sc-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>Continuity &amp; Evolution</strong></h2>
-    </div>
-    <div class="sc-grid reveal-stagger">
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l6-14 6 8 6-16 6 10"/><path d="M6 34h28"/><circle cx="14" cy="16" r="2"/></svg></div>
-        <p>Il cliente ha una piattaforma live che deve restare operativa</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M6 16h28"/><path d="M16 24h8v8h-8z"/><circle cx="11" cy="12" r="1.2"/><circle cx="16" cy="12" r="1.2"/></svg></div>
-        <p>Servono aggiornamenti di sicurezza regolari e documentati</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l7 4"/><path d="M30 8l2-2M10 8L8 6"/><path d="M14 30l-2 4M26 30l2 4"/></svg></div>
-        <p>Il cliente vuole aggiungere funzionalit&agrave; nel tempo senza ricostruire tutto</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24v28H8z"/><path d="M14 14h12M14 20h8"/><path d="M32 12l4-4M32 18l4 0"/><circle cx="36" cy="8" r="2" fill="currentColor" stroke="none" opacity=".5"/></svg></div>
-        <p>Una piattaforma esistente ha problemi di performance o stabilit&agrave;</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="14" height="20" rx="2"/><rect x="22" y="6" width="14" height="28" rx="2"/><path d="M8 26h6M26 30h6"/><path d="M18 20h4"/></svg></div>
-        <p>Serve un presidio tecnico continuativo per un cliente strategico</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- MINI CASE STUDY -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come realizziamo un progetto <strong>Continuity &amp; Evolution</strong></h2>
-    </div>
-    <div class="processo-grid reveal-stagger">
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6v24M6 18h24"/><circle cx="18" cy="18" r="13"/><path d="M12 12l12 12M24 12L12 24"/></svg></div><h3>Onboarding piattaforma</h3></div><p>Analisi dell&rsquo;infrastruttura, del codice e delle dipendenze. Setup del monitoraggio e degli alert automatici.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="28" height="28" rx="3"/><path d="M4 14h28"/><path d="M14 4v10"/><circle cx="22" cy="24" r="4"/><path d="M10 22h2M10 26h2"/></svg></div><h3>Piano di manutenzione</h3></div><p>Definizione del piano di aggiornamenti: dipendenze, CMS, plugin, certificati SSL, backup.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8l4-4 4 4"/><path d="M10 4v18"/><path d="M22 8h8v20H6v-6"/><path d="M16 22h10M16 26h6"/></svg></div><h3>Monitoraggio continuo</h3></div><p>Uptime monitoring, performance monitoring, alert su anomalie. Sappiamo i problemi prima che li segnali il cliente.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="13"/><path d="M18 10v8l5 5"/><path d="M28 6l2-2M8 6L6 4"/></svg></div><h3>Gestione evolutive</h3></div><p>Raccolta e prioritizzazione delle nuove funzionalit&agrave;. Stima, sviluppo e rilascio in modo strutturato.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18l4 4 8-8"/><rect x="4" y="6" width="28" height="24" rx="3"/><path d="M4 12h28"/></svg></div><h3>Report mensile</h3></div><p>Riepilogo delle attivit&agrave; svolte, stato della piattaforma e prossime scadenze tecniche.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a10 10 0 1 1-10 10"/><path d="M8 18H4l4-5 4 5H8"/><path d="M18 14v5l3 3"/></svg></div><h3>Escalation procedure</h3></div><p>In caso di incidenti critici, escalation immediata con SLA garantito per il ripristino.</p></div>
-    </div></div>
-</section>
-
-
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
-    </div>
-    <div class="perche-grid reveal-stagger">
-      <div class="perche-card reveal-scale"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-      <div class="perche-card reveal-scale"><p>Monitoraggio proattivo: sappiamo i problemi prima che li segnali il cliente finale, spesso prima che li noti.</p></div>
-      <div class="perche-card reveal-scale"><p>Ogni rilascio di nuove funzionalit&agrave; passa attraverso un ambiente di staging, niente aggiornamenti che rompono quanto gi&agrave; funziona.</p></div>
-      <div class="perche-card reveal-scale"><p>La conoscenza della piattaforma cresce nel tempo, ogni intervento &egrave; pi&ugrave; rapido ed efficace del precedente.</p></div>
-    </div></div>
-</section>
-
-
-<section class="cl-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come <strong>lavoriamo</strong></h2>
-      <p class="cl-text">Ogni progetto segue <strong style="color:#6B9BF7;font-weight:700">PartnerFlow</strong>, il nostro framework operativo che garantisce tempi, qualit&agrave; e trasparenza in ogni fase. Dall&rsquo;analisi iniziale alla consegna, ogni step &egrave; documentato e condiviso con l&rsquo;agenzia partner. Nessuna sorpresa, nessun ritardo non comunicato: solo un processo chiaro dove sai sempre a che punto siamo.</p>
-      <a href="/metodo" class="btn-pill">
-        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Scopri PartnerFlow</span>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Un esempio concreto</h2>
+      <a href="/case-study/supporto-tecnico-piattaforma-no-profit" class="svc-case-card" style="display:block;background:var(--off-white);border:1px solid #e2e8f0;border-radius:16px;padding:28px 32px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease" onmouseover="this.style.borderColor='#3B6FE8';this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px rgba(59,111,232,0.12)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.transform='';this.style.boxShadow=''">
+        <p style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--electric);margin:0 0 8px">Case study</p>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin:0 0 10px;line-height:1.3">Supporto tecnico piattaforma no-profit</h3>
+        <p style="font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 14px">Piattaforma legacy con 10 anni di debito tecnico stabilizzata in 60 giorni. Refactor pianificato con roadmap chiara.</p>
+        <span style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--electric)">Leggi il caso <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Progetti <strong>Continuity &amp; Evolution</strong> che abbiamo realizzato</h2>
-    </div>
-    <div class="cs-grid">
-      <a href="/case-study/supporto-tecnico-piattaforma-no-profit" class="cs-card reveal">
-        <p class="cs-card-title">Supporto tecnico piattaforma No-Profit</p>
-        <p class="cs-card-desc">Reverse engineering e stabilizzazione di piattaforma digitale per ente caritatevole internazionale in America Latina.</p>
-        <div class="cs-card-meta"><span>Technology / SaaS</span></div>
-      </a>
-    </div>
-  
-    <div class="reveal" style="text-align:center;margin-top:48px">
-      <a href="/case-study/" class="btn-pill" style="border-color:rgba(13,27,62,.15);color:var(--navy);display:inline-flex">
-        <span class="btn-pill-circle" style="background:var(--blue)"><svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" style="width:18px;height:18px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-        Guarda tutte le case history
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">Qual &egrave; il tempo di risposta in caso di problemi critici?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Per i clienti in piano di manutenzione attivo: risposta entro 2 ore su problemi critici, entro 8 ore su problemi non bloccanti.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Gestite piattaforme sviluppate da altri?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;. Facciamo prima un audit tecnico per capire lo stato della piattaforma, poi proponiamo un piano di manutenzione adeguato.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Come vengono gestite le evolutive?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Raccogliamo le richieste, le prioritizziamo insieme, stimiamo l&rsquo;effort e le sviluppiamo in modo strutturato. Niente richieste urgenti non pianificate che rompono quanto gi&agrave; funziona.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">I backup sono inclusi?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;. Backup automatici giornalieri su storage ridondato sono inclusi in tutti i piani di manutenzione.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Altri servizi che <strong>completano</strong> Continuity &amp; Evolution</h2>
-    </div>
-    <div class="rel-grid">
-      <a href="/servizi/web-commerce" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h3>Web &amp; Commerce <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Siti, landing page ed e-commerce che convertono</p></a>
-      <a href="/servizi/platform-engineering" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h3>Platform Engineering <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Piattaforme custom per esigenze complesse</p></a>
-      <a href="/servizi/cto-as-a-service" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>CTO as a Service <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Direzione tecnica continuativa per la tua azienda o la tua azienda o aziende e agenzie</p></a>
-    </div>
-  </div>
-</section>
-
+<!-- CTA FINALE -->
 <section class="cta-final">
   <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <h2>Hai un progetto che richiede<br><em>Continuity &amp; Evolution?</em></h2>
-      <p class="cta-desc">Nessun impegno. Una call di 30 minuti per capire se possiamo costruire qualcosa di altrettanto concreto.</p>
-      <div class="cta-action"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+      <h2>Parliamo del tuo <em>progetto?</em></h2>
+      <p class="cta-desc">Se stai valutando un progetto nel nostro ambito, raccontacelo. Una call di 30 minuti per capire se possiamo aiutare. In alternativa, se cerchi qualcosa di continuativo, guarda il <a href="/servizi/team-dedicato" style="color:var(--electric);text-decoration:underline">team dedicato</a>.</p>
+      <div class="cta-action">
+        <a href="/contatti" class="btn-pill">
+          <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Prenota una call</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">

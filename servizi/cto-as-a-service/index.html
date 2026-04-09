@@ -445,6 +445,15 @@ body { padding-top: 0 !important; }
   backdrop-filter: blur(24px);
 }
 </style>
+<style id="servizio-lean-styles">
+.intro-text { font-size:17px; line-height:1.7; color:var(--navy); margin:0 0 0 }
+.serv-tags .serv-tag { display:inline-block; padding:9px 16px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:999px; font-size:13.5px; font-weight:600; color:var(--navy); }
+.num-card { background:var(--white); border:1px solid #e2e8f0; border-radius:16px; padding:32px 28px; text-align:center; transition:border-color .2s ease, transform .2s ease; }
+.num-card:hover { border-color:#3B6FE8; transform:translateY(-2px); }
+.num-card .num-big { font-size:clamp(36px,4vw,48px); font-weight:800; color:var(--navy); line-height:1; margin-bottom:10px; letter-spacing:-0.02em; }
+.num-card .num-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--electric); margin-bottom:6px; }
+.num-card .num-note { font-size:13px; color:var(--muted); line-height:1.4; }
+</style>
 </head>
 <body>
 
@@ -545,194 +554,78 @@ body { padding-top: 0 !important; }
   </div>
 </div>
 
+<!-- HERO -->
 <section class="page-hero">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="page-hero-noise"></div>
   <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">CTO as a Service</li></ol></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/servizi">Servizi</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">CTO as a Service</li></ol></nav>
     <div class="page-hero-inner">
-      <h1>CTO as a <em>Service</em></h1>
-      <p class="page-hero-sub">Se la tua azienda o la tua azienda o aziende e agenzie ha bisogno di una direzione tecnica continuativa senza assumere un CTO interno, diventiamo noi quel riferimento, disponibili quando serve.</p>
+      <h1>CTO as a Service</h1>
+      <p class="page-hero-sub">Direzione tecnica continuativa senza assumere un CTO interno. Decisioni architetturali, governance codice e roadmap.</p>
     </div>
   </div>
 </section>
 
+<!-- COSA FACCIAMO -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I nostri <strong>servizi</strong></h2>
-    </div>
-    <div class="act-grid reveal-stagger">
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="14" r="8"/><path d="M8 36c0-6.6 5.4-12 12-12s12 5.4 12 12"/><path d="M26 10l4 4M30 10l-4 4"/></svg></div><h3>Direzione tecnica continuativa</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4l16 8-16 8L4 12z"/><path d="M4 20l16 8 16-8"/><path d="M4 28l16 8 16-8"/></svg></div><h3>Valutazione e selezione stack tecnologico</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4L6 10v10c0 9 5.6 17 14 20 8.4-3 14-11 14-20V10z"/><path d="M14 20l4 4 8-8"/></svg></div><h3>Supervisione qualit&agrave; del codice</h3></div>
-      <div class="act-item reveal"><div class="act-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34L20 6l14 28"/><path d="M12 24h16"/><circle cx="20" cy="18" r="3"/></svg></div><h3>Roadmap tecnologica e pianificazione evolutiva</h3></div>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Cosa facciamo</h2>
+      <p class="intro-text">Se il business &egrave; cresciuto pi&ugrave; veloce del team tech, c&rsquo;&egrave; un momento in cui servono scelte di qualit&agrave; che un junior non pu&ograve; prendere. Diventiamo il riferimento tecnico a chiamata: disponibili quando serve, fuori dal libro paga e senza ricerca HR.</p>
+      <div class="serv-tags" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px">
+        <span class="serv-tag">Direzione tecnica part-time</span>
+        <span class="serv-tag">Selezione stack e architetture</span>
+        <span class="serv-tag">Governance e code review</span>
+        <span class="serv-tag">Roadmap tecnologica</span>
+        <span class="serv-tag">Supervisione team esterni</span>
+        <span class="serv-tag">Due diligence tecnica</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- NUMERI -->
 <section class="section-pad" style="background:var(--off-white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">I numeri del settore <strong>CTO as a Service</strong></h2>
-    </div>
-    <div class="numeri-grid reveal-stagger">
-      <div class="numeri-item reveal"><p class="numeri-num">120-180k&euro;</p><p class="numeri-label">costo annuo medio di un CTO senior in Italia</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">67%</p><p class="numeri-label">delle agenzie italiane sopra i 10 dipendenti dichiara di aver bisogno di una guida tecnica continuativa</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">40%</p><p class="numeri-label">delle decisioni tecnologiche sbagliate nelle PMI viene presa senza una figura tecnica senior coinvolta</p></div>
-      <div class="numeri-item reveal"><p class="numeri-num">3x</p><p class="numeri-label">pi&ugrave; veloce lo scaling di un&rsquo;agenzia con una direzione tecnica strutturata</p></div>
+    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1080px;margin:0 auto">
+      <div class="num-card"><div class="num-big">€80K</div><div class="num-label">Costo 2 junior/anno</div><div class="num-note">Senza contare rischio assunzione sbagliata</div></div>
+      <div class="num-card"><div class="num-big">4-8h</div><div class="num-label">Disponibilit&agrave; mensile</div><div class="num-note">A chiamata quando serve</div></div>
+      <div class="num-card"><div class="num-big">12+</div><div class="num-label">Progetti supervisionati</div><div class="num-note">In parallelo su clienti diversi</div></div>
     </div>
   </div>
 </section>
 
-<section class="sc-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Quando un&rsquo;agenzia ha bisogno di <strong>CTO as a Service</strong></h2>
-    </div>
-    <div class="sc-grid reveal-stagger">
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30l6-14 6 8 6-16 6 10"/><path d="M6 34h28"/><circle cx="14" cy="16" r="2"/></svg></div>
-        <p>L&rsquo;agenzia gestisce pi&ugrave; progetti tecnici in parallelo e serve qualcuno che tenga il filo</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="28" height="24" rx="3"/><path d="M6 16h28"/><path d="M16 24h8v8h-8z"/><circle cx="11" cy="12" r="1.2"/><circle cx="16" cy="12" r="1.2"/></svg></div>
-        <p>Vuoi costruire un&rsquo;offerta tecnica strutturata senza un profilo senior interno</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l7 4"/><path d="M30 8l2-2M10 8L8 6"/><path d="M14 30l-2 4M26 30l2 4"/></svg></div>
-        <p>Stai crescendo e hai bisogno di qualcuno che definisca processi e standard di qualit&agrave;</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h24v28H8z"/><path d="M14 14h12M14 20h8"/><path d="M32 12l4-4M32 18l4 0"/><circle cx="36" cy="8" r="2" fill="currentColor" stroke="none" opacity=".5"/></svg></div>
-        <p>Hai team di developer esterni da coordinare e supervisionare</p>
-      </div>
-      <div class="sc-card reveal-scale">
-        <div class="sc-card-glow"></div>
-        <div class="sc-card-icon"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="14" height="20" rx="2"/><rect x="22" y="6" width="14" height="28" rx="2"/><path d="M8 26h6M26 30h6"/><path d="M18 20h4"/></svg></div>
-        <p>Vuoi prendere decisioni tecnologiche informate senza dipendere da chi esegue il lavoro</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+<!-- MINI CASE STUDY -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come realizziamo un progetto <strong>CTO as a Service</strong></h2>
-    </div>
-    <div class="processo-grid reveal-stagger">
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6v24M6 18h24"/><circle cx="18" cy="18" r="13"/><path d="M12 12l12 12M24 12L12 24"/></svg></div><h3>Onboarding</h3></div><p>Analisi dell&rsquo;agenzia: progetti in corso, team, processi, strumenti. Identificazione delle priorit&agrave; di intervento.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="28" height="28" rx="3"/><path d="M4 14h28"/><path d="M14 4v10"/><circle cx="22" cy="24" r="4"/><path d="M10 22h2M10 26h2"/></svg></div><h3>Direzione tecnica</h3></div><p>Definizione degli standard di sviluppo, revisione delle architetture proposte, supervisione della qualit&agrave; del codice.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8l4-4 4 4"/><path d="M10 4v18"/><path d="M22 8h8v20H6v-6"/><path d="M16 22h10M16 26h6"/></svg></div><h3>Supporto commerciale</h3></div><p>Affiancamento nella stima dei progetti, revisione delle offerte tecniche, partecipazione ai pitch.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="13"/><path d="M18 10v8l5 5"/><path d="M28 6l2-2M8 6L6 4"/></svg></div><h3>Governance dei vendor</h3></div><p>Supervisione dei partner tecnici esterni. Valutazione delle proposte, review del codice, gestione degli SLA.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18l4 4 8-8"/><rect x="4" y="6" width="28" height="24" rx="3"/><path d="M4 12h28"/></svg></div><h3>Roadmap tecnologica</h3></div><p>Definizione della roadmap: competenze da sviluppare, tool da adottare, posizionamento sul mercato.</p></div>
-      <div class="processo-step reveal"><div class="processo-head"><div class="processo-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a10 10 0 1 1-10 10"/><path d="M8 18H4l4-5 4 5H8"/><path d="M18 14v5l3 3"/></svg></div><h3>Report mensile</h3></div><p>Report sullo stato dei progetti, rischi identificati e decisioni tecniche prese nel periodo.</p></div>
-    </div></div>
-</section>
-
-
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Perch&eacute; il nostro approccio <strong>funziona</strong></h2>
-    </div>
-    <div class="perche-grid reveal-stagger">
-      <div class="perche-card reveal-scale"><p>Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, comunicazioni e documenti sempre visibili e aggiornati in tempo reale.</p></div>
-      <div class="perche-card reveal-scale"><p>Disponibile quando serve, senza il costo fisso di un profilo senior interno a tempo pieno.</p></div>
-      <div class="perche-card reveal-scale"><p>Accordo di riservatezza firmato, operiamo con il vostro dominio email, invisibili ai clienti finali.</p></div>
-      <div class="perche-card reveal-scale"><p>Il servizio scala con le vostre esigenze: da 8 ore/mese per agenzie con 1-2 progetti attivi fino a supporto intensivo su periodi critici.</p></div>
-    </div></div>
-</section>
-
-
-<section class="cl-section section-pad">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Come <strong>lavoriamo</strong></h2>
-      <p class="cl-text">Ogni progetto segue <strong style="color:#6B9BF7;font-weight:700">PartnerFlow</strong>, il nostro framework operativo che garantisce tempi, qualit&agrave; e trasparenza in ogni fase. Dall&rsquo;analisi iniziale alla consegna, ogni step &egrave; documentato e condiviso con l&rsquo;agenzia partner. Nessuna sorpresa, nessun ritardo non comunicato: solo un processo chiaro dove sai sempre a che punto siamo.</p>
-      <a href="/metodo" class="btn-pill">
-        <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span>Scopri PartnerFlow</span>
+    <div class="reveal" style="max-width:840px">
+      <h2 class="section-title">Un esempio concreto</h2>
+      <a href="/case-study/sistema-monitoraggio-impianti-industriali" class="svc-case-card" style="display:block;background:var(--off-white);border:1px solid #e2e8f0;border-radius:16px;padding:28px 32px;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease" onmouseover="this.style.borderColor='#3B6FE8';this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 32px rgba(59,111,232,0.12)'" onmouseout="this.style.borderColor='#e2e8f0';this.style.transform='';this.style.boxShadow=''">
+        <p style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--electric);margin:0 0 8px">Case study</p>
+        <h3 style="font-size:22px;font-weight:800;color:var(--navy);margin:0 0 10px;line-height:1.3">Monitoraggio impianti industriali</h3>
+        <p style="font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 14px">-35% fermi macchina con dashboard IoT e manutenzione predittiva. Direzione tecnica dalla scelta sensori al deploy in produzione.</p>
+        <span style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--electric)">Leggi il caso <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section-pad" style="background:var(--white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Progetti <strong>CTO as a Service</strong> che abbiamo realizzato</h2>
-    </div>
-    <div class="cs-grid">
-      <div class="cs-card reveal"><p class="cs-card-title">Dashboard analytics per piattaforma SaaS</p><p class="cs-card-desc">Pannello di controllo real-time con metriche, reportistica avanzata e oltre 50 integrazioni API.</p><div class="cs-card-meta"><span>Technology / SaaS</span></div></div><div class="cs-card reveal"><p class="cs-card-title">Marketplace B2B per filiera manifatturiera</p><p class="cs-card-desc">Piattaforma di sourcing con catalogo digitale e ordini automatizzati per oltre 800 aziende.</p><div class="cs-card-meta"><span>Industrial / B2B</span></div></div>
-    
-    <div class="reveal" style="text-align:center;margin-top:48px">
-      <a href="/case-study/" class="btn-pill" style="border-color:rgba(13,27,62,.15);color:var(--navy);display:inline-flex">
-        <span class="btn-pill-circle" style="background:var(--blue)"><svg viewBox="0 0 18 18" fill="none" stroke="#fff" stroke-width="1.5" style="width:18px;height:18px"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-        Guarda tutte le case history
-      </a>
-    </div>
-  </div>
-  </div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Domande <strong>frequenti</strong></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">Quante ore al mese include il servizio?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Partiamo da 8 ore/mese per agenzie con 1-2 progetti attivi, fino a 20+ ore/mese per portfolio pi&ugrave; ampio. Lo definiamo in base alle necessit&agrave; reali.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Possiamo iniziare con un progetto singolo e poi valutare?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;. Molte collaborazioni partono da un supporto puntuale (offerta tecnica, audit) e poi evolvono in rapporto continuativo.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Come gestite la riservatezza con i nostri clienti?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>Accordo di riservatezza firmato prima di qualsiasi attivit&agrave;. Operiamo con il vostro dominio email senza mai rivelare la nostra presenza ai clienti finali.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Possiamo coinvolgervi nelle call con i clienti tecnici?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-        <div class="faq-a"><p>S&igrave;, &egrave; parte integrante del servizio. Partecipiamo come parte del vostro team, rafforzando la credibilit&agrave; tecnica dell&rsquo;agenzia.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal">
-      <h2 class="section-title">Altri servizi che <strong>completano</strong> CTO as a Service</h2>
-    </div>
-    <div class="rel-grid">
-      <a href="/servizi/technical-advisory" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Technical Advisory <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Guida tecnica per progetti complessi</p></a>
-      <a href="/servizi/platform-engineering" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><h3>Platform Engineering <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Piattaforme custom per esigenze complesse</p></a>
-      <a href="/servizi/continuity-evolution" class="rel-card reveal"><div class="rel-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div><h3>Continuity &amp; Evolution <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></h3><p>Supporto continuativo dopo il lancio</p></a>
-    </div>
-  </div>
-</section>
-
+<!-- CTA FINALE -->
 <section class="cta-final">
   <div class="cta-blob cta-blob-1"></div><div class="cta-blob cta-blob-2"></div>
   <div class="container">
     <div class="cta-inner reveal">
-      <h2>Hai un progetto che richiede<br><em>CTO as a Service?</em></h2>
-      <p class="cta-desc">Nessun impegno. Una call di 30 minuti per capire se possiamo costruire qualcosa di altrettanto concreto.</p>
-      <div class="cta-action"><a href="/contatti" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prenota un appuntamento</span></a></div>
+      <h2>Parliamo del tuo <em>progetto?</em></h2>
+      <p class="cta-desc">Se stai valutando un progetto nel nostro ambito, raccontacelo. Una call di 30 minuti per capire se possiamo aiutare. In alternativa, se cerchi qualcosa di continuativo, guarda il <a href="/servizi/team-dedicato" style="color:var(--electric);text-decoration:underline">team dedicato</a>.</p>
+      <div class="cta-action">
+        <a href="/contatti" class="btn-pill">
+          <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Prenota una call</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="container">
