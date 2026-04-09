@@ -74,45 +74,13 @@
 </style>
 <style id="nav-floating-pill-styles">
 /* ───────────────────────────────────────────────────────────────
-   NAV: transparent initial (white text) → white pill on scroll
+   NAV: transparent initial → white glass on scroll
+   Hero is already navy + white text by design, no overlay needed.
    ─────────────────────────────────────────────────────────────── */
 
 nav.nav.nav-top { display: none !important; }
 
 body { padding-top: 0 !important; }
-.hero { padding-top: 96px !important; position: relative !important; }
-.page-hero { padding-top: 120px !important; padding-bottom: 72px !important; position: relative !important; }
-@media (max-width: 1024px) {
-  .hero { padding-top: 80px !important; }
-  .page-hero { padding-top: 104px !important; }
-}
-
-/* Dark gradient overlay on hero top for nav contrast when transparent */
-.hero::before,
-.page-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(180deg,
-    rgba(13, 27, 62, 0.55) 0%,
-    rgba(13, 27, 62, 0.28) 55%,
-    rgba(13, 27, 62, 0) 100%);
-  pointer-events: none;
-  z-index: 1;
-  transition: opacity .4s ease;
-}
-.hero > *,
-.page-hero > * {
-  position: relative;
-  z-index: 2;
-}
-body.nav-scrolled .hero::before,
-body.nav-scrolled .page-hero::before {
-  opacity: 0;
-}
 
 /* ─── NAV CONTAINER ─── */
 .nav-float {
@@ -200,15 +168,13 @@ body.nav-scrolled .page-hero::before {
   font-weight: 600;
   letter-spacing: -0.01em;
   border-radius: 10px;
-  transition: background .3s ease, color .3s ease, text-shadow .3s ease;
+  transition: background .3s ease, color .3s ease;
   white-space: nowrap;
   cursor: pointer;
   background: transparent;
-  text-shadow: 0 1px 3px rgba(13, 27, 62, 0.3);
 }
 .nav-float.is-scrolled .nf-link {
   color: #0D1B3E;
-  text-shadow: none;
 }
 
 .nf-link:hover,
@@ -240,7 +206,7 @@ body.nav-scrolled .page-hero::before {
   opacity: 1;
 }
 
-/* ─── CTA (outline white → solid navy on scroll) ─── */
+/* ─── CTA ─── */
 .nf-cta {
   display: inline-flex;
   align-items: center;
@@ -281,7 +247,6 @@ body.nav-scrolled .page-hero::before {
   color: #0D1B3E;
   border-color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
 }
 .nav-float.is-scrolled .nf-cta:hover {
   background: #3B6FE8;
@@ -291,12 +256,12 @@ body.nav-scrolled .page-hero::before {
 }
 .nf-cta:hover svg { transform: translateX(3px); }
 
-/* ─── MEGA-MENU (always white solid) ─── */
+/* ─── MEGA-MENU ─── */
 .nf-has-mega { position: static; }
 
 .nf-mega {
   position: fixed;
-  top: 78px;
+  top: 72px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   width: min(1040px, calc(100vw - 48px));
@@ -455,7 +420,7 @@ body.nav-scrolled .page-hero::before {
   transform: translateX(3px);
 }
 
-/* ─── HAMBURGER (white initial, dark on scroll) ─── */
+/* ─── HAMBURGER ─── */
 .nf-hamburger {
   display: none;
   flex-direction: column;
