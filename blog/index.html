@@ -37,18 +37,19 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Blog &middot; Edos Digital Solutions","description":"Insight e storie di prodotto da Edos Digital Solutions. Niente tendenze, solo cose concrete viste sui progetti reali. Manifatturiero, retail, food, real estate.","url":"https://www.edos.it/blog/","publisher":{"@type":"Organization","name":"Edos Digital Solutions","url":"https://www.edos.it"}}</script>
 <style id="nav-floating-pill-styles">
 /* ───────────────────────────────────────────────────────────────
-   TOP NAV LIGHT GLASS — coherent with site design system
+   NAV: transparent initial → centered pill on scroll
+   Menu voices space out initially, compress toward center on scroll
    ─────────────────────────────────────────────────────────────── */
 
-/* Hide legacy if present */
 nav.nav.nav-top { display: none !important; }
 
-/* No body padding — nav overlays the hero via backdrop-blur */
 body { padding-top: 0 !important; }
-
-/* Hero sections get internal top padding so content is not covered */
-.hero { padding-top: 104px !important; }
-.page-hero { padding-top: 130px !important; padding-bottom: 72px !important; }
+.hero { padding-top: 88px !important; }
+.page-hero { padding-top: 112px !important; padding-bottom: 64px !important; }
+@media (max-width: 1024px) {
+  .hero { padding-top: 76px !important; }
+  .page-hero { padding-top: 96px !important; }
+}
 
 /* ─── NAV CONTAINER ─── */
 .nav-float {
@@ -63,27 +64,53 @@ body { padding-top: 0 !important; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  padding: 18px 48px;
-  background: rgba(255, 255, 255, 0.72);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  gap: 32px;
+  padding: 14px 48px;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   border: none;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.35);
+  border-bottom: 1px solid transparent;
   border-radius: 0;
   box-shadow: none;
-  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease, padding .3s ease;
+  transition:
+    top .45s cubic-bezier(.2,.8,.2,1),
+    left .45s cubic-bezier(.2,.8,.2,1),
+    right .45s cubic-bezier(.2,.8,.2,1),
+    max-width .45s cubic-bezier(.2,.8,.2,1),
+    padding .45s cubic-bezier(.2,.8,.2,1),
+    gap .45s cubic-bezier(.2,.8,.2,1),
+    background .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    border-radius .45s cubic-bezier(.2,.8,.2,1),
+    backdrop-filter .35s ease,
+    transform .45s cubic-bezier(.2,.8,.2,1);
   font-family: inherit;
 }
+
 .nav-float.is-scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom-color: rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 24px rgba(13, 27, 62, 0.06);
-  padding: 14px 48px;
+  top: 14px;
+  left: 50%;
+  right: auto;
+  width: auto;
+  max-width: min(1040px, calc(100% - 32px));
+  transform: translateX(-50%);
+  padding: 9px 12px 9px 22px;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 999px;
+  box-shadow:
+    0 16px 48px rgba(13, 27, 62, 0.12),
+    0 4px 12px rgba(13, 27, 62, 0.05);
 }
+
 @media (max-width: 1024px) {
-  .nav-float { padding: 14px 24px; gap: 16px; }
-  .nav-float.is-scrolled { padding: 12px 24px; }
+  .nav-float { padding: 12px 24px; gap: 16px; }
+  .nav-float.is-scrolled { padding: 10px 12px 10px 18px; max-width: calc(100% - 24px); }
 }
 
 /* ─── LOGO ─── */
@@ -92,17 +119,14 @@ body { padding-top: 0 !important; }
   align-items: center;
   padding: 0;
   flex-shrink: 0;
-  border-right: none;
-  margin-right: 0;
 }
 .nf-logo img {
   display: block;
   height: 28px;
   width: auto;
-  filter: none;
-  /* Swap to dark logo (light background) */
-  content: url('/logo.png');
+  transition: height .35s ease;
 }
+.nav-float.is-scrolled .nf-logo img { height: 24px; }
 
 /* ─── MENU LIST ─── */
 .nf-menu {
@@ -111,9 +135,14 @@ body { padding-top: 0 !important; }
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 20px;
   flex: 1;
   justify-content: center;
+  transition: gap .45s cubic-bezier(.2,.8,.2,1), flex .45s cubic-bezier(.2,.8,.2,1);
+}
+.nav-float.is-scrolled .nf-menu {
+  gap: 2px;
+  flex: 0 0 auto;
 }
 .nf-menu li { margin: 0; }
 
@@ -122,23 +151,25 @@ body { padding-top: 0 !important; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 12px 18px;
+  padding: 10px 14px;
   color: #0D1B3E;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  border-radius: 10px;
-  transition: background .22s ease, color .22s ease;
+  border-radius: 999px;
+  transition: background .22s ease, color .22s ease, padding .35s ease;
   white-space: nowrap;
   cursor: pointer;
   background: transparent;
 }
+.nav-float.is-scrolled .nf-link { padding: 9px 13px; }
+
 .nf-link:hover,
 .nf-link:focus-visible,
 .nf-has-mega:hover > .nf-link,
 .nf-has-mega:focus-within > .nf-link {
-  background: rgba(59, 111, 232, 0.08);
+  background: rgba(59, 111, 232, 0.1);
   color: #3B6FE8;
   outline: none;
 }
@@ -159,7 +190,7 @@ body { padding-top: 0 !important; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 24px;
+  padding: 11px 22px;
   background: #0D1B3E;
   color: #ffffff;
   text-decoration: none;
@@ -168,16 +199,17 @@ body { padding-top: 0 !important; }
   letter-spacing: -0.005em;
   border-radius: 999px;
   margin-left: 0;
-  transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+  transition: background .25s ease, transform .25s ease, box-shadow .25s ease, padding .35s ease;
   white-space: nowrap;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(13, 27, 62, 0.12);
+  box-shadow: 0 2px 8px rgba(13, 27, 62, 0.15);
 }
+.nav-float.is-scrolled .nf-cta { padding: 10px 20px; }
 .nf-cta svg { width: 15px; height: 15px; transition: transform .25s ease; }
 .nf-cta:hover {
   background: #3B6FE8;
   transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(59, 111, 232, 0.32);
+  box-shadow: 0 10px 28px rgba(59, 111, 232, 0.35);
 }
 .nf-cta:hover svg { transform: translateX(3px); }
 
@@ -186,27 +218,26 @@ body { padding-top: 0 !important; }
 
 .nf-mega {
   position: fixed;
-  top: 82px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   width: min(1040px, calc(100vw - 48px));
   background: #ffffff;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  padding: 32px;
+  padding: 28px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity .3s cubic-bezier(.2,.8,.2,1),
               transform .3s cubic-bezier(.2,.8,.2,1),
+              top .3s cubic-bezier(.2,.8,.2,1),
               visibility .3s;
   box-shadow:
-    0 24px 80px rgba(13, 27, 62, 0.12),
+    0 24px 80px rgba(13, 27, 62, 0.16),
     0 6px 20px rgba(13, 27, 62, 0.06);
 }
-.nav-float.is-scrolled .nf-mega { top: 72px; }
+.nav-float.is-scrolled .nf-mega { top: 78px; }
 
 .nf-has-mega:hover .nf-mega,
 .nf-has-mega:focus-within .nf-mega {
@@ -216,7 +247,6 @@ body { padding-top: 0 !important; }
   transform: translateX(-50%) translateY(0);
 }
 
-/* Invisible hover bridge */
 .nf-has-mega::after {
   content: "";
   position: absolute;
@@ -229,8 +259,8 @@ body { padding-top: 0 !important; }
 .nf-has-mega:hover::after { pointer-events: auto; }
 
 .nf-mega-head {
-  margin-bottom: 24px;
-  padding-bottom: 20px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #e2e8f0;
 }
 .nf-mega-eyebrow {
@@ -248,7 +278,6 @@ body { padding-top: 0 !important; }
   margin: 0;
   letter-spacing: -0.015em;
 }
-
 .nf-mega-grid { display: grid; gap: 10px; }
 .nf-mega-grid-servizi,
 .nf-mega-grid-settori { grid-template-columns: repeat(3, 1fr); }
@@ -257,7 +286,7 @@ body { padding-top: 0 !important; }
   .nf-mega-grid-settori { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ─── BENTO CARDS (light) ─── */
+/* ─── BENTO CARDS ─── */
 .mm-card {
   display: flex;
   align-items: flex-start;
@@ -351,7 +380,7 @@ body { padding-top: 0 !important; }
   transform: translateX(3px);
 }
 
-/* ─── HAMBURGER (mobile) ─── */
+/* ─── HAMBURGER ─── */
 .nf-hamburger {
   display: none;
   flex-direction: column;
@@ -377,16 +406,13 @@ body { padding-top: 0 !important; }
   transition: transform .2s ease, opacity .2s ease;
 }
 
-/* ─── MOBILE BREAKPOINT ─── */
 @media (max-width: 1024px) {
   .nav-float .nf-menu,
   .nav-float .nf-cta { display: none; }
   .nav-float .nf-hamburger { display: flex; }
-  .hero { padding-top: 88px !important; }
-  .page-hero { padding-top: 110px !important; }
 }
 
-/* ─── Mobile overlay: restore light/dark theme of original ─── */
+/* Mobile overlay theme */
 .nav-overlay {
   background: rgba(13, 27, 62, 0.96);
   -webkit-backdrop-filter: blur(24px);
@@ -398,11 +424,10 @@ body { padding-top: 0 !important; }
 
 <nav class="nav-float" id="mainNav" aria-label="Navigazione principale">
   <a href="/" class="nf-logo" aria-label="Edos Digital Solutions">
-    <img src="/logo-white.png" alt="Edos" width="72" height="24" loading="lazy">
+    <img src="/logo.png" alt="Edos" width="72" height="24" loading="lazy">
   </a>
 
   <ul class="nf-menu" role="menubar">
-    <li role="none"><a href="/per-le-agenzie" class="nf-link" role="menuitem">Per le agenzie</a></li>
     <li role="none" class="nf-has-mega">
       <a href="/servizi" class="nf-link" role="menuitem" aria-haspopup="true">
         Servizi
@@ -441,13 +466,15 @@ body { padding-top: 0 !important; }
           <a href="/settori/retail-consumer-goods" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Retail / Consumer Goods</h4><p class="mm-card-desc">Inventario multi-sede, loyalty, omnicanale</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
           <a href="/settori/food-beverage-gdo" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Food & Beverage / GDO</h4><p class="mm-card-desc">Portali B2B distributori, gestione ordini</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
           <a href="/settori/real-estate-costruttori" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Real Estate / Costruttori</h4><p class="mm-card-desc">Configuratori appartamento, CRM cantiere</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
-          <a href="/settori/finance-banking" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Finance / Banking</h4><p class="mm-card-desc">Piattaforme sicure, open banking, compliance</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+          <a href="/settori/finance-banking" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Finance / Banking</h4><p class="mm-card-desc">Piattaforme sicure, open banking, compliance</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
           <a href="/settori/technology-saas" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Technology / SaaS</h4><p class="mm-card-desc">Dashboard, multi-tenant, scalabilità</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
-          <a href="/settori/fashion-luxury" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Fashion / Luxury</h4><p class="mm-card-desc">E-commerce premium, clienteling, storytelling</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
+          <a href="/settori/fashion-luxury" class="mm-card" role="menuitem"><div class="mm-card-icon"><svg class="mm-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/></svg></div><div class="mm-card-body"><h4 class="mm-card-title">Fashion / Luxury</h4><p class="mm-card-desc">E-commerce premium, clienteling</p></div><svg class="mm-card-arrow" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></a>
         </div>
       </div>
     </li>
+    <li role="none"><a href="/per-le-agenzie" class="nf-link" role="menuitem">Per le agenzie</a></li>
     <li role="none"><a href="/case-study" class="nf-link" role="menuitem">Case study</a></li>
+    <li role="none"><a href="/contatti" class="nf-link" role="menuitem">Contatti</a></li>
   </ul>
 
   <a href="/contatti" class="nf-cta">
