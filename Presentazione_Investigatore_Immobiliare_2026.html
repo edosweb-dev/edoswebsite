@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigatore Immobiliare - Proposta Commerciale</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* PRINT */
+@media print {
+    @page { size: 1280px 720px; margin: 0; padding: 0; }
+    html, body { margin: 0 !important; padding: 0 !important; background: none !important; gap: 0 !important; display: block !important; width: 1280px; }
+    .slide-container { box-shadow: none !important; page-break-after: always; page-break-inside: avoid; margin: 0 !important; }
+    .slide-container:last-child { page-break-after: auto; }
+    .fullscreen-nav { display: none !important; }
+}
+
+/* FULLSCREEN MODE */
+body.fullscreen-mode {
+    background: #000 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    overflow: hidden !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: block !important;
+}
+body.fullscreen-mode .slide-container {
+    display: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+}
+body.fullscreen-mode .slide-container.active-slide {
+    display: flex !important;
+}
+.fullscreen-nav {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    padding: 8px 20px;
+    gap: 16px;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+body.fullscreen-mode .fullscreen-nav { display: flex; }
+.fullscreen-nav:hover, body.fullscreen-mode:hover .fullscreen-nav { opacity: 1; }
+.fullscreen-nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+}
+.fullscreen-nav button:hover { background: rgba(255,255,255,0.15); }
+.fullscreen-nav .slide-counter { color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; min-width: 60px; text-align: center; }
+.fullscreen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.fullscreen-btn:hover { background: var(--secondary); }
+body.fullscreen-mode .fullscreen-btn { display: none; }
+
+/* 1. SETUP GENERALE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: #f1f5f9; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; font-family: 'Inter', sans-serif; color: #1e293b; }
+
+.slide-container {
+    width: 1280px;
+    height: 720px;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px 64px 80px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* 2. COLORI E BRANDING */
+:root {
+    --primary: #1B3A5C;
+    --secondary: #2B5F8A;
+    --accent: #3B82F6;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-soft: #f8fafc;
+    --border: #e2e8f0;
+}
+
+/* 3. TIPOGRAFIA E TITOLI */
+h1, h2, h3 { font-family: 'Inter', sans-serif; color: var(--primary); }
+.slide-title {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    border-left: 6px solid var(--accent);
+    padding-left: 20px;
+}
+
+p, li, td, th { font-size: 15px; color: var(--text-dark); line-height: 1.5; }
+
+/* 4. LOGO EDOS */
+.header-logo-container {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.header-logo-container svg { height: 40px; }
+
+/* Sfondo scuro per copertina */
+.dark-theme { background-color: var(--primary); color: white; }
+.dark-theme h1, .dark-theme p, .dark-theme .logo-text { color: white; }
+.dark-theme .logo-svg { fill: white; }
+.dark-theme .footer-nav { color: rgba(255,255,255,0.5); border-top-color: rgba(255,255,255,0.2); }
+
+.footer-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+    font-size: 11px;
+    color: var(--text-muted);
+    z-index: 10;
+}
+
+/* 5. COMPONENTI UI */
+.content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
+
+.module-card {
+    background: var(--bg-soft);
+    padding: 22px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+}
+.module-card i { font-size: 24px; color: var(--accent); margin-bottom: 2px; }
+.module-card h3 { font-size: 17px; font-weight: 700; color: var(--primary); }
+.module-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; width: 100%; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; }
+
+/* Laptop/Browser Mockup CSS */
+.laptop-mockup {
+    width: 340px;
+    height: 420px;
+    background: #1e293b;
+    border-radius: 12px;
+    border: 3px solid #334155;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+.browser-chrome {
+    height: 32px;
+    background: #334155;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.browser-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.browser-url {
+    flex: 1;
+    height: 18px;
+    background: #1e293b;
+    border-radius: 4px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 8px;
+    color: #64748b;
+}
+.browser-body {
+    flex: 1;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Table Style */
+.table-pro { width: 100%; border-collapse: collapse; border: 1px solid var(--border); }
+.table-pro th { background: var(--primary); color: white; padding: 11px 14px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+.table-pro td { padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.total-row { background: #f0f4f2; font-weight: 700; }
+.total-row td { color: var(--primary); font-size: 16px; padding: 14px 14px; }
+
+/* Phases Timeline */
+.phase-timeline { display: flex; gap: 0; width: 100%; position: relative; margin-top: 20px; }
+.phase-timeline::before { content: ''; position: absolute; top: 32px; left: 40px; right: 40px; height: 3px; background: var(--border); z-index: 0; }
+.phase-step { flex: 1; text-align: center; position: relative; z-index: 1; padding: 0 15px; }
+.phase-dot { width: 64px; height: 64px; border-radius: 50%; background: var(--primary); color: white; display: grid; place-items: center; font-size: 22px; font-weight: 800; margin: 0 auto 20px; border: 4px solid white; box-shadow: 0 4px 12px rgba(27, 58, 92, 0.25); }
+.phase-step h3 { font-size: 16px; margin-bottom: 8px; }
+.phase-step p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+.phase-step.active .phase-dot { background: var(--accent); box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4); }
+
+/* Team Profiles */
+.team-grid { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 0; text-align: center; max-width: 800px; margin: 0 auto; position: relative; }
+.team-grid .divider-v { background: var(--border); }
+.team-grid .divider-h { grid-column: 1 / -1; height: 1px; background: var(--border); }
+.profile-card { padding: 28px 32px; }
+.profile-initial { width: 70px; height: 70px; background: #dbeafe; border: 2px solid var(--accent); border-radius: 50%; display: grid; place-items: center; font-size: 28px; font-weight: 700; color: var(--primary); margin: 0 auto 12px; }
+
+/* Cost Cards */
+.cost-card { padding: 22px; border-radius: 10px; background: #fff; border: 1px solid var(--border); }
+
+/* Timeline List */
+.timeline-list { list-style: none; padding: 0; margin-top: 20px; }
+.timeline-list li { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 25px; }
+.timeline-list .step-number { width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+.timeline-list h4 { font-size: 18px; color: var(--primary); margin-bottom: 4px; }
+.timeline-list p { font-size: 14px; color: var(--text-muted); margin: 0; }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Copertina (DARK THEME) -->
+<div class="slide-container dark-theme" id="slide1">
+    <div class="header-logo-container" style="right: auto; left: 80px;">
+        <img src="EDOS - Logo/2.png" alt="Edos" style="height: 40px;">
+    </div>
+    <div class="content-area" style="flex-direction: row; align-items: center; justify-content: space-between; padding-top: 30px;">
+        <div style="max-width: 600px;">
+            <p style="text-transform: uppercase; letter-spacing: 3px; color: rgba(255,255,255,0.4); font-weight: 500; font-size: 13px; margin-bottom: 20px;">Proposta Commerciale</p>
+            <h1 style="font-size: 54px; line-height: 1.1; margin-bottom: 20px;">Investigatore<br><span style="color:var(--accent)">Immobiliare</span></h1>
+            <p style="font-size: 20px; font-weight: 300; margin-top: 25px; color: rgba(255,255,255,0.8);">Piattaforma AI per sopralluoghi e relazioni immobiliari</p>
+            <div style="margin-top: 48px; display: flex; gap: 20px; align-items: center; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.4);">
+                <span>Aprile 2026</span>
+                <span style="opacity: 0.4;">·</span>
+                <span>Impregest srl</span>
+            </div>
+        </div>
+
+        <!-- Laptop/Browser Mockup CSS -->
+        <div class="laptop-mockup">
+            <div class="browser-chrome">
+                <div class="browser-dot" style="background: #ef4444;"></div>
+                <div class="browser-dot" style="background: #f59e0b;"></div>
+                <div class="browser-dot" style="background: #22c55e;"></div>
+                <div class="browser-url">investigatore-immobiliare.app</div>
+            </div>
+            <div class="browser-body">
+                <!-- App Header -->
+                <div style="background: var(--primary); padding: 12px 16px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <p style="font-size: 9px; opacity: 0.7; margin-bottom: 2px;">Dashboard</p>
+                        <p style="font-size: 16px; font-weight: 800; margin: 0; color: white;">3 Pratiche Attive</p>
+                    </div>
+                    <div style="width: 28px; height: 28px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-plus" style="font-size: 12px; color: white;"></i>
+                    </div>
+                </div>
+                <!-- App Body -->
+                <div style="padding: 12px; background: #f8fafc; flex: 1;">
+                    <p style="font-size: 9px; font-weight: 700; color: var(--primary); margin-bottom: 8px;">Ultima Pratica</p>
+                    <!-- Property Card -->
+                    <div style="background: #fff; border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; margin-bottom: 8px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <p style="font-size: 11px; font-weight: 700; margin: 0; color: var(--primary);">Via Roma 15, Milano</p>
+                            <span style="font-size: 8px; background: #dcfce7; color: #16a34a; padding: 2px 6px; border-radius: 4px; font-weight: 600;">Completato</span>
+                        </div>
+                        <p style="font-size: 8px; color: #94a3b8; margin: 0;">Trilocale · 85 mq · Piano 3</p>
+                    </div>
+                    <!-- Report Preview -->
+                    <div style="background: #fff; border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; margin-bottom: 8px;">
+                        <p style="font-size: 9px; font-weight: 700; color: var(--primary); margin-bottom: 6px;">Relazione AI</p>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                            <i class="fa-solid fa-check-circle" style="font-size: 8px; color: #22c55e;"></i>
+                            <span style="font-size: 8px; color: #334155;">Mappatura Territoriale</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                            <i class="fa-solid fa-check-circle" style="font-size: 8px; color: #22c55e;"></i>
+                            <span style="font-size: 8px; color: #334155;">Preventivo Ristrutturazione</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+                            <i class="fa-solid fa-check-circle" style="font-size: 8px; color: #22c55e;"></i>
+                            <span style="font-size: 8px; color: #334155;">Raccomandazione Prezzo</span>
+                        </div>
+                        <div style="background: var(--accent); color: white; text-align: center; padding: 5px; border-radius: 5px; font-size: 8px; font-weight: 700;">Approva e Invia</div>
+                    </div>
+                    <!-- Second card -->
+                    <div style="background: #fff; border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border: 1px solid #f0f0f0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <p style="font-size: 11px; font-weight: 700; margin: 0; color: var(--primary);">Viale Monza 42</p>
+                            <span style="font-size: 8px; background: #fef3c7; color: #d97706; padding: 2px 6px; border-radius: 4px; font-weight: 600;">In lavorazione</span>
+                        </div>
+                        <p style="font-size: 8px; color: #94a3b8; margin: 0;">Bilocale · 55 mq · Piano 1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>INVESTIGATORE IMMOBILIARE — PROPOSTA COMMERCIALE</div><div>01 / 15</div></div>
+</div>
+
+<!-- Slide 2: Partiamo dai tuoi numeri -->
+<div class="slide-container" id="slide2">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Partiamo dai tuoi numeri</h2>
+    <div class="content-area" style="gap: 20px;">
+        <p style="font-size: 16px; color: var(--text-muted); max-width: 700px;">Prima di parlare di tecnologia, capiamo insieme da dove partiamo.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            <!-- Input -->
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+                <div style="background: var(--bg-soft); border-radius: 12px; padding: 28px 24px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+                        <div style="width: 38px; height: 38px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa-solid fa-euro-sign" style="color: white; font-size: 16px;"></i>
+                        </div>
+                        <label style="font-size: 16px; font-weight: 700; color: var(--primary); margin: 0;">Quanto fai pagare una relazione?</label>
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 8px; padding-left: 50px;">
+                        <input type="number" id="priceInput" value="" placeholder="—" min="0" step="50" style="font-size: 42px; font-weight: 800; color: var(--primary); border: none; border-bottom: 3px solid var(--accent); background: transparent; width: 200px; outline: none; font-family: 'Inter', sans-serif;" oninput="calcBase()">
+                        <span style="font-size: 18px; font-weight: 600; color: var(--text-muted);">EUR</span>
+                    </div>
+                </div>
+                <div style="background: var(--bg-soft); border-radius: 12px; padding: 28px 24px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+                        <div style="width: 38px; height: 38px; background: var(--secondary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <i class="fa-solid fa-file-lines" style="color: white; font-size: 16px;"></i>
+                        </div>
+                        <label style="font-size: 16px; font-weight: 700; color: var(--primary); margin: 0;">Quante relazioni fai oggi al mese?</label>
+                    </div>
+                    <div style="display: flex; align-items: baseline; gap: 8px; padding-left: 50px;">
+                        <input type="number" id="currentInput" value="" placeholder="—" min="0" step="1" style="font-size: 42px; font-weight: 800; color: var(--primary); border: none; border-bottom: 3px solid var(--accent); background: transparent; width: 120px; outline: none; font-family: 'Inter', sans-serif;" oninput="calcBase()">
+                        <span style="font-size: 18px; font-weight: 600; color: var(--text-muted);">al mese</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Risultato -->
+            <div style="display: flex; flex-direction: column; gap: 16px; justify-content: center; height: 100%;">
+                <div id="baseResult" style="transition: opacity 0.3s; opacity: 0.3;">
+                    <div style="background: var(--primary); border-radius: 12px; padding: 28px 24px; text-align: center; margin-bottom: 16px;">
+                        <p style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Il tuo fatturato oggi</p>
+                        <p id="baseMonthly" style="font-size: 36px; font-weight: 800; color: white; margin: 0;">— EUR / mese</p>
+                    </div>
+                    <div style="background: var(--bg-soft); border-radius: 12px; padding: 22px 24px; text-align: center; margin-bottom: 16px;">
+                        <p style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Proiezione annuale</p>
+                        <p id="baseYearly" style="font-size: 28px; font-weight: 800; color: var(--primary); margin: 0;">— EUR / anno</p>
+                    </div>
+                    <div style="background: #fef2f2; border-radius: 12px; padding: 18px 24px; display: flex; align-items: center; gap: 12px;">
+                        <i class="fa-solid fa-clock" style="font-size: 18px; color: #ef4444;"></i>
+                        <div>
+                            <p style="font-size: 13px; color: #991b1b; margin: 0;"><strong>Tempo investito:</strong> <span id="baseHours">—</span> ore al mese</p>
+                            <p style="font-size: 12px; color: #b91c1c; margin: 2px 0 0 0;">di cui il 60% in calcoli manuali ripetitivi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>I TUOI NUMERI</div><div></div></div>
+</div>
+
+<script>
+function calcBase() {
+    const price = parseInt(document.getElementById('priceInput').value) || 0;
+    const current = parseInt(document.getElementById('currentInput').value) || 0;
+    const monthly = price * current;
+    const yearly = monthly * 12;
+    const hours = current * 4;
+    const box = document.getElementById('baseResult');
+
+    if (price > 0 && current > 0) {
+        document.getElementById('baseMonthly').textContent = monthly.toLocaleString('it-IT') + ' EUR / mese';
+        document.getElementById('baseYearly').textContent = yearly.toLocaleString('it-IT') + ' EUR / anno';
+        document.getElementById('baseHours').textContent = hours;
+        box.style.opacity = '1';
+    } else {
+        box.style.opacity = '0.3';
+    }
+    // Populate recap on economics slide
+    const el = (id) => document.getElementById(id);
+    if (el('recapPrice')) el('recapPrice').textContent = price > 0 ? price.toLocaleString('it-IT') : '—';
+    if (el('recapCurrent')) el('recapCurrent').textContent = current > 0 ? current : '—';
+    if (el('recapHours')) el('recapHours').textContent = current > 0 ? (current * 4) : '—';
+    calcROI();
+}
+
+function calcROI() {
+    const price = parseInt(document.getElementById('priceInput').value) || 0;
+    const current = parseInt(document.getElementById('currentInput').value) || 0;
+    const futureEl = document.getElementById('futureInput');
+    const future = futureEl ? (parseInt(futureEl.value) || 0) : 0;
+    const investment = 9500;
+
+    if (future === 0 || price === 0) return;
+
+    const additionalRevenue = (future - current) * price;
+    const paybackMonths = additionalRevenue > 0 ? (investment / additionalRevenue) : 999;
+    const hoursSaved = (future * 3.5);
+    const yearNow = current * price * 12;
+    const yearNew = future * price * 12;
+
+    const el = (id) => document.getElementById(id);
+    if (el('revenueResult')) el('revenueResult').textContent = '+' + additionalRevenue.toLocaleString('it-IT') + ' EUR';
+    if (el('paybackResult')) el('paybackResult').textContent = paybackMonths < 99 ? paybackMonths.toFixed(1).replace('.', ',') + ' mesi' : '\u2014';
+    if (el('hoursResult')) el('hoursResult').textContent = hoursSaved.toFixed(1).replace('.', ',') + ' h';
+    if (el('yearNowResult')) el('yearNowResult').textContent = yearNow.toLocaleString('it-IT') + ' EUR';
+    if (el('yearNewResult')) el('yearNewResult').textContent = yearNew.toLocaleString('it-IT') + ' EUR';
+
+    // Update investment slide reminder
+    if (el('roiPayback2')) el('roiPayback2').textContent = paybackMonths < 99 ? paybackMonths.toFixed(1).replace('.', ',') + ' mesi' : '\u2014';
+    if (el('roiRevenue2')) el('roiRevenue2').textContent = '+' + additionalRevenue.toLocaleString('it-IT') + ' EUR/mese';
+    if (el('roiYear2')) el('roiYear2').textContent = '+' + ((yearNew - yearNow)).toLocaleString('it-IT') + ' EUR/anno';
+}
+</script>
+
+<!-- Slide 3: L'Obiettivo -->
+<div class="slide-container" id="slide3">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">L'Obiettivo</h2>
+    <div class="content-area" style="text-align: center; align-items: center;">
+        <h2 style="font-size: 34px; max-width: 1000px; line-height: 1.35; font-weight: 600;">Michele ha una visione: un servizio di investigazione immobiliare che <span style="color:var(--secondary)">funziona anche senza di lui in cantiere</span>. Il cliente fa il sopralluogo, l'AI genera la relazione, Michele valida e consegna. Da 4 ore di lavoro manuale a 30 minuti di revisione. Noi costruiamo la piattaforma che rende tutto questo possibile.</h2>
+    </div>
+    <div class="footer-nav"><div>VISIONE DEL PROGETTO</div><div>02 / 15</div></div>
+</div>
+
+<!-- Slide: La tua giornata -->
+<div class="slide-container">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">La tua giornata: oggi vs con la piattaforma</h2>
+    <div class="content-area" style="gap: 24px;">
+        <div style="display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: start;">
+            <!-- OGGI -->
+            <div>
+                <div style="background: #fef2f2; border-radius: 12px; padding: 28px 24px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <div style="width: 36px; height: 36px; background: #ef4444; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-calendar-xmark" style="color: white; font-size: 16px;"></i>
+                        </div>
+                        <p style="font-size: 18px; font-weight: 800; color: #991b1b; margin: 0;">Oggi</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #b91c1c; font-weight: 700; min-width: 50px;">08:00</span>
+                            <p style="font-size: 13px; color: #7f1d1d; margin: 0;">Parti per il sopralluogo. Il cliente ti aspetta.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #b91c1c; font-weight: 700; min-width: 50px;">10:00</span>
+                            <p style="font-size: 13px; color: #7f1d1d; margin: 0;">Torni in ufficio. Inizi la relazione.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #b91c1c; font-weight: 700; min-width: 50px;">10:30</span>
+                            <p style="font-size: 13px; color: #7f1d1d; margin: 0;">Ricostruisci planimetria, cerchi prezziari, calcoli manuali...</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #b91c1c; font-weight: 700; min-width: 50px;">13:00</span>
+                            <p style="font-size: 13px; color: #7f1d1d; margin: 0;">Ancora sul preventivo. 2,5 ore e non hai finito.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #b91c1c; font-weight: 700; min-width: 50px;">14:00</span>
+                            <p style="font-size: 13px; color: #7f1d1d; margin: 0;">Relazione pronta. I cantieri ti hanno aspettato tutto il giorno.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid #fecaca;">
+                        <p style="font-size: 12px; color: #b91c1c; font-weight: 700; margin: 0;">Risultato: 1 relazione, 1 giornata persa, cantieri fermi.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Freccia centrale -->
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                <i class="fa-solid fa-arrow-right" style="font-size: 24px; color: var(--accent);"></i>
+            </div>
+            <!-- CON PIATTAFORMA -->
+            <div>
+                <div style="background: #f0fdf4; border-radius: 12px; padding: 28px 24px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <div style="width: 36px; height: 36px; background: #22c55e; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-calendar-check" style="color: white; font-size: 16px;"></i>
+                        </div>
+                        <p style="font-size: 18px; font-weight: 800; color: #166534; margin: 0;">Con la piattaforma</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #16a34a; font-weight: 700; min-width: 50px;">08:00</span>
+                            <p style="font-size: 13px; color: #14532d; margin: 0;">Sei in cantiere. Il cliente fa il sopralluogo da solo con il telefono.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #16a34a; font-weight: 700; min-width: 50px;">10:00</span>
+                            <p style="font-size: 13px; color: #14532d; margin: 0;">Il cliente carica foto e dati. La piattaforma ti notifica.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #16a34a; font-weight: 700; min-width: 50px;">10:05</span>
+                            <p style="font-size: 13px; color: #14532d; margin: 0;">L'AI genera la relazione completa con preventivo.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #16a34a; font-weight: 700; min-width: 50px;">13:00</span>
+                            <p style="font-size: 13px; color: #14532d; margin: 0;">Pausa pranzo. Apri la dashboard, rivedi la relazione.</p>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="font-size: 11px; color: #16a34a; font-weight: 700; min-width: 50px;">13:30</span>
+                            <p style="font-size: 13px; color: #14532d; margin: 0;">Approvi e invii. Torni ai cantieri. Tutto il giorno produttivo.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid #bbf7d0;">
+                        <p style="font-size: 12px; color: #16a34a; font-weight: 700; margin: 0;">Risultato: 1 relazione in 30 min, giornata libera per il tuo lavoro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>IL CAMBIO DI PARADIGMA</div><div></div></div>
+</div>
+
+<!-- Slide: Come lo vive il tuo cliente -->
+<div class="slide-container">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Come lo vive il tuo cliente</h2>
+    <div class="content-area" style="gap: 24px;">
+        <p style="font-size: 16px; color: var(--text-muted); max-width: 800px;">Il modello NoiCompriamoAuto.it applicato all'immobiliare: il cliente fa tutto dal telefono, tu ricevi la pratica pronta.</p>
+        <div style="display: flex; align-items: flex-start; gap: 0; justify-content: center;">
+            <!-- Step 1 -->
+            <div style="text-align: center; width: 180px;">
+                <div style="width: 56px; height: 56px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-tv" style="color: white; font-size: 22px;"></i>
+                </div>
+                <p style="font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">Vede lo spot TV</p>
+                <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Scopre il servizio Investigatore Immobiliare</p>
+            </div>
+            <div style="flex-shrink: 0; width: 40px; display: flex; align-items: center; justify-content: center; padding-top: 20px;">
+                <i class="fa-solid fa-chevron-right" style="color: var(--accent); font-size: 14px;"></i>
+            </div>
+            <!-- Step 2 -->
+            <div style="text-align: center; width: 180px;">
+                <div style="width: 56px; height: 56px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-mobile-screen" style="color: white; font-size: 22px;"></i>
+                </div>
+                <p style="font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">Apre la piattaforma</p>
+                <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Si registra e inserisce i dati dell'immobile</p>
+            </div>
+            <div style="flex-shrink: 0; width: 40px; display: flex; align-items: center; justify-content: center; padding-top: 20px;">
+                <i class="fa-solid fa-chevron-right" style="color: var(--accent); font-size: 14px;"></i>
+            </div>
+            <!-- Step 3 -->
+            <div style="text-align: center; width: 180px;">
+                <div style="width: 56px; height: 56px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-camera" style="color: white; font-size: 22px;"></i>
+                </div>
+                <p style="font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">Fa il sopralluogo</p>
+                <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Segue le indicazioni, scatta foto, carica i dati</p>
+            </div>
+            <div style="flex-shrink: 0; width: 40px; display: flex; align-items: center; justify-content: center; padding-top: 20px;">
+                <i class="fa-solid fa-chevron-right" style="color: var(--accent); font-size: 14px;"></i>
+            </div>
+            <!-- Step 4 -->
+            <div style="text-align: center; width: 180px;">
+                <div style="width: 56px; height: 56px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-brain" style="color: white; font-size: 22px;"></i>
+                </div>
+                <p style="font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">L'AI lavora</p>
+                <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Genera la relazione completa con preventivo</p>
+            </div>
+            <div style="flex-shrink: 0; width: 40px; display: flex; align-items: center; justify-content: center; padding-top: 20px;">
+                <i class="fa-solid fa-chevron-right" style="color: var(--accent); font-size: 14px;"></i>
+            </div>
+            <!-- Step 5 -->
+            <div style="text-align: center; width: 180px;">
+                <div style="width: 56px; height: 56px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-file-circle-check" style="color: white; font-size: 22px;"></i>
+                </div>
+                <p style="font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px;">Riceve la relazione</p>
+                <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Validata da Michele, pronta per decidere</p>
+            </div>
+        </div>
+        <div style="background: #dbeafe; padding: 16px 24px; border-radius: 10px; display: flex; align-items: center; gap: 14px;">
+            <i class="fa-solid fa-bolt" style="font-size: 20px; color: var(--primary);"></i>
+            <p style="margin: 0; font-size: 14px; color: var(--primary);"><strong>Per il cliente:</strong> costa meno, arriva prima, puo valutare piu immobili. <strong>Per te:</strong> non devi esserci fisicamente, lavori dalla dashboard.</p>
+        </div>
+    </div>
+    <div class="footer-nav"><div>L'ESPERIENZA DEL CLIENTE</div><div></div></div>
+</div>
+
+<!-- Slide: Modulo 1 - Portale Clienti -->
+<div class="slide-container">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Modulo 1: Portale Clienti</h2>
+    <div class="content-area">
+        <div class="grid-2">
+            <div class="module-card"><i class="fa-solid fa-file-lines"></i><h3>Form Multi-step Guidato</h3><p>Raccolta dati strutturata: indirizzo, tipologia, metratura, anno di costruzione, stato conservazione. Esperienza ispirata a NoiCompriamoAuto.it.</p></div>
+            <div class="module-card"><i class="fa-solid fa-camera"></i><h3>Upload Foto e Documenti</h3><p>Fino a 30 foto organizzate per ambiente (cucina, bagno, esterno). Upload planimetria catastale, visura e APE.</p></div>
+            <div class="module-card"><i class="fa-solid fa-gauge-high"></i><h3>Dashboard Cliente</h3><p>Stato della pratica in tempo reale. Possibilita di integrare dati in momenti diversi, anche durante il sopralluogo.</p></div>
+            <div class="module-card"><i class="fa-solid fa-mobile-screen"></i><h3>Design Mobile-first</h3><p>Interfaccia responsive ottimizzata per smartphone. Pensata per l'uso sul campo durante il sopralluogo.</p></div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>MODULO 01: INTAKE CLIENTI</div><div>03 / 15</div></div>
+</div>
+
+<!-- Slide 4: Modulo 2 - Back-office Operativo -->
+<div class="slide-container" id="slide4">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Modulo 2: Back-office Operativo</h2>
+    <div class="content-area">
+        <div class="grid-3">
+            <div class="module-card"><i class="fa-solid fa-table-columns"></i><h3>Dashboard Pratiche</h3><p>Lista pratiche con stati (nuovo, in lavorazione, completato, consegnato). Filtri per stato, data, zona geografica.</p></div>
+            <div class="module-card"><i class="fa-solid fa-pen-to-square"></i><h3>Editor Relazione AI</h3><p>Modifica, annota e approva la relazione generata dall'AI. Pieno controllo prima della consegna al cliente.</p></div>
+            <div class="module-card"><i class="fa-solid fa-file-export"></i><h3>Generazione PDF e Invio</h3><p>PDF con branding Investigatore Immobiliare. Invio via email o link. Storico modifiche e versioni.</p></div>
+        </div>
+        <div style="margin-top: 16px; background: #dbeafe; padding: 14px 22px; border-radius: 10px; display: flex; align-items: center; gap: 14px;">
+            <i class="fa-solid fa-images" style="font-size: 18px; color: var(--primary); flex-shrink: 0;"></i>
+            <div>
+                <p style="font-weight: 700; color: var(--primary); font-size: 14px; margin: 0;">Include: Galleria Foto per Ambiente</p>
+                <p style="font-size: 12px; margin-top: 3px; color: var(--text-muted);">Visualizzazione foto organizzata per ambiente con zoom, dettaglio pratica completo con tutti i dati e documenti caricati.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>MODULO 02: GESTIONE OPERATIVA</div><div>04 / 15</div></div>
+</div>
+
+<!-- Slide 5: Modulo 3 - AI Generazione Relazione -->
+<div class="slide-container" id="slide5">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Modulo 3: AI Generazione Relazione</h2>
+    <div class="content-area">
+        <div style="display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: center;">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="module-card" style="background: var(--primary); color: white;">
+                    <i class="fa-solid fa-database" style="color: var(--accent);"></i>
+                    <h3 style="color: white;">RAG sul Prezziario</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Il prezziario viene indicizzato con pgvector in Supabase. Per ogni relazione, il sistema recupera voci e costi unitari pertinenti per tipologia e zona.</p>
+                </div>
+                <div class="module-card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>Prompt Engineering Calibrato</h3>
+                    <p>Costruito sulle 5-10 relazioni di esempio del cliente. L'output rispetta struttura, tono e formato del titolare.</p>
+                </div>
+                <div class="module-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Validazione Umana Obbligatoria</h3>
+                    <p>Nessuna relazione esce senza approvazione. Possibilita di rigenerare singole sezioni con istruzioni specifiche.</p>
+                </div>
+            </div>
+            <!-- Browser Mockup -->
+            <div class="laptop-mockup" style="width: 340px; height: 380px;">
+                <div class="browser-chrome">
+                    <div class="browser-dot" style="background: #ef4444;"></div>
+                    <div class="browser-dot" style="background: #f59e0b;"></div>
+                    <div class="browser-dot" style="background: #22c55e;"></div>
+                    <div class="browser-url">app/pratica/0047</div>
+                </div>
+                <div class="browser-body">
+                    <div style="background: var(--primary); padding: 10px 14px; color: white;">
+                        <p style="font-size: 10px; font-weight: 700; margin: 0; color: white;">Pratica #0047 — Via Roma 15, Milano</p>
+                    </div>
+                    <div style="padding: 14px; background: #f8fafc; flex: 1;">
+                        <p style="font-size: 9px; font-weight: 700; color: var(--primary); margin-bottom: 10px;">Relazione Generata</p>
+                        <div style="background: #fff; border-radius: 8px; padding: 10px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); margin-bottom: 8px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fa-solid fa-check-circle" style="font-size: 10px; color: #22c55e;"></i>
+                                <span style="font-size: 10px; font-weight: 600; color: #334155;">Mappatura Territoriale</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fa-solid fa-check-circle" style="font-size: 10px; color: #22c55e;"></i>
+                                <span style="font-size: 10px; font-weight: 600; color: #334155;">Preventivo Ristrutturazione</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                                <i class="fa-solid fa-check-circle" style="font-size: 10px; color: #22c55e;"></i>
+                                <span style="font-size: 10px; font-weight: 600; color: #334155;">Raccomandazione Prezzo</span>
+                            </div>
+                            <div style="height: 1px; background: #e2e8f0; margin-bottom: 10px;"></div>
+                            <div style="display: flex; gap: 6px;">
+                                <div style="background: var(--accent); color: white; text-align: center; padding: 6px 10px; border-radius: 6px; font-size: 9px; font-weight: 700; flex: 1;">Approva e Invia</div>
+                                <div style="background: #f1f5f9; color: var(--primary); text-align: center; padding: 6px 10px; border-radius: 6px; font-size: 9px; font-weight: 600; flex: 1;">Rigenera</div>
+                            </div>
+                        </div>
+                        <div style="background: #fff; border-radius: 8px; padding: 8px 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                            <p style="font-size: 8px; color: #94a3b8; margin: 0;">Generata il 05/04/2026 · v2 · 12 pagine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>MODULO 03: INTELLIGENZA ARTIFICIALE</div><div>05 / 15</div></div>
+</div>
+
+<!-- Slide 6: Architettura del Sistema -->
+<div class="slide-container" id="slide6">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Architettura del Sistema</h2>
+    <div class="content-area" style="gap: 20px;">
+        <!-- Schema a blocchi con connessioni -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0;">
+            <!-- Web App -->
+            <div style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; text-align: center; width: 220px; flex-shrink: 0;">
+                <div style="width: 44px; height: 44px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-globe" style="font-size: 20px; color: white;"></i>
+                </div>
+                <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px;">Web App</p>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0;">Next.js 16<br>React 19 + TypeScript<br>Tailwind CSS 4</p>
+            </div>
+            <!-- Freccia -->
+            <div style="width: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <div style="width: 100%; height: 1px; background: var(--border); position: relative;">
+                    <div style="position: absolute; right: -3px; top: -3px; width: 7px; height: 7px; border-right: 1.5px solid var(--accent); border-top: 1.5px solid var(--accent); transform: rotate(45deg);"></div>
+                </div>
+            </div>
+            <!-- Backend -->
+            <div style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; text-align: center; width: 220px; flex-shrink: 0;">
+                <div style="width: 44px; height: 44px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-server" style="font-size: 20px; color: white;"></i>
+                </div>
+                <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px;">Backend API</p>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0;">Next.js API Routes<br>Supabase SDK<br>PostgreSQL</p>
+            </div>
+            <!-- Freccia -->
+            <div style="width: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <div style="width: 100%; height: 1px; background: var(--border); position: relative;">
+                    <div style="position: absolute; right: -3px; top: -3px; width: 7px; height: 7px; border-right: 1.5px solid var(--accent); border-top: 1.5px solid var(--accent); transform: rotate(45deg);"></div>
+                </div>
+            </div>
+            <!-- AI Engine -->
+            <div style="background: var(--primary); border: 1px solid var(--primary); border-radius: 12px; padding: 22px 20px; text-align: center; width: 220px; flex-shrink: 0;">
+                <div style="width: 44px; height: 44px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-brain" style="font-size: 20px; color: white;"></i>
+                </div>
+                <p style="font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px;">AI Engine</p>
+                <p style="font-size: 13px; color: white; line-height: 1.5; margin: 0;">Vercel AI SDK<br>Claude API<br>RAG pgvector</p>
+            </div>
+            <!-- Freccia -->
+            <div style="width: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <div style="width: 100%; height: 1px; background: var(--border); position: relative;">
+                    <div style="position: absolute; right: -3px; top: -3px; width: 7px; height: 7px; border-right: 1.5px solid var(--accent); border-top: 1.5px solid var(--accent); transform: rotate(45deg);"></div>
+                </div>
+            </div>
+            <!-- Cloud -->
+            <div style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px; padding: 22px 20px; text-align: center; width: 220px; flex-shrink: 0;">
+                <div style="width: 44px; height: 44px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                    <i class="fa-solid fa-cloud" style="font-size: 20px; color: white;"></i>
+                </div>
+                <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px;">Cloud</p>
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin: 0;">Supabase<br>Vercel<br>SMTP Cliente</p>
+            </div>
+        </div>
+        <!-- Stack bar -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
+                <i class="fa-solid fa-code" style="font-size: 16px; color: var(--accent);"></i>
+                <div>
+                    <p style="font-size: 10px; font-weight: 600; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;">Stack</p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin: 0;">TypeScript, Next.js 16, React 19</p>
+                </div>
+            </div>
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
+                <i class="fa-solid fa-database" style="font-size: 16px; color: var(--accent);"></i>
+                <div>
+                    <p style="font-size: 10px; font-weight: 600; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;">Storage</p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin: 0;">PostgreSQL Cloud (Supabase)</p>
+                </div>
+            </div>
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
+                <i class="fa-solid fa-envelope" style="font-size: 16px; color: var(--accent);"></i>
+                <div>
+                    <p style="font-size: 10px; font-weight: 600; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;">Email</p>
+                    <p style="font-size: 13px; color: var(--text-muted); margin: 0;">SMTP Cliente (zero costi)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>STACK TECNOLOGICO</div><div>06 / 15</div></div>
+</div>
+
+<!-- Slide: Economics - Con la piattaforma -->
+<div class="slide-container">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">E se potessi farne di piu?</h2>
+    <div class="content-area" style="gap: 20px;">
+        <!-- Riepilogo valori slide 2 -->
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-euro-sign" style="font-size: 14px; color: var(--accent);"></i>
+                <p style="font-size: 13px; color: var(--primary); margin: 0;"><strong>Prezzo relazione:</strong> <span id="recapPrice">—</span> EUR</p>
+            </div>
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-file-lines" style="font-size: 14px; color: var(--accent);"></i>
+                <p style="font-size: 13px; color: var(--primary); margin: 0;"><strong>Oggi:</strong> <span id="recapCurrent">—</span> relazioni/mese</p>
+            </div>
+            <div style="background: var(--bg-soft); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; gap: 10px;">
+                <i class="fa-solid fa-clock" style="font-size: 14px; color: #ef4444;"></i>
+                <p style="font-size: 13px; color: var(--primary); margin: 0;"><strong>Tempo:</strong> <span id="recapHours">—</span> ore/mese (4h per pratica)</p>
+            </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            <!-- Input + contesto -->
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+                <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6;">Con la piattaforma non devi essere presente al sopralluogo e la relazione si genera in automatico. Il tuo unico lavoro e la validazione finale: circa 30 minuti.</p>
+                <div>
+                    <label style="font-size: 18px; font-weight: 600; color: var(--primary); display: block; margin-bottom: 14px;">Quante relazioni potresti fare al mese?</label>
+                    <div style="display: flex; align-items: baseline; gap: 10px;">
+                        <input type="number" id="futureInput" value="" placeholder="—" min="0" step="1" style="font-size: 48px; font-weight: 800; color: var(--accent); border: none; border-bottom: 3px solid var(--accent); background: transparent; width: 140px; outline: none; font-family: 'Inter', sans-serif;" oninput="calcROI()">
+                        <span style="font-size: 22px; font-weight: 600; color: var(--text-muted);">al mese</span>
+                    </div>
+                </div>
+                <div style="background: #dbeafe; padding: 14px 18px; border-radius: 10px;">
+                    <p style="font-size: 13px; color: var(--primary); margin: 0;"><strong>Esempio:</strong> con 30 minuti per pratica, anche solo 2 pratiche al giorno = 40 al mese. Senza mai andare a un sopralluogo.</p>
+                </div>
+            </div>
+            <!-- Risultati -->
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="background: var(--primary); border-radius: 12px; padding: 22px 24px; text-align: center;">
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Fatturato mensile aggiuntivo</p>
+                    <p id="revenueResult" style="font-size: 36px; font-weight: 800; color: white; margin: 0;">—</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div style="background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; text-align: center;">
+                        <p style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Rientro investimento</p>
+                        <p id="paybackResult" style="font-size: 28px; font-weight: 800; color: var(--primary); margin: 0;">—</p>
+                    </div>
+                    <div style="background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; text-align: center;">
+                        <p style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Ore risparmiate / mese</p>
+                        <p id="hoursResult" style="font-size: 28px; font-weight: 800; color: var(--primary); margin: 0;">—</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div style="background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; text-align: center;">
+                        <p style="font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Fatturato annuo OGGI</p>
+                        <p id="yearNowResult" style="font-size: 22px; font-weight: 800; color: var(--text-muted); margin: 0;">—</p>
+                    </div>
+                    <div style="background: #dcfce7; border-radius: 10px; padding: 18px 20px; text-align: center;">
+                        <p style="font-size: 11px; color: #16a34a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Fatturato annuo CON PIATTAFORMA</p>
+                        <p id="yearNewResult" style="font-size: 22px; font-weight: 800; color: #16a34a; margin: 0;">—</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>I NUMERI CON LA PIATTAFORMA</div><div></div></div>
+</div>
+
+<!-- Slide 7: Investimento -->
+<div class="slide-container" id="slide7">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Investimento</h2>
+    <div class="content-area" style="gap: 14px;">
+        <!-- 3 Step cards -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <!-- Modulo 1 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <div style="width: 38px; height: 38px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-file-lines" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">Portale Clienti</p>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">Form multi-step, upload foto e documenti, dashboard cliente, design mobile-first</p>
+                <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);">5 giorni</span>
+                    <span style="font-size: 16px; font-weight: 700; color: var(--primary);">2.500 EUR</span>
+                </div>
+            </div>
+            <!-- Modulo 2 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <div style="width: 38px; height: 38px; background: var(--secondary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-table-columns" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">Back-office</p>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">Dashboard pratiche, editor relazione AI, generazione PDF, galleria foto per ambiente</p>
+                <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);">5 giorni</span>
+                    <span style="font-size: 16px; font-weight: 700; color: var(--primary);">2.800 EUR</span>
+                </div>
+            </div>
+            <!-- Modulo 3 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <div style="width: 38px; height: 38px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-brain" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">AI Relazione</p>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">RAG sul prezziario, prompt engineering calibrato, validazione umana obbligatoria</p>
+                <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 14px;">
+                    <span style="font-size: 14px; color: var(--text-muted);">6 giorni</span>
+                    <span style="font-size: 16px; font-weight: 700; color: var(--primary);">2.200 EUR</span>
+                </div>
+            </div>
+        </div>
+        <!-- UX + PM + Setup + Totale -->
+        <div style="display: flex; gap: 12px;">
+            <div style="flex: 1; background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px;">
+                <i class="fa-solid fa-pen-ruler" style="font-size: 16px; color: var(--accent);"></i>
+                <div style="flex: 1;">
+                    <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">UX/UI Design</p>
+                    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Wireframe, prototipi, interfaccia</p>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size: 12px; color: var(--text-muted);">3 gg</span>
+                    <span style="font-size: 15px; font-weight: 700; color: var(--primary); margin-left: 10px;">1.000 EUR</span>
+                </div>
+            </div>
+            <div style="flex: 1; background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px;">
+                <i class="fa-solid fa-list-check" style="font-size: 16px; color: var(--accent);"></i>
+                <div style="flex: 1;">
+                    <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">Project Management</p>
+                    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Coordinamento, checkpoint</p>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size: 15px; font-weight: 700; color: var(--accent);">Incluso</span>
+                </div>
+            </div>
+            <div style="flex: 1; background: var(--bg-soft); border-radius: 10px; padding: 18px 20px; display: flex; align-items: center; gap: 14px;">
+                <i class="fa-solid fa-server" style="font-size: 16px; color: var(--accent);"></i>
+                <div style="flex: 1;">
+                    <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">Setup Infrastruttura</p>
+                    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Deploy, config SMTP</p>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size: 12px; color: var(--text-muted);">1 gg</span>
+                    <span style="font-size: 15px; font-weight: 700; color: var(--primary); margin-left: 10px;">1.000 EUR</span>
+                </div>
+            </div>
+            <div style="background: var(--primary); border-radius: 10px; padding: 20px 32px; display: flex; align-items: center; gap: 24px; flex-shrink: 0;">
+                <div>
+                    <p style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin: 0;">Totale</p>
+                    <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin: 0;">20 giorni</p>
+                </div>
+                <p style="font-size: 28px; font-weight: 800; color: white; margin: 0; letter-spacing: -0.5px;">9.500 EUR</p>
+            </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-muted);">Prezzo fisso, tutto incluso. Nessun costo aggiuntivo a sorpresa. IVA esclusa.</p>
+        <!-- ROI reminder box - populated from simulator -->
+        <div id="roiReminder" style="background: #dcfce7; border-radius: 10px; padding: 16px 24px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fa-solid fa-calculator" style="font-size: 18px; color: #16a34a;"></i>
+                <div>
+                    <p style="font-size: 13px; font-weight: 700; color: #16a34a; margin: 0;">Con i tuoi numeri</p>
+                    <p id="roiReminderText" style="font-size: 12px; color: #15803d; margin: 0;">L'investimento si ripaga in <strong id="roiPayback2">3,3 mesi</strong>. Fatturato aggiuntivo: <strong id="roiRevenue2">+4.500 EUR/mese</strong>.</p>
+                </div>
+            </div>
+            <p id="roiYear2" style="font-size: 18px; font-weight: 800; color: #16a34a; margin: 0; white-space: nowrap;">+54.000 EUR/anno</p>
+        </div>
+    </div>
+    <div class="footer-nav"><div>QUOTAZIONE COMMERCIALE</div><div>07 / 15</div></div>
+</div>
+
+<!-- Slide 8: Costi Operativi Ricorrenti -->
+<div class="slide-container" id="slide8">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Costi Operativi Ricorrenti</h2>
+    <div class="content-area" style="gap: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <!-- Costi Fissi -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                    <div style="width: 38px; height: 38px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-server" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">Costi Fissi Mensili</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border);">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-cloud" style="font-size: 14px; color: var(--accent); width: 20px; text-align: center;"></i>
+                            <span style="font-size: 14px;">Hosting + database (Supabase)</span>
+                        </div>
+                        <strong style="font-size: 14px; color: var(--primary);">~25 EUR/mese</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border);">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-hard-drive" style="font-size: 14px; color: var(--accent); width: 20px; text-align: center;"></i>
+                            <span style="font-size: 14px;">Storage foto e documenti</span>
+                        </div>
+                        <strong style="font-size: 14px; color: var(--primary);">~10 EUR/mese</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border);">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-wrench" style="font-size: 14px; color: var(--accent); width: 20px; text-align: center;"></i>
+                            <span style="font-size: 14px;">Manutenzione e supporto</span>
+                        </div>
+                        <strong style="font-size: 14px; color: var(--primary);">200 EUR/mese</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-envelope" style="font-size: 14px; color: var(--accent); width: 20px; text-align: center;"></i>
+                            <span style="font-size: 14px;">Email (SMTP cliente)</span>
+                        </div>
+                        <strong style="font-size: 14px; color: var(--accent);">Incluso</strong>
+                    </div>
+                </div>
+            </div>
+            <!-- Costi AI -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                    <div style="width: 38px; height: 38px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-bolt" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">Costi AI Variabili</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-brain" style="font-size: 14px; color: var(--accent); width: 20px; text-align: center;"></i>
+                            <span style="font-size: 14px;">Generazione relazione (LLM)</span>
+                        </div>
+                        <strong style="font-size: 14px; color: var(--primary);">0,30-0,80 EUR/relazione</strong>
+                    </div>
+                </div>
+                <div style="background: #dbeafe; padding: 14px 16px; border-radius: 8px; margin-top: 18px;">
+                    <p style="font-size: 12px; margin: 0; color: var(--primary);">I costi scalano con il volume di pratiche. Con 10 relazioni/mese il costo AI e inferiore a 10 EUR.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>COSTI OPERATIVI E INFRASTRUTTURA</div><div>08 / 15</div></div>
+</div>
+
+<!-- Slide 9: Supporto Post Go-Live -->
+<div class="slide-container" id="slide9">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Supporto Post Go-Live</h2>
+    <div class="content-area" style="gap: 16px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <!-- SLA -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                    <div style="width: 38px; height: 38px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-headset" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">SLA Garantiti</p>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Lun-Ven 9:00-18:00</p>
+                <!-- Critico -->
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; flex-shrink: 0;"></div>
+                    <div style="flex: 1;">
+                        <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">Critico</p>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Piattaforma bloccata</p>
+                    </div>
+                    <span style="font-size: 15px; font-weight: 700; color: var(--primary);">30 min</span>
+                </div>
+                <!-- Medio -->
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; flex-shrink: 0;"></div>
+                    <div style="flex: 1;">
+                        <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">Medio</p>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Funzione degradata</p>
+                    </div>
+                    <span style="font-size: 15px; font-weight: 700; color: var(--primary);">2 ore</span>
+                </div>
+                <!-- Classico -->
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 0;">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0;"></div>
+                    <div style="flex: 1;">
+                        <p style="font-size: 15px; font-weight: 700; color: var(--primary); margin: 0;">Classico</p>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Modifica minore</p>
+                    </div>
+                    <span style="font-size: 15px; font-weight: 700; color: var(--primary);">6 ore</span>
+                </div>
+            </div>
+            <!-- Pacchetti -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 26px 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                    <div style="width: 38px; height: 38px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-wrench" style="color: white; font-size: 16px;"></i>
+                    </div>
+                    <p style="font-size: 17px; font-weight: 700; color: var(--primary); margin: 0;">Pacchetti Interventi</p>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Evolutive e miglioramenti</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                    <span style="font-size: 14px;">Giornata Singola</span>
+                    <strong style="font-size: 14px; color: var(--primary);">350 EUR</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+                    <span style="font-size: 14px;">5 Giornate</span>
+                    <div style="text-align: right;"><strong style="font-size: 14px; color: var(--primary);">1.575 EUR</strong> <span style="font-size: 11px; color: var(--accent); font-weight: 600; margin-left: 6px;">-10%</span></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                    <span style="font-size: 14px;">10 Giornate</span>
+                    <div style="text-align: right;"><strong style="font-size: 14px; color: var(--primary);">2.800 EUR</strong> <span style="font-size: 11px; color: var(--accent); font-weight: 600; margin-left: 6px;">-20%</span></div>
+                </div>
+            </div>
+        </div>
+        <div style="background: #dbeafe; padding: 14px 20px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+            <i class="fa-solid fa-shield-halved" style="font-size: 18px; color: var(--primary);"></i>
+            <p style="margin:0; font-size: 14px; color: var(--primary); font-weight: 600;">Bug fixing gratuito garantito per 60 giorni dalla data di rilascio.</p>
+        </div>
+    </div>
+    <div class="footer-nav"><div>LIVELLI DI SERVIZIO (SLA)</div><div>09 / 15</div></div>
+</div>
+
+<!-- Slide 10: Piano di Sviluppo -->
+<div class="slide-container" id="slide10">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Piano di Sviluppo</h2>
+    <div class="content-area">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; font-weight: 700; color: #94a3b8; font-size: 12px;">
+                <div style="width: 280px;">Attivita</div><div style="flex: 1; display: flex; justify-content: space-between;"><span>SETT 1</span><span>SETT 2</span><span>SETT 3</span><span>SETT 4</span></div>
+            </div>
+            <div style="display: flex; align-items: center;"><div style="width: 280px; font-size: 14px;">Kick-off & Setup</div><div style="flex: 1; background: #f1f5f9; height: 10px; border-radius: 5px;"><div style="width: 25%; background: var(--primary); height: 100%; border-radius: 5px;"></div></div></div>
+            <div style="display: flex; align-items: center;"><div style="width: 280px; font-size: 14px;">Modulo 1: Portale Clienti</div><div style="flex: 1; background: #f1f5f9; height: 10px; border-radius: 5px;"><div style="width: 37.5%; margin-left: 12.5%; background: var(--accent); height: 100%; border-radius: 5px;"></div></div></div>
+            <div style="display: flex; align-items: center;"><div style="width: 280px; font-size: 14px;">Modulo 2: Back-office</div><div style="flex: 1; background: #f1f5f9; height: 10px; border-radius: 5px;"><div style="width: 37.5%; margin-left: 25%; background: var(--secondary); height: 100%; border-radius: 5px;"></div></div></div>
+            <div style="display: flex; align-items: center;"><div style="width: 280px; font-size: 14px;">Modulo 3: AI Relazione</div><div style="flex: 1; background: #f1f5f9; height: 10px; border-radius: 5px;"><div style="width: 50%; margin-left: 37.5%; background: var(--primary); height: 100%; border-radius: 5px;"></div></div></div>
+            <div style="display: flex; align-items: center;"><div style="width: 280px; font-size: 14px;">Collaudo & Go-live</div><div style="flex: 1; background: #f1f5f9; height: 10px; border-radius: 5px;"><div style="width: 12.5%; margin-left: 87.5%; background: var(--accent); height: 100%; border-radius: 5px;"></div></div></div>
+        </div>
+        <p style="margin-top: 24px; font-style: italic; color: var(--text-muted); font-size: 12px;">Priorita: Modulo 1 operativo in 2 settimane, prima delle campagne TV. Tempi stimati: 4 settimane.</p>
+    </div>
+    <div class="footer-nav"><div>PIANO DI SVILUPPO</div><div>10 / 15</div></div>
+</div>
+
+<!-- Slide 11: Il Team di Progetto -->
+<div class="slide-container" id="slide11">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Il Team di Progetto</h2>
+    <div class="content-area" style="align-items: center; justify-content: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1px 1fr 1px 1fr; gap: 0; text-align: center; max-width: 1000px;">
+            <div class="profile-card" style="padding: 32px 36px;">
+                <i class="fa-solid fa-list-check" style="font-size: 28px; color: var(--accent); margin-bottom: 10px;"></i>
+                <h3 style="font-size: 24px;">Alessia</h3><p style="color: var(--accent); font-weight: 600; font-size: 14px;">Project Manager</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Responsabile del coordinamento del progetto e referente principale del cliente. Gestisce le attivita operative, monitora le scadenze e garantisce la comunicazione continua tra il team tecnico e il cliente.</p>
+            </div>
+            <div style="background: var(--border);"></div>
+            <div class="profile-card" style="padding: 32px 36px;">
+                <i class="fa-solid fa-code" style="font-size: 28px; color: var(--accent); margin-bottom: 10px;"></i>
+                <h3 style="font-size: 24px;">Federico</h3><p style="color: var(--accent); font-weight: 600; font-size: 14px;">Senior Developer & Tech Lead</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Guida le scelte architetturali e tecniche del progetto. Si occupa della definizione dello stack, della supervisione dello sviluppo e dell'integrazione AI. Assicura coerenza tecnica e qualita del codice lungo tutto il ciclo di sviluppo.</p>
+            </div>
+            <div style="background: var(--border);"></div>
+            <div class="profile-card" style="padding: 32px 36px;">
+                <i class="fa-solid fa-pen-ruler" style="font-size: 28px; color: var(--accent); margin-bottom: 10px;"></i>
+                <h3 style="font-size: 24px;">Emma</h3><p style="color: var(--accent); font-weight: 600; font-size: 14px;">UX Specialist</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Progetta l'esperienza utente e l'architettura dell'informazione. Si occupa di wireframe, prototipi e test di usabilita, assicurando che ogni prodotto sia intuitivo, coerente e centrato sulle esigenze dell'utente finale.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>TEAM DI PROGETTO</div><div>11 / 15</div></div>
+</div>
+
+<!-- Slide 12: Principali Risultati Attesi -->
+<div class="slide-container" id="slide12">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Cosa cambia per te, concretamente</h2>
+    <div class="content-area">
+        <div class="grid-3">
+            <div class="module-card" style="text-align: center;">
+                <i class="fa-solid fa-clock"></i>
+                <h3 style="margin-top: 8px;">Liberi 3,5 ore per pratica</h3>
+                <p>Oggi ogni relazione ti costa 4 ore. Con la piattaforma ne servono 30 minuti. Il resto del tempo lo dedichi ai cantieri e ai clienti.</p>
+            </div>
+            <div class="module-card" style="text-align: center;">
+                <i class="fa-solid fa-arrows-up-down-left-right"></i>
+                <h3 style="margin-top: 8px;">Servi 10x piu clienti</h3>
+                <p>Da 1-2 relazioni al mese a 10-20+. Quando le campagne TV porteranno contatti, sarai pronto a gestirli tutti.</p>
+            </div>
+            <div class="module-card" style="text-align: center;">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <h3 style="margin-top: 8px;">Nessun cliente perso</h3>
+                <p>Ogni contatto dalle campagne TV diventa una pratica. Non perdi piu opportunita perche non hai tempo di seguirle.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>IMPATTO DEL PROGETTO</div><div>12 / 15</div></div>
+</div>
+
+<!-- Slide: I primi 6 mesi -->
+<div class="slide-container">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">I primi 6 mesi: cosa succede dopo la firma</h2>
+    <div class="content-area" style="gap: 16px;">
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
+            <!-- Mese 1 -->
+            <div style="background: var(--primary); border-radius: 10px; padding: 20px 16px; color: white;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">1</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: white; margin: 0;">Mese 1</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">COSTRUZIONE</p>
+                <p style="font-size: 11px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0;">Portale clienti online. Prime pratiche di test con dati reali. Calibrazione AI sulle tue relazioni.</p>
+            </div>
+            <!-- Mese 2 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 20px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: var(--secondary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">2</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: var(--primary); margin: 0;">Mese 2</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">LANCIO</p>
+                <p style="font-size: 11px; color: var(--text-muted); line-height: 1.5; margin: 0;">Piattaforma completa. Campagne TV partono. Primi clienti reali usano il sistema.</p>
+            </div>
+            <!-- Mese 3 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 20px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: var(--secondary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">3</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: var(--primary); margin: 0;">Mese 3</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">CRESCITA</p>
+                <p style="font-size: 11px; color: var(--text-muted); line-height: 1.5; margin: 0;">Volume cresce. Gestisci tutto dalla dashboard. L'AI migliora con ogni relazione.</p>
+            </div>
+            <!-- Mese 4 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 20px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: var(--secondary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">4</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: var(--primary); margin: 0;">Mese 4</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">ROUTINE</p>
+                <p style="font-size: 11px; color: var(--text-muted); line-height: 1.5; margin: 0;">Il processo e rodato. 30 minuti per pratica. Il tuo tempo e libero per i cantieri.</p>
+            </div>
+            <!-- Mese 5 -->
+            <div style="background: var(--bg-soft); border-radius: 10px; padding: 20px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: var(--secondary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">5</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: var(--primary); margin: 0;">Mese 5</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">VALIDAZIONE</p>
+                <p style="font-size: 11px; color: var(--text-muted); line-height: 1.5; margin: 0;">Modello validato dai numeri. Investimento ripagato. Si ragiona sulla Fase 2.</p>
+            </div>
+            <!-- Mese 6 -->
+            <div style="background: #dcfce7; border-radius: 10px; padding: 20px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                    <div style="width: 28px; height: 28px; background: #16a34a; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 13px; font-weight: 800; color: white;">6</span>
+                    </div>
+                    <p style="font-size: 13px; font-weight: 700; color: #166534; margin: 0;">Mese 6</p>
+                </div>
+                <p style="font-size: 11px; font-weight: 700; color: #16a34a; margin-bottom: 6px;">SCALA</p>
+                <p style="font-size: 11px; color: #15803d; line-height: 1.5; margin: 0;">Il servizio gira. Puoi formare collaboratori. Si valutano lead automation e sopralluogo guidato avanzato.</p>
+            </div>
+        </div>
+        <div style="background: var(--bg-soft); border-radius: 10px; padding: 16px 24px; display: flex; align-items: center; gap: 14px; margin-top: 4px;">
+            <i class="fa-solid fa-flag-checkered" style="font-size: 18px; color: var(--accent);"></i>
+            <p style="margin: 0; font-size: 14px; color: var(--primary);">Il momento giusto e adesso: le richieste sono ancora gestibili e hai il tempo per costruire il sistema <strong>prima</strong> che il volume cresca.</p>
+        </div>
+    </div>
+    <div class="footer-nav"><div>ROADMAP 6 MESI</div><div></div></div>
+</div>
+
+<!-- Slide 13: Le Fasi per il Go-Live -->
+<div class="slide-container" id="slide13">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Le Fasi per il Go-Live</h2>
+    <div class="content-area">
+        <div class="team-grid">
+            <div class="profile-card">
+                <p style="font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 8px;">01</p>
+                <h3 style="font-size: 18px;">Firma e Kick-off</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Accettazione proposta e versamento prima tranche (30%). Raccolta materiali: relazioni, prezziario, brand kit.</p>
+            </div>
+            <div class="divider-v"></div>
+            <div class="profile-card">
+                <p style="font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 8px;">02</p>
+                <h3 style="font-size: 18px;">Portale Clienti Online</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Modulo 1 operativo in 2 settimane. Landing, form, upload, dashboard. Pronto per le campagne TV.</p>
+            </div>
+            <div class="divider-h"></div>
+            <div class="profile-card">
+                <p style="font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 8px;">03</p>
+                <h3 style="font-size: 18px;">Back-office e AI</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Sviluppo cruscotto gestione e pipeline AI. Calibrazione su relazioni di esempio. Checkpoint settimanali.</p>
+            </div>
+            <div class="divider-v"></div>
+            <div class="profile-card">
+                <p style="font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 8px;">04</p>
+                <h3 style="font-size: 18px;">Collaudo e Go-Live</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Test completo, correzioni, messa in produzione. Formazione all'uso della piattaforma.</p>
+            </div>
+        </div>
+        <p style="margin-top: 40px; font-style: italic; color: var(--text-muted); font-size: 13px; text-align: center;">Consegna completa in 4 settimane dalla firma. Modulo 1 pronto in anticipo per le campagne TV.</p>
+    </div>
+    <div class="footer-nav"><div>FASI DI RILASCIO</div><div>13 / 15</div></div>
+</div>
+
+<!-- Slide 14: Perche scegliere Edos? -->
+<div class="slide-container" id="slide14">
+    <div class="header-logo-container">
+        <img src="EDOS - Logo/1.png" alt="Edos" style="height: 40px;">
+    </div>
+    <h2 class="slide-title">Perche scegliere Edos?</h2>
+    <div class="content-area">
+        <div class="grid-2">
+            <div class="module-card" style="background: var(--primary); color: white;"><h3 style="color:white;">Nessun Single Point of Failure</h3><p style="color:rgba(255,255,255,0.8);">Con un freelance il progetto si ferma in caso di assenza. In Edos il team garantisce continuita e responsabilita separate tra PM, Tech Lead e Dev.</p></div>
+            <div class="module-card"><h3>Soluzioni su Misura</h3><p>Sviluppiamo codice sorgente che diventa proprieta del committente. Nessun vincolo a piattaforme chiuse (vendor lock-in).</p></div>
+            <div class="module-card"><h3>Specialisti AI</h3><p>Esperienza verticale su pipeline RAG, Vercel AI SDK e integrazione LLM (Claude, OpenAI). Architetture AI calibrate sui dati del cliente.</p></div>
+            <div class="module-card"><h3>Prezzo Fisso, Zero Sorprese</h3><p>Budget definito in anticipo con milestone chiare. Nessun costo nascosto, nessuna variante non concordata.</p></div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>PERCHE SCEGLIERE EDOS</div><div>14 / 15</div></div>
+</div>
+
+<!-- Slide 15: Chiusura (DARK THEME) -->
+<div class="slide-container dark-theme" id="slide15">
+    <div class="header-logo-container" style="right: auto; left: 80px;">
+        <img src="EDOS - Logo/2.png" alt="Edos" style="height: 40px;">
+    </div>
+    <div class="content-area" style="flex-direction: row; align-items: center; justify-content: space-between;">
+        <!-- Colonna sinistra: CTA -->
+        <div style="max-width: 580px;">
+            <p style="font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: rgba(255,255,255,0.35); font-weight: 500; margin-bottom: 24px;">Prossimo passo</p>
+            <h1 style="font-size: 44px; line-height: 1.2; font-weight: 700; letter-spacing: -0.5px;">Il tuo servizio.<br>La tua esperienza.<br><span style="color: var(--accent);">La nostra tecnologia.</span></h1>
+            <p style="font-size: 18px; color: rgba(255,255,255,0.6); margin-top: 20px; line-height: 1.6;">Tu sai valutare un immobile come nessun altro.<br>Noi ti diamo lo strumento per farlo su scala.</p>
+        </div>
+        <!-- Colonna destra: contatti -->
+        <div style="display: flex; flex-direction: column; gap: 24px; min-width: 280px;">
+            <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px; display: flex; align-items: center; gap: 16px;">
+                <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fa-solid fa-user" style="color: white; font-size: 16px;"></i>
+                </div>
+                <div>
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;">Contatto</p>
+                    <p style="font-size: 16px; font-weight: 600; color: white; margin: 0;">Giuseppe Famiani</p>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px; display: flex; align-items: center; gap: 16px;">
+                <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fa-solid fa-envelope" style="color: var(--accent); font-size: 16px;"></i>
+                </div>
+                <div>
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;">Email</p>
+                    <p style="font-size: 15px; font-weight: 600; color: white; margin: 0;">giuseppe.famiani@edos.it</p>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px; display: flex; align-items: center; gap: 16px;">
+                <div style="width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <i class="fa-solid fa-globe" style="color: var(--accent); font-size: 16px;"></i>
+                </div>
+                <div>
+                    <p style="font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px;">Web</p>
+                    <p style="font-size: 15px; font-weight: 600; color: white; margin: 0;">edos.it</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-nav"><div>EDOS SRL</div><div>15 / 15</div></div>
+</div>
+
+<!-- Fullscreen button -->
+<button class="fullscreen-btn" onclick="enterFullscreen()">
+    <i class="fa-solid fa-expand"></i> Presentazione
+</button>
+
+<!-- Fullscreen navigation -->
+<div class="fullscreen-nav" id="fullscreenNav">
+    <button onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <span class="slide-counter" id="slideCounter">1 / 1</span>
+    <button onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+    <button onclick="exitFullscreen()" style="margin-left: 12px; font-size: 14px;"><i class="fa-solid fa-compress"></i></button>
+</div>
+
+<script>
+let currentSlide = 0;
+let slides = [];
+
+function getSlides() {
+    slides = document.querySelectorAll('.slide-container');
+}
+
+function updateSlideDisplay() {
+    slides.forEach((s, i) => s.classList.toggle('active-slide', i === currentSlide));
+    document.getElementById('slideCounter').textContent = (currentSlide + 1) + ' / ' + slides.length;
+
+    // Scale slide to fit viewport
+    if (document.body.classList.contains('fullscreen-mode')) {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const scale = Math.min(vw / 1280, vh / 720);
+        slides.forEach(s => {
+            s.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+            s.style.transformOrigin = 'center center';
+        });
+    }
+}
+
+function nextSlide() {
+    if (currentSlide < slides.length - 1) { currentSlide++; updateSlideDisplay(); }
+}
+
+function prevSlide() {
+    if (currentSlide > 0) { currentSlide--; updateSlideDisplay(); }
+}
+
+function enterFullscreen() {
+    getSlides();
+    currentSlide = 0;
+    document.body.classList.add('fullscreen-mode');
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    }
+    updateSlideDisplay();
+}
+
+function exitFullscreen() {
+    document.body.classList.remove('fullscreen-mode');
+    slides.forEach(s => {
+        s.classList.remove('active-slide');
+        s.style.transform = '';
+        s.style.position = '';
+        s.style.top = '';
+        s.style.left = '';
+        s.style.display = '';
+    });
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (!document.body.classList.contains('fullscreen-mode')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); nextSlide(); }
+    if (e.key === 'ArrowLeft' || e.key === 'Backspace') { e.preventDefault(); prevSlide(); }
+    if (e.key === 'Escape') { exitFullscreen(); }
+});
+
+document.addEventListener('fullscreenchange', function() {
+    if (!document.fullscreenElement && document.body.classList.contains('fullscreen-mode')) {
+        exitFullscreen();
+    }
+});
+
+window.addEventListener('resize', function() {
+    if (document.body.classList.contains('fullscreen-mode')) {
+        updateSlideDisplay();
+    }
+});
+</script>
+
+</body>
+</html>
