@@ -446,6 +446,14 @@ body { padding-top: 0 !important; }
   backdrop-filter: blur(24px);
 }
 </style>
+<style id="hero-v2-styles">
+.hero-ctas{align-items:center}
+.hero-link-secondary{display:inline-flex;align-items:center;gap:10px;padding:14px 20px 14px 16px;color:rgba(255,255,255,.7);font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:color .25s ease,gap .25s ease;text-decoration:none}
+.hero-link-secondary:hover{color:#fff;gap:16px}
+.hero-link-secondary svg{width:14px;height:14px;flex-shrink:0;opacity:.8;transition:opacity .25s,transform .25s}
+.hero-link-secondary:hover svg{opacity:1;transform:translateX(3px)}
+@media(max-width:900px){.hero-ctas{flex-direction:column;align-items:flex-start}.hero-link-secondary{padding:12px 0}}
+</style>
 </head>
 <body>
 
@@ -554,8 +562,8 @@ body { padding-top: 0 !important; }
 
   <div class="container">
     <div class="hero-inner">
-      <h1>Piattaforme digitali su misura<br>per la tua <em>azienda.</em></h1>
-      <p class="hero-sub">Configuratori, portali B2B, e-commerce multi-sede, gestionali custom.<br><strong>30+ progetti consegnati. Zero ritardi.</strong></p>
+      <h1>Piattaforme digitali su misura<br>con un <em>reparto tech dedicato.</em></h1>
+      <p class="hero-sub">Configuratori, portali B2B, e-commerce multi-sede, gestionali custom per aziende B2B. Team senior in retainer mensile, senza assumerlo.<br><strong>30+ progetti consegnati. Zero ritardi.</strong></p>
       <div class="hero-ctas">
         <a href="/contatti" class="btn-pill">
           <span class="btn-pill-circle">
@@ -564,6 +572,12 @@ body { padding-top: 0 !important; }
             </svg>
           </span>
           <span>Prenota un appuntamento</span>
+        </a>
+        <a href="/servizi/team-dedicato" class="hero-link-secondary">
+          <span>Come funziona il team dedicato</span>
+          <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
       </div>
     </div>
