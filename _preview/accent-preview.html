@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Anteprima Accent · Sezione Agenzie T1 · Edos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#060E22;
+  --navy-mid:#0D1B3E;
+  --navy-card:#111F45;
+  --white:#FFFFFF;
+  --off-white:#F7F8FC;
+  --surface:#F2F4F9;
+  --text:#0D1B3E;
+  --text-body:#374165;
+  --text-muted:#6B7A99;
+  --border:rgba(13,27,62,0.08);
+  --border-s:rgba(13,27,62,0.14);
+  --font:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:"Plus Jakarta Sans","Inter",sans-serif;
+  /* T2 reference (sito principale) */
+  --t2-accent:#3B6FE8;
+  --t2-accent-hover:#2557D6;
+  --t2-accent-pale:#EEF3FF;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.6;color:var(--text-body);background:var(--off-white);-webkit-font-smoothing:antialiased}
+
+.preview-header{
+  background:var(--navy);
+  color:#fff;
+  padding:48px 32px 32px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.preview-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:800;
+  letter-spacing:-.025em;
+  margin-bottom:12px;
+  color:#fff;
+}
+.preview-header .lead{
+  font-size:1rem;
+  color:rgba(255,255,255,.6);
+  max-width:680px;
+  margin:0 auto 20px;
+  line-height:1.7;
+}
+.preview-header .meta{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  font-size:.75rem;
+  color:rgba(255,255,255,.5);
+  font-weight:500;
+  letter-spacing:.04em;
+}
+.preview-header .meta-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.3)}
+
+.legend{
+  background:var(--off-white);
+  padding:24px 32px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  flex-wrap:wrap;
+  font-size:.8125rem;
+  color:var(--text-muted);
+}
+.legend-item{display:inline-flex;align-items:center;gap:8px}
+.legend-swatch{width:14px;height:14px;border-radius:4px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  background:var(--off-white);
+}
+@media(max-width:1100px){.grid{grid-template-columns:1fr}}
+
+.col{
+  border-right:1px solid var(--border);
+  background:var(--off-white);
+}
+.col:last-child{border-right:none}
+@media(max-width:1100px){
+  .col{border-right:none;border-bottom:1px solid var(--border)}
+}
+
+.col-head{
+  padding:32px 24px 20px;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+}
+.col-head .col-tag{
+  display:inline-block;
+  font-size:.6875rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:8px;
+}
+.col-head h2{
+  font-family:var(--font-display);
+  font-size:1.5rem;
+  font-weight:800;
+  color:var(--navy);
+  margin-bottom:12px;
+  letter-spacing:-.02em;
+}
+.col-head .swatches{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.swatch{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  align-items:center;
+}
+.swatch-block{
+  width:42px;
+  height:42px;
+  border-radius:8px;
+  border:1px solid var(--border);
+}
+.swatch-hex{
+  font-size:.625rem;
+  font-weight:600;
+  color:var(--text-muted);
+  font-family:ui-monospace,monospace;
+}
+.col-head .desc{
+  font-size:.8125rem;
+  color:var(--text-muted);
+  line-height:1.6;
+}
+
+.section{
+  padding:24px;
+  border-bottom:1px solid var(--border);
+}
+.section:last-child{border-bottom:none}
+.section-label{
+  font-size:.625rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:14px;
+}
+
+/* Mini hero T1 */
+.mini-hero{
+  position:relative;
+  background:var(--navy);
+  border-radius:14px;
+  padding:32px 24px;
+  color:#fff;
+  overflow:hidden;
+}
+.mini-hero::before{
+  content:'';
+  position:absolute;
+  top:-30%;
+  right:-20%;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:.7;
+}
+.mini-hero .eyebrow{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:.625rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.mini-hero .eyebrow-bar{width:24px;height:2px;border-radius:2px}
+.mini-hero h3{
+  position:relative;
+  z-index:2;
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  margin-bottom:14px;
+  color:#fff;
+}
+.mini-hero h3 em{font-style:normal}
+.mini-hero p{
+  position:relative;
+  z-index:2;
+  font-size:.875rem;
+  color:rgba(255,255,255,.6);
+  line-height:1.6;
+  margin-bottom:20px;
+}
+.mini-hero .cta{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:8px;
+  font-size:.8125rem;
+  font-weight:600;
+  color:#fff;
+  text-decoration:none;
+  transition:all .2s;
+}
+
+/* Badge */
+.badge-row{display:flex;flex-wrap:wrap;gap:8px}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 12px;
+  border-radius:100px;
+  font-size:.6875rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.badge::before{
+  content:'';
+  width:5px;
+  height:5px;
+  border-radius:50%;
+}
+
+/* Card white-label */
+.wl-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  transition:all .25s;
+}
+.wl-card .icon{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:14px;
+}
+.wl-card .icon svg{width:18px;height:18px;stroke-width:1.8;fill:none}
+.wl-card h4{
+  font-family:var(--font-display);
+  font-size:1rem;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.wl-card p{font-size:.8125rem;color:var(--text-muted);line-height:1.6;margin-bottom:12px}
+.wl-card ul{list-style:none}
+.wl-card li{
+  font-size:.75rem;
+  color:var(--text-body);
+  padding-left:18px;
+  position:relative;
+  margin-bottom:6px;
+  line-height:1.5;
+}
+.wl-card li::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:7px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+}
+
+/* CTA buttons */
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 20px;
+  border-radius:9px;
+  font-size:.8125rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .2s;
+  cursor:pointer;
+  border:none;
+  font-family:var(--font);
+}
+.btn-primary{color:#fff}
+.btn-outline{background:transparent;border:1.5px solid}
+
+/* Stats */
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.stat{padding:14px;background:var(--white);border:1px solid var(--border);border-radius:10px}
+.stat-num{font-family:var(--font-display);font-size:1.75rem;font-weight:800;line-height:1}
+.stat-num span{font-weight:600}
+.stat-lab{font-size:.625rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-top:4px}
+
+/* Link example */
+.link-row{display:flex;flex-direction:column;gap:8px}
+.link-ex{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:.875rem;
+  font-weight:500;
+  text-decoration:none;
+  padding:6px 0;
+  border-bottom:1px solid transparent;
+  width:fit-content;
+  transition:all .2s;
+}
+.link-ex svg{width:14px;height:14px;stroke-width:2;fill:none}
+
+/* ========================================
+   COLONNA A · VIOLA #643CE6
+   ======================================== */
+.col-a .col-tag{color:#8B5FFF}
+.col-a .swatch-block.s1{background:#643CE6}
+.col-a .swatch-block.s2{background:#8B5FFF}
+.col-a .swatch-block.s3{background:#F0EDFF}
+.col-a .mini-hero::before{background:radial-gradient(circle,rgba(139,95,255,.4) 0%,transparent 70%)}
+.col-a .mini-hero .eyebrow{color:#B89FFF}
+.col-a .mini-hero .eyebrow-bar{background:#8B5FFF}
+.col-a .mini-hero h3 em{
+  background:linear-gradient(110deg,#B89FFF 0%,#D4C2FF 50%,#B89FFF 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.col-a .mini-hero .cta{background:#643CE6}
+.col-a .mini-hero .cta:hover{background:#5031C7}
+.col-a .badge.b1{background:rgba(100,60,230,.1);color:#643CE6}
+.col-a .badge.b1::before{background:#643CE6}
+.col-a .badge.b2{background:#643CE6;color:#fff}
+.col-a .badge.b2::before{background:#fff}
+.col-a .wl-card:hover{border-color:#643CE6;box-shadow:0 8px 32px rgba(100,60,230,.1)}
+.col-a .wl-card .icon{background:rgba(100,60,230,.1);color:#643CE6}
+.col-a .wl-card li::before{background:#643CE6}
+.col-a .btn-primary{background:#643CE6}
+.col-a .btn-primary:hover{background:#5031C7;box-shadow:0 8px 24px rgba(100,60,230,.3)}
+.col-a .btn-outline{color:#643CE6;border-color:#643CE6}
+.col-a .btn-outline:hover{background:#F0EDFF}
+.col-a .stat-num{color:var(--navy)}
+.col-a .stat-num span{color:#643CE6}
+.col-a .link-ex{color:#643CE6}
+.col-a .link-ex:hover{border-bottom-color:#643CE6}
+
+/* ========================================
+   COLONNA B · CYAN #00B4F0
+   ======================================== */
+.col-b .col-tag{color:#00B4F0}
+.col-b .swatch-block.s1{background:#00B4F0}
+.col-b .swatch-block.s2{background:#33C7F5}
+.col-b .swatch-block.s3{background:#E0F6FE}
+.col-b .mini-hero::before{background:radial-gradient(circle,rgba(0,180,240,.4) 0%,transparent 70%)}
+.col-b .mini-hero .eyebrow{color:#7AD8F8}
+.col-b .mini-hero .eyebrow-bar{background:#00B4F0}
+.col-b .mini-hero h3 em{
+  background:linear-gradient(110deg,#7AD8F8 0%,#A8E5FA 50%,#7AD8F8 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.col-b .mini-hero .cta{background:#00B4F0;color:#0a1628}
+.col-b .mini-hero .cta:hover{background:#0099CC}
+.col-b .badge.b1{background:rgba(0,180,240,.12);color:#0099CC}
+.col-b .badge.b1::before{background:#00B4F0}
+.col-b .badge.b2{background:#00B4F0;color:#0a1628}
+.col-b .badge.b2::before{background:#0a1628}
+.col-b .wl-card:hover{border-color:#00B4F0;box-shadow:0 8px 32px rgba(0,180,240,.1)}
+.col-b .wl-card .icon{background:rgba(0,180,240,.12);color:#0099CC}
+.col-b .wl-card li::before{background:#00B4F0}
+.col-b .btn-primary{background:#00B4F0;color:#0a1628}
+.col-b .btn-primary:hover{background:#0099CC;color:#fff;box-shadow:0 8px 24px rgba(0,180,240,.3)}
+.col-b .btn-outline{color:#0099CC;border-color:#00B4F0}
+.col-b .btn-outline:hover{background:#E0F6FE}
+.col-b .stat-num{color:var(--navy)}
+.col-b .stat-num span{color:#0099CC}
+.col-b .link-ex{color:#0099CC}
+.col-b .link-ex:hover{border-bottom-color:#00B4F0}
+
+/* ========================================
+   COLONNA C · VERDE ACQUA #10B981
+   ======================================== */
+.col-c .col-tag{color:#10B981}
+.col-c .swatch-block.s1{background:#10B981}
+.col-c .swatch-block.s2{background:#34D9A0}
+.col-c .swatch-block.s3{background:#E1FBF1}
+.col-c .mini-hero::before{background:radial-gradient(circle,rgba(16,185,129,.35) 0%,transparent 70%)}
+.col-c .mini-hero .eyebrow{color:#6BE5B8}
+.col-c .mini-hero .eyebrow-bar{background:#10B981}
+.col-c .mini-hero h3 em{
+  background:linear-gradient(110deg,#6BE5B8 0%,#A4F2D0 50%,#6BE5B8 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.col-c .mini-hero .cta{background:#10B981;color:#fff}
+.col-c .mini-hero .cta:hover{background:#0E9D6E}
+.col-c .badge.b1{background:rgba(16,185,129,.1);color:#0E9D6E}
+.col-c .badge.b1::before{background:#10B981}
+.col-c .badge.b2{background:#10B981;color:#fff}
+.col-c .badge.b2::before{background:#fff}
+.col-c .wl-card:hover{border-color:#10B981;box-shadow:0 8px 32px rgba(16,185,129,.1)}
+.col-c .wl-card .icon{background:rgba(16,185,129,.12);color:#0E9D6E}
+.col-c .wl-card li::before{background:#10B981}
+.col-c .btn-primary{background:#10B981}
+.col-c .btn-primary:hover{background:#0E9D6E;box-shadow:0 8px 24px rgba(16,185,129,.3)}
+.col-c .btn-outline{color:#0E9D6E;border-color:#10B981}
+.col-c .btn-outline:hover{background:#E1FBF1}
+.col-c .stat-num{color:var(--navy)}
+.col-c .stat-num span{color:#10B981}
+.col-c .link-ex{color:#0E9D6E}
+.col-c .link-ex:hover{border-bottom-color:#10B981}
+
+/* Decision footer */
+.decision{
+  background:var(--navy);
+  color:#fff;
+  padding:40px 32px;
+  text-align:center;
+}
+.decision h3{
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  font-weight:800;
+  margin-bottom:8px;
+  color:#fff;
+}
+.decision p{
+  font-size:.875rem;
+  color:rgba(255,255,255,.55);
+  max-width:560px;
+  margin:0 auto;
+  line-height:1.7;
+}
+.decision .options{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+.dec-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 20px;
+  border-radius:100px;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.7);
+}
+.dec-pill .dot{width:8px;height:8px;border-radius:50%}
+.dec-pill.a .dot{background:#8B5FFF}
+.dec-pill.b .dot{background:#00B4F0}
+.dec-pill.c .dot{background:#10B981}
+
+/* T2 reference banner */
+.t2-ref{
+  background:var(--white);
+  padding:20px 32px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.t2-ref-label{
+  font-size:.75rem;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.04em;
+}
+.t2-ref-swatch{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:.8125rem;
+  font-weight:600;
+  color:var(--text);
+}
+.t2-ref-swatch .block{
+  width:24px;
+  height:24px;
+  border-radius:6px;
+  background:#3B6FE8;
+}
+.t2-ref-arrow{color:var(--text-muted);font-size:1.25rem}
+</style>
+</head>
+<body>
+
+<div class="preview-header">
+  <h1>Anteprima Accent · Sezione Agenzie T1</h1>
+  <p class="lead">Confronto visivo delle 3 opzioni accent per il <strong style="color:#fff">sotto-sistema agenzie</strong> del sito Edos. Il sito principale (T2 cliente finale) mantiene il blu elettrico <code style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-size:.75rem">#3B6FE8</code>. L'accent T1 cambia per segnalare visivamente "stai entrando in una sezione differente".</p>
+  <div class="meta">
+    <span>Edos · Site Refresh Mag 2026</span>
+    <span class="meta-dot"></span>
+    <span>Branch: claude/site-refresh-mag2026</span>
+  </div>
+</div>
+
+<div class="t2-ref">
+  <div class="t2-ref-swatch">
+    <span class="block"></span>
+    <span>T2 Cliente finale · accent <code style="font-family:ui-monospace,monospace;font-size:.75rem;color:var(--text-muted)">#3B6FE8</code> (resta uguale)</span>
+  </div>
+  <span class="t2-ref-arrow">→</span>
+  <span class="t2-ref-label">Confronta sotto le 3 opzioni T1 ↓</span>
+</div>
+
+<div class="legend">
+  <span class="legend-item"><span class="legend-swatch" style="background:#643CE6"></span><strong>A · Viola elettrico</strong> · già nei blob hero attuali</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:#00B4F0"></span><strong>B · Cyan</strong> · già nei blob hero attuali</span>
+  <span class="legend-item"><span class="legend-swatch" style="background:#10B981"></span><strong>C · Verde acqua</strong> · nuovo (fuori palette)</span>
+</div>
+
+<div class="grid">
+
+  <!-- ========================== COLONNA A · VIOLA ========================== -->
+  <div class="col col-a">
+    <div class="col-head">
+      <span class="col-tag">Opzione A</span>
+      <h2>Viola elettrico</h2>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-block s1"></div><span class="swatch-hex">#643CE6</span></div>
+        <div class="swatch"><div class="swatch-block s2"></div><span class="swatch-hex">#8B5FFF</span></div>
+        <div class="swatch"><div class="swatch-block s3"></div><span class="swatch-hex">#F0EDFF</span></div>
+      </div>
+      <p class="desc">Già presente nei blob secondari della hero (rgba 100,60,230). Tone tech-premium, insider, "white-label professional". Zero rischio fuori-brand.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Mini Hero T1</div>
+      <div class="mini-hero">
+        <div class="eyebrow"><span class="eyebrow-bar"></span><span>Per le agenzie</span></div>
+        <h3>Il <em>partner tech</em> che sta dietro alle tue offerte digitali.</h3>
+        <p>Sviluppo white-label per agenzie marketing e comunicazione. Team senior italiano, contratti chiari, zero overlap con i tuoi clienti.</p>
+        <a href="#" class="cta">Demo team dedicato →</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Badge contestuale</div>
+      <div class="badge-row">
+        <span class="badge b1">Sezione Agenzie</span>
+        <span class="badge b2">White-label</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Card white-label</div>
+      <div class="wl-card">
+        <div class="icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h4>Reparto tech in white-label</h4>
+        <p>Lavoriamo dietro al tuo brand. Mai contatto diretto col tuo cliente.</p>
+        <ul>
+          <li>NDA reciproco standard</li>
+          <li>Onboarding 48 ore</li>
+          <li>SLA scritto · zero ritardi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">CTA</div>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary">Prenota demo →</a>
+        <a href="#" class="btn btn-outline">Scarica brochure</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Stats</div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">40<span>+</span></div>
+          <div class="stat-lab">Progetti consegnati</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-lab">Consegne puntuali</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Link inline</div>
+      <div class="link-row">
+        <a href="#" class="link-ex">Scopri il modello white-label <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="#" class="link-ex">Leggi i 3 case study agenzie <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================== COLONNA B · CYAN ========================== -->
+  <div class="col col-b">
+    <div class="col-head">
+      <span class="col-tag">Opzione B</span>
+      <h2>Cyan</h2>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-block s1"></div><span class="swatch-hex">#00B4F0</span></div>
+        <div class="swatch"><div class="swatch-block s2"></div><span class="swatch-hex">#33C7F5</span></div>
+        <div class="swatch"><div class="swatch-block s3"></div><span class="swatch-hex">#E0F6FE</span></div>
+      </div>
+      <p class="desc">Già presente nei blob terziari della hero (rgba 0,180,240). Tone innovation, fresh, "agile partner". Più dinamico ma rischia "diverso brand" se non bilanciato.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Mini Hero T1</div>
+      <div class="mini-hero">
+        <div class="eyebrow"><span class="eyebrow-bar"></span><span>Per le agenzie</span></div>
+        <h3>Il <em>partner tech</em> che sta dietro alle tue offerte digitali.</h3>
+        <p>Sviluppo white-label per agenzie marketing e comunicazione. Team senior italiano, contratti chiari, zero overlap con i tuoi clienti.</p>
+        <a href="#" class="cta">Demo team dedicato →</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Badge contestuale</div>
+      <div class="badge-row">
+        <span class="badge b1">Sezione Agenzie</span>
+        <span class="badge b2">White-label</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Card white-label</div>
+      <div class="wl-card">
+        <div class="icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h4>Reparto tech in white-label</h4>
+        <p>Lavoriamo dietro al tuo brand. Mai contatto diretto col tuo cliente.</p>
+        <ul>
+          <li>NDA reciproco standard</li>
+          <li>Onboarding 48 ore</li>
+          <li>SLA scritto · zero ritardi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">CTA</div>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary">Prenota demo →</a>
+        <a href="#" class="btn btn-outline">Scarica brochure</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Stats</div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">40<span>+</span></div>
+          <div class="stat-lab">Progetti consegnati</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-lab">Consegne puntuali</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Link inline</div>
+      <div class="link-row">
+        <a href="#" class="link-ex">Scopri il modello white-label <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="#" class="link-ex">Leggi i 3 case study agenzie <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================== COLONNA C · VERDE ACQUA ========================== -->
+  <div class="col col-c">
+    <div class="col-head">
+      <span class="col-tag">Opzione C</span>
+      <h2>Verde acqua</h2>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-block s1"></div><span class="swatch-hex">#10B981</span></div>
+        <div class="swatch"><div class="swatch-block s2"></div><span class="swatch-hex">#34D9A0</span></div>
+        <div class="swatch"><div class="swatch-block s3"></div><span class="swatch-hex">#E1FBF1</span></div>
+      </div>
+      <p class="desc">Nuovo, non in palette esistente. Tone growth, performance, ROI. Comunica "partner che porta risultati" ma è più tipico delle agenzie performance/SaaS che del tech serio.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Mini Hero T1</div>
+      <div class="mini-hero">
+        <div class="eyebrow"><span class="eyebrow-bar"></span><span>Per le agenzie</span></div>
+        <h3>Il <em>partner tech</em> che sta dietro alle tue offerte digitali.</h3>
+        <p>Sviluppo white-label per agenzie marketing e comunicazione. Team senior italiano, contratti chiari, zero overlap con i tuoi clienti.</p>
+        <a href="#" class="cta">Demo team dedicato →</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Badge contestuale</div>
+      <div class="badge-row">
+        <span class="badge b1">Sezione Agenzie</span>
+        <span class="badge b2">White-label</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Card white-label</div>
+      <div class="wl-card">
+        <div class="icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h4>Reparto tech in white-label</h4>
+        <p>Lavoriamo dietro al tuo brand. Mai contatto diretto col tuo cliente.</p>
+        <ul>
+          <li>NDA reciproco standard</li>
+          <li>Onboarding 48 ore</li>
+          <li>SLA scritto · zero ritardi</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">CTA</div>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary">Prenota demo →</a>
+        <a href="#" class="btn btn-outline">Scarica brochure</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Stats</div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">40<span>+</span></div>
+          <div class="stat-lab">Progetti consegnati</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100<span>%</span></div>
+          <div class="stat-lab">Consegne puntuali</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Link inline</div>
+      <div class="link-row">
+        <a href="#" class="link-ex">Scopri il modello white-label <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="#" class="link-ex">Leggi i 3 case study agenzie <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="decision">
+  <h3>Quale accent ti convince?</h3>
+  <p>Apri ogni colonna su monitor a confronto col sito principale (homepage edos.it). Considera: distinzione visiva netta · coerenza brand · tone target agenzie marketing/comm.</p>
+  <div class="options">
+    <span class="dec-pill a"><span class="dot"></span>Opzione A · Viola</span>
+    <span class="dec-pill b"><span class="dot"></span>Opzione B · Cyan</span>
+    <span class="dec-pill c"><span class="dot"></span>Opzione C · Verde acqua</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -5,6 +5,7 @@ Disallow: /contatti/grazie/
 Disallow: /case-study-template/
 Disallow: /retainer-one-pager/
 Disallow: /Presentazione_Investigatore_Immobiliare_2026.html
+Disallow: /_preview/
 
 # Sitemap
 Sitemap: https://www.edos.it/sitemap.xml
