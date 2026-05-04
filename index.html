@@ -456,55 +456,16 @@ body { padding-top: 0 !important; }
 </style>
 <style id="hero-t2-refresh">
 /* === HERO T2 REFRESH MAG 2026 ===
-   Diagonal Mask Wipe + 2 messaggi alternati (12s ciclo, 6s+6s)
-   Trust stacking 3-numeri sopra piega (filoblu pattern)
-   Hardware accelerated (transform + opacity + clip-path)
+   Hero statica (no motion) + trust stacking 3-numeri sopra piega
+   Pattern: filoblu/alpenite (no fronzoli, B2B serio italiano)
 */
-.hero-stack{
-  position:relative;
-  min-height:300px;
-  margin-bottom:36px;
-}
-@media(min-width:768px){.hero-stack{min-height:240px}}
 
-.hero-msg{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation:heroWipe 12s cubic-bezier(0.16,1,0.3,1) infinite;
-}
-.hero-msg:nth-of-type(1){animation-delay:0s}
-.hero-msg:nth-of-type(2){animation-delay:6s}
-
-@keyframes heroWipe{
-  0%   {opacity:0; clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}
-  4%   {opacity:1; clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}
-  18%  {opacity:1; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%)}
-  46%  {opacity:1; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%)}
-  50%  {opacity:1; clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
-  100% {opacity:0; clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
-}
-
-/* Override animazioni h1/sub esistenti dentro hero-msg (gestite dal wipe) */
-.hero-msg h1{
-  margin-bottom:24px;
-  animation:none !important;
-  opacity:1;
-}
-.hero-msg .hero-sub{
-  margin-bottom:0;
-  animation:none !important;
-  opacity:1;
-  max-width:640px;
-}
-
-/* Trust stacking 3-numeri (filoblu pattern) */
+/* Trust stacking 3-numeri */
 .hero-trust-stacking{
   display:grid;
   grid-template-columns:repeat(3,auto);
   gap:48px;
-  margin:0 0 40px;
+  margin:8px 0 40px;
   align-items:end;
   width:fit-content;
   opacity:0;
@@ -536,15 +497,6 @@ body { padding-top: 0 !important; }
 
 /* Accessibilità: rispetta reduced motion */
 @media (prefers-reduced-motion:reduce){
-  .hero-msg{
-    animation:heroFade 12s linear infinite;
-    clip-path:none;
-  }
-  @keyframes heroFade{
-    0%,4%   {opacity:0}
-    8%,46%  {opacity:1}
-    50%,100%{opacity:0}
-  }
   .hero-trust-stacking{animation:none;opacity:1}
 }
 </style>
@@ -656,28 +608,20 @@ body { padding-top: 0 !important; }
 
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-stack">
-        <div class="hero-msg">
-          <h1>Costruiamo <em>da zero</em><br>la tua piattaforma digitale.</h1>
-          <p class="hero-sub">Configuratori, portali B2B, e-commerce, gestionali custom. <strong>Team senior italiano</strong>, contratti chiari, SLA scritto.</p>
-        </div>
-        <div class="hero-msg">
-          <h1>Orchestriamo <em>i tuoi fornitori tech</em>,<br>dalla discovery al go-live.</h1>
-          <p class="hero-sub">Capitolato, governance, milestone, code review. <strong>Tu hai un solo interlocutore</strong>: noi.</p>
-        </div>
-      </div>
+      <h1>Sviluppiamo <em>soluzioni digitali</em><br>su misura.</h1>
+      <p class="hero-sub">E-commerce, portali B2B, gestionali, configuratori, app custom. Team senior in Italia, metodo PartnerFlow&trade;, consegne nei tempi.</p>
 
       <div class="hero-trust-stacking">
         <div class="trust-stat">
-          <div class="trust-num">5<span>+</span></div>
-          <div class="trust-lab">Anni esperienza team</div>
+          <div class="trust-num">7<span>+</span></div>
+          <div class="trust-lab">Anni esperienza media</div>
         </div>
         <div class="trust-stat">
-          <div class="trust-num">40<span>+</span></div>
-          <div class="trust-lab">Progetti consegnati</div>
+          <div class="trust-num">30<span>+</span></div>
+          <div class="trust-lab">Progetti consegnati nel 2025</div>
         </div>
         <div class="trust-stat">
-          <div class="trust-num">10<span>+</span></div>
+          <div class="trust-num">15<span>+</span></div>
           <div class="trust-lab">Professionisti senior</div>
         </div>
       </div>
