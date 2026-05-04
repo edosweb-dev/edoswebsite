@@ -454,6 +454,100 @@ body { padding-top: 0 !important; }
 .hero-link-secondary:hover svg{opacity:1;transform:translateX(3px)}
 @media(max-width:900px){.hero-ctas{flex-direction:column;align-items:flex-start}.hero-link-secondary{padding:12px 0}}
 </style>
+<style id="hero-t2-refresh">
+/* === HERO T2 REFRESH MAG 2026 ===
+   Diagonal Mask Wipe + 2 messaggi alternati (12s ciclo, 6s+6s)
+   Trust stacking 3-numeri sopra piega (filoblu pattern)
+   Hardware accelerated (transform + opacity + clip-path)
+*/
+.hero-stack{
+  position:relative;
+  min-height:300px;
+  margin-bottom:36px;
+}
+@media(min-width:768px){.hero-stack{min-height:240px}}
+
+.hero-msg{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  clip-path:polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation:heroWipe 12s cubic-bezier(0.16,1,0.3,1) infinite;
+}
+.hero-msg:nth-of-type(1){animation-delay:0s}
+.hero-msg:nth-of-type(2){animation-delay:6s}
+
+@keyframes heroWipe{
+  0%   {opacity:0; clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}
+  4%   {opacity:1; clip-path:polygon(0 0, 0 0, 0 100%, 0 100%)}
+  18%  {opacity:1; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%)}
+  46%  {opacity:1; clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%)}
+  50%  {opacity:1; clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
+  100% {opacity:0; clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
+}
+
+/* Override animazioni h1/sub esistenti dentro hero-msg (gestite dal wipe) */
+.hero-msg h1{
+  margin-bottom:24px;
+  animation:none !important;
+  opacity:1;
+}
+.hero-msg .hero-sub{
+  margin-bottom:0;
+  animation:none !important;
+  opacity:1;
+  max-width:640px;
+}
+
+/* Trust stacking 3-numeri (filoblu pattern) */
+.hero-trust-stacking{
+  display:grid;
+  grid-template-columns:repeat(3,auto);
+  gap:48px;
+  margin:0 0 40px;
+  align-items:end;
+  width:fit-content;
+  opacity:0;
+  animation:fadeUp .75s cubic-bezier(.16,1,.3,1) forwards .4s;
+}
+@media(max-width:600px){
+  .hero-trust-stacking{gap:28px}
+}
+
+.trust-stat{display:flex;flex-direction:column;gap:6px}
+
+.trust-num{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,3vw,2.75rem);
+  font-weight:800;
+  color:#fff;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+.trust-num span{color:var(--blue);font-weight:600}
+
+.trust-lab{
+  font-size:.7rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+}
+
+/* Accessibilità: rispetta reduced motion */
+@media (prefers-reduced-motion:reduce){
+  .hero-msg{
+    animation:heroFade 12s linear infinite;
+    clip-path:none;
+  }
+  @keyframes heroFade{
+    0%,4%   {opacity:0}
+    8%,46%  {opacity:1}
+    50%,100%{opacity:0}
+  }
+  .hero-trust-stacking{animation:none;opacity:1}
+}
+</style>
 </head>
 <body>
 
@@ -562,8 +656,32 @@ body { padding-top: 0 !important; }
 
   <div class="container">
     <div class="hero-inner">
-      <h1>Piattaforme digitali su misura<br>con un <em>reparto tech dedicato.</em></h1>
-      <p class="hero-sub">Configuratori, portali B2B, e-commerce multi-sede, gestionali custom per aziende B2B. Team senior in retainer mensile, senza assumerlo.<br><strong>30+ progetti consegnati. Zero ritardi.</strong></p>
+      <div class="hero-stack">
+        <div class="hero-msg">
+          <h1>Costruiamo <em>da zero</em><br>la tua piattaforma digitale.</h1>
+          <p class="hero-sub">Configuratori, portali B2B, e-commerce, gestionali custom. <strong>Team senior italiano</strong>, contratti chiari, SLA scritto.</p>
+        </div>
+        <div class="hero-msg">
+          <h1>Orchestriamo <em>i tuoi fornitori tech</em>,<br>dalla discovery al go-live.</h1>
+          <p class="hero-sub">Capitolato, governance, milestone, code review. <strong>Tu hai un solo interlocutore</strong>: noi.</p>
+        </div>
+      </div>
+
+      <div class="hero-trust-stacking">
+        <div class="trust-stat">
+          <div class="trust-num">5<span>+</span></div>
+          <div class="trust-lab">Anni esperienza team</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-num">40<span>+</span></div>
+          <div class="trust-lab">Progetti consegnati</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-num">10<span>+</span></div>
+          <div class="trust-lab">Professionisti senior</div>
+        </div>
+      </div>
+
       <div class="hero-ctas">
         <a href="/contatti" class="btn-pill">
           <span class="btn-pill-circle">
@@ -571,10 +689,10 @@ body { padding-top: 0 !important; }
               <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
-          <span>Prenota un appuntamento</span>
+          <span>Discovery gratuito</span>
         </a>
-        <a href="/servizi/team-dedicato" class="hero-link-secondary">
-          <span>Come funziona il team dedicato</span>
+        <a href="/settori" class="hero-link-secondary">
+          <span>Esplora i 7 settori</span>
           <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
