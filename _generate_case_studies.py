@@ -816,7 +816,7 @@ CLIENT_CSS = """
 NAV_OVERLAY = '''<div class="nav-overlay" id="navOverlay">
   <div class="nav-ov-geo"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="380" y="60" width="460" height="790" rx="230" stroke="white" stroke-width="1.4"/><rect x="680" y="100" width="420" height="620" rx="200" stroke="white" stroke-width="1.4"/><rect x="1020" y="180" width="340" height="460" rx="170" stroke="white" stroke-width="1.4"/><line x1="440" y1="0" x2="1440" y2="900" stroke="white" stroke-width="1.4"/><line x1="548" y1="0" x2="548" y2="900" stroke="white" stroke-width="1.4"/></svg></div>
   <div class="nav-ov-top">
-    <a href="/" class="nav-ov-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions"></a>
+    <a href="/" class="nav-ov-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos"></a>
     <button class="nav-ov-close" id="navOverlayClose" aria-label="Chiudi menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
   <div class="nav-ov-body">
@@ -858,9 +858,9 @@ FOOTER = '''<footer class="footer">
         <div class="footer-col-links"><a href="/case-study/piattaforma-web-orchestra">Piattaforma web Orchestra</a><a href="/case-study/ecommerce-b2b-treere">E-commerce B2B Treere</a><a href="/case-study/crm-b2c-mutuisi">CRM B2C MutuiS&igrave;</a><a href="/case-study/piattaforma-power2play-brand-energia">Piattaforma Power2Play</a><a href="/case-study/piattaforma-ai-automazione-preventivi">AI automazione preventivi</a><a href="/case-study/rag-agentico-analisi-documentazione">RAG analisi documentazione</a><a href="/case-study/ecommerce-headless-brand-luxury">E-commerce headless luxury</a><a href="/case-study/marketplace-b2b-filiera-manifatturiera">Marketplace B2B manifatturiero</a></div>
       </div>
     </div>
-    <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async"></a>
+    <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos" loading="lazy" decoding="async"></a>
     <div class="footer-info">Edos Srl &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>Sede legale: Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI) &mdash; Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)</div>
-    <div class="footer-bottom"><span>&copy; 2026 Edos Digital Solutions</span><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a></div></div>
+    <div class="footer-bottom"><span>&copy; 2026 Edos</span><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a></div></div>
   </div>
 </footer>'''
 
@@ -915,7 +915,7 @@ def generate_page(cs, all_cases):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{cs['title']} &middot; Case Study &middot; Edos Digital Solutions</title>
+  <title>{cs['title']} &middot; Case Study &middot; Edos</title>
   <meta name="description" content="{cs['meta_desc']}">
   <link rel="icon" type="image/jpeg" href="https://www.edos.it/wp-content/uploads/2025/02/favicon.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">

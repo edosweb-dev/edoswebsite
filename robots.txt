@@ -1,4 +1,4 @@
-# Edos Digital Solutions — robots.txt
+# Edos — robots.txt
 User-agent: *
 Allow: /
 Disallow: /contatti/grazie/

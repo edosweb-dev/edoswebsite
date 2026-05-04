@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Anteprima Hero T2 · 3 opzioni alternate · Edos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#060E22;
+  --navy-mid:#0D1B3E;
+  --blue:#3B6FE8;
+  --blue-hover:#2557D6;
+  --blue-pale:#EEF3FF;
+  --white:#FFFFFF;
+  --off-white:#F7F8FC;
+  --text-muted:#6B7A99;
+  --border:rgba(13,27,62,0.08);
+  --font:"Inter",-apple-system,sans-serif;
+  --font-display:"Plus Jakarta Sans","Inter",sans-serif;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);font-size:16px;line-height:1.6;color:#374165;background:var(--off-white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ── HEADER preview ── */
+.preview-header{
+  background:var(--navy);
+  color:#fff;
+  padding:48px 32px 32px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.preview-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  font-weight:800;
+  letter-spacing:-.025em;
+  margin-bottom:12px;
+  color:#fff;
+}
+.preview-header .lead{
+  font-size:1rem;
+  color:rgba(255,255,255,.6);
+  max-width:680px;
+  margin:0 auto 16px;
+  line-height:1.7;
+}
+.preview-header .meta{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  font-size:.75rem;
+  color:rgba(255,255,255,.5);
+  font-weight:500;
+}
+.preview-header .meta-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.3)}
+
+/* ── Option label sticky ── */
+.option-label{
+  background:var(--white);
+  padding:24px 32px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.option-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+.option-tag .pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--blue-pale);
+  color:var(--blue);
+  font-family:var(--font-display);
+  font-weight:800;
+  font-size:1rem;
+}
+.option-tag .text strong{
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.125rem;
+  color:var(--navy-mid);
+  letter-spacing:-.01em;
+}
+.option-tag .text span{
+  font-size:.8125rem;
+  color:var(--text-muted);
+  margin-top:2px;
+  display:block;
+}
+.option-msgs{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  font-size:.75rem;
+  color:var(--text-muted);
+  flex-wrap:wrap;
+}
+.option-msgs code{
+  font-family:ui-monospace,monospace;
+  background:var(--off-white);
+  padding:4px 10px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  color:var(--navy-mid);
+  font-size:.75rem;
+}
+
+/* ── HERO (replica fedele del sito) ── */
+.hero{
+  position:relative;
+  background:var(--navy);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:560px;
+  padding:120px 0 100px;
+  overflow:hidden;
+  color:#fff;
+}
+.hero-container{
+  max-width:1160px;
+  width:100%;
+  margin:0 auto;
+  padding:0 28px;
+  position:relative;
+  z-index:3;
+}
+
+/* Animated blobs */
+.blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+.blob-1{
+  width:700px;height:700px;
+  top:-15%;right:-12%;
+  background:radial-gradient(circle,rgba(59,111,232,.22) 0%,transparent 65%);
+  animation:blobA 14s ease-in-out infinite;
+}
+.blob-2{
+  width:500px;height:500px;
+  bottom:-20%;left:-10%;
+  background:radial-gradient(circle,rgba(100,60,230,.14) 0%,transparent 65%);
+  animation:blobB 18s ease-in-out infinite;
+}
+.blob-3{
+  width:380px;height:380px;
+  top:35%;left:28%;
+  background:radial-gradient(circle,rgba(0,180,240,.08) 0%,transparent 65%);
+  animation:blobC 12s ease-in-out infinite;
+}
+@keyframes blobA{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-50px,40px) scale(1.08)}66%{transform:translate(30px,-30px) scale(.94)}}
+@keyframes blobB{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.06)}66%{transform:translate(-25px,25px) scale(.96)}}
+@keyframes blobC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,50px) scale(1.12)}}
+
+.hero-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:24px;
+}
+.hero-eyebrow-bar{width:36px;height:2px;background:var(--blue);border-radius:2px}
+.hero-eyebrow span{
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(107,155,247,.9);
+}
+
+/* Stacked rotating messages */
+.hero-stack{
+  position:relative;
+  margin-bottom:36px;
+  /* fixed height per evitare layout shift */
+  min-height:220px;
+}
+@media(max-width:768px){.hero-stack{min-height:280px}}
+
+.hero-msg{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  animation:crossfade 10s ease-in-out infinite;
+}
+.hero-msg:nth-child(1){animation-delay:0s}
+.hero-msg:nth-child(2){animation-delay:5s}
+
+@keyframes crossfade{
+  0%   {opacity:0;transform:translateY(8px) blur(2px);filter:blur(2px)}
+  4%   {opacity:1;transform:translateY(0);filter:blur(0)}
+  46%  {opacity:1;transform:translateY(0);filter:blur(0)}
+  50%  {opacity:0;transform:translateY(-8px);filter:blur(2px)}
+  100% {opacity:0;transform:translateY(-8px);filter:blur(2px)}
+}
+
+.hero-msg h1{
+  font-family:var(--font-display);
+  font-size:clamp(1.85rem,3.6vw,3.5rem);
+  font-weight:800;
+  line-height:1.1;
+  color:#fff;
+  margin-bottom:24px;
+  letter-spacing:-.03em;
+}
+.hero-msg h1 em{
+  font-style:normal;
+  background:linear-gradient(110deg,#6B9BF7 0%,#93BFFF 50%,#6B9BF7 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 4s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.hero-msg .sub{
+  font-family:var(--font-display);
+  font-size:clamp(.9375rem,1.3vw,1.0625rem);
+  color:rgba(255,255,255,.58);
+  line-height:1.7;
+  max-width:620px;
+}
+.hero-msg .sub strong{color:#fff;font-weight:700}
+
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.btn-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:18px;
+  padding:5px 28px 5px 5px;
+  border:1.5px solid rgba(255,255,255,.3);
+  border-radius:100px;
+  color:#fff;
+  font-family:var(--font-display);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:border-color .2s,background .2s;
+}
+.btn-pill:hover{border-color:rgba(255,255,255,.7);background:rgba(255,255,255,.05)}
+.btn-pill-circle{
+  width:46px;height:46px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:background .2s;
+}
+.btn-pill:hover .btn-pill-circle{background:var(--blue)}
+.btn-pill-circle svg{width:18px;height:18px;color:var(--navy);transition:color .2s}
+.btn-pill:hover .btn-pill-circle svg{color:#fff}
+
+.btn-ghost{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 24px;
+  background:rgba(255,255,255,.08);
+  border:1.5px solid rgba(255,255,255,.18);
+  border-radius:9px;
+  color:#fff;
+  font-size:.8125rem;
+  font-weight:600;
+  text-decoration:none;
+  transition:all .22s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4)}
+
+/* Pause/Play timer indicator */
+.hero-timer{
+  position:absolute;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.hero-timer .dots{display:flex;gap:6px}
+.hero-timer .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
+  position:relative;
+  overflow:hidden;
+}
+.hero-timer .dot.active{background:rgba(255,255,255,.4)}
+.hero-timer .dot.active::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:#fff;
+  border-radius:50%;
+  animation:dotFill 5s linear infinite;
+  transform-origin:left center;
+}
+.hero-timer .label{
+  font-size:.625rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.4);
+  font-weight:700;
+}
+@keyframes dotFill{
+  from{transform:scaleX(0)}
+  to{transform:scaleX(1)}
+}
+/* For the rotating dots */
+.hero-timer .d1{animation:dotPulse 10s linear infinite}
+.hero-timer .d2{animation:dotPulse 10s linear infinite 5s}
+@keyframes dotPulse{
+  0%{background:#fff}
+  50%{background:rgba(255,255,255,.2)}
+  100%{background:#fff}
+}
+
+/* Decision footer */
+.decision{
+  background:var(--navy);
+  color:#fff;
+  padding:48px 32px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.decision h3{
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  font-weight:800;
+  margin-bottom:8px;
+  color:#fff;
+}
+.decision p{
+  font-size:.875rem;
+  color:rgba(255,255,255,.55);
+  max-width:560px;
+  margin:0 auto;
+  line-height:1.7;
+}
+.decision .options{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+.dec-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  border-radius:100px;
+  font-size:.8125rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.8);
+}
+.dec-pill .num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:rgba(59,111,232,.2);
+  color:#93BFFF;
+  font-size:.75rem;
+  font-weight:800;
+}
+</style>
+</head>
+<body>
+
+<div class="preview-header">
+  <h1>Anteprima Hero T2 · 3 opzioni alternate</h1>
+  <p class="lead">Replica fedele dell'animazione hero del sito principale (T2 cliente finale). Ogni hero alterna 2 messaggi ogni <strong style="color:#fff">5 secondi</strong> con crossfade. Stessa palette del sito attuale (navy + blu elettrico).</p>
+  <div class="meta">
+    <span>Edos · Site Refresh Mag 2026</span>
+    <span class="meta-dot"></span>
+    <span>Branch: claude/site-refresh-mag2026</span>
+  </div>
+</div>
+
+<!-- ============================ OPZIONE I · COSA + BANDI ============================ -->
+<div class="option-label">
+  <div class="option-tag">
+    <span class="pill">I</span>
+    <div class="text">
+      <strong>Cosa + Bandi</strong>
+      <span>Mostra il "cosa facciamo" + l'arma commerciale dei bandi finanziati · raccomandato</span>
+    </div>
+  </div>
+  <div class="option-msgs">
+    <code>5s · Cosa</code>
+    <span>⇄</span>
+    <code>5s · Fino al 100% a fondo perduto</code>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-container">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-bar"></span>
+      <span>Soluzioni digitali per aziende</span>
+    </div>
+    <div class="hero-stack">
+
+      <div class="hero-msg">
+        <h1>Costruiamo <em>piattaforme digitali</em> custom per la tua azienda.</h1>
+        <p class="sub">Configuratori, portali B2B, e-commerce multi-sede, gestionali. <strong>Team senior italiano</strong>, 40+ progetti consegnati, zero ritardi.</p>
+      </div>
+
+      <div class="hero-msg">
+        <h1>Fino al <em>100% a fondo perduto</em> sul tuo progetto digitale.</h1>
+        <p class="sub">Insieme al nostro partner di finanza agevolata intercettiamo bandi regionali e nazionali. <strong>Tra il 70% e il 100%</strong> dell'investimento coperto.</p>
+      </div>
+
+    </div>
+    <div class="hero-ctas">
+      <a href="#" class="btn-pill">
+        <span class="btn-pill-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+        Discovery gratuito
+      </a>
+      <a href="#" class="btn-ghost">Esplora i 9 settori →</a>
+    </div>
+  </div>
+  <div class="hero-timer">
+    <div class="dots">
+      <span class="dot d1 active"></span>
+      <span class="dot d2"></span>
+    </div>
+    <span class="label">Auto · 5s</span>
+  </div>
+</section>
+
+<!-- ============================ OPZIONE II · 2 MODELLI T2 ============================ -->
+<div class="option-label">
+  <div class="option-tag">
+    <span class="pill">II</span>
+    <div class="text">
+      <strong>2 modelli T2</strong>
+      <span>Mostra Build + Orchestrator come dual offering principale</span>
+    </div>
+  </div>
+  <div class="option-msgs">
+    <code>5s · Build</code>
+    <span>⇄</span>
+    <code>5s · Orchestrator</code>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-container">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-bar"></span>
+      <span>Soluzioni digitali per aziende</span>
+    </div>
+    <div class="hero-stack">
+
+      <div class="hero-msg">
+        <h1>Costruiamo <em>da zero</em> la tua piattaforma digitale.</h1>
+        <p class="sub">Configuratori, portali B2B, e-commerce, gestionali custom. <strong>Team senior italiano</strong> in retainer mensile, contratti chiari, SLA scritto.</p>
+      </div>
+
+      <div class="hero-msg">
+        <h1>Orchestriamo <em>i tuoi fornitori tech</em>, dalla discovery al go-live.</h1>
+        <p class="sub">Hai più fornitori da coordinare? Definiamo capitolato, governance, milestone. <strong>Tu hai un solo interlocutore</strong>: noi.</p>
+      </div>
+
+    </div>
+    <div class="hero-ctas">
+      <a href="#" class="btn-pill">
+        <span class="btn-pill-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+        Discovery gratuito
+      </a>
+      <a href="#" class="btn-ghost">Esplora i 9 settori →</a>
+    </div>
+  </div>
+  <div class="hero-timer">
+    <div class="dots">
+      <span class="dot d1 active"></span>
+      <span class="dot d2"></span>
+    </div>
+    <span class="label">Auto · 5s</span>
+  </div>
+</section>
+
+<!-- ============================ OPZIONE III · PAIN + PROMISE ============================ -->
+<div class="option-label">
+  <div class="option-tag">
+    <span class="pill">III</span>
+    <div class="text">
+      <strong>Pain + Promise</strong>
+      <span>Pain-first: parte dal problema del cliente, narrativo</span>
+    </div>
+  </div>
+  <div class="option-msgs">
+    <code>5s · Pain</code>
+    <span>⇄</span>
+    <code>5s · Promise</code>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="hero-container">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-bar"></span>
+      <span>Soluzioni digitali per aziende</span>
+    </div>
+    <div class="hero-stack">
+
+      <div class="hero-msg">
+        <h1>Hai un <em>progetto digitale complesso</em> che non sai da dove iniziare?</h1>
+        <p class="sub">Nuovo gestionale, e-commerce B2B, configuratore, portale clienti. <strong>Senza una guida tecnica seria, ti perdi</strong> tra fornitori, preventivi e specifiche tecniche.</p>
+      </div>
+
+      <div class="hero-msg">
+        <h1>Lo gestiamo noi, dalla <em>discovery al go-live</em>.</h1>
+        <p class="sub">Capitolato chiaro, milestone, code review, QA, PM dedicato. <strong>Un solo interlocutore tecnico</strong>, contratti che durano, consegne nei tempi.</p>
+      </div>
+
+    </div>
+    <div class="hero-ctas">
+      <a href="#" class="btn-pill">
+        <span class="btn-pill-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </span>
+        Discovery gratuito
+      </a>
+      <a href="#" class="btn-ghost">Esplora i 9 settori →</a>
+    </div>
+  </div>
+  <div class="hero-timer">
+    <div class="dots">
+      <span class="dot d1 active"></span>
+      <span class="dot d2"></span>
+    </div>
+    <span class="label">Auto · 5s</span>
+  </div>
+</section>
+
+<div class="decision">
+  <h3>Quale hero T2 ti convince?</h3>
+  <p>L'animazione gira in loop 10 secondi totali (5s + 5s) con crossfade morbido + leggero translate. Tutte e 3 le hero usano la stessa palette T2 attuale (navy + blu elettrico).</p>
+  <div class="options">
+    <span class="dec-pill"><span class="num">I</span>Cosa + Bandi</span>
+    <span class="dec-pill"><span class="num">II</span>2 modelli T2</span>
+    <span class="dec-pill"><span class="num">III</span>Pain + Promise</span>
+  </div>
+</div>
+
+</body>
+</html>

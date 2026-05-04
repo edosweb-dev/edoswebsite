@@ -253,6 +253,6 @@ Asset interno per Fase 2 del piano 90 Giorni. Copia-incolla diretto in Smartlead
 
 ```
 Giuseppe Famiani
-CEO · Edos Digital Solutions
+CEO · Edos
 www.edos.it
 ```
