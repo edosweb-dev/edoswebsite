@@ -38,10 +38,10 @@ Edos sviluppa piattaforme digitali su misura per aziende italiane: configuratori
 
 ## Numeri
 
-- 30+ progetti completati
+- 30+ progetti consegnati nel 2025
+- 7+ anni di esperienza media del team
+- 15+ professionisti senior
 - 100% consegne puntuali
-- 12+ professionisti senior
-- 8+ anni di esperienza media
 
 ## Metodo PartnerFlow
 
@@ -54,9 +54,16 @@ Il metodo di lavoro Edos prevede:
 
 Ogni progetto include NDA garantito, accesso CRM trasparente, PM dedicato e comunicazione in italiano.
 
-## Offerta Retainer
+## Compliance & Finanza Agevolata (differenziatore unico)
 
-[Reparto Tech Dedicato](https://www.edos.it/retainer/) — Team senior in retainer mensile per aziende che hanno bisogno di tecnologia seria senza assumere un reparto IT interno. Include PM, sviluppatori senior e designer dedicati, dashboard PartnerFlow real-time, SLA di consegna scritto, onboarding in 48 ore. Piani da €8.000 a €15.000/mese, commitment trimestrale, primo progetto a commessa prima del retainer.
+- [Bandi finanziati](https://www.edos.it/bandi-finanziati/) — Insieme al nostro partner di finanza agevolata intercettiamo bandi regionali e nazionali per finanziare il progetto digitale. Tra il 70% e il 100% a fondo perduto.
+- [NIS2](https://www.edos.it/nis2/) — Verifica compliance D.lgs. 138/2024 con il nostro partner cybersecurity certificato. 4 pilastri: visibilità, incident response, ruoli, continuity.
+- [Digital ACT (EAA)](https://www.edos.it/accessibilita/) — Adeguamento siti e e-commerce alla European Accessibility Act (D.lgs. 82/2022). WCAG 2.1 AA con partner specializzato. Sanzioni fino a 40K€.
+- [Network di partner](https://www.edos.it/partner/) — 4 aree: Compliance, Marketplace (Amazon), Tech (Shopify Partner), Servizi collaterali.
+
+## Offerta Reparto Tech Dedicato
+
+[Reparto Tech Dedicato](https://www.edos.it/servizi/team-dedicato/) — Team senior dedicato per aziende che vogliono un reparto tech senza assumere internamente. Include PM, sviluppatori senior e designer dedicati, dashboard PartnerFlow real-time, SLA di consegna scritto, onboarding in 48 ore. Piani da €8.000 a €15.000/mese, commitment trimestrale, primo progetto a commessa prima del canone.
 
 ## Risorse gratuite e tool
 
@@ -70,7 +77,11 @@ Ogni progetto include NDA garantito, accesso CRM trasparente, PM dedicato e comu
 ## Pagine principali
 
 - [Homepage](https://www.edos.it/)
-- [Reparto Tech Dedicato (Retainer)](https://www.edos.it/retainer/)
+- [Reparto Tech Dedicato](https://www.edos.it/servizi/team-dedicato/)
+- [Bandi finanziati](https://www.edos.it/bandi-finanziati/)
+- [NIS2](https://www.edos.it/nis2/)
+- [Digital ACT (Accessibilità)](https://www.edos.it/accessibilita/)
+- [Network partner](https://www.edos.it/partner/)
 - [Per le agenzie](https://www.edos.it/per-le-agenzie/)
 - [PartnerFlow — Metodo](https://www.edos.it/metodo/)
 - [Sicurezza & Compliance](https://www.edos.it/sicurezza-compliance/)
