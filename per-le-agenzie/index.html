@@ -151,6 +151,9 @@ h2 .b{color:var(--blu)}
 .price .what{font-size:clamp(16px,1.4vw,19px);font-weight:600}
 .price .what span{display:block;font-weight:400;font-size:14.5px;color:var(--muted);margin-top:4px}
 .price .desc{color:var(--ink-2);font-size:15.5px;line-height:1.55;max-width:52ch}
+.calib{margin-top:clamp(24px,3.4vh,34px);font-size:15.5px;color:var(--muted);
+  max-width:64ch;line-height:1.6}
+.calib b{color:var(--ink);font-weight:600}
 
 /* i lavori, su scuro */
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(30px,5vh,52px)}
@@ -237,7 +240,7 @@ h2 .b{color:var(--blu)}
 
 <header class="bar">
   <a href="/" aria-label="Edos"><img src="/logo-white.png" alt="Edos"></a>
-  <a class="cta" href="#parliamone">Mandateci la richiesta</a>
+  <a class="cta" href="#parliamone">Raccontateci un progetto</a>
 </header>
 
 <main>
@@ -249,8 +252,8 @@ h2 .b{color:var(--blu)}
     <p class="kicker a">Per agenzie di marketing e comunicazione</p>
     <h1 class="stmt a a2" style="margin-top:18px">Il reparto tecnico <em>della vostra agenzia</em></h1>
     <p class="dwhisper a a3">Quando il progetto del vostro cliente diventa tecnico, lo costruiamo noi. Davanti a lui ci siete voi, dall'inizio alla fine. <b>Al vostro cliente faremmo lo stesso prezzo che facciamo a voi</b>, quindi il rapporto resta dove sta.</p>
-    <a class="go a a4" href="#parliamone">Mandateci la richiesta del cliente</a>
-    <p class="after a a5">Vi diciamo come la faremmo, con prezzo e tempi, entro tre giorni lavorativi. Il brief lo scriviamo noi: da voi servono venti minuti.</p>
+    <a class="go a a4" href="#parliamone">Raccontateci un progetto</a>
+    <p class="after a a5">Due righe bastano. Vi rispondiamo con come lo faremmo, tempi e prezzo, entro tre giorni lavorativi: il brief lo scriviamo noi.</p>
   </div>
 </section>
 
@@ -293,24 +296,25 @@ h2 .b{color:var(--blu)}
   <p class="eyebrow a">Tre fasce, col prezzo scritto</p>
   <h2 class="a a2" style="margin-top:14px">La maggior parte delle agenzie <span class="b">comincia dal modulo</span></h2>
   <div class="rule"></div>
-  <p class="whisper a a3">Sono i prezzi che fatturiamo a voi. Il margine che ci mettete sopra è vostro, e davanti al vostro cliente di prezzo parlate voi.</p>
+  <p class="whisper a a3">Sono le fasce in cui si sono collocati i lavori consegnati finora, e servono a darvi un ordine di grandezza subito. Il numero esatto nasce dal perimetro del vostro cliente e lo fissiamo insieme prima di partire. Sono prezzi che fatturiamo a voi: il margine che ci mettete sopra è vostro, e davanti al vostro cliente di prezzo parlate voi.</p>
 
   <div style="margin-top:clamp(30px,5vh,52px)" class="seq">
     <div class="price">
-      <span class="eur">2.500 €</span>
+      <span class="eur">2.500 – 4.000 €</span>
       <span class="what">Un modulo<span>due o tre settimane</span></span>
       <span class="desc">Un configuratore, un calcolatore, un'area riservata, un form che parla col gestionale. Si aggiunge al sito che il cliente ha già, e serve a vederci lavorare prima di affidarci un progetto intero.</span>
     </div>
     <div class="price">
-      <span class="eur">4.000 €</span>
+      <span class="eur">4.000 – 12.000 €</span>
       <span class="what">Un progetto completo<span>da sei a dieci settimane</span></span>
       <span class="desc">Portale con aree riservate e ruoli, e-commerce con listini per rivenditore, integrazioni verso i software che il cliente usa già. Il primo pezzo entra in funzione mentre il resto avanza.</span>
     </div>
     <div class="price">
-      <span class="eur">12.000 €</span>
+      <span class="eur">da 12.000 €</span>
       <span class="what">Una piattaforma<span>a fasi, la prima entro sei settimane</span></span>
       <span class="desc">Il lavoro dell'azienda in un posto solo: pratiche, ruoli, approvazioni, provvigioni, e i documenti che si compilano da soli. Si quota sul perimetro, dopo la prima call.</span>
     </div>
+    <p class="calib a a6">Ogni azienda ha le sue regole, quindi il perimetro cambia il numero. Dopo la prima call vi arriva il preventivo con dentro cosa comprende, in quanto tempo e a che prezzo: <b>da quel momento quel numero resta fermo</b>, e quello che arriva dopo lo quotiamo prima di metterci mano.</p>
   </div>
 </section>
 
@@ -385,8 +389,8 @@ h2 .b{color:var(--blu)}
   <div class="brace">{}</div>
   <div class="in csplit">
     <div>
-      <h2 class="cst a">Mandateci la richiesta <em>del vostro cliente</em></h2>
-      <p class="crecap a a2">Due righe bastano. Vi diciamo <b>come la faremmo, con prezzo e tempi, entro tre giorni lavorativi</b>. Il brief lo scriviamo noi: da voi servono venti minuti. Poi decidete voi.</p>
+      <h2 class="cst a">Raccontateci un progetto <em>del vostro cliente</em></h2>
+      <p class="crecap a a2">Anche uno che state ancora valutando. Ora succede questo: ci scrivete due righe, e vi rispondiamo con <b>come lo faremmo, tempi e prezzo, entro tre giorni lavorativi</b>. Il brief lo scriviamo noi: da voi servono venti minuti. Poi decidete voi.</p>
       <p class="crecap a a3">Se preferite sentirvi prima, scrivete a <a href="mailto:info@edos.it" style="color:#7FB0FF">info@edos.it</a>.</p>
     </div>
 
@@ -422,10 +426,10 @@ h2 .b{color:var(--blu)}
         </select>
       </div>
       <div class="field">
-        <label for="ag-progetto">Cosa vi ha chiesto il cliente <span>(facoltativo)</span></label>
-        <textarea id="ag-progetto" name="progetto" placeholder="Un e-commerce con listini per rivenditore, serve entro novembre."></textarea>
+        <label for="ag-progetto">Raccontateci il progetto <span>(facoltativo)</span></label>
+        <textarea id="ag-progetto" name="progetto" placeholder="Un cliente ci ha chiesto un e-commerce con listini per rivenditore, gli serve entro novembre."></textarea>
       </div>
-      <button type="submit" class="send" id="agSend">Mandate la richiesta</button>
+      <button type="submit" class="send" id="agSend">Raccontatecelo</button>
       <p class="note">Rispondiamo dalla casella di Edos. I dati che ci lasciate servono a rispondervi e restano qui.</p>
       <div class="msg" id="agMsg" role="status"></div>
     </form>
@@ -487,19 +491,19 @@ h2 .b{color:var(--blu)}
       .then(function(res){
         if(res.ok){
           msg.className='msg ok';
-          msg.textContent='Arrivata. Vi rispondiamo con come la faremmo, prezzo e tempi, entro tre giorni lavorativi.';
-          f.reset();btn.textContent='Richiesta inviata';
+          msg.textContent='Arrivato. Vi rispondiamo con come lo faremmo, tempi e prezzo, entro tre giorni lavorativi.';
+          f.reset();btn.textContent='Arrivato, grazie';
           if(window.gtag){gtag('event','generate_lead',{form:'agenzie',value:1})}
         } else {
           msg.className='msg ko';
           msg.textContent=(res.j&&res.j.error)||'Riprovate tra un istante, oppure scriveteci a info@edos.it.';
-          btn.disabled=false;btn.textContent='Mandate la richiesta';
+          btn.disabled=false;btn.textContent='Raccontatecelo';
         }
       })
       .catch(function(){
         msg.className='msg ko';
         msg.textContent='Riprovate tra un istante, oppure scriveteci a info@edos.it.';
-        btn.disabled=false;btn.textContent='Mandate la richiesta';
+        btn.disabled=false;btn.textContent='Raccontatecelo';
       });
   });
 })();
