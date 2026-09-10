@@ -102,6 +102,12 @@ h2 .b{color:var(--blu)}
   max-width:44ch;line-height:1.5}
 .dwhisper b{color:#fff;font-weight:600}
 
+.patti{list-style:none;margin-top:clamp(26px,4vh,40px);display:grid;gap:14px;max-width:44ch}
+.patti li{font-size:clamp(17px,1.6vw,23px);font-weight:500;color:#fff;line-height:1.35;
+  padding-left:30px;position:relative}
+.patti li::before{content:'';position:absolute;left:0;top:.62em;width:16px;height:2px;
+  background:rgba(255,255,255,.6)}
+
 /* blu pieno, per il picco */
 .drench{color:#fff;background:radial-gradient(120% 100% at 80% 0%,#1466d8 0%,#004aad 46%,#012f72 100%);
   padding:clamp(56px,11vh,124px) var(--pad)}
@@ -185,7 +191,7 @@ h2 .b{color:var(--blu)}
 .work .fig{transition:transform .3s ease}
 .work:hover .fig{transform:translateY(-2px)}
 .work .was{font-size:14.5px;color:rgba(255,255,255,.5);line-height:1.5}
-.work .now{font-size:clamp(17px,1.5vw,21px);font-weight:600;color:#fff;margin-top:10px;line-height:1.35}
+.work .now{font-size:clamp(17px,1.5vw,21px);font-weight:600;color:#fff;line-height:1.35}
 .work .fig{font-size:clamp(28px,3.2vw,44px);font-weight:800;color:var(--sky);
   letter-spacing:-.04em;margin-top:22px;line-height:1;font-variant-numeric:tabular-nums}
 .work .fig span{display:block;font-size:14px;font-weight:400;color:rgba(255,255,255,.5);
@@ -304,7 +310,7 @@ h2 .b{color:var(--blu)}
   <div class="in">
     <p class="kicker a">Per agenzie di marketing e comunicazione</p>
     <h1 class="stmt a a2" style="margin-top:18px">Il reparto tecnico <em>della vostra agenzia</em></h1>
-    <p class="dwhisper a a3">Quando il progetto del vostro cliente diventa tecnico, lo costruiamo noi. Davanti a lui ci siete voi, dall'inizio alla fine. <b>Al vostro cliente faremmo lo stesso prezzo che facciamo a voi</b>, quindi il rapporto resta dove sta.</p>
+    <p class="dwhisper a a3">Quando il progetto del vostro cliente diventa tecnico, lo costruiamo noi. Davanti a lui ci siete voi, dall'inizio alla fine.</p>
     <a class="go a a4" href="#parliamone">Raccontateci un progetto</a>
     <p class="after a a5">Due righe bastano. Vi rispondiamo con come lo faremmo, tempi e prezzo, entro tre giorni lavorativi: il brief lo scriviamo noi.</p>
   </div>
@@ -323,7 +329,7 @@ h2 .b{color:var(--blu)}
       <p class="eyebrow a">Quando ci chiamate</p>
       <h2 class="a a2" style="margin-top:14px">Di solito <span class="b">suona così</span></h2>
       <div class="rule"></div>
-      <p class="whisper a a3">Sono le richieste che arrivano dalle agenzie, raccolte come le sentiamo in call. Se ne riconoscete una, è il punto esatto in cui entriamo noi.</p>
+      <p class="whisper a a3">Se ne riconoscete una, è il punto esatto in cui entriamo noi.</p>
     </div>
     <div class="elist seq">
       <div class="erow"><span class="n">01</span><span class="t">«Il cliente ci ha chiesto un'area riservata, e da lì in avanti ci fermiamo.»</span></div>
@@ -341,7 +347,11 @@ h2 .b{color:var(--blu)}
   <div class="in">
     <p class="kicker a" style="color:rgba(255,255,255,.74)">La domanda che vi state facendo</p>
     <h2 class="stmt a a2" style="margin-top:18px">Il cliente <em style="color:#fff;opacity:.74">resta vostro</em></h2>
-    <p class="dwhisper a a3">Per tutta la durata del lavoro e per i ventiquattro mesi dopo la consegna trattiamo con il vostro cliente attraverso di voi, e sta scritto nel contratto. Al cliente diretto facciamo gli stessi prezzi che facciamo a voi, quindi la porta di servizio per scavalcarvi resta chiusa. Le call col cliente finale le portiamo noi, col vostro nome, quando lo preferite.</p>
+    <ul class="patti seq">
+      <li>Scritto nel contratto, per ventiquattro mesi dopo la consegna</li>
+      <li>Al cliente diretto facciamo il vostro stesso prezzo</li>
+      <li>Le call le portiamo noi, col vostro nome</li>
+    </ul>
   </div>
 </section>
 
@@ -349,7 +359,7 @@ h2 .b{color:var(--blu)}
   <p class="eyebrow a">Tre fasce, col prezzo scritto</p>
   <h2 class="a a2" style="margin-top:14px">La maggior parte delle agenzie <span class="b">comincia dal modulo</span></h2>
   <div class="rule"></div>
-  <p class="whisper a a3">Sono le fasce dove si sono collocati i lavori consegnati finora, e vi danno un ordine di grandezza subito. Il margine che ci mettete sopra è vostro.</p>
+  <p class="whisper a a3">Dove si sono collocati i lavori consegnati finora. Il margine che ci mettete sopra è vostro.</p>
 
   <div style="margin-top:clamp(30px,5vh,52px)" class="seq">
     <div class="price">
@@ -367,7 +377,7 @@ h2 .b{color:var(--blu)}
       <span class="what">Una piattaforma<span>a fasi, la prima entro sei settimane</span></span>
       <span class="desc">Il lavoro dell'azienda in un posto solo: pratiche, ruoli, approvazioni, provvigioni, e i documenti che si compilano da soli.</span>
     </div>
-    <p class="calib a a6">Ogni azienda ha le sue regole, quindi il perimetro cambia il numero. Dopo la prima call arriva il preventivo con perimetro, tempi e prezzo: <b>da lì quel numero resta fermo</b>.</p>
+    <p class="calib a a6">Il perimetro cambia il numero. Dopo la prima call arriva il preventivo, e <b>da lì quel numero resta fermo</b>.</p>
   </div>
 </section>
 
@@ -379,27 +389,24 @@ h2 .b{color:var(--blu)}
     <figure class="shot a a3">
       <div class="frame"><img src="/images/agenzie/dashboard-campagne.webp" width="1440" height="730" loading="lazy"
            alt="Schermata di una piattaforma di analisi campagne costruita da Edos per un'agenzia"></div>
-      <figcaption>Una delle piattaforme, aperta. Costruita per un'agenzia e usata ogni giorno dai suoi clienti: il marchio sopra è il suo.</figcaption>
+      <figcaption>Costruita per un'agenzia, usata dai suoi clienti. Il marchio sopra è il suo.</figcaption>
     </figure>
 
     <div class="works seq">
       <div class="work">
-        <p class="was">Era una piattaforma per una linea di prodotto.</p>
-        <p class="now">Oggi sono quattordici, per lo stesso gruppo della finanza agevolata.</p>
+        <p class="now">Da una piattaforma a quattordici, per un gruppo della finanza agevolata.</p>
         <div class="fig">13 volte<span>ci hanno richiamato in due anni</span></div>
       </div>
       <div class="work">
-        <p class="was">Era un calcolatore da mettere sul sito.</p>
-        <p class="now">Oggi è la piattaforma di un mediatore creditizio nazionale.</p>
-        <div class="fig">50.000<span>visitatori al mese su 1.200 pagine. Chi cerca casa vede la rata mentre inserisce i dati</span></div>
+        <p class="now">Da un calcolatore alla piattaforma di un mediatore creditizio nazionale.</p>
+        <div class="fig">50.000<span>visitatori al mese, su 1.200 pagine</span></div>
       </div>
       <div class="work">
-        <p class="was">Erano quattro file Excel e una casella condivisa.</p>
-        <p class="now">Oggi è il gestionale di un facility management tecnico.</p>
-        <div class="fig">150<span>clienti corporate in un posto solo, e i tecnici chiudono dal telefono</span></div>
+        <p class="now">Da quattro file Excel al gestionale di un facility management tecnico.</p>
+        <div class="fig">150<span>clienti corporate in un posto solo</span></div>
       </div>
     </div>
-    <p class="coda a a6">In tutti e tre i casi il committente ci ha chiamati direttamente. Con la vostra agenzia in mezzo cambia una cosa: queste storie le raccontate voi.</p>
+    <p class="coda a a6">Con la vostra agenzia in mezzo cambia una cosa: queste storie le raccontate voi.</p>
   </div>
 </section>
 
@@ -413,7 +420,7 @@ h2 .b{color:var(--blu)}
   <p class="eyebrow a">Come si lavora</p>
   <h2 class="a a2" style="margin-top:14px">Sei impegni che <span class="b">finiscono nel contratto</span></h2>
   <div class="rule"></div>
-  <p class="whisper a a3">Le cose che un'agenzia vuole sapere prima di mettere il suo cliente nelle mani di qualcun altro.</p>
+  <p class="whisper a a3">Apritele: sono le cose che un'agenzia vuole sapere prima.</p>
 
   <div class="grid6 seq">
     <details class="gi">
@@ -449,8 +456,8 @@ h2 .b{color:var(--blu)}
   <div class="in csplit">
     <div>
       <h2 class="cst a">Raccontateci un progetto <em>del vostro cliente</em></h2>
-      <p class="crecap a a2">Anche uno che state ancora valutando. Ora succede questo: ci scrivete due righe, e vi rispondiamo con <b>come lo faremmo, tempi e prezzo, entro tre giorni lavorativi</b>. Il brief lo scriviamo noi: da voi servono venti minuti. Poi decidete voi.</p>
-      <p class="crecap a a3">Se preferite sentirvi prima, scrivete a <a href="mailto:info@edos.it" style="color:#7FB0FF">info@edos.it</a>.</p>
+      <p class="crecap a a2">Anche uno che state ancora valutando. Due righe bastano: vi rispondiamo con <b>come lo faremmo, tempi e prezzo, entro tre giorni lavorativi</b>.</p>
+      <p class="crecap a a3">Oppure scrivete a <a href="mailto:info@edos.it" style="color:#7FB0FF">info@edos.it</a>.</p>
     </div>
 
     <form class="glass a a4" id="agForm" novalidate>
