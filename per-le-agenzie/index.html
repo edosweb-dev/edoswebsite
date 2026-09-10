@@ -155,6 +155,22 @@ h2 .b{color:var(--blu)}
   max-width:64ch;line-height:1.6}
 .calib b{color:var(--ink);font-weight:600}
 
+/* la schermata */
+.shot{margin:clamp(28px,4.6vh,46px) calc(var(--pad) * -1) 0 0}
+.shot .frame{position:relative;max-height:clamp(240px,42vh,400px);overflow:hidden;
+  border:1px solid rgba(255,255,255,.16);border-right:0;border-radius:8px 0 0 8px;
+  box-shadow:0 44px 90px -46px rgba(0,0,0,.95)}
+.shot .frame::after{content:'';position:absolute;left:0;right:0;bottom:0;height:120px;
+  background:linear-gradient(180deg,rgba(9,15,28,0),rgba(9,15,28,.92))}
+.shot img{width:100%;height:auto;display:block}
+.shot figcaption{margin-top:14px;font-size:14px;color:rgba(255,255,255,.5);
+  max-width:52ch;line-height:1.5;padding-right:var(--pad)}
+@media (max-width:1000px){
+  .shot{margin-right:0}
+  .shot .frame{border-right:1px solid rgba(255,255,255,.16);border-radius:8px}
+  .shot figcaption{padding-right:0}
+}
+
 /* i lavori, su scuro */
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:clamp(30px,5vh,52px)}
 .work{border-top:1px solid rgba(255,255,255,.16);padding-top:22px}
@@ -171,11 +187,21 @@ h2 .b{color:var(--blu)}
 
 /* impegni */
 .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.4vw,52px);margin-top:clamp(32px,5vh,56px)}
-.gi .gic{height:40px;margin-bottom:16px;display:flex;align-items:flex-end}
-.gi .gic svg{width:40px;height:40px;stroke:var(--blu);stroke-width:1.6;fill:none;
+.gi{border-top:1px solid var(--line);padding-top:18px}
+.gi summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:40px 1fr 18px;
+  gap:14px;align-items:center;padding-bottom:2px}
+.gi summary::-webkit-details-marker{display:none}
+.gi summary::after{content:'';width:11px;height:11px;justify-self:end;
+  border-right:1.6px solid var(--blu);border-bottom:1.6px solid var(--blu);
+  transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s ease}
+.gi[open] summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
+.gi .gic{display:flex;align-items:center}
+.gi .gic svg{width:34px;height:34px;stroke:var(--blu);stroke-width:1.6;fill:none;
   stroke-linecap:round;stroke-linejoin:round}
-.gi b{display:block;font-size:clamp(16px,1.4vw,19px);font-weight:700;letter-spacing:-.01em}
-.gi p{margin-top:9px;font-size:15px;color:var(--ink-2);line-height:1.55;max-width:34ch}
+.gi b{display:block;font-size:clamp(16px,1.35vw,18px);font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.gi p{margin:12px 0 4px 54px;font-size:15px;color:var(--ink-2);line-height:1.55;max-width:34ch}
+.gi summary:hover b{color:var(--blu)}
+@media (max-width:640px){.gi p{margin-left:0}}
 
 /* chiusura col modulo */
 .csplit{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(30px,5vw,62px);align-items:center}
@@ -296,25 +322,25 @@ h2 .b{color:var(--blu)}
   <p class="eyebrow a">Tre fasce, col prezzo scritto</p>
   <h2 class="a a2" style="margin-top:14px">La maggior parte delle agenzie <span class="b">comincia dal modulo</span></h2>
   <div class="rule"></div>
-  <p class="whisper a a3">Sono le fasce in cui si sono collocati i lavori consegnati finora, e servono a darvi un ordine di grandezza subito. Il numero esatto nasce dal perimetro del vostro cliente e lo fissiamo insieme prima di partire. Sono prezzi che fatturiamo a voi: il margine che ci mettete sopra è vostro, e davanti al vostro cliente di prezzo parlate voi.</p>
+  <p class="whisper a a3">Sono le fasce dove si sono collocati i lavori consegnati finora, e vi danno un ordine di grandezza subito. Il margine che ci mettete sopra è vostro.</p>
 
   <div style="margin-top:clamp(30px,5vh,52px)" class="seq">
     <div class="price">
       <span class="eur">2.500 – 4.000 €</span>
       <span class="what">Un modulo<span>due o tre settimane</span></span>
-      <span class="desc">Un configuratore, un calcolatore, un'area riservata, un form che parla col gestionale. Si aggiunge al sito che il cliente ha già, e serve a vederci lavorare prima di affidarci un progetto intero.</span>
+      <span class="desc">Un configuratore, un calcolatore, un'area riservata, un form che parla col gestionale. Si aggiunge al sito che il cliente ha già.</span>
     </div>
     <div class="price">
       <span class="eur">4.000 – 12.000 €</span>
       <span class="what">Un progetto completo<span>da sei a dieci settimane</span></span>
-      <span class="desc">Portale con aree riservate e ruoli, e-commerce con listini per rivenditore, integrazioni verso i software che il cliente usa già. Il primo pezzo entra in funzione mentre il resto avanza.</span>
+      <span class="desc">Portale con aree riservate e ruoli, e-commerce con listini per rivenditore, integrazioni verso i software che il cliente usa già.</span>
     </div>
     <div class="price">
       <span class="eur">da 12.000 €</span>
       <span class="what">Una piattaforma<span>a fasi, la prima entro sei settimane</span></span>
-      <span class="desc">Il lavoro dell'azienda in un posto solo: pratiche, ruoli, approvazioni, provvigioni, e i documenti che si compilano da soli. Si quota sul perimetro, dopo la prima call.</span>
+      <span class="desc">Il lavoro dell'azienda in un posto solo: pratiche, ruoli, approvazioni, provvigioni, e i documenti che si compilano da soli.</span>
     </div>
-    <p class="calib a a6">Ogni azienda ha le sue regole, quindi il perimetro cambia il numero. Dopo la prima call vi arriva il preventivo con dentro cosa comprende, in quanto tempo e a che prezzo: <b>da quel momento quel numero resta fermo</b>, e quello che arriva dopo lo quotiamo prima di metterci mano.</p>
+    <p class="calib a a6">Ogni azienda ha le sue regole, quindi il perimetro cambia il numero. Dopo la prima call arriva il preventivo con perimetro, tempi e prezzo: <b>da lì quel numero resta fermo</b>.</p>
   </div>
 </section>
 
@@ -323,21 +349,27 @@ h2 .b{color:var(--blu)}
   <div class="in">
     <p class="kicker a">Lavori consegnati</p>
     <h2 class="stmt a a2" style="margin-top:16px;font-size:clamp(29px,4.2vw,56px);max-width:19ch">Lo stesso gruppo ci ha <em>richiamati tredici volte</em></h2>
+    <figure class="shot a a3">
+      <div class="frame"><img src="/images/agenzie/dashboard-campagne.webp" width="1440" height="730" loading="lazy"
+           alt="Schermata di una piattaforma di analisi campagne costruita da Edos per un'agenzia"></div>
+      <figcaption>Una delle piattaforme, aperta. Costruita per un'agenzia e usata ogni giorno dai suoi clienti: il marchio sopra è il suo.</figcaption>
+    </figure>
+
     <div class="works seq">
       <div class="work">
         <p class="was">Era una piattaforma per una linea di prodotto.</p>
         <p class="now">Oggi sono quattordici, per lo stesso gruppo della finanza agevolata.</p>
-        <div class="fig">13 volte<span>ci hanno richiamato in due anni. Ogni volta partiamo da quello che abbiamo già costruito e lo adattiamo</span></div>
+        <div class="fig">13 volte<span>ci hanno richiamato in due anni</span></div>
       </div>
       <div class="work">
         <p class="was">Era un calcolatore da mettere sul sito.</p>
         <p class="now">Oggi è la piattaforma di un mediatore creditizio nazionale.</p>
-        <div class="fig">50.000<span>visitatori al mese su 1.200 pagine. Chi cerca casa vede la rata mentre inserisce i dati, e la rete riceve la pratica già compilata</span></div>
+        <div class="fig">50.000<span>visitatori al mese su 1.200 pagine. Chi cerca casa vede la rata mentre inserisce i dati</span></div>
       </div>
       <div class="work">
         <p class="was">Erano quattro file Excel e una casella condivisa.</p>
         <p class="now">Oggi è il gestionale di un facility management tecnico.</p>
-        <div class="fig">150<span>clienti corporate in un posto solo. I tecnici chiudono dal telefono, l'ufficio vede in tempo reale cosa è pronto da fatturare</span></div>
+        <div class="fig">150<span>clienti corporate in un posto solo, e i tecnici chiudono dal telefono</span></div>
       </div>
     </div>
     <p class="coda a a6">In tutti e tre i casi il committente ci ha chiamati direttamente. Con la vostra agenzia in mezzo cambia una cosa: queste storie le raccontate voi.</p>
@@ -351,36 +383,30 @@ h2 .b{color:var(--blu)}
   <p class="whisper a a3">Le cose che un'agenzia vuole sapere prima di mettere il suo cliente nelle mani di qualcun altro.</p>
 
   <div class="grid6 seq">
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></div>
-      <b>Il cliente resta vostro</b>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/></svg></span><b>Il cliente resta vostro</b></summary>
       <p>Per tutta la durata e per i ventiquattro mesi dopo la consegna trattiamo con il vostro cliente attraverso di voi. Sta nel contratto.</p>
-    </div>
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></div>
-      <b>Il codice è vostro dal primo giorno</b>
+    </details>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></span><b>Il codice è vostro dal primo giorno</b></summary>
       <p>Il repository è intestato a voi da subito: quello che avete pagato è già vostro mentre lavoriamo.</p>
-    </div>
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7.2-7.2a2 2 0 01-.6-1.4V5a2 2 0 012-2h7a2 2 0 011.4.6l7.4 7.4a2 2 0 010 2.4z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></div>
-      <b>Il prezzo del preventivo è il prezzo</b>
+    </details>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0l-7.2-7.2a2 2 0 01-.6-1.4V5a2 2 0 012-2h7a2 2 0 011.4.6l7.4 7.4a2 2 0 010 2.4z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span><b>Il prezzo del preventivo è il prezzo</b></summary>
       <p>Quello che sta nel perimetro è chiuso. Quello che arriva dopo lo quotiamo prima di metterci mano.</p>
-    </div>
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9"/></svg></div>
-      <b>Sapete sempre con chi parlate</b>
+    </details>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.9"/></svg></span><b>Sapete sempre con chi parlate</b></summary>
       <p>La stessa persona dalla prima call alla modifica di un anno dopo. È il motivo per cui la risposta arriva in giornata.</p>
-    </div>
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-      <b>Restiamo dopo il lancio</b>
+    </details>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Restiamo dopo il lancio</b></summary>
       <p>720 € l'anno tengono in piedi aggiornamenti, backup, sicurezza e ripristino. Le evoluzioni nei pacchetti da 40 ore.</p>
-    </div>
-    <div class="gi">
-      <div class="gic"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="5"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></div>
-      <b>Fornitore qualificato 4.0</b>
+    </details>
+    <details class="gi">
+      <summary><span class="gic"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="5"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span><b>Fornitore qualificato 4.0</b></summary>
       <p>Edos è iscritta all'Elenco Fornitori 4.0 di Unioncamere Lombardia: quando il vostro cliente prende un bando, quella spesa può venire da noi.</p>
-    </div>
+    </details>
   </div>
 </section>
 
