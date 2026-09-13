@@ -816,6 +816,62 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .anello{flex-direction:column;gap:12px;padding:22px}
 }
 </style>
+
+<style id="metodo-interattivo">
+.metodo-due{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,4vw,64px);align-items:start;margin-top:clamp(32px,4vw,52px)}
+.tappe{position:relative;display:flex;flex-direction:column;gap:6px}
+.tappe-binario{position:absolute;left:23px;top:26px;bottom:26px;width:1px;background:rgba(13,27,62,.14);z-index:0}
+.tappa{position:relative;z-index:1;display:flex;gap:18px;align-items:flex-start;text-align:left;background:none;border:none;border-radius:12px;padding:14px 16px 14px 0;cursor:pointer;font-family:inherit;transition:background .25s}
+.tappa:hover{background:rgba(0,74,173,.04)}
+.tappa:focus-visible{outline:2px solid #004AAD;outline-offset:2px}
+.tappa-nodo{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--white);border:1px solid rgba(13,27,62,.16);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.95rem;font-weight:600;color:#5F6B80;font-variant-numeric:tabular-nums;transition:all .28s}
+.tappa-corpo{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tappa-chi{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#5F6B80}
+.tappa-titolo{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy);letter-spacing:-.015em}
+.tappa-riga{font-size:1rem;line-height:1.5;color:#4A5568}
+.tappa-attiva .tappa-nodo{background:#004AAD;border-color:#004AAD;color:#fff;box-shadow:0 0 0 6px rgba(0,74,173,.1)}
+.tappa-attiva .tappa-titolo{color:#004AAD}
+
+.pannelli{position:relative}
+.pn-finestra{background:#fff;border:1px solid rgba(13,27,62,.1);border-radius:14px;box-shadow:0 24px 60px -30px rgba(13,27,62,.3);padding:22px;min-height:330px}
+.pn-didascalia{margin:14px 2px 0;font-size:.9rem;color:#5F6B80}
+.pannello{animation:pnEntra .35s cubic-bezier(.16,1,.3,1)}
+@keyframes pnEntra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.pn-elenco{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.pn-elenco li{display:flex;flex-direction:column;gap:4px;padding:16px 4px;border-bottom:1px solid rgba(13,27,62,.07)}
+.pn-elenco li:last-child{border-bottom:none}
+.pn-et{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#5F6B80}
+.pn-elenco strong{font-size:1.0625rem;font-weight:600;color:var(--navy)}
+
+.pn-chat{display:flex;flex-direction:column;gap:12px}
+.pn-msg{background:#F4F6FA;border-radius:12px 12px 12px 4px;padding:12px 14px;max-width:88%}
+.pn-msg-noi{background:rgba(0,74,173,.07);border-radius:12px 12px 4px 12px;align-self:flex-end;max-width:82%}
+.pn-chi{display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:#5F6B80;margin-bottom:5px}
+.pn-msg p{margin:0;font-size:1rem;line-height:1.5;color:var(--navy)}
+.pn-scrivendo{display:flex;gap:5px;padding:10px 14px;background:#F4F6FA;border-radius:12px;width:fit-content}
+.pn-scrivendo span{width:7px;height:7px;border-radius:50%;background:rgba(13,27,62,.3);animation:pnPunti 1.3s infinite}
+.pn-scrivendo span:nth-child(2){animation-delay:.18s}
+.pn-scrivendo span:nth-child(3){animation-delay:.36s}
+@keyframes pnPunti{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+
+.pn-doc-testa{margin:0 0 14px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5F6B80}
+.pn-indice{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.pn-indice li{display:flex;gap:12px;align-items:baseline;padding:13px 4px;border-bottom:1px solid rgba(13,27,62,.07);font-size:1.0625rem;color:var(--navy);line-height:1.45}
+.pn-indice li span{font-variant-numeric:tabular-nums;color:#5F6B80;font-size:.9rem}
+.pn-pri{font-style:normal;margin-left:8px;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#A8352C;background:rgba(201,68,58,.1);padding:3px 8px;border-radius:99px;white-space:nowrap}
+.pn-doc-piede{margin:16px 0 0;font-size:.95rem;color:#4A5568}
+
+@media (max-width:900px){
+  .metodo-due{grid-template-columns:1fr;gap:26px}
+  .pn-finestra{min-height:0}
+  .tappa-riga{font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .pannello{animation:none}
+  .pn-scrivendo span{animation:none}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -891,45 +947,120 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   <div class="container">
     <div class="fasi-testa">
       <h2>Raccontateci cosa vi serve.<br><span class="dc-accento">Poi verifichiamo che sia quello.</span></h2>
-      <p>Il passaggio che nessuno fa sta fra il primo e il secondo: quello che ci dite voi lo mettiamo accanto a quello che dicono i vostri.</p>
+      <p>Il passaggio che nessuno fa sta fra il primo e il secondo.</p>
     </div>
 
-    <div class="percorso">
-      <div class="percorso-binario" aria-hidden="true"></div>
-      <article class="stazione">
-        <div class="stazione-nodo"><span class="stazione-num">01</span></div>
-        <p class="stazione-chi">il titolare</p>
-        <h3>Raccontate</h3>
-        <p class="stazione-testo">Dite cosa vi serve, come lo vedete voi. Si firma, e il contratto nomina chi entra nella chat e chi decide.</p>
-      </article><article class="stazione">
-        <div class="stazione-nodo"><span class="stazione-num">02</span></div>
-        <p class="stazione-chi">chi esegue</p>
-        <h3>Parlano i vostri</h3>
-        <p class="stazione-testo">Una chat aperta all&rsquo;azienda per quindici giorni. Scrivono dal telefono, quando vogliono. Zero riunioni, e voi non preparate niente.</p>
-      </article><article class="stazione">
-        <div class="stazione-nodo"><span class="stazione-num">03</span></div>
-        <p class="stazione-chi">Edos</p>
-        <h3>Vi portiamo il piano</h3>
-        <p class="stazione-testo">I punti critici e il progetto a moduli, con i numeri e le priorit&agrave;. &Egrave; il capitolato della vostra azienda, ed &egrave; vostro. Poi scegliete.</p>
-      </article><article class="stazione">
-        <div class="stazione-nodo"><span class="stazione-num">04</span></div>
-        <p class="stazione-chi">Edos</p>
-        <h3>Costruiamo</h3>
-        <p class="stazione-testo">Si parte da quello che usate oggi, il vostro Excel compreso. Settimane, e nessuna anagrafica da riportare a mano.</p>
-      </article>
+    <div class="metodo-due">
+      <div class="tappe" role="tablist" aria-label="Le quattro tappe del metodo">
+        <button class="tappa tappa-attiva" role="tab" id="tappa-1"
+        aria-selected="true" aria-controls="pannello-1" tabindex="0" data-tappa="1">
+      <span class="tappa-nodo">01</span>
+      <span class="tappa-corpo">
+        <span class="tappa-chi">il titolare</span>
+        <span class="tappa-titolo">Raccontate</span>
+        <span class="tappa-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span>
+      </span>
+    </button><button class="tappa" role="tab" id="tappa-2"
+        aria-selected="false" aria-controls="pannello-2" tabindex="-1" data-tappa="2">
+      <span class="tappa-nodo">02</span>
+      <span class="tappa-corpo">
+        <span class="tappa-chi">chi esegue</span>
+        <span class="tappa-titolo">Parlano i vostri</span>
+        <span class="tappa-riga">Quindici giorni di chat aperta. Zero riunioni.</span>
+      </span>
+    </button><button class="tappa" role="tab" id="tappa-3"
+        aria-selected="false" aria-controls="pannello-3" tabindex="-1" data-tappa="3">
+      <span class="tappa-nodo">03</span>
+      <span class="tappa-corpo">
+        <span class="tappa-chi">Edos</span>
+        <span class="tappa-titolo">Vi portiamo il piano</span>
+        <span class="tappa-riga">I punti critici e i moduli, con le priorit&agrave;.</span>
+      </span>
+    </button><button class="tappa" role="tab" id="tappa-4"
+        aria-selected="false" aria-controls="pannello-4" tabindex="-1" data-tappa="4">
+      <span class="tappa-nodo">04</span>
+      <span class="tappa-corpo">
+        <span class="tappa-chi">Edos</span>
+        <span class="tappa-titolo">Costruiamo</span>
+        <span class="tappa-riga">Si parte dal vostro Excel. Settimane, non mesi.</span>
+      </span>
+    </button>
+        <div class="tappe-binario" aria-hidden="true"></div>
+      </div>
+      <div class="pannelli">
+        <div class="pannello pannello-attivo" id="pannello-1" role="tabpanel" aria-labelledby="tappa-1">
+      <div class="pn-finestra"><ul class="pn-elenco">
+  <li><span class="pn-et">Chi entra nella chat</span><strong>6 persone, dai tre reparti che toccano la pratica</strong></li>
+  <li><span class="pn-et">Chi decide</span><strong>Il titolare, e sta scritto nel contratto</strong></li>
+  <li><span class="pn-et">Quanto dura l&rsquo;ascolto</span><strong>15 giorni, senza riunioni</strong></li>
+  <li><span class="pn-et">Cosa preparate voi</span><strong>Niente</strong></li>
+</ul></div>
+      <p class="pn-didascalia">Il contratto dice chi entra e chi decide. Nient&rsquo;altro da preparare.</p>
+    </div>
+        <div class="pannello" id="pannello-2" role="tabpanel" aria-labelledby="tappa-2" hidden>
+      <div class="pn-finestra"><div class="pn-chat">
+  <div class="pn-msg"><span class="pn-chi">Marco &middot; back office</span><p>Quando arriva una pratica la ricopio in tre file diversi. Se sbaglio uno, me ne accorgo a fine mese.</p></div>
+  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>I documenti mi arrivano via email da quattro persone. Cerco l&rsquo;ultima versione ogni volta.</p></div>
+  <div class="pn-msg"><span class="pn-chi">Luca &middot; commerciale</span><p>Il cliente mi chiama per sapere a che punto siamo. Io chiamo Sara, Sara guarda il file.</p></div>
+  <div class="pn-msg pn-msg-noi"><span class="pn-chi">Edos</span><p>Quante pratiche restano ferme perch&eacute; manca un documento?</p></div>
+  <div class="pn-scrivendo"><span></span><span></span><span></span></div>
+</div></div>
+      <p class="pn-didascalia">Quindici giorni di chat: scrivono dal telefono, quando vogliono.</p>
+    </div>
+        <div class="pannello" id="pannello-3" role="tabpanel" aria-labelledby="tappa-3" hidden>
+      <div class="pn-finestra"><div class="pn-doc">
+  <p class="pn-doc-testa">Documento dei flussi &middot; 34 pagine</p>
+  <ol class="pn-indice">
+    <li><span>1</span> Come gira oggi una pratica, raccontata dai vostri</li>
+    <li><span>2</span> I dodici punti dove il flusso si ferma <em class="pn-pri">priorit&agrave; alta</em></li>
+    <li><span>3</span> La piattaforma in moduli, con i tempi</li>
+    <li><span>4</span> Cosa costa ogni modulo, e in che ordine conviene</li>
+    <li><span>5</span> Cosa resta come &egrave;, e perch&eacute;</li>
+  </ol>
+  <p class="pn-doc-piede">&Egrave; vostro anche se il progetto lo fate con un altro.</p>
+</div></div>
+      <p class="pn-didascalia">Il documento dei flussi, con i punti critici e le priorit&agrave;.</p>
+    </div>
+        <div class="pannello" id="pannello-4" role="tabpanel" aria-labelledby="tappa-4" hidden>
+      <div class="pn-finestra"><div class="ui-finestra" role="img" aria-label="Schermata dimostrativa: elenco delle pratiche con stato, responsabile e ultimo aggiornamento">
+  <div class="ui-barra"><span class="ui-pallini"><i></i><i></i><i></i></span><span class="ui-titolo">Pratiche &middot; settembre</span><span class="ui-demo">dati dimostrativi</span></div>
+  <div class="ui-corpo">
+    <aside class="ui-lato">
+      <span class="ui-voce ui-voce-attiva">Pratiche</span>
+      <span class="ui-voce">Clienti</span>
+      <span class="ui-voce">Documenti</span>
+      <span class="ui-voce">Scadenze</span>
+      <span class="ui-voce">Report</span>
+    </aside>
+    <div class="ui-tabella-zona">
+      <div class="ui-cifre">
+        <div><strong>38</strong><span>aperte</span></div>
+        <div><strong>12</strong><span>in delibera</span></div>
+        <div class="ui-cifra-rossa"><strong>3</strong><span>ferme da 5 giorni</span></div>
+      </div>
+      <table class="ui-tabella">
+        <thead><tr><th>Pratica</th><th>Cliente</th><th>Fase</th><th>Stato</th><th>Responsabile</th></tr></thead>
+        <tbody><tr><td class="ui-cod">PR-2418</td><td class="ui-cli">Bertoldi Impianti</td><td>Istruttoria</td><td><span class="ui-stato ui-giallo">in corso</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2417</td><td class="ui-cli">Farmacia Sant&rsquo;Anna</td><td>Delibera</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>L. Ferri</td></tr><tr><td class="ui-cod">PR-2415</td><td class="ui-cli">Nuova Edilcasa</td><td>Documenti</td><td><span class="ui-stato ui-rosso">in attesa</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2412</td><td class="ui-cli">Olivieri &amp; Partners</td><td>Erogazione</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>S. Riva</td></tr><tr><td class="ui-cod">PR-2409</td><td class="ui-cli">Tecnoforme</td><td>Raccolta dati</td><td><span class="ui-stato ui-grigio">da avviare</span></td><td>L. Ferri</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div></div>
+      <p class="pn-didascalia">La piattaforma, costruita sul flusso raccontato dai vostri.</p>
+    </div>
+      </div>
     </div>
 
     <div class="anello">
       <div class="anello-segno" aria-hidden="true">&infin;</div>
       <div class="anello-testo">
         <h3>E poi, ogni mese, un&rsquo;idea</h3>
-        <p>&laquo;Abbiamo pensato che pu&ograve; interessarvi questo, e per questo motivo.&raquo; Di solito il motivo &egrave; che ha funzionato in un&rsquo;altra azienda come la vostra. <strong>E la potete buttare.</strong></p>
+        <p>&laquo;Abbiamo pensato che pu&ograve; interessarvi questo, e per questo motivo.&raquo; <strong>E la potete buttare.</strong></p>
       </div>
     </div>
 
     <div class="patto">
-      <p><strong>L&rsquo;analisi si paga alla firma.</strong> Se il progetto lo fate con noi, si scomputa per intero dal preventivo. Se lo fate senza di noi, <em>il documento resta vostro.</em></p>
-      <p class="patto-bando">Edos &egrave; iscritta all&rsquo;<a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco pubblico dei Fornitori di servizi e tecnologie 4.0 di Unioncamere Lombardia</a>: <strong>se il progetto viene finanziato con un bando, la spesa software &egrave; ammissibile.</strong></p>
+      <p><strong>L&rsquo;analisi si paga alla firma</strong>, e si scomputa per intero se il progetto lo fate con noi. Altrimenti <em>il documento resta vostro.</em></p>
+      <p class="patto-bando">Edos &egrave; iscritta all&rsquo;<a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco Fornitori 4.0 di Unioncamere Lombardia</a>: <strong>con un bando, la spesa software &egrave; ammissibile.</strong></p>
     </div>
   </div>
 </section>
@@ -1317,6 +1448,36 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   window.addEventListener('scroll', suScroll, {passive:true});
   window.addEventListener('resize', suScroll, {passive:true});
   applica();
+})();
+</script>
+
+<script>
+/* le tappe del metodo: una alla volta, e il pannello segue */
+(function(){
+  var tappe = [].slice.call(document.querySelectorAll('.tappa'));
+  if(!tappe.length) return;
+  var pannelli = [].slice.call(document.querySelectorAll('.pannello'));
+  function mostra(i){
+    tappe.forEach(function(t, k){
+      var att = k === i;
+      t.classList.toggle('tappa-attiva', att);
+      t.setAttribute('aria-selected', att ? 'true' : 'false');
+      t.tabIndex = att ? 0 : -1;
+    });
+    pannelli.forEach(function(p, k){
+      p.hidden = k !== i;
+      p.classList.toggle('pannello-attivo', k === i);
+    });
+  }
+  tappe.forEach(function(t, i){
+    t.addEventListener('click', function(){ mostra(i); });
+    t.addEventListener('keydown', function(e){
+      var j = null;
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') j = (i + 1) % tappe.length;
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') j = (i - 1 + tappe.length) % tappe.length;
+      if(j !== null){ e.preventDefault(); mostra(j); tappe[j].focus(); }
+    });
+  });
 })();
 </script>
 </body>
