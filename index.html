@@ -494,6 +494,10 @@ body.nav-adattiva .nav-float .nf-hamburger span{background:#0D1B3E}
 <style id="hero-blu">
 /* ===== Hero blu ===== */
 .hero{background:var(--navy);color:#fff}
+.segnaposto{display:inline-block;background:rgba(255,214,102,.16);border:1px dashed rgba(255,214,102,.7);border-radius:8px;padding:.35em .7em;color:#FFD666;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;letter-spacing:0;line-height:1.5;text-transform:none}
+.segnaposto-titolo{font-size:.34em;padding:.8em 1em}
+.segnaposto small{display:block;opacity:.75;font-size:.85em;margin-top:.3em}
+.hero h1:has(.segnaposto){line-height:1.2}
 .hero-occhiello{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#84B4FF;margin-bottom:22px}
 .hero h1{color:#fff}
 .hero h1 em{color:#84B4FF}
@@ -600,9 +604,9 @@ body.nav-adattiva .nav-float.su-notte .nf-cta:hover{background:#3B6FE8;border-co
 
   <div class="container">
     <div class="hero-inner">
-      <p class="hero-occhiello">Per le aziende che lavorano a pratiche</p>
-      <h1>Il software si piega a come lavorate.<br><em>Non il contrario.</em></h1>
-      <p class="hero-sub">E come lavorate lo dicono le persone che lo fanno ogni giorno.<br><strong>Si parte dal vostro Excel</strong>, e in poche settimane aprite una pagina e vedete a che punto &egrave; ogni lavoro.</p>
+      <p class="hero-occhiello"><span class="segnaposto" data-chiave="hero.occhiello">[[ hero.occhiello ]] &middot; 4-7 parole, il bacino</span></p>
+      <h1><span class="segnaposto segnaposto-titolo" data-chiave="hero.titolo">[[ hero.titolo ]]<br><small>una o due righe &middot; 6-12 parole</small></span></h1>
+      <p class="hero-sub"><span class="segnaposto" data-chiave="hero.sottotitolo">[[ hero.sottotitolo ]]<br>due righe &middot; 22-32 parole &middot; una parte in grassetto</span></p>
       <div class="hero-ctas">
         <a href="/contatti" class="btn-pill btn-pill-pieno">
           <span>Prenota un appuntamento</span>
