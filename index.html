@@ -495,10 +495,6 @@ body.nav-adattiva .nav-float .nf-hamburger span{background:#0D1B3E}
 <style id="hero-blu">
 /* ===== Hero blu ===== */
 .hero{background:var(--navy);color:#fff}
-.segnaposto{display:inline-block;background:rgba(255,214,102,.16);border:1px dashed rgba(255,214,102,.7);border-radius:8px;padding:.35em .7em;color:#FFD666;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:500;letter-spacing:0;line-height:1.5;text-transform:none}
-.segnaposto-titolo{font-size:.34em;padding:.8em 1em}
-.segnaposto small{display:block;opacity:.75;font-size:.85em;margin-top:.3em}
-.hero h1:has(.segnaposto){line-height:1.2}
 .hero-occhiello{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#84B4FF;margin-bottom:22px}
 .hero h1{color:#fff}
 .hero h1 em{color:#84B4FF}
@@ -1082,21 +1078,50 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 }
 </style>
 
-<style id="blocco-specchio">
-.specchio{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
-.specchio-testa{max-width:820px;margin-bottom:clamp(34px,4vw,50px)}
-.specchio-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:16px}
-.scrivanie{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.6vw,34px)}
-.scrivania{display:flex;flex-direction:column;gap:18px;padding:28px 26px 30px;border:1px solid rgba(13,27,62,.12);border-radius:10px;background:var(--white);transition:border-color .25s}
-.scrivania:hover{border-color:rgba(0,74,173,.35)}
-.sc-chi{margin:0;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#004AAD}
-.sc-chi span{display:block;margin-top:6px;font-weight:500;letter-spacing:.04em;text-transform:none;font-size:.85rem;color:#5F6B80}
-.sc-detto{margin:0;font-family:var(--font-display);font-size:clamp(1.08rem,1.4vw,1.26rem);font-weight:500;line-height:1.42;letter-spacing:-.012em;color:var(--navy)}
-.specchio-piede{margin:clamp(30px,3.4vw,44px) 0 0;font-size:1.08rem;line-height:1.62;color:#4A5568;max-width:88ch}
-.specchio-piede strong{color:var(--navy)}
-@media (max-width:900px){
-  .scrivanie{grid-template-columns:1fr}
-  .scrivania{padding:24px 22px 26px;gap:14px}
+<style id="blocco-passi">
+.passi{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.passi-testa{max-width:900px;margin-bottom:clamp(34px,4vw,52px)}
+.passi-testa h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:500;line-height:1.04;letter-spacing:-.03em;color:var(--navy);margin:0}
+.passi-testa p{font-size:1.125rem;line-height:1.58;color:#4A5568;margin-top:18px}
+.passi-testa p strong{color:var(--navy);font-weight:600}
+.passi-griglia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.8vw,22px)}
+.passo{display:flex;flex-direction:column;gap:16px;padding:30px 28px 28px;background:#0D1B3E;border-radius:12px}
+.pa-num{margin:0;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.42)}
+.passo h3{font-family:var(--font-display);font-size:clamp(1.24rem,1.7vw,1.55rem);font-weight:600;line-height:1.18;letter-spacing:-.018em;color:#fff;margin:0}
+.pa-bisogno{margin:0;padding:16px 18px;border-radius:8px;background:rgba(255,255,255,.06);border-left:2px solid #84B4FF;font-size:1rem;line-height:1.5;color:rgba(255,255,255,.86)}
+.pa-dati{margin-top:auto;padding-top:22px}
+.pa-eti{margin:0 0 7px;font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.pa-tempo{margin:0 0 13px;font-family:var(--font-display);font-size:1.35rem;font-weight:600;line-height:1.1;color:#fff}
+.pa-barra{height:3px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.pa-barra i{display:block;height:100%;background:#84B4FF;border-radius:99px}
+.pa-prezzo{margin:15px 0 0;font-family:var(--font-display);font-size:1.28rem;font-weight:600;line-height:1.15;color:#fff}
+.pa-prezzo span{display:block;margin-top:5px;font-family:var(--font);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.58)}
+.pa-cta{display:inline-flex;align-items:center;gap:11px;margin-top:22px;padding:7px 22px 7px 7px;border-radius:99px;background:#fff;color:#00306E;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;align-self:flex-start;transition:background .2s}
+.pa-cta:hover{background:#DCE8FA}
+.pa-cerchio{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#004AAD;color:#fff;flex-shrink:0}
+.pa-cerchio svg{width:16px;height:16px}
+.passi-piede{margin:clamp(28px,3.2vw,42px) 0 0;font-size:1.06rem;line-height:1.62;color:#4A5568;max-width:82ch}
+
+/* i titoli di sezione tornano tutti sulla stessa scala */
+.fasi-testa h2,.schermo-testo h2,.lavori-testa h2,.confronto-testa h2{
+  font-family:var(--font-display);font-size:clamp(1.85rem,3.1vw,2.85rem);font-weight:500;
+  line-height:1.06;letter-spacing:-.028em;color:var(--navy);margin:0}
+
+/* su schermo stretto la tabella dimostrativa si scorre: si vede che continua */
+@media (max-width:700px){
+  .ui-finestra{position:relative}
+  .ui-finestra::after{content:"";position:absolute;top:38px;right:0;bottom:0;width:36px;pointer-events:none;
+    background:linear-gradient(90deg,rgba(255,255,255,0),#fff 78%)}
+}
+
+.footer-legal a::before{margin-inline:7px}
+/* le tre prove restano tre, invece di lasciare una colonna vuota */
+.prove-griglia{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:520px){.prove-griglia{grid-template-columns:1fr}}
+@media (max-width:980px){
+  .passi-griglia{grid-template-columns:1fr}
+  .passo{padding:26px 24px 24px;gap:14px}
+  .pa-dati{padding-top:16px}
 }
 </style>
 </head>
@@ -1170,9 +1195,9 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 
   <div class="container">
     <div class="hero-inner">
-      <!-- SEGNAPOSTO hero.titolo · 6-10 parole · il posizionamento -->
+
       <h1>Piattaforme gestionali <em>su misura</em><br>per i processi aziendali</h1>
-      <!-- SEGNAPOSTO hero.sottotitolo · 16-24 parole · una riga sola -->
+
       <p class="hero-sub">Progettiamo e sviluppiamo il software che segue il flusso di lavoro dell'azienda, dalla richiesta all'esito. <strong>Si integra con i gestionali gi&agrave; in uso.</strong></p>
       <div class="hero-ctas">
         <a href="/contatti" class="btn-pill btn-pill-pieno">
@@ -1200,25 +1225,47 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<section class="specchio" data-tono="chiaro">
+<section class="passi" data-tono="chiaro">
   <div class="container">
-    <div class="specchio-testa">
-      <h2>La stessa pratica,<br><span class="dc-accento">vista da tre scrivanie</span></h2>
-      <p>Sono frasi raccolte nei primi incontri. Se in azienda vostra le avete gi&agrave; sentite tutte e tre, ci siamo gi&agrave; passati.</p>
+    <div class="passi-testa">
+      <h2>Qual &egrave; il passo giusto<br>per <span class="dc-accento">la vostra azienda</span>?</h2>
+      <p>Lavoriamo con aziende <strong>dai 10 ai 30 collaboratori</strong> dove il lavoro entra come una pratica e passa da tre o quattro mani prima di valere soldi: credito, finanza agevolata, assicurazioni, servizi su commessa. Il primo passo dipende da dove siete adesso.</p>
     </div>
-
-    <div class="scrivanie"><article class="scrivania">
-      <p class="sc-chi">Il titolare<span>la sera, prima di chiudere</span></p>
-      <p class="sc-detto">&laquo;Apro il file e vedo solo le righe che qualcuno ha aggiornato. Per sapere il resto domani mattina lo chiedo, e intanto stanotte ci penso.&raquo;</p>
-    </article><article class="scrivania">
-      <p class="sc-chi">Chi lavora la pratica<span>un marted&igrave; qualunque</span></p>
-      <p class="sc-detto">&laquo;La stessa pratica sta nella mail, nella cartella e nel file. Se manca un documento me ne accorgo quando il cliente chiama.&raquo;</p>
-    </article><article class="scrivania">
-      <p class="sc-chi">Il cliente<span>al telefono, la terza volta</span></p>
-      <p class="sc-detto">&laquo;Volevo solo sapere a che punto siamo. Mi hanno detto che mi richiamano.&raquo;</p>
+    <div class="passi-griglia"><article class="passo">
+      <p class="pa-num">01</p>
+      <h3>Analisi dei Flussi</h3>
+      <p class="pa-bisogno">Avete bisogno di sapere dove si ferma oggi una pratica, prima di decidere cosa costruire?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">3 settimane</p>
+        <div class="pa-barra"><i style="width:30%"></i></div>
+        <p class="pa-prezzo">da 1.500 &euro;<span>si scomputa dal progetto</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
+    </article><article class="passo">
+      <p class="pa-num">02</p>
+      <h3>La piattaforma delle pratiche</h3>
+      <p class="pa-bisogno">Avete bisogno di portare pratiche, documenti e stati in un posto solo, partendo dal file che usate oggi?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">dalle 8 settimane</p>
+        <div class="pa-barra"><i style="width:100%"></i></div>
+        <p class="pa-prezzo">a moduli<span>si parte dal primo</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
+    </article><article class="passo">
+      <p class="pa-num">03</p>
+      <h3>L&rsquo;innesto sul gestionale</h3>
+      <p class="pa-bisogno">Avete bisogno che il sistema in uso parli con il resto: firma, posta, portali, fatturazione?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">dalle 2 settimane</p>
+        <div class="pa-barra"><i style="width:20%"></i></div>
+        <p class="pa-prezzo">a intervento<span>sul sistema che avete</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
     </article></div>
-
-    <p class="specchio-piede">Succede nelle aziende <strong>dai 10 ai 30 collaboratori</strong> dove il lavoro entra come una pratica e passa da tre o quattro mani prima di valere soldi: <strong>credito, finanza agevolata, assicurazioni, servizi su commessa</strong>. Cambia il mestiere, resta il giro.</p>
+    <p class="passi-piede">Cambia il mestiere, resta il giro. Se una di queste tre domande descrive la vostra settimana, la conversazione parte da l&igrave;.</p>
   </div>
 </section>
 
@@ -1236,13 +1283,13 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
       <span class="rt-testo"><span class="rt-titolo"><b>01</b> Raccontate</span><span class="rt-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span></span>
     </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>02</b> Parlano i vostri</span><span class="rt-riga">Quindici giorni di chat aperta. Zero riunioni.</span></span>
+      <span class="rt-testo"><span class="rt-titolo"><b>02</b> Parlano i vostri</span><span class="rt-riga">Quindici giorni di chat aperta, quando avete tempo voi.</span></span>
     </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>03</b> Vi portiamo il piano</span><span class="rt-riga">I punti critici e i moduli, con le priorit&agrave;.</span></span>
     </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel. Settimane, non mesi.</span></span>
+      <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel, e si misura in settimane.</span></span>
     </li></ol>
       <div class="pannelli"><div class="pannello" id="pannello-1" aria-live="polite">
       <div class="pn-finestra"><div class="pn-appunti">
@@ -1304,7 +1351,7 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
     <div class="schermo-griglia">
       <div class="schermo-testo">
         <h2>La piattaforma si guarda<br><span class="dc-accento">prima di sceglierla</span></h2>
-        <!-- SEGNAPOSTO schermo.testo Â· 25-40 parole -->
+
         <p>Ogni piattaforma riporta gli stati, i passaggi e i ruoli dell&rsquo;azienda per cui &egrave; costruita. Le schermate qui accanto vengono da un ambiente dimostrativo.</p>
         <ul class="voci-freccia">
           <li><span class="vf-freccia">&#8599;</span> Quattro stati, e si legge in tre secondi</li>
@@ -1313,7 +1360,7 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
         </ul>
       </div>
       <div class="schermo-figura">
-        <!-- SEGNAPOSTO schermo.immagine Â· schermata vera, dati finti, 1200x760 -->
+
         <div class="ui-finestra" role="img" aria-label="Schermata dimostrativa: elenco delle pratiche con stato, responsabile e ultimo aggiornamento">
   <div class="ui-barra"><span class="ui-pallini"><i></i><i></i><i></i></span><span class="ui-titolo">Pratiche &middot; settembre</span><span class="ui-demo">dati dimostrativi</span></div>
   <div class="ui-corpo">
@@ -1442,12 +1489,12 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 <!-- ===== 8 Â· Le tre paure ===== -->
 <section class="paure" data-tono="chiaro">
   <div class="container">
-    <h2 class="paure-citazione">L&rsquo;intelligenza artificiale &egrave; valida solo quanto <span class="dc-accento">il processo su cui gira.</span></h2>
-    <p class="paure-sotto">Un assistente messo sopra un flusso dove nessuno sa a che punto &egrave; una pratica produce niente. Noi costruiamo prima il processo, e l&rsquo;AI ci gira sopra.</p>
+    <h2 class="paure-citazione">L&rsquo;intelligenza artificiale vale quanto<br><span class="dc-accento">il processo su cui gira.</span></h2>
+    <p class="paure-sotto">Un assistente lavora bene quando sa a che punto sta ogni pratica. Per questo costruiamo prima il processo, e l&rsquo;AI ci gira sopra.</p>
     <div class="paure-griglia">
       <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 14v2.5"/></svg></span><h3>I dati restano dentro</h3><p>I dati dei vostri clienti restano nella vostra piattaforma, e lo mettiamo per iscritto nel contratto. &Egrave; la prima domanda che ci fanno, ed &egrave; giusto farla.</p></div>
       <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 8.5-4 3.5 4 3.5"/><path d="m15.5 8.5 4 3.5-4 3.5"/><path d="m13.5 5-3 14"/></svg></span><h3>Il codice &egrave; vostro</h3><p>Il progetto e il documento dei flussi restano di chi li ha pagati. Sta scritto nel contratto, insieme ai tempi e a chi decide.</p></div>
-      <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17.5 9 11l4 4 7.5-8"/><path d="M15 6.5h5.5V12"/></svg></span><h3>E se cresco, poi lo butto?</h3><p>La base da cui partiamo regge gi&agrave; un&rsquo;azienda intera: clienti, offerte con firma, progetti, ticket, tempi, fatturazione, calendario. Il posto dove crescere c&rsquo;&egrave; gi&agrave;.</p></div>
+      <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17.5 9 11l4 4 7.5-8"/><path d="M15 6.5h5.5V12"/></svg></span><h3>Il posto per crescere c&rsquo;&egrave; gi&agrave;</h3><p>La base da cui partiamo regge gi&agrave; un&rsquo;azienda intera: clienti, offerte con firma, progetti, ticket, tempi, fatturazione, calendario. Quando l&rsquo;azienda cresce, la piattaforma la segue.</p></div>
     </div>
   </div>
 </section>
