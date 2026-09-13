@@ -1081,6 +1081,24 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .chi-no{padding:22px 20px 24px}
 }
 </style>
+
+<style id="blocco-specchio">
+.specchio{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.specchio-testa{max-width:820px;margin-bottom:clamp(34px,4vw,50px)}
+.specchio-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:16px}
+.scrivanie{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.6vw,34px)}
+.scrivania{display:flex;flex-direction:column;gap:18px;padding:28px 26px 30px;border:1px solid rgba(13,27,62,.12);border-radius:10px;background:var(--white);transition:border-color .25s}
+.scrivania:hover{border-color:rgba(0,74,173,.35)}
+.sc-chi{margin:0;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#004AAD}
+.sc-chi span{display:block;margin-top:6px;font-weight:500;letter-spacing:.04em;text-transform:none;font-size:.85rem;color:#5F6B80}
+.sc-detto{margin:0;font-family:var(--font-display);font-size:clamp(1.08rem,1.4vw,1.26rem);font-weight:500;line-height:1.42;letter-spacing:-.012em;color:var(--navy)}
+.specchio-piede{margin:clamp(30px,3.4vw,44px) 0 0;font-size:1.08rem;line-height:1.62;color:#4A5568;max-width:88ch}
+.specchio-piede strong{color:var(--navy)}
+@media (max-width:900px){
+  .scrivanie{grid-template-columns:1fr}
+  .scrivania{padding:24px 22px 26px;gap:14px}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -1182,28 +1200,25 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<section class="chi-siete" data-tono="chiaro">
+<section class="specchio" data-tono="chiaro">
   <div class="container">
-    <div class="chi-testa">
-      <p class="chi-occhiello">Il cliente per cui lavoriamo</p>
-      <h2>Aziende dai 10 ai 30 collaboratori,<br><span class="dc-accento">dove il lavoro entra come una pratica</span></h2>
-      <p class="chi-sotto">Non &egrave; un settore, &egrave; una forma di azienda. <em>Per riconoscersi bastano tre segnali su cinque.</em></p>
+    <div class="specchio-testa">
+      <h2>La stessa pratica,<br><span class="dc-accento">vista da tre scrivanie</span></h2>
+      <p>Sono frasi raccolte nei primi incontri. Se in azienda vostra le avete gi&agrave; sentite tutte e tre, ci siamo gi&agrave; passati.</p>
     </div>
 
-    <div class="chi-griglia">
-      <div class="chi-si">
-        <p class="chi-eti chi-eti-si">Siete voi se</p>
-        <ul class="segnali"><li><span class="sg-segno" aria-hidden="true"></span><div><b>Il lavoro entra con un numero e uno stato</b><span>Una domanda di finanziamento, un mandato, una commessa, una candidatura.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Passa da tre o quattro persone</b><span>Ognuna lavora la sua parte e aggiunge documenti, e nessuna vede tutto.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Alla fine c&rsquo;&egrave; qualcosa che vale soldi</b><span>Una delibera, un&rsquo;erogazione, una provvigione, una fornitura aggiudicata.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Oggi gira su Excel e posta elettronica</b><span>Oppure su un gestionale che copre la contabilit&agrave; e lascia fuori la pratica.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>I volumi stanno salendo</b><span>L&rsquo;organizzazione che reggeva venti pratiche al mese, a cento ne chiede un&rsquo;altra.</span></div></li></ul>
-      </div>
-      <div class="chi-no">
-        <p class="chi-eti chi-eti-no">Cerchiamo altro se</p>
-        <ul class="esclusi"><li>Il lavoro entra ed esce in giornata, senza passaggi n&eacute; stati</li><li>Vendete prodotti a catalogo e serve un negozio online</li><li>Cercate un programma da attivare domani, lasciando fuori il vostro modo di lavorare</li></ul>
-        <div class="chi-settori">
-          <p class="chi-eti">Dove l&rsquo;abbiamo gi&agrave; costruito</p>
-          <ul class="settori"><li>Credito</li><li>Finanza agevolata</li><li>Assicurazioni</li><li>Servizi su commessa</li><li>Enti che valutano domande</li><li>Reti commerciali</li></ul>
-        </div>
-      </div>
-    </div>
+    <div class="scrivanie"><article class="scrivania">
+      <p class="sc-chi">Il titolare<span>la sera, prima di chiudere</span></p>
+      <p class="sc-detto">&laquo;Apro il file e vedo solo le righe che qualcuno ha aggiornato. Per sapere il resto domani mattina lo chiedo, e intanto stanotte ci penso.&raquo;</p>
+    </article><article class="scrivania">
+      <p class="sc-chi">Chi lavora la pratica<span>un marted&igrave; qualunque</span></p>
+      <p class="sc-detto">&laquo;La stessa pratica sta nella mail, nella cartella e nel file. Se manca un documento me ne accorgo quando il cliente chiama.&raquo;</p>
+    </article><article class="scrivania">
+      <p class="sc-chi">Il cliente<span>al telefono, la terza volta</span></p>
+      <p class="sc-detto">&laquo;Volevo solo sapere a che punto siamo. Mi hanno detto che mi richiamano.&raquo;</p>
+    </article></div>
+
+    <p class="specchio-piede">Succede nelle aziende <strong>dai 10 ai 30 collaboratori</strong> dove il lavoro entra come una pratica e passa da tre o quattro mani prima di valere soldi: <strong>credito, finanza agevolata, assicurazioni, servizi su commessa</strong>. Cambia il mestiere, resta il giro.</p>
   </div>
 </section>
 
