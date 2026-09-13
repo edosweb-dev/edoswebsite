@@ -790,6 +790,32 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 .modulo-nota{font-size:.9rem;color:#5F6B80;margin:0}
 @media (max-width:860px){.indice-lavori{grid-template-columns:1fr}}
 </style>
+
+<style id="percorso-fasi">
+.percorso{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,34px);margin-top:clamp(36px,4vw,56px)}
+.percorso-binario{position:absolute;top:23px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,transparent,rgba(13,27,62,.18) 8%,rgba(13,27,62,.18) 92%,transparent)}
+.stazione{position:relative;padding-top:0}
+.stazione-nodo{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:var(--white);border:1px solid rgba(13,27,62,.14);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.stazione-num{font-family:var(--font-display);font-size:1rem;font-weight:600;color:#004AAD;font-variant-numeric:tabular-nums}
+.stazione-chi{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#5F6B80;margin:0 0 8px}
+.stazione h3{font-family:var(--font-display);font-size:1.28rem;font-weight:600;color:var(--navy);margin:0 0 10px;letter-spacing:-.015em}
+.stazione-testo{font-size:1rem;line-height:1.55;color:#4A5568;margin:0}
+.stazione:hover .stazione-nodo{border-color:#004AAD;box-shadow:0 0 0 6px rgba(0,74,173,.08);transform:translateY(-2px)}
+
+.anello{display:flex;align-items:flex-start;gap:22px;margin-top:clamp(34px,4vw,52px);padding:26px 30px;border:1px dashed rgba(0,74,173,.32);border-radius:16px;background:rgba(0,74,173,.035)}
+.anello-segno{font-family:var(--font-display);font-size:2.2rem;line-height:1;color:#004AAD;flex-shrink:0}
+.anello-testo h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy);margin:0 0 8px}
+.anello-testo p{font-size:1.0625rem;line-height:1.55;color:#4A5568;margin:0;max-width:74ch}
+.anello-testo strong{color:var(--navy)}
+
+@media (max-width:900px){
+  .percorso{grid-template-columns:1fr;gap:0}
+  .percorso-binario{top:10px;bottom:10px;left:23px;right:auto;width:1px;height:auto;background:linear-gradient(180deg,transparent,rgba(13,27,62,.18) 6%,rgba(13,27,62,.18) 94%,transparent)}
+  .stazione{padding:0 0 28px 68px}
+  .stazione-nodo{position:absolute;left:0;top:0;margin:0;width:46px;height:46px}
+  .anello{flex-direction:column;gap:12px;padding:22px}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -867,13 +893,40 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
       <h2>Raccontateci cosa vi serve.<br><span class="dc-accento">Poi verifichiamo che sia quello.</span></h2>
       <p>Il passaggio che nessuno fa sta fra il primo e il secondo: quello che ci dite voi lo mettiamo accanto a quello che dicono i vostri.</p>
     </div>
-    <div class="fasi-elenco">
-      <div class="fase"><span class="fase-num">01</span><div class="fase-testo"><h3>Raccontate</h3><p>Dite cosa vi serve, come lo vedete voi. Si firma, e il contratto nomina chi entra nella chat e chi decide.</p></div><span class="fase-chi">il titolare</span></div>
-      <div class="fase"><span class="fase-num">02</span><div class="fase-testo"><h3>Parlano i vostri</h3><p>Una chat aperta all&rsquo;azienda per quindici giorni. Scrivono dal telefono, quando vogliono. Zero riunioni, e voi non preparate niente.</p></div><span class="fase-chi">chi esegue</span></div>
-      <div class="fase"><span class="fase-num">03</span><div class="fase-testo"><h3>Vi portiamo il piano</h3><p>I punti critici e il progetto a moduli, con i numeri e le priorit&agrave;. &Egrave; il capitolato della vostra azienda, ed &egrave; vostro. Poi scegliete.</p></div><span class="fase-chi">Edos</span></div>
-      <div class="fase"><span class="fase-num">04</span><div class="fase-testo"><h3>Costruiamo</h3><p>Si parte da quello che usate oggi, il vostro Excel compreso. Settimane, e nessuna anagrafica da riportare a mano.</p></div><span class="fase-chi">Edos</span></div>
-      <div class="fase fase-anello"><span class="fase-num">&infin;</span><div class="fase-testo"><h3>Ogni mese un&rsquo;idea</h3><p>&laquo;Abbiamo pensato che pu&ograve; interessarvi questo, e per questo motivo.&raquo; Di solito il motivo &egrave; che ha funzionato in un&rsquo;altra azienda come la vostra.</p></div><span class="fase-chi">e la potete buttare</span></div>
+
+    <div class="percorso">
+      <div class="percorso-binario" aria-hidden="true"></div>
+      <article class="stazione">
+        <div class="stazione-nodo"><span class="stazione-num">01</span></div>
+        <p class="stazione-chi">il titolare</p>
+        <h3>Raccontate</h3>
+        <p class="stazione-testo">Dite cosa vi serve, come lo vedete voi. Si firma, e il contratto nomina chi entra nella chat e chi decide.</p>
+      </article><article class="stazione">
+        <div class="stazione-nodo"><span class="stazione-num">02</span></div>
+        <p class="stazione-chi">chi esegue</p>
+        <h3>Parlano i vostri</h3>
+        <p class="stazione-testo">Una chat aperta all&rsquo;azienda per quindici giorni. Scrivono dal telefono, quando vogliono. Zero riunioni, e voi non preparate niente.</p>
+      </article><article class="stazione">
+        <div class="stazione-nodo"><span class="stazione-num">03</span></div>
+        <p class="stazione-chi">Edos</p>
+        <h3>Vi portiamo il piano</h3>
+        <p class="stazione-testo">I punti critici e il progetto a moduli, con i numeri e le priorit&agrave;. &Egrave; il capitolato della vostra azienda, ed &egrave; vostro. Poi scegliete.</p>
+      </article><article class="stazione">
+        <div class="stazione-nodo"><span class="stazione-num">04</span></div>
+        <p class="stazione-chi">Edos</p>
+        <h3>Costruiamo</h3>
+        <p class="stazione-testo">Si parte da quello che usate oggi, il vostro Excel compreso. Settimane, e nessuna anagrafica da riportare a mano.</p>
+      </article>
     </div>
+
+    <div class="anello">
+      <div class="anello-segno" aria-hidden="true">&infin;</div>
+      <div class="anello-testo">
+        <h3>E poi, ogni mese, un&rsquo;idea</h3>
+        <p>&laquo;Abbiamo pensato che pu&ograve; interessarvi questo, e per questo motivo.&raquo; Di solito il motivo &egrave; che ha funzionato in un&rsquo;altra azienda come la vostra. <strong>E la potete buttare.</strong></p>
+      </div>
+    </div>
+
     <div class="patto">
       <p><strong>L&rsquo;analisi si paga alla firma.</strong> Se il progetto lo fate con noi, si scomputa per intero dal preventivo. Se lo fate senza di noi, <em>il documento resta vostro.</em></p>
       <p class="patto-bando">Edos &egrave; iscritta all&rsquo;<a href="https://www.unioncamerelombardia.it/progetti/dettaglio-progetto/elenco-fornitori-40" target="_blank" rel="noopener">Elenco pubblico dei Fornitori di servizi e tecnologie 4.0 di Unioncamere Lombardia</a>: <strong>se il progetto viene finanziato con un bando, la spesa software &egrave; ammissibile.</strong></p>
