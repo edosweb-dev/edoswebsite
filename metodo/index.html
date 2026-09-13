@@ -872,6 +872,77 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .pn-scrivendo span{animation:none}
 }
 </style>
+
+<style id="icone-e-rifiniture">
+/* ===== icone ===== */
+.ico{width:22px;height:22px;display:block}
+.ico-tappa{width:21px;height:21px}
+.cond-ico,.paura-ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(13,27,62,.14);border-radius:8px;color:#004AAD;flex-shrink:0;background:#fff}
+.elenco-condizioni .cond{display:flex;gap:16px;align-items:flex-start}
+.cond-testo{min-width:0}
+.paura-ico{margin-bottom:16px}
+
+/* ===== le tappe: icona dentro il nodo, numero accanto ===== */
+.tappa-nodo{color:#5F6B80}
+.tappa-attiva .tappa-nodo{color:#fff}
+.tappa-num{position:absolute;left:14px;top:6px;font-family:var(--font-display);font-size:.62rem;font-weight:700;letter-spacing:.06em;color:#5F6B80;font-variant-numeric:tabular-nums}
+.tappa-attiva .tappa-num{color:#004AAD}
+.tappa{position:relative}
+
+/* ===== meno morbido, piu' tecnico ===== */
+.pn-finestra,.ui-finestra,.lavoro,.paura,.riquadro,.patto,.mn{border-radius:10px}
+.anello{border-radius:10px}
+.pn-finestra{box-shadow:0 10px 30px -22px rgba(13,27,62,.45)}
+.ui-finestra{box-shadow:0 14px 40px -26px rgba(13,27,62,.4)}
+.lavoro:hover{box-shadow:0 10px 26px -18px rgba(13,27,62,.35)}
+.paura:hover,.riquadro:hover{box-shadow:none;border-color:rgba(0,74,173,.45)}
+.pn-msg{border-radius:8px 8px 8px 2px}
+.pn-msg-noi{border-radius:8px 8px 2px 8px}
+.cond-ico,.paura-ico{border-radius:7px}
+
+/* ===== il modulo sul telefono: tappe in fila, pannello sotto ===== */
+@media (max-width:900px){
+  .metodo-due{grid-template-columns:1fr;gap:20px}
+  .tappe{flex-direction:row;gap:8px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .tappe::-webkit-scrollbar{height:0}
+  .tappe-binario{display:none}
+  .tappa{flex:0 0 auto;scroll-snap-align:start;flex-direction:column;gap:8px;align-items:flex-start;width:168px;padding:14px;border:1px solid rgba(13,27,62,.12);border-radius:10px;background:#fff}
+  .tappa-attiva{border-color:#004AAD;background:rgba(0,74,173,.04)}
+  .tappa-nodo{width:36px;height:36px}
+  .tappa-num{position:static;margin-bottom:0}
+  .tappa-titolo{font-size:1.02rem}
+  .tappa-riga{display:none}
+  .tappa-chi{font-size:.62rem}
+  .pn-finestra{padding:18px}
+  .pn-didascalia{margin-top:12px}
+}
+</style>
+<style id="num-tappa">.tappa-num{position:static;font-weight:700;color:#004AAD;font-size:.68rem;letter-spacing:.08em}.tappa-chi{display:flex;gap:6px;align-items:baseline}</style>
+<style id="metodo-righe">
+.metodo-due{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center}
+.pannelli{order:0}
+.tappe{order:1;display:block;gap:0}
+.tappe-binario{display:none}
+.riga-tappa{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:none;border:none;border-top:1px solid rgba(13,27,62,.12);padding:20px 4px;cursor:pointer;font-family:inherit;transition:padding-left .22s,border-color .22s}
+.riga-tappa:first-of-type{border-top:none}
+.riga-tappa:hover{padding-left:8px}
+.riga-tappa:focus-visible{outline:2px solid #004AAD;outline-offset:2px}
+.rt-freccia{font-size:1.05rem;line-height:1.35;color:rgba(13,27,62,.3);transition:color .22s,transform .22s}
+.rt-testo{display:flex;flex-direction:column;gap:5px;min-width:0}
+.rt-titolo{font-family:var(--font-display);font-size:1.22rem;font-weight:600;color:var(--navy);letter-spacing:-.015em}
+.rt-titolo b{font-weight:600;color:#5F6B80;font-size:.82rem;letter-spacing:.08em;margin-right:6px;font-variant-numeric:tabular-nums}
+.rt-riga{font-size:1rem;line-height:1.5;color:#4A5568}
+.riga-attiva .rt-freccia{color:#004AAD;transform:translate(2px,-2px)}
+.riga-attiva .rt-titolo{color:#004AAD}
+.riga-attiva .rt-titolo b{color:#004AAD}
+@media (max-width:900px){
+  .metodo-due{grid-template-columns:1fr;gap:22px}
+  .pannelli{order:1}
+  .tappe{order:0}
+  .riga-tappa{padding:16px 2px}
+  .rt-titolo{font-size:1.1rem}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -951,42 +1022,23 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
     </div>
 
     <div class="metodo-due">
-      <div class="tappe" role="tablist" aria-label="Le quattro tappe del metodo">
-        <button class="tappa tappa-attiva" role="tab" id="tappa-1"
-        aria-selected="true" aria-controls="pannello-1" tabindex="0" data-tappa="1">
-      <span class="tappa-nodo">01</span>
-      <span class="tappa-corpo">
-        <span class="tappa-chi">il titolare</span>
-        <span class="tappa-titolo">Raccontate</span>
-        <span class="tappa-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span>
-      </span>
-    </button><button class="tappa" role="tab" id="tappa-2"
-        aria-selected="false" aria-controls="pannello-2" tabindex="-1" data-tappa="2">
-      <span class="tappa-nodo">02</span>
-      <span class="tappa-corpo">
-        <span class="tappa-chi">chi esegue</span>
-        <span class="tappa-titolo">Parlano i vostri</span>
-        <span class="tappa-riga">Quindici giorni di chat aperta. Zero riunioni.</span>
-      </span>
-    </button><button class="tappa" role="tab" id="tappa-3"
-        aria-selected="false" aria-controls="pannello-3" tabindex="-1" data-tappa="3">
-      <span class="tappa-nodo">03</span>
-      <span class="tappa-corpo">
-        <span class="tappa-chi">Edos</span>
-        <span class="tappa-titolo">Vi portiamo il piano</span>
-        <span class="tappa-riga">I punti critici e i moduli, con le priorit&agrave;.</span>
-      </span>
-    </button><button class="tappa" role="tab" id="tappa-4"
-        aria-selected="false" aria-controls="pannello-4" tabindex="-1" data-tappa="4">
-      <span class="tappa-nodo">04</span>
-      <span class="tappa-corpo">
-        <span class="tappa-chi">Edos</span>
-        <span class="tappa-titolo">Costruiamo</span>
-        <span class="tappa-riga">Si parte dal vostro Excel. Settimane, non mesi.</span>
-      </span>
-    </button>
-        <div class="tappe-binario" aria-hidden="true"></div>
-      </div>
+      <div class="tappe" role="tablist" aria-label="Le quattro tappe del metodo"><button class="riga-tappa riga-attiva" role="tab" id="tappa-1"
+        aria-selected="true" aria-controls="pannello-1" tabindex="0">
+      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
+      <span class="rt-testo"><span class="rt-titolo"><b>01</b> Raccontate</span><span class="rt-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span></span>
+    </button><button class="riga-tappa" role="tab" id="tappa-2"
+        aria-selected="false" aria-controls="pannello-2" tabindex="-1">
+      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
+      <span class="rt-testo"><span class="rt-titolo"><b>02</b> Parlano i vostri</span><span class="rt-riga">Quindici giorni di chat aperta. Zero riunioni.</span></span>
+    </button><button class="riga-tappa" role="tab" id="tappa-3"
+        aria-selected="false" aria-controls="pannello-3" tabindex="-1">
+      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
+      <span class="rt-testo"><span class="rt-titolo"><b>03</b> Vi portiamo il piano</span><span class="rt-riga">I punti critici e i moduli, con le priorit&agrave;.</span></span>
+    </button><button class="riga-tappa" role="tab" id="tappa-4"
+        aria-selected="false" aria-controls="pannello-4" tabindex="-1">
+      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
+      <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel. Settimane, non mesi.</span></span>
+    </button></div>
       <div class="pannelli">
         <div class="pannello pannello-attivo" id="pannello-1" role="tabpanel" aria-labelledby="tappa-1">
       <div class="pn-finestra"><ul class="pn-elenco">
@@ -1454,13 +1506,13 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 <script>
 /* le tappe del metodo: una alla volta, e il pannello segue */
 (function(){
-  var tappe = [].slice.call(document.querySelectorAll('.tappa'));
+  var tappe = [].slice.call(document.querySelectorAll('.riga-tappa'));
   if(!tappe.length) return;
   var pannelli = [].slice.call(document.querySelectorAll('.pannello'));
   function mostra(i){
     tappe.forEach(function(t, k){
       var att = k === i;
-      t.classList.toggle('tappa-attiva', att);
+      t.classList.toggle('riga-attiva', att);
       t.setAttribute('aria-selected', att ? 'true' : 'false');
       t.tabIndex = att ? 0 : -1;
     });
