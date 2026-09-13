@@ -540,6 +540,22 @@ body.nav-adattiva .nav-float.su-notte .nf-cta:hover{background:#3B6FE8;border-co
 h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:600;letter-spacing:-.025em}
 .hero-sub{font-weight:400;font-family:var(--font)}
 </style>
+
+<style id="modulo-due-colonne">
+.due-colonne{background:var(--white);padding:clamp(72px,9vw,128px) 0;border-bottom:1px solid var(--border)}
+.dc-griglia{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.dc-sinistra h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.4vw,3.2rem);line-height:1.12;letter-spacing:-.03em;color:var(--navy);margin:0}
+.dc-accento{color:#004AAD}
+.dc-destra p{font-family:var(--font);font-size:clamp(1rem,1.15vw,1.1rem);line-height:1.75;color:#4A5568;margin:0 0 20px}
+.dc-destra p strong{color:var(--navy);font-weight:700}
+.btn-contorno{display:inline-flex;align-items:center;gap:12px;margin-top:16px;padding:15px 30px;border:1.5px solid rgba(13,27,62,.22);border-radius:100px;color:var(--navy);font-family:var(--font-display);font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transition:border-color .2s,background .2s,color .2s}
+.btn-contorno svg{width:16px;height:16px}
+.btn-contorno:hover{border-color:#004AAD;color:#004AAD;background:rgba(0,74,173,.05)}
+@media (max-width:860px){
+  .dc-griglia{grid-template-columns:1fr;gap:28px}
+  .due-colonne{padding:64px 0}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -627,13 +643,27 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<!-- tagline strip -->
-<div class="hero-tagline" data-tono="chiaro">
+<!-- blocco due colonne -->
+<section class="due-colonne" data-tono="chiaro">
   <div class="container">
-    <p class="tagline-anim">Il lavoro entra come una <strong style="font-weight:700;color:var(--navy)">pratica</strong>: una domanda, un mandato, una commessa. Passa da tre o quattro mani, e alla fine vale soldi.</p>
-    <p class="tagline-anim">Il software si piega a <strong style="font-weight:700;color:var(--navy)">come lavorate</strong>, e come lavorate lo dicono <strong style="font-weight:700;color:var(--navy)">le persone che lo fanno ogni giorno.</strong></p>
+    <div class="dc-griglia">
+      <div class="dc-sinistra">
+        <!-- SEGNAPOSTO promessa.titolo · 5-8 parole su due righe, la seconda in accento -->
+        <h2>Lorem ipsum dolor sit<br><span class="dc-accento">amet consectetur elit</span></h2>
+      </div>
+      <div class="dc-destra">
+        <!-- SEGNAPOSTO promessa.testo · tre capoversi da 15-25 parole, con le parole chiave in grassetto -->
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, <strong>ut enim ad minim veniam</strong>.</p>
+        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, <strong>sunt in culpa qui officia deserunt mollit</strong>.</p>
+        <a href="/metodo" class="btn-contorno">
+          <span>Scopri di pi&ugrave;</span>
+          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- pillars strip -->
 <div class="hero-bottom" data-tono="chiaro">
