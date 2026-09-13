@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edos · il software che fa girare le aziende che lavorano a pratiche</title>
+  <title>Prove &middot; le cinque condizioni</title>
   <meta name="description" content="Costruiamo il software che fa girare le aziende dove ogni pratica passa da tre o quattro mani. Si parte dal vostro Excel. 19 piattaforme costruite.">
   <link rel="canonical" href="https://www.edos.it/">
   <meta name="robots" content="index, follow">
@@ -1013,820 +1013,157 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 .rt-titolo b{color:#5F6B80}
 </style>
 
-<style id="blocco-giornata">
-.giornata{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
-.giornata-testa{max-width:820px;margin-bottom:clamp(36px,4vw,54px)}
-.giornata-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:16px}
-.giornata-corpo{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(30px,4.5vw,68px);align-items:start}
+<style>
+body{background:#F4F6FA}
+.prova{padding:60px 0 20px}
+.prova-testa{max-width:1290px;margin:0 auto 8px;padding:0 32px}
+.prova-eti{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#004AAD;padding:6px 12px;border-radius:99px;margin-bottom:14px}
+.prova-nota{font-size:1rem;color:#5F6B80;margin:0 0 26px;max-width:70ch}
+.prova-corpo{background:#fff;border-top:1px solid rgba(13,27,62,.1);border-bottom:1px solid rgba(13,27,62,.1);padding:clamp(48px,5vw,72px) 0}
+.prova-corpo .container{max-width:1290px;margin:0 auto;padding:0 32px}
+.tt{max-width:760px;margin-bottom:38px}
+.tt h2{font-family:var(--font-display);font-size:clamp(1.8rem,3vw,2.7rem);font-weight:500;line-height:1.06;letter-spacing:-.028em;color:var(--navy);margin:0}
+.tt p{font-size:1.08rem;line-height:1.55;color:#4A5568;margin-top:14px}
 
-.momenti{list-style:none;margin:0;padding:0;position:relative}
-.momenti::before{content:"";position:absolute;left:58px;top:14px;bottom:14px;width:1px;background:rgba(13,27,62,.12)}
-.momento{position:relative;display:grid;grid-template-columns:78px minmax(0,1fr);gap:22px;padding:18px 0}
-.mm-ora{font-family:var(--font-display);font-size:1.04rem;font-weight:600;color:#004AAD;font-variant-numeric:tabular-nums;text-align:right;padding-top:1px}
-.mm-testo{margin:0;font-size:1.08rem;line-height:1.58;color:var(--navy)}
-.momento::after{content:"";position:absolute;left:54px;top:26px;width:9px;height:9px;border-radius:50%;background:#fff;border:1.5px solid rgba(0,74,173,.45)}
+/* A */
+.voci{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.voce{grid-column:span 2;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:26px 24px;border:1px solid rgba(13,27,62,.12);border-radius:10px;transition:border-color .25s}
+.voce:nth-child(4),.voce:nth-child(5){grid-column:span 3}
+.voce:hover{border-color:rgba(0,74,173,.4)}
+.voce-detto{font-family:var(--font-display);font-size:clamp(1.1rem,1.45vw,1.3rem);font-weight:500;line-height:1.34;color:var(--navy);margin:0}
+.voce-cond{display:flex;align-items:center;gap:11px;margin:0;padding-top:16px;border-top:1px solid rgba(13,27,62,.09);font-size:.94rem;color:#5F6B80}
+.voce-ico{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;border:1px solid rgba(13,27,62,.14);border-radius:7px;color:#004AAD}
 
-.xl{margin:0}
-.xl-finestra{border:1px solid rgba(13,27,62,.14);border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 12px 34px -24px rgba(13,27,62,.4)}
-.xl-barra{padding:10px 14px;background:#F1F3F7;border-bottom:1px solid rgba(13,27,62,.1);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.76rem;color:#5F6B80}
-.xl-tabella{width:100%;border-collapse:collapse;font-size:.94rem}
-.xl-tabella th{text-align:left;padding:10px 14px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#5F6B80;border-bottom:1px solid rgba(13,27,62,.1);font-weight:600}
-.xl-tabella td{padding:11px 14px;border-bottom:1px solid rgba(13,27,62,.06);color:var(--navy)}
-.xl-tabella tr:last-child td{border-bottom:none}
-.xl-stato{width:46px}
-.xl-verde .xl-stato{background:#DCEFE4}
-.xl-giallo .xl-stato{background:#FAEDD2}
-.xl-rosso .xl-stato{background:#F6DCD9}
-.xl-bianco .xl-stato{background:#fff;box-shadow:inset 0 0 0 1px rgba(13,27,62,.07)}
-.xl figcaption{margin-top:16px;font-size:.98rem;line-height:1.55;color:#5F6B80}
-.xl figcaption strong{color:var(--navy)}
+/* B */
+.lista-check{max-width:820px}
+.lista-check ul{list-style:none;margin:0;padding:0}
+.lista-check li{border-top:1px solid rgba(13,27,62,.1)}
+.lista-check li:first-child{border-top:none}
+.check{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left;background:none;border:none;padding:18px 4px;cursor:pointer;font-family:inherit}
+.check-box{width:22px;height:22px;flex-shrink:0;border:1.5px solid rgba(13,27,62,.28);border-radius:5px;margin-top:2px;position:relative;transition:all .2s}
+.check[aria-pressed="true"] .check-box{background:#004AAD;border-color:#004AAD}
+.check[aria-pressed="true"] .check-box::after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check-testo{display:flex;flex-direction:column;gap:4px}
+.check-testo b{font-family:var(--font-display);font-size:1.16rem;font-weight:600;color:var(--navy)}
+.check-testo i{font-style:normal;font-size:1rem;color:#5F6B80}
+.check-esito{margin-top:26px;padding:20px 24px;border:1px dashed rgba(0,74,173,.35);border-radius:10px;background:rgba(0,74,173,.04)}
+.check-esito p{margin:0;font-size:1.08rem;color:var(--navy)}
+.check-conta{font-family:var(--font-display);font-weight:600;color:#004AAD}
 
-@media (max-width:900px){
-  .giornata-corpo{grid-template-columns:1fr;gap:30px}
-  .momento{grid-template-columns:62px minmax(0,1fr);gap:16px;padding:15px 0}
-  .momenti::before{left:44px}
-  .momento::after{left:40px;top:22px}
-  .mm-testo{font-size:1.02rem}
+/* C */
+.tessere{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.tessera{padding:24px 20px;border:1px solid rgba(13,27,62,.12);border-radius:10px;transition:border-color .25s}
+.tessera:hover{border-color:rgba(0,74,173,.4)}
+.tessera-ico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(13,27,62,.14);border-radius:8px;color:#004AAD;margin-bottom:16px}
+.tessera h3{font-family:var(--font-display);font-size:1.08rem;font-weight:600;color:var(--navy);margin:0 0 8px;line-height:1.25}
+.tessera p{font-size:.96rem;line-height:1.5;color:#5F6B80;margin:0}
+
+/* D */
+.prima-dopo{display:grid;grid-template-columns:1fr 48px 1fr;gap:20px;align-items:center}
+.pd-col{padding:28px 26px;border:1px solid rgba(13,27,62,.12);border-radius:10px}
+.pd-dopo{border-color:rgba(0,74,173,.35);background:rgba(0,74,173,.035)}
+.pd-testa{margin:0 0 16px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#5F6B80}
+.pd-dopo .pd-testa{color:#004AAD}
+.pd-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.pd-col li{font-size:1.02rem;line-height:1.45;color:#4A5568;padding-left:18px;position:relative}
+.pd-col li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1.5px;background:rgba(13,27,62,.3)}
+.pd-dopo li{color:var(--navy)}
+.pd-dopo li::before{background:#004AAD}
+.pd-freccia{text-align:center;font-size:1.5rem;color:rgba(13,27,62,.3)}
+
+@media (max-width:1000px){
+  .voci{grid-template-columns:repeat(2,1fr)}
+  .voce,.voce:nth-child(4),.voce:nth-child(5){grid-column:span 1}
+  .tessere{grid-template-columns:repeat(2,1fr)}
+  .prima-dopo{grid-template-columns:1fr}
+  .pd-freccia{transform:rotate(90deg)}
 }
+@media (max-width:620px){.voci,.tessere{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="nav-adattiva">
-
-<!-- ===================== NAV ===================== -->
-<nav class="nav-float" id="mainNav" aria-label="Navigazione principale">
-  <a href="/" class="nf-logo" aria-label="Edos">
-    <img src="/logo-edos-chiaro.svg" alt="Edos" width="96" height="32" loading="lazy">
-  </a>
-
-  <ul class="nf-menu" role="menubar">
-    <li role="none"><a href="/servizi" class="nf-link" role="menuitem">Cosa facciamo</a></li>
-    <li role="none"><a href="/metodo" class="nf-link" role="menuitem">Come lavoriamo</a></li>
-    <li role="none"><a href="/case-study" class="nf-link" role="menuitem">I lavori</a></li>
-    <li role="none"><a href="/contatti" class="nf-link" role="menuitem">Contatti</a></li>
-  </ul>
-
-  <a href="/contatti" class="nf-cta">
-    <span>Prenota call</span>
-    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
-  </a>
-
-  <button class="nf-hamburger" id="navHamburger" aria-label="Apri menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Fullscreen overlay nav -->
-<div class="nav-overlay" id="navOverlay">
-  <div class="nav-ov-top">
-    <a href="/" class="nav-ov-logo"><img src="/logo-edos-chiaro.svg" alt="Edos" width="104" height="35" loading="lazy"></a>
-    <button class="nav-ov-close" id="navOverlayClose" aria-label="Chiudi menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-    </button>
+<section class="prova">
+  <div class="prova-testa">
+    <span class="prova-eti">Soluzione A &middot; Le parole del cliente</span>
+    <p class="prova-nota">Cinque frasi raccolte nei primi incontri. Chi si riconosce si riconosce nelle proprie parole, e la condizione sta sotto in piccolo.</p>
   </div>
-  <div class="nav-ov-body">
-    <nav class="nav-ov-main">
-      <a href="/servizi">Cosa facciamo</a><a href="/metodo">Come lavoriamo</a><a href="/case-study">I lavori</a><a href="/contatti">Contatti</a>
-    </nav>
-    <div class="nav-ov-divider"></div>
-    <div class="nav-ov-side">
-      <div class="nav-ov-sub">
-        <div class="nav-ov-sub-label">Edos</div>
-        <a href="/per-le-agenzie">Per le agenzie</a><a href="/lavora-con-noi">Lavora con noi</a>
-      </div>
+  <div class="prova-corpo">
+    <div class="container">
+      <div class="tt"><h2>Le aziende con cui lavoriamo<br><span class="dc-accento">dicono queste cinque cose</span></h2><p>Sono frasi raccolte durante i primi incontri. <em>Per riconoscersi ne bastano tre.</em></p></div>
+      <div class="voci"><article class="voce"><p class="voce-detto">&laquo;Ogni pratica la ricopio in tre file diversi&raquo;</p><p class="voce-cond"><span class="voce-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M12 3v9"/><path d="m8.5 8.5 3.5 3.5 3.5-3.5"/><path d="M3 14v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/><path d="M3 14h5l1.5 2h5L16 14h5"/></svg></span>Il lavoro entra come una pratica</p></article><article class="voce"><p class="voce-detto">&laquo;Per sapere a che punto siamo devo telefonare a Sara&raquo;</p><p class="voce-cond"><span class="voce-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><path d="M2.5 18v-1a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1"/><path d="M12.5 18v-1a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1"/></svg></span>Il flusso attraversa tre o quattro ruoli</p></article><article class="voce"><p class="voce-detto">&laquo;Se manca un allegato la delibera slitta, e lo scopriamo tardi&raquo;</p><p class="voce-cond"><span class="voce-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.2A4.4 4.4 0 0 0 12 7.5c-2.2 0-4 2-4 4.5s1.8 4.5 4 4.5a4.4 4.4 0 0 0 3.5-1.7"/><path d="M7.5 11h5"/><path d="M7.5 13.2h5"/></svg></span>L&rsquo;esito ha un valore economico</p></article><article class="voce"><p class="voce-detto">&laquo;I documenti arrivano via email, anche dai clienti&raquo;</p><p class="voce-cond"><span class="voce-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18"/><path d="M9 9v11"/><path d="M15 9v11"/></svg></span>Il flusso vive su Excel e posta</p></article><article class="voce"><p class="voce-detto">&laquo;Trenta pratiche al mese, e stanno salendo&raquo;</p><p class="voce-cond"><span class="voce-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:18px;height:18px"><path d="M3 20h18"/><rect x="5" y="12" width="3.5" height="5" rx="1"/><rect x="10.2" y="8" width="3.5" height="9" rx="1"/><rect x="15.4" y="4.5" width="3.5" height="12.5" rx="1"/></svg></span>I volumi stanno crescendo</p></article></div>
     </div>
-    <div class="nav-ov-contact">
-      <a href="mailto:info@edos.it" class="nav-ov-contact-mail">info@edos.it</a>
-      <a href="/contatti" class="nav-ov-contact-cta">Prenota un appuntamento</a>
+  </div>
+</section><section class="prova">
+  <div class="prova-testa">
+    <span class="prova-eti">Soluzione B &middot; Checklist da spuntare</span>
+    <p class="prova-nota">Il lettore spunta quello che succede da lui, e il contatore cambia la frase finale. Chiede un gesto piccolo e porta alla richiesta.</p>
+  </div>
+  <div class="prova-corpo">
+    <div class="container">
+      <div class="tt"><h2>Vi riconoscete?<br><span class="dc-accento">Spuntate quello che succede da voi</span></h2><p>Bastano tre caselle su cinque.</p></div>
+      <div class="lista-check">
+  <ul><li><button class="check" type="button" aria-pressed="false"><span class="check-box" aria-hidden="true"></span><span class="check-testo"><b>Il lavoro entra come una pratica</b><i>&laquo;Ogni pratica la ricopio in tre file diversi&raquo;</i></span></button></li><li><button class="check" type="button" aria-pressed="false"><span class="check-box" aria-hidden="true"></span><span class="check-testo"><b>Il flusso attraversa tre o quattro ruoli</b><i>&laquo;Per sapere a che punto siamo devo telefonare a Sara&raquo;</i></span></button></li><li><button class="check" type="button" aria-pressed="false"><span class="check-box" aria-hidden="true"></span><span class="check-testo"><b>L&rsquo;esito ha un valore economico</b><i>&laquo;Se manca un allegato la delibera slitta, e lo scopriamo tardi&raquo;</i></span></button></li><li><button class="check" type="button" aria-pressed="false"><span class="check-box" aria-hidden="true"></span><span class="check-testo"><b>Il flusso vive su Excel e posta</b><i>&laquo;I documenti arrivano via email, anche dai clienti&raquo;</i></span></button></li><li><button class="check" type="button" aria-pressed="false"><span class="check-box" aria-hidden="true"></span><span class="check-testo"><b>I volumi stanno crescendo</b><i>&laquo;Trenta pratiche al mese, e stanno salendo&raquo;</i></span></button></li></ul>
+  <div class="check-esito" aria-live="polite"><p><span class="check-conta">0</span> su cinque. <span class="check-frase">Spuntate quello che succede da voi.</span></p></div>
+</div>
     </div>
+  </div>
+</section><section class="prova">
+  <div class="prova-testa">
+    <span class="prova-eti">Soluzione C &middot; Cinque tessere corte</span>
+    <p class="prova-nota">La forma piu' asciutta: icona, titolo di tre parole, una riga. Si legge in dieci secondi e non chiede niente.</p>
+  </div>
+  <div class="prova-corpo">
+    <div class="container">
+      <div class="tt"><h2>Le aziende con cui lavoriamo<br><span class="dc-accento">hanno cinque cose in comune</span></h2><p>Per riconoscersi ne bastano tre.</p></div>
+      <div class="tessere"><article class="tessera"><span class="tessera-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><path d="M12 3v9"/><path d="m8.5 8.5 3.5 3.5 3.5-3.5"/><path d="M3 14v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4"/><path d="M3 14h5l1.5 2h5L16 14h5"/></svg></span><h3>Entra come una pratica</h3><p>Una domanda, un mandato, una commessa.</p></article><article class="tessera"><span class="tessera-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="8" r="2.5"/><path d="M2.5 18v-1a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1"/><path d="M12.5 18v-1a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1"/></svg></span><h3>Passa da tre o quattro ruoli</h3><p>Ognuno lavora la sua parte e aggiunge documenti.</p></article><article class="tessera"><span class="tessera-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"/><path d="M15.5 9.2A4.4 4.4 0 0 0 12 7.5c-2.2 0-4 2-4 4.5s1.8 4.5 4 4.5a4.4 4.4 0 0 0 3.5-1.7"/><path d="M7.5 11h5"/><path d="M7.5 13.2h5"/></svg></span><h3>L&rsquo;esito vale soldi</h3><p>Una delibera, un&rsquo;erogazione, una provvigione.</p></article><article class="tessera"><span class="tessera-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18"/><path d="M9 9v11"/><path d="M15 9v11"/></svg></span><h3>Vive su Excel e posta</h3><p>Oppure su un gestionale che lascia fuori la pratica.</p></article><article class="tessera"><span class="tessera-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:20px;height:20px"><path d="M3 20h18"/><rect x="5" y="12" width="3.5" height="5" rx="1"/><rect x="10.2" y="8" width="3.5" height="9" rx="1"/><rect x="15.4" y="4.5" width="3.5" height="12.5" rx="1"/></svg></span><h3>I volumi crescono</h3><p>Venti pratiche al mese reggevano, cento no.</p></article></div>
+    </div>
+  </div>
+</section><section class="prova">
+  <div class="prova-testa">
+    <span class="prova-eti">Soluzione D &middot; Oggi e con la piattaforma</span>
+    <p class="prova-nota">Due colonne affiancate: com'e' adesso e come diventa. Dice la stessa cosa delle condizioni, e in piu' mostra il risultato.</p>
+  </div>
+  <div class="prova-corpo">
+    <div class="container">
+      <div class="tt"><h2>Com&rsquo;&egrave; adesso,<br><span class="dc-accento">e come diventa</span></h2><p>Le cinque cose che succedono nelle aziende con cui lavoriamo, e cosa cambia dopo.</p></div>
+      <div class="prima-dopo">
+  <div class="pd-col pd-oggi">
+    <p class="pd-testa">Oggi, da voi</p>
+    <ul>
+      <li>La pratica sta in tre file diversi</li>
+      <li>Per sapere a che punto &egrave; serve una telefonata</li>
+      <li>I documenti arrivano via email e si perdono</li>
+      <li>Un allegato mancante blocca la delibera</li>
+      <li>I volumi salgono e il metodo scricchiola</li>
+    </ul>
+  </div>
+  <div class="pd-freccia" aria-hidden="true">&rarr;</div>
+  <div class="pd-col pd-dopo">
+    <p class="pd-testa">Con la piattaforma</p>
+    <ul>
+      <li>La pratica sta in un posto solo, con un numero e uno stato</li>
+      <li>A che punto &egrave; si legge in tre secondi</li>
+      <li>I documenti stanno attaccati alla pratica</li>
+      <li>Il controllo dice subito cosa manca</li>
+      <li>Cento pratiche al mese girano come venti</li>
+    </ul>
   </div>
 </div>
-
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="home" data-tono="scuro">
-  <div class="hero-motivo" aria-hidden="true">
-    <svg viewBox="0 0 1200 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M -40 60 H 400 V 140 H 840 V 100 H 1160 V 180 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.190"/>
-      <path d="M 50 140 H 370 V 60 H 810 V 100 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.181"/>
-      <path d="M 140 190 H 460 V 110 H 720 V 190 H 1160 V 150 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.172"/>
-      <path d="M 230 260 H 490 V 180 H 750 V 100 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.163"/>
-      <path d="M -40 310 H 280 V 270 H 540 V 350 H 920 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.154"/>
-      <path d="M 50 380 H 370 V 340 H 750 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.145"/>
-      <path d="M 140 420 H 400 V 340 H 840 V 380 H 1280 V 300 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.136"/>
-      <rect x="397.5" y="57.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="397.5" y="137.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="837.5" y="137.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="837.5" y="97.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1157.5" y="97.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1157.5" y="177.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="367.5" y="137.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="367.5" y="57.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="807.5" y="57.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="807.5" y="97.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="457.5" y="187.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="457.5" y="107.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="717.5" y="107.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="717.5" y="187.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1157.5" y="187.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1157.5" y="147.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="487.5" y="257.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="487.5" y="177.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="747.5" y="177.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="747.5" y="97.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="277.5" y="307.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="277.5" y="267.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="537.5" y="267.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="537.5" y="347.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="367.5" y="377.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="367.5" y="337.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="397.5" y="417.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="397.5" y="337.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="837.5" y="337.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="837.5" y="377.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1277.5" y="377.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/><rect x="1277.5" y="297.5" width="5" height="5" fill="#0D1B3E" opacity="0.26"/>
-      <path class="binario-vivo binario-vivo-1" d="M 50 140 H 370 V 60 H 810 V 100 H 1260" fill="none" stroke="#004AAD" stroke-width="1.4"/>
-      <path class="binario-vivo binario-vivo-2" d="M -40 310 H 280 V 270 H 540 V 350 H 920 H 1260" fill="none" stroke="#004AAD" stroke-width="1.4"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="hero-inner">
-      <!-- SEGNAPOSTO hero.titolo � 6-10 parole � il posizionamento -->
-      <h1>Piattaforme gestionali <em>su misura</em><br>per i processi aziendali</h1>
-      <!-- SEGNAPOSTO hero.sottotitolo � 16-24 parole � una riga sola -->
-      <p class="hero-sub">Progettiamo e sviluppiamo il software che segue il flusso di lavoro dell'azienda, dalla richiesta all'esito. <strong>Si integra con i gestionali gi&agrave; in uso.</strong></p>
-      <div class="hero-ctas">
-        <a href="/contatti" class="btn-pill btn-pill-pieno">
-          <span>Prenota un appuntamento</span>
-          <span class="btn-pill-circle">
-            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
-          </span>
-        </a>
-      </div>
     </div>
   </div>
 </section>
-
-
-<!-- ===== 2 · La prova che viene da fuori ===== -->
-<section class="prove" data-tono="chiaro">
-  <div class="container">
-    <h2 class="prove-titolo">Diciannove piattaforme realizzate, ognuna sul flusso di un'azienda diversa</h2>
-    <div class="prove-griglia">
-      <div class="prove-voce"><p class="prove-num">19</p><p class="prove-riga">piattaforme di gestione pratiche</p></div>
-      <div class="prove-voce"><p class="prove-num">14</p><p class="prove-riga">per un solo gruppo, in due anni</p></div>
-      <div class="prove-voce"><p class="prove-num">60+</p><p class="prove-riga">progetti digitali consegnati dal 2025</p></div>
-      
-    </div>
-  </div>
-</section>
-
-<section class="giornata" data-tono="chiaro">
-  <div class="container">
-    <div class="giornata-testa">
-      <h2>Una giornata qualunque,<br><span class="dc-accento">e sono le cose che ci raccontano</span></h2>
-      <p>Quattro momenti presi dai primi incontri. <em>Se ne riconoscete tre, &egrave; il nostro lavoro.</em></p>
-    </div>
-    <div class="giornata-corpo">
-      <ol class="momenti"><li class="momento"><span class="mm-ora">8:40</span><p class="mm-testo">Apri il file con gli stati a colori. Il giallo di ieri &egrave; ancora giallo, e non sai se qualcuno ci ha lavorato.</p></li><li class="momento"><span class="mm-ora">11:15</span><p class="mm-testo">Un cliente manda la terza email della settimana con gli stessi allegati. La casella &egrave; piena, e la pratica &egrave; da un&rsquo;altra parte.</p></li><li class="momento"><span class="mm-ora">15:30</span><p class="mm-testo">Una dichiarazione &egrave; ferma da due settimane perch&eacute; aspetta un pagamento. Nessuno se lo ricorda, e la scadenza corre.</p></li><li class="momento"><span class="mm-ora">19:10</span><p class="mm-testo">I collaboratori sono andati via. Per sapere cosa &egrave; stato fatto oggi, domani mattina lo chiedi.</p></li></ol>
-      <figure class="xl">
-        <div class="xl-finestra">
-          <div class="xl-barra"><span>Lavori_clienti_2026_def2.xlsx</span></div>
-          <table class="xl-tabella">
-            <thead><tr><th>Cliente</th><th>Lavoro</th><th>Stato</th></tr></thead>
-            <tbody><tr class="xl-verde"><td>Rossi Srl</td><td>Bilancio</td><td class="xl-stato"></td></tr><tr class="xl-giallo"><td>Bianchi &amp; C.</td><td>IVA trimestrale</td><td class="xl-stato"></td></tr><tr class="xl-giallo"><td>Verdi Spa</td><td>Contabilit&agrave;</td><td class="xl-stato"></td></tr><tr class="xl-rosso"><td>Neri Snc</td><td>Dichiarazione</td><td class="xl-stato"></td></tr><tr class="xl-bianco"><td>Gialli Srl</td><td>Bilancio</td><td class="xl-stato"></td></tr><tr class="xl-verde"><td>Marini Srl</td><td>Contabilit&agrave;</td><td class="xl-stato"></td></tr><tr class="xl-bianco"><td>Costa Sas</td><td>IVA trimestrale</td><td class="xl-stato"></td></tr></tbody>
-          </table>
-        </div>
-        <figcaption>Bianco da iniziare, giallo in corso, verde chiuso, rosso fermo. Il file esiste in ogni azienda con cui lavoriamo, e <strong>&egrave; da l&igrave; che partiamo.</strong></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 4 · Come si lavora insieme ===== -->
-<section class="fasi" data-tono="chiaro">
-  <div class="container">
-    <div class="fasi-testa">
-      <h2>Raccontateci cosa vi serve.<br><span class="dc-accento">Poi verifichiamo che sia quello.</span></h2>
-      <p>Il passaggio che nessuno fa sta fra il primo e il secondo.</p>
-    </div>
-
-    <div class="metodo-due">
-      <ol class="tappe"><li class="riga-tappa">
-      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>01</b> Raccontate</span><span class="rt-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span></span>
-    </li><li class="riga-tappa">
-      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>02</b> Parlano i vostri</span><span class="rt-riga">Quindici giorni di chat aperta. Zero riunioni.</span></span>
-    </li><li class="riga-tappa">
-      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>03</b> Vi portiamo il piano</span><span class="rt-riga">I punti critici e i moduli, con le priorit&agrave;.</span></span>
-    </li><li class="riga-tappa">
-      <span class="rt-freccia" aria-hidden="true">&#8599;</span>
-      <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel. Settimane, non mesi.</span></span>
-    </li></ol>
-      <div class="pannelli"><div class="pannello" id="pannello-1" aria-live="polite">
-      <div class="pn-finestra"><div class="pn-appunti">
-  <div class="pn-foglio-testa"><span>Primo incontro</span><span class="pn-data">12 settembre</span></div>
-  <ul class="pn-note">
-    <li>Trenta pratiche al mese, e stanno salendo</li>
-    <li><mark>Nessuno sa dire a che punto &egrave; una pratica senza chiamare</mark></li>
-    <li>Tre file Excel, e ognuno tiene il suo</li>
-    <li>I documenti arrivano via email, anche dai clienti</li>
-    <li><mark>La delibera slitta se manca un allegato, e ce ne accorgiamo tardi</mark></li>
-  </ul>
-  <p class="pn-foglio-piede">Appunti presi durante l&rsquo;incontro con il titolare.</p>
-</div></div>
-      <p class="pn-didascalia">Gli appunti del primo incontro: quello che dice chi compra.</p>
-    </div><div class="pannello" id="pannello-2" aria-live="polite" hidden>
-      <div class="pn-finestra"><div class="pn-chat">
-  <div class="pn-msg"><span class="pn-chi">Marco &middot; back office</span><p>Quando arriva una pratica la ricopio in tre file diversi. Se sbaglio uno, me ne accorgo a fine mese.</p></div>
-  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>I documenti mi arrivano da quattro persone. Cerco l&rsquo;ultima versione ogni volta.</p></div>
-  <div class="pn-msg pn-msg-noi"><span class="pn-chi">Edos</span><p>Quante pratiche restano ferme perch&eacute; manca un documento?</p></div>
-  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>Almeno cinque al mese. E il cliente lo scopre da noi, mai il contrario.</p></div>
-  <div class="pn-scrivendo"><span></span><span></span><span></span></div>
-</div></div>
-      <p class="pn-didascalia">Quindici giorni di chat: quello che dice chi esegue.</p>
-    </div><div class="pannello" id="pannello-3" aria-live="polite" hidden>
-      <div class="pn-finestra"><div class="pn-doc">
-  <div class="pn-foglio-testa"><span>Documento dei flussi</span><span class="pn-data">34 pagine</span></div>
-  <ol class="pn-indice">
-    <li><span>1</span> Come gira oggi una pratica, raccontata dai vostri</li>
-    <li><span>2</span> I dodici punti dove il flusso si ferma <em class="pn-pri">priorit&agrave; alta</em></li>
-    <li><span>3</span> La piattaforma in moduli, con i tempi</li>
-    <li><span>4</span> Cosa resta come &egrave;, e perch&eacute;</li>
-  </ol>
-  <p class="pn-foglio-piede">&Egrave; vostro anche se il progetto lo fate con un altro.</p>
-</div></div>
-      <p class="pn-didascalia">Il documento dei flussi, con i punti critici e le priorit&agrave;.</p>
-    </div><div class="pannello" id="pannello-4" aria-live="polite" hidden>
-      <div class="pn-finestra"><div class="pn-progetto">
-  <div class="pn-foglio-testa"><span>Progetto in moduli</span><span class="pn-data">proposta</span></div>
-  <div class="pn-moduli">
-    <div class="pn-modulo"><span class="pn-mod-nome">Anagrafiche e pratiche</span><span class="pn-mod-barra"><i style="width:100%"></i></span><span class="pn-mod-tempo">3 sett.</span></div>
-    <div class="pn-modulo"><span class="pn-mod-nome">Documenti e scadenze</span><span class="pn-mod-barra"><i style="width:72%"></i></span><span class="pn-mod-tempo">2 sett.</span></div>
-    <div class="pn-modulo"><span class="pn-mod-nome">Portale del cliente</span><span class="pn-mod-barra"><i style="width:56%"></i></span><span class="pn-mod-tempo">2 sett.</span></div>
-    <div class="pn-modulo pn-modulo-dopo"><span class="pn-mod-nome">Controlli automatici</span><span class="pn-mod-barra"><i style="width:34%"></i></span><span class="pn-mod-tempo">dopo</span></div>
-  </div>
-  <p class="pn-foglio-piede">Si parte dal primo modulo. Gli altri si decidono a piattaforma accesa.</p>
-</div></div>
-      <p class="pn-didascalia">Il progetto in moduli, con i tempi. Si parte dal primo.</p>
-    </div></div>
-    </div>
-
-    
-
-    </div>
-</section>
-
-<!-- ===== 5 · Lo schermo ===== -->
-<section class="schermo" data-tono="chiaro">
-  <div class="container">
-    <div class="schermo-griglia">
-      <div class="schermo-testo">
-        <h2>La piattaforma si guarda<br><span class="dc-accento">prima di sceglierla</span></h2>
-        <!-- SEGNAPOSTO schermo.testo · 25-40 parole -->
-        <p>Ogni piattaforma riporta gli stati, i passaggi e i ruoli dell&rsquo;azienda per cui &egrave; costruita. Le schermate qui accanto vengono da un ambiente dimostrativo.</p>
-        <ul class="voci-freccia">
-          <li><span class="vf-freccia">&#8599;</span> Quattro stati, e si legge in tre secondi</li>
-          <li><span class="vf-freccia">&#8599;</span> Chi &egrave; pieno, e chi pu&ograve; prenderne un&rsquo;altra</li>
-          <li><span class="vf-freccia">&#8599;</span> I documenti attaccati alla pratica, non alle email</li>
-        </ul>
-      </div>
-      <div class="schermo-figura">
-        <!-- SEGNAPOSTO schermo.immagine · schermata vera, dati finti, 1200x760 -->
-        <div class="ui-finestra" role="img" aria-label="Schermata dimostrativa: elenco delle pratiche con stato, responsabile e ultimo aggiornamento">
-  <div class="ui-barra"><span class="ui-pallini"><i></i><i></i><i></i></span><span class="ui-titolo">Pratiche &middot; settembre</span><span class="ui-demo">dati dimostrativi</span></div>
-  <div class="ui-corpo">
-    <aside class="ui-lato">
-      <span class="ui-voce ui-voce-attiva">Pratiche</span>
-      <span class="ui-voce">Clienti</span>
-      <span class="ui-voce">Documenti</span>
-      <span class="ui-voce">Scadenze</span>
-      <span class="ui-voce">Report</span>
-    </aside>
-    <div class="ui-tabella-zona">
-      <div class="ui-cifre">
-        <div><strong>38</strong><span>aperte</span></div>
-        <div><strong>12</strong><span>in delibera</span></div>
-        <div class="ui-cifra-rossa"><strong>3</strong><span>ferme da 5 giorni</span></div>
-      </div>
-      <table class="ui-tabella">
-        <thead><tr><th>Pratica</th><th>Cliente</th><th>Fase</th><th>Stato</th><th>Responsabile</th></tr></thead>
-        <tbody><tr><td class="ui-cod">PR-2418</td><td class="ui-cli">Bertoldi Impianti</td><td>Istruttoria</td><td><span class="ui-stato ui-giallo">in corso</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2417</td><td class="ui-cli">Farmacia Sant&rsquo;Anna</td><td>Delibera</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>L. Ferri</td></tr><tr><td class="ui-cod">PR-2415</td><td class="ui-cli">Nuova Edilcasa</td><td>Documenti</td><td><span class="ui-stato ui-rosso">in attesa</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2412</td><td class="ui-cli">Olivieri &amp; Partners</td><td>Erogazione</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>S. Riva</td></tr><tr><td class="ui-cod">PR-2409</td><td class="ui-cli">Tecnoforme</td><td>Raccolta dati</td><td><span class="ui-stato ui-grigio">da avviare</span></td><td>L. Ferri</td></tr></tbody>
-      </table>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="tech-slider" data-tono="chiaro">
-  <p class="tech-slider-label reveal">Le tecnologie che utilizziamo</p>
-  <div class="tech-track">
-    <!-- Set 1 -->
-    <div class="tech-item" data-label="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Vue.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Laravel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WordPress"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WooCommerce"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Flutter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Supabase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Magento"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento" width="40" height="40" loading="lazy"></div>
-    <!-- Set 2 (duplicate for seamless loop) -->
-    <div class="tech-item" data-label="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Vue.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Laravel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WordPress"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WooCommerce"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Flutter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Supabase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Magento"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento" width="40" height="40" loading="lazy"></div>
-  </div>
-</section>
-
-<!-- ===== 6 · I lavori ===== -->
-<section class="lavori" data-tono="chiaro">
-  <div class="container">
-    <div class="lavori-testa">
-      <h2>Settori diversi,<br><span class="dc-accento">lo stesso flusso di lavoro</span></h2>
-      <p>Credito, finanza agevolata, assicurazioni, servizi: cambia il settore, resta la struttura del flusso. &Egrave; quella che abbiamo costruito diciannove volte.</p>
-    </div>
-    <div class="lavori-griglia">
-      <article class="lavoro lavoro-grande">
-        <div class="mn mn-tabella"><div class="mn-riga"><span class="mn-barra" style="width:62%"></span><i class="mn-verde"></i></div><div class="mn-riga"><span class="mn-barra" style="width:48%"></span><i class="mn-giallo"></i></div><div class="mn-riga"><span class="mn-barra" style="width:70%"></span><i class="mn-verde"></i></div><div class="mn-riga"><span class="mn-barra" style="width:35%"></span><i class="mn-rosso"></i></div><div class="mn-riga"><span class="mn-barra" style="width:55%"></span><i class="mn-grigio"></i></div></div>
-        <p class="lavoro-tipo">Mediatore creditizio</p>
-        <h3>1.200 pagine e 50.000 visitatori al mese sulla piattaforma delle pratiche</h3>
-        <p class="lavoro-periodo">in produzione dal 2024</p>
-      </article>
-      <article class="lavoro lavoro-grande">
-        <div class="mn mn-colonne"><div class="mn-col"><span class="mn-col-testa mn-grigio"></span><span class="mn-card"></span><span class="mn-card"></span><span class="mn-card"></span></div><div class="mn-col"><span class="mn-col-testa mn-giallo"></span><span class="mn-card"></span><span class="mn-card"></span></div><div class="mn-col"><span class="mn-col-testa mn-verde"></span><span class="mn-card"></span><span class="mn-card"></span><span class="mn-card"></span><span class="mn-card"></span></div></div>
-        <p class="lavoro-tipo">Facility management</p>
-        <h3>150 clienti corporate seguiti dentro una piattaforma sola</h3>
-        <p class="lavoro-periodo">in produzione dal 2025</p>
-      </article>
-      <article class="lavoro">
-        <div class="mn mn-grafico"><span style="height:38%"></span><span style="height:55%"></span><span style="height:42%"></span><span style="height:70%"></span><span style="height:58%"></span><span style="height:84%"></span><span style="height:66%"></span></div>
-        <p class="lavoro-tipo">Finanza agevolata</p>
-        <h3>Quattordici piattaforme in due anni per lo stesso gruppo, tutte sulla stessa base</h3>
-        <p class="lavoro-periodo">dal 2024</p>
-      </article>
-      <article class="lavoro">
-        <div class="mn mn-scheda"><span class="mn-titolo"></span><div class="mn-campi"><span></span><span></span><span></span><span></span></div><div class="mn-doc"><i></i><i></i><i></i></div></div>
-        <p class="lavoro-tipo">Studio professionale</p>
-        <h3>Quattro professionisti, e la pratica di un cliente la vedono tutti e quattro</h3>
-        <p class="lavoro-periodo">dal 2026</p>
-      </article>
-    </div>
-    <p class="lavori-nota">I gestionali di pratiche sono interni per natura, e dentro ci sono i dati dei clienti dei nostri clienti. Per questo i lavori si raccontano per tipo di azienda.</p>
-  </div>
-</section>
-
-<!-- ===== 7 · Il confronto a tre ===== -->
-<section class="confronto" data-tono="chiaro">
-  <div class="container">
-    <div class="confronto-testa">
-      <h2>Tre strade, e cambia<br><span class="dc-accento">cosa chiedono a voi</span></h2>
-      <p>La differenza sta in quanto tempo passa prima di vedere qualcosa che funziona.</p>
-    </div>
-    <table class="tabella-confronto">
-      <thead>
-        <tr><th scope="col">Il verticale a canone</th><th scope="col">Lo sviluppo su misura classico</th><th scope="col" class="col-edos">Edos</th></tr>
-      </thead>
-      <tbody>
-        <tr><td data-col="Il verticale a canone">Cambiate processo per stare dentro al loro schema</td><td data-col="Su misura classico">Il capitolato lo scrivete voi, e nessuno vi aiuta</td><td class="col-edos" data-col="Edos">Si parte dal vostro Excel, che &egrave; gi&agrave; il capitolato</td></tr>
-        <tr><td data-col="Il verticale a canone">Riportate tutte le anagrafiche prima di cominciare</td><td data-col="Su misura classico">Si parte dal foglio bianco, quindi si costruisce tutto</td><td class="col-edos" data-col="Edos">I punti critici li scrivono i vostri, non un consulente</td></tr>
-        <tr><td data-col="Il verticale a canone">Mesi prima di vedere la vostra prima pratica dentro</td><td data-col="Su misura classico">Il preventivo cresce strada facendo</td><td class="col-edos" data-col="Edos">Settimane, e la base da cui partiamo gira da anni</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ===== 8 · Le tre paure ===== -->
-<section class="paure" data-tono="chiaro">
-  <div class="container">
-    <h2 class="paure-citazione">L&rsquo;intelligenza artificiale &egrave; valida solo quanto <span class="dc-accento">il processo su cui gira.</span></h2>
-    <p class="paure-sotto">Un assistente messo sopra un flusso dove nessuno sa a che punto &egrave; una pratica produce niente. Noi costruiamo prima il processo, e l&rsquo;AI ci gira sopra.</p>
-    <div class="paure-griglia">
-      <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 14v2.5"/></svg></span><h3>I dati restano dentro</h3><p>I dati dei vostri clienti restano nella vostra piattaforma, e lo mettiamo per iscritto nel contratto. &Egrave; la prima domanda che ci fanno, ed &egrave; giusto farla.</p></div>
-      <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.5 8.5-4 3.5 4 3.5"/><path d="m15.5 8.5 4 3.5-4 3.5"/><path d="m13.5 5-3 14"/></svg></span><h3>Il codice &egrave; vostro</h3><p>Il progetto e il documento dei flussi restano di chi li ha pagati. Sta scritto nel contratto, insieme ai tempi e a chi decide.</p></div>
-      <div class="paura"><span class="paura-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17.5 9 11l4 4 7.5-8"/><path d="M15 6.5h5.5V12"/></svg></span><h3>E se cresco, poi lo butto?</h3><p>La base da cui partiamo regge gi&agrave; un&rsquo;azienda intera: clienti, offerte con firma, progetti, ticket, tempi, fatturazione, calendario. Il posto dove crescere c&rsquo;&egrave; gi&agrave;.</p></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===== 9 · La chiusura ===== -->
-<section class="chiusura" data-tono="notte">
-  <div class="container">
-    <h2>Le vostre pratiche oggi<br><span class="ch-accento">su cosa girano?</span></h2>
-    <p>Raccontatecelo in due righe. Vi rispondiamo dicendo se &egrave; un lavoro che sappiamo fare, e come lo imposteremmo.</p>
-    <a href="/contatti" class="btn-pill btn-pill-pieno">
-      <span>Prenota un appuntamento</span>
-      <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-mobile-contact">
-      <a href="mailto:info@edos.it">info@edos.it</a>
-      <a href="/contatti">Prenota un appuntamento</a>
-    </div>
-    <div class="footer-columns">
-      <div class="footer-col">
-        <div class="footer-col-label">Menu<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/servizi">Cosa facciamo</a><a href="/metodo">Come lavoriamo</a><a href="/case-study">I lavori</a><a href="/contatti">Contatti</a></div>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-label">Edos<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/per-le-agenzie">Per le agenzie</a><a href="/lavora-con-noi">Lavora con noi</a><a href="/tools/calcolatore-roi-configuratore">Calcolatore ROI</a></div>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-label">Legali<svg class="footer-col-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-        <div class="footer-col-links"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a><a href="#" data-cookie-prefs>Gestisci cookie</a></div>
-      </div>
-    </div>
-    <a href="/" class="footer-logo"><img src="/logo-edos-chiaro.svg" alt="Edos" width="104" height="35" loading="lazy" decoding="async"></a>
-    <div class="footer-info">Edos Srl &middot; iscritta all&rsquo;Elenco pubblico dei Fornitori di servizi e tecnologie 4.0 di Unioncamere Lombardia &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>Sede legale: Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI) &middot; Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)</div>
-    <div class="footer-bottom"><span>&copy; 2026 Edos</span><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a><a href="#" data-cookie-prefs>Gestisci cookie</a></div></div>
-  </div>
-</footer>
-
-<script src="/js/main.js" defer></script>
-<script src="/js/cases-data.js"></script>
 <script>
-(function(){
-  'use strict';
-
-  /* ---- Count-up ---- */
-  var cEls = document.querySelectorAll('[data-target]');
-  if('IntersectionObserver' in window){
-    var cObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(!entry.isIntersecting) return;
-        var el = entry.target;
-        var target = parseInt(el.getAttribute('data-target'), 10);
-        var suffix = el.getAttribute('data-suffix') || '';
-        cObs.unobserve(el);
-        var cur = 0, step = Math.max(1, Math.ceil(target/50));
-        var t = setInterval(function(){
-          cur += step;
-          if(cur >= target){ cur = target; clearInterval(t); }
-          el.textContent = cur + suffix;
-        }, 28);
-      });
-    }, {threshold:0.5});
-    cEls.forEach(function(el){ cObs.observe(el); });
-  }
-
-  /* ---- PILLARS ICON DRAW ANIMATION ---- */
-  (function(){
-    var pillars = document.querySelectorAll('.hero-pillar');
-    if(!pillars.length) return;
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add('draw-in');
-          obs.unobserve(e.target);
-        }
-      });
-    }, {threshold:0.3});
-    pillars.forEach(function(p){ obs.observe(p); });
-  })();
-
-  /* ---- PARTNERFLOW STEP ANIMATIONS ---- */
-  (function(){
-    var steps = document.querySelectorAll('.pf-step');
-    if(!steps.length) return;
-
-    function scrambleNum(numEl, target) {
-      var iter = 0, maxIter = 14;
-      var id = setInterval(function(){
-        iter++;
-        if(iter < maxIter) {
-          numEl.textContent = '0' + Math.floor(Math.random() * 9);
-        } else {
-          numEl.textContent = String(target).padStart(2,'0');
-          clearInterval(id);
-          numEl.closest('.pf-step').classList.add('pf-counted');
-        }
-      }, 38);
-    }
-
-    if('IntersectionObserver' in window) {
-      var pfObs = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(!e.isIntersecting) return;
-          pfObs.unobserve(e.target);
-          var numEl = e.target.querySelector('.pf-step-num');
-          if(!numEl || e.target.classList.contains('pf-counted')) return;
-          var idx = Array.from(steps).indexOf(e.target);
-          setTimeout(function(){ scrambleNum(numEl, parseInt(numEl.dataset.pf)); }, idx * 120);
-        });
-      }, {threshold:0.25});
-      steps.forEach(function(s){ pfObs.observe(s); });
-    } else {
-      steps.forEach(function(s){
-        var n = s.querySelector('.pf-step-num');
-        if(n) n.textContent = String(parseInt(n.dataset.pf)).padStart(2,'0');
-        s.classList.add('pf-counted');
-      });
-    }
-  })();
-
-  /* ---- TAGLINE WORD-BY-WORD ANIMATION ---- */
-  (function(){
-    var paras = document.querySelectorAll('.hero-tagline .tagline-anim');
-    if(!paras.length) return;
-
-    var delay = 0;
-    var step  = 42; // ms between words
-
-    paras.forEach(function(p){
-      var nodes = Array.from(p.childNodes);
-      p.innerHTML = '';
-
-      nodes.forEach(function(node){
-        if(node.nodeType === 3){
-          // text node: split by spaces preserving them
-          var parts = node.textContent.split(/(\s+)/);
-          parts.forEach(function(part){
-            if(/^\s+$/.test(part)){
-              p.appendChild(document.createTextNode(part));
-            } else if(part){
-              var sp = document.createElement('span');
-              sp.className = 'tw';
-              sp.textContent = part;
-              sp.style.transitionDelay = delay + 'ms';
-              delay += step;
-              p.appendChild(sp);
-            }
-          });
-        } else if(node.nodeType === 1){
-          // element node (strong): treat as one word unit
-          var sp = document.createElement('span');
-          sp.className = 'tw';
-          sp.appendChild(node.cloneNode(true));
-          sp.style.transitionDelay = delay + 'ms';
-          delay += step;
-          p.appendChild(sp);
-        }
-      });
-
-      // gap between the two paragraphs
-      delay += 80;
-    });
-
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          paras.forEach(function(p){ p.classList.add('animated'); });
-          obs.disconnect();
-        }
-      });
-    }, {threshold: 0.2});
-
-    obs.observe(paras[0]);
-  })();
-
-  /* ---- SERVICES ACCORDION ---- */
-  (function(){
-    var items = document.querySelectorAll('#servAccordion .serv-item');
-    items.forEach(function(item){
-      var btn = item.querySelector('.serv-btn');
-      if(!btn) return;
-      btn.addEventListener('click', function(){
-        var isOpen = item.classList.contains('open');
-        // chiudi tutti
-        items.forEach(function(i){
-          i.classList.remove('open');
-          var b = i.querySelector('.serv-btn');
-          if(b) b.setAttribute('aria-expanded','false');
-        });
-        // apri quello cliccato se era chiuso
-        if(!isOpen){
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded','true');
-        }
-      });
-    });
-  })();
-
-  /* ---- HERO SCROLL EXIT ANIMATION ---- */
-  (function(){
-    var hero       = document.querySelector('.hero');
-    var heroInner  = document.querySelector('.hero-inner');
-    if(!hero) return;
-
-    var ticking = false;
-
-    function onScroll(){
-      if(!ticking){
-        requestAnimationFrame(update);
-        ticking = true;
-      }
-    }
-
-    function update(){
-      ticking = false;
-      var scrollY  = window.scrollY || window.pageYOffset;
-      var heroH    = hero.offsetHeight;
-      // progress 0→1 as hero scrolls out of view
-      var progress = Math.min(1, Math.max(0, scrollY / heroH));
-
-      // content: parallax up + fade out
-      var translateY = progress * 60;
-      var opacity    = 1 - progress * 1.6;
-      var blur       = progress * 8;
-      var style      = 'translateY(-' + translateY + 'px)';
-
-      if(heroInner){
-        heroInner.style.transform  = style;
-        heroInner.style.opacity    = Math.max(0, opacity);
-        heroInner.style.filter     = 'blur(' + blur + 'px)';
-      }
-    }
-
-    window.addEventListener('scroll', onScroll, {passive:true});
-    update();
-  })();
-
-  /* ---- SECTION PARALLAX ---- */
-  (function(){
-    var parallaxEls = document.querySelectorAll('.servizi::before, .settori::after');
-    // Lightweight parallax for section accent shapes
-    var sections = document.querySelectorAll('.servizi, .settori, .cases');
-    function parallaxUpdate(){
-      var scrollY = window.scrollY || window.pageYOffset;
-      sections.forEach(function(sec){
-        var rect = sec.getBoundingClientRect();
-        var winH = window.innerHeight;
-        if(rect.top < winH && rect.bottom > 0){
-          var progress = (winH - rect.top) / (winH + rect.height);
-          var offset = (progress - 0.5) * 30;
-          sec.style.setProperty('--parallax-y', offset + 'px');
-        }
-      });
-    }
-    var pTicking = false;
-    window.addEventListener('scroll', function(){
-      if(!pTicking){ requestAnimationFrame(function(){ parallaxUpdate(); pTicking = false; }); pTicking = true; }
-    }, {passive:true});
-  })();
-
-  /* ── Case study: dynamic render from CASES catalogue ── */
-  function initCases(){
-    if(typeof CASES==='undefined')return;
-    var grid=document.getElementById('casesGrid');
-    if(!grid)return;
-
-    var ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-
-    function shuffle(arr){
-      var a=arr.slice(),i=a.length,j,tmp;
-      while(i>1){j=Math.floor(Math.random()*(i--));tmp=a[i];a[i]=a[j];a[j]=tmp;}
-      return a;
-    }
-
-    function buildCard(c,idx){
-      var a=document.createElement('a');
-      a.href=c.u;a.className='c-item';
-      a.setAttribute('data-type',c.ty);a.setAttribute('data-sector',c.se);
-      a.innerHTML=
-        '<div class="c-num">'+String(idx+1).padStart(2,'0')+'</div>'+
-        '<p class="c-title">'+c.t+'</p>'+
-        '<p class="c-desc">'+c.d+'</p>'+
-        '<div class="c-meta">'+
-          '<div class="c-meta-item"><div class="c-meta-label">Settore</div><div class="c-meta-value">'+c.sl+'</div></div>'+
-          '<div class="c-meta-item"><div class="c-meta-label">Servizio</div><div class="c-meta-value">'+c.sv+'</div></div>'+
-        '</div>'+
-        '<span class="c-arrow">'+ARROW+'</span>';
-      return a;
-    }
-
-    /* initial render: 8 random cases */
-    var shown=shuffle(CASES).slice(0,8);
-    shown.forEach(function(c,i){
-      var card=buildCard(c,i);
-      card.style.opacity='0';card.style.transform='translateY(14px)';
-      grid.appendChild(card);
-      (function(el,v){setTimeout(function(){
-        el.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';
-        el.style.opacity='1';el.style.transform='translateY(0)';
-      },v*50);})(card,i);
-    });
-
-    /* filters */
-    var btns=document.querySelectorAll('.cf-btn');
-    btns.forEach(function(btn){
-      btn.addEventListener('click',function(){
-        btns.forEach(function(b){b.classList.remove('active');});
-        btn.classList.add('active');
-        var f=btn.getAttribute('data-filter');
-        var filtered;
-        if(f==='all'){
-          filtered=shuffle(CASES).slice(0,8);
-        }else{
-          var parts=f.split(':'),key=parts[0],val=parts[1];
-          filtered=shuffle(CASES.filter(function(c){return key==='type'?c.ty===val:c.se===val;}));
-        }
-        grid.innerHTML='';
-        filtered.forEach(function(c,i){
-          var card=buildCard(c,i);
-          card.style.opacity='0';card.style.transform='translateY(14px)';
-          grid.appendChild(card);
-          (function(el,v){setTimeout(function(){
-            el.style.transition='opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)';
-            el.style.opacity='1';el.style.transform='translateY(0)';
-          },v*50);})(card,i);
-        });
-      });
-    });
-  }
-  initCases();
-
-})();
-</script>
-<script src="/js/cookie-consent.js" defer></script>
-<script>
-(function(){
-  var nav = document.getElementById('mainNav');
-  if (!nav) return;
-  function check(){
-    if (window.scrollY > 20) {
-      nav.classList.add('is-scrolled');
-      document.body.classList.add('nav-scrolled');
-    } else {
-      nav.classList.remove('is-scrolled');
-      document.body.classList.remove('nav-scrolled');
-    }
-  }
-  check();
-  window.addEventListener('scroll', check, {passive: true});
-})();
+document.querySelectorAll('.check').forEach(function(b){
+  b.addEventListener('click', function(){
+    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    var n = document.querySelectorAll('.check[aria-pressed="true"]').length;
+    document.querySelector('.check-conta').textContent = n;
+    document.querySelector('.check-frase').textContent = n >= 3
+      ? 'Tre su cinque: e\u0300 esattamente il nostro lavoro.'
+      : 'Spuntate quello che succede da voi.';
+  });
+});
 </script>
 
-<script>
-/* la barra prende il tono della sezione che le passa sotto */
-(function(){
-  var nav = document.getElementById('mainNav');
-  if(!nav) return;
-  var zone = [].slice.call(document.querySelectorAll('[data-tono]'));
-  if(!zone.length) return;
-  function applica(){
-    var y = nav.getBoundingClientRect().bottom - 8;
-    var tono = 'chiaro';
-    for(var i=0;i<zone.length;i++){
-      var r = zone[i].getBoundingClientRect();
-      if(r.top <= y && r.bottom >= y){ tono = zone[i].getAttribute('data-tono'); }
-    }
-    nav.classList.toggle('su-scuro', tono === 'scuro' || tono === 'notte');
-    nav.classList.toggle('su-notte', tono === 'notte');
-  }
-  var atteso = false;
-  function suScroll(){
-    if(atteso) return;
-    atteso = true;
-    requestAnimationFrame(function(){ applica(); atteso = false; });
-  }
-  window.addEventListener('scroll', suScroll, {passive:true});
-  window.addEventListener('resize', suScroll, {passive:true});
-  applica();
-})();
-</script>
-<script>
-/* la scena del metodo: quattro stati che si compongono, uno dopo l'altro */
-(function(){
-  var pannelli = [].slice.call(document.querySelectorAll('.pannello'));
-  if(!pannelli.length) return;
-  var blocco = document.querySelector('.metodo-due');
-  var DURATE = [2900, 3800, 2900, 2700];
-  var i = -1, timer = null, sopra = false, visibile = false;
-  var lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function scena(k){
-    i = k;
-    pannelli.forEach(function(p, n){
-      if(n === k){
-        p.hidden = false;
-        p.classList.remove('in-scena');
-        void p.offsetWidth;
-        requestAnimationFrame(function(){ p.classList.add('in-scena'); });
-      } else {
-        p.classList.remove('in-scena');
-        p.hidden = true;
-      }
-    });
-    programma();
-  }
-  function programma(){
-    clearTimeout(timer);
-    if(sopra || lento || !visibile) return;
-    timer = setTimeout(function(){ scena((i + 1) % pannelli.length); }, DURATE[i] || 5200);
-  }
-  if(blocco){
-    blocco.addEventListener('mouseenter', function(){ sopra = true; clearTimeout(timer); });
-    blocco.addEventListener('mouseleave', function(){ sopra = false; programma(); });
-    blocco.addEventListener('focusin', function(){ sopra = true; clearTimeout(timer); });
-    blocco.addEventListener('focusout', function(){ sopra = false; programma(); });
-    if('IntersectionObserver' in window){
-      new IntersectionObserver(function(v){
-        visibile = v[0].isIntersecting;
-        if(visibile){ if(i < 0) scena(0); else programma(); } else clearTimeout(timer);
-      }, {threshold: .35}).observe(blocco);
-    } else { visibile = true; scena(0); }
-  }
-  if(i < 0){ pannelli.forEach(function(p, n){ p.hidden = n !== 0; }); }
-})();
-</script>
 </body>
 </html>
