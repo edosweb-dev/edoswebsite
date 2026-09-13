@@ -916,6 +916,35 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .rt-titolo{font-size:1.1rem}
 }
 </style>
+
+<style id="sequenza-metodo">
+/* la barra che mostra quanto manca al passaggio */
+.riga-tappa{position:relative}
+.riga-tappa::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:#004AAD;transition:width .2s linear}
+.riga-attiva.riga-scorre::after{width:var(--avanzamento,0%)}
+
+/* appunti */
+.pn-foglio-testa{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid rgba(13,27,62,.1);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5F6B80}
+.pn-data{color:#8A93A6}
+.pn-note{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.pn-note li{position:relative;padding-left:20px;font-size:1.0625rem;line-height:1.5;color:var(--navy)}
+.pn-note li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:1.5px;background:rgba(13,27,62,.35)}
+.pn-note mark{background:rgba(217,146,43,.22);color:inherit;padding:1px 2px;border-radius:2px}
+.pn-foglio-piede{margin:16px 0 0;font-size:.92rem;color:#5F6B80}
+
+/* progetto in moduli */
+.pn-moduli{display:flex;flex-direction:column;gap:14px}
+.pn-modulo{display:grid;grid-template-columns:minmax(0,1fr) 96px 54px;gap:12px;align-items:center;font-size:1rem;color:var(--navy)}
+.pn-mod-barra{height:7px;border-radius:99px;background:rgba(13,27,62,.08);overflow:hidden}
+.pn-mod-barra i{display:block;height:100%;border-radius:99px;background:#004AAD}
+.pn-mod-tempo{font-size:.88rem;color:#5F6B80;text-align:right;font-variant-numeric:tabular-nums}
+.pn-modulo-dopo{opacity:.52}
+.pn-modulo-dopo .pn-mod-barra i{background:rgba(13,27,62,.3)}
+
+@media (prefers-reduced-motion:reduce){
+  .riga-attiva.riga-scorre::after{display:none}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -1062,67 +1091,53 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel. Settimane, non mesi.</span></span>
     </button></div>
-      <div class="pannelli">
-        <div class="pannello pannello-attivo" id="pannello-1" role="tabpanel" aria-labelledby="tappa-1">
-      <div class="pn-finestra"><ul class="pn-elenco">
-  <li><span class="pn-et">Chi entra nella chat</span><strong>6 persone, dai tre reparti che toccano la pratica</strong></li>
-  <li><span class="pn-et">Chi decide</span><strong>Il titolare, e sta scritto nel contratto</strong></li>
-  <li><span class="pn-et">Quanto dura l&rsquo;ascolto</span><strong>15 giorni, senza riunioni</strong></li>
-  <li><span class="pn-et">Cosa preparate voi</span><strong>Niente</strong></li>
-</ul></div>
-      <p class="pn-didascalia">Il contratto dice chi entra e chi decide. Nient&rsquo;altro da preparare.</p>
-    </div>
-        <div class="pannello" id="pannello-2" role="tabpanel" aria-labelledby="tappa-2" hidden>
+      <div class="pannelli"><div class="pannello" id="pannello-1" role="tabpanel" aria-labelledby="tappa-1">
+      <div class="pn-finestra"><div class="pn-appunti">
+  <div class="pn-foglio-testa"><span>Primo incontro</span><span class="pn-data">12 settembre</span></div>
+  <ul class="pn-note">
+    <li>Trenta pratiche al mese, e stanno salendo</li>
+    <li><mark>Nessuno sa dire a che punto &egrave; una pratica senza chiamare</mark></li>
+    <li>Tre file Excel, e ognuno tiene il suo</li>
+    <li>I documenti arrivano via email, anche dai clienti</li>
+    <li><mark>La delibera slitta se manca un allegato, e ce ne accorgiamo tardi</mark></li>
+  </ul>
+  <p class="pn-foglio-piede">Appunti presi durante l&rsquo;incontro con il titolare.</p>
+</div></div>
+      <p class="pn-didascalia">Gli appunti del primo incontro: quello che dice chi compra.</p>
+    </div><div class="pannello" id="pannello-2" role="tabpanel" aria-labelledby="tappa-2" hidden>
       <div class="pn-finestra"><div class="pn-chat">
   <div class="pn-msg"><span class="pn-chi">Marco &middot; back office</span><p>Quando arriva una pratica la ricopio in tre file diversi. Se sbaglio uno, me ne accorgo a fine mese.</p></div>
-  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>I documenti mi arrivano via email da quattro persone. Cerco l&rsquo;ultima versione ogni volta.</p></div>
-  <div class="pn-msg"><span class="pn-chi">Luca &middot; commerciale</span><p>Il cliente mi chiama per sapere a che punto siamo. Io chiamo Sara, Sara guarda il file.</p></div>
+  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>I documenti mi arrivano da quattro persone. Cerco l&rsquo;ultima versione ogni volta.</p></div>
   <div class="pn-msg pn-msg-noi"><span class="pn-chi">Edos</span><p>Quante pratiche restano ferme perch&eacute; manca un documento?</p></div>
+  <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>Almeno cinque al mese. E il cliente lo scopre da noi, mai il contrario.</p></div>
   <div class="pn-scrivendo"><span></span><span></span><span></span></div>
 </div></div>
-      <p class="pn-didascalia">Quindici giorni di chat: scrivono dal telefono, quando vogliono.</p>
-    </div>
-        <div class="pannello" id="pannello-3" role="tabpanel" aria-labelledby="tappa-3" hidden>
+      <p class="pn-didascalia">Quindici giorni di chat: quello che dice chi esegue.</p>
+    </div><div class="pannello" id="pannello-3" role="tabpanel" aria-labelledby="tappa-3" hidden>
       <div class="pn-finestra"><div class="pn-doc">
-  <p class="pn-doc-testa">Documento dei flussi &middot; 34 pagine</p>
+  <div class="pn-foglio-testa"><span>Documento dei flussi</span><span class="pn-data">34 pagine</span></div>
   <ol class="pn-indice">
     <li><span>1</span> Come gira oggi una pratica, raccontata dai vostri</li>
     <li><span>2</span> I dodici punti dove il flusso si ferma <em class="pn-pri">priorit&agrave; alta</em></li>
     <li><span>3</span> La piattaforma in moduli, con i tempi</li>
-    <li><span>4</span> Cosa costa ogni modulo, e in che ordine conviene</li>
-    <li><span>5</span> Cosa resta come &egrave;, e perch&eacute;</li>
+    <li><span>4</span> Cosa resta come &egrave;, e perch&eacute;</li>
   </ol>
-  <p class="pn-doc-piede">&Egrave; vostro anche se il progetto lo fate con un altro.</p>
+  <p class="pn-foglio-piede">&Egrave; vostro anche se il progetto lo fate con un altro.</p>
 </div></div>
       <p class="pn-didascalia">Il documento dei flussi, con i punti critici e le priorit&agrave;.</p>
-    </div>
-        <div class="pannello" id="pannello-4" role="tabpanel" aria-labelledby="tappa-4" hidden>
-      <div class="pn-finestra"><div class="ui-finestra" role="img" aria-label="Schermata dimostrativa: elenco delle pratiche con stato, responsabile e ultimo aggiornamento">
-  <div class="ui-barra"><span class="ui-pallini"><i></i><i></i><i></i></span><span class="ui-titolo">Pratiche &middot; settembre</span><span class="ui-demo">dati dimostrativi</span></div>
-  <div class="ui-corpo">
-    <aside class="ui-lato">
-      <span class="ui-voce ui-voce-attiva">Pratiche</span>
-      <span class="ui-voce">Clienti</span>
-      <span class="ui-voce">Documenti</span>
-      <span class="ui-voce">Scadenze</span>
-      <span class="ui-voce">Report</span>
-    </aside>
-    <div class="ui-tabella-zona">
-      <div class="ui-cifre">
-        <div><strong>38</strong><span>aperte</span></div>
-        <div><strong>12</strong><span>in delibera</span></div>
-        <div class="ui-cifra-rossa"><strong>3</strong><span>ferme da 5 giorni</span></div>
-      </div>
-      <table class="ui-tabella">
-        <thead><tr><th>Pratica</th><th>Cliente</th><th>Fase</th><th>Stato</th><th>Responsabile</th></tr></thead>
-        <tbody><tr><td class="ui-cod">PR-2418</td><td class="ui-cli">Bertoldi Impianti</td><td>Istruttoria</td><td><span class="ui-stato ui-giallo">in corso</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2417</td><td class="ui-cli">Farmacia Sant&rsquo;Anna</td><td>Delibera</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>L. Ferri</td></tr><tr><td class="ui-cod">PR-2415</td><td class="ui-cli">Nuova Edilcasa</td><td>Documenti</td><td><span class="ui-stato ui-rosso">in attesa</span></td><td>M. Conti</td></tr><tr><td class="ui-cod">PR-2412</td><td class="ui-cli">Olivieri &amp; Partners</td><td>Erogazione</td><td><span class="ui-stato ui-verde">chiusa</span></td><td>S. Riva</td></tr><tr><td class="ui-cod">PR-2409</td><td class="ui-cli">Tecnoforme</td><td>Raccolta dati</td><td><span class="ui-stato ui-grigio">da avviare</span></td><td>L. Ferri</td></tr></tbody>
-      </table>
-    </div>
+    </div><div class="pannello" id="pannello-4" role="tabpanel" aria-labelledby="tappa-4" hidden>
+      <div class="pn-finestra"><div class="pn-progetto">
+  <div class="pn-foglio-testa"><span>Progetto in moduli</span><span class="pn-data">proposta</span></div>
+  <div class="pn-moduli">
+    <div class="pn-modulo"><span class="pn-mod-nome">Anagrafiche e pratiche</span><span class="pn-mod-barra"><i style="width:100%"></i></span><span class="pn-mod-tempo">3 sett.</span></div>
+    <div class="pn-modulo"><span class="pn-mod-nome">Documenti e scadenze</span><span class="pn-mod-barra"><i style="width:72%"></i></span><span class="pn-mod-tempo">2 sett.</span></div>
+    <div class="pn-modulo"><span class="pn-mod-nome">Portale del cliente</span><span class="pn-mod-barra"><i style="width:56%"></i></span><span class="pn-mod-tempo">2 sett.</span></div>
+    <div class="pn-modulo pn-modulo-dopo"><span class="pn-mod-nome">Controlli automatici</span><span class="pn-mod-barra"><i style="width:34%"></i></span><span class="pn-mod-tempo">dopo</span></div>
   </div>
+  <p class="pn-foglio-piede">Si parte dal primo modulo. Gli altri si decidono a piattaforma accesa.</p>
 </div></div>
-      <p class="pn-didascalia">La piattaforma, costruita sul flusso raccontato dai vostri.</p>
-    </div>
-      </div>
+      <p class="pn-didascalia">Il progetto in moduli, con i tempi. Si parte dal primo.</p>
+    </div></div>
     </div>
 
     <div class="anello">
@@ -1676,33 +1691,65 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 })();
 </script>
 
+
+
 <script>
-/* le tappe del metodo: una alla volta, e il pannello segue */
+/* la sequenza del metodo: gira da sola, si ferma appena la tocchi */
 (function(){
-  var tappe = [].slice.call(document.querySelectorAll('.riga-tappa'));
-  if(!tappe.length) return;
+  var righe = [].slice.call(document.querySelectorAll('.riga-tappa'));
+  if(!righe.length) return;
   var pannelli = [].slice.call(document.querySelectorAll('.pannello'));
-  function mostra(i){
-    tappe.forEach(function(t, k){
-      var att = k === i;
-      t.classList.toggle('riga-attiva', att);
-      t.setAttribute('aria-selected', att ? 'true' : 'false');
-      t.tabIndex = att ? 0 : -1;
+  var blocco = document.querySelector('.metodo-due');
+  var DURATA = 6000;
+  var i = 0, avvio = 0, giro = null, ferma = false, visibile = false;
+  var lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function mostra(k){
+    i = k;
+    righe.forEach(function(r, n){
+      var att = n === k;
+      r.classList.toggle('riga-attiva', att);
+      r.setAttribute('aria-selected', att ? 'true' : 'false');
+      r.tabIndex = att ? 0 : -1;
+      r.style.removeProperty('--avanzamento');
+      r.classList.toggle('riga-scorre', att && !ferma && !lento);
     });
-    pannelli.forEach(function(p, k){
-      p.hidden = k !== i;
-      p.classList.toggle('pannello-attivo', k === i);
-    });
+    pannelli.forEach(function(p, n){ p.hidden = n !== k; });
+    avvio = performance.now();
   }
-  tappe.forEach(function(t, i){
-    t.addEventListener('click', function(){ mostra(i); });
-    t.addEventListener('keydown', function(e){
+
+  function passo(ora){
+    if(ferma || lento || !visibile){ giro = requestAnimationFrame(passo); return; }
+    var q = Math.min(1, (ora - avvio) / DURATA);
+    righe[i].style.setProperty('--avanzamento', (q * 100).toFixed(1) + '%');
+    if(q >= 1) mostra((i + 1) % righe.length);
+    giro = requestAnimationFrame(passo);
+  }
+
+  function stop(){
+    ferma = true;
+    righe.forEach(function(r){ r.classList.remove('riga-scorre'); r.style.removeProperty('--avanzamento'); });
+  }
+
+  righe.forEach(function(r, k){
+    r.addEventListener('click', function(){ stop(); mostra(k); });
+    r.addEventListener('keydown', function(e){
       var j = null;
-      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') j = (i + 1) % tappe.length;
-      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') j = (i - 1 + tappe.length) % tappe.length;
-      if(j !== null){ e.preventDefault(); mostra(j); tappe[j].focus(); }
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') j = (k + 1) % righe.length;
+      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') j = (k - 1 + righe.length) % righe.length;
+      if(j !== null){ e.preventDefault(); stop(); mostra(j); righe[j].focus(); }
     });
   });
+  if(blocco){
+    blocco.addEventListener('mouseenter', function(){ ferma = true; });
+    blocco.addEventListener('mouseleave', function(){ if(!blocco.dataset.scelto){ ferma = false; avvio = performance.now(); righe[i].classList.add('riga-scorre'); } });
+    blocco.addEventListener('click', function(){ blocco.dataset.scelto = '1'; });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(voci){ visibile = voci[0].isIntersecting; if(visibile) avvio = performance.now(); }, {threshold: .3}).observe(blocco);
+    } else { visibile = true; }
+  }
+  mostra(0);
+  giro = requestAnimationFrame(passo);
 })();
 </script>
 </body>
