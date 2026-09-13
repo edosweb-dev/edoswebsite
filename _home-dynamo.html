@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home soluzione A</title>
+  <title>Home &middot; prova Dynamo</title>
   <meta name="description" content="Costruiamo il software che fa girare le aziende dove ogni pratica passa da tre o quattro mani. Si parte dal vostro Excel. 19 piattaforme costruite.">
   <link rel="canonical" href="https://www.edos.it/">
   <meta name="robots" content="index, follow">
@@ -1100,42 +1100,36 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 }
 </style>
 
-<style id="prove-ui">
-/* A */
-.pila{position:relative;height:250px;max-width:640px}
-.pila-carta{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:28px;background:#fff;border:1px solid rgba(13,27,62,.14);border-radius:12px;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .45s,box-shadow .45s}
-.pila-carta[data-i="0"]{z-index:3;box-shadow:0 18px 40px -28px rgba(13,27,62,.5)}
-.pila-carta[data-i="1"]{transform:translate(14px,16px) scale(.975);z-index:2;opacity:.72}
-.pila-carta[data-i="2"]{transform:translate(28px,32px) scale(.95);z-index:1;opacity:.45}
-.pc-detto{margin:0;font-family:var(--font-display);font-size:clamp(1.14rem,1.5vw,1.4rem);font-weight:500;line-height:1.4;color:var(--navy)}
-.pc-chi{margin:0;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#004AAD}
-.pc-chi span{display:block;margin-top:5px;font-weight:500;letter-spacing:.03em;text-transform:none;font-size:.85rem;color:#5F6B80}
-.pila-comandi{display:flex;align-items:center;gap:20px;margin-top:56px}
-.pila-tasto{background:none;border:1px solid rgba(13,27,62,.2);border-radius:99px;padding:10px 18px;font-family:var(--font);font-size:.86rem;color:var(--navy);cursor:pointer}
-.pila-tasto:hover{border-color:#004AAD;color:#004AAD}
-.pila-pallini{display:flex;gap:7px}
-.pila-pallini i{width:7px;height:7px;border-radius:50%;background:rgba(13,27,62,.2)}
-.pila-pallini i.attivo{background:#004AAD}
-/* B */
-.fuoco{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.fuoco-carta{display:flex;flex-direction:column;gap:16px;padding:26px 26px 26px 24px;border-left:2px solid rgba(13,27,62,.12);transition:border-color .3s,opacity .3s,transform .3s}
-.fuoco:hover .fuoco-carta{opacity:.38}
-.fuoco:hover .fuoco-carta:hover{opacity:1;border-left-color:#004AAD;transform:translateX(3px)}
-.fc-numero{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.1em;color:#5F6B80}
-.fc-detto{margin:0;font-family:var(--font-display);font-size:clamp(1.06rem,1.35vw,1.24rem);font-weight:500;line-height:1.42;color:var(--navy)}
-.fc-chi{margin:0;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#004AAD}
-.fc-chi span{display:block;margin-top:5px;font-weight:500;letter-spacing:.03em;text-transform:none;font-size:.85rem;color:#5F6B80}
-/* C */
-.grande{max-width:1020px}
-.gr-detto{margin:0;font-family:var(--font-display);font-size:clamp(1.5rem,2.9vw,2.45rem);font-weight:500;line-height:1.26;letter-spacing:-.022em;color:var(--navy);min-height:3.3em;transition:opacity .16s ease}
-.gr-chi{margin:24px 0 0;font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#004AAD}
-.gr-chi span{display:block;margin-top:6px;font-weight:500;letter-spacing:.03em;text-transform:none;font-size:.9rem;color:#5F6B80}
-.gr-scelte{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(13,27,62,.12)}
-.gr-scelta{background:none;border:1px solid rgba(13,27,62,.18);border-radius:99px;padding:9px 18px;font-family:var(--font);font-size:.92rem;color:#5F6B80;cursor:pointer;transition:all .22s}
-.gr-scelta:hover{border-color:rgba(0,74,173,.5);color:var(--navy)}
-.gr-attiva{background:#004AAD;border-color:#004AAD;color:#fff}
-@media (max-width:900px){.fuoco{grid-template-columns:1fr}.fuoco:hover .fuoco-carta{opacity:1}.pila{height:320px}}
-</style></head>
+<style id="blocco-passi">
+.passi{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.passi-testa{max-width:900px;margin-bottom:clamp(34px,4vw,52px)}
+.passi-testa h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:500;line-height:1.04;letter-spacing:-.03em;color:var(--navy);margin:0}
+.passi-testa p{font-size:1.125rem;line-height:1.58;color:#4A5568;margin-top:18px}
+.passi-testa p strong{color:var(--navy);font-weight:600}
+.passi-griglia{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.8vw,22px)}
+.passo{display:flex;flex-direction:column;gap:16px;padding:30px 28px 28px;background:#0D1B3E;border-radius:12px}
+.pa-num{margin:0;font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.42)}
+.passo h3{font-family:var(--font-display);font-size:clamp(1.24rem,1.7vw,1.55rem);font-weight:600;line-height:1.18;letter-spacing:-.018em;color:#fff;margin:0}
+.pa-bisogno{margin:0;padding:16px 18px;border-radius:8px;background:rgba(255,255,255,.06);border-left:2px solid #84B4FF;font-size:1rem;line-height:1.5;color:rgba(255,255,255,.86)}
+.pa-dati{margin-top:auto;padding-top:22px}
+.pa-eti{margin:0 0 7px;font-size:.66rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.42)}
+.pa-tempo{margin:0 0 13px;font-family:var(--font-display);font-size:1.35rem;font-weight:600;line-height:1.1;color:#fff}
+.pa-barra{height:3px;border-radius:99px;background:rgba(255,255,255,.14);overflow:hidden}
+.pa-barra i{display:block;height:100%;background:#84B4FF;border-radius:99px}
+.pa-prezzo{margin:15px 0 0;font-family:var(--font-display);font-size:1.28rem;font-weight:600;line-height:1.15;color:#fff}
+.pa-prezzo span{display:block;margin-top:5px;font-family:var(--font);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.58)}
+.pa-cta{display:inline-flex;align-items:center;gap:11px;margin-top:22px;padding:7px 22px 7px 7px;border-radius:99px;background:#fff;color:#00306E;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;align-self:flex-start;transition:background .2s}
+.pa-cta:hover{background:#DCE8FA}
+.pa-cerchio{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#004AAD;color:#fff;flex-shrink:0}
+.pa-cerchio svg{width:16px;height:16px}
+.passi-piede{margin:clamp(28px,3.2vw,42px) 0 0;font-size:1.06rem;line-height:1.62;color:#4A5568;max-width:82ch}
+@media (max-width:980px){
+  .passi-griglia{grid-template-columns:1fr}
+  .passo{padding:26px 24px 24px;gap:14px}
+  .pa-dati{padding-top:16px}
+}
+</style>
+</head>
 <body class="nav-adattiva">
 
 <!-- ===================== NAV ===================== -->
@@ -1236,12 +1230,49 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<section class="specchio" data-tono="chiaro"><div class="container"><div class="specchio-testa">
-      <h2>La stessa pratica,<br><span class="dc-accento">vista da tre scrivanie</span></h2>
-      <p>Sono frasi raccolte nei primi incontri. Se in azienda vostra le avete gi&agrave; sentite tutte e tre, ci siamo gi&agrave; passati.</p>
+<section class="passi" data-tono="chiaro">
+  <div class="container">
+    <div class="passi-testa">
+      <h2>Qual &egrave; il passo giusto<br>per <span class="dc-accento">la vostra azienda</span>?</h2>
+      <p>Lavoriamo con aziende <strong>dai 10 ai 30 collaboratori</strong> dove il lavoro entra come una pratica e passa da tre o quattro mani prima di valere soldi: credito, finanza agevolata, assicurazioni, servizi su commessa. Il primo passo dipende da dove siete adesso.</p>
     </div>
-<div class="pila" id="pila"><article class="pila-carta" data-i="0"><p class="pc-chi">Il titolare<span>la sera, prima di chiudere</span></p><p class="pc-detto">&laquo;Apro il file e vedo solo le righe che qualcuno ha aggiornato. Per sapere il resto domani mattina lo chiedo, e intanto stanotte ci penso.&raquo;</p></article><article class="pila-carta" data-i="1"><p class="pc-chi">Chi lavora la pratica<span>un marted&igrave; qualunque</span></p><p class="pc-detto">&laquo;La stessa pratica sta nella mail, nella cartella e nel file. Se manca un documento me ne accorgo quando il cliente chiama.&raquo;</p></article><article class="pila-carta" data-i="2"><p class="pc-chi">Il cliente<span>al telefono, la terza volta</span></p><p class="pc-detto">&laquo;Volevo solo sapere a che punto siamo. Mi hanno detto che mi richiamano.&raquo;</p></article></div><div class="pila-comandi"><button class="pila-tasto" type="button">Voce successiva &rarr;</button><span class="pila-pallini"><i class="attivo"></i><i class=""></i><i class=""></i></span></div>
-<p class="specchio-piede">Succede nelle aziende <strong>dai 10 ai 30 collaboratori</strong> dove il lavoro entra come una pratica e passa da tre o quattro mani prima di valere soldi: <strong>credito, finanza agevolata, assicurazioni, servizi su commessa</strong>. Cambia il mestiere, resta il giro.</p></div></section>
+    <div class="passi-griglia"><article class="passo">
+      <p class="pa-num">01</p>
+      <h3>Analisi dei Flussi</h3>
+      <p class="pa-bisogno">Avete bisogno di sapere dove si ferma oggi una pratica, prima di decidere cosa costruire?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">3 settimane</p>
+        <div class="pa-barra"><i style="width:30%"></i></div>
+        <p class="pa-prezzo">da 1.500 &euro;<span>si scomputa dal progetto</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
+    </article><article class="passo">
+      <p class="pa-num">02</p>
+      <h3>La piattaforma delle pratiche</h3>
+      <p class="pa-bisogno">Avete bisogno di portare pratiche, documenti e stati in un posto solo, partendo dal file che usate oggi?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">dalle 8 settimane</p>
+        <div class="pa-barra"><i style="width:100%"></i></div>
+        <p class="pa-prezzo">a moduli<span>si parte dal primo</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
+    </article><article class="passo">
+      <p class="pa-num">03</p>
+      <h3>L&rsquo;innesto sul gestionale</h3>
+      <p class="pa-bisogno">Avete bisogno che il sistema in uso parli con il resto: firma, posta, portali, fatturazione?</p>
+      <div class="pa-dati">
+        <p class="pa-eti">A partire da</p>
+        <p class="pa-tempo">dalle 2 settimane</p>
+        <div class="pa-barra"><i style="width:20%"></i></div>
+        <p class="pa-prezzo">a intervento<span>sul sistema che avete</span></p>
+      </div>
+      <a href="/contatti" class="pa-cta"><span class="pa-cerchio" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span><span>Parliamone</span></a>
+    </article></div>
+    <p class="passi-piede">Cambia il mestiere, resta il giro. Se una di queste tre domande descrive la vostra settimana, la conversazione parte da l&igrave;.</p>
+  </div>
+</section>
 
 <!-- ===== 4 · Come si lavora insieme ===== -->
 <section class="fasi" data-tono="chiaro">
@@ -1899,34 +1930,5 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   if(i < 0){ pannelli.forEach(function(p, n){ p.hidden = n !== 0; }); }
 })();
 </script>
-
-<script>
-(function(){
-  var pila = document.getElementById('pila');
-  if(pila){
-    var carte = [].slice.call(pila.children), n = 0;
-    document.querySelector('.pila-tasto').addEventListener('click', function(){
-      n = (n + 1) % carte.length;
-      carte.forEach(function(c, i){ c.dataset.i = (i - n + carte.length) % carte.length; });
-      document.querySelectorAll('.pila-pallini i').forEach(function(p, i){ p.classList.toggle('attivo', i === n); });
-    });
-  }
-  var VOCI = [["Il titolare", "la sera, prima di chiudere", "Apro il file e vedo solo le righe che qualcuno ha aggiornato. Per sapere il resto domani mattina lo chiedo, e intanto stanotte ci penso."], ["Chi lavora la pratica", "un marted&igrave; qualunque", "La stessa pratica sta nella mail, nella cartella e nel file. Se manca un documento me ne accorgo quando il cliente chiama."], ["Il cliente", "al telefono, la terza volta", "Volevo solo sapere a che punto siamo. Mi hanno detto che mi richiamano."]];
-  var scelte = [].slice.call(document.querySelectorAll('.gr-scelta'));
-  if(scelte.length){
-    var detto = document.getElementById('grDetto'), chi = document.getElementById('grChi');
-    scelte.forEach(function(b, i){
-      b.addEventListener('click', function(){
-        scelte.forEach(function(x, k){ x.classList.toggle('gr-attiva', k === i); x.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
-        detto.style.opacity = 0;
-        setTimeout(function(){
-          detto.innerHTML = '\u00ab' + VOCI[i][2] + '\u00bb';
-          chi.innerHTML = VOCI[i][0] + '<span>' + VOCI[i][1] + '</span>';
-          detto.style.opacity = 1;
-        }, 160);
-      });
-    });
-  }
-})();
-</script></body>
+</body>
 </html>
