@@ -447,7 +447,7 @@ body { padding-top: 0 !important; }
 }
 </style>
 
-<style id="hero-chiaro">
+<style id="nav-adattiva">
 /* ===== Hero chiaro, modello fattoretto.ai ===== */
 .hero{background:#FBFAF7;color:var(--navy);min-height:78vh;padding:180px 0 96px;justify-content:center;text-align:center}
 .hero-inner{max-width:1180px;margin:0 auto}
@@ -474,12 +474,12 @@ body { padding-top: 0 !important; }
 @keyframes binarioScorre{to{stroke-dashoffset:0}}
 
 /* la barra sopra un hero chiaro prende lo stesso vestito che ha allo scroll */
-body.hero-chiaro .nav-float{background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-bottom-color:rgba(226,232,240,.9)}
-body.hero-chiaro .nav-float .nf-link{color:#0D1B3E}
-body.hero-chiaro .nav-float .nf-link:hover{background:rgba(0,74,173,.1);color:#004AAD}
-body.hero-chiaro .nav-float .nf-cta{background:#004AAD;color:#fff;border-color:#004AAD;box-shadow:0 2px 8px rgba(0,74,173,.2)}
-body.hero-chiaro .nav-float .nf-logo img{filter:brightness(0) saturate(100%) invert(9%) sepia(29%) saturate(2400%) hue-rotate(203deg) brightness(96%) contrast(96%)}
-body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
+body.nav-adattiva .nav-float{background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);border-bottom-color:rgba(226,232,240,.9)}
+body.nav-adattiva .nav-float .nf-link{color:#0D1B3E}
+body.nav-adattiva .nav-float .nf-link:hover{background:rgba(0,74,173,.1);color:#004AAD}
+body.nav-adattiva .nav-float .nf-cta{background:#004AAD;color:#fff;border-color:#004AAD;box-shadow:0 2px 8px rgba(0,74,173,.2)}
+body.nav-adattiva .nav-float .nf-logo img{filter:brightness(0) saturate(100%) invert(9%) sepia(29%) saturate(2400%) hue-rotate(203deg) brightness(96%) contrast(96%)}
+body.nav-adattiva .nav-float .nf-hamburger span{background:#0D1B3E}
 
 @media (max-width:768px){
   .hero{padding:132px 0 72px;min-height:auto}
@@ -490,8 +490,46 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
   .binario-vivo{animation:none;opacity:0}
 }
 </style>
+
+<style id="hero-blu">
+/* ===== Hero blu ===== */
+.hero{background:#004AAD;color:#fff}
+.hero h1{color:#fff}
+.hero h1 em{color:#9EC6FF}
+.hero-sub{color:rgba(255,255,255,.82)}
+.hero-sub strong{color:#fff}
+.hero-link-secondario{color:#fff;opacity:.82}
+.hero-link-secondario:hover{opacity:1}
+.btn-pill-pieno{background:#fff;border-color:#fff;color:#00306E}
+.btn-pill-pieno:hover{background:#EAF1FC;border-color:#EAF1FC}
+.btn-pill-pieno .btn-pill-circle{background:rgba(0,48,110,.12)}
+.btn-pill-pieno .btn-pill-circle svg{color:#00306E}
+.btn-pill-pieno:hover .btn-pill-circle{background:rgba(0,48,110,.2)}
+.btn-pill-pieno:hover .btn-pill-circle svg{color:#00306E}
+/* i binari, in chiaro sul blu */
+.hero-motivo svg path[stroke="#0D1B3E"]{stroke:#FFFFFF}
+.hero-motivo svg rect[fill="#0D1B3E"]{fill:#FFFFFF}
+.hero-motivo svg path[stroke="#004AAD"]{stroke:#BBD6FF}
+.hero-motivo{opacity:.5}
+
+/* ===== La barra prende il tono della sezione che ha sotto ===== */
+.nav-float{transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+.nav-float .nf-link,.nav-float .nf-cta,.nav-float .nf-logo img{transition:color .3s ease,background .3s ease,border-color .3s ease,filter .3s ease}
+
+body.nav-adattiva .nav-float.su-scuro{background:rgba(0,74,173,.82);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-bottom-color:rgba(255,255,255,.14);box-shadow:none}
+body.nav-adattiva .nav-float.su-scuro .nf-link{color:rgba(255,255,255,.92)}
+body.nav-adattiva .nav-float.su-scuro .nf-link:hover{background:rgba(255,255,255,.14);color:#fff}
+body.nav-adattiva .nav-float.su-scuro .nf-cta{background:#fff;color:#00306E;border-color:#fff;box-shadow:none}
+body.nav-adattiva .nav-float.su-scuro .nf-cta:hover{background:#EAF1FC;color:#00306E}
+body.nav-adattiva .nav-float.su-scuro .nf-logo img{filter:brightness(0) invert(1)}
+body.nav-adattiva .nav-float.su-scuro .nf-hamburger span{background:#fff}
+
+body.nav-adattiva .nav-float.su-notte{background:rgba(6,14,34,.86)}
+body.nav-adattiva .nav-float.su-notte .nf-cta{background:#004AAD;color:#fff;border-color:#004AAD}
+body.nav-adattiva .nav-float.su-notte .nf-cta:hover{background:#3B6FE8;border-color:#3B6FE8}
+</style>
 </head>
-<body class="hero-chiaro">
+<body class="nav-adattiva">
 
 <!-- ===================== NAV ===================== -->
 <nav class="nav-float" id="mainNav" aria-label="Navigazione principale">
@@ -543,7 +581,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </div>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero" id="home">
+<section class="hero" id="home" data-tono="scuro">
   <div class="hero-motivo" aria-hidden="true">
     <svg viewBox="0 0 1200 460" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M -40 60 H 400 V 140 H 840 V 100 H 1160 V 180 H 1260" fill="none" stroke="#0D1B3E" stroke-width="1" opacity="0.190"/>
@@ -577,7 +615,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- tagline strip -->
-<div class="hero-tagline">
+<div class="hero-tagline" data-tono="chiaro">
   <div class="container">
     <p class="tagline-anim">Il lavoro entra come una <strong style="font-weight:700;color:var(--navy)">pratica</strong>: una domanda, un mandato, una commessa. Passa da tre o quattro mani, e alla fine vale soldi.</p>
     <p class="tagline-anim">Il software si piega a <strong style="font-weight:700;color:var(--navy)">come lavorate</strong>, e come lavorate lo dicono <strong style="font-weight:700;color:var(--navy)">le persone che lo fanno ogni giorno.</strong></p>
@@ -585,7 +623,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </div>
 
 <!-- pillars strip -->
-<div class="hero-bottom">
+<div class="hero-bottom" data-tono="chiaro">
   <div class="container">
     <div class="hero-pillars">
       <div class="hero-pillar">
@@ -627,7 +665,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
   </div>
 </div>
 <!-- ===================== STATBAR ===================== -->
-<section class="section-pad lazy-section" style="background:var(--white);padding-top:56px;padding-bottom:56px">
+<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--white);padding-top:56px;padding-bottom:56px">
   <div class="container">
     <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;max-width:960px;margin:0 auto;text-align:center">
       <div>
@@ -651,7 +689,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- ===================== ROUTING AUDIENCE ===================== -->
-<section class="section-pad lazy-section" style="background:var(--off-white)" id="per-chi-siamo">
+<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white)" id="per-chi-siamo">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 48px">
       <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin:0 0 16px;line-height:1.15">Partiamo da <em style="font-style:normal;color:var(--electric)">dove ti trovi tu.</em></h2>
@@ -747,7 +785,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- ===================== SERVIZI ===================== -->
-<section class="servizi section-pad lazy-section" id="servizi">
+<section class="servizi section-pad lazy-section" data-tono="chiaro" id="servizi">
   <div class="container">
 
     <div class="servizi-head reveal">
@@ -950,7 +988,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 
 
 <!-- ===================== PARTNERFLOW ===================== -->
-<section class="partnerflow section-pad lazy-section" id="metodo">
+<section class="partnerflow section-pad lazy-section" id="metodo" data-tono="notte">
   <div class="container">
     <div class="pf-header reveal">
       <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui<br>gestiamo ogni progetto.</p>
@@ -986,7 +1024,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- ===================== GARANZIE ===================== -->
-<section class="section-pad lazy-section" style="background:var(--off-white)" id="garanzie">
+<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white)" id="garanzie">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 56px">
       <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin:0 0 16px;line-height:1.15">Le cose che <em style="font-style:normal;color:var(--electric)">firmiamo sul contratto.</em></h2>
@@ -1029,7 +1067,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- ===================== SETTORI ===================== -->
-<section class="settori section-pad lazy-section" id="settori">
+<section class="settori section-pad lazy-section" data-tono="chiaro" id="settori">
   <div class="container">
     <div class="settori-head">
       <h2 class="reveal">Conosciamo le regole del tuo <em>settore.</em></h2>
@@ -1092,7 +1130,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 </section>
 
 <!-- ===================== CASE STUDY ===================== -->
-<section class="cases section-pad lazy-section" id="chi-siamo">
+<section class="cases section-pad lazy-section" data-tono="chiaro" id="chi-siamo">
   <div class="container">
     <div class="cases-head">
       <h2 class="reveal">Quello che facciamo<br>raccontato dai risultati.</h2>
@@ -1142,7 +1180,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 @media (max-width: 960px) { .wall-grid { column-count:2; } }
 @media (max-width: 640px) { .wall-grid { column-count:1; } }
 </style>
-<section class="section-pad lazy-section wall-section" id="testimonial">
+<section class="section-pad lazy-section wall-section" data-tono="chiaro" id="testimonial">
   <div class="container">
     <div class="reveal wall-head">
       <h2>Cosa ci sentiamo dire <em>pi&ugrave; spesso dai clienti.</em></h2>
@@ -1279,7 +1317,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
   Formato: <img src="/clienti/logo-nome-cliente.svg" alt="Nome Cliente" style="max-height:44px;width:auto;opacity:0.6;filter:grayscale(100%);transition:all .3s">
   Se il cliente e sotto NDA, ometti il logo e usa i testimonial anonimizzati sopra.
 --&gt;
-<section class="section-pad lazy-section" style="background:var(--off-white);padding-top:48px;padding-bottom:48px">
+<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white);padding-top:48px;padding-bottom:48px">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <p style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:0 0 32px">Aziende e brand che hanno scelto Edos</p>
@@ -1299,7 +1337,7 @@ body.hero-chiaro .nav-float .nf-hamburger span{background:#0D1B3E}
 END LOGO WALL -->
 
 <!-- ===================== CTA FINALE ===================== -->
-<section class="cta-final lazy-section" id="contatti">
+<section class="cta-final lazy-section" id="contatti" data-tono="notte">
   <div class="cta-blob cta-blob-1"></div>
   <div class="cta-blob cta-blob-2"></div>
   <div class="container">
@@ -1660,6 +1698,35 @@ END LOGO WALL -->
   }
   check();
   window.addEventListener('scroll', check, {passive: true});
+})();
+</script>
+
+<script>
+/* la barra prende il tono della sezione che le passa sotto */
+(function(){
+  var nav = document.getElementById('mainNav');
+  if(!nav) return;
+  var zone = [].slice.call(document.querySelectorAll('[data-tono]'));
+  if(!zone.length) return;
+  function applica(){
+    var y = nav.getBoundingClientRect().bottom - 8;
+    var tono = 'chiaro';
+    for(var i=0;i<zone.length;i++){
+      var r = zone[i].getBoundingClientRect();
+      if(r.top <= y && r.bottom >= y){ tono = zone[i].getAttribute('data-tono'); }
+    }
+    nav.classList.toggle('su-scuro', tono === 'scuro' || tono === 'notte');
+    nav.classList.toggle('su-notte', tono === 'notte');
+  }
+  var atteso = false;
+  function suScroll(){
+    if(atteso) return;
+    atteso = true;
+    requestAnimationFrame(function(){ applica(); atteso = false; });
+  }
+  window.addEventListener('scroll', suScroll, {passive:true});
+  window.addEventListener('resize', suScroll, {passive:true});
+  applica();
 })();
 </script>
 </body>
