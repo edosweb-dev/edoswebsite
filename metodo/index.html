@@ -925,16 +925,13 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 .tappe-binario{display:none}
 .riga-tappa{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:none;border:none;border-top:1px solid rgba(13,27,62,.12);padding:20px 4px;cursor:pointer;font-family:inherit;transition:padding-left .22s,border-color .22s}
 .riga-tappa:first-of-type{border-top:none}
-.riga-tappa:hover{padding-left:8px}
+
 .riga-tappa:focus-visible{outline:2px solid #004AAD;outline-offset:2px}
 .rt-freccia{font-size:1.05rem;line-height:1.35;color:rgba(13,27,62,.3);transition:color .22s,transform .22s}
 .rt-testo{display:flex;flex-direction:column;gap:5px;min-width:0}
 .rt-titolo{font-family:var(--font-display);font-size:1.22rem;font-weight:600;color:var(--navy);letter-spacing:-.015em}
 .rt-titolo b{font-weight:600;color:#5F6B80;font-size:.82rem;letter-spacing:.08em;margin-right:6px;font-variant-numeric:tabular-nums}
 .rt-riga{font-size:1rem;line-height:1.5;color:#4A5568}
-.riga-attiva .rt-freccia{color:#004AAD;transform:translate(2px,-2px)}
-.riga-attiva .rt-titolo{color:#004AAD}
-.riga-attiva .rt-titolo b{color:#004AAD}
 @media (max-width:900px){
   .metodo-due{grid-template-columns:1fr;gap:22px}
   .pannelli{order:1}
@@ -947,9 +944,6 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 <style id="sequenza-metodo">
 /* la barra che mostra quanto manca al passaggio */
 .riga-tappa{position:relative}
-.riga-tappa::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:#004AAD;transition:width .2s linear}
-.riga-attiva.riga-scorre::after{width:var(--avanzamento,0%)}
-
 /* appunti */
 .pn-foglio-testa{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid rgba(13,27,62,.1);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#5F6B80}
 .pn-data{color:#8A93A6}
@@ -969,8 +963,81 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 .pn-modulo-dopo .pn-mod-barra i{background:rgba(13,27,62,.3)}
 
 @media (prefers-reduced-motion:reduce){
-  .riga-attiva.riga-scorre::after{display:none}
+  
 }
+</style>
+
+<style id="tappe-non-cliccabili">
+.tappe{list-style:none;margin:0;padding:0}
+.riga-tappa{cursor:default}
+</style>
+
+<style id="scena-metodo">
+/* ogni pezzo entra al suo momento, e il tempo dello stato e' la somma dei suoi pezzi */
+.pannello{opacity:0;transform:translateY(10px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.pannello.in-scena{opacity:1;transform:none}
+.pannello[hidden]{display:none}
+
+.pn-finestra > * > *{--ritardo:0ms}
+/* appunti: le righe si scrivono una dopo l'altra */
+.in-scena .pn-note li{opacity:0;animation:scrittura .42s cubic-bezier(.16,1,.3,1) forwards}
+.in-scena .pn-note li:nth-child(1){animation-delay:.18s}
+.in-scena .pn-note li:nth-child(2){animation-delay:.52s}
+.in-scena .pn-note li:nth-child(3){animation-delay:.86s}
+.in-scena .pn-note li:nth-child(4){animation-delay:1.2s}
+.in-scena .pn-note li:nth-child(5){animation-delay:1.54s}
+.in-scena .pn-note mark{background-size:0 100%;background-repeat:no-repeat;background-image:linear-gradient(rgba(217,146,43,.28),rgba(217,146,43,.28));animation:evidenzia .5s ease forwards}
+.in-scena .pn-note li:nth-child(2) mark{animation-delay:2.1s}
+.in-scena .pn-note li:nth-child(5) mark{animation-delay:2.5s}
+@keyframes scrittura{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes evidenzia{to{background-size:100% 100%}}
+
+/* chat: i messaggi arrivano, e prima di ognuno lampeggiano i puntini */
+.in-scena .pn-msg{opacity:0;animation:messaggio .38s cubic-bezier(.16,1,.3,1) forwards}
+.in-scena .pn-msg:nth-of-type(1){animation-delay:.3s}
+.in-scena .pn-msg:nth-of-type(2){animation-delay:1.5s}
+.in-scena .pn-msg:nth-of-type(3){animation-delay:2.9s}
+.in-scena .pn-msg:nth-of-type(4){animation-delay:4.3s}
+.in-scena .pn-scrivendo{opacity:0;animation:messaggio .3s ease forwards;animation-delay:5.4s}
+@keyframes messaggio{from{opacity:0;transform:translateY(10px) scale(.985)}to{opacity:1;transform:none}}
+
+/* analisi: l'indice si forma riga per riga, poi appare la priorita' */
+.in-scena .pn-indice li{opacity:0;animation:scrittura .4s cubic-bezier(.16,1,.3,1) forwards}
+.in-scena .pn-indice li:nth-child(1){animation-delay:.25s}
+.in-scena .pn-indice li:nth-child(2){animation-delay:.7s}
+.in-scena .pn-indice li:nth-child(3){animation-delay:1.15s}
+.in-scena .pn-indice li:nth-child(4){animation-delay:1.6s}
+.in-scena .pn-pri{opacity:0;transform:scale(.88);animation:timbro .45s cubic-bezier(.2,1.4,.4,1) forwards;animation-delay:2.2s}
+@keyframes timbro{to{opacity:1;transform:none}}
+
+/* progetto: le barre si riempiono */
+.in-scena .pn-modulo{opacity:0;animation:scrittura .4s cubic-bezier(.16,1,.3,1) forwards}
+.in-scena .pn-modulo:nth-child(1){animation-delay:.2s}
+.in-scena .pn-modulo:nth-child(2){animation-delay:.55s}
+.in-scena .pn-modulo:nth-child(3){animation-delay:.9s}
+.in-scena .pn-modulo:nth-child(4){animation-delay:1.25s}
+.in-scena .pn-mod-barra i{transform-origin:left;transform:scaleX(0);animation:riempi .85s cubic-bezier(.16,1,.3,1) forwards}
+.in-scena .pn-modulo:nth-child(1) .pn-mod-barra i{animation-delay:.5s}
+.in-scena .pn-modulo:nth-child(2) .pn-mod-barra i{animation-delay:.85s}
+.in-scena .pn-modulo:nth-child(3) .pn-mod-barra i{animation-delay:1.2s}
+.in-scena .pn-modulo:nth-child(4) .pn-mod-barra i{animation-delay:1.55s}
+@keyframes riempi{to{transform:scaleX(1)}}
+
+/* la riga a destra si accende quando la sua scena entra */
+@media (prefers-reduced-motion:reduce){
+  .pannello,.in-scena .pn-note li,.in-scena .pn-msg,.in-scena .pn-indice li,.in-scena .pn-modulo,.in-scena .pn-pri,.in-scena .pn-scrivendo{opacity:1;transform:none;animation:none}
+  .in-scena .pn-mod-barra i{transform:none;animation:none}
+  .in-scena .pn-note mark{background-size:100% 100%;animation:none}
+  .riga-tappa:not(.){opacity:1}
+}
+</style>
+
+<style id="righe-ferme">
+.riga-tappa{opacity:1;cursor:default;padding-left:0}
+.riga-tappa::after{display:none}
+.rt-freccia{color:rgba(13,27,62,.32)}
+.rt-titolo,.rt-titolo b{color:var(--navy)}
+.rt-titolo b{color:#5F6B80}
 </style>
 </head>
 <body class="nav-adattiva">
@@ -1051,24 +1118,20 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
     </div>
 
     <div class="metodo-due">
-      <div class="tappe" role="tablist" aria-label="Le quattro tappe del metodo"><button class="riga-tappa riga-attiva" role="tab" id="tappa-1"
-        aria-selected="true" aria-controls="pannello-1" tabindex="0">
+      <ol class="tappe"><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>01</b> Raccontate</span><span class="rt-riga">Dite cosa vi serve. Si firma, e si decide chi entra.</span></span>
-    </button><button class="riga-tappa" role="tab" id="tappa-2"
-        aria-selected="false" aria-controls="pannello-2" tabindex="-1">
+    </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>02</b> Parlano i vostri</span><span class="rt-riga">Quindici giorni di chat aperta. Zero riunioni.</span></span>
-    </button><button class="riga-tappa" role="tab" id="tappa-3"
-        aria-selected="false" aria-controls="pannello-3" tabindex="-1">
+    </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>03</b> Vi portiamo il piano</span><span class="rt-riga">I punti critici e i moduli, con le priorit&agrave;.</span></span>
-    </button><button class="riga-tappa" role="tab" id="tappa-4"
-        aria-selected="false" aria-controls="pannello-4" tabindex="-1">
+    </li><li class="riga-tappa">
       <span class="rt-freccia" aria-hidden="true">&#8599;</span>
       <span class="rt-testo"><span class="rt-titolo"><b>04</b> Costruiamo</span><span class="rt-riga">Si parte dal vostro Excel. Settimane, non mesi.</span></span>
-    </button></div>
-      <div class="pannelli"><div class="pannello" id="pannello-1" role="tabpanel" aria-labelledby="tappa-1">
+    </li></ol>
+      <div class="pannelli"><div class="pannello" id="pannello-1" aria-live="polite">
       <div class="pn-finestra"><div class="pn-appunti">
   <div class="pn-foglio-testa"><span>Primo incontro</span><span class="pn-data">12 settembre</span></div>
   <ul class="pn-note">
@@ -1081,7 +1144,7 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   <p class="pn-foglio-piede">Appunti presi durante l&rsquo;incontro con il titolare.</p>
 </div></div>
       <p class="pn-didascalia">Gli appunti del primo incontro: quello che dice chi compra.</p>
-    </div><div class="pannello" id="pannello-2" role="tabpanel" aria-labelledby="tappa-2" hidden>
+    </div><div class="pannello" id="pannello-2" aria-live="polite" hidden>
       <div class="pn-finestra"><div class="pn-chat">
   <div class="pn-msg"><span class="pn-chi">Marco &middot; back office</span><p>Quando arriva una pratica la ricopio in tre file diversi. Se sbaglio uno, me ne accorgo a fine mese.</p></div>
   <div class="pn-msg"><span class="pn-chi">Sara &middot; istruttoria</span><p>I documenti mi arrivano da quattro persone. Cerco l&rsquo;ultima versione ogni volta.</p></div>
@@ -1090,7 +1153,7 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   <div class="pn-scrivendo"><span></span><span></span><span></span></div>
 </div></div>
       <p class="pn-didascalia">Quindici giorni di chat: quello che dice chi esegue.</p>
-    </div><div class="pannello" id="pannello-3" role="tabpanel" aria-labelledby="tappa-3" hidden>
+    </div><div class="pannello" id="pannello-3" aria-live="polite" hidden>
       <div class="pn-finestra"><div class="pn-doc">
   <div class="pn-foglio-testa"><span>Documento dei flussi</span><span class="pn-data">34 pagine</span></div>
   <ol class="pn-indice">
@@ -1102,7 +1165,7 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   <p class="pn-foglio-piede">&Egrave; vostro anche se il progetto lo fate con un altro.</p>
 </div></div>
       <p class="pn-didascalia">Il documento dei flussi, con i punti critici e le priorit&agrave;.</p>
-    </div><div class="pannello" id="pannello-4" role="tabpanel" aria-labelledby="tappa-4" hidden>
+    </div><div class="pannello" id="pannello-4" aria-live="polite" hidden>
       <div class="pn-finestra"><div class="pn-progetto">
   <div class="pn-foglio-testa"><span>Progetto in moduli</span><span class="pn-data">proposta</span></div>
   <div class="pn-moduli">
@@ -1517,66 +1580,49 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   applica();
 })();
 </script>
-
-
-
 <script>
-/* la sequenza del metodo: gira da sola, si ferma appena la tocchi */
+/* la scena del metodo: quattro stati che si compongono, uno dopo l'altro */
 (function(){
-  var righe = [].slice.call(document.querySelectorAll('.riga-tappa'));
-  if(!righe.length) return;
   var pannelli = [].slice.call(document.querySelectorAll('.pannello'));
+  if(!pannelli.length) return;
   var blocco = document.querySelector('.metodo-due');
-  var DURATA = 6000;
-  var i = 0, avvio = 0, giro = null, ferma = false, visibile = false;
+  var DURATE = [5200, 7400, 5400, 4800];
+  var i = -1, timer = null, sopra = false, visibile = false;
   var lento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function mostra(k){
+  function scena(k){
     i = k;
-    righe.forEach(function(r, n){
-      var att = n === k;
-      r.classList.toggle('riga-attiva', att);
-      r.setAttribute('aria-selected', att ? 'true' : 'false');
-      r.tabIndex = att ? 0 : -1;
-      r.style.removeProperty('--avanzamento');
-      r.classList.toggle('riga-scorre', att && !ferma && !lento);
+    pannelli.forEach(function(p, n){
+      if(n === k){
+        p.hidden = false;
+        p.classList.remove('in-scena');
+        void p.offsetWidth;
+        requestAnimationFrame(function(){ p.classList.add('in-scena'); });
+      } else {
+        p.classList.remove('in-scena');
+        p.hidden = true;
+      }
     });
-    pannelli.forEach(function(p, n){ p.hidden = n !== k; });
-    avvio = performance.now();
+    programma();
   }
-
-  function passo(ora){
-    if(ferma || lento || !visibile){ giro = requestAnimationFrame(passo); return; }
-    var q = Math.min(1, (ora - avvio) / DURATA);
-    righe[i].style.setProperty('--avanzamento', (q * 100).toFixed(1) + '%');
-    if(q >= 1) mostra((i + 1) % righe.length);
-    giro = requestAnimationFrame(passo);
+  function programma(){
+    clearTimeout(timer);
+    if(sopra || lento || !visibile) return;
+    timer = setTimeout(function(){ scena((i + 1) % pannelli.length); }, DURATE[i] || 5200);
   }
-
-  function stop(){
-    ferma = true;
-    righe.forEach(function(r){ r.classList.remove('riga-scorre'); r.style.removeProperty('--avanzamento'); });
-  }
-
-  righe.forEach(function(r, k){
-    r.addEventListener('click', function(){ stop(); mostra(k); });
-    r.addEventListener('keydown', function(e){
-      var j = null;
-      if(e.key === 'ArrowDown' || e.key === 'ArrowRight') j = (k + 1) % righe.length;
-      if(e.key === 'ArrowUp' || e.key === 'ArrowLeft') j = (k - 1 + righe.length) % righe.length;
-      if(j !== null){ e.preventDefault(); stop(); mostra(j); righe[j].focus(); }
-    });
-  });
   if(blocco){
-    blocco.addEventListener('mouseenter', function(){ ferma = true; });
-    blocco.addEventListener('mouseleave', function(){ if(!blocco.dataset.scelto){ ferma = false; avvio = performance.now(); righe[i].classList.add('riga-scorre'); } });
-    blocco.addEventListener('click', function(){ blocco.dataset.scelto = '1'; });
+    blocco.addEventListener('mouseenter', function(){ sopra = true; clearTimeout(timer); });
+    blocco.addEventListener('mouseleave', function(){ sopra = false; programma(); });
+    blocco.addEventListener('focusin', function(){ sopra = true; clearTimeout(timer); });
+    blocco.addEventListener('focusout', function(){ sopra = false; programma(); });
     if('IntersectionObserver' in window){
-      new IntersectionObserver(function(voci){ visibile = voci[0].isIntersecting; if(visibile) avvio = performance.now(); }, {threshold: .3}).observe(blocco);
-    } else { visibile = true; }
+      new IntersectionObserver(function(v){
+        visibile = v[0].isIntersecting;
+        if(visibile){ if(i < 0) scena(0); else programma(); } else clearTimeout(timer);
+      }, {threshold: .35}).observe(blocco);
+    } else { visibile = true; scena(0); }
   }
-  mostra(0);
-  giro = requestAnimationFrame(passo);
+  if(i < 0){ pannelli.forEach(function(p, n){ p.hidden = n !== 0; }); }
 })();
 </script>
 </body>
