@@ -1049,6 +1049,38 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .mm-testo{font-size:1.02rem}
 }
 </style>
+
+<style id="blocco-chi-siete">
+.chi-siete{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.chi-testa{max-width:860px;margin-bottom:clamp(34px,4vw,52px)}
+.chi-occhiello{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#004AAD;margin:0 0 16px}
+.chi-sotto{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:16px}
+.chi-griglia{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:clamp(28px,4vw,64px);align-items:start}
+.chi-eti{font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#5F6B80;margin:0 0 18px}
+.chi-eti-si{color:#1F7A4D}
+.chi-eti-no{color:#A8352C}
+
+.segnali{list-style:none;margin:0;padding:0}
+.segnali li{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid rgba(13,27,62,.1)}
+.segnali li:first-child{border-top:none;padding-top:0}
+.sg-segno{flex-shrink:0;width:20px;height:20px;margin-top:3px;border-radius:5px;border:1.5px solid rgba(46,158,104,.5);position:relative;background:rgba(46,158,104,.08)}
+.sg-segno::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid #1F7A4D;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.segnali b{display:block;font-family:var(--font-display);font-size:1.14rem;font-weight:600;color:var(--navy);margin-bottom:5px;letter-spacing:-.012em}
+.segnali span{display:block;font-size:1rem;line-height:1.5;color:#4A5568}
+
+.chi-no{padding:26px 26px 28px;border:1px solid rgba(13,27,62,.12);border-radius:10px;background:#FAFBFD}
+.esclusi{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:12px}
+.esclusi li{position:relative;padding-left:24px;font-size:1rem;line-height:1.5;color:#4A5568}
+.esclusi li::before{content:"";position:absolute;left:2px;top:.52em;width:12px;height:1.6px;background:rgba(168,53,44,.55)}
+.chi-settori{padding-top:22px;border-top:1px solid rgba(13,27,62,.1)}
+.settori{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.settori li{font-size:.92rem;color:var(--navy);border:1px solid rgba(13,27,62,.14);border-radius:99px;padding:6px 13px;background:#fff}
+
+@media (max-width:900px){
+  .chi-griglia{grid-template-columns:1fr;gap:28px}
+  .chi-no{padding:22px 20px 24px}
+}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -1150,24 +1182,27 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<section class="giornata" data-tono="chiaro">
+<section class="chi-siete" data-tono="chiaro">
   <div class="container">
-    <div class="giornata-testa">
-      <h2>Una giornata qualunque,<br><span class="dc-accento">e sono le cose che ci raccontano</span></h2>
-      <p>Quattro momenti presi dai primi incontri. <em>Se ne riconoscete tre, &egrave; il nostro lavoro.</em></p>
+    <div class="chi-testa">
+      <p class="chi-occhiello">Il cliente per cui lavoriamo</p>
+      <h2>Aziende dai 10 ai 30 collaboratori,<br><span class="dc-accento">dove il lavoro entra come una pratica</span></h2>
+      <p class="chi-sotto">Non &egrave; un settore, &egrave; una forma di azienda. <em>Per riconoscersi bastano tre segnali su cinque.</em></p>
     </div>
-    <div class="giornata-corpo">
-      <ol class="momenti"><li class="momento"><span class="mm-ora">8:40</span><p class="mm-testo">Apri il file con gli stati a colori. Il giallo di ieri &egrave; ancora giallo, e non sai se qualcuno ci ha lavorato.</p></li><li class="momento"><span class="mm-ora">11:15</span><p class="mm-testo">Un cliente manda la terza email della settimana con gli stessi allegati. La casella &egrave; piena, e la pratica &egrave; da un&rsquo;altra parte.</p></li><li class="momento"><span class="mm-ora">15:30</span><p class="mm-testo">Una dichiarazione &egrave; ferma da due settimane perch&eacute; aspetta un pagamento. Nessuno se lo ricorda, e la scadenza corre.</p></li><li class="momento"><span class="mm-ora">19:10</span><p class="mm-testo">I collaboratori sono andati via. Per sapere cosa &egrave; stato fatto oggi, domani mattina lo chiedi.</p></li></ol>
-      <figure class="xl">
-        <div class="xl-finestra">
-          <div class="xl-barra"><span>Lavori_clienti_2026_def2.xlsx</span></div>
-          <table class="xl-tabella">
-            <thead><tr><th>Cliente</th><th>Lavoro</th><th>Stato</th></tr></thead>
-            <tbody><tr class="xl-verde"><td>Rossi Srl</td><td>Bilancio</td><td class="xl-stato"></td></tr><tr class="xl-giallo"><td>Bianchi &amp; C.</td><td>IVA trimestrale</td><td class="xl-stato"></td></tr><tr class="xl-giallo"><td>Verdi Spa</td><td>Contabilit&agrave;</td><td class="xl-stato"></td></tr><tr class="xl-rosso"><td>Neri Snc</td><td>Dichiarazione</td><td class="xl-stato"></td></tr><tr class="xl-bianco"><td>Gialli Srl</td><td>Bilancio</td><td class="xl-stato"></td></tr><tr class="xl-verde"><td>Marini Srl</td><td>Contabilit&agrave;</td><td class="xl-stato"></td></tr><tr class="xl-bianco"><td>Costa Sas</td><td>IVA trimestrale</td><td class="xl-stato"></td></tr></tbody>
-          </table>
+
+    <div class="chi-griglia">
+      <div class="chi-si">
+        <p class="chi-eti chi-eti-si">Siete voi se</p>
+        <ul class="segnali"><li><span class="sg-segno" aria-hidden="true"></span><div><b>Il lavoro entra con un numero e uno stato</b><span>Una domanda di finanziamento, un mandato, una commessa, una candidatura.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Passa da tre o quattro persone</b><span>Ognuna lavora la sua parte e aggiunge documenti, e nessuna vede tutto.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Alla fine c&rsquo;&egrave; qualcosa che vale soldi</b><span>Una delibera, un&rsquo;erogazione, una provvigione, una fornitura aggiudicata.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>Oggi gira su Excel e posta elettronica</b><span>Oppure su un gestionale che copre la contabilit&agrave; e lascia fuori la pratica.</span></div></li><li><span class="sg-segno" aria-hidden="true"></span><div><b>I volumi stanno salendo</b><span>L&rsquo;organizzazione che reggeva venti pratiche al mese, a cento ne chiede un&rsquo;altra.</span></div></li></ul>
+      </div>
+      <div class="chi-no">
+        <p class="chi-eti chi-eti-no">Cerchiamo altro se</p>
+        <ul class="esclusi"><li>Il lavoro entra ed esce in giornata, senza passaggi n&eacute; stati</li><li>Vendete prodotti a catalogo e serve un negozio online</li><li>Cercate un programma da attivare domani, lasciando fuori il vostro modo di lavorare</li></ul>
+        <div class="chi-settori">
+          <p class="chi-eti">Dove l&rsquo;abbiamo gi&agrave; costruito</p>
+          <ul class="settori"><li>Credito</li><li>Finanza agevolata</li><li>Assicurazioni</li><li>Servizi su commessa</li><li>Enti che valutano domande</li><li>Reti commerciali</li></ul>
         </div>
-        <figcaption>Bianco da iniziare, giallo in corso, verde chiuso, rosso fermo. Il file esiste in ogni azienda con cui lavoriamo, e <strong>&egrave; da l&igrave; che partiamo.</strong></figcaption>
-      </figure>
+      </div>
     </div>
   </div>
 </section>
