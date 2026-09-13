@@ -1,169 +1,630 @@
 {
   "redirects": [
-    { "source": "/retainer", "destination": "/servizi/team-dedicato", "statusCode": 301 },
-    { "source": "/retainer/", "destination": "/servizi/team-dedicato", "statusCode": 301 },
-    { "source": "/il-team", "destination": "/team", "statusCode": 301 },
-    { "source": "/il-team/", "destination": "/team", "statusCode": 301 },
-    { "source": "/progetti", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetti/", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/azienda", "destination": "/#chi-siamo", "statusCode": 301 },
-    { "source": "/azienda/", "destination": "/#chi-siamo", "statusCode": 301 },
-    { "source": "/il-metodo", "destination": "/metodo", "statusCode": 301 },
-    { "source": "/il-metodo/", "destination": "/metodo", "statusCode": 301 },
-    { "source": "/per-le-agenzie/v2", "destination": "/per-le-agenzie", "statusCode": 301 },
-    { "source": "/progetto/piattaforma-instantwin-per-brand-del-settore-energy", "destination": "/case-study/piattaforma-power2play-brand-energia", "statusCode": 301 },
-    { "source": "/progetto/piattaforma-instantwin-per-brand-del-settore-energy/", "destination": "/case-study/piattaforma-power2play-brand-energia", "statusCode": 301 },
-    { "source": "/progetto/supporto-tecnico-e-evolutivo-per-piattaforma-no-profit-internazionale", "destination": "/case-study/supporto-tecnico-piattaforma-no-profit", "statusCode": 301 },
-    { "source": "/progetto/supporto-tecnico-e-evolutivo-per-piattaforma-no-profit-internazionale/", "destination": "/case-study/supporto-tecnico-piattaforma-no-profit", "statusCode": 301 },
-    { "source": "/progetto/mutui-si-digital-transformation-nel-settore-creditizio", "destination": "/case-study/crm-b2c-mutuisi", "statusCode": 301 },
-    { "source": "/progetto/mutui-si-digital-transformation-nel-settore-creditizio/", "destination": "/case-study/crm-b2c-mutuisi", "statusCode": 301 },
-    { "source": "/progetto/orchestra-piattaforma-digitale-per-musicisti", "destination": "/case-study/piattaforma-web-orchestra", "statusCode": 301 },
-    { "source": "/progetto/orchestra-piattaforma-digitale-per-musicisti/", "destination": "/case-study/piattaforma-web-orchestra", "statusCode": 301 },
-    { "source": "/progetto/treere-trasformazione-digitale-nel-real-estate", "destination": "/case-study/ecommerce-b2b-treere", "statusCode": 301 },
-    { "source": "/progetto/treere-trasformazione-digitale-nel-real-estate/", "destination": "/case-study/ecommerce-b2b-treere", "statusCode": 301 },
-    { "source": "/progetto/fondamenta-digitali-la-vetrina-online-di-parafioriti-costruzioni", "destination": "/case-study/sito-istituzionale-studio-professionale", "statusCode": 301 },
-    { "source": "/progetto/fondamenta-digitali-la-vetrina-online-di-parafioriti-costruzioni/", "destination": "/case-study/sito-istituzionale-studio-professionale", "statusCode": 301 },
-    { "source": "/progetto/adg-notai-eleganza-digitale-per-il-diritto", "destination": "/case-study/sito-istituzionale-studio-professionale", "statusCode": 301 },
-    { "source": "/progetto/adg-notai-eleganza-digitale-per-il-diritto/", "destination": "/case-study/sito-istituzionale-studio-professionale", "statusCode": 301 },
-    { "source": "/progetto/nutricom-innovazione-digitale-per-il-settore-degli-integratori", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/nutricom-innovazione-digitale-per-il-settore-degli-integratori/", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/orlando-tales-dalla-carta-al-digitale", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/orlando-tales-dalla-carta-al-digitale/", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/il-viaggio-digitale-di-hey-pilates-design-ed-emozione", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/il-viaggio-digitale-di-hey-pilates-design-ed-emozione/", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/rainbowellness-da-progetto-parziale-a-visione-completa", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/progetto/rainbowellness-da-progetto-parziale-a-visione-completa/", "destination": "/case-study", "statusCode": 301 },
-    { "source": "/job/ux-specialist", "destination": "/lavora-con-noi/ux-ui-designer", "statusCode": 301 },
-    { "source": "/job/ux-specialist/", "destination": "/lavora-con-noi/ux-ui-designer", "statusCode": 301 },
-    { "source": "/job/full-stack-developer", "destination": "/lavora-con-noi/full-stack-developer", "statusCode": 301 },
-    { "source": "/job/full-stack-developer/", "destination": "/lavora-con-noi/full-stack-developer", "statusCode": 301 },
-    { "source": "/promo-report", "destination": "/", "statusCode": 301 },
-    { "source": "/vr/:path*", "destination": "/", "statusCode": 301 },
-    { "source": "/wp-admin/:path*", "destination": "/", "statusCode": 301 }
+    {
+      "source": "/settori",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/fashion-luxury",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/fashion-luxury/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/finance-banking",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/finance-banking/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/food-beverage-gdo",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/food-beverage-gdo/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/industrial-manifatturiero-b2b",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/industrial-manifatturiero-b2b/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/real-estate-costruttori",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/real-estate-costruttori/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/retail-consumer-goods",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/retail-consumer-goods/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/technology-saas",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/settori/technology-saas/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/ai-integration",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/ai-integration/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/app-webapp",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/app-webapp/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/continuity-evolution",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/continuity-evolution/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/cto-as-a-service",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/cto-as-a-service/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/platform-engineering",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/platform-engineering/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/product-design",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/product-design/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/team-dedicato",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/team-dedicato/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/technical-advisory",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/technical-advisory/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/web-commerce",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/servizi/web-commerce/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/retainer-one-pager",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/retainer-one-pager/",
+      "destination": "/servizi",
+      "statusCode": 301
+    },
+    {
+      "source": "/audit-gratuito",
+      "destination": "/contatti",
+      "statusCode": 301
+    },
+    {
+      "source": "/audit-gratuito/",
+      "destination": "/contatti",
+      "statusCode": 301
+    },
+    {
+      "source": "/sviluppo-web-white-label-agenzie",
+      "destination": "/per-le-agenzie",
+      "statusCode": 301
+    },
+    {
+      "source": "/sviluppo-web-white-label-agenzie/",
+      "destination": "/per-le-agenzie",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools",
+      "destination": "/tools/calcolatore-roi-configuratore",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/",
+      "destination": "/tools/calcolatore-roi-configuratore",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-template",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-study-template/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/Presentazione_Investigatore_Immobiliare_2026.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retainer",
+      "destination": "/servizi/team-dedicato",
+      "statusCode": 301
+    },
+    {
+      "source": "/retainer/",
+      "destination": "/servizi/team-dedicato",
+      "statusCode": 301
+    },
+    {
+      "source": "/il-team",
+      "destination": "/team",
+      "statusCode": 301
+    },
+    {
+      "source": "/il-team/",
+      "destination": "/team",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetti",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetti/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/azienda",
+      "destination": "/#chi-siamo",
+      "statusCode": 301
+    },
+    {
+      "source": "/azienda/",
+      "destination": "/#chi-siamo",
+      "statusCode": 301
+    },
+    {
+      "source": "/il-metodo",
+      "destination": "/metodo",
+      "statusCode": 301
+    },
+    {
+      "source": "/il-metodo/",
+      "destination": "/metodo",
+      "statusCode": 301
+    },
+    {
+      "source": "/per-le-agenzie/v2",
+      "destination": "/per-le-agenzie",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/piattaforma-instantwin-per-brand-del-settore-energy",
+      "destination": "/case-study/piattaforma-power2play-brand-energia",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/piattaforma-instantwin-per-brand-del-settore-energy/",
+      "destination": "/case-study/piattaforma-power2play-brand-energia",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/supporto-tecnico-e-evolutivo-per-piattaforma-no-profit-internazionale",
+      "destination": "/case-study/supporto-tecnico-piattaforma-no-profit",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/supporto-tecnico-e-evolutivo-per-piattaforma-no-profit-internazionale/",
+      "destination": "/case-study/supporto-tecnico-piattaforma-no-profit",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/mutui-si-digital-transformation-nel-settore-creditizio",
+      "destination": "/case-study/crm-b2c-mutuisi",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/mutui-si-digital-transformation-nel-settore-creditizio/",
+      "destination": "/case-study/crm-b2c-mutuisi",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/orchestra-piattaforma-digitale-per-musicisti",
+      "destination": "/case-study/piattaforma-web-orchestra",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/orchestra-piattaforma-digitale-per-musicisti/",
+      "destination": "/case-study/piattaforma-web-orchestra",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/treere-trasformazione-digitale-nel-real-estate",
+      "destination": "/case-study/ecommerce-b2b-treere",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/treere-trasformazione-digitale-nel-real-estate/",
+      "destination": "/case-study/ecommerce-b2b-treere",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/fondamenta-digitali-la-vetrina-online-di-parafioriti-costruzioni",
+      "destination": "/case-study/sito-istituzionale-studio-professionale",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/fondamenta-digitali-la-vetrina-online-di-parafioriti-costruzioni/",
+      "destination": "/case-study/sito-istituzionale-studio-professionale",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/adg-notai-eleganza-digitale-per-il-diritto",
+      "destination": "/case-study/sito-istituzionale-studio-professionale",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/adg-notai-eleganza-digitale-per-il-diritto/",
+      "destination": "/case-study/sito-istituzionale-studio-professionale",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/nutricom-innovazione-digitale-per-il-settore-degli-integratori",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/nutricom-innovazione-digitale-per-il-settore-degli-integratori/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/orlando-tales-dalla-carta-al-digitale",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/orlando-tales-dalla-carta-al-digitale/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/il-viaggio-digitale-di-hey-pilates-design-ed-emozione",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/il-viaggio-digitale-di-hey-pilates-design-ed-emozione/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/rainbowellness-da-progetto-parziale-a-visione-completa",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/progetto/rainbowellness-da-progetto-parziale-a-visione-completa/",
+      "destination": "/case-study",
+      "statusCode": 301
+    },
+    {
+      "source": "/job/ux-specialist",
+      "destination": "/lavora-con-noi/ux-ui-designer",
+      "statusCode": 301
+    },
+    {
+      "source": "/job/ux-specialist/",
+      "destination": "/lavora-con-noi/ux-ui-designer",
+      "statusCode": 301
+    },
+    {
+      "source": "/job/full-stack-developer",
+      "destination": "/lavora-con-noi/full-stack-developer",
+      "statusCode": 301
+    },
+    {
+      "source": "/job/full-stack-developer/",
+      "destination": "/lavora-con-noi/full-stack-developer",
+      "statusCode": 301
+    },
+    {
+      "source": "/promo-report",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vr/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
-    { "source": "/api/contact", "destination": "/api/contact" },
-    { "source": "/api/candidatura", "destination": "/api/candidatura" }
+    {
+      "source": "/api/contact",
+      "destination": "/api/contact"
+    },
+    {
+      "source": "/api/candidatura",
+      "destination": "/api/candidatura"
+    }
   ],
   "headers": [
     {
       "source": "/api/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-store" }
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
       ]
     },
     {
       "source": "/js/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.css",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.woff2",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.woff",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.ttf",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.otf",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.eot",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.jpg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.jpeg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.gif",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.webp",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.avif",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.svg",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.ico",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/llms(.*)\\.txt",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ]
