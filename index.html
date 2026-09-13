@@ -556,6 +556,32 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   .due-colonne{padding:64px 0}
 }
 </style>
+
+<style id="scala-tipografica">
+/* Scala presa dalle misure del riferimento, adattata al nostro contenitore.
+   Loro: contenitore 1290 - h1 100px/0.95/500 - h2 50px/1.00/500 - p 18px/1.33 su colonna 575
+   - padding di sezione 110 sopra e 70 sotto. */
+.container{max-width:1290px;padding:0 32px}
+.section-pad{padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+
+/* apertura */
+.hero{padding:clamp(150px,14vw,208px) 0 clamp(96px,10vw,132px)}
+.hero-inner{max-width:1290px}
+.hero h1{font-size:clamp(2.4rem,6vw,5.5rem);line-height:.98;font-weight:500;letter-spacing:-.03em;max-width:960px;margin-left:auto;margin-right:auto;margin-bottom:30px}
+.hero-sub{font-size:clamp(1.05rem,1.45vw,1.35rem);line-height:1.45;max-width:640px;margin-bottom:46px}
+
+/* titoli di sezione */
+.due-colonne .dc-sinistra h2,
+.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2,.partnerflow h2{
+  font-size:clamp(2rem,3.4vw,3.15rem);line-height:1.04;font-weight:500;letter-spacing:-.028em}
+
+/* colonne di testo */
+.dc-destra{max-width:600px}
+.dc-destra p{font-size:1.125rem;line-height:1.5;margin-bottom:26px}
+.dc-griglia{gap:clamp(32px,5vw,80px)}
+.due-colonne{padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.hero-pillar-text,.wall-card p{font-size:1.0625rem;line-height:1.55}
+</style>
 </head>
 <body class="nav-adattiva">
 
