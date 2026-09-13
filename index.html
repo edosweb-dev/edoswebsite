@@ -582,6 +582,99 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
 .due-colonne{padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
 .hero-pillar-text,.wall-card p{font-size:1.0625rem;line-height:1.55}
 </style>
+
+<style id="blocchi-home">
+/* 2 · prove */
+.prove{background:var(--white);padding:clamp(48px,5vw,72px) 0;border-bottom:1px solid var(--border)}
+.prove-griglia{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(24px,3vw,48px);align-items:start}
+.prove-num{font-family:var(--font-display);font-size:clamp(2.4rem,3.6vw,3.4rem);font-weight:500;letter-spacing:-.04em;color:var(--navy);line-height:1;margin:0 0 10px;font-variant-numeric:tabular-nums}
+.prove-riga{font-size:1rem;line-height:1.5;color:#4A5568;margin:0;max-width:26ch}
+.prove-badge{border-left:2px solid #004AAD;padding-left:20px}
+.prove-badge strong{color:var(--navy)}
+
+/* 3 · condizioni */
+.dc-occhiello{font-size:1.0625rem;line-height:1.6;color:#4A5568;margin-top:24px;max-width:44ch}
+.elenco-condizioni .cond{padding:22px 0;border-top:1px solid var(--border)}
+.elenco-condizioni .cond:first-child{border-top:none;padding-top:0}
+.elenco-condizioni h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy);margin:0 0 8px;letter-spacing:-.01em}
+.elenco-condizioni p{font-size:1.0625rem;line-height:1.55;color:#4A5568;margin:0}
+
+/* 4 · fasi */
+.fasi{background:var(--off-white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.fasi-testa{max-width:760px;margin-bottom:clamp(40px,5vw,64px)}
+.fasi-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:20px}
+.fase{display:grid;grid-template-columns:72px minmax(0,1fr) 160px;gap:clamp(16px,3vw,40px);align-items:start;padding:26px 0;border-top:1px solid var(--border)}
+.fase-num{font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:#004AAD;font-variant-numeric:tabular-nums}
+.fase-testo h3{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:var(--navy);margin:0 0 8px}
+.fase-testo p{font-size:1.0625rem;line-height:1.55;color:#4A5568;margin:0;max-width:62ch}
+.fase-chi{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:#94A2B9;text-align:right}
+.fase-anello .fase-num{color:#94A2B9}
+.patto{margin-top:40px;padding:28px 32px;background:var(--white);border:1px solid var(--border);border-radius:14px}
+.patto p{margin:0;font-size:1.125rem;line-height:1.6;color:var(--navy)}
+
+/* 5 · schermo */
+.schermo{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.schermo-griglia{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,72px);align-items:center}
+.schermo-testo p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin:24px 0 28px;max-width:52ch}
+.voci-freccia{list-style:none;padding:0;margin:0}
+.voci-freccia li{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--border);font-size:1.0625rem;color:var(--navy)}
+.vf-freccia{color:#004AAD;font-size:1.1rem;line-height:1.3}
+.figura-vuota{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;aspect-ratio:16/10;border:1px dashed rgba(13,27,62,.25);border-radius:16px;background:repeating-linear-gradient(135deg,rgba(13,27,62,.03) 0 12px,transparent 12px 24px);color:#94A2B9;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.95rem;text-align:center;padding:20px}
+.figura-vuota small{font-size:.8rem;opacity:.8}
+.figura-piccola{aspect-ratio:16/9;border-radius:12px;margin-bottom:18px;font-size:.8rem}
+
+/* 6 · lavori */
+.lavori{background:var(--off-white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.lavori-testa{max-width:820px;margin-bottom:clamp(36px,4vw,56px)}
+.lavori-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:18px}
+.lavori-griglia{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.lavoro{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:20px}
+.lavoro-grande{grid-column:span 2}
+.lavoro-tipo{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#94A2B9;margin:0 0 10px}
+.lavoro h3{font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1.28;color:var(--navy);margin:0 0 12px;letter-spacing:-.015em}
+.lavoro-periodo{font-size:.95rem;color:#94A2B9;margin:0}
+.lavori-nota{margin-top:28px;font-size:1rem;color:#4A5568;max-width:70ch}
+
+/* 7 · confronto */
+.confronto{background:var(--white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.confronto-testa{max-width:760px;margin-bottom:clamp(32px,4vw,52px)}
+.confronto-testa p{font-size:1.125rem;line-height:1.55;color:#4A5568;margin-top:18px}
+.tabella-confronto{width:100%;border-collapse:collapse;font-size:1.0625rem}
+.tabella-confronto th{text-align:left;font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--navy);padding:18px 22px;border-bottom:2px solid var(--border);vertical-align:bottom}
+.tabella-confronto td{padding:20px 22px;border-bottom:1px solid var(--border);color:#4A5568;line-height:1.5;vertical-align:top}
+.tabella-confronto .col-edos{background:rgba(0,74,173,.05);color:var(--navy);font-weight:600}
+.tabella-confronto thead .col-edos{color:#004AAD;border-bottom-color:#004AAD}
+
+/* 8 · paure */
+.paure{background:var(--off-white);padding:clamp(72px,7.5vw,110px) 0 clamp(48px,5vw,70px)}
+.paure-citazione{font-family:var(--font-display);font-size:clamp(1.6rem,2.8vw,2.6rem);font-weight:500;line-height:1.18;letter-spacing:-.025em;color:var(--navy);margin:0;max-width:20ch}
+.paure-sotto{font-size:1.125rem;line-height:1.55;color:#4A5568;margin:22px 0 clamp(36px,4vw,56px);max-width:64ch}
+.paure-griglia{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.paura{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:26px}
+.paura h3{font-family:var(--font-display);font-size:1.2rem;font-weight:600;color:var(--navy);margin:0 0 10px}
+.paura p{font-size:1.0625rem;line-height:1.55;color:#4A5568;margin:0}
+
+@media (max-width:900px){
+  .schermo-griglia,.dc-griglia{grid-template-columns:1fr}
+  .lavori-griglia{grid-template-columns:1fr}
+  .lavoro-grande{grid-column:span 1}
+  .fase{grid-template-columns:52px minmax(0,1fr)}
+  .fase-chi{display:none}
+  .tabella-confronto,.tabella-confronto tbody,.tabella-confronto tr,.tabella-confronto td{display:block;width:100%}
+  .tabella-confronto thead{display:none}
+  .tabella-confronto tr{margin-bottom:18px;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  .tabella-confronto td{border-bottom:1px solid var(--border)}
+}
+</style>
+<style id="blocco-chiusura">
+.chiusura{background:var(--navy);color:#fff;padding:clamp(88px,9vw,132px) 0;text-align:center}
+.chiusura h2{font-family:var(--font-display);font-size:clamp(2rem,3.6vw,3.3rem);font-weight:500;line-height:1.06;letter-spacing:-.03em;color:#fff;margin:0 0 22px}
+.ch-accento{color:#84B4FF}
+.chiusura p{font-size:1.125rem;line-height:1.55;color:rgba(255,255,255,.78);max-width:56ch;margin:0 auto 40px}
+.chiusura .btn-pill-pieno{background:#fff;border-color:#fff;color:#00306E}
+.chiusura .btn-pill-pieno .btn-pill-circle{background:rgba(0,48,110,.12)}
+.chiusura .btn-pill-pieno .btn-pill-circle svg{color:#00306E}
+</style>
 </head>
 <body class="nav-adattiva">
 
@@ -669,767 +762,163 @@ h2,.servizi-head h2,.settori-head h2,.cases-head h2,.wall-head h2{font-weight:60
   </div>
 </section>
 
-<!-- blocco due colonne -->
+
+<!-- ===== 2 · La prova che viene da fuori ===== -->
+<section class="prove" data-tono="chiaro">
+  <div class="container">
+    <div class="prove-griglia">
+      <div class="prove-voce"><p class="prove-num">19</p><p class="prove-riga">piattaforme di pratiche gi&agrave; costruite</p></div>
+      <div class="prove-voce"><p class="prove-num">14</p><p class="prove-riga">per un solo gruppo, in due anni</p></div>
+      <div class="prove-voce"><p class="prove-num">150</p><p class="prove-riga">clienti corporate serviti dalla piattaforma di un nostro cliente</p></div>
+      <div class="prove-voce prove-badge"><p class="prove-riga"><strong>Elenco Fornitori qualificati 4.0</strong><br>Unioncamere Lombardia</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 · Vi riconoscete ===== -->
 <section class="due-colonne" data-tono="chiaro">
   <div class="container">
     <div class="dc-griglia">
       <div class="dc-sinistra">
-        <!-- SEGNAPOSTO promessa.titolo · 5-8 parole su due righe, la seconda in accento -->
-        <h2>Lorem ipsum dolor sit<br><span class="dc-accento">amet consectetur elit</span></h2>
+        <h2>Il software si piega<br><span class="dc-accento">a come lavorate</span></h2>
+        <p class="dc-occhiello">E come lavorate lo dicono le persone che lo fanno ogni giorno. Lavoriamo con le aziende dove succedono queste cinque cose. <em>Per riconoscersi ne bastano tre.</em></p>
       </div>
-      <div class="dc-destra">
-        <!-- SEGNAPOSTO promessa.testo · tre capoversi da 15-25 parole, con le parole chiave in grassetto -->
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, <strong>ut enim ad minim veniam</strong>.</p>
-        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p>
-        <p>Excepteur sint occaecat cupidatat non proident, <strong>sunt in culpa qui officia deserunt mollit</strong>.</p>
-        <a href="/metodo" class="btn-contorno">
-          <span>Scopri di pi&ugrave;</span>
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
-        </a>
+      <div class="dc-destra elenco-condizioni">
+        <div class="cond"><h3>Il lavoro entra come una pratica</h3><p>Una domanda, un mandato, una richiesta, una candidatura, una commessa. Arriva, e da l&igrave; comincia un giro.</p></div>
+        <div class="cond"><h3>Il giro passa da tre o quattro mani</h3><p>Ognuna vede una cosa diversa e ne aggiunge una sua. I documenti si accumulano, e sapere a che punto &egrave; una pratica richiede una telefonata.</p></div>
+        <div class="cond"><h3>Alla fine esce qualcosa che vale soldi</h3><p>Una delibera, un&rsquo;erogazione, una provvigione, un premio assegnato.</p></div>
+        <div class="cond"><h3>Oggi tutto questo gira su Excel pi&ugrave; email</h3><p>Oppure su un gestionale che tiene la contabilit&agrave; e lascia la pratica fuori.</p></div>
+        <div class="cond"><h3>E state crescendo</h3><p>Il metodo che reggeva venti pratiche al mese, a cento ne chiede uno nuovo.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- pillars strip -->
-<div class="hero-bottom" data-tono="chiaro">
+<!-- ===== 4 · Come si lavora insieme ===== -->
+<section class="fasi" data-tono="chiaro">
   <div class="container">
-    <div class="hero-pillars">
-      <div class="hero-pillar">
-        <div class="hero-pillar-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 4L8 9v10c0 9.4 5.9 18.2 14 21 8.1-2.8 14-11.6 14-21V9L22 4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <rect x="17" y="16" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/>
-            <path d="M20 16v-2a2 2 0 014 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="22" y1="21" x2="22" y2="25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg></div>
-        <p class="hero-pillar-title">Si parte dal vostro Excel</p>
-        <p class="hero-pillar-text">Guardiamo come gira oggi una pratica dentro la vostra azienda, e da l&igrave; nasce il piano. Le vostre regole restano le vostre regole.</p>
-      </div>
-      <div class="hero-pillar">
-        <div class="hero-pillar-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="14" cy="16" r="5" stroke="currentColor" stroke-width="1.8"/>
-            <circle cx="30" cy="16" r="5" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M14 24c-5 0-9 3-9 7v3h18v-3c0-4-4-7-9-7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-            <path d="M30 24c-3 0-5.5 1.2-7 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M22 38l6-4 6 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg></div>
-        <p class="hero-pillar-title">In mano ai vostri in poche settimane</p>
-        <p class="hero-pillar-text">Le prime schermate girano in due o tre settimane, e le usa chi lavora le pratiche tutti i giorni.</p>
-      </div>
-      <div class="hero-pillar">
-        <div class="hero-pillar-icon"><svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="4" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
-            <rect x="25" y="4" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
-            <rect x="4" y="25" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
-            <rect x="25" y="25" width="15" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
-            <line x1="19" y1="11.5" x2="25" y2="11.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="19" y1="32.5" x2="25" y2="32.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="11.5" y1="19" x2="11.5" y2="25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="32.5" y1="19" x2="32.5" y2="25" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg></div>
-        <p class="hero-pillar-title">L'avanzamento &egrave; sempre a video</p>
-        <p class="hero-pillar-text">Accesso diretto al nostro CRM per tutta la durata del progetto: avanzamento, decisioni e comunicazioni restano visibili.</p>
-      </div>
+    <div class="fasi-testa">
+      <h2>Raccontateci cosa vi serve.<br><span class="dc-accento">Poi verifichiamo che sia quello.</span></h2>
+      <p>Il passaggio che nessuno fa sta fra il primo e il secondo: quello che ci dite voi lo mettiamo accanto a quello che dicono i vostri.</p>
     </div>
-  </div>
-</div>
-<!-- ===================== STATBAR ===================== -->
-<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--white);padding-top:56px;padding-bottom:56px">
-  <div class="container">
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;max-width:960px;margin:0 auto;text-align:center">
-      <div>
-        <div style="font-size:clamp(36px,5vw,56px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px">40<span style="color:var(--electric)">+</span></div>
-        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin:0">Progetti consegnati</p>
-      </div>
-      <div>
-        <div style="font-size:clamp(36px,5vw,56px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px">100<span style="color:var(--electric)">%</span></div>
-        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin:0">Consegne puntuali</p>
-      </div>
-      <div>
-        <div style="font-size:clamp(36px,5vw,56px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px">5<span style="color:var(--electric)">+</span></div>
-        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin:0">Anni esperienza media team</p>
-      </div>
-      <div>
-        <div style="font-size:clamp(36px,5vw,56px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px">10<span style="color:var(--electric)">+</span></div>
-        <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);margin:0">Professionisti senior in Italia</p>
-      </div>
+    <div class="fasi-elenco">
+      <div class="fase"><span class="fase-num">01</span><div class="fase-testo"><h3>Raccontate</h3><p>Dite cosa vi serve, come lo vedete voi. Si firma, e il contratto nomina chi entra nella chat e chi decide.</p></div><span class="fase-chi">il titolare</span></div>
+      <div class="fase"><span class="fase-num">02</span><div class="fase-testo"><h3>Parlano i vostri</h3><p>Una chat aperta all&rsquo;azienda per quindici giorni. Scrivono dal telefono, quando vogliono. Zero riunioni, e voi non preparate niente.</p></div><span class="fase-chi">chi esegue</span></div>
+      <div class="fase"><span class="fase-num">03</span><div class="fase-testo"><h3>Vi portiamo il piano</h3><p>I punti critici e il progetto a moduli, con i numeri e le priorit&agrave;. &Egrave; il capitolato della vostra azienda, ed &egrave; vostro. Poi scegliete.</p></div><span class="fase-chi">Edos</span></div>
+      <div class="fase"><span class="fase-num">04</span><div class="fase-testo"><h3>Costruiamo</h3><p>Si parte da quello che usate oggi, il vostro Excel compreso. Settimane, e nessuna anagrafica da riportare a mano.</p></div><span class="fase-chi">Edos</span></div>
+      <div class="fase fase-anello"><span class="fase-num">&infin;</span><div class="fase-testo"><h3>Ogni mese un&rsquo;idea</h3><p>&laquo;Abbiamo pensato che pu&ograve; interessarvi questo, e per questo motivo.&raquo; Di solito il motivo &egrave; che ha funzionato in un&rsquo;altra azienda come la vostra.</p></div><span class="fase-chi">e la potete buttare</span></div>
+    </div>
+    <div class="patto">
+      <p><strong>L&rsquo;analisi si paga alla firma.</strong> Se il progetto lo fate con noi, si scomputa per intero dal preventivo. Se lo fate senza di noi, <em>il documento resta vostro.</em></p>
     </div>
   </div>
 </section>
 
-<!-- ===================== ROUTING AUDIENCE ===================== -->
-<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white)" id="per-chi-siamo">
+<!-- ===== 5 · Lo schermo ===== -->
+<section class="schermo" data-tono="chiaro">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 48px">
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin:0 0 16px;line-height:1.15">Partiamo da <em style="font-style:normal;color:var(--electric)">dove ti trovi tu.</em></h2>
-      <p style="font-size:17px;line-height:1.6;color:var(--muted);margin:0">Lavoriamo con due tipi di clienti, con due formule diverse. Scegli il percorso che ti corrisponde.</p>
-    </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:960px;margin:0 auto">
-
-      <!-- CARD AZIENDA -->
-      <span  style="text-decoration:none;color:inherit;display:block;background:var(--white);border:1px solid #e2e8f0;border-radius:20px;padding:40px 32px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 24px 48px rgba(13,27,62,0.08)';this.style.borderColor='var(--electric)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#e2e8f0'">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
-          <div style="width:48px;height:48px;border-radius:12px;background:rgba(59,111,232,0.1);display:flex;align-items:center;justify-content:center;color:var(--electric)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
-          </div>
-          <span style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--electric)">Per le aziende</span>
-        </div>
-        <h3 style="font-size:24px;font-weight:800;color:var(--navy);margin:0 0 12px;line-height:1.25">Sono un&rsquo;azienda e mi serve un <em style="font-style:normal">reparto tech dedicato.</em></h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--muted);margin:0 0 24px">Manifatturiero, retail multi-sede, food &amp; beverage, real estate. Costruiamo piattaforme custom con un team senior in retainer mensile. Onboarding in 48 ore, SLA scritto, commitment trimestrale.</p>
-        <ul style="list-style:none;padding:0;margin:0 0 28px;font-size:14px;line-height:1.7;color:var(--navy)">
-          <li style="padding-left:24px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>Team senior dedicato (PM + dev + designer)</li>
-          <li style="padding-left:24px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>Prezzo trasparente da &euro;8.000 a &euro;15.000/mese</li>
-          <li style="padding-left:24px;position:relative"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>Primo progetto a commessa prima del retainer</li>
+    <div class="schermo-griglia">
+      <div class="schermo-testo">
+        <h2>La cosa vera,<br><span class="dc-accento">non il racconto della cosa vera</span></h2>
+        <!-- SEGNAPOSTO schermo.testo · 25-40 parole -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam quis nostrud exercitation.</p>
+        <ul class="voci-freccia">
+          <li><span class="vf-freccia">&#8599;</span> Quattro stati, e si legge in tre secondi</li>
+          <li><span class="vf-freccia">&#8599;</span> Chi &egrave; pieno, e chi pu&ograve; prenderne un&rsquo;altra</li>
+          <li><span class="vf-freccia">&#8599;</span> I documenti attaccati alla pratica, non alle email</li>
         </ul>
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--electric)">
-          <span>Scopri il team dedicato</span>
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5"/></svg>
-        </div>
-      </span>
-
-      <!-- CARD AGENZIA -->
-      <a href="/per-le-agenzie" style="text-decoration:none;color:inherit;display:block;background:var(--white);border:1px solid #e2e8f0;border-radius:20px;padding:40px 32px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 24px 48px rgba(13,27,62,0.08)';this.style.borderColor='var(--electric)'" onmouseout="this.style.transform='';this.style.boxShadow='';this.style.borderColor='#e2e8f0'">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
-          <div style="width:48px;height:48px;border-radius:12px;background:rgba(59,111,232,0.1);display:flex;align-items:center;justify-content:center;color:var(--electric)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <span style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--electric)">Per le agenzie</span>
-        </div>
-        <h3 style="font-size:24px;font-weight:800;color:var(--navy);margin:0 0 12px;line-height:1.25">Sono un&rsquo;agenzia e cerco un <em style="font-style:normal">partner tecnico white label.</em></h3>
-        <p style="font-size:15px;line-height:1.65;color:var(--muted);margin:0 0 24px">Agenzie marketing, creative e comunicazione con progetti complessi e senza team dev senior interno. Diventiamo la tua divisione tecnica invisibile: NDA, dominio tuo, zero visibilit&agrave; al cliente finale.</p>
-        <ul style="list-style:none;padding:0;margin:0 0 28px;font-size:14px;line-height:1.7;color:var(--navy)">
-          <li style="padding-left:24px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>White label completo, NDA e dominio tuo</li>
-          <li style="padding-left:24px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>Partecipazione ai meeting commerciali</li>
-          <li style="padding-left:24px;position:relative"><span style="position:absolute;left:0;top:2px;color:var(--electric)">&#10003;</span>Ticket medio 7-15K&euro;, progetti fino a 50K+</li>
-        </ul>
-        <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--electric)">
-          <span>Scopri il modello white label</span>
-          <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5"/></svg>
-        </div>
-      </a>
-
+      </div>
+      <div class="schermo-figura">
+        <!-- SEGNAPOSTO schermo.immagine · schermata vera, dati finti, 1200x760 -->
+        <div class="figura-vuota"><span>[[ schermo.immagine ]]</span><small>schermata della piattaforma &middot; dati dimostrativi</small></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== TECH SLIDER ===================== -->
-<section class="tech-slider">
-  <p class="tech-slider-label reveal">Le tecnologie che utilizziamo</p>
-  <div class="tech-track">
-    <!-- Set 1 -->
-    <div class="tech-item" data-label="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Vue.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Laravel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WordPress"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WooCommerce"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Flutter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Supabase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Magento"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento" width="40" height="40" loading="lazy"></div>
-    <!-- Set 2 (duplicate for seamless loop) -->
-    <div class="tech-item" data-label="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Next.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" alt="Next.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Vue.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Laravel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WordPress"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg" alt="WordPress" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="WooCommerce"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Figma"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Flutter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="PostgreSQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="AWS"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Supabase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40" loading="lazy"></div>
-    <div class="tech-item" data-label="Magento"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/magento/magento-original.svg" alt="Magento" width="40" height="40" loading="lazy"></div>
-  </div>
-</section>
-
-<!-- ===================== SERVIZI ===================== -->
-<section class="servizi section-pad lazy-section" data-tono="chiaro" id="servizi">
+<!-- ===== 6 · I lavori ===== -->
+<section class="lavori" data-tono="chiaro">
   <div class="container">
-
-    <div class="servizi-head reveal">
-      <h2>Tutto il tech di cui<br><em>la tua azienda</em> ha bisogno</h2>
+    <div class="lavori-testa">
+      <h2>&Egrave; una forma di azienda,<br><span class="dc-accento">mai un settore</span></h2>
+      <p>Cambia il mestiere, resta il giro. Ed &egrave; lo stesso giro che abbiamo costruito diciannove volte.</p>
     </div>
-
-    <ul class="serv-list" id="servAccordion">
-
-      <!-- Web & Commerce -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="6" width="28" height="20" rx="2"/><path d="M4 12h28"/><circle cx="8" cy="9" r="1"/><circle cx="12" cy="9" r="1"/><path d="M12 30h12M18 26v4"/></svg></span>
-            <span class="serv-name">Web &amp; Commerce</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Realizziamo siti aziendali, landing page e shop online che convertono. Dal progetto al lancio, nei tempi stabiliti.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Siti aziendali e istituzionali</span>
-            <span class="serv-tag">Landing page ad alta conversione</span>
-            <span class="serv-tag">E-commerce (Shopify, WooCommerce, Magento 2)</span>
-            <span class="serv-tag">Headless &amp; architetture moderne</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- App & WebApp -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="10" y="3" width="16" height="30" rx="3"/><path d="M10 8h16M10 27h16"/><circle cx="18" cy="30" r="1.2"/><path d="M15 15l3 3 3-3M15 19l3 3 3-3"/></svg></span>
-            <span class="serv-name">App &amp; WebApp</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Sviluppiamo applicazioni web e mobile che rispondono a esigenze specifiche e scalano con il tuo business.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Applicazioni web progressive (PWA)</span>
-            <span class="serv-tag">App mobile ibride (iOS e Android)</span>
-            <span class="serv-tag">Dashboard e pannelli di controllo</span>
-            <span class="serv-tag">Integrazioni con API e servizi terzi</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- Platform Engineering -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M6 10h24M6 26h24"/><circle cx="18" cy="7" r="1.2"/><path d="M12 16h12M12 20h8"/></svg></span>
-            <span class="serv-name">Platform Engineering</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Quando il progetto non entra in nessun template, costruiamo la soluzione su misura.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Gestionali aziendali</span>
-            <span class="serv-tag">Portali B2B e B2C</span>
-            <span class="serv-tag">Marketplace</span>
-            <span class="serv-tag">Piattaforme verticali</span>
-            <span class="serv-tag">Integrazioni ERP</span>
-            <span class="serv-tag">CRM &amp; API</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- AI Integration -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><circle cx="18" cy="18" r="12"/><circle cx="18" cy="18" r="4"/><path d="M18 2v4M18 30v4M2 18h4M30 18h4"/><path d="M8 8l3 3M25 25l3 3M8 28l3-3M25 8l3-3"/></svg></span>
-            <span class="serv-name">AI Integration</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Integriamo intelligenza artificiale nei processi e nelle piattaforme, dove ha senso farlo.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Agenti AI</span>
-            <span class="serv-tag">Chatbot su misura</span>
-            <span class="serv-tag">Automazione flussi</span>
-            <span class="serv-tag">Integrazione LLM</span>
-            <span class="serv-tag">AI in piattaforme</span>
-            <span class="serv-tag">Assistenti virtuali</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- Product Design -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M8 4h20v28H8z"/><path d="M12 10h12M12 14h12M12 18h8"/><path d="M22 22l6 6M28 22l-6 6"/></svg></span>
-            <span class="serv-name">Product Design</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Progettiamo interfacce che funzionano prima ancora di essere belle. Ogni scelta ha una ragione.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Ricerca utente</span>
-            <span class="serv-tag">UI web &amp; mobile</span>
-            <span class="serv-tag">Wireframing</span>
-            <span class="serv-tag">Design system</span>
-            <span class="serv-tag">Prototipazione</span>
-            <span class="serv-tag">Componenti riusabili</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- Technical Advisory -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4l14 8v12l-14 8L4 24V12z"/><path d="M18 12v12M12 18h12"/></svg></span>
-            <span class="serv-name">Technical Advisory</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Per le aziende che hanno bisogno di una guida tecnica senza assumere un direttore tecnico interno.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Analisi funzionale</span>
-            <span class="serv-tag">Offerte tecniche</span>
-            <span class="serv-tag">Architettura progetto</span>
-            <span class="serv-tag">Audit piattaforme</span>
-            <span class="serv-tag">Pre-sales support</span>
-            <span class="serv-tag">Strategia continuativa</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- CTO as a Service -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
-            <span class="serv-name">CTO as a Service</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Un punto di riferimento tecnico dedicato alla tua azienda, disponibile quando ne hai bisogno.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Direzione tecnica</span>
-            <span class="serv-tag">Selezione stack</span>
-            <span class="serv-tag">Supervisione team</span>
-            <span class="serv-tag">Qualit&agrave; codice</span>
-            <span class="serv-tag">Roadmap tecnologica</span>
-            <span class="serv-tag">Pianificazione evolutiva</span>
-          </div>
-        </div></div></div>
-      </li>
-
-      <!-- Continuity & Evolution -->
-      <li class="serv-item reveal">
-        <button class="serv-btn" aria-expanded="false">
-          <div class="serv-btn-left">
-            <span class="serv-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 18a12 12 0 0 1 24 0"/><path d="M30 18a12 12 0 0 1-24 0"/><path d="M30 18l-3-3M30 18l-3 3"/><path d="M6 18l3-3M6 18l3 3"/><circle cx="18" cy="18" r="3"/></svg></span>
-            <span class="serv-name">Continuity &amp; Evolution</span>
-          </div>
-          <div class="serv-btn-right">
-            <span class="serv-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-          </div>
-        </button>
-        <div class="serv-panel"><div class="serv-panel-inner"><div class="serv-panel-content">
-          <p class="serv-desc">Il lavoro non finisce al lancio. Monitoriamo, aggiorniamo e facciamo evolvere ogni progetto nel tempo.</p>
-          <div class="serv-tags">
-            <span class="serv-tag">Monitoring &amp; uptime</span>
-            <span class="serv-tag">Security updates</span>
-            <span class="serv-tag">Evolutive</span>
-            <span class="serv-tag">Nuove funzionalit&agrave;</span>
-            <span class="serv-tag">Assistenza prioritaria</span>
-            <span class="serv-tag">Agenzie partner</span>
-          </div>
-        </div></div></div>
-      </li>
-
-    </ul>
+    <div class="lavori-griglia">
+      <article class="lavoro lavoro-grande">
+        <div class="figura-vuota figura-piccola"><span>[[ lavoro.1.immagine ]]</span></div>
+        <p class="lavoro-tipo">Mediatore creditizio</p>
+        <h3>1.200 pagine e 50.000 visitatori al mese sulla piattaforma delle pratiche</h3>
+        <p class="lavoro-periodo">in produzione dal 2024</p>
+      </article>
+      <article class="lavoro lavoro-grande">
+        <div class="figura-vuota figura-piccola"><span>[[ lavoro.2.immagine ]]</span></div>
+        <p class="lavoro-tipo">Facility management</p>
+        <h3>150 clienti corporate seguiti dentro una piattaforma sola</h3>
+        <p class="lavoro-periodo">in produzione dal 2025</p>
+      </article>
+      <article class="lavoro">
+        <div class="figura-vuota figura-piccola"><span>[[ lavoro.3.immagine ]]</span></div>
+        <p class="lavoro-tipo">Finanza agevolata</p>
+        <h3><!-- SEGNAPOSTO lavoro.3.titolo -->Lorem ipsum dolor sit amet consectetur</h3>
+        <p class="lavoro-periodo">&mdash;</p>
+      </article>
+      <article class="lavoro">
+        <div class="figura-vuota figura-piccola"><span>[[ lavoro.4.immagine ]]</span></div>
+        <p class="lavoro-tipo">Studio professionale</p>
+        <h3><!-- SEGNAPOSTO lavoro.4.titolo -->Lorem ipsum dolor sit amet consectetur</h3>
+        <p class="lavoro-periodo">&mdash;</p>
+      </article>
+    </div>
+    <p class="lavori-nota">I gestionali di pratiche sono interni per natura, e dentro ci sono i dati dei clienti dei nostri clienti. Per questo i lavori si raccontano per tipo di azienda.</p>
   </div>
 </section>
 
-
-<!-- ===================== PARTNERFLOW ===================== -->
-<section class="partnerflow section-pad lazy-section" id="metodo" data-tono="notte">
+<!-- ===== 7 · Il confronto a tre ===== -->
+<section class="confronto" data-tono="chiaro">
   <div class="container">
-    <div class="pf-header reveal">
-      <p class="pf-title"><span class="pf-brand">PartnerFlow</span>, il metodo con cui<br>gestiamo ogni progetto.</p>
-      <p class="pf-desc">Lavorare con noi non significa affidarti e sperare per il meglio. PartnerFlow &egrave; il framework che usiamo su ogni progetto. I tempi vengono rispettati perch&eacute; la comunicazione &egrave; continua e gli imprevisti li vediamo arrivare prima della deadline, non dopo.</p>
+    <div class="confronto-testa">
+      <h2>Tre strade, e cambia<br><span class="dc-accento">cosa chiedono a voi</span></h2>
+      <p>La differenza sta in quanto tempo passa prima di vedere qualcosa che funziona.</p>
     </div>
-    <div class="pf-steps">
-      <div class="pf-step reveal">
-        <span class="pf-step-num" data-pf="1">00</span>
-        <span class="pf-step-line"></span>
-        <h3>Discovery</h3>
-        <p>Analizziamo insieme le esigenze, definiamo i requisiti e stimiamo effort e timeline in modo realistico.</p>
-      </div>
-      <div class="pf-step reveal d2">
-        <span class="pf-step-num" data-pf="2">00</span>
-        <span class="pf-step-line"></span>
-        <h3>Pianificazione</h3>
-        <p>Costruiamo l&rsquo;architettura del progetto, pianifichiamo gli sprint e condividiamo tutto con te prima di scrivere una riga di codice.</p>
-      </div>
-      <div class="pf-step reveal d3">
-        <span class="pf-step-num" data-pf="3">00</span>
-        <span class="pf-step-line"></span>
-        <h3>Sviluppo</h3>
-        <p>Design, frontend, backend e QA continua. Hai accesso real-time all&rsquo;avanzamento tramite il nostro CRM dedicato: comunicazioni, milestone, documenti e decisioni sempre tracciati e visibili.</p>
-      </div>
-      <div class="pf-step reveal d4">
-        <span class="pf-step-num" data-pf="4">00</span>
-        <span class="pf-step-line"></span>
-        <h3>Supporto</h3>
-        <p>Lancio, stabilizzazione post-lancio e monitoraggio. Non sparisce nessuno dopo il go-live.</p>
-      </div>
-    </div>
+    <table class="tabella-confronto">
+      <thead>
+        <tr><th scope="col">Il verticale a canone</th><th scope="col">Lo sviluppo su misura classico</th><th scope="col" class="col-edos">Edos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cambiate processo per stare dentro al loro schema</td><td>Il capitolato lo scrivete voi, e nessuno vi aiuta</td><td class="col-edos">Si parte dal vostro Excel, che &egrave; gi&agrave; il capitolato</td></tr>
+        <tr><td>Riportate tutte le anagrafiche prima di cominciare</td><td>Si parte dal foglio bianco, quindi si costruisce tutto</td><td class="col-edos">I punti critici li scrivono i vostri, non un consulente</td></tr>
+        <tr><td>Mesi prima di vedere la vostra prima pratica dentro</td><td>Il preventivo cresce strada facendo</td><td class="col-edos">Settimane, e la base da cui partiamo gira da anni</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
-<!-- ===================== GARANZIE ===================== -->
-<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white)" id="garanzie">
+<!-- ===== 8 · Le tre paure ===== -->
+<section class="paure" data-tono="chiaro">
   <div class="container">
-    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 56px">
-      <h2 style="font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin:0 0 16px;line-height:1.15">Le cose che <em style="font-style:normal;color:var(--electric)">firmiamo sul contratto.</em></h2>
-      <p style="font-size:17px;line-height:1.6;color:var(--muted);margin:0">Tre promesse che scriviamo prima ancora che tu firmi il primo bonifico. Nessuna ammorbidita dalle clausole piccole.</p>
-    </div>
-    <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1040px;margin:0 auto">
-
-      <div style="background:var(--white);border:1px solid #e2e8f0;border-radius:16px;padding:36px 28px">
-        <div style="width:48px;height:48px;border-radius:12px;background:rgba(59,111,232,0.1);display:flex;align-items:center;justify-content:center;color:var(--electric);margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin:0 0 12px">Garanzia consegna</h3>
-        <p style="font-size:14px;line-height:1.65;color:var(--muted);margin:0">Ogni sprint ha una deadline scritta. Se la sforiamo per cause nostre, i giorni di ritardo vengono scalati dal canone del mese successivo. Nessuna scusa, nessun rimpallo.</p>
-      </div>
-
-      <div style="background:var(--white);border:1px solid #e2e8f0;border-radius:16px;padding:36px 28px">
-        <div style="width:48px;height:48px;border-radius:12px;background:rgba(59,111,232,0.1);display:flex;align-items:center;justify-content:center;color:var(--electric);margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><path d="M20 6L9 17l-5-5"/></svg>
-        </div>
-        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin:0 0 12px">Garanzia satisfaction</h3>
-        <p style="font-size:14px;line-height:1.65;color:var(--muted);margin:0">Primo mese rimborsabile se non sei soddisfatto del team, del metodo o dei primi risultati. Niente scuse, niente vincoli e niente tentativi di farti restare.</p>
-      </div>
-
-      <div style="background:var(--white);border:1px solid #e2e8f0;border-radius:16px;padding:36px 28px">
-        <div style="width:48px;height:48px;border-radius:12px;background:rgba(59,111,232,0.1);display:flex;align-items:center;justify-content:center;color:var(--electric);margin-bottom:20px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px"><circle cx="12" cy="12" r="10"/><path d="M4.93 4.93l14.14 14.14"/></svg>
-        </div>
-        <h3 style="font-size:20px;font-weight:800;color:var(--navy);margin:0 0 12px">Mai vincoli al primo incontro</h3>
-        <p style="font-size:14px;line-height:1.65;color:var(--muted);margin:0">Si parte sempre con un progetto singolo a commessa standard. Solo se il primo lavoro ti convince, continuiamo insieme in modalit&agrave; continuativa. Se no, paghi quel singolo progetto e ci salutiamo.</p>
-      </div>
-
-    </div>
-    <div class="reveal" style="text-align:center;margin-top:40px">
-      <a href="/servizi/team-dedicato#garanzie" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--electric);text-decoration:none">
-        <span>Leggi le garanzie nei dettagli</span>
-        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SETTORI ===================== -->
-<section class="settori section-pad lazy-section" data-tono="chiaro" id="settori">
-  <div class="container">
-    <div class="settori-head">
-      <h2 class="reveal">Conosciamo le regole del tuo <em>settore.</em></h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="settori-columns">
-
-      <!-- Colonna sinistra -->
-      <div class="s-col reveal-left">
-        <p class="s-col-title">Produzione &amp; Industria</p>
-        <div class="s-list">
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M18 4v6M12 8l2 4M24 8l-2 4"/><circle cx="18" cy="22" r="9"/><path d="M14 20c1-2 3-3 4-3s3 1 4 3M13 25h10"/></svg></span>
-            <p class="s-name">Food &amp; Beverage / GDO</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-          <a href="/" class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M6 30h24M10 30V18h4v12M16 30V12h4v18M22 30V22h4v8"/><path d="M8 14l10-8 10 8" stroke-dasharray="2 2"/></svg></span>
-            <p class="s-name">Industrial / Manifatturiero B2B</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </a>
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="6" y="6" width="24" height="24" rx="3"/><path d="M6 14h24M14 14v16"/><circle cx="24" cy="22" r="3"/></svg></span>
-            <p class="s-name">Retail / Consumer Goods</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M5 32h26M9 32V14l9-6 9 6v18"/><path d="M15 32v-8h6v8"/><path d="M14 18h2v2h-2zM20 18h2v2h-2zM14 23h2v2h-2zM20 23h2v2h-2z"/></svg></span>
-            <p class="s-name">Real Estate / Costruttori</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-        </div>
-      </div>
-
-      <!-- Colonna destra -->
-      <div class="s-col reveal-right">
-        <p class="s-col-title">Servizi &amp; Digitale</p>
-        <div class="s-list">
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="8" y="6" width="20" height="24" rx="2"/><path d="M13 12h10M13 17h10M13 22h6"/><circle cx="24" cy="24" r="3"/><path d="M22.5 22.5l3 3"/></svg></span>
-            <p class="s-name">Finance / Banking</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><path d="M12 4l-2 28M24 4l2 28"/><path d="M8 12c4-3 8-3 10 0s6 3 10 0"/><path d="M8 22c4-3 8-3 10 0s6 3 10 0"/></svg></span>
-            <p class="s-name">Fashion / Luxury</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-          <span  class="s-row reveal">
-            <span class="s-icon"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor"><rect x="4" y="8" width="28" height="18" rx="2"/><path d="M10 14l4 4-4 4M18 22h8"/><path d="M4 26l14 4 14-4"/></svg></span>
-            <p class="s-name">Technology / SaaS</p>
-            <span class="s-arrow"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CASE STUDY ===================== -->
-<section class="cases section-pad lazy-section" data-tono="chiaro" id="chi-siamo">
-  <div class="container">
-    <div class="cases-head">
-      <h2 class="reveal">Quello che facciamo<br>raccontato dai risultati.</h2>
-      <p class="reveal">Dietro ogni progetto c&rsquo;&egrave; un&rsquo;azienda con un problema concreto da risolvere, una scadenza da rispettare e un budget entro cui stare. La soluzione l&rsquo;abbiamo costruita senza sforare nulla.</p>
-    </div>
-
-    <!-- Filtri su due righe -->
-    <div class="cases-filters reveal">
-      <div class="cf-row">
-        <span class="cf-label">Per servizio</span>
-        <button class="cf-btn active" data-filter="all">Tutti</button>
-        <button class="cf-btn" data-filter="type:ai">AI</button>
-        <button class="cf-btn" data-filter="type:platform">Piattaforme</button>
-        <button class="cf-btn" data-filter="type:app">App</button>
-        <button class="cf-btn" data-filter="type:ecommerce">E-commerce</button>
-        <button class="cf-btn" data-filter="type:web">Web</button>
-      </div>
-      <div class="cf-row">
-        <span class="cf-label">Per settore</span>
-        <button class="cf-btn" data-filter="sector:tech">Tech</button>
-        <button class="cf-btn" data-filter="sector:industry">Industry</button>
-        <button class="cf-btn" data-filter="sector:finance">Finance</button>
-        <button class="cf-btn" data-filter="sector:retail">Retail</button>
-        <button class="cf-btn" data-filter="sector:health">Health</button>
-        <button class="cf-btn" data-filter="sector:food">Food</button>
-        <button class="cf-btn" data-filter="sector:fashion">Fashion</button>
-        <button class="cf-btn" data-filter="sector:energy">Energy</button>
-      </div>
-    </div>
-
-    <div class="cases-grid" id="casesGrid"></div>
-  </div><!-- /.container -->
-</section>
-
-<!-- ===================== WALL OF FEEDBACK ===================== -->
-<style>
-.wall-section { background: var(--white); }
-.wall-head { text-align:center; max-width:720px; margin:0 auto 56px; }
-.wall-head h2 { font-size:clamp(28px,4vw,40px); font-weight:800; color:var(--navy); margin:0 0 16px; line-height:1.15; }
-.wall-head h2 em { font-style:normal; color:var(--electric); }
-.wall-head p { font-size:17px; line-height:1.6; color:var(--muted); margin:0; }
-.wall-grid { column-count:3; column-gap:24px; max-width:1180px; margin:0 auto; }
-.wall-card { display:inline-block; width:100%; margin-bottom:24px; background:var(--off-white); border-radius:14px; padding:26px 24px; border-left:3px solid var(--electric); break-inside:avoid; page-break-inside:avoid; }
-.wall-quote { font-size:15px; line-height:1.6; color:var(--navy); margin:0 0 18px; }
-.wall-attrib { font-size:12.5px; color:var(--muted); margin:0; line-height:1.5; }
-.wall-attrib strong { color:var(--navy); font-weight:700; display:block; margin-bottom:2px; font-size:13px; }
-@media (max-width: 960px) { .wall-grid { column-count:2; } }
-@media (max-width: 640px) { .wall-grid { column-count:1; } }
-</style>
-<section class="section-pad lazy-section wall-section" data-tono="chiaro" id="testimonial">
-  <div class="container">
-    <div class="reveal wall-head">
-      <h2>Cosa ci sentiamo dire <em>pi&ugrave; spesso dai clienti.</em></h2>
-      <p>Dopo 40+ progetti consegnati, certe reazioni si ripetono. Le abbiamo raccolte qui: non sono citazioni firmate a libera circolazione, sono il pattern che sentiamo in call e in meeting dopo ogni consegna.</p>
-    </div>
-    <div class="reveal wall-grid">
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Con 800 affiliati avevamo 800 modi diversi di ordinare. Ora ne abbiamo uno. Nel primo trimestre dopo il lancio le vendite sono cresciute del 67%.</p>
-        <p class="wall-attrib"><strong>Direttore Operations</strong><br><span>Network franchising, Nord Italia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Il nostro pregiudizio era che IoT e manutenzione predittiva fossero buzzword. Poi abbiamo misurato -35% di fermi macchina nei primi sei mesi. Il pregiudizio ha cambiato nome.</p>
-        <p class="wall-attrib"><strong>Direttore Produzione</strong><br><span>Azienda metalmeccanica, Lombardia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Un marketplace che connette 800 aziende della nostra filiera era una visione. Il team Edos l’ha trasformata in un prodotto vivo che gira ogni giorno.</p>
-        <p class="wall-attrib"><strong>CEO</strong><br><span>Gruppo industriale manifatturiero, Emilia-Romagna</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">I nostri commerciali passavano 3 ore per fare un preventivo. Oggi 30 secondi. La cosa che non avevamo previsto: anche il tasso di accettazione è aumentato.</p>
-        <p class="wall-attrib"><strong>Sales Director</strong><br><span>PMI manifatturiera B2B, Veneto</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Nel credito al consumo ogni minuto di attrito è un cliente perso. Il CRM che abbiamo costruito con loro ha tagliato il 40% del tempo di gestione pratica.</p>
-        <p class="wall-attrib"><strong>Head of Customer Operations</strong><br><span>Fintech servizi finanziari, Lazio</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">50.000 download nei primi tre mesi senza un euro in pubblicità. Il programma fedeltà integrato nell’app ha fatto tutto il lavoro.</p>
-        <p class="wall-attrib"><strong>Marketing Manager</strong><br><span>Catena retail nazionale, Piemonte</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Prima ricevevamo ordini via email, telefono e fax. Fax. Nel 2025. Oggi è tutto in un portale unico, con riordino automatico sui prodotti ricorrenti.</p>
-        <p class="wall-attrib"><strong>Responsabile Supply Chain</strong><br><span>Azienda food &amp; beverage, Emilia-Romagna</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">+250% di traffico organico in 12 mesi senza campagne a pagamento. Il CRM integrato ci ha permesso di gestire quel volume senza raddoppiare il team commerciale.</p>
-        <p class="wall-attrib"><strong>CMO</strong><br><span>Network agenzie immobiliari, Toscana</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Sei mesi fa gli analytics erano 4 file Excel e 2 dashboard che dicevano cose diverse. Oggi è un’unica fonte di verità. Zero ambiguità nei meeting di prodotto.</p>
-        <p class="wall-attrib"><strong>Product Owner</strong><br><span>SaaS B2B, Lazio</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Il cliente luxury non perdona performance scadenti. Core Web Vitals sopra 95 in tutti i percentili. Il posizionamento premium ora è coerente anche nel digitale.</p>
-        <p class="wall-attrib"><strong>Digital Director</strong><br><span>Maison fashion, Milano</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Dovevamo scalare i corsi a migliaia di utenti senza rompere nulla. La piattaforma regge i picchi senza singhiozzi, e l’abbiamo lanciata in 10 settimane.</p>
-        <p class="wall-attrib"><strong>Direttore Didattico</strong><br><span>Ente di formazione professionale, Lombardia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Gestire HR di un gruppo con 8 società controllate era un incubo Excel. Oggi tutto passa per un portale unico con SSO. Il team HR è passato dal firefighting alla strategia.</p>
-        <p class="wall-attrib"><strong>HR Director</strong><br><span>Gruppo manifatturiero, Veneto</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Siamo passati da qualificare 100 lead al mese manualmente a qualificarne 2.000 con la stessa squadra. Non era una promessa, era un test A/B sui nostri dati reali.</p>
-        <p class="wall-attrib"><strong>Sales Operations Manager</strong><br><span>Servizi B2B, Lombardia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">La nostra knowledge base erano 12.000 PDF che nessuno leggeva. Oggi è un assistente che risponde in 3 secondi citando le fonti esatte. La produttività del team legal è un’altra.</p>
-        <p class="wall-attrib"><strong>General Counsel</strong><br><span>Gruppo industriale, Emilia-Romagna</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Lanciare una campagna instant win richiedeva 3 mesi di IT. Con Edos l’abbiamo fatto in 4 settimane, e ha retto 500.000 utenti concorrenti senza un errore.</p>
-        <p class="wall-attrib"><strong>Brand Manager</strong><br><span>Azienda settore energy, Lombardia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Abbiamo smesso di rispondere alle stesse 20 domande in Slack. L’agente le sa, e quando non sa lo ammette. Che è più di quello che fa Google.</p>
-        <p class="wall-attrib"><strong>IT Manager</strong><br><span>PMI tech, Piemonte</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Formare 80 venditori nuovi ogni anno assorbiva tempo del senior management. Oggi ognuno si allena con un agente AI sul materiale vero dell’azienda. Onboarding dimezzato.</p>
-        <p class="wall-attrib"><strong>Sales Enablement Lead</strong><br><span>Gruppo B2B servizi, Lombardia</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Leggevamo 200 bandi al mese a mano per capire quali fossero rilevanti. Oggi un agente legge, filtra e scrive un brief. Il team lavora solo sugli 8 che valgono davvero.</p>
-        <p class="wall-attrib"><strong>Direttore Business Development</strong><br><span>Società partecipata settore pubblico, Lazio</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Avevamo ereditato una piattaforma legacy con 10 anni di debito tecnico. Edos l’ha stabilizzata in 60 giorni e adesso stiamo pianificando il refactor con una roadmap chiara.</p>
-        <p class="wall-attrib"><strong>CTO</strong><br><span>Organizzazione no-profit internazionale, Roma</span></p>
-      </div>
-
-      <div class="wall-card">
-        <svg viewBox="0 0 24 24" fill="var(--electric)" style="width:22px;height:22px;opacity:0.35;margin-bottom:12px"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-        <p class="wall-quote">Costruire un’app che insegnasse soft skills senza sembrare un questionario era il vero problema. L’hanno risolto in modo che i nostri utenti tornano volontariamente.</p>
-        <p class="wall-attrib"><strong>Chief Learning Officer</strong><br><span>Scale-up HR tech, Milano</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOGO WALL: hidden until real logos are available. Unhide by removing the outer HTML comment wrapper.
-<!-- ===================== LOGO WALL ===================== --&gt;
-<!--
-  PLACEHOLDER: Sostituisci i [LOGO SLOT N] con loghi reali quando disponibili.
-  Formato: <img src="/clienti/logo-nome-cliente.svg" alt="Nome Cliente" style="max-height:44px;width:auto;opacity:0.6;filter:grayscale(100%);transition:all .3s">
-  Se il cliente e sotto NDA, ometti il logo e usa i testimonial anonimizzati sopra.
---&gt;
-<section class="section-pad lazy-section" data-tono="chiaro" style="background:var(--off-white);padding-top:48px;padding-bottom:48px">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <p style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin:0 0 32px">Aziende e brand che hanno scelto Edos</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:32px;align-items:center;max-width:960px;margin:0 auto;opacity:0.7">
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 1]</div>
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 2]</div>
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 3]</div>
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 4]</div>
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 5]</div>
-        <div style="text-align:center;padding:12px;border:1px dashed #cbd5e1;border-radius:8px;color:#94a3b8;font-size:12px;font-family:monospace">[LOGO SLOT 6]</div>
-      </div>
+    <p class="paure-citazione">L&rsquo;intelligenza artificiale &egrave; valida solo quanto <span class="dc-accento">il processo su cui gira.</span></p>
+    <p class="paure-sotto">Un assistente messo sopra un flusso dove nessuno sa a che punto &egrave; una pratica produce niente. Noi costruiamo prima il processo, e l&rsquo;AI ci gira sopra.</p>
+    <div class="paure-griglia">
+      <div class="paura"><h3>I dati restano dentro</h3><p>I dati dei vostri clienti restano nella vostra piattaforma, e lo mettiamo per iscritto nel contratto. &Egrave; la prima domanda che ci fanno, ed &egrave; giusto farla.</p></div>
+      <div class="paura"><h3>Il codice &egrave; vostro</h3><p>Il progetto e il documento dei flussi restano di chi li ha pagati. Sta scritto nel contratto, insieme ai tempi e a chi decide.</p></div>
+      <div class="paura"><h3>E se cresco, poi lo butto?</h3><p>La base da cui partiamo regge gi&agrave; un&rsquo;azienda intera: clienti, offerte con firma, progetti, ticket, tempi, fatturazione, calendario. Il posto dove crescere c&rsquo;&egrave; gi&agrave;.</p></div>
     </div>
   </div>
 </section>
 
 
-END LOGO WALL -->
-
-<!-- ===================== CTA FINALE ===================== -->
-<section class="cta-final lazy-section" id="contatti" data-tono="notte">
-  <div class="cta-blob cta-blob-1"></div>
-  <div class="cta-blob cta-blob-2"></div>
+<!-- ===== 9 · La chiusura ===== -->
+<section class="chiusura" data-tono="notte">
   <div class="container">
-    <div class="cta-inner">
-      <h2 class="reveal">Le migliori collaborazioni<br>iniziano da una <em>conversazione.</em></h2>
-      <p class="cta-desc reveal d1">Se cerchi un partner tecnico con cui crescere, sei nel posto giusto. Qualcuno con cui ragionare sulle scelte, non un fornitore da gestire.</p>
-      <div class="cta-action reveal d2">
-        <a href="/contatti" class="btn-pill">
-          <span class="btn-pill-circle">
-            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          Prenota un appuntamento
-        </a>
-      </div>
-    </div>
+    <h2>Le vostre pratiche oggi<br><span class="ch-accento">su cosa girano?</span></h2>
+    <p>Raccontatecelo in due righe. Vi rispondiamo dicendo se &egrave; un lavoro che sappiamo fare, e come lo imposteremmo.</p>
+    <a href="/contatti" class="btn-pill btn-pill-pieno">
+      <span>Prenota un appuntamento</span>
+      <span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg></span>
+    </a>
   </div>
 </section>
 
-<!-- ===================== FIXED SIDE CTA ===================== -->
-
-<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="container">
     <div class="footer-mobile-contact">
