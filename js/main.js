@@ -148,3 +148,16 @@
   })();
 
 })();
+
+/* Torna su: compare dopo un po' di scorrimento, riporta in cima alla pagina (23/09/2026) */
+(function(){
+  if(document.getElementById('toTop')) return;
+  var b=document.createElement('button');
+  b.type='button'; b.id='toTop'; b.className='to-top'; b.setAttribute('aria-label','Torna su');
+  b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(b);
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function upd(){ b.classList.toggle('is-on', window.scrollY>700); }
+  window.addEventListener('scroll',upd,{passive:true}); upd();
+  b.addEventListener('click',function(){ window.scrollTo({top:0,behavior:reduce?'auto':'smooth'}); });
+})();

@@ -1,0 +1,16 @@
+/* Regole comuni a tutte le pagine (23/09/2026). Il resto del CSS è ancora inline pagina per pagina. */
+
+/* Footer: i puntini tra i link legali non sono più cliccabili e ogni link ha il suo stato al passaggio */
+.footer-legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 24px}
+.footer-legal a{position:relative;color:rgba(255,255,255,.6)!important}
+.footer-legal a:hover,.footer-legal a:focus-visible{color:#fff!important;text-decoration:underline;text-underline-offset:3px}
+.footer-legal a+a::before{content:'\00B7'!important;position:absolute;left:-14px;top:0;pointer-events:none;color:rgba(255,255,255,.3)}
+
+/* Torna su */
+.to-top{position:fixed;right:24px;bottom:24px;z-index:95;width:48px;height:48px;border-radius:50%;border:1px solid rgba(13,27,62,.16);background:#fff;color:#0D1B3E;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(6,14,34,.24);cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s,background .2s}
+.to-top.is-on{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:#3B6FE8;border-color:#3B6FE8;color:#fff}
+.to-top:focus-visible{outline:2px solid #3B6FE8;outline-offset:3px}
+.to-top svg{width:20px;height:20px}
+@media(max-width:640px){.to-top{right:14px;bottom:14px;width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.to-top{transition:none}}
