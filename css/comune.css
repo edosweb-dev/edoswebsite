@@ -66,3 +66,5 @@
 .cta-final .cta-desc strong{display:block;color:#fff;font-weight:600;margin-bottom:4px}
 .ed-text .ed-guida{margin-bottom:10px}
 @media(max-width:640px){.hn-lista-testa p{font-size:1.0625rem}.hn-lista-testa p strong,.ed-guida{font-size:1.1875rem}}
+/* Contrasto: il © nel piede era troppo chiaro sul blu */
+.footer-bottom>span{color:rgba(255,255,255,.6)}
