@@ -38,3 +38,17 @@
   .hero h1,.hero-sub,.hero-eyebrow,.hero-ctas,.page-hero h1,.page-hero-sub,.cs-hero h1,.cs-hero-lead,.cs-hero-meta,
   .ty-content h1,.ty-content p,.ty-actions,.error-inner h1,.error-sub,.error-cta,.error-cards{animation:none!important;opacity:1!important;transform:none!important}
 }
+
+/* Telefono: dati aziendali nel footer più leggibili, link legali su due colonne senza puntini,
+   spazio in fondo perché i bottoni «Cookie» e «Torna su» non coprano i link; briciole di pane su una riga */
+@media(max-width:900px){
+  .footer-info{font-size:.8125rem!important;color:rgba(255,255,255,.75)!important;line-height:1.75!important}
+  .footer-bottom{padding-bottom:92px!important}
+  .footer-legal{display:grid!important;grid-template-columns:1fr 1fr;gap:12px 20px;text-align:center;width:100%}
+  .footer-legal a+a::before{display:none!important}
+}
+@media(max-width:640px){
+  .breadcrumb ol{flex-wrap:nowrap}
+  .breadcrumb li{white-space:nowrap}
+  .breadcrumb ol:has(li:nth-child(5)) .breadcrumb-current,.breadcrumb ol:has(li:nth-child(5)) li.breadcrumb-sep:nth-last-child(2){display:none}
+}
