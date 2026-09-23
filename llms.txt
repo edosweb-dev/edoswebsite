@@ -6,7 +6,7 @@
 
 Aziende in cui il lavoro entra come una pratica: una domanda di finanziamento, un mandato, una commessa. La pratica passa da tre o quattro mani, e alla fine esce qualcosa che vale soldi: una delibera, un'erogazione, una provvigione. Spesso oggi gira su Excel e posta elettronica, e sta crescendo.
 
-Lavoriamo anche con le agenzie, in white label.
+Lavoriamo anche con le agenzie di comunicazione e marketing: siamo il loro team di sviluppo, consegniamo con il loro marchio e il cliente resta loro. [Per le agenzie](https://www.edos.it/per-le-agenzie/)
 
 ## Come lavoriamo
 
@@ -56,6 +56,7 @@ Progetti reali. Alcuni con il nome del cliente, altri in forma anonima per riser
 - [Chi siamo](https://www.edos.it/azienda/)
 - [Servizi](https://www.edos.it/servizi/)
 - [Case study](https://www.edos.it/case-study/)
+- [Per le agenzie](https://www.edos.it/per-le-agenzie/)
 - [Contatti](https://www.edos.it/contatti/)
 
 ## Informazioni aziendali

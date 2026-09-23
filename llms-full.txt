@@ -79,5 +79,8 @@ Case study: piattaforma per una fondazione, con candidature a doppia anagrafica 
 ## [Piattaforma CRM per vendite | Case Study | Edos](https://www.edos.it/case-study/piattaforma-crm-vendite/)
 Case study: riscrittura indipendente del CRM vendite per una società di marketing e vendite, con pipeline a 9 stadi, motore di lavorazione esiti e ruoli granulari. Progetto in corso.
 
+## [Per le agenzie · Edos](https://www.edos.it/per-le-agenzie/)
+Siamo il team di sviluppo della vostra agenzia: portali, aree riservate, integrazioni ed e-commerce per i vostri clienti, consegnati con il vostro marchio. Il cliente resta vostro.
+
 ## [Contatti · Edos](https://www.edos.it/contatti/)
 Scriveteci per parlare del vostro progetto: rispondiamo entro 24 ore lavorative. Oppure prenotate un appuntamento dal calendario.
