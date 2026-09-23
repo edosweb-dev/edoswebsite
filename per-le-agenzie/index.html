@@ -521,21 +521,20 @@ body { padding-top: 0 !important; }
 .ag-passi p{font-size:1rem;color:var(--text-body);line-height:1.65;margin:0}
 .ag-casi{grid-template-columns:repeat(3,1fr)}
 .ag-casi .c-title{font-size:clamp(1.15rem,1.6vw,1.35rem)}
-.ag-prezzi{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px}
-.ag-prezzo{background:#fff;border:1px solid var(--border-s);border-radius:16px;padding:32px}
-.ag-prezzo-cosa{font-size:1rem;font-weight:600;color:var(--text-body);margin:0 0 10px}
-.ag-prezzo-cifra{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.375rem);white-space:nowrap;font-weight:800;letter-spacing:-.02em;color:var(--text);margin:0;line-height:1.1}
-.ag-margine{margin-top:28px;font-size:1.0625rem;color:var(--text-body)}
-.ag-margine strong{color:var(--text)}
-.ag-ruoli{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px}
-.ag-ruolo{border:1px solid var(--border-s);border-radius:16px;padding:32px}
-.ag-ruolo-noi{background:var(--navy);border-color:var(--navy);color:#fff}
-.ag-ruolo-chi{font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0 0 18px;color:var(--text)}
-.ag-ruolo-noi .ag-ruolo-chi{color:#fff}
-.ag-ruolo ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.ag-ruolo li{position:relative;padding-left:28px;font-size:1.0625rem;line-height:1.5;color:var(--text-body)}
-.ag-ruolo-noi li{color:rgba(255,255,255,.85)}
-.ag-ruolo li::before{content:'';position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:50%;background:var(--blue-pale) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B6FE8' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/10px no-repeat}
+.ag-listino{list-style:none;margin:0;padding:0;display:grid}
+.ag-listino li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:32px;padding-block:30px;border-top:1px solid var(--border-s)}
+.ag-listino li:last-child{border-bottom:1px solid var(--border-s)}
+.ag-listino h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--text);margin:0}
+.ag-listino p{margin:8px 0 0;font-size:1rem;line-height:1.6;color:var(--text-body)}
+.ag-listino .ag-cifra{margin:0;font-family:var(--font-display);font-size:clamp(1.625rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.02em;color:var(--text);white-space:nowrap;line-height:1.1}
+.ag-ruoli-sez .section-title{color:#fff}
+.ag-ruoli-sez .section-title strong{color:#93BFFF}
+.ag-ruoli{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.14)}
+.ag-ruolo{padding:36px 40px 8px 0}
+.ag-ruolo+.ag-ruolo{padding-left:40px;border-left:1px solid rgba(255,255,255,.14)}
+.ag-ruolo-chi{margin:0 0 20px;font-family:var(--font-display);font-size:1rem;font-weight:700;color:#93BFFF}
+.ag-ruolo ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.ag-ruolo li{font-family:var(--font-display);font-size:clamp(1.25rem,2vw,1.5rem);font-weight:600;line-height:1.35;color:#fff}
 .ag-contatto-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
 .ag-contatto-testa p{margin-top:16px;font-size:1.125rem;line-height:1.6;color:var(--text-body)}
 .ag-contatto-testa p strong{display:block;margin-bottom:6px;color:var(--text);font-family:var(--font-display);font-size:1.25rem;line-height:1.4}
@@ -550,12 +549,12 @@ body { padding-top: 0 !important; }
 .ag-errore{min-height:1.2em;margin:0;color:#B42318;font-size:.9375rem}
 .ag-invia{justify-self:start;cursor:pointer;font-family:var(--font-display)}
 .ag-invia[disabled]{opacity:.6;cursor:wait}
-.ag-nota{margin:0;font-size:.875rem;color:var(--text-body)}
 .ag-grazie{border:1px solid var(--border-s);border-radius:16px;padding:32px;background:var(--off-white)}
 .ag-grazie h3{font-family:var(--font-display);font-size:1.5rem;color:var(--text);margin:0 0 8px}
 .ag-grazie p{margin:0;color:var(--text-body)}
 @media(max-width:1024px){.ag-passi{grid-template-columns:1fr 1fr}.ag-passi li:nth-child(3){padding-left:0;border-left:none}.ag-passi li:nth-child(n+3){border-top:1px solid var(--border-s)}.ag-casi{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.ag-passi{grid-template-columns:1fr}.ag-passi li,.ag-passi li+li{padding:26px 0;border-left:none;border-top:1px solid var(--border-s)}.ag-passi li:first-child{border-top:none}.ag-casi,.ag-prezzi,.ag-ruoli,.ag-contatto-grid{grid-template-columns:1fr}.ag-contatto-grid{gap:32px}.ag-testa p{font-size:1.0625rem}.ag-testa p strong{font-size:1.1875rem}}
+@media(max-width:700px){.ag-passi{grid-template-columns:1fr}.ag-passi li,.ag-passi li+li{padding:26px 0;border-left:none;border-top:1px solid var(--border-s)}.ag-passi li:first-child{border-top:none}.ag-casi,.ag-ruoli,.ag-contatto-grid{grid-template-columns:1fr}.ag-contatto-grid{gap:32px}.ag-testa p{font-size:1.0625rem}.ag-testa p strong{font-size:1.1875rem}}
+@media(max-width:700px){.ag-listino li{grid-template-columns:1fr;row-gap:14px}.ag-ruolo,.ag-ruolo+.ag-ruolo{padding:28px 0 20px;border-left:none}.ag-ruolo+.ag-ruolo{border-top:1px solid rgba(255,255,255,.14)}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Per le agenzie · Edos", "description": "Siamo il team di sviluppo della vostra agenzia: portali, aree riservate, integrazioni ed e-commerce per i vostri clienti, consegnati con il vostro marchio. Il cliente resta vostro.", "url": "https://www.edos.it/per-le-agenzie/", "publisher": {"@type": "Organization", "name": "Edos", "url": "https://www.edos.it"}}</script>
 <link rel="stylesheet" href="/css/comune.css?v=20260923f">
@@ -635,7 +634,7 @@ body { padding-top: 0 !important; }
     <div class="page-hero-inner">
       <h1>Siamo il vostro team di sviluppo.<br><em>Il cliente resta vostro.</em></h1>
       <p class="page-hero-sub">Portali, piattaforme, aree riservate e integrazioni per i clienti della vostra agenzia, consegnati con il vostro marchio.</p>
-      <div class="ag-hero-cta"><a href="#contatto" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Raccontateci il progetto</span></a></div>
+      <div class="ag-hero-cta"><a href="#contatto" class="btn-pill"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Richiedete tempi e prezzo</span></a></div>
     </div>
   </div>
 </section>
@@ -691,28 +690,28 @@ body { padding-top: 0 !important; }
 </section>
 
 <!-- PREZZI -->
-<section class="section-pad" style="background:var(--off-white)">
-  <div class="container">
-    <div class="reveal ag-testa">
-      <h2 class="section-title">Le fasce <strong>di prezzo</strong></h2>
+<section class="hn-lista" style="background:var(--off-white)">
+  <div class="container hn-lista-grid">
+    <div class="hn-lista-testa reveal">
+      <h2 class="section-title">Prezzi chiari <strong>dal primo lavoro</strong></h2>
+      <p><strong>Il margine verso il vostro cliente lo decidete voi.</strong> Sono prezzi netti, IVA esclusa. La cifra esatta vi arriva per iscritto entro 1-3 giorni dalla richiesta.</p>
     </div>
-    <div class="ag-prezzi">
-      <div class="ag-prezzo reveal"><p class="ag-prezzo-cosa">Primo lavoro insieme, un modulo</p><p class="ag-prezzo-cifra">&euro; 2.500 &ndash; 4.000</p></div>
-      <div class="ag-prezzo reveal"><p class="ag-prezzo-cosa">Progetto completo</p><p class="ag-prezzo-cifra">&euro; 4.000 &ndash; 12.000</p></div>
-    </div>
-    <p class="ag-margine reveal"><strong>Il margine verso il vostro cliente lo decidete voi.</strong> Prezzi netti, IVA esclusa.</p>
+    <ul class="ag-listino">
+      <li class="reveal"><div><h3>Primo lavoro insieme</h3><p>Un modulo: un&rsquo;area riservata, un&rsquo;integrazione o un configuratore.</p></div><p class="ag-cifra">&euro;&nbsp;2.500&thinsp;&ndash;&thinsp;4.000</p></li>
+      <li class="reveal"><div><h3>Progetto completo</h3><p>Una piattaforma intera, costruita un modulo alla volta.</p></div><p class="ag-cifra">&euro;&nbsp;4.000&thinsp;&ndash;&thinsp;12.000</p></li>
+    </ul>
   </div>
 </section>
 
 <!-- CHI FA COSA -->
-<section class="section-pad" style="background:var(--white)">
+<section class="section-pad ag-ruoli-sez" style="background:var(--navy)">
   <div class="container">
     <div class="reveal ag-testa">
-      <h2 class="section-title">Chi fa <strong>cosa</strong></h2>
+      <h2 class="section-title">Il cliente lo seguite voi.<br><strong>La parte tecnica, noi.</strong></h2>
     </div>
     <div class="ag-ruoli">
-      <div class="ag-ruolo reveal"><p class="ag-ruolo-chi">Voi</p><ul><li>Il rapporto con il cliente</li><li>La grafica, se la curate voi</li><li>Il prezzo finale</li></ul></div>
-      <div class="ag-ruolo ag-ruolo-noi reveal"><p class="ag-ruolo-chi">Noi</p><ul><li>Lo sviluppo</li><li>Le integrazioni</li><li>La messa online</li><li>L&rsquo;assistenza tecnica verso di voi</li></ul></div>
+      <div class="ag-ruolo reveal"><p class="ag-ruolo-chi">La vostra agenzia</p><ul><li>Il rapporto con il cliente</li><li>La grafica, se la curate voi</li><li>Il prezzo finale</li></ul></div>
+      <div class="ag-ruolo reveal"><p class="ag-ruolo-chi">Edos</p><ul><li>Lo sviluppo</li><li>Le integrazioni</li><li>La messa online</li><li>L&rsquo;assistenza tecnica verso di voi</li></ul></div>
     </div>
   </div>
 </section>
@@ -735,8 +734,8 @@ body { padding-top: 0 !important; }
 <section class="section-pad ag-contatto" id="contatto" style="background:var(--white)">
   <div class="container ag-contatto-grid">
     <div class="ag-contatto-testa reveal">
-      <h2 class="section-title">Raccontateci <strong>il progetto</strong></h2>
-      <p><strong>Oppure rispondete all&rsquo;email che avete ricevuto: la leggo io.</strong> Giuseppe Famiani, Edos.</p>
+      <h2 class="section-title">Tempi e prezzo, <strong>per iscritto in 1-3 giorni</strong></h2>
+      <p><strong>Scriveteci cosa vi ha chiesto il cliente, anche in poche righe.</strong></p>
     </div>
     <div class="ag-form-wrap reveal">
       <form class="ag-form" id="agForm" novalidate>
@@ -747,7 +746,6 @@ body { padding-top: 0 !important; }
         <div class="ag-trappola" aria-hidden="true"><label for="agSito">Sito</label><input id="agSito" name="sito" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="ag-errore" id="agErrore" role="alert"></p>
         <button type="submit" class="btn-pill btn-pill-dark ag-invia" id="agInvia"><span class="btn-pill-circle"><svg viewBox="0 0 18 18" fill="none"><path d="M3.5 9h11M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Invia la richiesta</span></button>
-        <p class="ag-nota">Vi rispondo entro 1-3 giorni.</p>
       </form>
       <div class="ag-grazie" id="agGrazie" hidden tabindex="-1"><h3>Grazie, vi rispondo entro 1-3 giorni.</h3><p>La vostra richiesta è già nella mia casella.</p></div>
     </div>
