@@ -14,3 +14,21 @@
 .to-top svg{width:20px;height:20px}
 @media(max-width:640px){.to-top{right:14px;bottom:14px;width:44px;height:44px}}
 @media(prefers-reduced-motion:reduce){.to-top{transition:none}}
+
+/* Prestazioni (23/09/2026)
+   - le entrate animate usano solo opacità e spostamento: lo sfocato (filter:blur) costava molto sui telefoni
+   - le macchie di luce degli hero restano ferme: prima si muovevano all'infinito con uno sfocato da 90-100px
+   - su telefono niente vetro sfocato dietro al menu: ridisegnarlo a ogni scorrimento rallentava la pagina */
+@keyframes heroLine{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.reveal,.reveal-scale,.reveal-right,.reveal.visible,.reveal-scale.visible,.reveal-right.visible{filter:none!important}
+.blob,.cta-blob,.blob-1,.blob-2,.blob-3,.cta-blob-1,.cta-blob-2{animation:none!important}
+@media(max-width:900px){
+  .nav.scrolled,.nav-float,.nav-float.is-scrolled,.nf-cta,.nav-float.is-scrolled .nf-cta{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .nav.scrolled,.nav-float.is-scrolled{background:rgba(255,255,255,.98)!important}
+  .reveal,.reveal-scale,.reveal-right{transition-duration:.45s!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-scale,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}
+  .tech-track,.fixed-cta-ring{animation:none!important}
+}
