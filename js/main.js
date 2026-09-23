@@ -105,10 +105,10 @@
     var el=document.getElementById('footerCaseLinks');
     if(!el)return;
     var cases=[
-      {h:'/case-study/piattaforma-web-orchestra',t:'Piattaforma web Orchestra'},
-      {h:'/case-study/ecommerce-b2b-treere',t:'E-commerce B2B Treere'},
-      {h:'/case-study/crm-b2c-mutuisi',t:'CRM B2C MutuiS\u00ec'},
-      {h:'/case-study/piattaforma-power2play-brand-energia',t:'Piattaforma Power2Play'},
+      {h:'/case-study/marketplace-musicisti-organizzatori',t:'Marketplace per musicisti'},
+      {h:'/case-study/ecommerce-b2b-network-franchising',t:'E-commerce B2B per network franchising'},
+      {h:'/case-study/crm-b2c-richieste-mutuo',t:'CRM B2C per mutui online'},
+      {h:'/case-study/piattaforma-instant-win-brand-energia',t:'Piattaforma instant win per brand energia'},
       {h:'/case-study/piattaforma-ai-automazione-preventivi',t:'AI automazione preventivi'},
       {h:'/case-study/rag-agentico-analisi-documentazione',t:'RAG analisi documentazione'},
       {h:'/case-study/ecommerce-headless-brand-luxury',t:'E-commerce headless luxury'},

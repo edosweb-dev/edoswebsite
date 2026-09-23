@@ -1,0 +1,21 @@
+# File interni: restano nel repo, non vanno serviti dal sito pubblico
+.agents/
+.claude/
+_assets/
+_*.py
+docs/
+case-study-template/
+skills-lock.json
+scripts_check.mjs
+# Pagine tolte dal sito il 23/09/2026 (in 301 da vercel.json), restano nel repo
+audit-gratuito/
+blog/
+faq/
+lavora-con-noi/
+metodo/
+sicurezza-compliance/
+team/
+tools/
+retainer/
+retainer-one-pager/
+sviluppo-web-white-label-agenzie/

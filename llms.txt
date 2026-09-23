@@ -1,106 +1,68 @@
-# Edos Digital Solutions
+# Edos
 
-> Piattaforme digitali su misura per aziende: configuratori, portali B2B, e-commerce multi-sede, gestionali custom. Team senior 100% italiano, 30+ progetti consegnati, zero ritardi.
+> Edos è una società di sviluppo web. Sviluppiamo il software sul modo di lavorare dei nostri clienti: piattaforme per le aziende che lavorano a pratiche (credito, finanza agevolata, assicurazioni, perizie), collegate ai gestionali che usano già, con l'AI che legge i documenti e compila i campi. Un referente unico, dall'analisi al supporto.
+
+## Per chi lavoriamo
+
+Aziende in cui il lavoro entra come una pratica: una domanda di finanziamento, un mandato, una commessa. La pratica passa da tre o quattro mani, e alla fine esce qualcosa che vale soldi: una delibera, un'erogazione, una provvigione. Spesso oggi gira su Excel e posta elettronica, e sta crescendo.
+
+Lavoriamo anche con le agenzie, in white label.
+
+## Come lavoriamo
+
+- Fase 0, l'analisi: chi lavora le pratiche racconta in una chat come lavora davvero, ognuno per la sua parte. Alla fine consegniamo un documento con il flusso di lavoro di oggi. L'analisi è compresa nel prezzo del progetto.
+- 01 Vi portiamo il piano: passaggi critici, moduli, priorità. Il capitolato resta del cliente.
+- 02 Costruiamo: si parte da quello che si usa oggi, Excel compreso, e si rilascia un modulo alla volta.
+- 03 Cresce con voi: dopo il collaudo la stessa persona segue la piattaforma e la adatta quando cambia il modo di lavorare.
+
+Quello che resta al cliente: il codice (dal primo commit, su un repository a cui accede quando vuole) e i dati (restano nella sua piattaforma, ed è scritto nel contratto).
+
+Edos è iscritta nell'Elenco dei Fornitori qualificati 4.0 di Unioncamere Lombardia: un progetto può entrare in un bando 4.0, se la misura lo prevede.
+
+## Servizi
+
+- [Gestionali su misura](https://www.edos.it/servizi/gestionali-su-misura/): Un gestionale su misura per le vostre pratiche: stato, documenti, area clienti e collegamenti ai programmi che usate già, Excel compreso.
+- [AI nelle pratiche](https://www.edos.it/servizi/ai-nelle-pratiche/): L'intelligenza artificiale dentro le vostre pratiche: legge PEC, visure e PDF, compila i campi e propone il passo successivo. La persona controlla e decide.
+- [App e web app](https://www.edos.it/servizi/app-web-app/): App per chi lavora fuori ufficio: turni, incassi, firme e documenti dal telefono, collegati alla stessa piattaforma dell'ufficio.
+- [Interfacce semplici](https://www.edos.it/servizi/interfacce-semplici/): Schermate pensate per chi le usa tutto il giorno: ogni ruolo vede quello che gli serve, e un'operazione si fa in pochi passaggi.
+- [Assistenza ed evoluzione](https://www.edos.it/servizi/assistenza-evoluzione/): Seguiamo nel tempo le piattaforme che costruiamo e quelle ereditate da altri: aggiornamenti, correzioni e funzioni nuove, con lo stesso referente.
+- [Siti ed e-commerce](https://www.edos.it/servizi/siti-ecommerce/): Siti aziendali ed e-commerce collegati al vostro modo di lavorare: catalogo, ordini, contratti e fatture in un posto solo, anche per la vostra rete.
+
+Panoramica per situazione: [Servizi](https://www.edos.it/servizi/)
+
+## Case study
+
+Progetti reali. Alcuni con il nome del cliente, altri in forma anonima per riservatezza. Alcuni sono conclusi, altri in corso, e ogni scheda lo dichiara.
+
+- [Marketplace per musicisti e conservatori](https://www.edos.it/case-study/marketplace-musicisti-organizzatori/): I musicisti dei conservatori presentano il loro percorso, chi organizza un evento pubblica cosa gli serve e sceglie. Servizio: Gestionali su misura.
+- [CRM B2C per mutui online](https://www.edos.it/case-study/crm-b2c-richieste-mutuo/): Chi cerca un mutuo riceve subito una risposta, il consulente riceve una richiesta già completa. Servizio: Project management.
+- [Piattaforma instant win per brand energia](https://www.edos.it/case-study/piattaforma-instant-win-brand-energia/): Un gioco a premi sulle partite dentro l’app di un fornitore di energia, collegato al sistema che decide le vincite. Servizio: Gestionali su misura.
+- [Supporto tecnico per piattaforma No-Profit internazionale](https://www.edos.it/case-study/supporto-tecnico-piattaforma-no-profit/): Il sito per donare e l’area sostenitori di un programma di sostegno a distanza, presi in carico da un altro fornitore. Servizio: Assistenza ed evoluzione.
+- [Sito istituzionale per studio professionale](https://www.edos.it/case-study/sito-istituzionale-studio-professionale/): Due studi notarili diventano uno: un sito che li presenta come una realtà sola e la posta su un unico dominio. Servizio: Siti ed e-commerce.
+- [E-commerce B2B per network franchising](https://www.edos.it/case-study/ecommerce-b2b-network-franchising/): Una rete di affiliati con acquisti, contratti e fatturazione centralizzati in un’unica piattaforma. Servizio: Siti ed e-commerce.
+- [App per organizzare partite sportive amatoriali](https://www.edos.it/case-study/app-organizzazione-eventi-sportivi/): App nativa iOS e Android per organizzare partite sportive amatoriali, gestire squadre e prenotare campi. Servizio: App e web app.
+- [Piattaforma AI per perizie immobiliari](https://www.edos.it/case-study/piattaforma-ai-perizie-immobiliari/): Generazione assistita da AI delle relazioni peritali, da foto di sopralluogo a documento. Servizio: AI nelle pratiche.
+- [Gestionale per servizi NCC e taxi](https://www.edos.it/case-study/gestionale-servizi-ncc-taxi/): Turni, incassi, spese e stipendi soci in un unico sistema, in continua evoluzione. Servizio: Gestionali su misura.
+- [Assistenza ed evoluzione per un gruppo multi-piattaforma](https://www.edos.it/case-study/continuity-evolution-gruppo-multipiattaforma/): Le piattaforme di un gruppo che segue le imprese su agevolazioni e crediti d’imposta, seguite ed estese dal 2025. Servizio: Assistenza ed evoluzione.
+- [Pagina di bilancio per un gruppo assicurativo](https://www.edos.it/case-study/piattaforma-gestionale-assicurativo/): La pagina web bilingue del bilancio annuale di un gruppo assicurativo, aggiornata a ogni edizione. Servizio: Assistenza ed evoluzione.
+- [Modulo e-commerce per un’azienda farmaceutica](https://www.edos.it/case-study/modulo-ecommerce-settore-farmaceutico/): Sviluppo di un canale e-commerce per un’azienda del settore chimico-farmaceutico. Progetto in corso. Servizio: Siti ed e-commerce.
+- [Piattaforma unica per pratiche assicurative](https://www.edos.it/case-study/piattaforma-unica-pratiche-assicurative/): Un’agenzia assicurativa sostituisce due sistemi separati con un’unica piattaforma database-first. Progetto in corso. Servizio: Gestionali su misura.
+- [Piattaforma candidature per un premio scientifico](https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/): Candidature in italiano e in inglese per il premio internazionale di una fondazione. Progetto in corso. Servizio: Gestionali su misura.
+- [Piattaforma CRM per vendite](https://www.edos.it/case-study/piattaforma-crm-vendite/): Riscrittura indipendente del CRM vendite, con pipeline a 9 stadi e motore di lavorazione esiti. Progetto in corso. Servizio: Gestionali su misura.
+
+## Pagine principali
+
+- [Home](https://www.edos.it/)
+- [Chi siamo](https://www.edos.it/azienda/)
+- [Servizi](https://www.edos.it/servizi/)
+- [Case study](https://www.edos.it/case-study/)
+- [Contatti](https://www.edos.it/contatti/)
 
 ## Informazioni aziendali
 
 - Ragione sociale: Edos Srl
 - P.IVA: 14030760962
-- Sede legale: Piazzetta Umberto Giordano, 2 — 20122 Milano (MI)
-- Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 — 20146 Milano (MI)
-- Sito web: https://www.edos.it
+- Sede legale: Piazzetta Umberto Giordano, 2, 20122 Milano (MI)
+- Sede operativa: Via Giovanni Gioacchino Winckelmann, 1, 20146 Milano (MI)
+- Sito: https://www.edos.it
 - Email: info@edos.it
-
-## Chi siamo
-
-Edos Digital Solutions costruisce piattaforme digitali su misura per aziende che hanno bisogno di tecnologia seria — non un sito vetrina. Configuratori di prodotto, portali B2B, e-commerce multi-sede, gestionali custom. Team senior, 100% italiano, niente offshore, niente junior nascosti. Lavoriamo anche con agenzie marketing come partner tecnico.
-
-## Servizi
-
-- [Web & Commerce](https://www.edos.it/servizi/web-commerce/): Siti aziendali, landing page ed e-commerce
-- [App & WebApp](https://www.edos.it/servizi/app-webapp/): App mobile, web app e soluzioni ibride
-- [Platform Engineering](https://www.edos.it/servizi/platform-engineering/): Piattaforme custom scalabili
-- [AI Integration](https://www.edos.it/servizi/ai-integration/): Automazione intelligente, RAG, agenti AI
-- [Product Design](https://www.edos.it/servizi/product-design/): UX/UI design, design system, user experience
-- [Technical Advisory](https://www.edos.it/servizi/technical-advisory/): Consulenza tecnica e architetturale
-- [CTO as a Service](https://www.edos.it/servizi/cto-as-a-service/): Direzione tecnica dedicata
-- [Continuity & Evolution](https://www.edos.it/servizi/continuity-evolution/): Manutenzione, monitoraggio, evoluzione
-
-## Settori
-
-- [Food & Beverage / GDO](https://www.edos.it/settori/food-beverage-gdo/)
-- [Retail / Consumer Goods](https://www.edos.it/settori/retail-consumer-goods/)
-- [Industrial / Manifatturiero B2B](https://www.edos.it/settori/industrial-manifatturiero-b2b/)
-- [Real Estate / Costruttori](https://www.edos.it/settori/real-estate-costruttori/)
-- [Finance / Banking](https://www.edos.it/settori/finance-banking/)
-- [Fashion / Luxury](https://www.edos.it/settori/fashion-luxury/)
-- [Technology / SaaS](https://www.edos.it/settori/technology-saas/)
-
-## Numeri
-
-- 40+ progetti completati
-- 100% consegne puntuali
-- 12+ professionisti senior
-- 8+ anni di esperienza media
-
-## Metodo PartnerFlow
-
-Il metodo di lavoro Edos prevede:
-1. Assessment tecnico del progetto
-2. Proposta tecnica e timeline
-3. Sviluppo con sprint bisettimanali
-4. Review e QA continui
-5. Deploy e handoff completo
-
-Ogni progetto include NDA garantito, accesso CRM trasparente, PM dedicato e comunicazione in italiano.
-
-## Offerta Retainer
-
-[Reparto Tech Dedicato](https://www.edos.it/retainer/) — Team senior in retainer mensile per aziende che hanno bisogno di tecnologia seria senza assumere un reparto IT interno. Include PM, sviluppatori senior e designer dedicati, dashboard PartnerFlow real-time, SLA di consegna scritto, onboarding in 48 ore. Piani da €8.000 a €15.000/mese, commitment trimestrale, primo progetto a commessa prima del retainer.
-
-## Risorse gratuite e tool
-
-- [Audit digitale gratuito](https://www.edos.it/audit-gratuito/) — Form 5 domande → report scritto entro 48 ore con 3 interventi prioritari per il tuo settore. Zero follow-up commerciali non richiesti.
-- [Calcolatore ROI configuratore preventivi](https://www.edos.it/tools/calcolatore-roi-configuratore/) — Tool interattivo che stima ore risparmiate, costo opportunità e revenue potenziale automatizzando la preventivazione manuale. Calcolo istantaneo senza email, report dettagliato opzionale.
-- [Sicurezza & Compliance](https://www.edos.it/sicurezza-compliance/) — Come Edos protegge dati, codice e progetti: GDPR, NDA, hosting EU, proprietà del codice, logging, audit esterni e reference call.
-- [PartnerFlow — Il metodo](https://www.edos.it/metodo/) — Framework operativo in 4 fasi (Discovery, Pianificazione, Sviluppo, Supporto) applicato su ogni progetto complesso.
-- [Tool gratuiti (hub)](https://www.edos.it/tools/) — Hub dei calcolatori e strumenti gratuiti di analisi ROI per progetti tech B2B.
-- [Blog](https://www.edos.it/blog/) — Insight e storie di prodotto dai progetti reali Edos.
-
-## Pagine principali
-
-- [Homepage](https://www.edos.it/)
-- [Reparto Tech Dedicato (Retainer)](https://www.edos.it/retainer/)
-- [Per le agenzie](https://www.edos.it/per-le-agenzie/)
-- [PartnerFlow — Metodo](https://www.edos.it/metodo/)
-- [Sicurezza & Compliance](https://www.edos.it/sicurezza-compliance/)
-- [Audit digitale gratuito](https://www.edos.it/audit-gratuito/)
-- [Calcolatore ROI configuratore](https://www.edos.it/tools/calcolatore-roi-configuratore/)
-- [Servizi](https://www.edos.it/servizi/)
-- [Settori](https://www.edos.it/settori/)
-- [Case Study](https://www.edos.it/case-study/)
-- [Team](https://www.edos.it/team/)
-- [FAQ](https://www.edos.it/faq/)
-- [Contatti](https://www.edos.it/contatti/)
-- [Lavora con noi](https://www.edos.it/lavora-con-noi/)
-
-## Case Study (selezione)
-
-- [E-commerce B2B Treere](https://www.edos.it/case-study/ecommerce-b2b-treere/): E-commerce B2B per network franchising con 800+ affiliati
-- [E-commerce headless brand luxury](https://www.edos.it/case-study/ecommerce-headless-brand-luxury/): E-commerce headless per brand luxury
-- [Piattaforma ordini GDO](https://www.edos.it/case-study/piattaforma-ordini-gdo/): Piattaforma ordini per grande distribuzione
-- [Agente AI qualifica lead](https://www.edos.it/case-study/agente-ai-qualifica-lead/): Agente AI per qualificazione automatica dei lead
-- [Dashboard analytics SaaS](https://www.edos.it/case-study/dashboard-analytics-saas/): Dashboard analytics per piattaforma SaaS
-- [Piattaforma booking hospitality](https://www.edos.it/case-study/piattaforma-booking-gruppo-hospitality/): Piattaforma booking per gruppo hospitality
-- [Configuratore prodotto automotive](https://www.edos.it/case-study/configuratore-prodotto-automotive/): Configuratore prodotto per il settore automotive
-- [RAG agentico analisi documentazione](https://www.edos.it/case-study/rag-agentico-analisi-documentazione/): Sistema RAG agentico per analisi documentale
-- [App mobile catena retail](https://www.edos.it/case-study/app-mobile-catena-retail/): App mobile per catena retail
-- [Piattaforma AI automazione preventivi](https://www.edos.it/case-study/piattaforma-ai-automazione-preventivi/): Piattaforma AI per automazione preventivi
-
-## Lavora con noi
-
-Collaboriamo con professionisti senior in P.IVA, da remoto, comunicazione in italiano:
-- [Full Stack Developer](https://www.edos.it/lavora-con-noi/full-stack-developer/)
-- [UX/UI Designer](https://www.edos.it/lavora-con-noi/ux-ui-designer/)
-- [Project Manager](https://www.edos.it/lavora-con-noi/project-manager/)
-- [App Developer](https://www.edos.it/lavora-con-noi/app-developer/)
