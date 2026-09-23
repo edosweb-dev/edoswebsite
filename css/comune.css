@@ -32,3 +32,9 @@
   .reveal,.reveal-scale,.reveal-right{opacity:1!important;transform:none!important;transition:none!important}
   .tech-track,.fixed-cta-ring{animation:none!important}
 }
+/* Su telefono il titolo e il testo dell'apertura compaiono subito, senza entrata animata:
+   il titolo è il primo contenuto che si vede e aspettare l'animazione rallentava la pagina */
+@media(max-width:900px){
+  .hero h1,.hero-sub,.hero-eyebrow,.hero-ctas,.page-hero h1,.page-hero-sub,.cs-hero h1,.cs-hero-lead,.cs-hero-meta,
+  .ty-content h1,.ty-content p,.ty-actions,.error-inner h1,.error-sub,.error-cta,.error-cards{animation:none!important;opacity:1!important;transform:none!important}
+}
