@@ -2,12 +2,21 @@
 <html lang="it">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EBVD6CYMX8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EBVD6CYMX8');
+  gtag('consent', 'default', {analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+  /* Google Analytics si carica solo dopo il consenso alle statistiche (vedi js/cookie-consent.js) */
+  window.edosLoadAnalytics = function(){
+    if(window.__edosGA) return; window.__edosGA = 1;
+    gtag('consent', 'update', {analytics_storage: 'granted'});
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EBVD6CYMX8';
+    document.head.appendChild(s);
+    gtag('js', new Date()); gtag('config', 'G-EBVD6CYMX8');
+  };
+  try { var m = document.cookie.match(/(?:^|; )edos_cookie_consent=([^;]*)/);
+    if(m && JSON.parse(decodeURIComponent(m[1])).analytics) window.edosLoadAnalytics(); } catch(e){}
 </script>
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -698,7 +707,7 @@ body { padding-top: 0 !important; }
   </div>
 </footer>
 <script src="/js/main.js?v=20260923" defer></script>
-<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/cookie-consent.js?v=20260923" defer></script>
 <script>
 /* Animated counters — count up from zero on scroll */
 (function(){

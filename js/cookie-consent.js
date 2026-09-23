@@ -36,8 +36,57 @@
   function savePrefs(prefs){
     prefs.necessary = true; // always on
     setCookie(COOKIE_NAME, JSON.stringify(prefs), COOKIE_DAYS);
+    applyAnalytics(prefs);
     document.dispatchEvent(new CustomEvent('cookie-consent-update', {detail: prefs}));
     fireCallbacks(prefs);
+  }
+
+
+  /* ---------- Google Analytics: parte solo con il consenso alle statistiche ---------- */
+  var GA_ID = 'G-EBVD6CYMX8';
+  function clearGaCookies(){
+    var host = location.hostname, root = host.replace(/^www\./,'');
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if(/^_ga/.test(n)){
+        ['', ';domain=' + host, ';domain=.' + root].forEach(function(d){
+          document.cookie = n + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/' + d;
+        });
+      }
+    });
+  }
+  function applyAnalytics(prefs){
+    if(prefs && prefs.analytics){
+      window['ga-disable-' + GA_ID] = false;
+      if(window.edosLoadAnalytics) window.edosLoadAnalytics();
+    } else {
+      window['ga-disable-' + GA_ID] = true;
+      if(window.gtag) window.gtag('consent', 'update', {analytics_storage: 'denied'});
+      clearGaCookies();
+    }
+  }
+
+  /* ---------- bottone sempre visibile per cambiare la scelta ---------- */
+  function createFab(){
+    if(document.getElementById('cookieFab')) return;
+    var st = document.createElement('style');
+    st.textContent = '.cc-fab{position:fixed;left:20px;bottom:20px;z-index:95;display:inline-flex;align-items:center;gap:8px;padding:9px 15px 9px 11px;border-radius:100px;background:#fff;color:#0D1B3E;border:1px solid rgba(13,27,62,.16);box-shadow:0 6px 20px rgba(6,14,34,.16);font:600 .78rem/1 Inter,system-ui,sans-serif;cursor:pointer;transition:border-color .2s,box-shadow .2s}'
+      + '.cc-fab svg{width:18px;height:18px;color:#3B6FE8;flex-shrink:0}'
+      + '.cc-fab:hover{border-color:#3B6FE8;box-shadow:0 8px 24px rgba(59,111,232,.22)}'
+      + '.cc-fab:focus-visible{outline:2px solid #3B6FE8;outline-offset:3px}'
+      + '.cc-fab[hidden]{display:none}'
+      + '@media(max-width:640px){.cc-fab{left:12px;bottom:14px;padding:10px}.cc-fab span{display:none}}';
+    document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.type = 'button'; b.id = 'cookieFab'; b.className = 'cc-fab'; b.hidden = true;
+    b.setAttribute('aria-label', 'Gestisci le preferenze sui cookie');
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg><span>Cookie</span>';
+    b.addEventListener('click', function(){ showPrefs(); });
+    document.body.appendChild(b);
+  }
+  function setFab(visible){
+    var b = document.getElementById('cookieFab');
+    if(b) b.hidden = !visible;
   }
 
   /* ---------- callbacks ---------- */
@@ -134,12 +183,14 @@
     var w = document.getElementById('cookieWall');
     if(b) b.classList.add('cb-visible');
     if(w) w.classList.add('cw-visible');
+    setFab(false);
   }
   function hideBanner(){
     var b = document.getElementById('cookieBanner');
     var w = document.getElementById('cookieWall');
     if(b) b.classList.remove('cb-visible');
     if(w) w.classList.remove('cw-visible');
+    if(getPrefs()) setFab(true);
   }
   function showPrefs(){
     var p = document.getElementById('cookiePrefs');
@@ -151,12 +202,14 @@
     if(a) a.checked = !!prefs.analytics;
     if(m) m.checked = !!prefs.marketing;
     p.classList.add('cp-visible');
+    setFab(false);
     document.body.style.overflow = 'hidden';
   }
   function hidePrefs(){
     var p = document.getElementById('cookiePrefs');
     if(p) p.classList.remove('cp-visible');
     document.body.style.overflow = '';
+    if(getPrefs()) setFab(true);
   }
 
   function acceptAll(){
@@ -184,6 +237,7 @@
   /* ---------- init ---------- */
   function init(){
     createBanner();
+    createFab();
 
     // Bind events
     document.getElementById('cbAcceptAll').addEventListener('click', acceptAll);
@@ -208,6 +262,8 @@
       // Small delay for page render
       setTimeout(showBanner, 600);
     } else {
+      applyAnalytics(prefs);
+      setFab(true);
       fireCallbacks(prefs);
     }
   }
