@@ -157,7 +157,7 @@ body { padding-top: 0 !important; }
 @media(max-width:900px){.cs-shots.cs-shots,.cs-shots:has(> .cs-shot:nth-child(3):last-child){grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cs-shot .cs-frame{transition:none}.cs-shot a:hover .cs-frame{transform:none}}
 </style>
-<link rel="stylesheet" href="/css/comune.css?v=20260923d">
+<link rel="stylesheet" href="/css/comune.css?v=20260923e">
 </head>
 <body>
 
@@ -192,7 +192,7 @@ body { padding-top: 0 !important; }
     <li role="none"><a href="/contatti" class="nf-link" role="menuitem">Contatti</a></li>
   </ul>
 
-  <a href="/contatti" class="nf-cta">
+  <a href="https://calendly.com/giuseppe-famiani-edos/discovery-meeting" class="nf-cta" target="_blank" rel="noopener">
     <span>Prenota call</span>
     <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
   </a>
@@ -261,7 +261,7 @@ body { padding-top: 0 !important; }
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Cosa abbiamo <span>costruito</span></h2>
-      <p class="ed-text">Il centro del sistema &egrave; il servizio. Il referente dell&rsquo;azienda cliente lo richiede dal suo accesso: data, orario, passeggeri con indirizzi di presa e destinazione, metodo di pagamento, note. L&rsquo;amministrazione lo accetta, lo modifica o lo rifiuta, e il servizio entra in agenda come da assegnare. Da l&igrave; si affida a un dipendente, a un socio o a un conducente esterno, e passa per cinque stati: da assegnare, assegnato, in corso, completato, consuntivato.</p>
+      <p class="ed-text"><strong class="ed-guida">Il centro del sistema &egrave; il servizio.</strong>Il referente dell&rsquo;azienda cliente lo richiede dal suo accesso: data, orario, passeggeri con indirizzi di presa e destinazione, metodo di pagamento, note. L&rsquo;amministrazione lo accetta, lo modifica o lo rifiuta, e il servizio entra in agenda come da assegnare. Da l&igrave; si affida a un dipendente, a un socio o a un conducente esterno, e passa per cinque stati: da assegnare, assegnato, in corso, completato, consuntivato.</p>
       <p class="ed-text">Chi guida vede solo i servizi che gli sono stati assegnati. A fine corsa conferma dal telefono incasso, metodo di pagamento e ore lavorate, e il cliente pu&ograve; firmare direttamente sullo schermo. L&rsquo;amministrazione controlla, completa i dati che mancano e consuntiva il servizio, che da quel momento &egrave; chiuso.</p>
       <p class="ed-text">La parte economica ha i suoi registri. Gli incassi in contanti e con carta restano separati fin dall&rsquo;inserimento. Il conducente registra le spese pagate dal proprio fondo cassa con importo e causale; l&rsquo;amministrazione registra i movimenti aziendali indicando se sono spese, incassi o prelievi, con quale modalit&agrave; (bonifico, F24, contanti, carta) e quale socio li ha fatti. Il compenso di ciascun socio si calcola dai chilometri dei servizi, con una tabella di tariffe per fasce, pi&ugrave; le ore di attesa e un coefficiente di aumento, e il sistema mostra il dettaglio del calcolo prima della conferma.</p>
       <p class="ed-text">Ogni mese il sistema genera un report in PDF per azienda e per referente, con servizi, ore e importi, e lo archivia. Accanto ci sono il calendario dei turni con ferie e permessi, l&rsquo;anagrafica dei veicoli e quella dei conducenti esterni. I permessi stanno nel database: ogni azienda cliente vede solo i propri servizi e i propri report, anche se qualcuno prova a chiedere altro.</p>
@@ -269,7 +269,7 @@ body { padding-top: 0 !important; }
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Come abbiamo <span>lavorato</span></h2>
-      <p class="ed-text">Il primo commit &egrave; del 9 maggio 2025 e il sistema &egrave; in uso da allora. Lo schema del database &egrave; cresciuto per passi, con 99 migrazioni: ogni modulo nuovo, dai report alla gestione dei compensi fino al backup degli utenti, &egrave; arrivato come estensione di quello che c&rsquo;era gi&agrave;. Le funzioni sono state verificate su un elenco di casi di prova scritto per questo progetto.</p>
+      <p class="ed-text"><strong class="ed-guida">Il primo commit &egrave; del 9 maggio 2025 e il sistema &egrave; in uso da allora.</strong>Lo schema del database &egrave; cresciuto per passi, con 99 migrazioni: ogni modulo nuovo, dai report alla gestione dei compensi fino al backup degli utenti, &egrave; arrivato come estensione di quello che c&rsquo;era gi&agrave;. Le funzioni sono state verificate su un elenco di casi di prova scritto per questo progetto.</p>
       <p class="ed-text">Dopo il lancio siamo rimasti sul sistema in produzione, con correzioni ed evoluzioni che nascono dall&rsquo;uso di tutti i giorni. Un esempio recente, di agosto 2026: abbiamo spostato l&rsquo;invio delle email su un nuovo servizio, aggiunto una chiave che impedisce di mandare due volte la stessa mail quando un invio viene ritentato, e fatto in modo che l&rsquo;interfaccia segni un&rsquo;email come inviata solo quando &egrave; partita davvero, conservando il motivo quando qualcosa va storto.</p>
     </div>
 

@@ -123,7 +123,7 @@ body { padding-top: 0 !important; }
 .ed-text+.ed-text{margin-top:1em}
 .ed-text{max-width:780px}
 </style>
-<link rel="stylesheet" href="/css/comune.css?v=20260923d">
+<link rel="stylesheet" href="/css/comune.css?v=20260923e">
 </head>
 <body>
 
@@ -158,7 +158,7 @@ body { padding-top: 0 !important; }
     <li role="none"><a href="/contatti" class="nf-link" role="menuitem">Contatti</a></li>
   </ul>
 
-  <a href="/contatti" class="nf-cta">
+  <a href="https://calendly.com/giuseppe-famiani-edos/discovery-meeting" class="nf-cta" target="_blank" rel="noopener">
     <span>Prenota call</span>
     <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h10M10 5l4 4-4 4"/></svg>
   </a>
@@ -216,21 +216,21 @@ body { padding-top: 0 !important; }
 
         <div class="ed-block reveal">
       <h2 class="ed-heading">La situazione <span>di partenza</span></h2>
-      <p class="ed-text">Una fondazione avvia la prima edizione di un premio internazionale per giovani ricercatori, con una materia diversa a ogni edizione. Essendo la prima, c&rsquo;era un sistema da costruire da zero e un calendario preciso: il bando apre e chiude in date fissate, e le candidature possono arrivare da tutto il mondo, in italiano o in inglese.</p>
+      <p class="ed-text"><strong class="ed-guida">Una fondazione avvia la prima edizione di un premio internazionale per giovani ricercatori, con una materia diversa a ogni edizione.</strong>Essendo la prima, c&rsquo;era un sistema da costruire da zero e un calendario preciso: il bando apre e chiude in date fissate, e le candidature possono arrivare da tutto il mondo, in italiano o in inglese.</p>
       <p class="ed-text">Una regola del premio ha guidato tutto il modello dati: il candidato non si propone da solo. A candidarlo &egrave; sempre un terzo, una persona, un&rsquo;universit&agrave; o un ente. Ogni candidatura ha quindi due anagrafiche, quella di chi propone e quella di chi viene proposto, e la piattaforma le tiene insieme dalla prima bozza fino all&rsquo;esito.</p>
       <p class="ed-text">La segreteria della fondazione doveva poter raccogliere le candidature, controllarle, chiedere correzioni quando manca qualcosa e preparare il materiale per la giuria. Per scelta della fondazione la giuria resta fuori dalla piattaforma e riceve un fascicolo pronto da leggere.</p>
     </div>
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Cosa stiamo <span>costruendo</span></h2>
-      <p class="ed-text">Chi propone compila il modulo in pi&ugrave; volte, perch&eacute; la bozza si salva. Carica il curriculum in PDF, le pubblicazioni, i premi e i riconoscimenti del candidato, e d&agrave; i consensi, che restano registrati nella versione accettata in quel momento. Se la segreteria chiede una correzione, la candidatura torna modificabile. A fine percorso l&rsquo;esito arriva anche al candidato.</p>
+      <p class="ed-text"><strong class="ed-guida">Chi propone compila il modulo in pi&ugrave; volte, perch&eacute; la bozza si salva.</strong>Carica il curriculum in PDF, le pubblicazioni, i premi e i riconoscimenti del candidato, e d&agrave; i consensi, che restano registrati nella versione accettata in quel momento. Se la segreteria chiede una correzione, la candidatura torna modificabile. A fine percorso l&rsquo;esito arriva anche al candidato.</p>
       <p class="ed-text">La segreteria lavora su un elenco con filtri combinabili, apre il fascicolo cliccando la riga, segna una candidatura come da verificare o non ammessa, scarica la scheda in PDF ed esporta tutto in Excel. Per la giuria prepara un pacchetto per ogni giurato, protetto da password. L&rsquo;amministrazione gestisce le edizioni, le date di apertura e chiusura all&rsquo;ora scelta, i testi delle pagine e i modelli delle email, in due lingue, direttamente dal pannello.</p>
       <p class="ed-text">Tre scelte tecniche. Le regole sui singoli campi vivono nel codice, quelle strutturali nel database: una candidatura senza un allegato obbligatorio si ferma l&igrave;, qualunque strada prenda. La configurazione &egrave; per edizione, quindi la prossima potr&agrave; cambiare materia, requisiti e date senza toccare il codice. Le citt&agrave; del mondo, oltre 170 mila, stanno dentro il database, cos&igrave; la localizzazione dei candidati gira senza un servizio esterno a pagamento.</p>
     </div>
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Come stiamo <span>lavorando</span></h2>
-      <p class="ed-text">Abbiamo costruito prima il modello dati e lo strato server, poi le schermate della segreteria, dell&rsquo;amministrazione e le pagine pubbliche. A fine agosto la fondazione ha avuto un ambiente da visitare; le richieste emerse guardandolo sono state raccolte e rilasciate insieme, tra cui i filtri combinati, la scheda in PDF e l&rsquo;orario di chiusura del bando scelto dalla segreteria.</p>
+      <p class="ed-text"><strong class="ed-guida">Abbiamo costruito prima il modello dati e lo strato server, poi le schermate della segreteria, dell&rsquo;amministrazione e le pagine pubbliche.</strong>A fine agosto la fondazione ha avuto un ambiente da visitare; le richieste emerse guardandolo sono state raccolte e rilasciate insieme, tra cui i filtri combinati, la scheda in PDF e l&rsquo;orario di chiusura del bando scelto dalla segreteria.</p>
       <p class="ed-text">Un test automatico percorre l&rsquo;intera candidatura dal vero, dalla bozza all&rsquo;invio, con 35 verifiche. Alla prima esecuzione ha trovato due difetti reali che i controlli sul codice e sul database, da soli, non avevano visto.</p>
       <p class="ed-text">Le prestazioni le abbiamo misurate su un volume credibile: il progetto &egrave; dimensionato su circa duecento fascicoli, e la prova ne usa 208, ciascuno con proponente, candidato, un riconoscimento e una pubblicazione. L&rsquo;Excel di tutte le candidature esce in meno di mezzo secondo, e lo stesso vale per il PDF dell&rsquo;elenco.</p>
     </div>

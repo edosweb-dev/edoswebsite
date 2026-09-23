@@ -52,3 +52,17 @@
   .breadcrumb li{white-space:nowrap}
   .breadcrumb ol:has(li:nth-child(5)) .breadcrumb-current,.breadcrumb ol:has(li:nth-child(5)) li.breadcrumb-sep:nth-last-child(2){display:none}
 }
+
+/* Livelli di lettura su tutto il sito (23/09/2026)
+   1. titolo di sezione  2. frase guida: scura, più grande, in grassetto, su una riga sua
+   3. testo di dettaglio: più scuro del grigio di prima. Il grigio chiaro resta solo per etichette e note. */
+.hn-lista-testa p{font-size:1.25rem;line-height:1.6;color:var(--text-body)}
+.hn-lista-testa p strong,.ed-guida{display:block;margin-bottom:8px;color:var(--text);font-family:var(--font-display);font-weight:700;font-size:1.375rem;line-height:1.35;letter-spacing:-.01em;text-wrap:balance}
+.hn-elenco h3,.sv-cosa-voce h3{font-size:1.25rem}
+.hn-elenco p,.sv-cosa-voce p{color:var(--text-body);font-size:1rem}
+.sv-risposta{font-size:1rem;color:var(--text)}
+.c-desc,.ocs-item p{color:var(--text-body)}
+.cs-hero-lead{color:rgba(255,255,255,.78)}
+.cta-final .cta-desc strong{display:block;color:#fff;font-weight:600;margin-bottom:4px}
+.ed-text .ed-guida{margin-bottom:10px}
+@media(max-width:640px){.hn-lista-testa p{font-size:1.0625rem}.hn-lista-testa p strong,.ed-guida{font-size:1.1875rem}}
