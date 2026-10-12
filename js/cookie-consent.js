@@ -66,6 +66,18 @@
     }
   }
 
+  /* ---------- misura dei contatti: click su Calendly, email e telefono ----------
+   * Senza consenso gtag resta in coda nel dataLayer e non manda nulla. */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if(!a || !window.gtag) return;
+    var href = a.getAttribute('href'), tipo = null;
+    if(/calendly\.com\//.test(href)) tipo = 'calendly_click';
+    else if(/^mailto:/i.test(href)) tipo = 'email_click';
+    else if(/^tel:/i.test(href)) tipo = 'phone_click';
+    if(tipo) window.gtag('event', tipo, {page_path: location.pathname, link_text: (a.textContent || '').trim().slice(0, 80)});
+  }, true);
+
   /* ---------- bottone sempre visibile per cambiare la scelta ---------- */
   function createFab(){
     if(document.getElementById('cookieFab')) return;

@@ -744,7 +744,11 @@ body { padding-top: 0 !important; }
       return res.json();
     })
     .then(function(){
-      window.location.href='/contatti/grazie/';
+      var vai=function(){ if(vai.fatto) return; vai.fatto=1; window.location.href='/contatti/grazie/'; };
+      if(window.gtag && window.__edosGA){
+        window.gtag('event','generate_lead',{form_id:'contatti',reason:data.reason,event_callback:vai});
+        setTimeout(vai,1000);
+      } else vai();
     })
     .catch(function(err){
       errorBanner.textContent='Si \u00e8 verificato un errore nell\'invio del messaggio. Riprovate o scriveteci a info@edos.it.';
@@ -755,7 +759,7 @@ body { padding-top: 0 !important; }
   });
 })();
 </script>
-<script src="/js/cookie-consent.js?v=20260923" defer></script>
+<script src="/js/cookie-consent.js?v=20261012" defer></script>
 <script>
 (function(){
   var nav = document.getElementById('mainNav');
