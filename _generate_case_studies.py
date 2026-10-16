@@ -859,7 +859,7 @@ FOOTER = '''<footer class="footer">
       </div>
     </div>
     <a href="/" class="footer-logo"><img src="https://www.edos.it/wp-content/uploads/2025/02/logo-white-edos.png" alt="Edos Digital Solutions" loading="lazy" decoding="async"></a>
-    <div class="footer-info">Edos Srl &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>Sede legale: Piazzetta Umberto Giordano, 2 &middot; 20122 Milano (MI) &mdash; Sede operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)</div>
+    <div class="footer-info">Edos Srl &middot; P.IVA 14030760962 &middot; C.C.I.A.A. Milano REA MI 2758088 &middot; Capitale Sociale &euro; 20.000,00 I.V.<br>Sede legale e operativa: Via Giovanni Gioacchino Winckelmann, 1 &middot; 20146 Milano (MI)</div>
     <div class="footer-bottom"><span>&copy; 2026 Edos Digital Solutions</span><div class="footer-legal"><a href="/privacy-policy">Privacy Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/termini-e-condizioni">Termini e Condizioni</a></div></div>
   </div>
 </footer>'''

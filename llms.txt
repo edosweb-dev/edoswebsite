@@ -63,7 +63,6 @@ Progetti reali. Alcuni con il nome del cliente, altri in forma anonima per riser
 
 - Ragione sociale: Edos Srl
 - P.IVA: 14030760962
-- Sede legale: Piazzetta Umberto Giordano, 2, 20122 Milano (MI)
-- Sede operativa: Via Giovanni Gioacchino Winckelmann, 1, 20146 Milano (MI)
+- Sede legale e operativa: Via Giovanni Gioacchino Winckelmann, 1, 20146 Milano (MI)
 - Sito: https://www.edos.it
 - Email: info@edos.it
