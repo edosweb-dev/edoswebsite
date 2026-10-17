@@ -1,95 +1,2301 @@
-# Edos: indice completo delle pagine
+# Edos · testo completo del sito
 
-> Edos è una società di sviluppo web. Sviluppiamo il software sul modo di lavorare dei nostri clienti: piattaforme per le pratiche, collegate ai gestionali che usano già, con l'AI che compila i campi.
-> Sito: https://www.edos.it · Email: info@edos.it
-> Versione sintetica: https://www.edos.it/llms.txt
+> Edos è una società di sviluppo web. Sviluppiamo il software sul modo di lavorare dei nostri clienti: piattaforme per le aziende che lavorano a pratiche (credito, finanza agevolata, assicurazioni, perizie), collegate ai gestionali che usano già, con l'AI che legge i documenti e compila i campi. Un referente unico, dall'analisi al supporto.
 
-## [Edos · Piattaforme digitali su misura per aziende](https://www.edos.it/)
-Sviluppiamo il software sul vostro modo di lavorare: piattaforme per le pratiche, collegate ai gestionali che usate già, con l'AI che compila i campi.
+Questo file raccoglie il testo delle pagine pubbliche di www.edos.it, una dopo l’altra. L’indice breve è in https://www.edos.it/llms.txt.
 
-## [Chi siamo · Edos](https://www.edos.it/azienda/)
-Edos: società di sviluppo web. Costruiamo le piattaforme su cui girano le pratiche: credito, finanza agevolata, assicurazioni. Un referente unico, dall'analisi al supporto.
+Edos Srl · P.IVA 14030760962 · Via Giovanni Gioacchino Winckelmann 1, 20146 Milano · info@edos.it · +39 388 342 4454
 
-## [Servizi · Edos](https://www.edos.it/servizi/)
-Partite dalla situazione in cui vi riconoscete: gestionali su misura, AI nelle pratiche, app, interfacce semplici, assistenza nel tempo, siti ed e-commerce.
 
-## [Gestionale su misura per le pratiche · Edos](https://www.edos.it/servizi/gestionali-su-misura/)
-Un gestionale su misura per le vostre pratiche: stato, documenti, area clienti e collegamenti ai programmi che usate già, Excel compreso.
+---
 
-## [AI per le pratiche: legge i documenti e compila i campi · Edos](https://www.edos.it/servizi/ai-nelle-pratiche/)
-L'intelligenza artificiale dentro le vostre pratiche: legge PEC, visure e PDF, compila i campi e propone il passo successivo. La persona controlla e decide.
+URL: https://www.edos.it/
+Descrizione: Sviluppiamo il software sul vostro modo di lavorare: piattaforme per le pratiche, collegate ai gestionali che usate già, con l'AI che compila i campi.
 
-## [App per smartphone e web app su misura · Edos](https://www.edos.it/servizi/app-web-app/)
-App per chi lavora fuori ufficio: turni, incassi, firme e documenti dal telefono, collegati alla stessa piattaforma dell'ufficio.
+## Sviluppiamo il software sul vostro modo di lavorare
 
-## [Interfacce semplici per software aziendali · Edos](https://www.edos.it/servizi/interfacce-semplici/)
-Schermate pensate per chi le usa tutto il giorno: ogni ruolo vede quello che gli serve, e un'operazione si fa in pochi passaggi.
+Segue ogni pratica, si collega ai gestionali che usate già, e l'intelligenza artificiale compila i campi.
 
-## [Assistenza e manutenzione di piattaforme web · Edos](https://www.edos.it/servizi/assistenza-evoluzione/)
-Seguiamo nel tempo le piattaforme che costruiamo e quelle ereditate da altri: aggiornamenti, correzioni e funzioni nuove, con lo stesso referente.
+### Le aziende con cui lavoriamo hanno 5 cose in comune
 
-## [Siti aziendali ed e-commerce B2B · Edos](https://www.edos.it/servizi/siti-ecommerce/)
-Siti aziendali ed e-commerce collegati al vostro modo di lavorare: catalogo, ordini, contratti e fatture in un posto solo, anche per la vostra rete.
+Ne bastano tre per riconoscersi. Le abbiamo ritrovate in 19 aziende di settori diversi: qualcuno apre la pratica, altri la lavorano, e intanto al telefono c'è chi aspetta di sapere a che punto è.
 
-## [Case Study · Edos](https://www.edos.it/case-study/)
-Progetti reali di Edos: gestionali su misura, AI nelle pratiche, app, siti ed e-commerce. Con il nome del cliente o in forma anonima, conclusi e in corso.
+#### Il lavoro entra come una pratica
 
-## [Orchestra: marketplace per musicisti e conservatori | Case Study | Edos](https://www.edos.it/case-study/marketplace-musicisti-organizzatori/)
-Case study Orchestra: piattaforma web che mette in contatto i musicisti dei conservatori con privati e aziende. Profili, annunci con candidature, abbonamento Premium, compenso concordato direttamente.
+Una domanda di finanziamento, un mandato, una commessa. Da quel momento ha un numero e uno stato.
 
-## [MutuiSì: CRM B2C per mutui online | Case Study | Edos](https://www.edos.it/case-study/crm-b2c-richieste-mutuo/)
-Case study MutuiSì: il project management del rinnovo della piattaforma di un mediatore creditizio, con calcolo e confronto delle rate, richieste qualificate per i consulenti e collegamento al CRM.
+#### Passa da 3 o 4 mani
 
-## [Piattaforma instant win per brand energia | Case Study | Edos](https://www.edos.it/case-study/piattaforma-instant-win-brand-energia/)
-Case study: web app instant win per un fornitore di energia, collegata alla sua app: partite, squadra del cuore, esito immediato, email di vincita e calendario caricato da CSV.
+Ognuno aggiunge la sua parte e i suoi documenti. Per sapere a che punto è una pratica, oggi si alza il telefono.
 
-## [Supporto tecnico piattaforma No-Profit | Case Study | Edos](https://www.edos.it/case-study/supporto-tecnico-piattaforma-no-profit/)
-Case study: presa in carico del sito per le donazioni e dell’area personale dei sostenitori di un programma no-profit bilingue, con CRM, pagamenti ed email collegati.
+#### Alla fine esce qualcosa che vale soldi
 
-## [Sito studio professionale | Case Study | Edos](https://www.edos.it/case-study/sito-istituzionale-studio-professionale/)
-Case study: sito istituzionale per uno studio notarile nato dall’unione di due studi, con le competenze organizzate per ambito e la posta di tutti portata su un dominio unico.
+Una delibera, un'erogazione, una provvigione.
 
-## [TreeRe: e-commerce B2B per network franchising | Case Study | Edos](https://www.edos.it/case-study/ecommerce-b2b-network-franchising/)
-Case study TreeRe: e-commerce B2B per un network di consulenti immobiliari in franchising, con acquisti, fatturazione automatica, firma digitale dei contratti e accesso unico.
+#### Oggi gira su Excel e posta elettronica
 
-## [Set&Gol: app per organizzare partite sportive amatoriali | Case Study | Edos](https://www.edos.it/case-study/app-organizzazione-eventi-sportivi/)
-Case study Set&Gol: app per iOS e Android e portale web per organizzare partite amatoriali, gestire squadre e prenotare campi, con un calendario per i gestori delle strutture sportive.
+Oppure su un gestionale che tiene la contabilità. La pratica, quella, sta ancora nei fogli.
 
-## [Investigatore Immobiliare: piattaforma AI per perizie | Case Study | Edos](https://www.edos.it/case-study/piattaforma-ai-perizie-immobiliari/)
-Case study: la piattaforma di Investigatore Immobiliare, società tecnica che verifica gli immobili prima dell’acquisto. Richieste, pratiche, portale per l’acquirente e relazione scritta con l’AI a partire dalle foto del sopralluogo.
+#### E sta crescendo
 
-## [TaxiTime: gestionale per servizi NCC e taxi | Case Study | Edos](https://www.edos.it/case-study/gestionale-servizi-ncc-taxi/)
-Case study: il gestionale di TaxiTime, azienda di noleggio con conducente. Richieste dei clienti, agenda, incassi, spese, compensi dei soci e report mensili in un unico sistema, in produzione da maggio 2025.
+L'organizzazione che reggeva 20 pratiche al mese, a 100 ne chiede un'altra.
 
-## [Assistenza ed evoluzione per un gruppo multi-piattaforma | Case Study | Edos](https://www.edos.it/case-study/continuity-evolution-gruppo-multipiattaforma/)
-Case study: più di dieci piattaforme sviluppate dal 2025 per lo stesso gruppo, tra agevolazioni, crediti d’imposta e supply chain finance, con registrazione a documenti, approvazioni e permessi nel database.
+### Il vostro gestionale resta.Noi ci mettiamo l'AI in mezzo.
 
-## [Pagina di bilancio per un gruppo assicurativo | Case Study | Edos](https://www.edos.it/case-study/piattaforma-gestionale-assicurativo/)
-Case study: la pagina web bilingue del bilancio annuale di un gruppo assicurativo, con grafici generati dai dati, realizzata per un’agenzia partner e aggiornata nell’edizione successiva sulla stessa base.
+I programmi restano quelli di oggi. L'AI legge la PEC, la visura, il PDF appena arrivato, e riempie la pratica. Chi la segue guarda e decide, sempre.
 
-## [Modulo e-commerce per un’azienda farmaceutica | Case Study | Edos](https://www.edos.it/case-study/modulo-ecommerce-settore-farmaceutico/)
-Case study: e-commerce per un’azienda farmaceutica costruito sul sito WordPress esistente, con WooCommerce, pagamenti con carta e bonifico, ordini inviati al gestionale e staging separato. Progetto in corso.
+Quello che usate già
 
-## [Piattaforma unica per pratiche assicurative | Case Study | Edos](https://www.edos.it/case-study/piattaforma-unica-pratiche-assicurative/)
-Case study: un’agenzia assicurativa sostituisce due sistemi separati con un'unica piattaforma database-first, gestionale, area cliente e canale digitale. Progetto in corso.
+La pratica, nella piattaforma
 
-## [Piattaforma candidature per un premio scientifico | Case Study | Edos](https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/)
-Case study: piattaforma per una fondazione, con candidature a doppia anagrafica proponente/candidato, in italiano e in inglese. Progetto in corso.
+La posta certificata
 
-## [Piattaforma CRM per vendite | Case Study | Edos](https://www.edos.it/case-study/piattaforma-crm-vendite/)
-Case study: riscrittura indipendente del CRM vendite per una società di marketing e vendite, con pipeline a 9 stadi, motore di lavorazione esiti e ruoli granulari. Progetto in corso.
+richieste, allegati
 
-## [Bundle e quiz olfattivo per un brand di profumi | Case Study | Edos](https://www.edos.it/case-study/bundle-quiz-brand-profumi/)
-Case study: pagina bundle con premi a soglia e quiz che consiglia il profumo per Mine Perfume Lab, costruiti dentro Shopify Plus con pannelli gestiti dal cliente.
+I documenti
 
-## [Piattaforma preventivi per una società di trasporti | Case Study | Edos](https://www.edos.it/case-study/piattaforma-preventivi-trasporti/)
-Case study: piattaforma per una società di trasporti che trasforma le email dei clienti in richieste lette dall’AI, raccoglie i preventivi dei trasportatori e propone le offerte migliori con il margine applicato.
+visure, bilanci, PDF
 
-## [Sito per una società di noleggio a lungo termine | Case Study | Edos](https://www.edos.it/case-study/sito-noleggio-lungo-termine/)
-Case study: il nuovo sito di Assirent, noleggio a lungo termine per privati e aziende, scritto su misura con pannello per offerte e contenuti, ruoli per l’agenzia SEO e gli indirizzi del vecchio sito conservati.
+Il gestionale
 
-## [Per le agenzie · Edos](https://www.edos.it/per-le-agenzie/)
-Siamo il team di sviluppo della vostra agenzia: portali, aree riservate, integrazioni ed e-commerce per i vostri clienti, consegnati con il vostro marchio. Il cliente resta vostro.
+clienti, contabilità
 
-## [Contatti · Edos](https://www.edos.it/contatti/)
-Scriveteci per parlare del vostro progetto: rispondiamo entro 24 ore lavorative. Oppure prenotate un appuntamento dal calendario.
+Chi segue la pratica
+
+controlla e decide
+
+Il foglio Excel
+
+pratiche, scadenze
+
+AI Legge, compila e propone
+
+Legge la PEC appena arrivata e apre la pratica
+
+Compila i campi leggendo la visura
+
+Ritrova il cliente nel gestionale
+
+Propone cosa fare dopo, e a chi
+
+Aggiorna il foglio Excel dell'ufficio
+
+Lavora dentro la vostra piattaforma: i dati restano lì.
+
+Pratiche
+
+Dati dimostrativi
+
+Pratica PR-2419
+
+Nuova Edilcasa srl
+
+Arrivata da
+
+PEC del 17 set · visura allegata
+
+Partita IVA
+
+02184330168
+
+Sede
+
+Bergamo · via Borgo Palazzo 112
+
+Attività
+
+ATECO 41.20 · edilizia
+
+Cliente
+
+n. 1042 · 3 pratiche già fatte
+
+Da fare
+
+bilancio 2025 · L. Ferri · 24 set
+
+Excel
+
+pratiche-2026.xlsx · riga 312
+
+3 campi letti dalla visura, controllati da M. Conti
+
+Le tecnologie che utilizziamo
+
+### Tutto il tech di cuila vostra azienda ha bisogno
+
+Siti ed e-commerce che parlano con i vostri programmi: catalogo, ordini, contratti e fatture in un posto solo.
+
+App e web app collegate alla stessa piattaforma dell’ufficio. Ognuno vede la sua parte, da dove si trova.
+
+Gestionale, area clienti e documenti sullo stesso database. Si parte da quello che usate oggi, Excel compreso.
+
+Visure, bilanci, PDF arrivati via PEC: l’AI li legge e compila la pratica. Chi la segue controlla i campi e approva.
+
+Prima parliamo con chi userà lo strumento, poi disegniamo. Ogni ruolo vede la parte che gli serve.
+
+Aggiornamenti, correzioni e funzioni nuove, con la stessa persona che la conosce. Anche se l’ha costruita qualcun altro.
+
+Il vostro progetto può entrare in un bando?
+
+Sì, se la misura lo prevede. Edos è iscritta nell'Elenco Fornitori 4.0 di Unioncamere Lombardia, e un partner nazionale segue la domanda dalla presentazione alla rendicontazione.
+
+### Quello che facciamoraccontato dai risultati.
+
+Progetti veri, conclusi e in corso. Alcuni li raccontiamo con il nome del cliente, altri in forma anonima per riservatezza.
+
+### Raccontateci come lavorate oggi.
+
+Vi diciamo come struttureremmo il vostro flusso di lavoro, Excel compreso,e qual è il primo passo: l'Analisi dei Flussi , inclusa nel progetto.
+
+
+---
+
+URL: https://www.edos.it/azienda/
+Descrizione: Edos è una società di sviluppo web: costruiamo le piattaforme su cui girano le pratiche di credito, finanza agevolata e assicurazioni. Un referente unico.
+
+## Ogni progetto è diverso.Il metodo che lo porta in produzione, no.
+
+### Chi siamo, e per chi lavoriamo
+
+Edos è una società di sviluppo web. Costruiamo le piattaforme su cui girano le pratiche: dalla richiesta che entra al documento che esce.
+
+#### Aziende che lavorano a pratiche
+
+Credito, finanza agevolata, assicurazioni, perizie. Il lavoro entra come una pratica, passa da tre o quattro mani e alla fine esce qualcosa che vale soldi: una delibera, un’erogazione, una provvigione.
+
+#### Un referente, dall’analisi al supporto
+
+Parlate sempre con la stessa persona. Sei mesi dopo il collaudo scrivete a lui, e vi risponde ancora.
+
+#### Anche per le agenzie
+
+Con le agenzie lavoriamo con il loro marchio, e il cliente resta loro. Come funziona
+
+Come lavoriamo · Fase 0
+
+### Chi lavora le pratiche sa dove si inceppano.
+
+Noi glielo chiediamo, ed è la fase più importante di tutto il progetto. In una chat ognuno racconta come lavora davvero, e noi vediamo i punti in cui il flusso rallenta, prima di scrivere una riga di codice.
+
+#### Quando vogliono, da telefono o da pc
+
+Ognuno risponde dal dispositivo che preferisce, nei momenti liberi della giornata. Le ore dedicate alle pratiche restano alle pratiche.
+
+#### Tutti in parallelo
+
+Rispondono tutti insieme, ognuno per la sua parte, e il quadro completo arriva prima.
+
+#### Parla chi fa il lavoro
+
+Chi apre la pratica, chi la istruisce, chi decide: ascoltiamo ogni ruolo, con le sue parole.
+
+#### Due versioni a confronto
+
+Quello che racconta il titolare lo mettiamo accanto a quello che scrivono i vostri. Lì escono i punti che contano.
+
+Il risultato della Fase 0
+
+Alla fine vi consegniamo un documento con il vostro flusso di lavoro , così com’è oggi.
+
+L’analisi è compresa nel prezzo del progetto.
+
+Poi, il progetto
+
+- 01
+
+#### Vi portiamo il piano
+
+Mettiamo accanto quello che ci ha detto il titolare e quello che hanno scritto i vostri: i passaggi critici, i moduli, le priorità.
+
+Il capitolato della vostra azienda. Resta vostro.
+
+- 02
+
+#### Costruiamo
+
+Partiamo da quello che usate oggi, Excel compreso, e rilasciamo un modulo alla volta.
+
+Le prime pratiche che girano nel sistema nuovo.
+
+#### Cresce con voi
+
+Dopo il collaudo la stessa persona segue la piattaforma e la adatta quando cambia il vostro modo di lavorare.
+
+Un referente che conosce già il vostro sistema.
+
+### Quello che resta vostro
+
+#### Il codice
+
+È vostro dal primo commit, su un repository a cui accedete quando volete.
+
+#### I dati
+
+I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+#### Il fornitore qualificato
+
+Siamo nell’Elenco dei Fornitori qualificati 4.0 di Unioncamere Lombardia: chi finanzia il software con un bando 4.0 trova in noi il fornitore che serve.
+
+### Raccontateci come lavorate oggi.
+
+Guardate com’è fatto, poi ne parliamo. Se ci sono le condizioni, si comincia ascoltando i vostri.
+
+
+---
+
+URL: https://www.edos.it/servizi/
+Descrizione: Partite dalla situazione in cui vi riconoscete: gestionali su misura, AI nelle pratiche, app, interfacce semplici, assistenza nel tempo, siti ed e-commerce.
+
+## Da quale situazione partite?
+
+Sceglietela qui sotto: vi portiamo a quello che costruiamo per risolverla.
+
+- La pratica vive tra Excel, posta e gestionale. Per sapere a che punto è, si chiede a voce. Gestionali su misura
+
+- Passiamo ore a ricopiare dati dai documenti. Visure, bilanci, PDF arrivati via PEC. AI nelle pratiche
+
+- Chi lavora fuori ufficio ha bisogno di tutto sul telefono. Turni, incassi, firme, documenti. App e web app
+
+- Il programma c’è, e chi lo usa fa fatica. Troppi passaggi per fare una cosa semplice. Interfacce semplici
+
+- La piattaforma c’è già, e va seguita nel tempo. Aggiornamenti, correzioni, funzioni nuove. Assistenza ed evoluzione
+
+- Vogliamo vendere online, ai clienti o alla nostra rete. Catalogo, ordini, fatture in un posto solo. Siti ed e-commerce
+
+### La vostra è un’altra? Raccontatecela.
+
+Partiamo da come lavorate oggi, e troviamo insieme da dove cominciare.
+
+
+---
+
+URL: https://www.edos.it/servizi/gestionali-su-misura/
+Descrizione: Un gestionale su misura per le vostre pratiche: stato, documenti, area clienti e collegamenti ai programmi che usate già, Excel compreso.
+
+## Una piattaforma solaper le vostre pratiche.
+
+Gestionale, area clienti e documenti sullo stesso database. Si parte da quello che usate oggi, Excel compreso.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### La pratica vive in tre posti
+
+Un pezzo nel foglio Excel, uno nella posta, uno nel gestionale. Per sapere a che punto è, si chiede a voce.
+
+Ogni pratica ha una scheda sola: stato, documenti e chi la segue.
+
+#### Gli stessi dati, scritti due volte
+
+Il cliente si inserisce in un programma e poi si ricopia nell’altro. Tenerli allineati è un lavoro in più.
+
+Il dato si scrive una volta e arriva dove serve.
+
+#### Il cliente chiama per sapere
+
+E qualcuno interrompe quello che sta facendo per andare a guardare.
+
+Il cliente vede a che punto è dalla sua area riservata.
+
+#### Le pratiche sono cresciute
+
+Il programma di oggi è stato scelto quando erano la metà.
+
+La piattaforma cresce con voi, un modulo alla volta.
+
+### Cosa costruiamo
+
+#### Il gestionale delle pratiche
+
+Ogni pratica con il suo stato, i suoi documenti e chi la segue. Ogni ruolo vede la parte che gli serve.
+
+#### L’area clienti
+
+Il cliente carica i documenti e vede a che punto è la sua pratica, quando vuole.
+
+#### I collegamenti
+
+Con i programmi che usate già: contabilità, posta certificata, firma, fogli Excel. I dati si scrivono una volta sola.
+
+### Dove l’abbiamo fatto
+
+Piattaforma unica per pratiche assicurative
+
+Due programmi separati diventano una piattaforma sola: gestionale per il team, area cliente e canale digitale sopra lo stesso database.
+
+Gestionale per servizi NCC e taxi
+
+Turni, incassi, spese e stipendi dei soci in un unico sistema. Ogni ruolo vede la sua parte, e i documenti si firmano a schermo.
+
+Piattaforma CRM per vendite
+
+Ogni esito di una chiamata decide il passo successivo. Lo costruiamo un modulo alla volta, con i test di ognuno prima di passare al successivo.
+
+### Le domande che ci fate
+
+Il gestionale che usiamo oggi resta?
+
+Se vi serve, resta. La piattaforma si collega ai programmi che usate già, come la contabilità, e prende da lì i dati che servono. Cosa sostituire e cosa tenere lo decidiamo insieme, durante l’analisi.
+
+Che fine fanno i nostri fogli Excel?
+
+Li portiamo dentro. I dati che oggi stanno nei fogli entrano nella piattaforma, e se un foglio vi serve ancora, la piattaforma lo tiene aggiornato.
+
+Quando vediamo il primo pezzo funzionante?
+
+Rilasciamo un modulo alla volta, a partire da quello che vi serve di più. Le prime pratiche girano nel sistema nuovo mentre il resto è ancora in costruzione.
+
+E se il nostro modo di lavorare cambia?
+
+La stessa persona che ha costruito la piattaforma la segue dopo il collaudo, e la adatta quando cambia il vostro lavoro.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Si può finanziare con un bando?
+
+Se la misura lo prevede, sì. Siamo nell’Elenco dei Fornitori qualificati 4.0 di Unioncamere Lombardia, e un partner nazionale segue la domanda dalla presentazione alla rendicontazione.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+### Raccontateci come girano le vostre pratiche.
+
+Si comincia dall’analisi: chi lavora le pratiche ci racconta come lo fa. L’analisi è compresa nel prezzo del progetto.
+
+
+---
+
+URL: https://www.edos.it/servizi/ai-nelle-pratiche/
+Descrizione: L'intelligenza artificiale dentro le vostre pratiche: legge PEC, visure e PDF, compila i campi e propone il passo successivo. La persona controlla e decide.
+
+## L’AI legge i documenti.Voi decidete.
+
+Visure, bilanci, PDF arrivati via PEC: l’AI li legge e compila la pratica. Chi la segue controlla i campi e approva.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### Ore a ricopiare dati
+
+Partita IVA, sede, importi: si leggono dal PDF e si riscrivono a mano nel gestionale.
+
+L’AI legge il documento e compila i campi. La persona li controlla.
+
+#### La PEC arriva, e resta lì
+
+Qualcuno la deve aprire, capire di cosa si tratta e smistarla.
+
+La pratica si apre da sola, con gli allegati al loro posto.
+
+#### Manca sempre un documento
+
+Ve ne accorgete quando la pratica è già avanti.
+
+L’AI dice cosa serve ancora, e a chi chiederlo.
+
+#### Relazioni scritte da capo
+
+Ogni pratica finisce con un documento da scrivere, simile a quello di ieri.
+
+L’AI prepara la bozza dai dati della pratica. Voi la rivedete e firmate.
+
+### Cosa fa l’AI
+
+#### Legge i documenti
+
+PEC, visure, bilanci, foto, PDF: ne estrae i dati che servono alla pratica.
+
+#### Prepara le bozze
+
+Relazioni, lettere, riepiloghi, scritti a partire dai dati della pratica.
+
+#### Il controllo resta vostro
+
+Ogni campo compilato dall’AI è segnato, e una persona lo approva. Ogni passaggio resta registrato.
+
+### Dove l’abbiamo fatto
+
+Piattaforma AI per perizie immobiliari
+
+Dal sopralluogo fotografico alla relazione: l’AI analizza le foto e prepara la relazione, il perito la rivede. Il cliente segue la sua pratica da un portale.
+
+### Le domande che ci fate
+
+L’AI decide al posto nostro?
+
+Propone, e la persona decide. Ogni campo compilato dall’AI è segnato, così chi segue la pratica sa cosa controllare.
+
+Dove finiscono i nostri dati?
+
+Restano dentro la vostra piattaforma. L’AI lavora lì, sui documenti della pratica, e ogni passaggio resta registrato.
+
+Dobbiamo cambiare il gestionale che usiamo?
+
+Il vostro gestionale resta. L’AI si mette in mezzo: legge i documenti, ritrova il cliente nel gestionale e aggiorna i dati dove servono.
+
+Quali documenti sa leggere?
+
+Quelli che arrivano oggi nelle vostre pratiche: PEC, visure, bilanci, PDF, foto. Durante l’analisi scegliamo insieme da quali partire.
+
+Si può finanziare con un bando?
+
+Se la misura lo prevede, sì. Siamo nell’Elenco dei Fornitori qualificati 4.0 di Unioncamere Lombardia, e un partner nazionale segue la domanda dalla presentazione alla rendicontazione.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+### Quale pratica vi porta via più ore?
+
+Raccontatecela, e partiamo da lì. L’analisi è compresa nel prezzo del progetto.
+
+
+---
+
+URL: https://www.edos.it/servizi/app-web-app/
+Descrizione: App per chi lavora fuori ufficio: turni, incassi, firme e documenti dal telefono, collegati alla stessa piattaforma dell'ufficio.
+
+## Il lavoro sul telefono,anche fuori ufficio.
+
+App e web app collegate alla stessa piattaforma dell’ufficio. Ognuno vede la sua parte, da dove si trova.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### I dati arrivano la sera
+
+Chi è fuori scrive su carta o in chat, e in ufficio si ricopia tutto.
+
+Si inserisce dal telefono, e in ufficio si vede subito.
+
+#### Firme su carta
+
+Un documento da firmare vuol dire stampa, firma, scansione.
+
+Si firma a schermo, sul telefono.
+
+#### Ognuno chiede all’ufficio
+
+Turni, appuntamenti, cosa fare oggi: si chiede a voce.
+
+Ognuno apre l’app e trova la sua giornata.
+
+#### Serve su iPhone, Android e pc
+
+Tre strumenti diversi da tenere allineati.
+
+Un solo codice per iOS, Android e web.
+
+### Cosa costruiamo
+
+#### App per iOS e Android
+
+Si installano dallo store, e nascono dallo stesso codice.
+
+#### Web app
+
+Si aprono dal browser, sul telefono o sul pc dell’ufficio.
+
+#### Ruoli e permessi
+
+Ognuno vede la parte che gli serve: chi organizza, chi lavora sul campo, chi controlla.
+
+### Dove l’abbiamo fatto
+
+App per organizzare partite sportive amatoriali
+
+App per iOS e Android dallo stesso codice: squadre, calendario, inviti e prenotazione dei campi, con viste diverse per chi organizza e chi gioca.
+
+### Le domande che ci fate
+
+App o web app: cosa ci serve?
+
+Dipende da chi la usa e da dove. Se servono fotocamera, posizione o notifiche, un’app; se basta il browser, una web app. Spesso la stessa base fa tutte e due le cose.
+
+L’app parla con il gestionale dell’ufficio?
+
+Sì, lavorano sugli stessi dati. Quello che si inserisce dal telefono si vede subito in ufficio.
+
+Chi la pubblica negli store?
+
+Ci pensiamo noi, con l’account della vostra azienda su Apple e Google.
+
+E dopo il lancio?
+
+Restiamo: correzioni, aggiornamenti per le nuove versioni dei telefoni, funzioni nuove.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+Si può finanziare con un bando?
+
+Se la misura lo prevede, sì. Siamo nell’Elenco dei Fornitori qualificati 4.0 di Unioncamere Lombardia, e un partner nazionale segue la domanda dalla presentazione alla rendicontazione.
+
+### Chi lavora fuori, cosa gli serve?
+
+Raccontatecelo, e partiamo da lì.
+
+
+---
+
+URL: https://www.edos.it/servizi/interfacce-semplici/
+Descrizione: Schermate pensate per chi le usa tutto il giorno: ogni ruolo vede quello che gli serve, e un'operazione si fa in pochi passaggi.
+
+## Schermate faciliper chi le usa ogni giorno.
+
+Prima parliamo con chi userà lo strumento, poi disegniamo. Ogni ruolo vede la parte che gli serve.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### Troppi passaggi
+
+Per fare una cosa semplice si aprono cinque schermate.
+
+L’operazione di tutti i giorni si fa da una schermata sola.
+
+#### Serve un manuale
+
+Ogni persona nuova ha bisogno di settimane per imparare.
+
+Le schermate si capiscono usandole.
+
+#### Tutti vedono tutto
+
+E ognuno cerca la sua parte in mezzo a quella degli altri.
+
+Ogni ruolo vede quello che gli serve.
+
+#### Si torna al foglio Excel
+
+Perché il programma è più lento di un foglio.
+
+La piattaforma diventa il posto più comodo dove lavorare.
+
+### Come lavoriamo
+
+#### Parliamo con chi lo usa
+
+Prima di disegnare, ascoltiamo chi userà le schermate ogni giorno.
+
+#### Prototipi da provare
+
+Vedete e provate le schermate prima che siano costruite, e le correggiamo insieme.
+
+#### Un sistema coerente
+
+Pulsanti, moduli e tabelle uguali in tutta la piattaforma: si impara una volta.
+
+### Dove l’abbiamo fatto
+
+Piattaforma instant win per brand energia
+
+Un gioco a premi sulle partite dentro l’app di un fornitore di energia, collegato al sistema che decide le vincite.
+
+Piattaforma candidature per un premio scientifico
+
+Chi propone e chi è candidato hanno ognuno il suo percorso: bozza salvabile, allegati, invio. La segreteria ha l’elenco pronto per la giuria.
+
+Marketplace per musicisti e conservatori
+
+I musicisti dei conservatori presentano il loro percorso, chi organizza un evento pubblica cosa gli serve e sceglie.
+
+### Le domande che ci fate
+
+Si può ridisegnare un programma che abbiamo già?
+
+Lo guardiamo insieme. A volte basta ridisegnare le schermate, a volte conviene rifare anche la parte sotto. Ve lo diciamo con le ragioni scritte.
+
+Chi deve partecipare?
+
+Chi userà le schermate ogni giorno. Bastano poche conversazioni per capire dove perde tempo.
+
+Vediamo qualcosa prima dello sviluppo?
+
+Sì, i prototipi: schermate cliccabili da provare. Le correggiamo insieme prima di costruirle.
+
+Funziona anche da telefono?
+
+Sì, disegniamo ogni schermata per il pc e per il telefono.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+### Quale schermata vi fa perdere più tempo?
+
+Raccontatecelo, e partiamo da lì.
+
+
+---
+
+URL: https://www.edos.it/servizi/assistenza-evoluzione/
+Descrizione: Seguiamo nel tempo le piattaforme che costruiamo e quelle ereditate da altri: aggiornamenti, correzioni e funzioni nuove, con lo stesso referente.
+
+## La vostra piattaforma,seguita nel tempo.
+
+Aggiornamenti, correzioni e funzioni nuove, con la stessa persona che la conosce. Anche se l’ha costruita qualcun altro.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### Chi l’ha costruita segue altro
+
+E ogni richiesta riparte da capo.
+
+Prendiamo in carico la piattaforma, la studiamo e la mettiamo per iscritto.
+
+#### Ogni modifica mette in ansia
+
+Si tocca una cosa e se ne rompe un’altra.
+
+Ogni modifica passa dai test prima di andare online.
+
+#### Le richieste si accumulano
+
+Idee e correzioni in una lista che cresce.
+
+Le mettiamo in ordine con voi e le rilasciamo una alla volta.
+
+#### Ogni anno si riparte da capo
+
+La piattaforma va rifatta a ogni nuova stagione.
+
+Si riparte dalla base che c’è, e si aggiorna.
+
+### Cosa seguiamo
+
+#### Aggiornamenti e sicurezza
+
+Librerie, server e versioni, tenuti aggiornati.
+
+#### Correzioni
+
+Quando qualcosa si rompe, sapete a chi scrivere, e chi risponde conosce già la piattaforma.
+
+#### Funzioni nuove
+
+La piattaforma cambia quando cambia il vostro modo di lavorare, un modulo alla volta.
+
+### Dove l’abbiamo fatto
+
+Assistenza ed evoluzione per un gruppo multi-piattaforma
+
+Bacheca per i crediti d’imposta, portali documentali, strumenti finanziari interni. Ogni nuova richiesta parte da un contesto che conosciamo già.
+
+Pagina di bilancio per un gruppo assicurativo
+
+La pagina web bilingue del bilancio annuale di un gruppo assicurativo, aggiornata a ogni edizione.
+
+Supporto tecnico per piattaforma No-Profit internazionale
+
+Il sito per donare e l’area sostenitori di un programma di sostegno a distanza, presi in carico da un altro fornitore.
+
+### Le domande che ci fate
+
+Seguite anche piattaforme costruite da altri?
+
+Sì. Prima la studiamo e la mettiamo per iscritto, poi la prendiamo in carico.
+
+A chi scriviamo quando serve?
+
+Sempre alla stessa persona, che conosce già la vostra piattaforma.
+
+Possiamo aggiungere funzioni nuove?
+
+Sì, un modulo alla volta, sopra la base che c’è.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+### Raccontateci la vostra piattaforma.
+
+Com’è fatta, chi l’ha costruita, cosa vi serve adesso.
+
+
+---
+
+URL: https://www.edos.it/servizi/siti-ecommerce/
+Descrizione: Siti aziendali ed e-commerce collegati al vostro modo di lavorare: catalogo, ordini, contratti e fatture in un posto solo, anche per la vostra rete.
+
+## Vendere online,collegato al resto.
+
+Siti ed e-commerce che parlano con i vostri programmi: catalogo, ordini, contratti e fatture in un posto solo.
+
+### Quando serve
+
+Se vi riconoscete in due di queste scene, ecco cosa cambia.
+
+#### Gli ordini arrivano per email
+
+E qualcuno li ricopia nel gestionale.
+
+L’ordine entra una volta, e arriva dove serve.
+
+#### La rete compra da voi
+
+Affiliati, agenti, rivenditori: ognuno con un canale diverso.
+
+Un solo punto d’accesso, con i prezzi decisi dalla sede.
+
+#### Contratti in PDF
+
+Scambi di email con allegati, da stampare e firmare.
+
+Si firmano online, con firma digitale.
+
+#### Il sito è fermo da anni
+
+E chi vi cerca trova poco di quello che fate.
+
+Un sito che racconta cosa fate, con le parole di chi vi cerca.
+
+### Cosa costruiamo
+
+#### Siti aziendali
+
+Chiari, veloci, scritti per chi vi cerca.
+
+#### E-commerce B2B e B2C
+
+Catalogo, prezzi, ordini e pagamenti, anche per la vostra rete di vendita.
+
+#### I collegamenti
+
+Fatturazione, firma digitale, gestionale: i dati passano da soli.
+
+### Dove l’abbiamo fatto
+
+E-commerce B2B per network franchising
+
+Una rete di affiliati con acquisti, contratti e fatturazione centralizzati in un’unica piattaforma.
+
+Modulo e-commerce per un’azienda farmaceutica
+
+Un canale di vendita online per gestire ordini e vendite direttamente.
+
+Sito istituzionale per studio professionale
+
+Due studi notarili diventano uno: un sito che li presenta come una realtà sola e la posta su un unico dominio.
+
+### Le domande che ci fate
+
+Usate Shopify o WooCommerce?
+
+Dipende da cosa vi serve. Per un negozio semplice va bene una piattaforma pronta; per ordini, contratti e rete di vendita costruiamo su misura.
+
+L’e-commerce si collega al gestionale?
+
+Sì: ordini, clienti e fatture passano da un sistema all’altro, e si scrivono una volta sola.
+
+Testi e prodotti li possiamo cambiare noi?
+
+Sì, da un pannello, quando volete.
+
+Di chi è il codice?
+
+È vostro dal primo commit, su un repository a cui accedete quando volete. I dati dei vostri clienti restano nella vostra piattaforma, e lo scriviamo nel contratto.
+
+Il sito si trova su Google?
+
+Lo scriviamo con le parole che usano i vostri clienti quando vi cercano, e lo costruiamo veloce e leggibile da telefono: sono le basi perché Google lo mostri.
+
+Come si comincia?
+
+Dall’analisi: chi lavora le pratiche ci racconta come lo fa, in una chat, quando ha tempo. Alla fine vi consegniamo il documento con il vostro flusso di lavoro, e l’analisi è compresa nel prezzo del progetto. Poi vi portiamo il piano, e costruiamo un modulo alla volta.
+
+Con chi parliamo?
+
+Sempre con la stessa persona, dall’analisi al supporto dopo il collaudo.
+
+### Raccontateci cosa vendete, e a chi.
+
+Partiamo da come arrivano gli ordini oggi.
+
+
+---
+
+URL: https://www.edos.it/per-le-agenzie/
+Descrizione: Siamo il team di sviluppo della vostra agenzia: portali, aree riservate, integrazioni ed e-commerce, consegnati con il vostro marchio. Il cliente resta vostro.
+
+## Siamo il vostro team di sviluppo.Il cliente resta vostro.
+
+Portali, piattaforme, aree riservate e integrazioni per i clienti della vostra agenzia, consegnati con il vostro marchio.
+
+### Cosa vi chiedono i clienti, e lo facciamo noi
+
+Si parte quasi sempre da un modulo. Lo consegniamo con il vostro marchio e il cliente continua a parlare solo con voi. Poi, dopo il primo lavoro, si passa ai progetti più ampi.
+
+#### Un’area riservata
+
+Clienti, agenti o rivenditori entrano con le loro credenziali e trovano documenti, ordini e pratiche.
+
+#### Un’integrazione con il gestionale
+
+Il sito o il portale parla con il gestionale del cliente, e i dati si scrivono una volta sola.
+
+#### Un configuratore
+
+Chi compra sceglie le opzioni, vede il prezzo e manda una richiesta già completa.
+
+#### La parte e-commerce, con le regole del cliente
+
+Listini riservati, sconti per cliente, ordini minimi: il negozio segue il modo in cui vende il vostro cliente.
+
+#### Una piattaforma completa
+
+Quando il cliente vuole un sistema intero, lo costruiamo un modulo alla volta.
+
+### Come si lavora insieme
+
+Il metodo si chiama PartnerFlow. Quattro passi, sempre gli stessi, con una persona sola che vi segue dall’inizio alla consegna.
+
+- 01
+
+#### Ci inoltrate la richiesta del cliente
+
+È sufficiente l’email del cliente, così come vi è arrivata.
+
+- 02
+
+#### Vi mandiamo tempi e prezzo
+
+Per iscritto, entro 1-3 giorni.
+
+- 03
+
+#### Costruiamo, con un referente unico per voi
+
+Vi aggiorna a ogni passaggio, e le domande tecniche le risolve con voi.
+
+- 04
+
+#### Consegniamo con il vostro marchio
+
+E voi presentate il lavoro al vostro cliente.
+
+### Lavori fatti per agenzie
+
+Di lavori così ne abbiamo consegnati più di venti nell’ultimo anno. Eccone cinque, ognuno con la sua pagina.
+
+Modulo e-commerce per un’azienda farmaceutica
+
+Sviluppo di un canale e-commerce per un’azienda del settore chimico-farmaceutico. Progetto in corso.
+
+Pagina di bilancio per un gruppo assicurativo
+
+La pagina web bilingue del bilancio annuale di un gruppo assicurativo, aggiornata a ogni edizione.
+
+Piattaforma instant win per brand energia
+
+Un gioco a premi sulle partite dentro l’app di un fornitore di energia, collegato al sistema che decide le vincite.
+
+Supporto tecnico per piattaforma No-Profit internazionale
+
+Il sito per donare e l’area sostenitori di un programma di sostegno a distanza, presi in carico da un altro fornitore.
+
+App per organizzare partite sportive amatoriali
+
+App nativa iOS e Android per organizzare partite sportive amatoriali, gestire squadre e prenotare campi.
+
+### Prezzi chiari dal primo lavoro
+
+Il margine verso il vostro cliente lo decidete voi. Sono prezzi netti, IVA esclusa. La cifra esatta vi arriva per iscritto entro 1-3 giorni dalla richiesta.
+
+#### Primo lavoro insieme
+
+Un modulo: un’area riservata, un’integrazione o un configuratore.
+
+€ 2.500 – 4.000
+
+#### Progetto completo
+
+Una piattaforma intera, costruita un modulo alla volta.
+
+€ 4.000 – 12.000
+
+### Il cliente lo seguite voi.La parte tecnica, noi.
+
+La vostra agenzia
+
+- Il rapporto con il cliente
+
+- La grafica, se la curate voi
+
+- Il prezzo finale
+
+Edos
+
+- Lo sviluppo
+
+- Le integrazioni
+
+- La messa online
+
+- L’assistenza tecnica verso di voi
+
+### Riservatezza
+
+#### Accordo di riservatezza su ogni progetto
+
+Lo firmiamo prima di vedere i materiali del vostro cliente.
+
+#### Il vostro cliente parla solo con voi
+
+Il nostro team lavora in seconda linea e parla solo con voi.
+
+#### Il nostro nome compare dove lo decidete voi
+
+Nei documenti e nelle email di sistema va il vostro marchio.
+
+### Tempi e prezzo, per iscritto in 1-3 giorni
+
+Scriveteci cosa vi ha chiesto il cliente, anche in poche righe.
+
+#### Grazie, abbiamo ricevuto la vostra richiesta.
+
+Vi mandiamo tempi e prezzo per iscritto entro 1-3 giorni.
+
+
+---
+
+URL: https://www.edos.it/case-study/
+Descrizione: Progetti reali di Edos: gestionali su misura, AI nelle pratiche, app, siti ed e-commerce. Con il nome del cliente o in forma anonima, conclusi e in corso.
+
+## Quello che facciamo, raccontato dai risultati.
+
+Progetti veri. Alcuni li raccontiamo con il nome del cliente, altri in forma anonima per riservatezza. Alcuni sono conclusi, altri in corso: per ognuno lo trovate scritto.
+
+Marketplace per musicisti e conservatori
+
+I musicisti dei conservatori presentano il loro percorso, chi organizza un evento pubblica cosa gli serve e sceglie.
+
+CRM B2C per mutui online
+
+Chi cerca un mutuo riceve subito una risposta, il consulente riceve una richiesta già completa.
+
+Piattaforma instant win per brand energia
+
+Un gioco a premi sulle partite dentro l’app di un fornitore di energia, collegato al sistema che decide le vincite.
+
+Supporto tecnico per piattaforma No-Profit internazionale
+
+Il sito per donare e l’area sostenitori di un programma di sostegno a distanza, presi in carico da un altro fornitore.
+
+Sito istituzionale per studio professionale
+
+Due studi notarili diventano uno: un sito che li presenta come una realtà sola e la posta su un unico dominio.
+
+E-commerce B2B per network franchising
+
+Una rete di affiliati con acquisti, contratti e fatturazione centralizzati in un’unica piattaforma.
+
+App per organizzare partite sportive amatoriali
+
+App nativa iOS e Android per organizzare partite sportive amatoriali, gestire squadre e prenotare campi.
+
+Piattaforma AI per perizie immobiliari
+
+Generazione assistita da AI delle relazioni peritali, da foto di sopralluogo a documento.
+
+Gestionale per servizi NCC e taxi
+
+Turni, incassi, spese e stipendi soci in un unico sistema, in continua evoluzione.
+
+Assistenza ed evoluzione per un gruppo multi-piattaforma
+
+Le piattaforme di un gruppo che segue le imprese su agevolazioni e crediti d’imposta, seguite ed estese dal 2025.
+
+Pagina di bilancio per un gruppo assicurativo
+
+La pagina web bilingue del bilancio annuale di un gruppo assicurativo, aggiornata a ogni edizione.
+
+Modulo e-commerce per un’azienda farmaceutica
+
+Sviluppo di un canale e-commerce per un’azienda del settore chimico-farmaceutico. Progetto in corso.
+
+Piattaforma unica per pratiche assicurative
+
+Un’agenzia assicurativa sostituisce due sistemi separati con un’unica piattaforma database-first. Progetto in corso.
+
+Piattaforma candidature per un premio scientifico
+
+Candidature in italiano e in inglese per il premio internazionale di una fondazione. Progetto in corso.
+
+Piattaforma CRM per vendite
+
+Riscrittura indipendente del CRM vendite, con pipeline a 9 stadi e motore di lavorazione esiti. Progetto in corso.
+
+Bundle e quiz olfattivo per un brand di profumi
+
+Una pagina bundle con premi a soglia e un quiz che consiglia il profumo, tutto dentro Shopify.
+
+Piattaforma preventivi per una società di trasporti
+
+Dalla email del cliente alle offerte dei trasportatori, con l’AI che legge le richieste.
+
+Sito per una società di noleggio a lungo termine
+
+Sito su misura con pannello per offerte e contenuti, e gli indirizzi del vecchio sito conservati.
+
+### Avete un progetto simile?
+
+Raccontateci come lavorate oggi. Si comincia dall’analisi, compresa nel prezzo del progetto.
+
+
+---
+
+URL: https://www.edos.it/case-study/app-organizzazione-eventi-sportivi/
+Descrizione: Set&Gol: app iOS e Android e portale web per organizzare partite amatoriali, gestire le squadre e prenotare i campi, con il calendario per le strutture.
+
+## App per organizzare partite sportive amatoriali
+
+Chi gioca organizza le partite nelle chat, chi gestisce un centro sportivo prende le prenotazioni al telefono. Set&Gol, l’app che abbiamo costruito, mette i due lati nello stesso posto: squadre, inviti e campi, su iOS, Android e da browser.
+
+L’app di Set&Gol: le metriche della piattaforma, utenti, partite e strutture attive.
+
+La dashboard dell’amministratore, con le azioni rapide di moderazione e gestione.
+
+La configurazione degli sport: varianti, durata della partita e giocatori per squadra.
+
+### La situazione di partenza
+
+Una partita amatoriale di calcio, pallavolo, tennis o padel si organizza quasi sempre in un gruppo di messaggi: qualcuno propone un orario, qualcuno risponde, qualcuno si dimentica, e intanto va trovato un campo libero. Dall’altra parte c’è chi gestisce il centro sportivo, che riceve le richieste al telefono e tiene il calendario dei campi per conto suo.
+
+Per Set&Gol, attraverso un’agenzia digitale, ci è stata chiesta un’app che tenesse insieme i due lati: i giocatori che organizzano e partecipano, e i gestori delle strutture che mettono a disposizione i campi. Il progetto è nato come web app nell’autunno 2025; ad aprile 2026 l’abbiamo portata su iOS e Android come app nativa.
+
+### Cosa abbiamo costruito
+
+Lato giocatore, si crea una partita scegliendo sport e formato, si invitano amici o la propria squadra e si vede in ogni momento chi ha confermato. Le squadre hanno capitano, vice e membri. Attorno alla partita c’è la parte sociale: arbitro e spettatori, commenti, foto, il voto al migliore in campo e il posto dove ritrovarsi dopo, il terzo tempo. Gli indirizzi si cercano con il completamento automatico di Google, e dalla scheda di una struttura si apre la mappa.
+
+Lato gestore, ogni struttura ha i suoi campi, gli orari di apertura giorno per giorno e i prezzi distinti tra feriali e festivi. Le prenotazioni che arrivano dall’app si approvano a mano o in automatico, a scelta del gestore. Il calendario ha tre viste: settimana, giorno e mese. Nella vista settimanale ogni campo è una griglia a mezz’ore, gli slot occupati si vedono a colpo d’occhio con il nome di chi ha prenotato, e toccando uno slot libero si registra una prenotazione presa al telefono, anche per chi l’app non ce l’ha: bastano nome e numero. Prima di salvare, il sistema controlla che il campo sia davvero libero.
+
+Lato amministrazione, si creano le strutture, si assegnano ai gestori e si invitano gli utenti; chi riceve un invito entra solo dopo aver impostato la propria password.
+
+Una scelta tecnica, detta in parole semplici: il codice è uno solo. Lo stesso progetto diventa l’app installata sul telefono, il portale web riservato ai gestori e il sito pubblico, e capisce da solo in quale dei tre si trova. Così una correzione fatta una volta vale ovunque. In background, due funzioni chiudono da sole gli inviti e le partite scaduti.
+
+### Come abbiamo lavorato
+
+Il 1 aprile 2026 abbiamo spostato l’app su un database dedicato e l’abbiamo impacchettata per iOS e Android. I primi giorni sui telefoni veri hanno fatto emergere quello che il browser nascondeva: schermate nere al login e all’apertura della tastiera su Android, la posizione che non veniva letta, l’intestazione che finiva sotto la barra di stato. Il 3 aprile erano tutti corretti, con un registro delle modifiche per ciascuno.
+
+Poi l’app è cresciuta a rilasci successivi: il 12 maggio il portale web per i gestori, pensato per lo schermo del computer; il 19 e 20 maggio la creazione di utenti e strutture da parte dell’amministrazione, con un test end-to-end che percorre tutto il flusso di invito; il 28 maggio il calendario a tre viste con le prenotazioni manuali. Ogni rilascio grosso è partito da un documento di progetto scritto e approvato prima di toccare il codice, e ha un suo test automatico sulle pagine principali.
+
+### Cosa abbiamo ottenuto
+
+#### 3 · Ruoli utente
+
+Amministratore, gestore della struttura, giocatore
+
+#### 109 · Migrazioni database
+
+Schema ampliato per passi dall’autunno 2025
+
+#### 5 · Funzioni lato server
+
+Email, gestione utenti, chiusura automatica di inviti e partite scaduti
+
+#### 3 · Versioni dallo stesso codice
+
+App iOS e Android, portale web per i gestori, sito pubblico
+
+#### Stack tecnologico
+
+- React + TypeScript
+
+- Vite
+
+- Supabase (Postgres, Auth, Edge Function)
+
+- Capacitor (iOS & Android)
+
+- Google Maps API
+
+- Tailwind CSS + shadcn/ui
+
+#### Servizi coinvolti
+
+- App e web app
+
+- Interfacce semplici
+
+- Assistenza ed evoluzione
+
+
+---
+
+URL: https://www.edos.it/case-study/bundle-quiz-brand-profumi/
+Descrizione: Mine Perfume Lab: pagina bundle con premi a soglia e quiz che consiglia il profumo, costruiti dentro Shopify Plus e gestiti dal cliente.
+
+## Bundle e quiz olfattivo per un brand di profumi
+
+Un brand di profumi vende online su Shopify Plus e vuole due cose: far comprare più profumi insieme e aiutare chi arriva sul sito a trovare il suo. Abbiamo costruito entrambe dentro Shopify, con pannelli che il team di Mine usa da solo.
+
+### La situazione di partenza
+
+Mine ha un catalogo ampio, diviso in quattro famiglie olfattive, e un pubblico che spesso arriva sul sito senza sapere da quale profumo partire. Il negozio gira su Shopify Plus con un tema personalizzato e un programmatore interno.
+
+Ci ha chiesto due funzioni precise, da innestare sul negozio esistente: una pagina bundle con un vantaggio che cresce con il numero di profumi scelti e un quiz che consiglia i profumi giusti.
+
+### Cosa abbiamo costruito
+
+La pagina bundle. Il cliente sceglie i profumi da una griglia, filtrabile per famiglia olfattiva, e su ogni scheda vede famiglia e voto delle recensioni. In alto una fila di caselle numerate si riempie a ogni profumo aggiunto: oggi alla seconda casella scatta il 10%, alla quarta il 20%, alla sesta arriva un omaggio. A destra il riepilogo mostra prezzo pieno, sconto e totale. Il premio di ogni casella lo decide Mine dal pannello: uno sconto in percentuale, la spedizione gratis o un omaggio. Lo sconto si applica al checkout solo ai profumi entrati dal bundle, così gli acquisti normali restano a prezzo pieno.
+
+Il quiz. Si parte dalla email, con il consenso alle comunicazioni, poi arrivano poche domande sulle preferenze olfattive e un passo facoltativo per lasciare il telefono. Il risultato propone il set di campioni più adatto, per provare prima di comprare, e una rosa di profumi da aggiungere al carrello tutti insieme. Ogni risposta porta con sé delle etichette, e i profumi con più etichette in comune salgono in cima. I contatti arrivano a Klaviyo, il sistema di email marketing di Mine, con il risultato pronto per la comunicazione successiva.
+
+Domande, risposte ed etichette si modificano da un editor dentro l’amministrazione di Shopify, che segnala anche le etichette rimaste senza profumi.
+
+### Le schermate
+
+### Le scelte tecniche
+
+Tutto vive dentro Shopify: funzioni di sconto native, blocchi del tema e configurazione salvata nel negozio. Mine ha zero server da mantenere e zero canoni aggiuntivi, e il suo programmatore trova un codice che segue le regole della piattaforma.
+
+### Come abbiamo lavorato
+
+Abbiamo costruito tutto su un negozio di prova con i 12 profumi veri di Mine, foto e recensioni comprese, e lo abbiamo fatto provare al cliente prima di toccare il negozio reale. Le regole di sconto e consiglio hanno test automatici dedicati.
+
+Bundle e quiz sono online su mineperfumelab.com. La messa online è stata reversibile: una pagina nuova e blocchi nuovi, accanto a quelli che il negozio aveva già.
+
+#### 2 · App Shopify consegnate
+
+Bundle e quiz, ognuna con il suo pannello
+
+#### 95 · Test automatici
+
+Sulle regole di sconto, omaggio e consiglio
+
+#### 4 · Famiglie olfattive
+
+Usate dal quiz e mostrate sulle schede
+
+#### 0 · Server da mantenere
+
+Tutto gira dentro Shopify Plus
+
+#### Stack tecnologico
+
+- Shopify Plus
+
+- Shopify Functions
+
+- Theme app extension
+
+- JavaScript
+
+- Klaviyo
+
+#### Servizi coinvolti
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/continuity-evolution-gruppo-multipiattaforma/
+Descrizione: Più di dieci piattaforme sviluppate dal 2025 per un gruppo che segue le imprese su agevolazioni, crediti d’imposta e supply chain finance.
+
+## Assistenza ed evoluzione per un gruppo multi-piattaforma
+
+Un gruppo che segue le imprese su agevolazioni, crediti d’imposta e finanza strutturata ci affida le sue piattaforme dal 2025. Ogni nuova linea di attività parte da quello che abbiamo già costruito insieme.
+
+### La situazione di partenza
+
+Il gruppo lavora con le piccole e medie imprese su più fronti: agevolazioni pubbliche, cessione e acquisto di crediti d’imposta, finanza strutturata, supply chain finance. Ogni linea ha il suo pubblico e il suo percorso: c’è chi cede un credito e chi lo compra, chi segnala un’azienda, chi chiede un finanziamento, e un amministratore che controlla e approva.
+
+Per ogni nuova iniziativa serviva uno strumento su misura, pronto in tempi brevi, e un fornitore che conoscesse già il gruppo, i suoi ruoli e le sue regole. Nel 2025 abbiamo cominciato con una piattaforma per le agevolazioni. Da allora ogni nuova linea di attività è diventata un nuovo progetto con noi.
+
+### Cosa abbiamo costruito
+
+Una bacheca per la cessione e l’acquisto di crediti d’imposta. Cedenti, segnalatori e acquirenti si registrano con percorsi separati; le anteprime degli annunci sono pubbliche, i dettagli diventano visibili dopo la firma di un accordo di riservatezza, e ogni annuncio passa da un’approvazione interna prima di essere pubblicato.
+
+Un portale per le pratiche di supply chain finance. Fornitore e cliente formalizzano l’ordine, la controparte lo conferma da un link ricevuto via email, anche senza avere un account, e da quel momento la pratica resta bloccata. L’amministratore la condivide in sola lettura con una banca o un advisor tramite un link a scadenza, che offre il riepilogo in PDF e l’archivio completo dei documenti; ogni apertura del link viene registrata.
+
+Più piattaforme per l’accesso alle agevolazioni con registrazione in due tempi: l’azienda compila il modulo, riceve un link sicuro valido 48 ore per caricare i documenti, e ottiene le credenziali dopo la revisione dell’amministratore. Per i partner abbiamo costruito un onboarding che chiede la firma di due contratti, riservatezza e consulenza, prima di aprire la dashboard operativa, con i PDF generati dalla piattaforma.
+
+Accanto a questi, un portale di annunci per operazioni straordinarie e materie prime, con un modulo dedicato a chi cerca, e i siti di presentazione delle diverse linee, alcuni anche in inglese.
+
+### Le scelte tecniche
+
+Un flusso che si riusa. Il percorso di registrazione con caricamento dei documenti è documentato passo per passo sulla prima piattaforma che lo ha adottato, e riportato sulle successive. Per questo alcune piattaforme del 2026 sono state pianificate in finestre di una settimana.
+
+I permessi stanno nel database. Ogni azienda vede le proprie pratiche e quelle in cui è controparte, l’amministratore vede tutto, e una regola nel database blocca le modifiche a una pratica già confermata. L’accesso avviene con un codice inviato via email, al posto della password.
+
+Lo stack è cresciuto con il rapporto. Le prime piattaforme sono in React con Vite, le più recenti in Next.js, tutte con Supabase per database, accessi e documenti, pubblicate su Vercel. Il portale di supply chain finance è coperto da 21 test end-to-end sul flusso completo.
+
+### Come abbiamo lavorato
+
+Ogni piattaforma parte dai mockup dei singoli percorsi (amministratore, consulente o segnalatore, utente, sito pubblico) e da un’analisi funzionale a domande e risposte con il gruppo. Poi demo sul prodotto funzionante e revisioni: su una delle bacheche, dopo la revisione con il cliente, abbiamo separato i percorsi di chi cede e di chi acquista, e in registrazione chiediamo la sola visura, spostando gli altri documenti a una fase successiva.
+
+Dopo il lancio le piattaforme restano con noi: correzioni, funzioni nuove e un contratto di assistenza continuativa su quelle più usate.
+
+### A che punto siamo
+
+Il rapporto è attivo. Una nuova piattaforma per un fondo dedicato ai giovani è in sviluppo, e la versione in inglese di tre piattaforme già online è in pianificazione.
+
+### Cosa abbiamo ottenuto
+
+#### 10+ · Piattaforme sviluppate
+
+Per lo stesso gruppo dal 2025, una ancora in corso
+
+#### Continuativo · Tipo di rapporto
+
+Ogni nuova piattaforma parte da quello che conosciamo già
+
+#### 2 · Livelli di accesso
+
+Anteprime pubbliche, dettagli dopo la firma di riservatezza
+
+#### RLS · Permessi nel database
+
+Ogni azienda vede le pratiche che la riguardano
+
+#### Stack tecnologico
+
+- Next.js
+
+- Vite
+
+- Vercel
+
+- Supabase
+
+#### Servizi coinvolti
+
+- Assistenza ed evoluzione
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/crm-b2c-richieste-mutuo/
+Descrizione: MutuiSì: project management del rinnovo della piattaforma di un mediatore creditizio, con confronto delle rate e richieste complete per i consulenti.
+
+## CRM B2C per mutui online
+
+MutuiSì, mediatore creditizio, voleva che chi cerca un mutuo avesse subito una risposta, e che il consulente ricevesse una richiesta già completa. Noi abbiamo fatto da project manager, dall’analisi al lancio, tra il cliente e il team tecnico che ha sviluppato la piattaforma.
+
+### La situazione di partenza
+
+MutuiSì è un mediatore creditizio che lavora con diversi istituti bancari convenzionati. Il suo lavoro comincia da una domanda semplice: chi sta valutando una casa vuole sapere quanto pagherà di rata e con quale banca. Chi risponde per primo entra nella decisione, e tutto quello che viene dopo, dalla verifica di fattibilità alla delibera, parte da quel momento.
+
+La presenza online andava rinnovata per due ragioni. Il percorso dalla prima richiesta alla consulenza doveva diventare semplice e rassicurante, in un settore dove ogni parola conta e le note di trasparenza sono obbligatorie. E le richieste dovevano arrivare ai consulenti già qualificate: un contatto privo di importo, durata e istituto di interesse impegna il consulente quanto uno completo, con meno possibilità di chiudersi.
+
+### Cosa è nato dal progetto
+
+La piattaforma, sviluppata dal team tecnico con il nostro coordinamento, tiene insieme quattro parti.
+
+Il calcolo della rata e il confronto fra le offerte. Chi entra indica importo, durata, tipo di tasso (fisso, variabile o variabile con tetto massimo), valore e posizione dell’immobile, e vede le offerte disponibili una accanto all’altra: rata mensile, TAN, TAEG, spese accessorie, garanzie richieste, importo massimo finanziabile. Le condizioni di ogni istituto stanno in un archivio che il personale del cliente aggiorna da solo dal pannello di amministrazione, con lo storico: un preventivo fatto mesi prima resta ricostruibile.
+
+La trasparenza dentro il calcolo. Le note informative, la distinzione fra valore indicativo e offerta, il TAEG come misura complessiva hanno un posto previsto nella pagina fin dal disegno. In un prodotto finanziario sono contenuto principale, e trattarle così dall’inizio evita di doverle comprimere a fine lavoro.
+
+La qualificazione del contatto. Il confronto è il primo passo: alla fine l’utente aggiunge le informazioni su reddito e patrimonio e chiede la verifica di fattibilità sulle offerte che gli interessano. Al consulente arriva una richiesta con importo, durata, tipo di tasso, immobile e istituti scelti. La piattaforma è collegata al CRM del cliente, che assegna ogni richiesta secondo regole configurabili e avvia i ricontatti in base a quello che la persona ha chiesto davvero.
+
+La parte editoriale. Guide, notizie e approfondimenti, pubblicati dal personale interno in autonomia, con percorsi dedicati a casi specifici come il mutuo per chi ha meno di 36 anni e la surroga, ciascuno con il suo calcolo e le sue note.
+
+### Le schermate
+
+Una delle cinque domande del percorso, con la guida alle fasi dell’acquisto a lato.
+
+Il magazine: guide e approfondimenti pubblicati dal personale del cliente.
+
+### Come abbiamo lavorato
+
+Il nostro ruolo è stato di project management: il codice lo ha scritto il team tecnico, noi abbiamo tenuto insieme il cliente e lo sviluppo dall’analisi al lancio. Il progetto è partito da sessioni di analisi e interviste con le persone del cliente, per mappare le esigenze e tradurle in specifiche che il team di sviluppo potesse usare.
+
+Dai requisiti è nata una roadmap con milestone e priorità decise insieme al cliente. Abbiamo seguito il disegno dell’interfaccia, perché rispettasse il marchio e restasse chiara in un contesto finanziario, e poi lo sviluppo, a cicli brevi con revisioni regolari, con un’attenzione particolare al collegamento fra il sito e il CRM. Al lancio abbiamo coordinato i test finali e la formazione del team del cliente.
+
+### Dove siamo oggi
+
+La piattaforma è in esercizio. Il personale del cliente gestisce da solo contenuti, prodotti e condizioni, e ogni richiesta arriva alla rete con le informazioni che servono per lavorarla. Le pagine pubblicate sono oltre 1.200, con oltre 50.000 visitatori al mese.
+
+### Cosa abbiamo ottenuto
+
+#### 1.200+ · Pagine pubblicate dal personale del cliente
+
+#### 50.000+ · Visitatori al mese
+
+#### TAN e TAEG · Accanto a ogni rata, con lo storico delle condizioni
+
+#### Un referente · Tra il cliente e il team tecnico
+
+
+---
+
+URL: https://www.edos.it/case-study/ecommerce-b2b-network-franchising/
+Descrizione: TreeRe: e-commerce B2B per una rete di consulenti immobiliari in franchising, con acquisti, fatture automatiche, firma digitale e accesso unico.
+
+## E-commerce B2B per network franchising
+
+TreeRe, network di consulenti immobiliari in franchising, gestiva a mano acquisti, prodotti e contratti con i suoi affiliati. Abbiamo guidato la progettazione di un e-commerce B2B che li mette in un unico posto.
+
+### La situazione di partenza
+
+TreeRe è un network che coordina il lavoro di una rete di consulenti immobiliari affiliati in franchising. Dalla sede centrale passano gli acquisti degli affiliati, i prodotti che la rete mette a disposizione e i contratti che li regolano.
+
+Tutto questo si gestiva a mano. Ogni acquisto, ogni contratto e ogni fattura chiedeva passaggi ripetuti fra la sede e gli affiliati, con molto tempo speso e molte occasioni di errore, e con una rete così ampia il rallentamento pesava sul lavoro di tutti.
+
+### Cosa abbiamo costruito
+
+Il progetto ha portato a un e-commerce B2B su misura per la rete: gli affiliati acquistano, pagano e firmano i contratti nello stesso posto, e la sede centrale gestisce acquisti, prodotti e contratti da un’unica piattaforma, invece che caso per caso.
+
+Tre funzioni reggono il sistema. L’accesso unico, con una sola credenziale per tutte le funzioni. La fatturazione automatica, che genera il documento a ogni acquisto. La firma digitale dei contratti, che porta dentro la piattaforma un passaggio prima gestito a mano.
+
+### Le schermate
+
+L’offerta divisa in tre aree: servizi, strumenti e formazione.
+
+Il catalogo degli strumenti che la rete mette a disposizione degli affiliati.
+
+### Come abbiamo lavorato
+
+Il nostro ruolo è stato di regia del progetto, dall’analisi al lancio, al fianco del team di sviluppo.
+
+Analisi. Abbiamo mappato i flussi della sede e il modo in cui la sede lavora con gli affiliati, con workshop insieme alle persone chiave, per capire dove si perdeva tempo negli acquisti, nei prodotti e nei contratti. Ne sono usciti requisiti chiari e verificabili.
+
+Architettura. Abbiamo tradotto i requisiti in specifiche tecniche e definito con il team di sviluppo l’architettura dell’e-commerce, con attenzione ad automazione, centralizzazione e sicurezza.
+
+Sviluppo e integrazioni. Abbiamo seguito lo sviluppo passo per passo, controllando specifiche e tempi, e coordinato l’integrazione di accesso unico, fatturazione e firma digitale, tenendo aperto il dialogo fra i tecnici e la sede.
+
+Lancio. Abbiamo coordinato i test e la validazione delle funzioni, affiancato la sede nella formazione degli affiliati sul nuovo sistema e, dopo il lancio, seguito l’andamento della piattaforma raccogliendo i riscontri per i miglioramenti successivi.
+
+### Cosa abbiamo ottenuto
+
+#### ✓ · Acquisti in un posto solo
+
+Prodotti e acquisti della rete gestiti dalla sede su un’unica piattaforma
+
+#### ✓ · Firma digitale
+
+I contratti si firmano dentro la piattaforma
+
+#### ✓ · Fatturazione automatica
+
+Ogni acquisto genera la sua fattura
+
+#### ✓ · Un accesso unico
+
+Una sola credenziale copre tutte le funzioni della piattaforma
+
+#### Servizi coinvolti
+
+- Interfacce semplici
+
+- Siti ed e-commerce
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/gestionale-servizi-ncc-taxi/
+Descrizione: Il gestionale di TaxiTime: richieste dei clienti, agenda, incassi, spese, compensi dei soci e report mensili in un unico sistema, in uso da maggio 2025.
+
+## Gestionale per servizi NCC e taxi
+
+Servizi, incassi, spese e compensi dei soci tenuti su file Excel, da ricomporre ogni fine mese. TaxiTime, azienda di noleggio con conducente, ha scelto di portare tutto in un unico gestionale, dalla richiesta del cliente al report mensile.
+
+### La situazione di partenza
+
+Il cliente è TaxiTime, un’azienda di noleggio con conducente che lavora soprattutto per altre aziende: ne accompagna dipendenti e ospiti, spesso più passeggeri nello stesso servizio, ognuno con il suo indirizzo di presa. Alla guida ci sono i soci, alcuni dipendenti e, quando serve, conducenti esterni.
+
+Il documento funzionale da cui siamo partiti lo dice nella prima riga: i processi erano gestiti tramite file Excel. Le richieste arrivavano dai referenti delle aziende clienti, i servizi andavano segnati in agenda e assegnati, i conducenti incassavano in contanti o con carta, e le spese si pagavano spesso dal fondo cassa di chi guidava. A fine mese bisognava rimettere insieme tutto: per ogni azienda i servizi fatti, per ogni socio i chilometri e le ore, per l’azienda gli incassi e le uscite.
+
+Il cliente ci ha chiesto un gestionale che seguisse il servizio dalla richiesta alla fattura, con una parte pensata per il telefono, perché chi guida lo usa fuori ufficio, fra una corsa e l’altra.
+
+### Cosa abbiamo costruito
+
+Il centro del sistema è il servizio. Il referente dell’azienda cliente lo richiede dal suo accesso: data, orario, passeggeri con indirizzi di presa e destinazione, metodo di pagamento, note. L’amministrazione lo accetta, lo modifica o lo rifiuta, e il servizio entra in agenda come da assegnare. Da lì si affida a un dipendente, a un socio o a un conducente esterno, e passa per cinque stati: da assegnare, assegnato, in corso, completato, consuntivato.
+
+Chi guida vede solo i servizi che gli sono stati assegnati. A fine corsa conferma dal telefono incasso, metodo di pagamento e ore lavorate, e il cliente può firmare direttamente sullo schermo. L’amministrazione controlla, completa i dati che mancano e consuntiva il servizio, che da quel momento è chiuso.
+
+La parte economica ha i suoi registri. Gli incassi in contanti e con carta restano separati fin dall’inserimento. Il conducente registra le spese pagate dal proprio fondo cassa con importo e causale; l’amministrazione registra i movimenti aziendali indicando se sono spese, incassi o prelievi, con quale modalità (bonifico, F24, contanti, carta) e quale socio li ha fatti. Il compenso di ciascun socio si calcola dai chilometri dei servizi, con una tabella di tariffe per fasce, più le ore di attesa e un coefficiente di aumento, e il sistema mostra il dettaglio del calcolo prima della conferma.
+
+Ogni mese il sistema genera un report in PDF per azienda e per referente, con servizi, ore e importi, e lo archivia. Accanto ci sono il calendario dei turni con ferie e permessi, l’anagrafica dei veicoli e quella dei conducenti esterni. I permessi stanno nel database: ogni azienda cliente vede solo i propri servizi e i propri report, anche se qualcuno prova a chiedere altro.
+
+### Come abbiamo lavorato
+
+Il primo commit è del 9 maggio 2025 e il sistema è in uso da allora. Lo schema del database è cresciuto per passi, con 99 migrazioni: ogni modulo nuovo, dai report alla gestione dei compensi fino al backup degli utenti, è arrivato come estensione di quello che c’era già. Le funzioni sono state verificate su un elenco di casi di prova scritto per questo progetto.
+
+Dopo il lancio siamo rimasti sul sistema in produzione, con correzioni ed evoluzioni che nascono dall’uso di tutti i giorni. Un esempio recente, di agosto 2026: abbiamo spostato l’invio delle email su un nuovo servizio, aggiunto una chiave che impedisce di mandare due volte la stessa mail quando un invio viene ritentato, e fatto in modo che l’interfaccia segni un’email come inviata solo quando è partita davvero, conservando il motivo quando qualcosa va storto.
+
+### Cosa abbiamo ottenuto
+
+#### 4 · Ruoli con accesso
+
+Amministratore, socio, dipendente e azienda cliente
+
+#### 99 · Migrazioni database
+
+Schema costruito e ampliato per passi dal 2025
+
+#### 7 · Funzioni lato server
+
+Report PDF, notifiche, gestione utenti e backup
+
+#### 5 · Stati del servizio
+
+Da assegnare, assegnato, in corso, completato, consuntivato
+
+#### Stack tecnologico
+
+- React + TypeScript
+
+- Vite
+
+- Supabase (Postgres, RLS, Edge Function)
+
+- Tailwind CSS + shadcn/ui
+
+- Vercel
+
+#### Servizi coinvolti
+
+- Gestionali su misura
+
+- Assistenza ed evoluzione
+
+
+---
+
+URL: https://www.edos.it/case-study/marketplace-musicisti-organizzatori/
+Descrizione: Orchestra mette in contatto i musicisti dei conservatori con privati e aziende: profili, annunci, candidature e abbonamento Premium.
+
+## Marketplace per musicisti e conservatori
+
+Orchestra è un posto solo dove i musicisti dei conservatori presentano il loro percorso, e chi organizza un evento pubblica cosa gli serve e sceglie direttamente.
+
+### La situazione di partenza
+
+Orchestra è una società giovane, nata per portare nel mondo del lavoro i musicisti che escono dai conservatori e dalle accademie di alta formazione musicale. Chi si diploma in uno strumento o in canto ha una preparazione lunga e certificata, e per trovare ingaggi conta quasi sempre sui contatti personali o su un intermediario che trattiene una parte del compenso.
+
+Dall’altra parte ci sono privati e aziende che cercano musicisti per cerimonie, eventi privati e aziendali, festival e concerti. Chiedono in giro, ricevono nomi senza sapere che formazione abbiano e trattano ogni volta da capo.
+
+L’idea del cliente era precisa: un posto solo dove il musicista si presenta con il suo percorso vero, chi organizza un evento pubblica cosa gli serve e con che budget, e le due parti si accordano direttamente. Il compenso resta tra loro, e i termini d’uso fissano condizioni minime di dignità per chi suona: compenso adeguato, vitto, sicurezza.
+
+### Cosa abbiamo costruito
+
+Una piattaforma web con due percorsi distinti, uno per chi suona e uno per chi cerca.
+
+Il musicista crea un profilo professionale: foto, dati e contatti, strumento (come solista o in formazione), conservatorio di provenienza, diploma o autocertificazione, generi musicali e brani più eseguiti. Con l’abbonamento Premium aggiunge video delle sue esibizioni, curriculum e biografia. Dal suo profilo consulta gli annunci di lavoro, li filtra per luogo, data, genere musicale, strumento e budget, e si candida a quelli che gli interessano.
+
+Privati e aziende si registrano, pubblicano annunci su misura per il loro evento con il budget già indicato, esaminano le candidature arrivate e contattano direttamente il professionista scelto. Chi è indeciso può chiedere una consulenza di repertorio. Le recensioni aiutano chi arriva dopo a scegliere con più sicurezza, e il team del cliente controlla i profili di privati e aziende prima che entrino in contatto con i musicisti.
+
+Sulla piattaforma si pagano solo i servizi: l’abbonamento Premium del musicista, la pubblicazione degli annunci e la consulenza. Il compenso per l’esibizione passa fuori dalla piattaforma, direttamente tra le parti, come prevede il modello del cliente.
+
+### Le schermate
+
+Il percorso per aziende e privati: registrazione, annunci, scelta tra le candidature.
+
+I due ingressi: chi suona cerca gli annunci, chi organizza un evento li pubblica.
+
+Account Free e Premium: con il Premium il musicista aggiunge video, curriculum e biografia.
+
+### Come abbiamo lavorato
+
+Abbiamo seguito il progetto con project management, design e sviluppo nello stesso gruppo. Il punto di partenza sono stati i due percorsi: prima cosa vede e cosa fa il musicista, poi cosa vede e cosa fa chi organizza, e solo dopo le regole che li collegano. Chi può candidarsi a cosa, cosa sblocca il Premium, quando il profilo di un privato o di un’azienda diventa visibile ai musicisti.
+
+Per lo sviluppo abbiamo scelto Laravel, adatto a tenere in ordine ruoli, abbonamenti, annunci, candidature e moderazione in un’unica applicazione. Le parti interattive, come i filtri sugli annunci che si aggiornano senza ricaricare la pagina, sono fatte con Livewire e Alpine.js: l’interfaccia risponde subito e tutto resta nello stesso progetto, con una sola applicazione da mantenere.
+
+La piattaforma è online e il cliente la gestisce in autonomia: pubblica le sezioni sul progetto, le produzioni e le convenzioni attivate con i partner, e segue iscrizioni e annunci dal pannello.
+
+### Cosa abbiamo ottenuto
+
+#### ✓ · Due percorsi
+
+Uno per chi suona, uno per chi organizza, ciascuno con il suo profilo e le sue funzioni
+
+#### ✓ · Annunci e candidature
+
+Annunci con budget, filtri per luogo, data, genere e strumento, candidature dirette
+
+#### ✓ · Profili controllati
+
+Il team del cliente verifica privati e aziende prima del contatto con i musicisti
+
+#### ✓ · Compenso diretto
+
+Sulla piattaforma si pagano solo i servizi, il compenso resta tra le parti
+
+#### Stack tecnologico
+
+- Alpine.js
+
+- Laravel
+
+#### Servizi coinvolti
+
+- Interfacce semplici
+
+- Gestionali su misura
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/modulo-ecommerce-settore-farmaceutico/
+Descrizione: E-commerce costruito sul sito WordPress di un’azienda farmaceutica: WooCommerce, carta e bonifico, ordini inviati al gestionale. Progetto in corso.
+
+## Modulo e-commerce per un’azienda farmaceutica
+
+Un’azienda del settore chimico-farmaceutico apre la vendita online dei suoi prodotti partendo dal sito che ha già. Il progetto è in corso.
+
+### La situazione di partenza
+
+L’azienda ha un sito istituzionale in WordPress, con un’area riservata ai professionisti sanitari. Voleva aggiungere la vendita diretta al consumatore in Italia, partendo da una prima selezione di prodotti, e crescere per gradi. Le categorie indicate sono integratori, dispositivi medici e prodotti dermocosmetici.
+
+La richiesta emersa nella prima call era precisa: vendere online tenendo il sito attuale, e avere un modo sicuro per provare le modifiche prima di pubblicarle.
+
+### Cosa stiamo costruendo
+
+Il negozio nasce dentro il sito attuale con WooCommerce, il modulo di vendita di WordPress. La struttura editoriale resta quella di oggi; si aggiungono le pagine del negozio, la scheda prodotto, il carrello, il checkout e l’area cliente, con le aliquote IVA per categoria di prodotto, le zone di spedizione e le email di servizio: conferma d’ordine, spedizione, reso.
+
+Il cliente può comprare come ospite oppure creare un account, e può cancellarlo da solo. Chi chiede la fattura inserisce codice fiscale, partita IVA, ragione sociale, codice destinatario e PEC. Nel checkout c’è un campo libero per le note sulla consegna. Per acquistare bastano i dati dell’ordine e della spedizione: prescrizioni e documenti restano fuori dal sito.
+
+I pagamenti passano da Stripe per le carte e dal bonifico per chi lo preferisce. Ogni ordine parte dal sito in formato CSV verso il gestionale ordini dell’azienda, e da lì all’operatore logistico che prepara e spedisce i pacchi.
+
+### Le scelte tecniche
+
+WooCommerce al posto di una piattaforma separata. Per partire con pochi prodotti, WooCommerce si innesta nel WordPress esistente senza migrazioni e senza un canone mensile della piattaforma, e resta aperto alle evoluzioni successive.
+
+I dati delle carte restano a Stripe. Il checkout usa i componenti sicuri del fornitore di pagamento, certificato PCI DSS: il sito conserva l’esito della transazione e il suo riferimento.
+
+Uno staging separato. Una copia del sito su un hosting dedicato serve a provare grafica e funzioni prima della pubblicazione. Il suo database è indipendente da quello di produzione e contiene solo dati dimostrativi.
+
+### Come stiamo lavorando
+
+Il percorso è a fasi: audit tecnico del sito, ottimizzazione e creazione dello staging, configurazione del negozio, collegamento dei pagamenti, poi controlli sul flusso d’acquisto completo, formazione del team e lancio.
+
+Durante il lavoro abbiamo trovato nell’area riservata ai professionisti sanitari circa 2.200 iscrizioni generate automaticamente da bot. Abbiamo aggiunto la protezione anti bot al modulo, ripristinato l’approvazione manuale delle iscrizioni e ripulito gli account generati.
+
+Per i consulenti legali dell’azienda abbiamo preparato una scheda tecnica sugli adempimenti privacy: quali dati raccoglie il negozio e perché, quali fornitori li trattano, quali cookie usa. Per le statistiche abbiamo proposto Google Analytics 4 attivato solo dopo il consenso, con Consent Mode v2 e conservazione dei dati a 14 mesi.
+
+### A che punto siamo
+
+Il negozio è in sviluppo. Stiamo chiudendo con i consulenti legali gli ultimi punti privacy e con l’azienda l’organizzazione della logistica; poi il lancio con la prima selezione di prodotti. Aggiorneremo questa pagina a negozio aperto.
+
+#### Servizi coinvolti
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-ai-perizie-immobiliari/
+Descrizione: Investigatore Immobiliare verifica gli immobili prima dell’acquisto: pratiche, portale per l’acquirente e relazione scritta con l’AI dalle foto del sopralluogo.
+
+## Piattaforma AI per perizie immobiliari
+
+Prima di comprare casa, un tecnico controlla l’immobile e scrive una relazione con le criticità trovate e una controproposta di prezzo. Investigatore Immobiliare ci ha chiesto di portare tutto il percorso in una piattaforma, con l’AI che prepara la prima bozza della relazione a partire dalle foto del sopralluogo.
+
+### La situazione di partenza
+
+Il cliente è Investigatore Immobiliare, una società tecnica che controlla lo stato di un immobile prima che venga comprato. Chi sta per acquistare una casa chiede un sopralluogo: si guardano i documenti del venditore, la facciata e la copertura, le stanze una per una, gli impianti. Alla fine l’acquirente riceve una relazione scritta che gli dice cosa ha trovato il tecnico, quanto servirebbe per sistemarlo e che prezzo ha senso proporre al venditore.
+
+La relazione ha una struttura fissa in quattro parti: il contesto della zona con i prezzi medi di immobili simili, l’esito del sopralluogo con le criticità riscontrate, la stima degli interventi voce per voce, e il totale dell’investimento con imposte, notaio e provvigione dell’agenzia. L’ultima frase è sempre la controproposta. Scriverla da capo per ogni immobile, tornando sulle foto una alla volta, era la parte più lunga del lavoro.
+
+Il cliente ci ha chiesto di mettere in un solo sistema tutto il percorso: la richiesta che arriva dal sito, il contratto e il pagamento, la raccolta dei dati del sopralluogo, la scrittura della relazione e la consegna.
+
+### Cosa abbiamo costruito
+
+Tre parti collegate. Un sito pubblico raccoglie le richieste con un modulo breve e offre una guida scaricabile in cambio dell’email. Un back-office per il team segue ogni richiesta in 6 stadi, dal primo contatto al cliente acquisito, e ogni pratica in 7, dal contratto accettato alla relazione consegnata, con ruoli distinti per amministratori, operatori e commerciali. Un portale riservato permette all’acquirente di seguire la sua pratica: si entra con un codice ricevuto via email.
+
+Nel portale l’acquirente compila il sopralluogo in 6 passaggi: i documenti ricevuti dal venditore (visura, planimetria, certificato energetico), i mezzi pubblici e il contesto della zona, l’ispezione esterna, quella interna stanza per stanza, gli impianti, e infine foto e video. Quando serve, un operatore lo compila al posto del cliente e il sistema registra chi l’ha fatto. Per i locali commerciali c’è un percorso più corto, a note libere.
+
+La relazione si scrive in una chat, dentro la pratica. Quando il sopralluogo è completo, l’assistente AI prepara la prima bozza guardando fino a 60 foto e seguendo la struttura in quattro parti. Il tecnico chiede le modifiche scrivendo nella chat, e l’assistente riscrive solo la sezione o il paragrafo interessato; se gli manca un dato, lo chiede all’operatore. Per calibrarlo abbiamo usato cinque relazioni reali del cliente, rese anonime. Ogni conversazione resta registrata e le istruzioni dell’assistente hanno un numero di versione, così si sa sempre con quali regole è nata una bozza. La relazione approvata esce in PDF, con le foto ordinate per ambiente.
+
+Due scelte tecniche, in breve. Le foto stanno in un archivio privato e si aprono con un link valido dieci minuti: all’inizio erano salvate dentro il database, e una pratica con molte foto rallentava la pagina fino a bloccarla, così a maggio le abbiamo spostate. Il salvataggio sul telefono è automatico e riprova da solo se la connessione cade, perché il sopralluogo si compila spesso in giro, dallo smartphone.
+
+### Come abbiamo lavorato
+
+Il lavoro è partito il 16 aprile 2026 dal sito pubblico, per raccogliere richieste da subito. Poi il back-office con le due pipeline, poi il portale per l’acquirente, e per ultima l’AI. Anche la forma dell’assistente è cambiata strada facendo: l’idea iniziale era un editor a tre colonne con un pulsante per rigenerare ogni sezione; il 6 maggio, dopo averne parlato con il cliente, abbiamo scelto la chat, più vicina al modo in cui un tecnico corregge un testo.
+
+Il 15 maggio il cliente ha provato la piattaforma da capo a fondo e ci ha mandato una lista di modifiche, riquadro per riquadro: nuovi dati in anagrafica (metri quadri dichiarati e reali, prima o seconda casa, provvigione), più file per visura e planimetria, tipologie di facciata e gronda da scegliere da un elenco, e un campo note libero in ogni riquadro. Le abbiamo integrate nelle settimane successive. A luglio è arrivata la relazione rapida: un percorso per l’operatore con blocchi liberi di testo e foto, per i casi che non seguono i sei passaggi.
+
+Sito e piattaforma sono in produzione, e il lavoro continua: nel repository ci sono 390 commit tra aprile e luglio 2026. Il sito pubblico passa da un controllo automatico a ogni pubblicazione, che si ferma se accessibilità, SEO o prestazioni scendono sotto 95 su 100.
+
+### Cosa abbiamo ottenuto
+
+#### 60 · Foto per pratica
+
+Lette dall’AI per la prima bozza della relazione
+
+#### ≥95 · Soglia qualità del sito
+
+Accessibilità, SEO e prestazioni, controllate a ogni pubblicazione
+
+#### 6 · Passaggi del sopralluogo
+
+Dai documenti del venditore a foto e video
+
+#### 13 · Stadi di pipeline
+
+6 per la richiesta, 7 per la pratica cliente
+
+#### Stack tecnologico
+
+- Next.js
+
+- Supabase (Postgres, Auth, Storage)
+
+- Vercel AI SDK + Claude Sonnet 4.6
+
+- Vercel
+
+#### Servizi coinvolti
+
+- AI nelle pratiche
+
+- Gestionali su misura
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/
+Descrizione: Case study: piattaforma per una fondazione, con candidature a doppia anagrafica proponente/candidato, in italiano e in inglese. Progetto in corso.
+
+## Piattaforma candidature per un premio scientifico
+
+Una fondazione lancia la prima edizione di un premio internazionale per giovani ricercatori. Ci ha chiesto la piattaforma per gestire le candidature, in italiano e in inglese. Progetto in corso.
+
+### La situazione di partenza
+
+Una fondazione avvia la prima edizione di un premio internazionale per giovani ricercatori, con una materia diversa a ogni edizione. Essendo la prima, c’era un sistema da costruire da zero e un calendario preciso: il bando apre e chiude in date fissate, e le candidature possono arrivare da tutto il mondo, in italiano o in inglese.
+
+Una regola del premio ha guidato tutto il modello dati: il candidato non si propone da solo. A candidarlo è sempre un terzo, una persona, un’università o un ente. Ogni candidatura ha quindi due anagrafiche, quella di chi propone e quella di chi viene proposto, e la piattaforma le tiene insieme dalla prima bozza fino all’esito.
+
+La segreteria della fondazione doveva poter raccogliere le candidature, controllarle, chiedere correzioni quando manca qualcosa e preparare il materiale per la giuria. Per scelta della fondazione la giuria resta fuori dalla piattaforma e riceve un fascicolo pronto da leggere.
+
+### Cosa stiamo costruendo
+
+Chi propone compila il modulo in più volte, perché la bozza si salva. Carica il curriculum in PDF, le pubblicazioni, i premi e i riconoscimenti del candidato, e dà i consensi, che restano registrati nella versione accettata in quel momento. Se la segreteria chiede una correzione, la candidatura torna modificabile. A fine percorso l’esito arriva anche al candidato.
+
+La segreteria lavora su un elenco con filtri combinabili, apre il fascicolo cliccando la riga, segna una candidatura come da verificare o non ammessa, scarica la scheda in PDF ed esporta tutto in Excel. Per la giuria prepara un pacchetto per ogni giurato, protetto da password. L’amministrazione gestisce le edizioni, le date di apertura e chiusura all’ora scelta, i testi delle pagine e i modelli delle email, in due lingue, direttamente dal pannello.
+
+Tre scelte tecniche. Le regole sui singoli campi vivono nel codice, quelle strutturali nel database: una candidatura senza un allegato obbligatorio si ferma lì, qualunque strada prenda. La configurazione è per edizione, quindi la prossima potrà cambiare materia, requisiti e date senza toccare il codice. Le città del mondo, oltre 170 mila, stanno dentro il database, così la localizzazione dei candidati gira senza un servizio esterno a pagamento.
+
+### Come stiamo lavorando
+
+Abbiamo costruito prima il modello dati e lo strato server, poi le schermate della segreteria, dell’amministrazione e le pagine pubbliche. A fine agosto la fondazione ha avuto un ambiente da visitare; le richieste emerse guardandolo sono state raccolte e rilasciate insieme, tra cui i filtri combinati, la scheda in PDF e l’orario di chiusura del bando scelto dalla segreteria.
+
+Un test automatico percorre l’intera candidatura dal vero, dalla bozza all’invio, con 35 verifiche. Alla prima esecuzione ha trovato due difetti reali che i controlli sul codice e sul database, da soli, non avevano visto.
+
+Le prestazioni le abbiamo misurate su un volume credibile: il progetto è dimensionato su circa duecento fascicoli, e la prova ne usa 208, ciascuno con proponente, candidato, un riconoscimento e una pubblicazione. L’Excel di tutte le candidature esce in meno di mezzo secondo, e lo stesso vale per il PDF dell’elenco.
+
+### Dove siamo oggi
+
+La piattaforma è in produzione, in versione bilingue, da settembre 2026. Gli ultimi passi riguardano l’apertura del bando, prevista in autunno: i testi definitivi della fondazione e il passaggio dell’infrastruttura sui suoi account.
+
+#### 35 · Verifiche nel test completo
+
+Ha trovato 2 difetti reali alla prima esecuzione
+
+#### 208 · Candidature nella prova di carico
+
+Excel di tutte in 456 millisecondi
+
+#### 170.540 · Città nel database
+
+Per localizzare i candidati senza servizi esterni
+
+#### 2 · Lingue
+
+Italiano e inglese, fino alle email e ai consensi
+
+#### Stack tecnologico
+
+- Next.js (App Router)
+
+- Supabase (Postgres 17, Storage, Auth)
+
+- TypeScript
+
+- Vercel
+
+#### Servizi coinvolti
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-crm-vendite/
+Descrizione: Commerciali Digitali: riscrittura del CRM vendite con pipeline a 9 stadi, lavorazione degli esiti e permessi per ruolo. Progetto in corso.
+
+## Piattaforma CRM per vendite
+
+Una società che fissa appuntamenti commerciali per altre aziende lavorava su un gestionale precedente. Ci ha chiesto una riscrittura indipendente, fedele alle sue regole, un modulo alla volta. Progetto in corso.
+
+### La situazione di partenza
+
+Il cliente è una società che fissa appuntamenti commerciali per conto di altre aziende: un team di commerciali chiama al telefono liste di aziende e persone, e ogni appuntamento preso diventa un’opportunità per il cliente finale. Il lavoro girava su un gestionale precedente, costruito su un’altra tecnologia, che conteneva regole precise su cosa succede dopo ogni telefonata.
+
+Ci ha chiesto una riscrittura indipendente: un sistema nuovo, su basi tecniche diverse, fedele a quelle regole e pronto a crescere. Il flusso da coprire va dall’anagrafica condivisa di aziende e persone ai progetti per ciascun cliente, dalle liste da chiamare agli esiti, fino agli appuntamenti e alla pipeline.
+
+### Cosa stiamo costruendo
+
+Una giornata tipo. Il commerciale apre la sua lista, cinquanta contatti per pagina, con i contatori in alto: da chiamare, senza risposta, da richiamare, appuntamenti presi, dati errati. Chiama e registra l’esito. Se prende l’appuntamento, il contatto entra in pipeline con lui come titolare. Se la persona chiede di essere richiamata, il sistema pretende data e ora, così il richiamo compare nel giorno giusto. Se si oppone, numero e partita IVA finiscono in una lista di esclusione. Se il dato è sbagliato, il contatto passa in un cestino da verificare.
+
+Tutto questo lo fa un’unica funzione nel database, che applica le conseguenze di ogni esito in un solo passaggio: o riesce tutto, o resta tutto com’era. L’esito registrato su un’azienda si riflette sulle persone della stessa lista, e viceversa. Cestini e liste di esclusione si formano da soli a partire dagli esiti, senza interventi a mano.
+
+Ogni ruolo ha la sua vista. Amministratore e team leader governano utenti, anagrafica e progetti. Il commerciale lavora le sue liste, e accede all’anagrafica generale solo se è un profilo autonomo. Il cliente finale vede in sola lettura la pipeline e gli appuntamenti del proprio progetto, e dopo ogni incontro ne registra l’esito: interessante, in trattativa, concluso, chiuso senza seguito, da riprogrammare. I permessi sono scritti nel database e partono chiusi: ogni accesso va concesso esplicitamente.
+
+### Come stiamo lavorando
+
+Un modulo alla volta, nell’ordine del flusso: accessi e utenti, anagrafica con importazione e deduplica, progetti e liste, lavorazione degli esiti, pipeline, agenda, email, dashboard per ruolo. Un modulo è finito quando passa build, controllo dei tipi, test automatici e test che usano l’applicazione come un utente vero.
+
+Prima di importare i dati del sistema precedente li abbiamo analizzati: aziende, persone e utenti si portano, le password restano indietro, perché sono cifrate in un formato diverso, e ogni utente riceve un invito a sceglierne una nuova. Le segnalazioni del cliente arrivano da un pulsante presente in ogni pagina, e passano da una fase di smistamento e poi da un collaudo dedicato. Per chi riprenderà il codice c’è una consegna tecnica scritta, funzione per funzione.
+
+### Dove siamo oggi
+
+Il nucleo è completo e in uso: dall’anagrafica alla dashboard, passando per esiti, pipeline, agenda ed email. Da ottobre 2026 la piattaforma cresce con un canone mensile di evoluzione.
+
+L’ultimo ciclo di lavoro ha riguardato la velocità su volumi veri: elenchi, cestini e contatori ora si caricano a pagine e per blocchi indipendenti, e ogni ottimizzazione è stata confrontata con la versione precedente prima del rilascio. I prossimi moduli restano offerte e preventivi, le notifiche dentro l’applicazione e un’area cliente più ampia.
+
+#### 5 · Ruoli utente distinti
+
+Con permessi scritti nel database, chiusi in partenza
+
+#### 2.711 · Test automatici
+
+Su 307 file, dalle regole di business ai permessi
+
+#### 70 · File di test end-to-end
+
+Percorsi provati come li fa un utente vero
+
+#### 9 · Stadi di pipeline
+
+Con vista in sola lettura per il cliente finale
+
+#### Stack tecnologico
+
+- Next.js 16 (Turbopack)
+
+- Supabase (Postgres, RLS)
+
+- Playwright (test end-to-end)
+
+- TypeScript
+
+#### Servizi coinvolti
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-gestionale-assicurativo/
+Descrizione: La pagina web bilingue del bilancio annuale di un gruppo assicurativo, con grafici generati dai dati, realizzata per un’agenzia partner.
+
+## Pagina di bilancio per un gruppo assicurativo
+
+Ogni anno un gruppo assicurativo pubblica i numeri del suo bilancio. Per un’agenzia partner abbiamo costruito la pagina web bilingue che li racconta, e nell’edizione successiva l’abbiamo aggiornata sulla stessa base.
+
+### La situazione di partenza
+
+Un gruppo assicurativo presenta ogni anno i risultati del suo bilancio anche online, in italiano e in inglese. L’agenzia di comunicazione che cura il progetto per il gruppo prepara contenuti, dati e direzione grafica; serviva un partner tecnico che trasformasse quei materiali in una pagina web e che la conoscesse già l’anno dopo.
+
+Il formato scelto è una pagina unica: chi la apre scorre i numeri principali dell’anno, sezione per sezione, da computer come da telefono.
+
+### Cosa abbiamo fatto
+
+Nel 2025 abbiamo realizzato la pagina per il bilancio 2024: una applicazione React con i grafici disegnati dal codice a partire dai numeri, così ogni valore aggiornato si riflette direttamente nel grafico. Italiano e inglese hanno le stesse sezioni e restano allineati voce per voce.
+
+Nel 2026 l’agenzia ci ha portato i materiali della nuova edizione. Il lavoro è partito dalla pagina già online e ha toccato molti elementi: testi, numeri di bilancio, sezioni e grafici collegati, più alcune modifiche di layout e di componenti richieste dai nuovi contenuti, in entrambe le lingue.
+
+### Come abbiamo lavorato
+
+Si parte da un breve allineamento sui materiali. Poi mappiamo ogni modifica sulla pagina esistente, separiamo i semplici aggiornamenti di testo e dati dalle modifiche strutturali, e le realizziamo in italiano e in inglese insieme.
+
+Prima della pubblicazione controlliamo la pagina su desktop, tablet e telefono e sui principali browser, e verifichiamo che le due lingue coincidano. Testi e traduzioni arrivano dall’agenzia; a noi spetta tutto quello che li porta online.
+
+### Perché funziona
+
+La pagina è costruita per essere aggiornata. Ogni edizione riparte dalla base dell’anno precedente, e il tempo va nei contenuti nuovi. L’agenzia ha un referente tecnico che conosce già il progetto, e il gruppo ritrova ogni anno lo stesso formato, aggiornato.
+
+### Cosa abbiamo ottenuto
+
+#### 2 · Edizioni
+
+Realizzata per un bilancio e aggiornata per il successivo
+
+#### IT + EN · Due lingue allineate
+
+Stesse sezioni e stessi dati in entrambe le versioni
+
+#### Grafici · Generati dai dati
+
+Ogni numero aggiornato si riflette nel grafico
+
+#### Responsive · Su ogni schermo
+
+Controllata su desktop, tablet e telefono
+
+#### Servizi coinvolti
+
+- Assistenza ed evoluzione
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-instant-win-brand-energia/
+Descrizione: Web app instant win per un fornitore di energia, dentro la sua app: partite, squadra del cuore, esito immediato ed email di vincita.
+
+## Piattaforma instant win per brand energia
+
+Un fornitore di energia voleva un gioco a premi sulle partite, dentro la propria app. Abbiamo costruito la web app che lo gestisce, collegata all’app del brand e al sistema che decide le vincite.
+
+### La situazione di partenza
+
+Il cliente è un fornitore di energia che usa il gioco per restare vicino ai propri clienti. L’idea: chi usa l’app del brand può giocare sulle partite, scegliere la propria squadra del cuore e vincere premi con un meccanismo instant win, cioè con l’esito comunicato al momento della giocata.
+
+Servivano tre cose tenute insieme: un accesso immediato dall’app, con l’utente già riconosciuto; un collegamento affidabile con il sistema esterno che decide le vincite e conta le giocate disponibili; un modo semplice, per chi amministra il gioco, di caricare il calendario delle partite.
+
+### Cosa abbiamo costruito
+
+Una web app collegata all’app del brand. Chi apre il gioco dall’app arriva nella web app già riconosciuto, perché il suo identificativo passa con il collegamento. Lì vede le partite disponibili, sceglie la squadra del cuore (e può cambiarla), compila i propri dati e gioca.
+
+La giocata va al sistema instant win, che restituisce l’esito e il numero di giocate che restano nel mese. La web app lo mostra subito: un messaggio di vincita, oppure un messaggio con le giocate ancora disponibili. Quando qualcuno vince partono due email: una al vincitore, con le istruzioni per ritirare il premio, e una all’amministratore del sito, con i dettagli della giocata.
+
+Per chi gestisce il gioco c’è un pannello di amministrazione: le partite si inseriscono a mano oppure si caricano in blocco da un file CSV, così il calendario di un campionato entra in una volta sola.
+
+Con la nuova stagione sportiva la piattaforma è cresciuta: l’obiettivo dell’evoluzione era gestire contest separati per più campionati di calcio e per la pallavolo, mantenendo il funzionamento che i giocatori conoscevano già.
+
+### Come abbiamo lavorato
+
+Siamo partiti da un’analisi funzionale scritta: obiettivi, attori (l’utente, l’amministrazione, l’app del brand, il sistema instant win), flussi dall’accesso all’esito, e una roadmap che separa la prima versione dalle evoluzioni successive. Per l’interfaccia abbiamo usato come base il mockup che il cliente aveva già.
+
+La prima versione ha messo in fila l’essenziale: accesso tramite l’app, elenco delle partite, giocata inviata al sistema instant win, gestione dell’esito, inserimento delle partite a mano e da CSV. Statistiche per l’amministrazione, notifiche personalizzate e analisi più avanzate sono rimaste in roadmap come passi successivi.
+
+La piattaforma gira su WordPress, come modulo dedicato. Il lavoro si è svolto fra giugno e settembre 2025, con un referente unico per l’agenzia che seguiva il brand.
+
+### Cosa abbiamo ottenuto
+
+#### ✓ · Accesso dall’app
+
+L’utente arriva già riconosciuto, con un collegamento
+
+#### ✓ · Esito immediato
+
+Vincita o giocate rimaste nel mese, dal sistema instant win
+
+#### ✓ · Calendario da CSV
+
+Le partite si inseriscono a mano o si caricano in blocco
+
+#### ✓ · Email di vincita
+
+Al vincitore con le istruzioni, all’amministratore con i dettagli
+
+#### Stack tecnologico
+
+- WordPress (modulo dedicato)
+
+- PHP
+
+#### Servizi coinvolti
+
+- App e web app
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-preventivi-trasporti/
+Descrizione: Le email dei clienti diventano richieste lette dall’AI, i trasportatori inviano i preventivi e la piattaforma propone le offerte con il margine applicato.
+
+## Piattaforma preventivi per una società di trasporti
+
+Una società che organizza spedizioni per aziende riceve ogni giorno richieste via email e deve girarle ai trasportatori, raccogliere i prezzi e rispondere al cliente. Abbiamo portato tutto il giro in una sola piattaforma, con l’intelligenza artificiale che legge le email al posto dell’operatore.
+
+### La situazione di partenza
+
+Le richieste arrivavano per email, ognuna scritta a modo suo. Un operatore leggeva il testo, ricavava partenza, arrivo, merce e date, scriveva ai trasportatori, aspettava le risposte, confrontava i prezzi e preparava l’offerta per il cliente, aggiungendo a mano il margine.
+
+Ogni passaggio dipendeva da una persona e da una casella di posta.
+
+### Cosa abbiamo costruito
+
+Ogni email in arrivo diventa una richiesta con un codice. L’intelligenza artificiale ne estrae i dati della spedizione e segnala quelli mancanti, così l’operatore completa solo ciò che serve. La richiesta parte verso i trasportatori adatti a quel tipo di trasporto, che rispondono da un link personale, senza account da creare.
+
+I preventivi ricevuti si confrontano in una schermata, e il sistema propone le 3 offerte migliori con il margine già applicato, tenendo separati prezzo del trasportatore e prezzo finale. Il cliente riceve una pagina con le offerte e la loro validità, e conferma da lì.
+
+Per ogni trasportatore la piattaforma tiene anagrafica, referenti e documenti come DURC, assicurazione e iscrizione all’albo, e avvisa quando uno sta per scadere. Amministratori e operatori hanno viste diverse, e i permessi sono scritti nel database.
+
+### Come abbiamo lavorato
+
+Il lavoro è passato da un’agenzia partner, con rilasci frequenti e il cliente coinvolto a ogni modulo. Lo stato di ogni richiesta segue un percorso fisso, dalla ricezione alla conferma, e i contatori della dashboard leggono gli stessi stati, così i numeri a video coincidono con il lavoro reale.
+
+### Cosa abbiamo consegnato
+
+Il giro completo, dalla email del cliente alla sua conferma, in una sola piattaforma. L’operatore interviene dove serve il suo giudizio: completare un dato, scegliere un trasportatore, rivedere un’offerta.
+
+#### 8 · Stati della richiesta
+
+Dalla email ricevuta alla conferma del cliente
+
+#### 3 · Offerte proposte in automatico
+
+Con il margine già calcolato
+
+#### 6 · Funzioni lato server
+
+Accessi, link ai trasportatori, scadenze dei documenti
+
+#### 2 · Ruoli operativi
+
+Amministratore e operatore, con permessi nel database
+
+#### Stack tecnologico
+
+- React
+
+- TypeScript
+
+- Supabase (Postgres, RLS, Edge Functions)
+
+- AI per la lettura delle email
+
+#### Servizi coinvolti
+
+- Gestionali su misura
+
+- AI nelle pratiche
+
+
+---
+
+URL: https://www.edos.it/case-study/piattaforma-unica-pratiche-assicurative/
+Descrizione: Un’agenzia assicurativa passa da due sistemi separati a un’unica piattaforma: gestionale, area cliente e canale digitale. Progetto in corso.
+
+## Piattaforma unica per pratiche assicurative
+
+Un’agenzia assicurativa gestiva le proprie pratiche su due sistemi separati. Ci ha chiesto di unificarli in un’unica piattaforma, costruita database-first, con gestionale, area cliente e canale digitale. Progetto in corso, messa in produzione prevista in autunno 2026.
+
+### La situazione di partenza
+
+Il cliente è un’agenzia assicurativa che vende e gestisce polizze attraverso una rete di collaboratori organizzata su più livelli: chi sta sopra coordina chi sta sotto, e una sede centrale vede tutto. Il lavoro girava su due sistemi: un gestionale comprato come pacchetto base e ampliato negli anni, dove vivevano rete, portafoglio e provvigioni, e una seconda piattaforma per trattative e proposte. Intorno, fogli di calcolo e passaggi fatti a mano.
+
+Alcuni esempi di come si lavorava. Ogni mese in amministrazione qualcuno scaricava a mano l’estratto conto di ogni singolo operatore, perché è quel documento a governare il pagamento delle provvigioni. L’elenco dei pagamenti non andati a buon fine arrivava dalla banca una volta al mese in Excel, e da lì si avvisavano i collaboratori uno per uno. I prodotti caricati nella piattaforma delle trattative non si potevano nemmeno esportare.
+
+Ci ha chiesto una piattaforma sola che sostituisse entrambi i sistemi, con tre esperienze sopra lo stesso nucleo di dati: il gestionale per la sede e per la rete, la vendita online per chi compra una polizza (preventivo, questionario, firma e pagamento) e l’area riservata per l’assicurato, con le sue polizze, il nucleo familiare e i documenti.
+
+### Cosa stiamo costruendo
+
+Il cuore del gestionale è la catena del lavoro in un posto solo: trattativa, contratto, titolo, incasso. Da ogni incasso nascono le provvigioni maturate, operatore per operatore, con la base, l’aliquota e l’importo. L’estratto conto mensile, che prima si scaricava a mano per ciascuno, diventa un’estrazione che parte dagli stessi dati.
+
+Ogni ruolo vede la sua parte. Amministratore e back office lavorano su tutta la rete, gestiscono incarichi, mandati, ruoli e permessi. Il collaboratore vede le proprie trattative e i propri clienti; il partner vede la parte di rete che coordina; il cliente vede soltanto le sue polizze. La gerarchia della rete, con i suoi livelli, è un albero dentro il database: chi sta sopra vede chi sta sotto, senza eccezioni scritte a mano.
+
+Tre scelte tecniche reggono il resto. La prima: i prodotti sono dati. Una garanzia nuova, un ruolo nuovo o un campo che chiede una sola banca si dichiarano dal gestionale, senza sviluppo. La seconda: i permessi li decide il database, con una regola per ogni riga, così una schermata scritta male resta comunque senza il dato che quell’utente non deve vedere. La terza: le tre esperienze leggono lo stesso nucleo, quindi la polizza che l’assicurato apre nella sua area è la stessa riga su cui lavora il back office.
+
+### Come stiamo lavorando
+
+L’analisi è partita dalle riunioni in cui il team del cliente ci ha mostrato a schermo i due sistemi in uso. Le abbiamo registrate e trascritte, e ogni requisito porta con sé la fonte: la riunione e il minuto in cui è stato detto. Le domande aperte stanno in un registro con la risposta e la data, così nessuna si chiede due volte.
+
+Abbiamo lavorato presto sui dati veri. Il portafoglio attivo esportato dal vecchio gestionale, oltre undicimila righe, è passato da un lettore che controlla ogni riga prima di scrivere qualsiasi cosa: le poche righe scartate hanno la ragione scritta accanto, per esempio una rata che scade prima di cominciare, e tornano al cliente da correggere alla fonte.
+
+Venticinque controlli automatici girano prima di ogni salvataggio del codice, e il database ha una sua suite di test che verifica permessi e regole. Ai controlli si aggiunge lo sguardo: ogni pagina si apre a video prima di dirla finita. Da settembre il team del cliente lavora su un ambiente di prova protetto, con dati di prova, mentre si completano le ultime pagine.
+
+### Dove siamo oggi
+
+Il gestionale è quasi completo: 95 pagine costruite sulle 106 del perimetro, misurate a metà settembre. L’area riservata dell’assicurato esiste e funziona sopra lo stesso database. La vendita online è nel perimetro e parte dopo, per scelta del cliente. La messa in produzione è prevista in autunno 2026, e il codice passa al cliente.
+
+#### 324 · Migrazioni database
+
+Lo schema costruito un passo alla volta, ogni passo provato
+
+#### 2.530 · Verifiche automatiche
+
+Su 231 file di test dedicati al database
+
+#### 1.153 · Salvataggi del codice
+
+Da agosto 2026, con i controlli a ogni passaggio
+
+#### 95/106 · Pagine del gestionale
+
+Costruite sul perimetro concordato
+
+#### Stack tecnologico
+
+- Next.js (App Router)
+
+- Supabase (Postgres, RLS-first)
+
+- pgTAP (test del database)
+
+- TypeScript
+
+- Vercel
+
+#### Servizi coinvolti
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/case-study/sito-istituzionale-studio-professionale/
+Descrizione: Sito istituzionale per uno studio notarile nato dall’unione di due studi: competenze organizzate per ambito e posta di tutti su un dominio unico.
+
+## Sito istituzionale per studio professionale
+
+Due studi notarili diventano uno. Un sito che presenta lo studio nuovo come una realtà sola, e la posta di tutti su un unico dominio.
+
+### La situazione di partenza
+
+Due studi notarili hanno deciso di unirsi in un unico studio associato, per seguire privati e imprese in tutte le fasi dell’attività notarile, dalla consulenza alla firma dell’atto. Ognuno dei due arrivava con la sua storia, i suoi clienti e i suoi strumenti.
+
+Online questo si vedeva: presenze separate, indirizzi email su domini diversi, una casella istituzionale a parte. Chi scriveva allo studio faticava a capire a chi rivolgersi, e dentro lo studio la posta e gli appuntamenti viaggiavano su strumenti diversi.
+
+Servivano due cose insieme: un sito che presentasse lo studio nuovo come una realtà sola, e una posta che funzionasse come quella di un unico ufficio.
+
+### Cosa abbiamo costruito
+
+Il sito ha quattro sezioni: la home, i notai, le competenze e i contatti. La home racconta perché lo studio è nato e come lavora. La pagina dei notai riporta il percorso di ciascuno: formazione, concorsi, attività di docenza e pubblicazioni.
+
+La pagina delle competenze è quella su cui abbiamo lavorato di più, perché è quella che un cliente legge per capire se lo studio fa al caso suo. L’abbiamo organizzata per ambiti: immobiliare, diritto societario e operazioni straordinarie, successioni e atti di destinazione, escrow agent. Ogni ambito spiega in parole chiare quali atti e quali verifiche segue lo studio.
+
+Accanto al sito abbiamo spostato la posta di tutto lo studio su un dominio unico. Le caselle esistenti, dieci tra quelle dei due studi e quella istituzionale, sono confluite nei nuovi indirizzi. Ogni persona dello studio ha il suo account, c’è un gruppo condiviso per la posta comune e ci sono calendari condivisi per gli appuntamenti.
+
+### Come abbiamo lavorato
+
+I testi li ha scritti lo studio, e abbiamo lavorato su un documento condiviso, pagina per pagina. Accanto a ogni sezione c’erano le indicazioni dei notai: quale titolo usare, dove lasciare solo il testo, quali attività togliere o aggiungere, perfino come scrivere una parola. Abbiamo impaginato ogni revisione fino all’approvazione di ogni pagina.
+
+Per la posta abbiamo deciso casella per casella cosa portare: per alcune sia la posta storica sia quella nuova, per altre solo quella in arrivo. Un foglio condiviso teneva lo stato di ogni casella, così lo studio sapeva in ogni momento cosa era già passato sul nuovo dominio e cosa mancava. Il sito è realizzato in WordPress, così lo studio aggiorna testi e contatti in autonomia.
+
+### Cosa abbiamo ottenuto
+
+#### Uno · Due studi presentati come una realtà sola
+
+#### Ambiti · Competenze spiegate per area di attività
+
+#### Posta · Caselle portate su un dominio unico
+
+#### Calendari · Condivisi tra notai e collaboratori
+
+#### Stack tecnologico
+
+- WordPress
+
+#### Servizi coinvolti
+
+- Siti ed e-commerce
+
+- Gestionali su misura
+
+- Interfacce semplici
+
+
+---
+
+URL: https://www.edos.it/case-study/sito-noleggio-lungo-termine/
+Descrizione: Il nuovo sito di Assirent, noleggio a lungo termine: scritto su misura, con pannello per offerte e contenuti e gli indirizzi del vecchio sito conservati.
+
+## Sito per una società di noleggio a lungo termine
+
+Assirent è la divisione noleggio a lungo termine di Assiplan, assicuratori dal 1973. Il sito su WordPress andava rifatto per raccontare l’azienda come merita. Lo abbiamo riscritto su misura, con un pannello per i contenuti e le offerte del mese.
+
+### La situazione di partenza
+
+Il sito precedente era costruito con un tema WordPress e mostrava listino e schede auto prima ancora dell’azienda. Assirent voleva un sito di rappresentanza: chi è, cosa offre, a chi si rivolge, con le offerte in uno spazio dedicato.
+
+In più, un’agenzia SEO esterna lavora sui contenuti e doveva poter continuare a farlo, e il posizionamento conquistato negli anni andava conservato.
+
+### Cosa abbiamo costruito
+
+Un sito con pagine per servizi, privati e aziende, domande frequenti, articoli e offerte del mese. Ognuno dei 6 servizi ha il suo video breve, in versione verticale sul telefono. Chi chiede un preventivo riceve subito una email di conferma.
+
+Dietro c’è un pannello scritto da noi, con ruoli separati: Assirent gestisce offerte e contenuti, l’agenzia SEO cura titoli, descrizioni e articoli. Tutti gli indirizzi del vecchio sito sono stati mantenuti o reindirizzati verso la pagina giusta, comprese le 21 schede auto.
+
+### Le schermate
+
+Le offerte del mese, aggiornate da Assirent dal pannello.
+
+I 6 servizi, ognuno con un video breve.
+
+Cosa comprende il canone, e cosa si attiva su richiesta.
+
+### Come abbiamo lavorato
+
+Prima del codice abbiamo presentato 3 direzioni grafiche, consultabili online, e Assirent ha scelto la sua. I testi sono stati presi dal sito esistente, riscritti e riletti con il cliente.
+
+Il sito nuovo è online su assirent.com. Le statistiche di Google Analytics partono solo dopo il consenso del visitatore.
+
+#### 3 · Direzioni grafiche proposte
+
+Scelta fatta dal cliente prima dello sviluppo
+
+#### 6 · Video dei servizi
+
+Uno per ogni riquadro, anche in verticale
+
+#### 21 · Schede auto reindirizzate
+
+Il posizionamento costruito negli anni resta
+
+#### 2 · Ruoli nel pannello
+
+Assirent e agenzia SEO, ognuno sulla sua parte
+
+#### Stack tecnologico
+
+- Next.js 16
+
+- Supabase (Postgres, RLS)
+
+- TypeScript
+
+- Vercel
+
+#### Servizi coinvolti
+
+- Siti ed e-commerce
+
+
+---
+
+URL: https://www.edos.it/case-study/supporto-tecnico-piattaforma-no-profit/
+Descrizione: Presa in carico del sito per le donazioni e dell’area sostenitori di un programma no-profit bilingue, con CRM, pagamenti ed email collegati.
+
+## Supporto tecnico per piattaforma No-Profit internazionale
+
+Un programma di sostegno a distanza, un sito per donare e un’area personale per i sostenitori, presi in carico da un altro fornitore con trenta richieste già in lista.
+
+### La situazione di partenza
+
+Il cliente è un’organizzazione no-profit internazionale che sostiene bambini attraverso il sostegno a distanza. Il programma su cui abbiamo lavorato si rivolge ai sostenitori di lingua spagnola e funziona in due lingue, inglese e spagnolo.
+
+Il sistema digitale del programma ha due parti. C’è il sito pubblico, dove chi vuole aiutare sceglie un bambino, lo mette nel carrello e completa la donazione. E c’è l’area personale del sostenitore, dove si seguono il bambino sostenuto, i pagamenti e la corrispondenza. Intorno ci sono il CRM dell’organizzazione, il circuito di pagamento con carta e lo strumento per le email.
+
+La piattaforma era stata costruita da un altro fornitore. Quando il lavoro è passato a noi, attraverso un’agenzia partner, l’organizzazione aveva già una lista di trenta richieste scritte: correzioni, migliorie e funzioni nuove, raccolte in un’unica tabella di lavoro.
+
+### Cosa abbiamo fatto
+
+La prima cosa è stata rispondere a quella lista una voce alla volta. Per ogni richiesta abbiamo scritto cosa serviva sapere per stimarla, dove intervenire e con quali dipendenze. Così le trenta voci sono diventate un piano condiviso, diviso in quattro aree: sito pubblico, integrazioni tra sito e CRM, area personale del sostenitore, app mobile.
+
+Sul sito pubblico le richieste andavano dalle prestazioni su mobile al meccanismo che tiene «in sospeso» un bambino mentre il sostenitore completa la donazione, fino ai QR code stampati sulle cartoline: ogni codice porta al bambino assegnato dal CRM, poi al carrello e al pagamento. Tra le altre voci: nuovi metodi di pagamento come Google Pay e Apple Pay, un promemoria per i carrelli abbandonati, moduli di contatto e assistenza collegati al CRM, il consenso ai cookie.
+
+Nell’area personale le richieste riguardavano il sostenitore in prima persona: regali di compleanno e di Natale da aggiungere da soli, indirizzo di spedizione separato da quello di fatturazione, cambio di lingua tra inglese e spagnolo, cambio dell’email di accesso tenendo le donazioni ricorrenti, storico dei pagamenti, ricevute fiscali da scaricare, aggiornamenti su bambino, foto e lettere che arrivano direttamente dal CRM.
+
+Il primo intervento sul codice è stato mettere ordine: abbiamo tolto dal sito pubblico il page builder che appesantiva le pagine e portato tutto il codice sotto controllo di versione. Da lì ogni modifica è tracciata e si può ricostruire in qualsiasi momento.
+
+### Come abbiamo lavorato
+
+La collaborazione è durata da marzo a ottobre 2025, con un rendiconto mensile legato alle giornate di lavoro: project management da una parte, sviluppo su misura dall’altra. Ogni mese le attività erano registrate giorno per giorno, voce per voce, così l’organizzazione sapeva sempre su cosa stavamo lavorando e quanto tempo ci stavamo mettendo.
+
+Il sistema ha molte parti che si parlano: sito, area personale, CRM, pagamenti, email. Per questo, prima di toccare una funzione, verificavamo dove venivano scritti i dati e chi li leggeva dopo. Una modifica al carrello, per esempio, tocca anche il CRM e i pagamenti ricorrenti. La lingua di lavoro con il cliente era l’inglese, e le priorità venivano decise insieme al suo team marketing.
+
+### Cosa abbiamo ottenuto
+
+#### ✓ · Un piano condiviso
+
+Trenta richieste analizzate una per una e divise in quattro aree di lavoro
+
+#### ✓ · Codice in ordine
+
+Page builder rimosso e tutto il codice portato sotto controllo di versione
+
+#### ✓ · Due lingue
+
+Sito e area personale in inglese e spagnolo, collegati allo stesso CRM
+
+#### ✓ · Tempo tracciato
+
+Attività registrate giorno per giorno, rendiconto mensile da marzo a ottobre 2025
+
+#### Stack tecnologico
+
+- WordPress
+
+- Next.js
+
+#### Servizi coinvolti
+
+- Assistenza ed evoluzione
+
+- Gestionali su misura
+
+
+---
+
+URL: https://www.edos.it/contatti/
+Descrizione: Scriveteci per parlare del vostro progetto: rispondiamo entro 24 ore lavorative. Oppure prenotate un appuntamento dal calendario.
+
+## Parliamo del vostro modo di lavorare.
+
+Avete un progetto in mente, o volete capire se possiamo lavorare insieme: scriveteci da qui.
+
+### Raccontateci come lavorate oggi
+
+#### Messaggio inviato
+
+Grazie per averci scritto. Vi rispondiamo entro 24 ore lavorative.
+
+##### Preferite parlarne a voce?
+
+Scegliete un orario libero nel calendario: si comincia da una conversazione su come lavorate oggi.
+
+Edos Srl
+
+P.IVA 14030760962C.C.I.A.A. Milano REA MI 2758088
+
+Sede legale e operativa Via Giovanni Gioacchino Winckelmann, 120146 Milano (MI)
+
+Telefono ed email +39 388 342 4454 info@edos.it

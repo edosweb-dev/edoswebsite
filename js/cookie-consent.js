@@ -136,7 +136,7 @@
         '<div class="cb-logo"><img src="/logo-white.png" alt="Edos" loading="lazy"></div>' +
         '<div class="cb-text">' +
           '<p class="cb-desc">Per fornire le migliori esperienze, utilizziamo tecnologie come i cookie per memorizzare e/o accedere alle informazioni del dispositivo. Il consenso a queste tecnologie ci permetter\u00e0 di elaborare dati come il comportamento di navigazione o ID unici su questo sito. Non acconsentire o ritirare il consenso pu\u00f2 influire negativamente su alcune caratteristiche e funzioni. ' +
-            '<a href="/cookie-policy">Cookie Policy</a></p>' +
+            '<a href="/cookie-policy/">Cookie Policy</a></p>' +
         '</div>' +
         '<div class="cb-actions">' +
           '<button class="cb-btn cb-btn-accept" id="cbAcceptAll">Accetta tutti</button>' +
