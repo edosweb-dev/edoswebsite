@@ -855,7 +855,7 @@ body { padding-top: 0 !important; }
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(dati.email)){ err.textContent='Controllate l\u2019indirizzo email.'; f.elements.email.classList.add('is-err'); f.elements.email.focus(); return; }
     Object.keys(utm).forEach(function(k){ dati[k]=utm[k]; });
     btn.disabled=true;
-    fetch('/api/agenzie-contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(dati)})
+    fetch('/api/agenzie-contact/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(dati)})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(){
         f.hidden=true; var g=document.getElementById('agGrazie'); g.hidden=false; g.focus();
