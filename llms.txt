@@ -49,6 +49,9 @@ Progetti reali. Alcuni con il nome del cliente, altri in forma anonima per riser
 - [Piattaforma unica per pratiche assicurative](https://www.edos.it/case-study/piattaforma-unica-pratiche-assicurative/): Un’agenzia assicurativa sostituisce due sistemi separati con un’unica piattaforma database-first. Progetto in corso. Servizio: Gestionali su misura.
 - [Piattaforma candidature per un premio scientifico](https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/): Candidature in italiano e in inglese per il premio internazionale di una fondazione. Progetto in corso. Servizio: Gestionali su misura.
 - [Piattaforma CRM per vendite](https://www.edos.it/case-study/piattaforma-crm-vendite/): Riscrittura indipendente del CRM vendite, con pipeline a 9 stadi e motore di lavorazione esiti. Progetto in corso. Servizio: Gestionali su misura.
+- [Bundle e quiz olfattivo per un brand di profumi](https://www.edos.it/case-study/bundle-quiz-brand-profumi/): Una pagina bundle con premi a soglia e un quiz che consiglia il profumo, tutto dentro Shopify. Servizio: Siti ed e-commerce.
+- [Piattaforma preventivi per una società di trasporti](https://www.edos.it/case-study/piattaforma-preventivi-trasporti/): Dalla email del cliente alle offerte dei trasportatori, con l’AI che legge le richieste. Servizio: Gestionali su misura.
+- [Sito per una società di noleggio a lungo termine](https://www.edos.it/case-study/sito-noleggio-lungo-termine/): Sito su misura con pannello per offerte e contenuti, e gli indirizzi del vecchio sito conservati. Servizio: Siti ed e-commerce.
 
 ## Pagine principali
 

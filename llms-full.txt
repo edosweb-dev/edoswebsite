@@ -79,6 +79,15 @@ Case study: piattaforma per una fondazione, con candidature a doppia anagrafica 
 ## [Piattaforma CRM per vendite | Case Study | Edos](https://www.edos.it/case-study/piattaforma-crm-vendite/)
 Case study: riscrittura indipendente del CRM vendite per una società di marketing e vendite, con pipeline a 9 stadi, motore di lavorazione esiti e ruoli granulari. Progetto in corso.
 
+## [Bundle e quiz olfattivo per un brand di profumi | Case Study | Edos](https://www.edos.it/case-study/bundle-quiz-brand-profumi/)
+Case study: pagina bundle con premi a soglia e quiz che consiglia il profumo per Mine Perfume Lab, costruiti dentro Shopify Plus con pannelli gestiti dal cliente.
+
+## [Piattaforma preventivi per una società di trasporti | Case Study | Edos](https://www.edos.it/case-study/piattaforma-preventivi-trasporti/)
+Case study: piattaforma per una società di trasporti che trasforma le email dei clienti in richieste lette dall’AI, raccoglie i preventivi dei trasportatori e propone le offerte migliori con il margine applicato.
+
+## [Sito per una società di noleggio a lungo termine | Case Study | Edos](https://www.edos.it/case-study/sito-noleggio-lungo-termine/)
+Case study: il nuovo sito di Assirent, noleggio a lungo termine per privati e aziende, scritto su misura con pannello per offerte e contenuti, ruoli per l’agenzia SEO e gli indirizzi del vecchio sito conservati.
+
 ## [Per le agenzie · Edos](https://www.edos.it/per-le-agenzie/)
 Siamo il team di sviluppo della vostra agenzia: portali, aree riservate, integrazioni ed e-commerce per i vostri clienti, consegnati con il vostro marchio. Il cliente resta vostro.
 
