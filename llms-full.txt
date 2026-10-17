@@ -68,8 +68,6 @@ Il foglio Excel
 
 pratiche, scadenze
 
-AI Legge, compila e propone
-
 Legge la PEC appena arrivata e apre la pratica
 
 Compila i campi leggendo la visura
@@ -80,45 +78,9 @@ Propone cosa fare dopo, e a chi
 
 Aggiorna il foglio Excel dell'ufficio
 
-Lavora dentro la vostra piattaforma: i dati restano lì.
-
 Pratiche
 
 Dati dimostrativi
-
-Pratica PR-2419
-
-Nuova Edilcasa srl
-
-Arrivata da
-
-PEC del 17 set · visura allegata
-
-Partita IVA
-
-02184330168
-
-Sede
-
-Bergamo · via Borgo Palazzo 112
-
-Attività
-
-ATECO 41.20 · edilizia
-
-Cliente
-
-n. 1042 · 3 pratiche già fatte
-
-Da fare
-
-bilancio 2025 · L. Ferri · 24 set
-
-Excel
-
-pratiche-2026.xlsx · riga 312
-
-3 campi letti dalla visura, controllati da M. Conti
 
 Le tecnologie che utilizziamo
 
