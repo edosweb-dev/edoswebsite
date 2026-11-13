@@ -124,6 +124,34 @@ body { padding-top: 0 !important; }
 .ed-text{max-width:780px}
 </style>
 <link rel="stylesheet" href="/css/comune.css?v=20260923f">
+<style id="schermate-caso">.cs-hero.has-vetrina{padding-bottom:clamp(170px,19vw,250px)}
+.cs-vetrina{position:relative;z-index:3;margin-top:calc(-1 * clamp(130px,15vw,200px))}
+.cs-frame{margin:0;background:#fff;border-radius:12px;overflow:hidden;border:1px solid rgba(13,27,62,.10);box-shadow:0 1px 2px rgba(6,14,34,.06),0 28px 70px -18px rgba(6,14,34,.35)}
+.cs-frame-bar{display:flex;align-items:center;gap:6px;height:34px;padding:0 14px;background:#F2F4F9;border-bottom:1px solid rgba(13,27,62,.08)}
+.cs-frame-bar i{width:9px;height:9px;border-radius:50%;background:rgba(13,27,62,.16);flex-shrink:0}
+.cs-frame-bar span{margin:0 auto;transform:translateX(-18px);font:500 .72rem/1 var(--font);color:var(--text-muted);background:#fff;border:1px solid rgba(13,27,62,.08);border-radius:6px;padding:5px 16px;min-width:36%;text-align:center}
+.cs-frame img{display:block;width:100%;height:auto}
+.cs-vetrina .cs-frame{max-width:1060px;margin:0 auto}
+.cs-shots{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 32px;margin-top:36px}
+.cs-shot{margin:0}
+.cs-shot a{display:block;border-radius:12px}
+.cs-shot a:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.cs-shot .cs-frame{box-shadow:0 1px 2px rgba(6,14,34,.05),0 16px 40px -18px rgba(6,14,34,.28);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.cs-shot a:hover .cs-frame{transform:translateY(-3px);box-shadow:0 1px 2px rgba(6,14,34,.05),0 24px 50px -18px rgba(6,14,34,.36)}
+.cs-shot .cs-frame-bar{height:24px;padding:0 10px;gap:5px}
+.cs-shot .cs-frame-bar i{width:7px;height:7px}
+.cs-shot img{aspect-ratio:16/10;object-fit:cover;object-position:top}
+.cs-shot figcaption{font-size:.875rem;color:var(--text-body);margin-top:14px;line-height:1.55;max-width:48ch}
+.cs-shots:has(> .cs-shot:nth-child(3):last-child){grid-template-columns:repeat(3,1fr);gap:40px 24px}
+.cs-shots:has(> .cs-shot:only-child){grid-template-columns:1fr;max-width:760px}
+.cs-phones{display:flex;justify-content:center;align-items:flex-end;gap:clamp(14px,3vw,44px)}
+.cs-phone{margin:0;width:clamp(150px,21vw,250px);padding:8px;background:#0B1226;border-radius:34px;box-shadow:0 30px 60px -20px rgba(6,14,34,.5),inset 0 0 0 1px rgba(255,255,255,.08)}
+.cs-phone img{display:block;width:100%;height:auto;border-radius:27px}
+.cs-phone:nth-child(2){transform:translateY(-28px)}
+@media(max-width:700px){.cs-shots{grid-template-columns:1fr}.cs-frame-bar span{display:none}.cs-phones{gap:10px}.cs-phone{width:31%;padding:5px;border-radius:22px}.cs-phone img{border-radius:18px}.cs-phone:nth-child(2){transform:translateY(-14px)}}
+@media(max-width:900px){.cs-shots.cs-shots,.cs-shots:has(> .cs-shot:nth-child(3):last-child){grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cs-shot .cs-frame{transition:none}.cs-shot a:hover .cs-frame{transform:none}}
+.cs-phone{display:flex;flex-direction:column}.cs-phone figcaption{font-size:.8125rem;color:var(--text-body);line-height:1.5;margin-top:14px;text-align:center;padding:0 4px}</style>
 </head>
 <body>
 
@@ -189,13 +217,13 @@ body { padding-top: 0 !important; }
 </div>
 
 <!-- HERO -->
-<section class="cs-hero">
+<section class="cs-hero has-vetrina">
   <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="cs-hero-noise"></div>
   <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li class="breadcrumb-sep">/</li><li><a href="/case-study/">Case Study</a></li><li class="breadcrumb-sep">/</li><li class="breadcrumb-current">Premio Invernizzi</li></ol></nav>
     <div class="cs-hero-inner">
       <h1>Piattaforma del Premio Invernizzi per la Ricerca</h1>
-      <p class="cs-hero-lead">Dopo 20 anni la Fondazione Romeo ed Enrica Invernizzi rilancia il suo premio per la ricerca: un fondo da 1 milione di euro per ricercatori under 50 di tutto il mondo. Ci ha chiesto la piattaforma per gestire le candidature, in italiano e in inglese.</p>
+      <p class="cs-hero-lead">Dopo 20 anni la Fondazione Romeo ed Enrica Invernizzi rilancia il suo premio per la ricerca scientifica, con un fondo da 1 milione di euro per ricercatori under 50 di tutto il mondo. Edos ha progettato e sviluppato la piattaforma che gestisce l&rsquo;intero ciclo del bando: sito istituzionale, candidature online, segreteria e materiali per la giuria.</p>
       <div class="cs-hero-meta">
         <div class="cs-hero-meta-item">
           <span class="cs-hero-meta-label">Settore</span>
@@ -210,45 +238,64 @@ body { padding-top: 0 !important; }
   </div>
 </section>
 
+<!-- VETRINA -->
+<section class="cs-vetrina" aria-label="Schermata principale">
+  <div class="container">
+    <figure class="cs-frame"><div class="cs-frame-bar"><i></i><i></i><i></i><span>premioinvernizzi.it</span></div><img src="/case-study/piattaforma-candidature-premio-ricerca/img/d-home.webp" alt="La home del Premio Romeo ed Enrica Invernizzi, edizione 2027 dedicata all&rsquo;agroalimentare" width="1600" height="1000" decoding="async" fetchpriority="high"></figure>
+  </div>
+</section>
+
 <!-- CORPO EDITORIALE -->
 <section class="section-pad" style="background:var(--white)">
   <div class="container">
 
         <div class="ed-block reveal">
       <h2 class="ed-heading">La situazione <span>di partenza</span></h2>
-      <p class="ed-text"><strong class="ed-guida">La Fondazione Invernizzi rilancia dopo 20 anni un premio internazionale per giovani ricercatori, con una materia diversa a ogni edizione.</strong>Con il rilancio c&rsquo;era un sistema da costruire da zero e un calendario preciso: il bando apre e chiude in date fissate, e le candidature possono arrivare da tutto il mondo, in italiano o in inglese.</p>
-      <p class="ed-text">Una regola del premio ha guidato tutto il modello dati: il candidato non si propone da solo. A candidarlo &egrave; sempre un terzo, una persona, un&rsquo;universit&agrave; o un ente. Ogni candidatura ha quindi due anagrafiche, quella di chi propone e quella di chi viene proposto, e la piattaforma le tiene insieme dalla prima bozza fino all&rsquo;esito.</p>
-      <p class="ed-text">La segreteria della Fondazione doveva poter raccogliere le candidature, controllarle, chiedere correzioni quando manca qualcosa e preparare il materiale per la giuria. Per scelta della Fondazione la giuria resta fuori dalla piattaforma e riceve un fascicolo pronto da leggere.</p>
+      <p class="ed-text"><strong class="ed-guida">Un premio internazionale, un calendario fisso, una segreteria che deve lavorare in autonomia.</strong>Il Premio torna con una formula nuova: una materia diversa a ogni edizione, candidature da tutto il mondo in italiano e in inglese, apertura e chiusura del bando in date e orari stabiliti. La Fondazione cercava un sistema unico per raccogliere le candidature, verificarle e consegnare alla giuria fascicoli ordinati e confrontabili.</p>
+      <p class="ed-text">Una regola del bando ha orientato l&rsquo;intero progetto: a candidare &egrave; sempre un terzo, una persona, un&rsquo;universit&agrave; o un ente. Ogni candidatura tiene quindi insieme due profili, chi propone e chi viene proposto, dalla prima bozza fino all&rsquo;esito.</p>
     </div>
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Cosa abbiamo <span>costruito</span></h2>
-      <p class="ed-text"><strong class="ed-guida">Chi propone compila il modulo in pi&ugrave; volte, perch&eacute; la bozza si salva.</strong>Carica il curriculum in PDF, le pubblicazioni, i premi e i riconoscimenti del candidato, e d&agrave; i consensi, che restano registrati nella versione accettata in quel momento. Se la segreteria chiede una correzione, la candidatura torna modificabile. A fine percorso l&rsquo;esito arriva anche al candidato.</p>
-      <p class="ed-text">La segreteria lavora su un elenco con filtri combinabili, apre il fascicolo cliccando la riga, segna una candidatura come da verificare o non ammessa, scarica la scheda in PDF ed esporta tutto in Excel. Per la giuria prepara un pacchetto per ogni giurato, protetto da password. L&rsquo;amministrazione gestisce le edizioni, le date di apertura e chiusura all&rsquo;ora scelta, i testi delle pagine e i modelli delle email, in due lingue, direttamente dal pannello.</p>
-      <p class="ed-text">Tre scelte tecniche. Le regole sui singoli campi vivono nel codice, quelle strutturali nel database: una candidatura senza un allegato obbligatorio si ferma l&igrave;, qualunque strada prenda. La configurazione &egrave; per edizione, quindi la prossima potr&agrave; cambiare materia, requisiti e date senza toccare il codice. Le citt&agrave; del mondo, oltre 170 mila, stanno dentro il database, cos&igrave; la localizzazione dei candidati gira senza un servizio esterno a pagamento.</p>
+      <p class="ed-text"><strong class="ed-guida">Il sito e il modulo di candidatura.</strong>Il sito presenta il Premio, il bando in corso, la giuria e l&rsquo;archivio delle edizioni, in italiano e in inglese. Il modulo guida chi propone passo per passo: la bozza si salva e si riprende in qualsiasi momento, gli allegati vanno direttamente all&rsquo;archivio documentale e ogni consenso resta registrato nella versione accettata. A invio completato arriva la conferma con il numero di candidatura.</p>
+      <p class="ed-text"><strong class="ed-guida">La segreteria e la giuria.</strong>La segreteria lavora su un elenco unico con filtri combinabili, stati e note interne. Da ogni fascicolo chiede un&rsquo;integrazione al proponente, che ritrova la candidatura modificabile, e scarica la scheda in PDF; l&rsquo;intero elenco si esporta in Excel. Per la giuria prepara un pacchetto riservato per ciascun giurato, protetto da password.</p>
+      <p class="ed-text"><strong class="ed-guida">L&rsquo;amministrazione.</strong>La Fondazione gestisce in autonomia edizioni, date e orari del bando, testi delle pagine, modelli delle email nelle due lingue, utenti e permessi.</p>
+      <p class="ed-text"><strong class="ed-guida">Le scelte di progetto.</strong>Ogni edizione ha la propria configurazione: materia, requisiti e date cambiano dal pannello, e la prossima edizione parte senza nuovo sviluppo. I controlli essenziali vivono nel database, cos&igrave; una candidatura incompleta resta in bozza qualunque strada prenda. Le oltre 170.000 citt&agrave; del mondo sono incluse nella piattaforma, e la localizzazione dei candidati funziona in autonomia, senza servizi esterni in abbonamento.</p>
+    </div>
+
+    <div class="ed-block reveal">
+      <h2 class="ed-heading">Le <span>schermate</span></h2>
+      <div class="cs-shots">
+      <figure class="cs-shot"><div class="cs-frame"><div class="cs-frame-bar"><i></i><i></i><i></i><span>premioinvernizzi.it/it/bando</span></div><img src="/case-study/piattaforma-candidature-premio-ricerca/img/d-bando.webp" alt="La pagina del bando con le date di apertura e scadenza delle candidature" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption>Il bando: date, stato e accesso alla candidatura, aggiornati dal pannello della segreteria.</figcaption></figure>
+      <figure class="cs-shot"><div class="cs-frame"><div class="cs-frame-bar"><i></i><i></i><i></i><span>premioinvernizzi.it/candidatura</span></div><img src="/case-study/piattaforma-candidature-premio-ricerca/img/d-candidatura.webp" alt="L&rsquo;ingresso del modulo di candidatura con le regole del bando" width="1600" height="1000" loading="lazy" decoding="async"></div><figcaption>L&rsquo;ingresso del modulo: le regole essenziali prima di iniziare, e la ripresa della bozza dal link ricevuto via email.</figcaption></figure>
+      </div>
+      <div class="cs-phones" style="margin-top:72px">
+      <figure class="cs-phone"><img src="/case-study/piattaforma-candidature-premio-ricerca/img/t-home.webp" alt="La home del Premio sul telefono" width="780" height="1688" loading="lazy" decoding="async"></figure>
+      <figure class="cs-phone"><img src="/case-study/piattaforma-candidature-premio-ricerca/img/t-bando.webp" alt="Il bando sul telefono" width="780" height="1688" loading="lazy" decoding="async"></figure>
+      <figure class="cs-phone"><img src="/case-study/piattaforma-candidature-premio-ricerca/img/t-candidatura.webp" alt="Il modulo di candidatura sul telefono" width="780" height="1688" loading="lazy" decoding="async"></figure>
+      </div>
     </div>
 
     <div class="ed-block reveal">
       <h2 class="ed-heading">Come abbiamo <span>lavorato</span></h2>
-      <p class="ed-text"><strong class="ed-guida">Abbiamo costruito prima il modello dati e lo strato server, poi le schermate della segreteria, dell&rsquo;amministrazione e le pagine pubbliche.</strong>A fine agosto la Fondazione ha avuto un ambiente da visitare; le richieste emerse guardandolo sono state raccolte e rilasciate insieme, tra cui i filtri combinati, la scheda in PDF e l&rsquo;orario di chiusura del bando scelto dalla segreteria.</p>
-      <p class="ed-text">Un test automatico percorre l&rsquo;intera candidatura dal vero, dalla bozza all&rsquo;invio, con 35 verifiche. Alla prima esecuzione ha trovato due difetti reali che i controlli sul codice e sul database, da soli, non avevano visto.</p>
-      <p class="ed-text">Le prestazioni le abbiamo misurate su un volume credibile: il progetto &egrave; dimensionato su circa duecento fascicoli, e la prova ne usa 208, ciascuno con proponente, candidato, un riconoscimento e una pubblicazione. L&rsquo;Excel di tutte le candidature esce in meno di mezzo secondo, e lo stesso vale per il PDF dell&rsquo;elenco.</p>
+      <p class="ed-text"><strong class="ed-guida">Prima i flussi e i dati, poi le schermate.</strong>Il progetto &egrave; partito dal modello dei dati e dai flussi, condivisi con la Fondazione nella prima settimana insieme a &rsquo;48 Quarantotto, che ha curato l&rsquo;identit&agrave; visiva del Premio. Dalla fine di agosto la Fondazione ha lavorato su un ambiente di prova, e le richieste emerse in collaudo, tra cui i filtri combinati, la scheda in PDF e l&rsquo;orario di chiusura scelto dalla segreteria, sono state rilasciate insieme.</p>
+      <p class="ed-text">Prima del lancio un test automatico percorre l&rsquo;intera candidatura, dalla bozza all&rsquo;invio, con 35 verifiche. La prova di carico &egrave; stata eseguita su 208 fascicoli completi: l&rsquo;Excel di tutte le candidature si genera in meno di mezzo secondo.</p>
     </div>
 
 <div class="ed-block reveal">
       <h2 class="ed-heading">Dove siamo <span>oggi</span></h2>
-      <p class="ed-text">La piattaforma &egrave; online su <a href="https://www.premioinvernizzi.it" target="_blank" rel="noopener">premioinvernizzi.it</a>, in italiano e in inglese. L&rsquo;11 novembre 2026 la Fondazione ha presentato il rilancio del Premio alla stampa a Palazzo Invernizzi: l&rsquo;edizione 2027 &egrave; dedicata a &laquo;Microbiomes for Agriculture&raquo;. L&rsquo;identit&agrave; visiva del Premio &egrave; di &rsquo;48 Quarantotto, con cui abbiamo lavorato fin dalla prima settimana.</p>
+      <p class="ed-text">La piattaforma &egrave; online su <a href="https://www.premioinvernizzi.it" target="_blank" rel="noopener">premioinvernizzi.it</a>, in italiano e in inglese, e il bando dell&rsquo;edizione 2027 &egrave; aperto dal 10 novembre 2026. Lo stesso giorno la Fondazione ha presentato il rilancio del Premio alla stampa a Palazzo Invernizzi: l&rsquo;edizione 2027 &egrave; dedicata a &laquo;Microbiomes for Agriculture&raquo;. Edos segue la piattaforma con il servizio di assistenza, edizione dopo edizione.</p>
       <div class="res-grid">
         <div class="res-card">
           <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
           <div class="res-card-num">35</div>
           <h3>Verifiche nel test completo</h3>
-          <p>Ha trovato 2 difetti reali alla prima esecuzione</p>
+          <p>L&rsquo;intera candidatura, dalla bozza all&rsquo;invio</p>
         </div>
         <div class="res-card">
           <div class="res-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
           <div class="res-card-num">208</div>
-          <h3>Candidature nella prova di carico</h3>
+          <h3>Fascicoli nella prova di carico</h3>
           <p>Excel di tutte in 456 millisecondi</p>
         </div>
         <div class="res-card">
