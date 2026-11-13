@@ -73,8 +73,8 @@ Case study: e-commerce per un’azienda farmaceutica costruito sul sito WordPres
 ## [Piattaforma unica per pratiche assicurative | Case Study | Edos](https://www.edos.it/case-study/piattaforma-unica-pratiche-assicurative/)
 Case study: un’agenzia assicurativa sostituisce due sistemi separati con un'unica piattaforma database-first, gestionale, area cliente e canale digitale. Progetto in corso.
 
-## [Piattaforma candidature per un premio scientifico | Case Study | Edos](https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/)
-Case study: piattaforma per una fondazione, con candidature a doppia anagrafica proponente/candidato, in italiano e in inglese. Progetto in corso.
+## [Piattaforma del Premio Invernizzi per la Ricerca | Case Study | Edos](https://www.edos.it/case-study/piattaforma-candidature-premio-ricerca/)
+Case study: la piattaforma del Premio Romeo ed Enrica Invernizzi per la Ricerca, con candidature a doppia anagrafica proponente/candidato, in italiano e in inglese.
 
 ## [Piattaforma CRM per vendite | Case Study | Edos](https://www.edos.it/case-study/piattaforma-crm-vendite/)
 Case study: riscrittura indipendente del CRM vendite per una società di marketing e vendite, con pipeline a 9 stadi, motore di lavorazione esiti e ruoli granulari. Progetto in corso.
