@@ -1170,7 +1170,7 @@ body { padding-top: 0 !important; }
   <div class="container">
     <div class="cases-head">
       <h2 class="reveal">Quello che facciamo<br>raccontato dai risultati.</h2>
-      <p class="reveal"><strong>Progetti veri, conclusi e in corso.</strong> Alcuni li raccontiamo con il nome del cliente, altri in forma anonima per riservatezza.</p>
+      <p class="reveal"><strong>Progetti conclusi e in corso, con il nome dei clienti.</strong> Ogni caso racconta cosa abbiamo costruito e come lo usano oggi.</p>
     </div>
 
     <div class="cases-grid" id="casesGrid"></div>
@@ -1469,8 +1469,10 @@ body { padding-top: 0 !important; }
       return a;
     }
 
-    /* initial render: 8 random cases */
-    var shown=shuffle(CASES).slice(0,8);
+    /* initial render: 8 random cases among those that name the client */
+    var NAMED=['app-organizzazione-eventi-sportivi','bundle-quiz-brand-profumi','crm-b2c-richieste-mutuo','ecommerce-b2b-network-franchising','gestionale-servizi-ncc-taxi','marketplace-musicisti-organizzatori','piattaforma-ai-perizie-immobiliari','piattaforma-candidature-premio-ricerca','sito-noleggio-lungo-termine'];
+    var named=CASES.filter(function(c){return NAMED.some(function(s){return c.u.indexOf('/'+s+'/')>-1;});});
+    var shown=shuffle(named).slice(0,8);
     shown.forEach(function(c,i){
       var card=buildCard(c,i);
       card.style.opacity='0';card.style.transform='translateY(14px)';
